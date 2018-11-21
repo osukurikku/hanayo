@@ -1,0 +1,51 @@
+{{/*###
+Handler=/switcher
+TitleBar=Kotorikku Switcher
+KyutGrill=changelog.jpg
+*/}}
+{{ define "tpl" }}
+{{ $global := .Context }}
+{{ $ := $ }}
+<style>
+    .thumb-wrap {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+    }
+    .thumb-wrap iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<div class="ui container">
+    <div class="ui segment">
+        <h1 class="ui header">Инструкция по Server Switcher!</h1>
+        <hr/>
+        <p>Привет! Это маленькая инструкция расскажет тебе как  зайти на наш сервер.</p>
+        <h3 class="ui center" style="text-align: center;">Первым делом надо скачать один из свитчеров:</h3>
+
+        <div class="ui center aligned segment box-none">
+            <div class="ui buttons">
+                <a href="/static/switcherv2.zip" class="ui green button">Ripple Style</a>
+                <div class="or"></div>
+                <a href="/static/switcherv1.exe" class="ui pink button">Gatari Style</a>
+            </div>
+        </div>
+
+        <p>
+            Дальше нам  нужно распаковать тот или иной свитчер, открыть, установить сертификат и нажать заветную кнопку <b>"Перейти на Kotorikku"</b>. Всё добро пожаловать на один из самых дружелюбных приватных серверов <b>osu</b>!
+        </p>
+    </div>
+
+    <div class="ui segment">
+        <h1 class="ui header">Видеогайд:</h1>
+        <center class="thumb-warp"><iframe src="https://www.youtube.com/embed/BZjOI0J2mbA" gesture="media" allow="encrypted-media" allowfullscreen="" width="900" height="510" frameborder="0"></iframe></center>
+    </div>
+</div>
+{{ end }}
