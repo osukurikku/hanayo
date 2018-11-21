@@ -1,0 +1,99 @@
+{{/*###
+Handler=/team
+TitleBar=Team
+Include=user_group.html
+KyutGrill=team2.jpg
+*/}}
+{{ define "tpl" }}
+<div class="ui container">
+	<div class="ui segments">
+		<div class="ui center aligned segment">
+			<h3>{{ .T "This is a list of the wonderful people who keep Kotorikku up and running and deal with its community." }}</h3>
+		</div>
+		<div class="ui center aligned segment">
+			<h1 class="ui heading">{{ .T "Owners" }}</h1>
+			<p>
+				{{ .T "The backbones of the server. The owners function as both the main community managers, as well as primary Developers. They work on everything from managing the team to making this page look nicer." }}
+			</p>
+			{{ template "userGroup" (.Get "badges/members?id=%d" 2) }}
+		</div>
+		<div class="ui center aligned segment">
+			<h1 class="ui heading">{{ .T "Community Managers" }}</h1>
+			<p>
+				{{ .T "Community Managers deal with bans, silences, name changes and pretty much everything that has to do with the community." }}<br>
+				{{ .T "They take care of our Discord server and reply to emails sent to <a href='mailto:support@kotorikku.ru'>support@kotorikku.ru</a>. Community Managers have a red name in the in-game chat." | html }}
+			</p>
+			{{ template "userGroup" (.Get "badges/members?id=%d" 10) }}
+		</div>
+		<div class="ui center aligned segment">
+			<h1 class="ui heading">{{ .T "Developers" }}</h1>
+			<p>
+				{{ .T "Developers add new features to the server, squash bugs, keep the server up and running and take care of its maintenance." }}<br>
+			</p>
+			{{ template "userGroup" (.Get "badges/members?id=%d" 3) }}
+		</div>
+		<div class="ui center aligned segment">
+			<h1 class="ui heading">{{ .T "Chat Moderators" }}</h1>
+			<p>
+				{{ .T "Chat moderators manage the chat to make sure The Law&trade; (the rules) is respected." | html }}
+			</p>
+			{{ template "userGroup" (.Get "badges/members?id=%d" 4) }}
+		</div>
+		<div class="ui center aligned segment">
+			<h1 class="ui heading">{{ .T "BATs" }}</h1>
+			<p>
+				{{ .T "BATs play beatmaps in the ranking queue and decide whether they are good enough to be ranked or not." }}
+			</p>
+			{{ template "userGroup" (.Get "badges/members?id=%d" 5) }}
+		</div>
+	</div>
+	<div class="ui segments">
+		<div class="ui center aligned segment">
+			<h1 class="ui heading">{{ .T "Special thanks" }}</h1>
+			<p>{{ .T "Here's a list of people who helped with Kotorikku" }}</p>
+			{{ template "userGroup" (.Get "badges/members?id=%d" 42) }}
+		</div>
+		<div class="ui segment">
+			<ul class="ui list">
+				<li>
+					{{ .T "<b>Franc[e]sco/lolisamurai</b>, for <a href='https://github.com/Francesco149/oppai'>oppai</a>, used as standard pp calculator." | html }}<br>
+					oppai is licensed under GPL v3. Our implementation can be found <a href="https://github.com/osuAkatsuki/lets/src/master/pp/rippoppai.py">here</a>.
+				</li>
+				<li>
+					{{ .T "<b>Tom94</b>, for <a href='https://github.com/ppy/osu-performance'>osu-performance</a>, used as a reference for our mania pp calculator." | html }}<br>
+					osu-performance is licensed under AGPL v3. Our implementation can be found <a href="https://github.com/osuAkatsuki/lets/src/master/pp/wifipiano2.py">here</a>.
+				</li>
+				<li>
+					{{ .T "<b>Sunpy</b>, for <a href='https://github.com/osufx/catch-the-pp'>catch-the-pp</a>, used as catch the beat pp calculator." | html }}<br>
+					catch-the-pp is licensed under GPL v3. Our implementation can be found <a href="https://github.com/osuAkatsuki/lets">here</a>.
+				</li>
+				<li>
+					{{ .T "<b>jrosdahl</b>, for <a href='https://github.com/jrosdahl/miniircd'>miniircd</a>, used as a base for our IRC server." | html }}<br>
+					miniircd is licensed under GPL v2. Our implementation can be found <a href="https://github.com/osuAkatsuki/pep.py/src/master/irc/ircserver.py">here</a>.
+				</li>
+				<li>
+					{{ .T "<b>Sunpy</b>, for <a href='https://github.com/sunpy/secret'>cakes</a>, used as a large portion of our anticheat." | html }}
+				</li>
+				<li>{{ .T "<b><a href='http://ripple.moe/'>Ripple</a></b>, for the software to host Kotorikku" | html }}</li>
+				<li>{{ .T "<b><a id='everyone' class='clickable'>Everyone</a></b> who has supported Kotorikku by donating." | html }}</li>
+			</ul>
+		</div>
+	</div>
+	{{ $ := . }}
+	{{ .T "Looking for how you should contact our team? Check out <a href='/help'>this page</a>." | html }}
+	<div class="ui modal">
+		<div class="header"><h2 class="ui header">{{ .T "They told me these are very cool people." }}</h2></div>
+			<div class="content">
+				{{ template "userGroup" (.Get "badges/members?id=%d" 36) }}
+				<!-- Probably most shit coded part of Hanayo -->
+				<br>
+				<div class="centered">
+					<br><br>
+					<b>{{ $.T "Do you want to be in this list?" }}</b><br>
+					<a href="/donate"><b>{{ $.T "Support us with a donation!" }}</b></a><br>
+					<i>{{ $.T "(You get other cool perks too)" }}</i>
+				</div>
+			</div>
+	</div>
+</div>
+{{ end }}

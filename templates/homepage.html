@@ -1,0 +1,89 @@
+{{/*###
+Handler=/
+TitleBar=Home Page
+KyutGrill=darkhome.jpg
+*/}}
+{{ define "tpl" }}
+{{ $cf := .ClientFlags }}
+{{ $ds := band $cf 1 }}
+{{ $   := . }}
+<div class="ui container">
+	<div class="ui center aligned segment">
+		<img src="/static/logos/logo1.png">
+	</div>
+	{{ $set := systemSettings "website_home_alert" }}
+	{{ with $set.website_home_alert.String }}
+		<div class="ui warning message">
+			{{ . | html }}
+		</div>
+	{{ end }}
+	{{/* Not logged in block */}}
+	{{ if not .Context.User.ID }}
+		<div class="ui segment">
+			<h1 class="ui header">{{ .T "Welcome to Kotorikku." }}</h1>
+			<p>
+				{{ .T "You look new here. Allow us to introduce you to what Kotorikku is." }}
+			</p>
+			<p>
+				{{ .T "Kotorikku is a private osu! server, with features such as PP for all 4 gamemodes (including DT mania pp!), fully-functioning multiplayer, spectator, and many others. <b>we currently have %s users online and %s registered users!</b>" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
+			</p>
+			<h3 class="ui header center aligned">{{ .T "What are you waiting for? Join Kotorikku; It's risk-free: (you won't get banned on the official server if you play on Kotorikku).<br>You can also switch anytime between the official osu! server and Kotorikku" | html }}</h3>
+		</div>
+		<!--<div class="ui segment">
+			<center><h1 class="ui header">How to connect!</h1></center>
+			<p>
+				<center><iframe width="900" height="510" src="https://www.youtube.com/embed/BZjOI0J2mbA" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></center>		
+			</p>
+		</div> -->
+	{{ else }}
+		<div class="ui segment">
+			<h1 class="ui header">{{ .T "Hi, %s!" .Context.User.Username }}</h1>
+			<p>
+				{{ .T "Welcome back to Kotorikku. We currently have <b>%s online users and %s total registed users.</b> Hope you're having a wonderful day!" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
+			</p>
+		</div>
+	{{ end }}
+	<div class="ui stackable three grid">
+		    <div class="five wide column">
+			      <div class="ui red segment">
+			        <div class="ui grid">
+			          <div class="four wide column">
+			            <i class="user plus icon status-icon"></i>
+			          </div>
+			          <div class="twelve wide column" >
+			            <p class="status-head">{{ .T "%s" (rediget "ripple:online_users") | html }}</p>
+			            <p class="status-footer">Online Users</p>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			    <div class="five wide column">
+			      <div class="ui blue segment">
+			        <div class="ui grid">
+			          <div class="four wide column">
+			            <i class="user icon status-icon"></i>
+			          </div>
+			          <div class="twelve wide column" >
+			            <p class="status-head">{{ .T "%s" (rediget "ripple:registered_users") | html }}</p>
+			            <p class="status-footer">Registered Users</p>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			    <div class="six wide column">
+			      <div class="ui green segment">
+			        <div class="ui grid">
+			          <div class="four wide column">
+			            <i class="angle right icon status-icon"></i>
+			          </div>
+			          <div class="twelve wide column" >
+			            <p class="status-head">{{ .T "%s" (rediget "ripple:submitted_scores") | html }}</p>
+			            <p class="status-footer">Submitted Scores</p>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+		   </div>
+		</div>
+</div>
+{{ end }}
