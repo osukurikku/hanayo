@@ -39,7 +39,7 @@ var pageMappings = map[int]interface{}{
 	24: "/",          // my report
 	25: "/",          // report
 	26: "/friends",
-	27: "https://status.ripple.moe",
+	27: "https://status.kotorikku.ru",
 	28: "/", // user lookup
 	29: "/2fa_gateway",
 	30: "/settings/2fa",
@@ -73,7 +73,7 @@ func CheckRedirect(c *gin.Context) {
 		mapped := pageMappings[i]
 		if mapped == nil {
 			u := c.Request.URL
-			u.Host = "old.ripple.moe"
+			u.Host = "old.kotorikku.ru"
 			c.Redirect(302, u.String())
 			return
 		}

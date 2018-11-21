@@ -16,11 +16,11 @@ msgstr ""
 
 # JavaScript
 msgid ""
-"An error occurred while contacting the Ripple API. Please report this to a "
-"Ripple developer."
+"An error occurred while contacting the Kotorikku API. Please report this to a "
+"Kotorikku developer."
 msgstr ""
-"Ein Fehler ist aufgetreten während die Ripple-API kontaktiert wurde. Bitte "
-"melde dies einem Ripple-Entwickler."
+"Ein Fehler ist aufgetreten während die Kotorikku-API kontaktiert wurde. Bitte "
+"melde dies einem Kotorikku-Entwickler."
 
 msgid "Why, LOVE, of course!"
 msgstr "Warum, LOVE, of course!"
