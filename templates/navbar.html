@@ -30,7 +30,7 @@
 			{{ end }}
 			
 			{{ navbarItem .Path (.T "Donate" | printf "<i class=\"red heart icon\"></i>%s") "/donate" }}
-			{{ navbarItem .Path (.T "Download Switcher" | printf "<i class=\"blue cloud download icon\"></i>%s") "/static/switcher.exe" }}
+			{{ navbarItem .Path (.T "Switcher" | printf "<i class=\"blue cloud download icon\"></i>%s") "/switcher" }}
 			{{ if $isAdmin }}{{ navbarItem .Path (.T "Admin Panel" | printf "<b>%s</b>") "http://oadmin.kotorikku.ru/index.php?p=100" }}{{ end }}
 		{{ end }}
 		<div class="firetrucking-right-menu">
