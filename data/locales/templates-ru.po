@@ -30,6 +30,9 @@ msgstr "Первым делом надо скачать один из свитч
 msgid "Next we need to unpack one of a switchers, open, install the certificate and then press the green button <b>«Switch to Kotorikku»</b>. That's all, welcome to one of most frendly private servers <b>on osu!</b>."
 msgstr "Дальше нам нужно распаковать тот или иной свитчер, открыть, установить сертификат и нажать заветную кнопку <b>«Перейти на Kotorikku»</b>. Всё добро пожаловать на один из самых дружелюбных приватных серверов <b>osu</b>!"
 
+msgid "Videoguide:"
+msgstr "Видеогайд:"
+
 # General
 msgid "You're already logged in!"
 msgstr "Вы уже вошли!"
