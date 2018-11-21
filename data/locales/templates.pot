@@ -11,6 +11,21 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
+msgid "Kotorikku Switcher"
+msgstr ""
+
+msgid "Guide about Server Switcher!"
+msgstr ""
+
+msgid "Hi! This little guide will show you how to connect on our server"
+msgstr ""
+
+msgid "The first thing you need to do is download one of a switchers:"
+msgstr ""
+
+msgid "Next we need to unpack one of a switchers, open, install the certificate and then press the green button <b>«Switch to Kotorikku»</b>. That's all, welcome to one of most frendly private servers <b>on osu!</b>."
+msgstr ""
+
 msgid "Invalid CSRF token"
 msgstr ""
 

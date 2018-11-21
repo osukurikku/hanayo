@@ -14,6 +14,22 @@ msgstr ""
 "X-Pootle-Path: /ru/Hanayo/templates-ru.po\n"
 "X-Pootle-Revision: 6958\n"
 
+
+msgid "Kotorikku Switcher"
+msgstr "Kotorikku Switcher"
+
+msgid "Guide about Server Switcher!"
+msgstr "Инструкция по Server Switcher!"
+
+msgid "Hi! This little guide will show you how to connect on our server"
+msgstr "Привет! Это маленькая инструкция расскажет тебе как зайти на наш сервер."
+
+msgid "The first thing you need to do is download one of a switchers:"
+msgstr "Первым делом надо скачать один из свитчеров:"
+
+msgid "Next we need to unpack one of a switchers, open, install the certificate and then press the green button <b>«Switch to Kotorikku»</b>. That's all, welcome to one of most frendly private servers <b>on osu!</b>."
+msgstr "Дальше нам нужно распаковать тот или иной свитчер, открыть, установить сертификат и нажать заветную кнопку <b>«Перейти на Kotorikku»</b>. Всё добро пожаловать на один из самых дружелюбных приватных серверов <b>osu</b>!"
+
 # General
 msgid "You're already logged in!"
 msgstr "Вы уже вошли!"
