@@ -23,7 +23,7 @@ msgstr ""
 msgid "The first thing you need to do is download one of a switchers:"
 msgstr ""
 
-msgid "Next we need to unpack one of a switchers, open, install the certificate and then press the green button <b>«Switch to Kotorikku»</b>. That's all, welcome to one of most frendly private servers <b>on osu!</b>."
+msgid "Next we need to unpack one of a switchers, open, install the certificate and then press the green button <b>«Switch to Kotorikku»</b>. That's all, welcome to one of most friendly private servers <b>on osu!</b>."
 msgstr ""
 
 msgid "Videoguide:"
