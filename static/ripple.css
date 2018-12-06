@@ -176,11 +176,11 @@ div#navbar {
 	box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
 }
 
-div.item {
+div.menu > div.item {
      color: white!important;
  }
 
-a.item {
+div.menu > a.item {
     color: white!important;
 }
 
@@ -237,18 +237,18 @@ div#messages-container {
 }
 
 .subtitle, .about.title {
-	color: rgba(255,255,255,.6);
+	color: black;
 }
 .subtitle b {
-	color: rgba(255,255,255,.87);
+	color: black;
 }
 
 /* ds = Dark Site */
 body.ds .subtitle, body.ds .about.title {
-	color: rgba(255,255,255,.8);
+	color: black;
 }
 body.ds .subtitle b {
-	color: rgba(255,255,255,.94);
+	color: black;
 }
 
 .little.margin.top {
