@@ -91,6 +91,9 @@ a.inherit:hover {
 .footer {
 	border-top: 1px solid #bbb;
 	padding: 10px 20px;
+	color: white;
+	background-image: linear-gradient(180deg,rgba(0,0,0,.6) 0,transparent 4px);
+	background-color: rgba(0,0,0,.6);
 }
 
 .top.right.icon {
@@ -159,10 +162,34 @@ body.ds .white.background {
 	background-color: #454545 !important;
 }
 body {
-	background-image: url("/static/images/page-dark.png");
+	background-image: url("/static/images/page-light.png");
 }
+.triangles-1 {
+	background-image: url("/static/images/triangles-combined.png");
+}
+
+
 div#navbar {
-	background-color: rgb(76, 76, 76);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0,rgba(68,85,0,.9)),color-stop(37.5%,#450),color-stop(50%,#450),color-stop(50%,#222),to(#222));
+	background-image: linear-gradient(rgba(68,85,0,.9),#450 37.5%,#450 50%,#222 0,#222);
+	background-size: 200% 200%;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24);
+}
+
+div.item {
+	color: white!important;
+}
+
+input#user-search-input {
+	background: white;
+}
+
+.container-pd {
+	padding-top: -19px;
+	margin-top: -15px;
+}
+div#messages-container {
+	padding-top: 5px;
 }
 
 .user.avatar {
