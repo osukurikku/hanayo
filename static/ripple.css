@@ -177,7 +177,11 @@ div#navbar {
 }
 
 div.item {
-	color: white!important;
+     color: white!important;
+ }
+
+a.item {
+    color: white!important;
 }
 
 input#user-search-input {
