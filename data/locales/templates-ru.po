@@ -37,7 +37,7 @@ msgid "Subscribers"
 msgstr "Подписчики"
 
 msgid "Expires in <b>%s</b>"
-msgstr "Истекает через <b>%s</b>"
+msgstr "Истекает <b>%s</b>"
 
 msgid "Top donators"
 msgstr "Топ донатеров"
