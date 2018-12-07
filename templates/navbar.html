@@ -1,6 +1,7 @@
 {{ define "navbar" }}
 {{ $isRAP   := and (hasAdmin .Context.User.Privileges) (isRAP .Path) }}
 {{ $isAdmin := hasAdmin .Context.User.Privileges }}
+{{ $isDonor := has .Context.User.Privileges 4 }}
 {{ $ds      := band .ClientFlags 1 }}
 <div class="triangles-1">
     <div class="ui secondary fixed-height stackable black background main menu no margin bottom{{ if .DisableHH }} dropped{{ end }}"
@@ -53,6 +54,9 @@
                     <div class="menu">
                     {{ navbarItem .Path (.T "Profile") (printf "/u/%d" .Context.User.ID) }}
 						{{ navbarItem .Path (.T "Friends") "/friends" }}
+						{{ if $isDonor }}
+                              {{ navbarItem .Path (.T "Subscribers") "/subs" }}
+                        {{ end }}
 						{{ navbarItem .Path (.T "Settings") "/settings" }}
 						{{ navbarItem .Path (.T "Log out") (printf "/logout?k=%s" (.Session.Get "logout")) }}
                     </div>

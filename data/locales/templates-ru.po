@@ -18,6 +18,12 @@ msgstr ""
 msgid "Kotorikku Switcher"
 msgstr "Kotorikku Switcher"
 
+msgid "On this page you can see all of your subscribers, and add new friends if you see fit."
+msgstr "На этой странице вы можете увидеть своих подписчиков, а кого-то добавить в друзья."
+
+msgid "Subscribers"
+msgstr "Подписчики"
+
 msgid "Expires <b>%s</b>"
 msgstr "Истекает через <b>%s</b>"
 
