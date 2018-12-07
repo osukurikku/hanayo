@@ -18,6 +18,12 @@ msgstr ""
 msgid "Kotorikku Switcher"
 msgstr "Kotorikku Switcher"
 
+msgid "Expires <b>%s</b>"
+msgstr "Истекает через <b>%s</b>"
+
+msgid "Top donators"
+msgstr "Топ донатеров"
+
 msgid "Guide about Server Switcher!"
 msgstr "Инструкция по Server Switcher!"
 
@@ -576,7 +582,7 @@ msgstr ""
 "сервером osu! и Kotorikku!"
 
 msgid "Hi, %s!"
-msgstr "Как дела, %s!"
+msgstr "Как дела, %s?"
 
 msgid ""
 "Welcome back to Kotorikku. We currently have <b>%s online users and %s total "

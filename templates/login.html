@@ -9,6 +9,11 @@ KyutGrill=login2.jpg
 	{{ if .Context.User.Username }}
 		<div class="ui segment">
 			{{ .T "You're already logged in!" }}
+			<script>
+                $(document).ready(function() {
+                    $(location).attr('href', 'https://kotorikku.ru');
+                }
+			</script>
 		</div>
 	{{ else }}
 		<div class="tiny container">
