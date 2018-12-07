@@ -20,7 +20,7 @@ msgstr ""
 msgid "Subscribers"
 msgstr ""
 
-msgid "Expires in <b>%s</b>"
+msgid "Expires <b>%s</b>"
 msgstr ""
 
 msgid "Top donators"

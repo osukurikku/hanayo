@@ -24,7 +24,7 @@ msgstr "На этой странице вы можете увидеть свои
 msgid "Subscribers"
 msgstr "Подписчики"
 
-msgid "Expires <b>%s</b>"
+msgid "Expires in <b>%s</b>"
 msgstr "Истекает через <b>%s</b>"
 
 msgid "Top donators"

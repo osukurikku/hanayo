@@ -14,12 +14,6 @@ msgstr ""
 msgid "Kotorikku Switcher"
 msgstr ""
 
-msgid "On this page you can see all of your subscribers, and add new friends if you see fit."
-msgstr ""
-
-msgid "Subscribers"
-msgstr ""
-
 msgid "Expires in <b>%s</b>"
 msgstr ""
 

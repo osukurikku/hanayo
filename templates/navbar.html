@@ -4,7 +4,7 @@
 {{ $isDonor := has .Context.User.Privileges 4 }}
 {{ $ds      := band .ClientFlags 1 }}
 <div class="triangles-1">
-    <div class="ui secondary fixed-height stackable black background main menu no margin bottom{{ if .DisableHH }} dropped{{ end }}"
+    <div class="ui secondary inverted fixed-height stackable black background main menu no margin bottom{{ if .DisableHH }} dropped{{ end }}"
          id="navbar">
         <div class="ui container">
             <div class="item">
@@ -22,7 +22,7 @@
         {{ navbarItem .Path (.T "Leaderboard") "/leaderboard" }}
             <div class="ui dropdown item">
                 <span>{{ .T "Information" }}</span>
-                <div class="menu">
+                <div class="inverted menu">
                 {{ navbarItem .Path (.T "Signature Generator") "https://sig.kotorikku.ru/" }}
                 {{ navbarItem .Path (.T "Discord") "https://discord.gg/5uA3c76" }}
                     <div class="divider"></div>
@@ -51,7 +51,7 @@
                 <div class="ui dropdown item">
                     <img class="ui avatar image" src="{{ config "AvatarURL" }}/{{ .Context.User.ID }}">
                     <span>{{ .Context.User.Username }}</span>
-                    <div class="menu">
+                    <div class="inverted menu">
                     {{ navbarItem .Path (.T "Profile") (printf "/u/%d" .Context.User.ID) }}
 						{{ navbarItem .Path (.T "Friends") "/friends" }}
 						{{ if $isDonor }}

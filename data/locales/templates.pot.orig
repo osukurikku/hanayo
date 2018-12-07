@@ -14,13 +14,21 @@ msgstr ""
 msgid "Kotorikku Switcher"
 msgstr ""
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 msgid "On this page you can see all of your subscribers, and add new friends if you see fit."
 msgstr ""
 
 msgid "Subscribers"
 msgstr ""
 
+msgid "Expires <b>%s</b>"
+=======
 msgid "Expires in <b>%s</b>"
+>>>>>>> Stashed changes
+=======
+msgid "Expires in <b>%s</b>"
+>>>>>>> Stashed changes
 msgstr ""
 
 msgid "Top donators"

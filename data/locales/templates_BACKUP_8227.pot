@@ -14,12 +14,18 @@ msgstr ""
 msgid "Kotorikku Switcher"
 msgstr ""
 
+<<<<<<< Updated upstream
+
 msgid "On this page you can see all of your subscribers, and add new friends if you see fit."
 msgstr ""
 
 msgid "Subscribers"
 msgstr ""
 
+
+
+=======
+>>>>>>> Stashed changes
 msgid "Expires in <b>%s</b>"
 msgstr ""
 
@@ -147,6 +153,10 @@ msgstr ""
 
 msgid "Captcha is invalid."
 msgstr ""
+
+msgid "Whoops, an error slipped in. You might have been registered, though. I don't know."
+msgstr ""
+
 
 msgid "Whoops, an error slipped in. You might have been registered, though. I don't know."
 msgstr ""
@@ -1143,10 +1153,6 @@ msgstr ""
 
 msgid "See your public information (everything somebody can see on your user profile), however with this alone it will not be able to see your private information (for instance your email address)."
 msgstr ""
-
-msgid "Read private information"
-msgstr ""
-
 msgid "This application will be able to see your email address, and any private information we will add in the future."
 msgstr ""
 
