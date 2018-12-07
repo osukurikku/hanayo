@@ -55,7 +55,7 @@ KyutGrill=darkhome.jpg
                             <h4 class="ui image header">
                                 <img src="{{ config "AvatarURL" }}/{{ .id }}" class="ui small rounded image">
                                 <div class="content">
-                                    <a href="/u/1024">{{ .username }}</a>
+                                    <a href="/u/{{ .id }}">{{ .username }}</a>
                                     <div class="sub header">
                                     {{ $.T "Expires in <b>%s</b>" (time .expiration) | html }}
                                     </div>
