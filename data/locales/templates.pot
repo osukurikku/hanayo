@@ -14,10 +14,22 @@ msgstr ""
 msgid "Kotorikku Switcher"
 msgstr ""
 
+msgid "Chance to be in top donators"
+msgstr ""
+
+msgid "If you are <b>one of those who support our server the most</b>, you will be in the <b>top donators</b>. <b>Imagine</b> you are <b>on the main page</b>. That's cool)"
+msgstr ""
+
 msgid "On this page you can see all of your subscribers, and add new friends if you see fit."
 msgstr ""
 
 msgid "Subscribers"
+msgstr ""
+
+msgid "Viewing your subscribers"
+msgstr ""
+
+msgid "Now you can watch <b>your subscribers</b>. That's way to <b>found</b> new good friends"
 msgstr ""
 
 msgid "Expires in <b>%s</b>"
