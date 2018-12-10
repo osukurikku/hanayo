@@ -184,7 +184,7 @@ body.ds .white.background {
 	background-color: #454545 !important;
 }
 body {
-	background-image: url("static/images/page-light.png");
+	background-image: url("/static/images/page-light.png");
 }
 .triangles-1 {
 }
