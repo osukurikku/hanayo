@@ -180,7 +180,6 @@ div#navbar {
 	position: fixed;
 	height: 30px;
 	border-top-left-radius: 0;
-	overflow: hidden;
 	border-top-right-radius: 0;
 	z-index: 999;
 }
