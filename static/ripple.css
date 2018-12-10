@@ -24,6 +24,14 @@
 		left: auto;
 		right: 40px;
 	}
+	div#navbar {
+		display: flex;
+		justify-content: center !important;
+		width: 100%;
+		background: rgba(0, 0, 0, 1);
+		margin: auto 0;
+		z-index: 999;
+	}
 }
 @media (min-width: 700px) {
 	.huge.heading h1 {
@@ -34,6 +42,17 @@
 	.huge.heading.right h1 {
 		right: 40px;
 		left: auto;
+	}
+	div#navbar {
+		width: 100%;
+		border-radius: 30px;
+		background: rgba(0, 0, 0, 0.5);
+		margin: auto 0;
+		position: fixed;
+		height: 30px;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		z-index: 999;
 	}
 }
 
@@ -165,23 +184,9 @@ body.ds .white.background {
 	background-color: #454545 !important;
 }
 body {
-
+	background-image: url("static/images/page-light.png");
 }
 .triangles-1 {
-	
-}
-
-
-div#navbar {
-	width: 100%;
-	border-radius: 30px;
-	background: rgba(0, 0, 0, 0.5);
-	margin: auto 0;
-	position: fixed;
-	height: 30px;
-	border-top-left-radius: 0;
-	border-top-right-radius: 0;
-	z-index: 999;
 }
 
 .snow{
