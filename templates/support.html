@@ -173,12 +173,10 @@ AdditionalJS=https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.
                 </h2>
                 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_self">
                     <input type="hidden" name="amount" value="140.00" id="paypal-amt-rub">
-                    <div class="ui fluid labeled action input">
-                        <button type="submit" class="ui blue button">{{ $.T "Submit" }}</button>
-                    </div>
+                    <input class="ui positive basic button" type="submit"
+                           value="Перевести">
                     <input type="hidden" name="business" value="i@kotrik.ru">
                     <input type="hidden" name="cmd" value="_xclick">
-                    <input type="hidden" name="lc" value="GB">
                     <input type="hidden" name="no_note" value="0">
                     <input type="hidden" name="currency_code" value="RUB">
                     <img alt="" border="0" src="https://www.paypalobjects.com/ru_RU/i/scr/pixel.gif" width="1"
