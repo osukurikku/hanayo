@@ -28,12 +28,18 @@
                 {{ navbarItem .Path (.T "Contact support") "/help" }}
                 </div>
             </div>
-        {{ if .Context.User.Username }}
-			{{ navbarItem .Path (.T "Beatmaps") "/beatmaps/rank_request" }}
-			{{ end }}
+            <div class="ui dropdown item">
+                <span>{{ .T "Beatmaps" }}</span>
+                <div class="inverted menu">
+                {{ navbarItem .Path (.T "Beatmaps Searching") "/beatmaps" }}
+                {{ if .Context.User.Username }}
+                    {{ navbarItem .Path (.T "Rank Request") "/beatmaps/rank_request" }}
+                {{ end }}
+                </div>
+            </div>
 
         {{ navbarItem .Path (.T "Donate" | printf "<i class=\"red heart icon\"></i>%s") "/donate" }}
-        {{ navbarItem .Path (.T "Switcher" | printf "<i class=\"blue cloud download icon\"></i>%s") "/switcher" }}
+        {{ navbarItem .Path (.T "Switcher" | printf "<i class=\"blue download disk icon\"></i>%s") "/switcher" }}
         {{ if $isAdmin }}{{ navbarItem .Path (.T "Admin Panel" | printf "<b>%s</b>") "http://oadmin.kotorikku.ru/index.php?p=100" }}{{ end }}
         {{ end }}
             <div class="firetrucking-right-menu">
