@@ -168,6 +168,27 @@ AdditionalJS=https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.
         <div class="ui internally celled two column center aligned stackable grid">
             <div class="column">
                 <h2 class="ui header">
+                    <i class="paypal icon"></i>
+                {{ $.T "PayPal RUS" }}
+                </h2>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_self">
+                    <input type="hidden" name="amount" value="140.00" id="paypal-amt-rub">
+                    <div class="ui fluid labeled action input">
+                        <button type="submit" class="ui blue button">{{ $.T "Submit" }}</button>
+                    </div>
+                    <input type="hidden" name="business" value="i@kotrik.ru">
+                    <input type="hidden" name="cmd" value="_xclick">
+                    <input type="hidden" name="lc" value="GB">
+                    <input type="hidden" name="no_note" value="0">
+                    <input type="hidden" name="currency_code" value="RUB">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/ru_RU/i/scr/pixel.gif" width="1"
+                         height="1">
+                </form>
+            </div>
+        </div>
+        <div class="ui internally celled two column center aligned stackable grid">
+            <div class="column">
+                <h2 class="ui header">
                     <i class="thumbs up outline icon"></i>
                 {{ $.T "Yandex.Money" }}
                 </h2>
@@ -183,7 +204,7 @@ AdditionalJS=https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.
                            value="Оплата 'донор' сроком на 1 месяц ">
                     <input type="hidden" name="sum" value="140.00" id="yandex-amt" data-type="number">
                     <input type="hidden" name="comment"
-                           value="Покупка донора)">
+                           value="Покупка донора для {{ $global.User.Username }}">
                     <input type="hidden" name="need-fio" value="false">
                     <input type="hidden" name="need-email" value="false">
                     <input type="hidden" name="need-phone" value="false">
