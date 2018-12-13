@@ -12,6 +12,7 @@ import (
 	"os"
 	"strings"
 	"time"
+	"unicode/utf8"
 
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
@@ -198,6 +199,24 @@ func (b baseTemplateData) Get(s string, params ...interface{}) map[string]interf
 	}
 	return x
 }
+
+func replaceUnCorrectSymbols(s string) string {
+	if !utf8.ValidString(s) {
+		v := make([]rune, 0, len(s))
+		for i, r := range s {
+			if r == utf8.RuneError {
+				_, size := utf8.DecodeRuneInString(s[i:])
+				if size == 1 {
+					continue
+				}
+			}
+			v = append(v, r)
+		}
+		s = string(v)
+	}
+	return s
+}
+
 func (b baseTemplateData) BaseGet(s string, params ...interface{}) map[string]interface{} {
 	s = fmt.Sprintf(s, params...)
 	req, err := http.NewRequest("GET", s, nil)
@@ -225,8 +244,28 @@ func (b baseTemplateData) BaseGet(s string, params ...interface{}) map[string]in
 	return x
 }
 
+func (b baseTemplateData) GetFirstLine(s string) string {
+	var finalStr string
+	var lines []string = strings.Split(s, "\n")
+	if len(lines) > 0 {
+		n := replaceUnCorrectSymbols(lines[0])
+		return n
+	} else {
+		s = replaceUnCorrectSymbols(s)
+		var count int = 50
+		if len(s) > 0 {
+			if count >= len(s) {
+				count = len(s) - 1
+			}
+			finalStr = s[:count]
+		}
+		return finalStr
+	}
+}
+
 func (b baseTemplateData) SubStringKR(s string, count int) string {
 	var finalStr string
+	s = replaceUnCorrectSymbols(s)
 	if len(s) > 0 {
 		if count >= len(s) {
 			count = len(s) - 1

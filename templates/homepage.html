@@ -117,10 +117,10 @@ KyutGrill=darkhome.jpg
 	    {{ range .response.items }}
                 <div class="ui segment">
                     <h1 class="ui header no top margin">
-                        <a href="https://vk.com/kotorikku?w=wall-175152353_{{ .id }}" class="inherit">{{ $.SubStringKR .text 10 | html }}...</a>
+                        <a href="https://vk.com/kotorikku?w=wall-175152353_{{ .id }}" class="inherit">{{ $.GetFirstLine .text| html }}</a>
                     </h1>
                     <p>
-                        {{ $.SubStringKR .text 10 | html }}...
+                        {{ $.SubStringKR .text 133 | html }}...
                     </p>
                 </div>
             {{ end }}
