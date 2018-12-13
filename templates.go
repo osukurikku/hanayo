@@ -225,9 +225,12 @@ func (b baseTemplateData) BaseGet(s string, params ...interface{}) map[string]in
 	return x
 }
 
-func (b baseTemplateData) SubStringKR(s string, count int16) string {
+func (b baseTemplateData) SubStringKR(s string, count int) string {
 	var finalStr string
 	if len(s) > 0 {
+		if count >= len(s) {
+			count = len(s) - 1
+		}
 		finalStr = s[:count]
 	}
 	return finalStr
