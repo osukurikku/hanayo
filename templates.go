@@ -198,6 +198,41 @@ func (b baseTemplateData) Get(s string, params ...interface{}) map[string]interf
 	}
 	return x
 }
+func (b baseTemplateData) BaseGet(s string, params ...interface{}) map[string]interface{} {
+	s = fmt.Sprintf(s, params...)
+	req, err := http.NewRequest("GET", s, nil)
+	if err != nil {
+		b.Gin.Error(err)
+		return nil
+	}
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		b.Gin.Error(err)
+		return nil
+	}
+	data, err := ioutil.ReadAll(resp.Body)
+	defer resp.Body.Close()
+	if err != nil {
+		b.Gin.Error(err)
+		return nil
+	}
+	x := make(map[string]interface{})
+	err = json.Unmarshal(data, &x)
+	if err != nil {
+		b.Gin.Error(err)
+		return nil
+	}
+	return x
+}
+
+func (b baseTemplateData) SubStringKR(s string, count int16) string {
+	var finalStr string
+	if len(s) > 0 {
+		finalStr = s[:count]
+	}
+	return finalStr
+}
+
 func (b baseTemplateData) Has(privs uint64) bool {
 	return uint64(b.Context.User.Privileges)&privs == privs
 }

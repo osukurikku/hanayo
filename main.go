@@ -36,17 +36,17 @@ var startTime = time.Now()
 var (
 	config struct {
 		// Essential configuration that must be always checked for every environment.
-		ListenTo    string `description:"ip:port from which to take requests."`
-		Unix        bool   `description:"Whether ListenTo is an unix socket."`
-		DSN         string `description:"MySQL server DSN"`
-		RedisEnable bool
-		AvatarURL   string
-		BaseURL     string
-		API         string
-		BanchoAPI   string
+		ListenTo      string `description:"ip:port from which to take requests."`
+		Unix          bool   `description:"Whether ListenTo is an unix socket."`
+		DSN           string `description:"MySQL server DSN"`
+		RedisEnable   bool
+		AvatarURL     string
+		BaseURL       string
+		API           string
+		BanchoAPI     string
 		CheesegullAPI string
-		APISecret   string
-		Offline     bool `description:"If this is true, files will be served from the local server instead of the CDN."`
+		APISecret     string
+		Offline       bool `description:"If this is true, files will be served from the local server instead of the CDN."`
 
 		MainRippleFolder string `description:"Folder where all the non-go projects are contained, such as old-frontend, lets, ci-system. Used for changelog."`
 		AvatarsFolder    string `description:"location folder of avatars, used for placing the avatars from the avatar change page."`
@@ -57,7 +57,7 @@ var (
 		RedisNetwork        string
 		RedisAddress        string
 		RedisPassword       string
-		RedisDB int
+		RedisDB             int
 
 		DiscordServer string
 
@@ -80,6 +80,8 @@ var (
 
 		CoinbaseAPIKey    string
 		CoinbaseAPISecret string
+
+		VkTehToken string
 
 		SentryDSN string
 
@@ -124,7 +126,8 @@ func main() {
 		&config.IP_API:           "https://ip.zxq.co",
 		&config.DiscordServer:    "#",
 		&config.MainRippleFolder: "/home/osu/server",
-		&config.MailgunFrom:      `"Akatsuki" <noreply@akatsuki.pw>`,
+		&config.MailgunFrom:      `"Kotorikku" <noreply@kotorikku.ru>`,
+		&config.VkTehToken:       "<vkontakte_teh_token>",
 	}
 	for key, value := range configDefaults {
 		if *key == "" {
@@ -166,7 +169,7 @@ func main() {
 	rd = redis.NewClient(&redis.Options{
 		Addr:     config.RedisAddress,
 		Password: config.RedisPassword,
-		DB: config.RedisDB,
+		DB:       config.RedisDB,
 	})
 
 	// initialise oauth
