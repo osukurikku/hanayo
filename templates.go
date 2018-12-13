@@ -265,13 +265,13 @@ func (b baseTemplateData) GetFirstLine(s string) string {
 
 func (b baseTemplateData) SubStringKR(s string, count int) string {
 	var finalStr string
-	s = replaceUnCorrectSymbols(s)
 	if len(s) > 0 {
 		if count >= len(s) {
 			count = len(s) - 1
 		}
 		finalStr = s[:count]
 	}
+	finalStr = replaceUnCorrectSymbols(finalStr)
 	return finalStr
 }
 
