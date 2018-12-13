@@ -113,15 +113,14 @@ KyutGrill=darkhome.jpg
 
     <div class="ui segments">
         {{ $vktoken := config "VkTehToken" }}
-        {{ with .BaseGet "https://api.vk.com/api.php?oauth=1&method=wall.get&owner_id=-20003922&count=10&filter=owner&v=5.80&access_token=%d" $vktoken }}
-            {{ range .response.items }}
+        {{ with .BaseGet "https://api.vk.com/api.php?oauth=1&method=wall.get&owner_id=-175152353&count=10&filter=owner&v=5.80&access_token=%s" $vktoken }}
+	    {{ range .response.items }}
                 <div class="ui segment">
                     <h1 class="ui header no top margin">
-                        <a href="https://vk.com/kotorikku?w=wall-20003922_{{ .id }}" class="inherit">{{ SubStringKR .text 10 | html }}...</a>
-                        <div class="sub header">{{ time .date | html }}</div>
+                        <a href="https://vk.com/kotorikku?w=wall-175152353_{{ .id }}" class="inherit">{{ $.SubStringKR .text 10 | html }}...</a>
                     </h1>
                     <p>
-                        {{ SubStringKR .text 133 | html }}...
+                        {{ $.SubStringKR .text 10 | html }}...
                     </p>
                 </div>
             {{ end }}
