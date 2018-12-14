@@ -5,6 +5,53 @@
 	padding-top: 4px;
 }
 
+body {
+	width: 100vw;
+	height: 100vh;
+	color: #fff;
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 800% 800%;
+	-webkit-animation: Gradient 8s ease infinite;
+	-moz-animation: Gradient 8s ease infinite;
+	animation: Gradient 8s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
 .huge.heading {
 	width: 100%;
 	margin-bottom: 20px;
@@ -12,7 +59,7 @@
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-size: cover;
-	padding-top: 15%;
+	padding-top: 10%;
 }
 @media (max-width: 700px) {
 	.huge.heading h1 {
@@ -185,7 +232,6 @@ body.ds .white.background {
 	background-color: #454545 !important;
 }
 body {
-	background-image: url("/static/images/page-light.png");
 }
 .triangles-1 {
 }
@@ -258,18 +304,18 @@ div#messages-container {
 }
 
 .subtitle, .about.title {
-	color: black;
+	color: white;
 }
 .subtitle b {
-	color: black;
+	color: white;
 }
 
 /* ds = Dark Site */
 body.ds .subtitle, body.ds .about.title {
-	color: black;
+	color: white;
 }
 body.ds .subtitle b {
-	color: black;
+	color: white;
 }
 
 .little.margin.top {
