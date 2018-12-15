@@ -62,6 +62,12 @@ body {
 	padding-top: 10%;
 }
 @media (max-width: 700px) {
+	body {
+		background: url("/static/images/page-light.png");
+		-webkit-animation:  8s ease infinite;
+		-moz-animation:  8s ease infinite;
+		animation:  8s ease infinite;
+	}
 	.huge.heading h1 {
 		font-size: 24pt;
 		bottom: 10px;

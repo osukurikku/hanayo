@@ -26203,6 +26203,7 @@
    .ui.table:not(.unstackable) tr > th,
    .ui.table:not(.unstackable) tr > td {
      width: auto !important;
+     color: white;
      display: block !important;
    }
  
@@ -26333,7 +26334,7 @@
  .ui.definition.table tr td.definition {
    background: rgba(0, 0, 0, 0.03);
    font-weight: bold;
-   color: rgba(0, 0, 0, 0.95);
+   color: rgba(255, 255, 255, 0.95);
    text-transform: '';
    -webkit-box-shadow: '';
    box-shadow: '';
@@ -33523,7 +33524,7 @@
    font-size: 1em;
    line-height: 1.4;
    padding: 1.5rem;
-   background: #FFFFFF;
+   background: rgba(0,0,0,0.57);
  }
  
  .ui.modal > .image.content {
