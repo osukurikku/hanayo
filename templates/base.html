@@ -131,6 +131,7 @@
     <center class="ui container center">
     {{ .T "&copy; %d Ripple, Kotorikku, using Hanayo %s." (curryear) (version) | html }}
         <a href="/team" title="{{ .T "Who is working on this thing?" }}"><i class="users icon"></i>{{ .T "Team" }}</a>
+        <a href="https://git.dou-mou-about.me/osukotorikku" title="{{ .T "Git"}}{{/*'"*/}}"><i class="git square icon"></i></a>
         <div class="ui scrolling dropdown" style="margin-left: 5px;" id="language-selector">
         {{ $lang := .Context.Language }}
         {{ with $lang }}
