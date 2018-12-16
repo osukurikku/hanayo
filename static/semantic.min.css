@@ -18329,7 +18329,7 @@
  .ui.segments:not(.horizontal) > .segment:last-child {
    top: 0px;
    bottom: 0px;
-   margin-top: 0em;
+   margin-top: 50px;
    margin-bottom: 0em;
    -webkit-box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15), none;
    box-shadow: 0px 1px 2px 0 rgba(34, 36, 38, 0.15), none;
