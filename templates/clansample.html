@@ -94,7 +94,7 @@ Include=clan_members.html
                                 <form id="register-form" class="ui form" method="post" action="/c/{{ .ClanID }}">
                                     {{ ieForm .Gin }}
                                 </form>
-                                <div class="ui one item menu"><button tabindex="1" class="ui primary button" style="background-color:rgba(255,0,0,.5)" type="submit" form="register-form">{{ .T "Disband Clan" }}</button></div>
+                                <button tabindex="1" class="ui primary button" style="background-color:rgba(255,0,0,.5)" type="submit" form="register-form">{{ .T "Disband Clan" }}</button>
                             {{ else }}
                                 <form id="register-form" class="ui form" method="post" action="/c/{{ .ClanID }}">
                                     {{ ieForm .Gin }}
