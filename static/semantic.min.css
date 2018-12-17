@@ -21116,7 +21116,7 @@
  
  .ui[class*="three column"].grid > .row > .column,
  .ui[class*="three column"].grid > .column:not(.row) {
-   width: 33.33333333%;
+   width: 20%;
  }
  
  .ui[class*="four column"].grid > .row > .column,
