@@ -9,7 +9,7 @@ NoCompile=true
                 {{/* ignore fokabot */}}
                 {{ if ne (int .id) 999 }}
                     {{ $tj := index $teamJSON (print .id)}}
-                    <div class="column">
+                    <div style="width: 20%;" class="column">
                         <div class="ui left aligned fluid card">
                             <div class="image">
                                 <img src="{{ config "AvatarURL" }}/{{ .id }}" alt="Avatar">
