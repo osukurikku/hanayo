@@ -66,14 +66,14 @@
                 <h1 class="ui header">
                     {{ if $super }}
                     <div class="owner">
-                    <a href="/c/{{ $user.clan.id }}?mode=0">{{ $user.clan.tag }} </a> {{ .username }}
+                    <a href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> {{ .username }}
                     </div>
                     {{else if $dev}}
                     <div class="dev">
-                    <a href="/c/{{ $user.clan.id }}?mode=0">{{ $user.clan.tag }} </a> {{ .username }}
+                    <a href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> {{ .username }}
                     </div>
                     {{ else }}
-                    <a href="/c/{{ $user.clan.id }}?mode=0">{{ $user.clan.tag }} </a> {{ .username }}
+                    <a href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> {{ .username }}
 						{{ end }}
                 </h1>
                 {{ if .username_aka }}
@@ -198,6 +198,10 @@
                                 <td class="right aligned">#{{ . }}</td>
                             </tr>
                             {{ end }}
+                            <tr>
+                                <td><b>{{ $global.T "Clan" }}</b></td>
+                                <td class="right aligned"><a href="/c/{{ $user.clan.id }}?mode={{ $k }}">{{ $user.clan.name }}</a></td>
+                            </tr>
                             <tr>
                                 <td><b>{{ $global.T "PP" }}</b></td>
                                 <td class="right aligned">{{ humanize .pp }}</td>
