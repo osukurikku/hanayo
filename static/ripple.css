@@ -59,7 +59,7 @@ body {
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-size: cover;
-	padding-top: 10%;
+	padding-top: 15%;
 }
 @media (max-width: 700px) {
 	body {
