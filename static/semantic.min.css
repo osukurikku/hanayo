@@ -18313,6 +18313,7 @@
    box-shadow: none;
    border: none;
    border-top: 1px solid rgba(34, 36, 38, 0.15);
+   margin-top: 50px;
  }
  
  .ui.segments:not(.horizontal) > .segment:first-child {
@@ -27627,7 +27628,7 @@
    -webkit-box-direction: normal;
    -ms-flex-direction: column;
    flex-direction: column;
-   width: 290px;
+   width: 200px !important;
    min-height: 0px;
    background: #FFFFFF;
    padding: 0em;
@@ -27640,6 +27641,7 @@
    transition: box-shadow 0.1s ease, transform 0.1s ease;
    transition: box-shadow 0.1s ease, transform 0.1s ease, -webkit-box-shadow 0.1s ease, -webkit-transform 0.1s ease;
    z-index: '';
+   height: 330px;
  }
  
  .ui.card {
@@ -27737,7 +27739,7 @@
  .ui.card > .image > img {
    display: block;
    width: 100%;
-   height: auto;
+   height: 200px;
    border-radius: inherit;
  }
  
@@ -28104,6 +28106,7 @@
  .ui.fluid.card {
    width: 100%;
    max-width: 9999px;
+   /*! margin: 10px; */
  }
  
  /*-------------------
