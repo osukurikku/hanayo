@@ -38,7 +38,11 @@ Include=clan_members.html
                 <div class="row">
                 <div class="column">
 
-                {{ $global.T "%s" (.description | htmlescaper) | html }}
+                {{ with parseUserpage .description }}
+                    <div class="ui raised segment twemoji" id="userpage-content">
+                        {{ html . }}
+                    </div>
+                {{ end }}
             {{ end }}
             <br><br><table class="ui very basic two column compact table nopad">
                 <tbody>
