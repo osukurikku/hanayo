@@ -12,6 +12,7 @@ NoCompile=true
 
 		{{ navbarItem .Path (.T "Password") "/settings/password" }}
 
+		{{ navbarItem .Path (.T "Clan Settings") "/settings/clansettings" }}
 
 		{{/* Stuff for donators */}}
 		{{ if has .Context.User.Privileges 4 }}
