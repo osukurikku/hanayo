@@ -27,6 +27,12 @@ msgstr "Если ты <b>будешь одним из тех, кто подде�
 msgid "On this page you can see all of your subscribers, and add new friends if you see fit."
 msgstr "На этой странице вы можете увидеть своих подписчиков, а кого-то добавить в друзья."
 
+msgid "Creating clans"
+msgstr "Создать свой клан"
+
+msgid "Wow, now you can create clan for you and your friends. <b>Pew-pew</b> with other clans."
+msgstr "Вау, теперь вы можете создать клан для себя и своих игроков. <b>Pew-pew</b> с остальными кланами."
+
 msgid "Viewing your subscribers"
 msgstr "Просмотр своих подписчиков"
 

@@ -27,15 +27,14 @@ Include=menu.html
                                 <label class="left aligned">{{ "Clantag (2 to 6 characters)" }}</label>
                                 <input tabindex="1" type="text" name="tag" placeholder="{{ "Clantag" }}" value="{{ $tag }}" pattern="{2,6}$">
                             </div>
-                            <div class="field">
-                                <label class="left aligned">{{ "Description (optional)" }}</label>
-                                <input tabindex="2" type="text" name="password" placeholder="{{ "Description" }}" value="{{ $desc }}">
-                            </div>
+                            <br/>
+                            <textarea tabindex="1" class="monospace" name="data">{{ $desc }}</textarea>
+
                             <div class="field">
                                 <label class="left aligned">{{ "Icon [URL] (optional)" }}</label>
                                 <input tabindex="3" type="url" name="email" placeholder="{{ "Icon URL" }}" value="{{ $icon }}">
                             </div>
-                            {{ if has .Context.User.Privileges 8388612 }}
+                            {{ if has .Context.User.Privileges 4 }}
                                 <div class="field">
                                     <label class="left aligned">{{ "Background [URL] (optional)" }}</label>
                                     <input tabindex="4" type="url" name="bg" placeholder="{{ "Background URL" }}" value="{{ $bg }}">
@@ -44,6 +43,8 @@ Include=menu.html
                             {{ end }}
                             {{ ieForm .Gin }}
                         </form>
+
+                        <div class="ui segment twemoji" id="userpage-content">{{ parseUserpage $desc | html }}</div>
 
                         <br>
                         <button tabindex="5" class="ui primary button" type="submit" form="register-form">{{ .T "Save" }}</button>

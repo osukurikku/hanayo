@@ -20,6 +20,12 @@ msgstr ""
 msgid "If you are <b>one of those who support our server the most</b>, you will be in the <b>top donators</b>. <b>Imagine</b> you are <b>on the main page</b>. That's cool)"
 msgstr ""
 
+msgid "Creating clans"
+msgstr ""
+
+msgid "Wow, now you can create clan for you and your friends. <b>Pew-pew</b> with other clans."
+msgstr ""
+
 msgid "On this page you can see all of your subscribers, and add new friends if you see fit."
 msgstr ""
 
