@@ -26149,7 +26149,8 @@
  /* Table Row */
  
  .ui.table tr td {
-   border-top: 1px solid rgba(34, 36, 38, 0.1);
+   border-top: 1px solid rgba(255, 255, 255, 0.5);
+   /*! border-bottom: 1px solid rgba(34, 36, 38, 0.5); */
  }
  
  .ui.table tr:first-child td {

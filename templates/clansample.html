@@ -9,7 +9,7 @@ Include=clan_members.html
             {{ $global := . }}
             {{ $favouritemode := $gqm }}
             {{ range (.Get "clans?id=%d" .ClanID).clans }}
-                <div class="ui top attached segment overflow auto aligned">
+                <div style="border-bottom-left-radius: 0px !important; border-bottom-right-radius: 0px !important;" class="ui top attached segment overflow auto aligned">
                     <div class="magic table">
                         {{ if .icon }}
                             <div class="table element">
@@ -27,7 +27,7 @@ Include=clan_members.html
                         </div>
                     </div>
                 </div>
-                <div style="border-bottom-left-radius: 0px !important; border-bottom-right-radius: 0px !important;" class="ui four item bottom attached menu" id="mode-menu">
+                <div class="ui four item bottom attached menu" id="mode-menu">
                     <a class="mode item" href="/c/{{ .id }}?mode=0">osu!</a>
                     <a class="mode item" href="/c/{{ .id }}?mode=1">osu!taiko</a>
                     <a class="mode item" href="/c/{{ .id }}?mode=2">osu!catch</a>
