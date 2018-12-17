@@ -78,6 +78,10 @@
  body {
    margin: 0;
  }
+
+ .white {
+   color: white;
+ }
  
  /**
   * Add the correct display in IE 9-.
