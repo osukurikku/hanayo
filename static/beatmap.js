@@ -57,14 +57,12 @@
 
     // column 3
     $("#ar").html(diff.AR);
-    $("#stars").html(diff.DifficultyRating.toFixed(2));
+    $.getJSON(`https://osu-pp-calc-api.glitch.me/?id=${bid}`, function(res) {
+      $("#stars").html(diff.DifficultyRating.toFixed(2) + ` (${res.pp_100}pp)`);
+    });
     $("#length").html(timeFormat(diff.TotalLength));
     $("#drainLength").html(timeFormat(diff.HitLength));
     $("#bpm").html(diff.BPM);
-
-    $.getJSON(`https://osu-pp-calc-api.glitch.me/?id=${bid}`, function( res ) {
-      console.log(res);
-    });
 
     // hide mode for non-std maps
     console.log("favMode", favMode);
