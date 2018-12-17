@@ -3,6 +3,8 @@
 {{ $isAdmin := hasAdmin .Context.User.Privileges }}
 {{ $isDonor := has .Context.User.Privileges 4 }}
 {{ $ds      := band .ClientFlags 1 }}
+{{ $isClan := qb "SELECT user, clan FROM user_clans WHERE user = ?" .Context.User.ID }}
+
 <div class="triangles-1">
     <div class="ui secondary inverted fixed-height stackable black background main menu no margin bottom{{ if .DisableHH }} dropped{{ end }}"
          id="navbar">
@@ -35,6 +37,13 @@
                 {{ if .Context.User.Username }}
                     {{ navbarItem .Path (.T "Rank Request") "/beatmaps/rank_request" }}
                 {{ end }}
+                </div>
+            </div>
+            <div class="ui dropdown item">
+                <span>{{ .T "Clans" }}</span>
+                <div class="menu">
+                    {{ navbarItem .Path (.T "Clans Leaderboard") "/clans?mode=0" }}
+                    {{ navbarItem .Path (.T "Clans Create") "/clans/create" }}
                 </div>
             </div>
 
