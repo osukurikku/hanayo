@@ -23798,7 +23798,7 @@
  /* Vertical Active */
  
  .ui.vertical.menu .active.item {
-   background: rgba(0, 0, 0, 0.05);
+   background: rgba(0, 0, 0, 0.7);
    border-radius: 0em;
    -webkit-box-shadow: none;
    box-shadow: none;
