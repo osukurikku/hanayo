@@ -31,7 +31,7 @@ msgid "Creating clans"
 msgstr "Создать свой клан"
 
 msgid "Wow, now you can create clan for you and your friends. <b>Pew-pew</b> with other clans."
-msgstr "Вау, теперь вы можете создать клан для себя и своих игроков. <b>Pew-pew</b> с остальными кланами."
+msgstr "Вау, теперь вы можете создать клан для себя и своих друзей. <b>Pew-pew</b> с остальными кланами."
 
 msgid "Viewing your subscribers"
 msgstr "Просмотр своих подписчиков"
