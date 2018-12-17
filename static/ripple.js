@@ -43,6 +43,9 @@ var singlePageSnippets = {
         }
       });
   },
+  "/b" : function() {
+    console.log("Работает")
+  },
 
   "/leaderboard" : function() {
     page = page === 0 ? 1 : page;
