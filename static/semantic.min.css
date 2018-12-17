@@ -80,7 +80,7 @@
  }
 
  .white {
-   color: black;
+   color: black !important;
  }
  
  /**
