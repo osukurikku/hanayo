@@ -62,7 +62,7 @@
     $("#drainLength").html(timeFormat(diff.HitLength));
     $("#bpm").html(diff.BPM);
 
-    $.getJSON(`https://osu-pp-calc-api.glitch.me/?id=${diff}`, function( res ) {
+    $.getJSON(`https://osu-pp-calc-api.glitch.me/?id=${bid}`, function( res ) {
       console.log(res);
     });
 
