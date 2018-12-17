@@ -23617,7 +23617,7 @@
  .ui.menu .link.item:hover,
  .ui.menu a.item:hover {
    cursor: pointer;
-   background: rgba(0, 0, 0, 0.03);
+   background: rgba(244, 0, 0, 0.7);
    color: rgba(0, 0, 0, 0.95);
  }
  
