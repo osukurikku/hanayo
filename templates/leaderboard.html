@@ -16,7 +16,7 @@ KyutGrill=leaderboard.jpg
 	</script>
 	<div class="ui four item menu" id="mode-menu">
 		{{ range $k, $v := modes }}
-			<a class="{{ favMode $favMode $k }}item" data-mode="{{ $k }}" href="/leaderboard?mode={{ $k }}">{{ $v }}</a>
+			<a style="color: white" class="{{ favMode $favMode $k }}item" data-mode="{{ $k }}" href="/leaderboard?mode={{ $k }}">{{ $v }}</a>
 		{{ end }}
 	</div>
 	<div class="ui twelve item stackable menu">
