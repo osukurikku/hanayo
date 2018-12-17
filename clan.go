@@ -241,7 +241,6 @@ func clanInvite(c *gin.Context) {
 		}
 		// join
 		db.Exec("INSERT INTO `user_clans`(user, clan, perms) VALUES (?, ?, 1);", getContext(c).User.ID, res)
-		fmt.Printf("INSERT INTO `user_clans`(user, clan, perms) VALUES (%d, %d, 1);", getContext(c).User.ID, res)
 		addMessage(c, successMessage{T(c, "Joined clan.")})
 		getSession(c).Save()
 		c.Redirect(302, "/c/"+s)
