@@ -22,7 +22,7 @@ msgid "Chance to be in top donators"
 msgstr "Шанс попасть в топ донатеры проекта"
 
 msgid "If you are <b>one of those who support our server the most</b>, you will be in the <b>top donators</b>. <b>Imagine</b> you are <b>on the main page</b>. That's cool)"
-msgstr "Если ты <b>будешь одним из тех, кто поддержит наш сервер больше всех</b>, ты попадёшь в топ донатеры</b>. <b>Представь<b> ты на <b>главной странице проекта</b>. Это круто)"
+msgstr "Если ты <b>будешь одним из тех, кто поддержит наш сервер больше всех</b>, ты попадёшь в топ донатеры</b>. <b>Представь</b> ты на <b>главной странице проекта</b>. Это круто)"
 
 msgid "On this page you can see all of your subscribers, and add new friends if you see fit."
 msgstr "На этой странице вы можете увидеть своих подписчиков, а кого-то добавить в друзья."
