@@ -18314,7 +18314,7 @@
    box-shadow: none;
    border: none;
    border-top: 1px solid rgba(34, 36, 38, 0.15);
-   margin-top: 50px;
+   margin-top: 15px;
  }
  
  .ui.segments:not(.horizontal) > .segment:first-child {
