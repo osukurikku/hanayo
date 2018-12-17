@@ -62,6 +62,10 @@
     $("#drainLength").html(timeFormat(diff.HitLength));
     $("#bpm").html(diff.BPM);
 
+    $.getJSON(`https://osu-pp-calc-api.glitch.me/?id=${diff}`, function( res ) {
+      console.log(res);
+    });
+
     // hide mode for non-std maps
     console.log("favMode", favMode);
     if (diff.Mode != 0) {
