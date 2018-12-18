@@ -30813,7 +30813,7 @@
  
  .ui.checkbox label,
  .ui.checkbox + label {
-   color: rgba(0, 0, 0, 0.87);
+   color: rgba(255, 255, 255, 0.87);
    -webkit-transition: color 0.1s ease;
    transition: color 0.1s ease;
  }
