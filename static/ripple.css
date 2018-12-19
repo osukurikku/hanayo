@@ -190,7 +190,7 @@ a.inherit:hover {
 	transition: .3s;
 }
 
-.ui.segment.test-d:hover {
+.ui.segment.chibi-card:hover {
 	box-shadow: 0 0 2px 0 yellow;
 }
 
