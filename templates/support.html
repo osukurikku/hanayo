@@ -71,55 +71,190 @@ AdditionalJS=https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.
         <h4 class="ui horizontal divider header">
         {{ $.T "Here's what you get:" }}
         </h4>
-        <div class="ui internally celled stackable grid">
-            <div class="row">
-                <div class="four wide column">
-                    <h3 class="ui header">{{ $.T "Yellow username" }}</h3>
-                {{ $.T "Just like in osu!, you get a <b>shiny yellow username</b> in the in-game chat to show everyone you're a really cool dude who has helped us pay the server bills." | html }}
-                </div>
-                <div class="four wide column">
-                    <h3 class="ui header">{{ $.T "Donor badge" }}</h3>
-                {{ $.T "Again, just like in osu!, you will get a <b>donor badge</b> on your profile, to show everyone you're supporting us." | html }}
-                </div>
-                <div class="four wide column">
-                    <h3 class="ui header">{{ $.T "Custom badge editor" }}</h3>
-                {{ $.T "You get to be able to create your <b>own personal badge</b>, with custom text and icon, to show off on your profile! Let the world know you're an anchor. Or prank people showing a spinnin' wheel with \"Loading...\"! Up to you." | html }}
-                </div>
-                <div class="four wide column">
-                    <h3 class="ui header">{{ $.T "Friends ranking" }}</h3>
-                {{ $.T "<b>Competing with friends</b> is really cool, you can play on the leaderboard with someone more or less on your level, without getting crippling depression and RSI for not beating that pro!" | html }}
+        <div class="ui stackable one grid">
+            <div class="sixteen wide column">
+                <div class="ui segment chibi-card">
+                    <div class="ui stackable two grid chibi-grid">
+                        <div class="two wide column">
+                            <img class="ui centered image chibi" src="/static/chibi/1.png"/>
+                        </div>
+                        <div class="fourteen wide column grid">
+                            <h2>{{ $.T "Yellow username" }}</h2>
+                            <p class="chibi-text">
+                                {{ $.T "Just like in osu!, you get a <b>shiny yellow username</b> in the in-game chat to show everyone you're a really cool dude who has helped us pay the server bills." | html }}
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="four wide column">
-                    <h3 class="ui header">{{ $.T "Profile background" }}</h3>
-                {{ $.T "Think about <b>spicing your profile up with some eggplants</b>? Got you covered! Having donor privileges, you get to be able to change your profile background." | html }}
-                </div>
-                <div class="four wide column">
-                    <h3 class="ui header">{{ $.T "Unlimited Name Changes" }}</h3>
-                {{ $.T "<b>Tired of your current identity?</b> Now you can have as many as you want! Just ask an administrator to change your name, as many times as you'd like." | html }}
-                </div>
-                <div class="four wide column">
-                    <h3 class="ui header">{{ $.T "Unlimited Flag Changes" }}</h3>
-                {{ $.T "<b>Want to appear as if you're from another country?</b> You also get as many of these as you'd like. Again, just ask an administrator." | html }}
-                </div>
-                <div class="four wide column">
-                    <h3 class="ui header">{{ $.T "Unlimited Stats Resets" }}</h3>
-                {{ $.T "Now you can also <b>start fresh</b> with unlimited stats resets! Ask an administrator and they shall perform the deed." | html }}
+
+            <div class="sixteen wide column">
+                <div class="ui segment test-d">
+                    <div class="ui mobile reversed stackable two grid chibi-grid">
+
+                        <div class="fourteen wide column grid">
+                            <h2>{{ $.T "Donor badge" }}</h2>
+                            <p class="chibi-text">
+                                {{ $.T "Again, just like in osu!, you will get a <b>donor badge</b> on your profile, to show everyone you're supporting us." | html }}
+                            </p>
+                        </div>
+                        <div class="two wide column">
+                            <img class="ui centered image chibi" src="/static/chibi/2.png"/>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="four wide column">
-                    <h3 class="ui header">{{ $.T "Viewing your subscribers" }}</h3>
-                {{ $.T "Now you can watch <b>your subscribers</b>. That's way to <b>found</b> new good friends" | html }}
+
+            <div class="sixteen wide column">
+                <div class="ui segment chibi-card">
+                    <div class="ui stackable two grid chibi-grid">
+                        <div class="two wide column">
+                            <img class="ui centered image chibi" src="/static/chibi/3.png"/>
+                        </div>
+                        <div class="fourteen wide column grid">
+                            <h2>{{ $.T "Custom badge editor" }}</h2>
+                            <p class="chibi-text">
+                                {{ $.T "You get to be able to create your <b>own personal badge</b>, with custom text and icon, to show off on your profile! Let the world know you're an anchor. Or prank people showing a spinnin' wheel with \"Loading...\"! Up to you." | html }}
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="four wide column">
-                    <h3 class="ui header">{{ $.T "Chance to be in top donators" }}</h3>
-                {{ $.T "If you are <b>one of those who support our server the most</b>, you will be in the <b>top donators</b>. <b>Imagine</b> you are <b>on the main page</b>. That's cool)" | html }}
+            </div>
+
+            <div class="sixteen wide column">
+                <div class="ui segment test-d">
+                    <div class="ui mobile reversed stackable two grid chibi-grid">
+
+                        <div class="fourteen wide column grid">
+                            <h2>{{ $.T "Friends ranking" }}</h2>
+                            <p class="chibi-text">
+                                {{ $.T "<b>Competing with friends</b> is really cool, you can play on the leaderboard with someone more or less on your level, without getting crippling depression and RSI for not beating that pro!" | html }}
+                            </p>
+                        </div>
+                        <div class="two wide column">
+                            <img class="ui centered image chibi" src="/static/chibi/4.png"/>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="four wide column">
-                    <h3 class="ui header">{{ $.T "Creating clans" }}</h3>
-                    {{ $.T "Wow, now you can create clan for you and your friends. <b>Pew-pew</b> with other clans." | html }}
+            </div>
+
+            <div class="sixteen wide column">
+                <div class="ui segment chibi-card">
+                    <div class="ui stackable two grid chibi-grid">
+                        <div class="two wide column">
+                            <img class="ui centered image chibi" src="/static/chibi/5.png"/>
+                        </div>
+                        <div class="fourteen wide column grid">
+                            <h2>{{ $.T "Profile background" }}</h2>
+                            <p class="chibi-text">
+                                {{ $.T "Think about <b>spicing your profile up with some eggplants</b>? Got you covered! Having donor privileges, you get to be able to change your profile background." | html }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sixteen wide column">
+                <div class="ui segment test-d">
+                    <div class="ui mobile reversed stackable two grid chibi-grid">
+
+                        <div class="fourteen wide column grid">
+                            <h2>{{ $.T "Unlimited Name Changes" }}</h2>
+                            <p class="chibi-text">
+                                {{ $.T "<b>Tired of your current identity?</b> Now you can have as many as you want! Just ask an administrator to change your name, as many times as you'd like." | html }}
+                            </p>
+                        </div>
+                        <div class="two wide column">
+                            <img class="ui centered image chibi" src="/static/chibi/6.png"/>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="sixteen wide column">
+                <div class="ui segment chibi-card">
+                    <div class="ui stackable two grid chibi-grid">
+                        <div class="two wide column">
+                            <img class="ui centered image chibi" src="/static/chibi/7.png"/>
+                        </div>
+                        <div class="fourteen wide column grid">
+                            <h2>{{ $.T "Unlimited Flag Changes" }}</h2>
+                            <p class="chibi-text">
+                                {{ $.T "<b>Want to appear as if you're from another country?</b> You also get as many of these as you'd like. Again, just ask an administrator." | html }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sixteen wide column">
+                <div class="ui segment test-d">
+                    <div class="ui mobile reversed stackable two grid chibi-grid">
+
+                        <div class="fourteen wide column grid">
+                            <h2>{{ $.T "Unlimited Stats Resets" }}</h2>
+                            <p class="chibi-text">
+                                {{ $.T "Now you can also <b>start fresh</b> with unlimited stats resets! Ask an administrator and they shall perform the deed." | html }}
+                            </p>
+                        </div>
+                        <div class="two wide column">
+                            <img class="ui centered image chibi" src="/static/chibi/8.png"/>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="sixteen wide column">
+                <div class="ui segment chibi-card">
+                    <div class="ui stackable two grid chibi-grid">
+                        <div class="two wide column">
+                            <img class="ui centered image chibi" src="/static/chibi/9.png"/>
+                        </div>
+                        <div class="fourteen wide column grid">
+                            <h2>{{ $.T "Viewing your subscribers" }}</h2>
+                            <p class="chibi-text">
+                                {{ $.T "Now you can watch <b>your subscribers</b>. That's way to <b>found</b> new good friends" | html }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sixteen wide column">
+                <div class="ui segment test-d">
+                    <div class="ui mobile reversed stackable two grid chibi-grid">
+
+                        <div class="fourteen wide column grid">
+                            <h2>{{ $.T "Chance to be in top donators" }}</h2>
+                            <p class="chibi-text">
+                                {{ $.T "If you are <b>one of those who support our server the most</b>, you will be in the <b>top donators</b>. <b>Imagine</b> you are <b>on the main page</b>. That's cool)" | html }}
+                            </p>
+                        </div>
+                        <div class="two wide column">
+                            <img class="ui centered image chibi" src="/static/chibi/10.png"/>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="sixteen wide column">
+                <div class="ui segment chibi-card">
+                    <div class="ui stackable two grid chibi-grid">
+                        <div class="two wide column">
+                            <img class="ui centered image chibi" src="/static/chibi/11.png"/>
+                        </div>
+                        <div class="fourteen wide column grid">
+                            <h2>{{ $.T "Creating clans" }}</h2>
+                            <p class="chibi-text">
+                                {{ $.T "Wow, now you can create clan for you and your friends. <b>Pew-pew</b> with other clans." | html }}
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -182,6 +182,35 @@ a.inherit:hover {
 	-webkit-transition: opacity .1s ease;
 	transition: opacity .1s ease;
 }
+
+.ui.segment.chibi-card {
+	width: 100%;
+	height: auto;
+	background: url("/static/chibi/bg.png") center center / cover no-repeat;
+	transition: .3s;
+}
+
+.ui.segment.test-d:hover {
+	box-shadow: 0 0 2px 0 yellow;
+}
+
+.chibi {
+	width: 70%;
+}
+
+.ui.stackable.two.grid.chibi-grid {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+p.chibi-text {
+	font-size: 15px;
+}
+
+.chibi-1 {
+
+}
+
 .no.top.margin {
 	margin-top: 0;
 }
