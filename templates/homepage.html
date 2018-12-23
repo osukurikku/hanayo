@@ -9,13 +9,13 @@ KyutGrill=darkhome.jpg
     {{ $   := . }}
     <div class="ui container">
         <div class="ui stackable two grid">
-            <div class="eleven wide column">
+            <div class="nine wide column">
                 <div class="ui center aligned segment">
                     <img src="https://kotorikku.ru/static/logos/logo1.png" style="width: 100%;">
                 </div>
             </div>
 
-            <div class="five wide column">
+            <div class="seven wide column">
                 <div class="ui center aligned segment" style="height: 100%;">
                     <h4 class="header">Top-5 played beatmaps</h4>
 
@@ -34,7 +34,7 @@ KyutGrill=darkhome.jpg
                                             <img src="https://assets.ppy.sh/beatmaps/{{ .beatmapset_id }}/covers/cover.jpg"
                                                  class="ui mini rounded image">
                                             <div class="content">
-                                                {{ .song_name }}
+                                                <div style="font-size: 12px">{{ .song_name }}</div>
                                                 <div class="sub header">AR: {{ .ar }} OD: {{ .od }} Played: {{ .playcount }}
                                                 </div>
                                             </div>
