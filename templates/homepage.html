@@ -8,14 +8,14 @@ KyutGrill=darkhome.jpg
     {{ $ds := band $cf 1 }}
     {{ $   := . }}
     <div class="ui container">
-        <div class="ui stackable two grid">
+        <div id="logo" class="ui stackable two grid">
             <div class="nine wide column">
                 <div class="ui center aligned segment">
                     <img src="https://kotorikku.ru/static/logos/logo1.png" style="width: 100%;">
                 </div>
             </div>
 
-            <div class="seven wide column">
+            <div id="topplayed" class="seven wide column">
                 <div class="ui center aligned segment" style="height: 100%;">
                     <table class="ui very basic collapsing celled table" style="width: 100%; height: auto;">
                         <thead>
@@ -157,4 +157,11 @@ KyutGrill=darkhome.jpg
         </div>
     </div>
     </div>
+    <script>
+        document.getElementById('logo').style.height = document.getElementById('topplayed').style.height;
+        for(let i = 0; i < 6; i++) {
+            var sp = document.getElementsByClassName('sub')[i].innerHTML.split(" ");
+            document.getElementsByClassName('sub')[i].innerHTML = `${sp[0]} ${sp[1]} ${sp[2]} ${sp[3]} ${sp[4]} ${sp[5]} ${sp[6]} ${parseInt(sp[7]).toPrecision(3)}★ ${sp[8]} ${sp[9]}`
+        }
+    </script>
 {{ end }}
