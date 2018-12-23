@@ -158,7 +158,9 @@ KyutGrill=darkhome.jpg
     </div>
     </div>
     <script>
-        document.getElementById('logokotorikku').style.height = (Number(document.getElementById('topplayed').clientHeight)-30) + "px !important";
+        window.onload = function() {
+            document.getElementById('logokotorikku').style.height = (Number(document.getElementById('topplayed').clientHeight)-30) + "px !important";
+        }
         for(let i = 0; i < 6; i++) {
             var sp = document.getElementsByClassName('sub')[i].innerHTML.split(" ");
             document.getElementsByClassName('sub')[i].innerHTML = `${Number(sp[0]).toPrecision(3)}★ ${sp[1]} ${sp[2]} ${sp[3]} ${sp[4]} ${sp[5]} ${sp[6]} ${sp[7]} ${sp[8]}`
