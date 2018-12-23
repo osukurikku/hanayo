@@ -32,7 +32,7 @@ KyutGrill=darkhome.jpg
                                              class="ui mini rounded image">
                                         <div style="margin-left: 5px; width: 100%;" class="content">
                                             <div style="font-size: 13px">{{ .song_name }}</div>
-                                            <div class="sub header">AR: {{ .ar }} OD: {{ .od }} BPM: {{ .bpm }} Stars: {{ .difficulty2.std }} Played: {{ .playcount }}
+                                            <div class="sub header">{{ .difficulty2.std }} AR: {{ .ar }} OD: {{ .od }} BPM: {{ .bpm }} Played: {{ .playcount }}
                                         </div>
                                         </h4>
                                     </td>
@@ -161,7 +161,7 @@ KyutGrill=darkhome.jpg
         document.getElementById('logokotorikku').style.height = document.getElementById('topplayed').clientHeight + "px !important";
         for(let i = 0; i < 6; i++) {
             var sp = document.getElementsByClassName('sub')[i].innerHTML.split(" ");
-            document.getElementsByClassName('sub')[i].innerHTML = `${sp[0]} ${sp[1]} ${sp[2]} ${sp[3]} ${sp[4]} ${sp[5]} ${sp[6]} ${Number(sp[7]).toPrecision(3)}★ ${sp[8]} ${sp[9]}`
+            document.getElementsByClassName('sub')[i].innerHTML = `${Number(sp[0]).toPrecision(3)}★ ${sp[1]} ${sp[2]} ${sp[3]} ${sp[4]} ${sp[5]} ${sp[6]} ${sp[7]} ${sp[8]}`
         }
     </script>
 {{ end }}
