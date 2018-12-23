@@ -17,12 +17,10 @@ KyutGrill=darkhome.jpg
 
             <div class="seven wide column">
                 <div class="ui center aligned segment" style="height: 100%;">
-                    <h4 class="header">Top-5 played beatmaps</h4>
-
                     <table class="ui very basic collapsing celled table" style="width: 100%; height: auto;">
                         <thead>
                         <tr>
-                            <th style="color: white;">Map name</th>
+                            <th style="color: white;" align="center">Most played beatmaps</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -34,7 +32,7 @@ KyutGrill=darkhome.jpg
                                             <img src="https://assets.ppy.sh/beatmaps/{{ .beatmapset_id }}/covers/cover.jpg"
                                                  class="ui mini rounded image">
                                             <div class="content">
-                                                <div style="font-size: 12px">{{ .song_name }}</div>
+                                                <div style="font-size: 13px">{{ .song_name }}</div>
                                                 <div class="sub header">AR: {{ .ar }} OD: {{ .od }} Played: {{ .playcount }}
                                                 </div>
                                             </div>
