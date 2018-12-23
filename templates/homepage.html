@@ -10,8 +10,8 @@ KyutGrill=darkhome.jpg
     <div class="ui container">
         <div class="ui stackable two grid">
             <div class="nine wide column">
-                <div id="logokotorikku" class="ui center aligned segment">
-                    <img src="https://kotorikku.ru/static/logos/logo1.png" style="width: 100%;">
+                <div style="height: 100% !important;" class="ui center aligned segment">
+                    <img src="https://kotorikku.ru/static/logos/logo1.png" style="width: 100%; height: 100%;">
                 </div>
             </div>
 
@@ -158,9 +158,6 @@ KyutGrill=darkhome.jpg
     </div>
     </div>
     <script>
-        window.onload = function() {
-            document.getElementById('logokotorikku').style.height = (Number(document.getElementById('topplayed').clientHeight)-30) + "px !important";
-        }
         for(let i = 0; i < 6; i++) {
             var sp = document.getElementsByClassName('sub')[i].innerHTML.split(" ");
             document.getElementsByClassName('sub')[i].innerHTML = `${Number(sp[0]).toPrecision(3)}★ ${sp[1]} ${sp[2]} ${sp[3]} ${sp[4]} ${sp[5]} ${sp[6]} ${sp[7]} ${sp[8]}`
