@@ -27,8 +27,8 @@ KyutGrill=darkhome.jpg
                         {{ with .Get "krapi/top_beatmaps" }}
                             {{ range .beatmaps }}
                                 <tr>
-                                    <td style="display: flex; justify-content: center; align-items: center;">
-                                        <img style="width: 100px;" src="https://assets.ppy.sh/beatmaps/{{ .beatmapset_id }}/covers/list@2x.jpg"
+                                    <td style="display: flex; align-items: center;">
+                                        <img style="width: 80px;" src="https://assets.ppy.sh/beatmaps/{{ .beatmapset_id }}/covers/list@2x.jpg"
                                              class="ui mini rounded image">
                                         <div style="margin-left: 5px;" class="content">
                                             <div style="font-size: 13px">{{ .song_name }}</div>
