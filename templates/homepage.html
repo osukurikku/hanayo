@@ -158,7 +158,7 @@ KyutGrill=darkhome.jpg
     </div>
     </div>
     <script>
-        document.getElementById('logo').style.height = document.getElementById('topplayed').style.height;
+        document.getElementById('logo').style.height = document.getElementById('topplayed').style.height + "px";
         for(let i = 0; i < 6; i++) {
             var sp = document.getElementsByClassName('sub')[i].innerHTML.split(" ");
             document.getElementsByClassName('sub')[i].innerHTML = `${sp[0]} ${sp[1]} ${sp[2]} ${sp[3]} ${sp[4]} ${sp[5]} ${sp[6]} ${Number(sp[7]).toPrecision(3)}★ ${sp[8]} ${sp[9]}`
