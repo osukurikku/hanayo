@@ -17,6 +17,57 @@ msgstr ""
 msgid "Chance to be in top donators"
 msgstr ""
 
+msgid "Members"
+msgstr ""
+
+msgid "You need to be an Kotorikku Supporter in order to create a clan."
+msgstr ""
+
+msgid "The members of the clan."
+msgstr ""
+
+msgid "Tournament live"
+msgstr ""
+
+msgid "Most played beatmaps"
+msgstr ""
+
+msgid "Clans"
+msgstr ""
+
+msgid "Clans Leaderboard"
+msgstr ""
+
+msgid "Clans Create"
+msgstr ""
+
+msgid "You're already in a Clan."
+msgstr ""
+
+msgid "[Clan tag] Name"
+msgstr ""
+
+msgid "Clan Owner"
+msgstr ""
+
+msgid "The leader of the clan."
+msgstr ""
+
+msgid "Clan Settings"
+msgstr ""
+
+msgid "Generate a new invite!"
+msgstr ""
+
+msgid "Online Users"
+msgstr ""
+
+msgid "Registered Users"
+msgstr ""
+
+msgid "Submitted Scores"
+msgstr ""
+
 msgid "If you are <b>one of those who support our server the most</b>, you will be in the <b>top donators</b>. <b>Imagine</b> you are <b>on the main page</b>. That's cool)"
 msgstr ""
 

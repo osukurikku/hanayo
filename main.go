@@ -81,7 +81,8 @@ var (
 		CoinbaseAPIKey    string
 		CoinbaseAPISecret string
 
-		VkTehToken string
+		VkTehToken     string
+		ChallengeOneID string
 
 		SentryDSN string
 
@@ -128,6 +129,7 @@ func main() {
 		&config.MainRippleFolder: "/home/osu/server",
 		&config.MailgunFrom:      `"Kotorikku" <noreply@kotorikku.ru>`,
 		&config.VkTehToken:       "<vkontakte_teh_token>",
+		&config.ChallengeOneID:   "",
 	}
 	for key, value := range configDefaults {
 		if *key == "" {
@@ -325,8 +327,6 @@ func generateEngine() *gin.Engine {
 	r.POST("/oauth/token", oauth.Token)
 
 	r.GET("/donate/rates", btcconversions.GetRates)
-
-	r.Any("/blog/*url", blogRedirect)
 
 	loadSimplePages(r)
 

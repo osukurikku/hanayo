@@ -1,0 +1,21 @@
+{{/*###
+Handler=/tournament/live
+TitleBar=Kotorikku Switcher
+KyutGrill=changelog.jpg
+*/}}
+{{ define "tpl" }}
+    {{ $   := . }}
+    <div class="ui container">
+        <div class="ui segment">
+            <h1 class="ui header">{{ $.T "Tournament grid!" | html }}</h1>
+            <hr/>
+
+            <div class="ui segment">
+                {{ $chaloneid := config "ChallengeOneID" }}
+                <center>
+                    <iframe src="https://challonge.com/{{ $chaloneid }}/module" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
+                </center>
+            </div>
+        </div>
+    </div>
+{{ end }}

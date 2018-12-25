@@ -30,6 +30,58 @@ msgstr "На этой странице вы можете увидеть свои
 msgid "Creating clans"
 msgstr "Создать свой клан"
 
+msgid "Members"
+msgstr "Участники"
+
+msgid "You need to be an Kotorikku Supporter in order to create a clan."
+msgstr "Вы должны иметь Kotorikku донатор чтобы создать клан!"
+
+msgid "The members of the clan."
+msgstr "Члены клана."
+
+msgid "Tournament live"
+msgstr "Турнир live!"
+
+msgid "Most played beatmaps"
+msgstr "Наиболее сыгранные мапы"
+
+msgid "Clans"
+msgstr "Кланы"
+
+msgid "Clans Leaderboard"
+msgstr "Таблица лидеров кланов"
+
+msgid "Clans Create"
+msgstr "Создание клана"
+
+msgid "You're already in a Clan."
+msgstr "Вы уже в клане"
+
+msgid "[Clan tag] Name"
+msgstr "[Клан-тэг] Имя клана"
+
+msgid "Clan Owner"
+msgstr "Владелец клана"
+
+msgid "The leader of the clan."
+msgstr "Лидер клана"
+
+msgid "Clan Settings"
+msgstr "Настройки клана"
+
+msgid "Generate a new invite!"
+msgstr "Создать новое приглашение в клан!"
+
+msgid "Online Users"
+msgstr "Онлайн пользователи"
+
+msgid "Registered Users"
+msgstr "зарегестрированные пользователи"
+
+msgid "Submitted Scores"
+msgstr "Засабмпиченно скоров"
+
+
 msgid "Wow, now you can create clan for you and your friends. <b>Pew-pew</b> with other clans."
 msgstr "Вау, теперь вы можете создать клан для себя и своих друзей. <b>Pew-pew</b> с остальными кланами."
 

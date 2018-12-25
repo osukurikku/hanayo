@@ -25,6 +25,7 @@
             <div class="ui dropdown item">
                 <span>{{ .T "Information" }}</span>
                 <div class="inverted menu">
+                {{ navbarItem .Path (.T "Tournament live") "/tournament/live" }}
                 {{ navbarItem .Path (.T "Signature Generator") "https://sig.kotorikku.ru/" }}
                 {{ navbarItem .Path (.T "Discord") "https://discord.gg/5uA3c76" }}
                 {{ navbarItem .Path (.T "Contact support") "/help" }}

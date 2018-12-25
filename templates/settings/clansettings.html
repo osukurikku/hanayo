@@ -4,6 +4,7 @@ TitleBar=Clan Settings
 Include=menu.html
 */}}
 {{ define "tpl" }}
+    {{ $   := . }}
     <div class="ui container">
         <div class="ui stackable grid">
             {{ template "settingsSidebar" . }}
@@ -12,7 +13,7 @@ Include=menu.html
                     {{ $d := qb "SELECT user, clan, perms FROM user_clans WHERE user = ? AND perms = 8 LIMIT 1" .Context.User.ID }}
                     {{ $g := or $d.clan.Int -1 }}
                     {{ if $d }}
-                    <font size="6">Clan Settings</font>
+                    <font size="6">{{ $.T "Clan Settings" }} </font>
                     <br>
                     <br>
                     <div class="ui center aligned segment">
