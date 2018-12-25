@@ -175,7 +175,7 @@ func main() {
 	})
 
 	// initialise oauth
-	setUpOauth()
+	//setUpOauth()
 
 	// initialise btcaddress
 	btcaddress.Redis = rd
