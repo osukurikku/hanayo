@@ -574,7 +574,7 @@ img.locked-achievement {
 .snow.large {
 	-webkit-animation-duration: 10s;
 	animation-duration: 10s;
-	background-image: url("./large.png");
+	background-image: url("/static/images/large.png");
 	background-size: auto;
 }
 
