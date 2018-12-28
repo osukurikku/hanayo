@@ -1,5 +1,5 @@
 {{ define "tpl" }}
-	<div style="z-index: 3 !important"class="ui container">
+	<div class="ui container">
 	{{ $ := . }}
 	{{ if ne .Beatmapset.ID 0 }}
 		<div class="ui floating icon labeled dropdown button" id="diff-menu">
@@ -75,7 +75,7 @@
 			{{ end }}
 		</div>
 
-		<table style="z-index: 3 !important;" class="ui sortable fixed table">
+		<table class="ui sortable fixed table">
 			<thead>
 				<tr>
 					<th class="one wide">{{ .T "Rank" }} </th>
