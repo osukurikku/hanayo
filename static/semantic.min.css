@@ -8912,6 +8912,10 @@
  i.icon.chevron.up:before {
    content: "\f077";
  }
+
+ .chevron {
+   color: white;
+ }
  
  i.icon.child:before {
    content: "\f1ae";
