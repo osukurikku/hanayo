@@ -8912,6 +8912,10 @@
  i.icon.chevron.up:before {
    content: "\f077";
  }
+
+ .chevron {
+   color: white;
+ }
  
  i.icon.child:before {
    content: "\f1ae";
@@ -23621,8 +23625,8 @@
  .ui.menu .link.item:hover,
  .ui.menu a.item:hover {
    cursor: pointer;
-   background: rgba(0, 0, 0, 0.7);
-   color: rgba(0, 0, 0, 0.95);
+   background: rgba(0, 0, 0, 0.5);
+   color: rgba(255, 255, 255, 0.95);
  }
  
  /*--------------
@@ -23633,7 +23637,7 @@
  .ui.menu .link.item:active,
  .ui.menu a.item:active {
    background: rgba(0, 0, 0, 0.7);
-   color: rgba(0, 0, 0, 0.95);
+   color: rgba(255, 255, 255, 0.95);
  }
  
  /*--------------
@@ -27085,15 +27089,15 @@
  }
  
  .ui.sortable.table thead th:hover {
-   background: rgba(0, 0, 0, 0.05);
-   color: rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 0.8);
  }
  
  /* Sorted */
  
  .ui.sortable.table thead th.sorted {
-   background: rgba(0, 0, 0, 0.05);
-   color: rgba(0, 0, 0, 0.95);
+   background: rgba(255, 255, 255, 1);
+   color: rgba(0, 0, 0, 0.8);
  }
  
  .ui.sortable.table thead th.sorted:after {
@@ -27103,8 +27107,8 @@
  /* Sorted Hover */
  
  .ui.sortable.table thead th.sorted:hover {
-   background: rgba(0, 0, 0, 0.05);
-   color: rgba(0, 0, 0, 0.95);
+    background: rgba(255, 255, 255, 1);
+    color: rgba(0, 0, 0, 0.8);
  }
  
  /* Inverted */
