@@ -11,7 +11,7 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-msgid "Kotorikku Switcher"
+msgid "Katori Switcher"
 msgstr ""
 
 
@@ -38,7 +38,7 @@ msgstr ""
 msgid "The first thing you need to do is download one of a switchers:"
 msgstr ""
 
-msgid "Next we need to unpack one of a switchers, open, install the certificate and then press the green button <b>«Switch to Kotorikku»</b>. That's all, welcome to one of most friendly private servers <b>on osu!</b>."
+msgid "Next we need to unpack one of a switchers, open, install the certificate and then press the green button <b>«Switch to Katori»</b>. That's all, welcome to one of most friendly private servers <b>on osu!</b>."
 msgstr ""
 
 msgid "Videoguide:"
@@ -120,7 +120,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-msgid "You have been successfully registered on Kotorikku! You now need to verify your account."
+msgid "You have been successfully registered on Katori! You now need to verify your account."
 msgstr ""
 
 # Register checks
@@ -162,10 +162,10 @@ msgstr ""
 msgid "Verify account"
 msgstr ""
 
-msgid "Your account has been created, however it still <b>needs to be verified!</b> Please log in into <b><u>osu! (the game)</u></b> using your account. <b>There is <u>no email confirmation</u> at the moment. All you need to do is connect to Kotorikku from the osu! client!</b> If you're having trouble, <a href='/doc/1'>follow this guide</a>."
+msgid "Your account has been created, however it still <b>needs to be verified!</b> Please log in into <b><u>osu! (the game)</u></b> using your account. <b>There is <u>no email confirmation</u> at the moment. All you need to do is connect to Katori from the osu! client!</b> If you're having trouble, <a href='/doc/1'>follow this guide</a>."
 msgstr ""
 
-msgid "<b class='big text'>Do not let anyone except yourself log into your Kotorikku account!</b><br> Get on our <a href='%s'>Discord server's</a> #help channel instead (after following the steps on this page) so that we can help you out if you have trouble connecting."
+msgid "<b class='big text'>Do not let anyone except yourself log into your Katori account!</b><br> Get on our <a href='%s'>Discord server's</a> #help channel instead (after following the steps on this page) so that we can help you out if you have trouble connecting."
 msgstr ""
 
 msgid "<a href='/doc/1'>The Guide,</a> tl;dr version"
@@ -180,7 +180,7 @@ msgstr ""
 msgid "Click on <b>install certificate</b>, then <b>Yes</b>"
 msgstr ""
 
-msgid "Make sure the switcher says you're playing on <b>Kotorikku</b> server, if not click <b>On/Off</b>"
+msgid "Make sure the switcher says you're playing on <b>Katori</b> server, if not click <b>On/Off</b>"
 msgstr ""
 
 msgid "If it says something about read-only mode, go to <code>C:\\Windows\\System32\\Drivers\\etc</code>, open the hosts' file Properties and make sure it's not set to \"Read only\"."
@@ -202,16 +202,16 @@ msgstr ""
 msgid "Congratulations for not reading things!"
 msgstr ""
 
-msgid "Multiaccounts are not allowed on Kotorikku"
+msgid "Multiaccounts are not allowed on Katori"
 msgstr ""
 
-msgid "Your new account has been <b>banned</b> and your main account has been <b>restricted</b>. You can appeal in a month by sending an email to <b><a href='mailto:support@kotorikku.ru'>support@kotorikku.ru</a></b>. You better read the rules next time."
+msgid "Your new account has been <b>banned</b> and your main account has been <b>restricted</b>. You can appeal in a month by sending an email to <b><a href='mailto:support@katori.fun'>support@katori.fun</a></b>. You better read the rules next time."
 msgstr ""
 
-msgid "Welcome to Kotorikku"
+msgid "Welcome to Katori"
 msgstr ""
 
-msgid "We're glad to have you here. <b>Your account is now active.</b> You can now play on Kotorikku and <a href='/login'>log in</a> on the website!"
+msgid "We're glad to have you here. <b>Your account is now active.</b> You can now play on Katori and <a href='/login'>log in</a> on the website!"
 msgstr ""
 
 msgid "Here's a few things you might want to check out:"
@@ -244,10 +244,10 @@ msgstr ""
 msgid " - in case, well, you need help doing stuff"
 msgstr ""
 
-msgid " - in case you believe Kotorikku is down"
+msgid " - in case you believe Katori is down"
 msgstr ""
 
-msgid " - in case you want to talk with people about Kotorikku"
+msgid " - in case you want to talk with people about Katori"
 msgstr ""
 
 msgid " - just in case"
@@ -257,7 +257,7 @@ msgstr ""
 msgid "Recover account"
 msgstr ""
 
-msgid "Can't find a way to get back access to your Kotorikku account? Fear not! If you have your recovery codes which we recommended you to print you can type one in here and we'll magically log you in this time. After you've managed to get in, please disable and then re-enable 2FA, so you won't risk losing your account again."
+msgid "Can't find a way to get back access to your Katori account? Fear not! If you have your recovery codes which we recommended you to print you can type one in here and we'll magically log you in this time. After you've managed to get in, please disable and then re-enable 2FA, so you won't risk losing your account again."
 msgstr ""
 
 msgid "Oh no you don't."
@@ -282,10 +282,10 @@ msgstr ""
 msgid "If you're %s, keep in mind that multiaccounting = ban."
 msgstr ""
 
-msgid "If you're not %s, but you're using %s's computer, please sign up on Kotorikku from your own computer."
+msgid "If you're not %s, but you're using %s's computer, please sign up on Katori from your own computer."
 msgstr ""
 
-msgid "If you live with %s and you don't have your own computer from which to sign up on Kotorikku, then please contact support@kotorikku.ru, and we'll deal with your specific case."
+msgid "If you live with %s and you don't have your own computer from which to sign up on Katori, then please contact support@katori.fun, and we'll deal with your specific case."
 msgstr ""
 
 msgid "This warning may pop up also if you're using another computer on the same network of %s. As long as you're not using the same computer, you should be all good."
@@ -336,19 +336,19 @@ msgid "Successfully logged out."
 msgstr ""
 
 # pwreset.html
-msgid "Forgot your password? Worry not! Here you can reset it. Just tell us your username or email address, and we'll take care of it. You will receive an email at the email address you used to sign up on Kotorikku. To continue the password reset procedure, click the link on that email."
+msgid "Forgot your password? Worry not! Here you can reset it. Just tell us your username or email address, and we'll take care of it. You will receive an email at the email address you used to sign up on Katori. To continue the password reset procedure, click the link on that email."
 msgstr ""
 
 msgid "You look pretty banned/locked here."
 msgstr ""
 
-msgid "Done! You should shortly receive an email from us at the email you used to sign up on Kotorikku."
+msgid "Done! You should shortly receive an email from us at the email you used to sign up on Katori."
 msgstr ""
 
-msgid "Kotorikku password recovery instructions"
+msgid "Katori password recovery instructions"
 msgstr ""
 
-msgid "Hey %s! Someone, which we really hope was you, requested a password reset for your account. In case it was you, please <a href='%s'>click here</a> to reset your password on Kotorikku. Otherwise, silently ignore this email."
+msgid "Hey %s! Someone, which we really hope was you, requested a password reset for your account. In case it was you, please <a href='%s'>click here</a> to reset your password on Katori. Otherwise, silently ignore this email."
 msgstr ""
 
 # not_found.html
@@ -405,35 +405,35 @@ msgstr ""
 msgid "Home Page"
 msgstr ""
 
-msgid "Welcome to Kotorikku."
+msgid "Welcome to Katori."
 msgstr ""
 
-msgid "Kotorikku is a private osu! server, featuring multiplayer, PP, a very active community and a development team going strong implementing new features and squashing bugs. <a href='/about'>You can check out even more features here.</a> It has also a very friendly community, and it's <a href='https://zxq.co/Kotorikku/Kotorikku'>open source!</a> Just so you know, <b>we currently have %s users online and %s registered users!</b>"
+msgid "Katori is a private osu! server, featuring multiplayer, PP, a very active community and a development team going strong implementing new features and squashing bugs. <a href='/about'>You can check out even more features here.</a> It has also a very friendly community, and it's <a href='https://zxq.co/Katori/Katori'>open source!</a> Just so you know, <b>we currently have %s users online and %s registered users!</b>"
 msgstr ""
 
-msgid "What are you waiting for? Join Kotorikku! It's risk-free: you won't get your account banned on the official server if you play on Kotorikku.<br>You can also switch anytime between the official osu! server and Kotorikku!"
+msgid "What are you waiting for? Join Katori! It's risk-free: you won't get your account banned on the official server if you play on Katori.<br>You can also switch anytime between the official osu! server and Katori!"
 msgstr ""
 
 msgid "Howdy, %s!"
 msgstr ""
 
-msgid "Welcome back to Kotorikku. We currently have <b>%s online users and %s total registed users.</b> Nice day to farm a few maps, isn't it?"
+msgid "Welcome back to Katori. We currently have <b>%s online users and %s total registed users.</b> Nice day to farm a few maps, isn't it?"
 msgstr ""
 
-msgid "Latest news from our <a href='https://blog.Kotorikku.moe'>blog</a>"
+msgid "Latest news from our <a href='https://blog.Katori.moe'>blog</a>"
 msgstr ""
 
 # base.html
-msgid "Kotorikku's score submission is currently in maintenance mode. You will not be allowed to submit scores for the time being."
+msgid "Katori's score submission is currently in maintenance mode. You will not be allowed to submit scores for the time being."
 msgstr ""
 
-msgid "The Kotorikku website is currently in maintenance mode. Only certain users are allowed to access the full website."
+msgid "The Katori website is currently in maintenance mode. Only certain users are allowed to access the full website."
 msgstr ""
 
-msgid "Your account is currently in restricted mode. You will not be able to do certain actions, and your profile can only be seen by you and by Kotorikku's staff. If you believe we have mistaken putting you in restricted mode, or a month has passed since you first saw this, then you can send an appeal at <a href='mailto:support@kotorikku.ru'>support@kotorikku.ru</a>."
+msgid "Your account is currently in restricted mode. You will not be able to do certain actions, and your profile can only be seen by you and by Katori's staff. If you believe we have mistaken putting you in restricted mode, or a month has passed since you first saw this, then you can send an appeal at <a href='mailto:support@katori.fun'>support@katori.fun</a>."
 msgstr ""
 
-msgid "&copy; 2015-%d Kotorikku, using Hanayo %s."
+msgid "&copy; 2015-%d Katori, using Hanayo %s."
 msgstr ""
 
 msgid "Team"
@@ -470,10 +470,10 @@ msgstr ""
 msgid "Two Factor Authentication"
 msgstr ""
 
-msgid "Before proceding further on Kotorikku, we require you to use your Google Authenticator App to use the code for Kotorikku, so that we can log you in."
+msgid "Before proceding further on Katori, we require you to use your Google Authenticator App to use the code for Katori, so that we can log you in."
 msgstr ""
 
-msgid "Before proceding any further on Kotorikku, we require you to use the message you just received on telegram to log in to your account."
+msgid "Before proceding any further on Katori, we require you to use the message you just received on telegram to log in to your account."
 msgstr ""
 
 msgid "Lost your phone, or can't access Google Authenticator?"
@@ -525,23 +525,23 @@ msgstr ""
 msgid "Then the support mail is the way to go."
 msgstr ""
 
-msgid "When contacting the support mail, please make sure to <b>send the email from the email address you signed up on Kotorikku with</b>."
+msgid "When contacting the support mail, please make sure to <b>send the email from the email address you signed up on Katori with</b>."
 msgstr ""
 
-msgid "Last but not least, <b>the support email is not meant for filing bug reports</b>. If you need to report a bug, then please just ask one of our developers on Discord. If it's a security bug, for instance XSS or SQL injection, then please contact <a href='mailto:howl@Kotorikku.moe'>Howl</a> or <a href='mailto:nyo@Kotorikku.moe'>Nyo</a>."
+msgid "Last but not least, <b>the support email is not meant for filing bug reports</b>. If you need to report a bug, then please just ask one of our developers on Discord. If it's a security bug, for instance XSS or SQL injection, then please contact <a href='mailto:howl@Katori.moe'>Howl</a> or <a href='mailto:nyo@Katori.moe'>Nyo</a>."
 msgstr ""
 
 msgid "I have read and understood everything on this page."
 msgstr ""
 
-msgid "Ooops! Looks like something went really wrong while trying to process your request. Perhaps report this to a Kotorikku developer? Retrying doing what you were trying to do might work, too."
+msgid "Ooops! Looks like something went really wrong while trying to process your request. Perhaps report this to a Katori developer? Retrying doing what you were trying to do might work, too."
 msgstr ""
 
 # about.html
-msgid "Welcome to Kotorikku."
+msgid "Welcome to Katori."
 msgstr ""
 
-msgid "Kotorikku is a private osu! server."
+msgid "Katori is a private osu! server."
 msgstr ""
 
 msgid "There are many like it, but this one is ours."
@@ -584,21 +584,21 @@ msgstr ""
 msgid "And a lot more to come!"
 msgstr ""
 
-msgid "Kotorikku is the result of the hard work of two Italian developers, who got tired about the whole osu! ecosystem, and also because they wanted to play with a few banned friends."
+msgid "Katori is the result of the hard work of two Italian developers, who got tired about the whole osu! ecosystem, and also because they wanted to play with a few banned friends."
 msgstr ""
 
 # %s is wink emoji
-msgid "It has now evolved into the largest available osu! private server, with more than 10,000 registered users. <a href=\"/register\">Signing up</a> on Kotorikku won't result in getting your account on osu! restricted, so what are you waiting for?! Come join us! %s"
+msgid "It has now evolved into the largest available osu! private server, with more than 10,000 registered users. <a href=\"/register\">Signing up</a> on Katori won't result in getting your account on osu! restricted, so what are you waiting for?! Come join us! %s"
 msgstr ""
 
-msgid "In case you want to make sure we're not doing shady stuff with your data, you can also check the <a href=\"https://zxq.co/Kotorikku/Kotorikku\">source code</a> Kotorikku is running on."
+msgid "In case you want to make sure we're not doing shady stuff with your data, you can also check the <a href=\"https://zxq.co/Katori/Katori\">source code</a> Katori is running on."
 msgstr ""
 
 # changelog.html
 msgid "This is the changelog. Changes are published here as soon as they hit the production status (as in, live on the website)."
 msgstr ""
 
-msgid "For various reasons, some software of Kotorikku does not contribute to the changelog, to which this website is a part of. In case you want to see the changelog of Hanayo, you can do so by <a href=\"https://zxq.co/Kotorikku/hanayo/commits/master\">clicking here</a>."
+msgid "For various reasons, some software of Katori does not contribute to the changelog, to which this website is a part of. In case you want to see the changelog of Hanayo, you can do so by <a href=\"https://zxq.co/Katori/hanayo/commits/master\">clicking here</a>."
 msgstr ""
 
 msgid "Author"
@@ -624,7 +624,7 @@ msgstr ""
 msgid "Need some help getting around? Look no further! From here you will be able to view our documentation, which is basically a very simplistic wiki."
 msgstr ""
 
-msgid "Looks like there is no documentation on this Kotorikku instance!"
+msgid "Looks like there is no documentation on this Katori instance!"
 msgstr ""
 
 # friends.html
@@ -638,7 +638,7 @@ msgid "Remove"
 msgstr ""
 
 # irc.html
-msgid "Here you can generate a new IRC token. You can use it to connect to Kotorikku's chat using IRC. Remember that your IRC token is like a password, anyone who knows it, has access to your account. If you're interested knowing how to connect to Kotorikku's chat via IRC, you may want to check out <a href=\"/doc/11\">this</a>."
+msgid "Here you can generate a new IRC token. You can use it to connect to Katori's chat using IRC. Remember that your IRC token is like a password, anyone who knows it, has access to your account. If you're interested knowing how to connect to Katori's chat via IRC, you may want to check out <a href=\"/doc/11\">this</a>."
 msgstr ""
 
 msgid "Generate a new token!"
@@ -699,13 +699,13 @@ msgstr ""
 msgid "Unknown"
 msgstr ""
 
-msgid "<b>%s</b> is a Kotorikku player from <b>%s</b>."
+msgid "<b>%s</b> is a Katori player from <b>%s</b>."
 msgstr ""
 
 msgid "Last seen: %s."
 msgstr ""
 
-msgid "They signed up on Kotorikku %s."
+msgid "They signed up on Katori %s."
 msgstr ""
 
 msgid "They play with %s."
@@ -766,7 +766,7 @@ msgid "Level %s"
 msgstr ""
 
 # support.html
-msgid "Support Kotorikku"
+msgid "Support Katori"
 msgstr ""
 
 msgid "You are a donor!"
@@ -784,16 +784,16 @@ msgstr ""
 msgid "(Probably not.)"
 msgstr ""
 
-msgid "Kotorikku is not cheap to run."
+msgid "Katori is not cheap to run."
 msgstr ""
 
-msgid "While we provide this service for free, we still have to pay for it, and if we always took the money out of our own pockets, 1. we would be broke, 2. we wouldn't be able to upgrade our hardware to accomodate our users. While we do have loads of software optimisations that allow us to have Kotorikku run crazy fast while still being on not so high-end hardware, the more users we have, the higher-end our hardware needs to be. So we are asking you for help on this :)."
+msgid "While we provide this service for free, we still have to pay for it, and if we always took the money out of our own pockets, 1. we would be broke, 2. we wouldn't be able to upgrade our hardware to accomodate our users. While we do have loads of software optimisations that allow us to have Katori run crazy fast while still being on not so high-end hardware, the more users we have, the higher-end our hardware needs to be. So we are asking you for help on this :)."
 msgstr ""
 
 msgid "We are still students."
 msgstr ""
 
-msgid "Kotorikku developers, and most of the Kotorikku staff, do not have a day job. This means that we get most of our income as students from doing small jobs as \"freelancers\" every so often, or, you know, allowance."
+msgid "Katori developers, and most of the Katori staff, do not have a day job. This means that we get most of our income as students from doing small jobs as \"freelancers\" every so often, or, you know, allowance."
 msgstr ""
 
 msgid "We do not have ads. And never will."
@@ -880,13 +880,13 @@ msgstr ""
 msgid "Send %s BTC to this Bitcoin address:"
 msgstr ""
 
-msgid "Afterwards, <b>please send an email to <a href=\"mailto:howl@Kotorikku.moe\">howl@Kotorikku.moe</a></b> containing the transaction hash!"
+msgid "Afterwards, <b>please send an email to <a href=\"mailto:howl@Katori.moe\">howl@Katori.moe</a></b> containing the transaction hash!"
 msgstr ""
 
 msgid "I've donated, now what?"
 msgstr ""
 
-msgid "You'll have to wait until we verify and process your payment. It can take up to <b>12 hours</b>. If 12 hours have passed and you still haven't received your Donor tag, contact a <b>Dev/Community Manager</b> in our Discord server or send an email to <b><a href=\"mailto:support@kotorikku.ru\">support@kotorikku.ru</a></b>. Once we have processed your payment, you'll receive an <b>email</b> to the address you've used to sign up and you'll get <b>all the donor privileges, except the Discord ones</b>. To get the Discord donor privileges, go <a href=\"/settings/discord\">here</a>."
+msgid "You'll have to wait until we verify and process your payment. It can take up to <b>12 hours</b>. If 12 hours have passed and you still haven't received your Donor tag, contact a <b>Dev/Community Manager</b> in our Discord server or send an email to <b><a href=\"mailto:support@katori.fun\">support@katori.fun</a></b>. Once we have processed your payment, you'll receive an <b>email</b> to the address you've used to sign up and you'll get <b>all the donor privileges, except the Discord ones</b>. To get the Discord donor privileges, go <a href=\"/settings/discord\">here</a>."
 msgstr ""
 
 msgid "Please log in to get supporter"
@@ -923,7 +923,7 @@ msgstr ""
 msgid "If you don't have Telegram on the current device, you can either open this page from a device on which you have it, or scan this QR code:"
 msgstr ""
 
-msgid "In case you don't have a way to scan QR codes or you simply can't be bothered to download an app that scans them, you can also open Telegram, start a conversation with <a href=\"http://telegram.me/Kotorikku2fabot\"><b>@Kotorikku2fabot</b></a> and send this message:"
+msgid "In case you don't have a way to scan QR codes or you simply can't be bothered to download an app that scans them, you can also open Telegram, start a conversation with <a href=\"http://telegram.me/Katori2fabot\"><b>@Katori2fabot</b></a> and send this message:"
 msgstr ""
 
 msgid "Google Authenticator (TOTP) based 2FA"
@@ -944,7 +944,7 @@ msgstr ""
 msgid "Google Authenticator recovery keys"
 msgstr ""
 
-msgid "These are the only thing that will let you get back into your Kotorikku account if you lose your device. Our suggestion is to paste them inside a document in your word processor (Microsoft Word, LibreOffice Writer), print them and store them in a safe place."
+msgid "These are the only thing that will let you get back into your Katori account if you lose your device. Our suggestion is to paste them inside a document in your word processor (Microsoft Word, LibreOffice Writer), print them and store them in a safe place."
 msgstr ""
 
 msgid "Open File"
@@ -953,10 +953,10 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
-msgid "Your discord account has been linked to this Kotorikku account. <b>Welcome to the donors club and thank you for supporting us!</b> You have now access to the #donators text and voice channels on our official Discord server! You can also set a custom role name and username colour and change your nickname on Discord. If you want to change your nickname, you can use the <code>/nick</code> command. To set or edit your <b>custom role</b> name and colour, use the command <code>!role HEX_COLOUR ROLE_NAME</code>. You can pick your HEX colour <a href=\"http://www.colorpicker.com/\" target=\"_blank\">here</a>, it's the one that starts with '#'. You can change your role name and colour <b>whenever you want!</b>"
+msgid "Your discord account has been linked to this Katori account. <b>Welcome to the donors club and thank you for supporting us!</b> You have now access to the #donators text and voice channels on our official Discord server! You can also set a custom role name and username colour and change your nickname on Discord. If you want to change your nickname, you can use the <code>/nick</code> command. To set or edit your <b>custom role</b> name and colour, use the command <code>!role HEX_COLOUR ROLE_NAME</code>. You can pick your HEX colour <a href=\"http://www.colorpicker.com/\" target=\"_blank\">here</a>, it's the one that starts with '#'. You can change your role name and colour <b>whenever you want!</b>"
 msgstr ""
 
-msgid "Thank you for supporting us and have fun on Kotorikku!"
+msgid "Thank you for supporting us and have fun on Katori!"
 msgstr ""
 
 msgid "Donors get special privileges on our Discord server too!"
@@ -1113,7 +1113,7 @@ msgstr ""
 msgid "Colour is invalid"
 msgstr ""
 
-msgid "You have been automatically logged out of your account because your account has either been banned or locked. Should you believe this is a mistake, you can contact our support team at support@kotorikku.ru."
+msgid "You have been automatically logged out of your account because your account has either been banned or locked. Should you believe this is a mistake, you can contact our support team at support@katori.fun."
 msgstr ""
 
 msgid "You have been automatically logged out for security reasons. Please <a href='/login?redir=%s'>log back in</a>."
@@ -1134,12 +1134,12 @@ msgstr ""
 msgid "If you truly have understood what's written above and you have understood that creating a multiaccount will lead to a restriction on your main account, you can click here and you'll be brought to the sign up page."
 msgstr ""
 
-msgid "You look new here. Allow us to introduce you to what Kotorikku is."
+msgid "You look new here. Allow us to introduce you to what Katori is."
 msgstr ""
 
-# PAY ATTENTION! This is Log in *with* Kotorikku, not *on* Kotorikku. This is for
+# PAY ATTENTION! This is Log in *with* Katori, not *on* Katori. This is for
 # oauth.
-msgid "Log in with Kotorikku"
+msgid "Log in with Katori"
 msgstr ""
 
 msgid "This application will be able to:"
@@ -1156,7 +1156,7 @@ msgstr ""
 msgid "Write"
 msgstr ""
 
-msgid "This application will be able to make modifications to your Kotorikku account. This is potentially really dangerous! Use this only with applications that you trust."
+msgid "This application will be able to make modifications to your Katori account. This is potentially really dangerous! Use this only with applications that you trust."
 msgstr ""
 
 msgid "Approve"
@@ -1167,7 +1167,7 @@ msgstr ""
 
 # Team page
 
-msgid "This is a list of the wonderful people who keep Kotorikku up and running and deal with its community."
+msgid "This is a list of the wonderful people who keep Katori up and running and deal with its community."
 msgstr ""
 
 msgid "Community Managers"
@@ -1176,7 +1176,7 @@ msgstr ""
 msgid "Community Managers deal with bans, silences, name changes and pretty much everything that has to do with the community."
 msgstr ""
 
-msgid "They take care of our Discord server and reply to emails sent to <a href='mailto:support@kotorikku.ru'>support@kotorikku.ru</a>. Community Managers have a red name in the in-game chat."
+msgid "They take care of our Discord server and reply to emails sent to <a href='mailto:support@katori.fun'>support@katori.fun</a>. Community Managers have a red name in the in-game chat."
 msgstr ""
 
 msgid "Developers"
@@ -1200,7 +1200,7 @@ msgstr ""
 msgid "Special thanks"
 msgstr ""
 
-msgid "Here's a list of people who helped with Kotorikku."
+msgid "Here's a list of people who helped with Katori."
 msgstr ""
 
 msgid "<b>Franc[e]sco/lolisamurai</b>, for <a href='https://github.com/Francesco149/oppai'>oppai</a>, used as standard pp calculator."
@@ -1212,13 +1212,13 @@ msgstr ""
 msgid "<b>jrosdahl</b>, for <a href='https://github.com/jrosdahl/miniircd'>miniircd</a>, used as a base for our IRC server."
 msgstr ""
 
-msgid "<b>Avail</b>, for having hosted Kotorikku on his server."
+msgid "<b>Avail</b>, for having hosted Katori on his server."
 msgstr ""
 
-msgid "<b>Angela Guerra</b>, for designing the Kotorikku logo."
+msgid "<b>Angela Guerra</b>, for designing the Katori logo."
 msgstr ""
 
-msgid "<b><a id='everyone' class='clickable'>Everyone</a></b> who has supported the Kotorikku project by donating or inviting other people."
+msgid "<b><a id='everyone' class='clickable'>Everyone</a></b> who has supported the Katori project by donating or inviting other people."
 msgstr ""
 
 msgid "They told me these are very cool people."
@@ -1239,5 +1239,5 @@ msgstr ""
 msgid "(You get other cool perks too)"
 msgstr ""
 
-msgid "The Kotorikku API is the system through which developers can create applications to interact with Kotorikku. <b>If you're asked to fill out an API token from this page, be wary and only actually create the token if you really trust the owner of the application.</b>"
+msgid "The Katori API is the system through which developers can create applications to interact with Katori. <b>If you're asked to fill out an API token from this page, be wary and only actually create the token if you really trust the owner of the application.</b>"
 msgstr ""

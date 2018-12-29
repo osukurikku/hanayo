@@ -127,7 +127,7 @@ func main() {
 		&config.IP_API:           "https://ip.zxq.co",
 		&config.DiscordServer:    "#",
 		&config.MainRippleFolder: "/home/osu/server",
-		&config.MailgunFrom:      `"Kotorikku" <noreply@kotorikku.ru>`,
+		&config.MailgunFrom:      `"Katori" <noreply@katori.fun>`,
 		&config.VkTehToken:       "<vkontakte_teh_token>",
 		&config.ChallengeOneID:   "",
 	}

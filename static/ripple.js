@@ -508,7 +508,7 @@ function api(endpoint, data, success, failure, post) {
   }
 
   var errorMessage =
-      "An error occurred while contacting the Kotorikku API. Please report this to a Kotorikku developer.";
+      "An error occurred while contacting the Katori API. Please report this to a Katori developer.";
 
   $.ajax({
     method : (post ? "POST" : "GET"),
