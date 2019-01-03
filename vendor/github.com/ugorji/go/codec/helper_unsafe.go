@@ -23,12 +23,12 @@ const safeMode = false
 const unsafeFlagIndir = 1 << 7 // keep in sync with GO_ROOT/src/reflect/value.go
 
 type unsafeString struct {
-	Data uintptr
+	Data unsafe.Pointer
 	Len  int
 }
 
 type unsafeSlice struct {
-	Data uintptr
+	Data unsafe.Pointer
 	Len  int
 	Cap  int
 }
@@ -157,7 +157,8 @@ func isEmptyValue(v reflect.Value, tinfos *TypeInfos, deref, checkStruct bool) b
 		}
 		return isnil
 	case reflect.Ptr:
-		isnil := urv.ptr == nil
+		// isnil := urv.ptr == nil (not sufficient, as a pointer value encodes the type)
+		isnil := urv.ptr == nil || *(*unsafe.Pointer)(urv.ptr) == nil
 		if deref {
 			if isnil {
 				return true
@@ -175,17 +176,31 @@ func isEmptyValue(v reflect.Value, tinfos *TypeInfos, deref, checkStruct bool) b
 
 // --------------------------
 
+// atomicTypeInfoSlice contains length and pointer to the array for a slice.
+// It is expected to be 2 words.
+//
+// Previously, we atomically loaded and stored the length and array pointer separately,
+// which could lead to some races.
+// We now just atomically store and load the pointer to the value directly.
+
 type atomicTypeInfoSlice struct { // expected to be 2 words
-	v unsafe.Pointer
-	_ [8]byte // padding
+	l int            // length of the data array (must be first in struct, for 64-bit alignment necessary for 386)
+	v unsafe.Pointer // data array - Pointer (not uintptr) to maintain GC reference
 }
 
-func (x *atomicTypeInfoSlice) load() *[]rtid2ti {
-	return (*[]rtid2ti)(atomic.LoadPointer(&x.v))
+func (x *atomicTypeInfoSlice) load() []rtid2ti {
+	xp := unsafe.Pointer(x)
+	x2 := *(*atomicTypeInfoSlice)(atomic.LoadPointer(&xp))
+	if x2.l == 0 {
+		return nil
+	}
+	return *(*[]rtid2ti)(unsafe.Pointer(&unsafeSlice{Data: x2.v, Len: x2.l, Cap: x2.l}))
 }
 
-func (x *atomicTypeInfoSlice) store(p *[]rtid2ti) {
-	atomic.StorePointer(&x.v, unsafe.Pointer(p))
+func (x *atomicTypeInfoSlice) store(p []rtid2ti) {
+	s := (*unsafeSlice)(unsafe.Pointer(&p))
+	xp := unsafe.Pointer(x)
+	atomic.StorePointer(&xp, unsafe.Pointer(&atomicTypeInfoSlice{l: s.Len, v: s.Data}))
 }
 
 // --------------------------

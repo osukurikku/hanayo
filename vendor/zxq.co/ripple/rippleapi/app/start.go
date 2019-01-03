@@ -2,6 +2,7 @@ package app
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/DataDog/datadog-go/statsd"
 	fhr "github.com/buaazp/fasthttprouter"
@@ -67,6 +68,9 @@ func Start(conf common.Conf, dbO *sqlx.DB) *fhr.Router {
 	// start websocket
 	websockets.Start(red, db)
 
+	// start load achievements
+	go v1.LoadAchievementsEvery(db, time.Minute*10)
+
 	// peppyapi
 	{
 		r.Peppy("/api/get_user", peppy.GetUser)
@@ -87,6 +91,7 @@ func Start(conf common.Conf, dbO *sqlx.DB) *fhr.Router {
 		r.Method("/api/v1/users", v1.UsersGET)
 		r.Method("/api/v1/users/whatid", v1.UserWhatsTheIDGET)
 		r.Method("/api/v1/users/full", v1.UserFullGET)
+		r.Method("/api/v1/users/achievements", v1.UserAchievementsGET)
 		r.Method("/api/v1/users/userpage", v1.UserUserpageGET)
 		r.Method("/api/v1/users/lookup", v1.UserLookupGET)
 		r.Method("/api/v1/users/scores/best", v1.UserScoresBestGET)
@@ -126,6 +131,8 @@ func Start(conf common.Conf, dbO *sqlx.DB) *fhr.Router {
 		// Admin: user managing
 		r.POSTMethod("/api/v1/users/manage/set_allowed", v1.UserManageSetAllowedPOST, common.PrivilegeManageUser)
 		r.POSTMethod("/api/v1/users/edit", v1.UserEditPOST, common.PrivilegeManageUser)
+		r.POSTMethod("/api/v1/users/wipe", v1.WipeUserPOST, common.PrivilegeManageUser)
+		r.POSTMethod("/api/v1/scores/reports", v1.ScoreReportPOST, common.PrivilegeManageUser)
 
 		// M E T A
 		// E     T    "wow thats so meta"
