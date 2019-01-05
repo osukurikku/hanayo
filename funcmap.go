@@ -404,7 +404,7 @@ var funcMap = template.FuncMap{
 	},
 	// calculateDonorPrice calculates the price of x donor months in euros.
 	"calculateDonorPrice": func(a float64) string {
-		return fmt.Sprintf("%.2f", math.Pow(a*13.5*0.2, 0.7))
+		return fmt.Sprintf("%.2f", math.Pow(a*10.5*0.2, 0.97))
 	},
 	// is2faEnabled checks 2fa is enabled for an user
 	"is2faEnabled": is2faEnabled,
