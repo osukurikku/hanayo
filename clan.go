@@ -208,7 +208,7 @@ func createInvite(c *gin.Context) {
 				return
 			}
 			img = resize.Thumbnail(256, 256, img, resize.Bilinear)
-			f, err := os.Create(fmt.Sprintf("%s/%d.png", config.ClanAvatarsFolder, 1000000000000000000+clan))
+			f, err := os.Create(fmt.Sprintf("%s/%d.png", config.ClanAvatarsFolder, 2000000000+clan))
 			defer f.Close()
 			if err != nil {
 				//m = errorMessage{T(c, "An error occurred.")}
