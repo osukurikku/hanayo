@@ -48,8 +48,9 @@ var (
 		APISecret     string
 		Offline       bool `description:"If this is true, files will be served from the local server instead of the CDN."`
 
-		MainRippleFolder string `description:"Folder where all the non-go projects are contained, such as old-frontend, lets, ci-system. Used for changelog."`
-		AvatarsFolder    string `description:"location folder of avatars, used for placing the avatars from the avatar change page."`
+		MainRippleFolder  string `description:"Folder where all the non-go projects are contained, such as old-frontend, lets, ci-system. Used for changelog."`
+		AvatarsFolder     string `description:"location folder of avatars, used for placing the avatars from the avatar change page."`
+		ClanAvatarsFolder string `description:"location folder of clan avatars, used for placing the clan avatars from the clan avatar change page."`
 
 		CookieSecret string
 
