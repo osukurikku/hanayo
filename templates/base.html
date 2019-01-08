@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ if .TitleBar }}{{ .T .TitleBar }} - {{ end }}Kotorikku</title>
+    <title>{{ if .TitleBar }}{{ .T .TitleBar }} - {{ end }}Katori</title>
 
     <link rel="stylesheet" type="text/css" href="/static/{{ if $ds }}dark/{{ end }}semantic.min.css?{{ unixNano }}">
     <link rel="stylesheet" type="text/css" href="/static/ripple.css?{{ unixNano }}">
@@ -18,33 +18,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Kotorikku">
-    <meta name="description" content="Kotorikku is a private osu! server, with features such as PP for all 4 gamemodes (including DT mania pp!), fully-functioning multiplayer, spectator, and many others."/>
-    <meta name="keywords" content="osu, osu private server, osu server, kotorikku, osu!, осу приватный сервер, osu приватный сервер, приватный сервер, которикку">
+    <meta name="application-name" content="Katori">
+    <meta name="description" content="Katori is a private osu! server, with features such as PP for all 4 gamemodes (including DT mania pp!), fully-functioning multiplayer, spectator, and many others."/>
+    <meta name="keywords" content="osu, osu private server, osu server, katori, osu!, осу приватный сервер, osu приватный сервер, приватный сервер, которикку">
     <meta name="author" content="KotRik">
 
     <!-- Safari -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Kotorikku">
+    <meta name="apple-mobile-web-app-title" content="Katori">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <link rel="apple-touch-icon" href="https://kotorikku.ru/static/logos/logo1.png">
+    <link rel="apple-touch-icon" href="https://katori.fun/static/logos/logo1.png">
 
     <!-- OpenGraph -->
-    <meta property="og:title" content="Kotorikku">
-    <meta property="og:image" content="https://kotorikku.ru/static/logos/logo1.png">
+    <meta property="og:title" content="Katori">
+    <meta property="og:image" content="https://katori.fun/static/logos/logo1.png">
     <meta property="og:description" content="another cool private server for osu!game">
 
-    <meta property="og:url" content="https://kotorikku.ru/static/logos/logo1.png">
+    <meta property="og:url" content="https://katori.fun/static/logos/logo1.png">
     <meta property="og:type" content="website"/>
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:description" content="another cool private server for osu!game"/>
-    <meta name="twitter:title" content="Kotorikku"/>
-    <meta name="twitter:image" content="https://kotorikku.ru/static/logos/logo1.png"/>
+    <meta name="twitter:title" content="Katori"/>
+    <meta name="twitter:image" content="https://katori.fun/static/logos/logo1.png"/>
 
     <!-- Windows 8 -->
-    <meta name="msapplication-TileImage" content="https://kotorikku.ru/static/logos/logo1.png">
+    <meta name="msapplication-TileImage" content="https://katori.fun/static/logos/logo1.png">
     <meta name="msapplication-TileColor" content="#4C4C4C">
 
     <!-- Microdata -->
@@ -52,12 +52,12 @@
 			{
 			  "@context": "http://schema.org",
 			  "@type": "Organization",
-			  "url": "https://kotorikku.ru/",
-			  "logo": "https://kotorikku.ru/static/logos/logo1.png",
-			  "description": "Kotorikku - another cool private server for osu!game",
+			  "url": "https://katori.fun/",
+			  "logo": "https://katori.fun/static/logos/logo1.png",
+			  "description": "Katori - another cool private server for osu!game",
 			  "potentialAction": {
 			    "@type": "SearchAction",
-			    "target": "https://kotorikku.ru/u/{search_term_string}",
+			    "target": "https://katori.fun/u/{search_term_string}",
 			    "query-input": "required name=search_term_string"
 			  }
 			}
@@ -88,14 +88,14 @@
 
 
 
-    <div class="container-pd snow">
+    <div class="container-pd">
         <div class="ui margined container" id="messages-container">
             <noscript>Research has proven this website works probably more than 7% better if you have JavaScript
                 enabled.
             </noscript>
         {{ if and .Context.User.Username (not (has .Context.User.Privileges 1)) }}
             <div class="ui warning message">
-            {{ $.T "Your account is currently in restricted mode. You will not be able to perform certain actions, and your profile can only be seen by you and by Kotorikku's staff. If you believe this was a mistake, or a month has passed since you first saw this, then you can send an appeal to <a href=mailto:support@kotorikku.ru>support@kotorikku.ru</a>." | html }}
+            {{ $.T "Your account is currently in restricted mode. You will not be able to perform certain actions, and your profile can only be seen by you and by Katori's staff. If you believe this was a mistake, or a month has passed since you first saw this, then you can send an appeal to <a href=mailto:support@katori.fun>support@katori.fun</a>." | html }}
             </div>
         {{ end }}
         {{ if .Messages }}
@@ -114,12 +114,12 @@
         {{ end }}
         {{ with $settings.game_maintenance.Int }}
             <div class="ui warning message">
-            {{ $.T "Kotorikku's score submission is currently in maintenance mode. You will not be allowed to submit scores for the time being." }}
+            {{ $.T "Katori's score submission is currently in maintenance mode. You will not be allowed to submit scores for the time being." }}
             </div>
         {{ end }}
         {{ with $settings.website_maintenance.Int }}
             <div class="ui warning message">
-            {{ $.T "Kotorikku's website is currently in maintenance mode. Only certain users are allowed to access the full website." }}
+            {{ $.T "Katori's website is currently in maintenance mode. Only certain users are allowed to access the full website." }}
             </div>
         {{ end }}
 
@@ -131,9 +131,9 @@
 
 <div class="footer">
     <center class="ui container center">
-    {{ .T "&copy; %d Ripple, Kotorikku, using Hanayo %s." (curryear) (version) | html }}
+    {{ .T "&copy; %d Ripple, Katori, using Hanayo %s." (curryear) (version) | html }}
         <a href="/team" title="{{ .T "Who is working on this thing?" }}"><i class="users icon"></i>{{ .T "Team" }}</a>
-        <a href="https://github.com/osukotorikku" title="{{ .T "Git"}}{{/*'"*/}}"><i class="git square icon"></i></a>
+        <a href="https://github.com/osukatori" title="{{ .T "Git"}}{{/*'"*/}}"><i class="git square icon"></i></a>
         <div class="ui scrolling dropdown" style="margin-left: 5px;" id="language-selector">
         {{ $lang := .Context.Language }}
         {{ with $lang }}

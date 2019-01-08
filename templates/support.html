@@ -1,6 +1,6 @@
 {{/*###
 Handler=/donate
-TitleBar=Support Kotorikku
+TitleBar=Support Katori
 KyutGrill=fundmyautism.jpg
 AdditionalJS=https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.min.js
 */}}
@@ -36,17 +36,17 @@ AdditionalJS=https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.
         <div class="ui segment">
             <h3 class="ui header no top margin">
                 <i class="money icon"></i>
-                <div class="content">{{ $.T "Kotorikku is not cheap to run." }}</div>
+                <div class="content">{{ $.T "Katori is not cheap to run." }}</div>
             </h3>
             <blockquote>
-            {{ $.T "While we provide this service for free, we still have to pay for it, and if we always took the money out of our own pockets, 1. we would be broke, 2. we wouldn't be able to upgrade our hardware to accomodate our users. While we do have loads of software optimisations that allow us to have Kotorikku run crazy fast while still being on not so high-end hardware, the more users we have, the higher-end our hardware needs to be. So we are asking you for help on this :)." }}
+            {{ $.T "While we provide this service for free, we still have to pay for it, and if we always took the money out of our own pockets, 1. we would be broke, 2. we wouldn't be able to upgrade our hardware to accomodate our users. While we do have loads of software optimisations that allow us to have Katori run crazy fast while still being on not so high-end hardware, the more users we have, the higher-end our hardware needs to be. So we are asking you for help on this :)." }}
             </blockquote>
             <h3 class="ui header">
                 <i class="book icon"></i>
                 <div class="content">{{ $.T "We are still students." }}</div>
             </h3>
             <blockquote>
-            {{ $.T "Kotorikku developers, and most of the Kotorikku staff, do not have a day job. This means that we get most of our income as students from doing small jobs as \"freelancers\" every so often, or, you know, allowance." }}
+            {{ $.T "Katori developers, and most of the Katori staff, do not have a day job. This means that we get most of our income as students from doing small jobs as \"freelancers\" every so often, or, you know, allowance." }}
             </blockquote>
             <h3 class="ui header">
                 <i class="mouse pointer icon"></i>
@@ -283,7 +283,7 @@ AdditionalJS=https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.
                     <input type="hidden" name="option_select{{ . }}" value="{{ $months }} month{{ if . }}s{{ end }}">
                     <input type="hidden" name="option_amount{{ . }}" value="{{ calculateDonorPrice $months }}">
                 {{ end }}
-                    <input type="hidden" name="on1" value="Kotorikku user to give donor">
+                    <input type="hidden" name="on1" value="Katori user to give donor">
                     <input type="hidden" name="amount" value="{{ calculateDonorPrice 1 }}" id="paypal-amt">
                     <div class="ui fluid labeled action input">
                         <div class="ui label">
@@ -354,12 +354,32 @@ AdditionalJS=https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.
             </div>
         </div>
 
+        <div class="ui internally celled two column center aligned stackable grid">
+            <div class="column">
+                <h2 class="ui header">
+                    <i class="thumbs up outline icon"></i>
+                    {{ $.T "AnyPay(RUB)" }}
+                </h2>
+                <form action='https://any-pay.org/merchant' accept-charset='utf-8' method='post'>
+                    <input type='hidden' id="any_pay_merchant_id" name='merchant_id'>
+                    <input type='hidden' id="any_pay_amount" name='amount'>
+                    <input type='hidden' id="any_pay_id" name='pay_id'>
+                    <input type='hidden' id="any_pay_currency" name='currency'>
+                    <input type='hidden' id="any_pay_sign" name='sign'>
+                    <input type='hidden' name='field1' value='{{ $global.User.ID }}'>
+                    <input class="ui positive basic button" type="submit" value="Купить">
+                </form>
+            </div>
+        </div>
+
+
         <h4 class="ui horizontal divider header">
         {{ $.T "I've donated, now what?" }}
         </h4>
         <p>
         <center>
-        {{ $.T "Please contact KotRik directly, preferrably via discord/ingame, or if needed, via email: support@kotorikku.ru" | html }}
+            If you donate via AnyPay, just wait 2-3 minute and donate like magic on you account. If you had trouble just ask KotRik in Discord!
+        {{ $.T "Please contact KotRik directly, preferrably via discord/ingame, or if needed, via email: support@katori.fun" | html }}
             <br>
         {{ $.T "Disclaimer: Donations are NON-REFUNDABLE, and do not give you special privileges other than what is listed above. You will still be treated the same as all other users."}}
         </center>

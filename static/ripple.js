@@ -263,7 +263,7 @@ var singlePageSnippets = {
       rates = data;
       us.on('update', function() {
         var months = us.get();
-        var priceEUR = Math.pow(months * 30 * 0.2, 0.70);
+        var priceEUR = Math.pow(months * 10.5 * 0.2, 0.97);
         var priceBTC = priceEUR / rates.EUR;
         var priceUSD = priceBTC * rates.USD;
         $("#cost")
@@ -508,7 +508,7 @@ function api(endpoint, data, success, failure, post) {
   }
 
   var errorMessage =
-      "An error occurred while contacting the Kotorikku API. Please report this to a Kotorikku developer.";
+      "An error occurred while contacting the Katori API. Please report this to a Katori developer.";
 
   $.ajax({
     method : (post ? "POST" : "GET"),

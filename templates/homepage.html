@@ -11,7 +11,7 @@ KyutGrill=darkhome.jpg
         <div class="ui stackable two grid">
             <div class="nine wide column">
                 <div style="height: 100% !important;" class="ui center aligned segment">
-                    <img src="https://kotorikku.ru/static/logos/logo1.png" style="width: 100%; height: 100%;">
+                    <img src="https://katori.fun/static/logos/logo1.png" style="width: 100%;">
                 </div>
             </div>
 
@@ -54,20 +54,20 @@ KyutGrill=darkhome.jpg
         {{/* Not logged in block */}}
         {{ if not .Context.User.ID }}
             <div class="ui segment">
-                <h1 class="ui header">{{ .T "Welcome to Kotorikku." }}</h1>
+                <h1 class="ui header">{{ .T "Welcome to Katori." }}</h1>
                 <p>
-                    {{ .T "You look new here. Allow us to introduce you to what Kotorikku is." }}
+                    {{ .T "You look new here. Allow us to introduce you to what Katori is." }}
                 </p>
                 <p>
-                    {{ .T "Kotorikku is a private osu! server, with features such as PP for all 4 gamemodes (including DT mania pp!), fully-functioning multiplayer, spectator, and many others. <b>we currently have %s users online and %s registered users!</b>" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
+                    {{ .T "Katori is a private osu! server, with features such as PP for all 4 gamemodes (including DT mania pp!), fully-functioning multiplayer, spectator, and many others. <b>we currently have %s users online and %s registered users!</b>" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
                 </p>
-                <h3 class="ui header center aligned">{{ .T "What are you waiting for? Join Kotorikku; It's risk-free: (you won't get banned on the official server if you play on Kotorikku).<br>You can also switch anytime between the official osu! server and Kotorikku" | html }}</h3>
+                <h3 class="ui header center aligned">{{ .T "What are you waiting for? Join Katori; It's risk-free: (you won't get banned on the official server if you play on Katori).<br>You can also switch anytime between the official osu! server and Katori" | html }}</h3>
             </div>
         {{ else }}
             <div class="ui segment">
                 <h1 class="ui header">{{ .T "Hi, %s!" .Context.User.Username }}</h1>
                 <p>
-                    {{ .T "Welcome back to Kotorikku. We currently have <b>%s online users and %s total registed users.</b> Hope you're having a wonderful day!" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
+                    {{ .T "Welcome back to Katori. We currently have <b>%s online users and %s total registed users.</b> Hope you're having a wonderful day!" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
                 </p>
             </div>
         {{ end }}
@@ -145,7 +145,7 @@ KyutGrill=darkhome.jpg
                 {{ range .response.items }}
                     <div class="ui segment">
                         <h1 class="ui header no top margin">
-                            <a href="https://vk.com/kotorikku?w=wall-175152353_{{ .id }}"
+                            <a href="https://vk.com/osukatori?w=wall-175152353_{{ .id }}"
                                class="inherit">{{ $.GetFirstLine .text| html }}</a>
                         </h1>
                         <p>

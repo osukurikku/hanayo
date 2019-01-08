@@ -64,7 +64,7 @@ function initialiseAchievements() {
         shown++;
         $ach.append(
           $("<div class='ui two wide column'>").append(
-            $("<img src='https://s.kotorikku.ru/achievements/" + ach.icon + ".png' alt='" + ach.name +
+            $("<img src='https://s.katori.fun/achievements/" + ach.icon + ".png' alt='" + ach.name +
               "' class='" +
               (!ach.achieved ? "locked-achievement" : "achievement") +
               "'>").popup({

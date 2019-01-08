@@ -4,9 +4,16 @@ import (
 	"database/sql"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/nfnt/resize"
+	"image"
+	_ "image/gif"
+	_ "image/jpeg"
+	"image/png"
 	"math/rand"
+	"os"
 	"strconv"
 	"time"
+	"reflect"
 )
 
 // TODO: replace with simple ResponseInfo containing userid
@@ -182,7 +189,39 @@ func createInvite(c *gin.Context) {
 			return
 		}
 
-		db.Exec("UPDATE clans SET description = ?, icon = ?, tag = ?, background = ? WHERE id = ?", c.PostForm("password"), c.PostForm("email"), tag, c.PostForm("bg"), clan)
+		db.Exec("UPDATE clans SET description = ?, tag = ?, background = ? WHERE id = ?", c.PostForm("password"), tag, c.PostForm("bg"), clan)
+
+		//Avatar uploading if present!
+		fmt.Println("avatar test get!")
+		file, _, err := c.Request.FormFile("avatar")
+		fmt.Println("avatar getted ", reflect.TypeOf(file))
+		img, _, err2 := image.Decode(file)
+               	if err != nil || err2 != nil {
+               	        fmt.Println("test2")
+			fmt.Println("AVATAR ERROR!")
+			//m = errorMessage{T(c, "An error occurred.")}
+		} else {
+			fmt.Println("Avatar getted!")
+			if config.ClanAvatarsFolder == "" {
+				fmt.Println("test1")
+//m = errorMessage{T(c, "Changing avatar is currently not possible.")}
+				return
+			}
+			img = resize.Thumbnail(256, 256, img, resize.Bilinear)
+			f, err := os.Create(fmt.Sprintf("%s/%d.png", config.ClanAvatarsFolder, 2000000000+clan))
+			defer f.Close()
+			if err != nil {
+				//m = errorMessage{T(c, "An error occurred.")}
+				c.Error(err)
+				return
+			}
+			err = png.Encode(f, img)
+			if err != nil {
+				//m = errorMessage{T(c, "We were not able to save your avatar.")}
+				c.Error(err)
+				return
+			}
+		}
 	}
 	addMessage(c, successMessage{T(c, "Success")})
 	getSession(c).Save()
