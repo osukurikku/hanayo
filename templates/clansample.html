@@ -11,11 +11,11 @@ Include=clan_members.html
             {{ range (.Get "clans?id=%d" .ClanID).clans }}
                 <div style="border-bottom-left-radius: 0px !important; border-bottom-right-radius: 0px !important;" class="ui top attached segment overflow auto aligned">
                     <div class="magic table">
-                        {{ if .icon }}
-                            <div class="table element">
-                                <img src="{{ .icon }}" alt="icon" class="clan icon" style="border-radius:5%; height:90px;">
-                            </div>
-                        {{ end }}
+                        
+                        <div class="table element">
+                            <img src="{{ config "AvatarURL" }}/clans/{{ $.ClanID }}" alt="icon" class="clan icon" style="border-radius:5%; height:90px;">
+                        </div>
+                        
                         <div class="table element">
                             <h1 class="ui header">
 

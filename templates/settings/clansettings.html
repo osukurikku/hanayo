@@ -23,7 +23,7 @@ Include=menu.html
                         {{ $desc := or $c.description.String "" }}
                         {{ $icon := or $c.icon.String "" }}
                         {{ $bg := or $c.background.String "" }}
-                        <form id="register-form" class="ui form" method="post" action="/settings/clansettings">
+                        <form id="register-form" class="ui form" method="post" enctype="multipart/form-data" action="/settings/clansettings">
                             <div class="field">
                                 <label class="left aligned">{{ "Clantag (2 to 6 characters)" }}</label>
                                 <input tabindex="1" type="text" name="tag" placeholder="{{ "Clantag" }}" value="{{ $tag }}" pattern="{2,6}$">
@@ -32,9 +32,8 @@ Include=menu.html
                             <textarea tabindex="1" class="monospace" name="password">{{ $desc }}</textarea>
 
                             <div class="field">
-                                <label class="left aligned">{{ "Icon [URL] (optional)" }}</label>
-                                <input tabindex="3" type="url" name="email" placeholder="{{ "Icon URL" }}" value="{{ $icon }}">
-                            </div>
+                                <label class="left aligned">{{ "Icon (optional)" }}</label>
+                             </div>
 
                             <div class="ui buttons">
                                 <label tabindex="1" for="file" class="ui green labeled icon button">
@@ -42,7 +41,7 @@ Include=menu.html
                                     {{ .T "Open File" }}
                                 </label>
                             </div>
-                            <input type="file" id="file" style="display:none" required accept="image/*" name="avatar">
+                            <input type="file" id="file" style="display:none" accept="image/*" name="avatar">
                             {{ if has .Context.User.Privileges 4 }}
                                 <div class="field">
                                     <label class="left aligned">{{ "Background [URL] (optional)" }}</label>

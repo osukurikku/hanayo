@@ -132,7 +132,7 @@ const (
 	// should use "runtime/internal/sys".CacheLineSize, but that is not exposed.
 	cacheLineSize = 64
 
-	wordSizeBits = strconv.IntSize
+	wordSizeBits = 32 << (^uint(0) >> 63) // strconv.IntSize
 	wordSize     = wordSizeBits / 8
 
 	maxLevelsEmbedding = 15 // use this, so structFieldInfo fits into 8 bytes
@@ -391,6 +391,10 @@ var immutableKindsSet = [32]bool{
 // Any type which implements Selfer will be able to encode or decode itself.
 // Consequently, during (en|de)code, this takes precedence over
 // (text|binary)(M|Unm)arshal or extension support.
+//
+// Note: *the first set of bytes of any value MUST NOT represent nil in the format*.
+// This is because, during each decode, we first check the the next set of bytes
+// represent nil, and if so, we just set the value to nil.
 type Selfer interface {
 	CodecEncodeSelf(*Encoder)
 	CodecDecodeSelf(*Decoder)
@@ -440,10 +444,13 @@ type BasicHandle struct {
 	RPCOptions
 
 	// ---- cache line
+
 	DecodeOptions
 
 	// ---- cache line
+
 	EncodeOptions
+
 	// noBuiltInTypeChecker
 }
 
@@ -1148,7 +1155,7 @@ func (x *TypeInfos) get(rtid uintptr, rt reflect.Type) (pti *typeInfo) {
 	sp := x.infos.load()
 	var idx int
 	if sp != nil {
-		idx, pti = x.find(*sp, rtid)
+		idx, pti = x.find(sp, rtid)
 		if pti != nil {
 			return
 		}
@@ -1222,16 +1229,17 @@ func (x *TypeInfos) get(rtid uintptr, rt reflect.Type) (pti *typeInfo) {
 	sp = x.infos.load()
 	if sp == nil {
 		pti = &ti
-		vs := append(make([]rtid2ti, 0, 16), rtid2ti{rtid, pti})
-		x.infos.store(&vs)
+		vs := []rtid2ti{{rtid, pti}}
+		x.infos.store(vs)
 	} else {
-		idx, pti = x.find(*sp, rtid)
+		idx, pti = x.find(sp, rtid)
 		if pti == nil {
 			pti = &ti
-			vs := append(*sp, rtid2ti{})
-			copy(vs[idx+1:], vs[idx:])
+			vs := make([]rtid2ti, len(sp)+1)
+			copy(vs, sp[:idx])
+			copy(vs[idx+1:], sp[idx:])
 			vs[idx] = rtid2ti{rtid, pti}
-			x.infos.store(&vs)
+			x.infos.store(vs)
 		}
 	}
 	x.mu.Unlock()
@@ -1539,20 +1547,13 @@ func isEmptyStruct(v reflect.Value, tinfos *TypeInfos, deref, checkStruct bool) 
 // }
 
 func panicToErr(h errstrDecorator, err *error) {
+	// Note: This method MUST be called directly from defer i.e. defer panicToErr ...
+	// else it seems the recover is not fully handled
 	if recoverPanicToErr {
 		if x := recover(); x != nil {
 			// fmt.Printf("panic'ing with: %v\n", x)
 			// debug.PrintStack()
 			panicValToErr(h, x, err)
-		}
-	}
-}
-
-func panicToErrs2(h errstrDecorator, err1, err2 *error) {
-	if recoverPanicToErr {
-		if x := recover(); x != nil {
-			panicValToErr(h, x, err1)
-			panicValToErr(h, x, err2)
 		}
 	}
 }
