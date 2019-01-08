@@ -512,7 +512,7 @@ function getRank(gameMode, mods, acc, c300, c100, c50, cmiss) {
 
 function ppOrScore(pp, score) {
   if (pp != 0)
-    return addCommas(pp.toFixed(2)) + "pp";
+    return addCommas(pp) + "pp";
   return addCommas(score);
 }
 
