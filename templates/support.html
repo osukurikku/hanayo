@@ -354,11 +354,31 @@ AdditionalJS=https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.
             </div>
         </div>
 
+        <div class="ui internally celled two column center aligned stackable grid">
+            <div class="column">
+                <h2 class="ui header">
+                    <i class="thumbs up outline icon"></i>
+                    {{ $.T "AnyPay(RUB)" }}
+                </h2>
+                <form action='https://any-pay.org/merchant' accept-charset='utf-8' method='post'>
+                    <input type='hidden' id="any_pay_merchant_id" name='merchant_id'>
+                    <input type='hidden' id="any_pay_amount" name='amount'>
+                    <input type='hidden' id="any_pay_id" name='pay_id'>
+                    <input type='hidden' id="any_pay_currency" name='currency'>
+                    <input type='hidden' id="any_pay_sign" name='sign'>
+                    <input type='hidden' name='field1' value='{{ $global.User.ID }}'>
+                    <input class="ui positive basic button" type="submit" value="Купить">
+                </form>
+            </div>
+        </div>
+
+
         <h4 class="ui horizontal divider header">
         {{ $.T "I've donated, now what?" }}
         </h4>
         <p>
         <center>
+            If you donate via AnyPay, just wait 2-3 minute and donate like magic on you account. If you had trouble just ask KotRik in Discord!
         {{ $.T "Please contact KotRik directly, preferrably via discord/ingame, or if needed, via email: support@katori.fun" | html }}
             <br>
         {{ $.T "Disclaimer: Donations are NON-REFUNDABLE, and do not give you special privileges other than what is listed above. You will still be treated the same as all other users."}}
