@@ -83,7 +83,7 @@
 						{{ with bget "isOnline?id=%.0f" .id }}
                 <div class="subtitle">
                     <i class="{{ if .result }}green{{ else }}grey{{ end }} circle icon"></i>
-                    {{ if .result }}{{ $global.T "Online" }}{{ else }}{{ $global.T "Offline" }}{{ end }} ( <b>{{ with $global.Get "users/subscount?userid=%.0f" $global.Context.User.ID }}{{ if .subscount }}{{ .subscount }}{{ else }}0{{ end }}</b> subs count)
+                    {{ if .result }}{{ $global.T "Online" }}{{ else }}{{ $global.T "Offline" }}{{ end }} ( <b>{{ with $.Get "users/subscount?userid=%d" $.UserID }}{{ .subscount }}{{ end }}</b> subs count)
                 </div>
                 {{ end }}
             </div>
