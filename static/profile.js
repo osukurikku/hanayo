@@ -11,6 +11,8 @@ $(document).ready(function () {
         window.history.replaceState('', document.title, newPathName + "?mode=" + favouriteMode + wl.hash);
     else if (wl.pathname != newPathName)
         window.history.replaceState('', document.title, newPathName + wl.search + wl.hash);
+
+    loadRanksPLZ(userID, favouriteMode);
     setDefaultScoreTable();
     // when an item in the mode menu is clicked, it means we should change the mode.
     $("#mode-menu>.item").click(function (e) {
@@ -26,13 +28,7 @@ $(document).ready(function () {
             initialiseScores(needsLoad, m);
         $(this).addClass("active");
         window.history.replaceState('', document.title, wl.pathname + "?mode=" + m + wl.hash);
-        api("scores/ranksget", {userid: userID, mode: $(this).data("mode")}, (res) => {
-            $("#SSHDranks").text(res.sshd);
-            $("#SSranks").text(res.ss);
-            $("#SHDranks").text(res.sh);
-            $("#Sranks").text(res.s);
-            $("#Aranks").text(res.a);
-        })
+        loadRanksPLZ(userID, m);
     });
     initialiseAchievements();
     initialiseFriends();
@@ -47,6 +43,16 @@ $(document).ready(function () {
             i();
         });
 });
+
+function loadRanksPLZ(userid, mode) {
+    api("scores/ranksget", {userid: userid, mode: mode}, (res) => {
+        $("#SSHDranks").text(res.sshd);
+        $("#SSranks").text(res.ss);
+        $("#SHDranks").text(res.sh);
+        $("#Sranks").text(res.s);
+        $("#Aranks").text(res.a);
+    })
+}
 
 function initialiseAchievements() {
     api('users/achievements',
