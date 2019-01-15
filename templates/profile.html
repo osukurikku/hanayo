@@ -155,6 +155,35 @@
                 <br>{{ $global.T "They registered %s." (time $user.registered_on) | html }}
                 <br>{{ $global.T "Last seen: %s." (time $user.latest_activity) | html }}
                 <br>{{ with playstyle .play_style $global }}{{ $global.T "They play with %s." . }}{{ end }}
+
+                    <div class="ui five column grid container">
+                        <div class="centered column">
+                            <img class="ui centered small image" src="/static/ranking-icons/SSHD.png">
+                            <br>
+                            <p id="SSHDranks"></p>
+                        </div>
+                        <div class="centered column">
+                            <img class="ui centered small image" src="/static/ranking-icons/SS.png">
+                            <br>
+                            <p id="SSranks"></p>
+                        </div>
+                        <div class="centered column">
+                            <img class="ui centered small image" src="/static/ranking-icons/SHD.png">
+                            <br>
+                            <p id="SHDranks"></p>
+                        </div>
+                        <div class="centered column">
+                            <img class="ui centered small image" src="/static/ranking-icons/S.png">
+                            <br>
+                            <p id="Sranks"></p>
+                        </div>
+                        <div class="centered column">
+                            <img class="ui centered small image" src="/static/ranking-icons/A.png">
+                            <br>
+                            <p id="Aranks"></p>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="column">
                     {{ if and (not .badges) (not .custom_badge) }}
@@ -200,7 +229,8 @@
                             {{ end }}
                             <tr>
                                 <td><b>{{ $global.T "Clan" }}</b></td>
-                                <td class="right aligned"><a href="/c/{{ $user.clan.id }}?mode={{ $k }}">{{ $user.clan.name }}</a></td>
+                                <td class="right aligned"><a
+                                            href="/c/{{ $user.clan.id }}?mode={{ $k }}">{{ $user.clan.name }}</a></td>
                             </tr>
                             <tr>
                                 <td><b>{{ $global.T "PP" }}</b></td>

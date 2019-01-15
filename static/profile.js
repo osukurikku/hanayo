@@ -281,6 +281,14 @@ function loadScoresPage(type, mode) {
       enable = false;
     disableLoadMoreButton(type, mode, enable);
   });
+
+  api("scores/ranksget", { userid: userID, mode: mode}, (res) => {
+      $("#SSHDranks").innerHTML(res.sshd);
+      $("#SSranks").innerHTML(res.ss);
+      $("#SHDranks").innerHTML(res.sh);
+      $("#Sranks").innerHTML(res.s);
+      $("#Aranks").innerHTML(res.a);
+  })
 }
 function downloadStar(id) {
   return "<a href='/web/replays/" + id + "' class='new downloadstar'><i class='star icon'></i>" + T("Download") + "</a>";
