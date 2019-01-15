@@ -29,7 +29,7 @@ $(document).ready(function () {
     });
     initialiseAchievements();
     initialiseFriends();
-    api("scores/ranksget", {userid: userID, mode: mode}, (res) => {
+    api("scores/ranksget", {userid: userID, mode: m}, (res) => {
         $("#SSHDranks").text(res.sshd);
         $("#SSranks").text(res.ss);
         $("#SHDranks").text(res.sh);
