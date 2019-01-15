@@ -26,16 +26,16 @@ $(document).ready(function () {
             initialiseScores(needsLoad, m);
         $(this).addClass("active");
         window.history.replaceState('', document.title, wl.pathname + "?mode=" + m + wl.hash);
+        api("scores/ranksget", {userid: userID, mode: $(this).data("mode")}, (res) => {
+            $("#SSHDranks").text(res.sshd);
+            $("#SSranks").text(res.ss);
+            $("#SHDranks").text(res.sh);
+            $("#Sranks").text(res.s);
+            $("#Aranks").text(res.a);
+        })
     });
     initialiseAchievements();
     initialiseFriends();
-    api("scores/ranksget", {userid: userID, mode: m}, (res) => {
-        $("#SSHDranks").text(res.sshd);
-        $("#SSranks").text(res.ss);
-        $("#SHDranks").text(res.sh);
-        $("#Sranks").text(res.s);
-        $("#Aranks").text(res.a);
-    })
     // load scores page for the current favourite mode
     var i = function () {
         initialiseScores($("#scores-zone>div[data-mode=" + favouriteMode + "]"), favouriteMode)
