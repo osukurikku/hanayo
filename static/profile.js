@@ -283,11 +283,11 @@ function loadScoresPage(type, mode) {
   });
 
   api("scores/ranksget", { userid: userID, mode: mode}, (res) => {
-      $("#SSHDranks").innerHTML(res.sshd);
-      $("#SSranks").innerHTML(res.ss);
-      $("#SHDranks").innerHTML(res.sh);
-      $("#Sranks").innerHTML(res.s);
-      $("#Aranks").innerHTML(res.a);
+      $("#SSHDranks").text(res.sshd);
+      $("#SSranks").text(res.ss);
+      $("#SHDranks").text(res.sh);
+      $("#Sranks").text(res.s);
+      $("#Aranks").text(res.a);
   })
 }
 function downloadStar(id) {

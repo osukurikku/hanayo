@@ -13,8 +13,7 @@
 <div class="ui error centered message">{{ $global.T "User is <b>silenced</b> for %s, expires %s." (.silence_info.reason | htmlescaper) (time .silence_info.end) | html }}</div>
 {{ end }}
 						
-			{{ $cmyui  := has .id 1001 }}
-			{{ $solis  := has .id 1000 }}
+			{{ $cmyui  := has .id 1000 }}
 			{{ $charlotte  := has .id 999 }}
 			
 			{{ $super := has .privileges 7340031 }}
@@ -155,7 +154,8 @@
                 <br>{{ $global.T "They registered %s." (time $user.registered_on) | html }}
                 <br>{{ $global.T "Last seen: %s." (time $user.latest_activity) | html }}
                 <br>{{ with playstyle .play_style $global }}{{ $global.T "They play with %s." . }}{{ end }}
-
+		<br>
+		<h3 class="ui header">Ranks</h3>
                     <div class="ui five column grid container">
                         <div class="centered column">
                             <img class="ui centered small image" src="/static/ranking-icons/SSHD.png">
