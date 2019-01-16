@@ -32,7 +32,7 @@ $(document).ready(function () {
     });
     initialiseAchievements();
     initialiseFriends();
-    var connectTabs = new Tabs();
+    $('.kr-tab').tab()
     // load scores page for the current favourite mode
     var i = function () {
         initialiseScores($("#scores-zone>div[data-mode=" + favouriteMode + "]"), favouriteMode)
@@ -45,35 +45,6 @@ $(document).ready(function () {
             i();
         });
 });
-
-
-function Tabs() {
-    var bindAll = function() {
-        var menuElements = document.querySelectorAll('[data-tab-kr]');
-        for(var i = 0; i < menuElements.length ; i++) {
-            menuElements[i].addEventListener('click', change, false);
-        }
-    }
-
-    var clear = function() {
-        var menuElements = document.querySelectorAll('[data-tab-kr]');
-        for(var i = 0; i < menuElements.length ; i++) {
-            menuElements[i].classList.remove('active');
-            var id = menuElements[i].getAttribute('data-tab-kr');
-            document.getElementById(id).classList.remove('active');
-        }
-    }
-
-    var change = function(e) {
-        clear();
-        e.target.classList.add('active');
-        var id = e.currentTarget.getAttribute('data-tab-kr');
-        document.getElementById(id).classList.add('active');
-    }
-
-    bindAll();
-}
-
 function loadRanksPLZ(userid, mode) {
     api("scores/ranksget", {userid: userid, mode: mode}, (res) => {
         $("#SSHDranks").text(res.sshd);
@@ -249,7 +220,7 @@ function initialiseTopScores(el, mode) {
     el.append($("<div class='ui segments no bottom margin' />").append(
         $("<div class='ui segment' />").append("<h2 class='ui header'>" + T("Top scores") + "</h2>", topscores),
     ));
-    loadTopScoresPage("", mode);
+    loadTopScoresPage("top", mode);
 };
 
 function loadMoreClick() {

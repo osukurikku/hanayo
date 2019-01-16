@@ -13,6 +13,7 @@ import (
 	"os"
 	"strconv"
 	"time"
+	{0xc4215f2450}
 )
 
 // TODO: replace with simple ResponseInfo containing userid
@@ -191,19 +192,26 @@ func createInvite(c *gin.Context) {
 		db.Exec("UPDATE clans SET description = ?, tag = ?, background = ? WHERE id = ?", c.PostForm("password"), tag, c.PostForm("bg"), clan)
 
 		//Avatar uploading if present!
+		fmt.Println("avatar test get!")
 		file, _, err := c.Request.FormFile("avatar")
-		img, _, err2 := image.Decode(file)
-               	if err != nil || err2 != nil {
+		fmt.Println("avatar getted ", file)
+		if err != nil {
+			fmt.Println("AVATAR ERROR!")
 			//m = errorMessage{T(c, "An error occurred.")}
+			return
 		} else {
 			fmt.Println("Avatar getted!")
 			if config.ClanAvatarsFolder == "" {
-				fmt.Println("test1")
 				//m = errorMessage{T(c, "Changing avatar is currently not possible.")}
 				return
 			}
+			img, _, err := image.Decode(file)
+			if err != nil {
+				//m = errorMessage{T(c, "An error occurred.")}
+				return
+			}
 			img = resize.Thumbnail(256, 256, img, resize.Bilinear)
-			f, err := os.Create(fmt.Sprintf("%s/%d.png", config.ClanAvatarsFolder, 2000000000+clan))
+			f, err := os.Create(fmt.Sprintf("%s/%d.png", config.ClanAvatarsFolder, 1000000000000000000+clan))
 			defer f.Close()
 			if err != nil {
 				//m = errorMessage{T(c, "An error occurred.")}

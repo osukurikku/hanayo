@@ -83,9 +83,7 @@
 						{{ with bget "isOnline?id=%.0f" .id }}
                 <div class="subtitle">
                     <i class="{{ if .result }}green{{ else }}grey{{ end }} circle icon"></i>
-                    {{ if .result }}{{ $global.T "Online" }}{{ else }}{{ $global.T "Offline" }}{{ end }} (
-                    <b>{{ with $global.Get "users/subscount?userid=%.0f" $global.Context.User.ID }}{{ if .subscount }}{{ .subscount }}{{ else }}0{{ end }}</b>
-                    subs count)
+                    {{ if .result }}{{ $global.T "Online" }}{{ else }}{{ $global.T "Offline" }}{{ end }} (<b>{{ with $.Get "users/subscount?userid=%d" $.UserID }}{{ .subscount }}{{ end }}</b> subs count)
                 </div>
                 {{ end }}
             </div>
@@ -128,9 +126,9 @@
 </div>
 <div class="ui top center centered attached segment overflow auto">
     <div class="ui breadcrumb">
-        <a href="#scores-zone" class="section">scores</a>
+        <a class="section kr-tab" data-tab="scores-zone">scores</a>
         <div class="divider"> /</div>
-        <a href="#top-scores-zone" class="section">top plays</a>
+        <a class="section kr-tab" data-tab="top-scores-zone">top plays</a>
     </div>
 </div>
     <div class="ui segment">
@@ -295,13 +293,13 @@
 </div>
 </div>
 
-    <div class="ui tab active" id="scores-zone" data-tab-kr="scores-zone">
+    <div class="ui tab active" data-tab="scores-zone">
         {{ range _range 4 }}
             <div data-mode="{{ . }}" {{ if ne . (int $favouritemode) }} hidden{{ end }} data-loaded="0">
             </div>
         {{ end }}
     </div>
-    <div class="ui tab" id="top-scores-zone" data-tab-kr="top-scores-zone">
+    <div class="ui tab" data-tab="top-scores-zone">
         {{ range _range 4 }}
             <div data-mode="{{ . }}" {{ if ne . (int $favouritemode) }} hidden{{ end }} data-loaded="0">
             </div>
