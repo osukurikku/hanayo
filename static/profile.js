@@ -32,9 +32,11 @@ $(document).ready(function () {
     });
     initialiseAchievements();
     initialiseFriends();
+    var connectTabs = new Tabs();
     // load scores page for the current favourite mode
     var i = function () {
         initialiseScores($("#scores-zone>div[data-mode=" + favouriteMode + "]"), favouriteMode)
+        initialiseTopScores($("#top-scores-zone>div[data-mode=" + favouriteMode + "]"), favouriteMode)
     };
     if (i18nLoaded)
         i();
@@ -43,6 +45,34 @@ $(document).ready(function () {
             i();
         });
 });
+
+
+function Tabs() {
+    var bindAll = function() {
+        var menuElements = document.querySelectorAll('[data-tab-kr]');
+        for(var i = 0; i < menuElements.length ; i++) {
+            menuElements[i].addEventListener('click', change, false);
+        }
+    }
+
+    var clear = function() {
+        var menuElements = document.querySelectorAll('[data-tab-kr]');
+        for(var i = 0; i < menuElements.length ; i++) {
+            menuElements[i].classList.remove('active');
+            var id = menuElements[i].getAttribute('data-tab-kr');
+            document.getElementById(id).classList.remove('active');
+        }
+    }
+
+    var change = function(e) {
+        clear();
+        e.target.classList.add('active');
+        var id = e.currentTarget.getAttribute('data-tab-kr');
+        document.getElementById(id).classList.add('active');
+    }
+
+    bindAll();
+}
 
 function loadRanksPLZ(userid, mode) {
     api("scores/ranksget", {userid: userid, mode: mode}, (res) => {
@@ -212,6 +242,16 @@ function initialiseScores(el, mode) {
     loadScoresPage("recent", mode);
 };
 
+function initialiseTopScores(el, mode) {
+    el.attr("data-loaded", "1");
+    var topscores = defaultScoreTable.clone(true).addClass("orange");
+    topscores.attr("data-type", "top-scores");
+    el.append($("<div class='ui segments no bottom margin' />").append(
+        $("<div class='ui segment' />").append("<h2 class='ui header'>" + T("Top scores") + "</h2>", topscores),
+    ));
+    loadTopScoresPage("", mode);
+};
+
 function loadMoreClick() {
     var t = $(this);
     if (t.hasClass("disabled"))
@@ -224,12 +264,53 @@ function loadMoreClick() {
 
 // currentPage for each mode
 var currentPage = {
-    0: {best: 0, recent: 0},
-    1: {best: 0, recent: 0},
-    2: {best: 0, recent: 0},
-    3: {best: 0, recent: 0},
+    0: {best: 0, recent: 0, top: 0},
+    1: {best: 0, recent: 0, top: 0},
+    2: {best: 0, recent: 0, top: 0},
+    3: {best: 0, recent: 0, top: 0},
 };
 var scoreStore = {};
+var topScoreStore = {};
+
+function loadTopScoresPage(type, mode) {
+    var table = $("#top-scores-zone div[data-mode=" + mode + "] table[data-type=" + type + "] tbody");
+    var page = ++currentPage[mode][type];
+    api("users/first_scores", {
+        mode: mode,
+        p: page,
+        l: 20,
+        id: userID,
+    }, function (r) {
+        if (r.scores == null) {
+            disableTopLoadMoreButton(type, mode);
+            return;
+        }
+        r.scores.forEach(function (v, idx) {
+            topScoreStore[v.id] = v;
+            if (v.completed == 0) {
+            } else {
+                var scoreRank = getRank(mode, v.mods, v.accuracy, v.count_300, v.count_100, v.count_50, v.count_miss);
+            }
+            table.append($("<tr class='new score-row' data-scoreid='" + v.id + "' />").append(
+                $(
+                    "<td><img src='/static/ranking-icons/" + scoreRank + ".png' class='score rank' alt='" + scoreRank + "'> " +
+                    escapeHTML(v.beatmap.song_name) + " <b>" + getScoreMods(v.mods) + "</b> <i>(" + v.accuracy.toFixed(2) + "%)</i><br />" +
+                    "<div class='subtitle'><time class='new timeago' datetime='" + v.time + "'>" + v.time + "</time></div></td>"
+                ),
+                $("<td><b>" + ppOrScore(v.pp, v.score) + "</b> " + weightedPP(type, page, idx, v.pp) + (v.completed == 3 ? "<br>" + downloadStar(v.id) : "") + "</td>")
+            ));
+        });
+        $(".new.timeago").timeago().removeClass("new");
+        $(".new.score-row").click(viewScoreInfo).removeClass("new");
+        $(".new.downloadstar").click(function (e) {
+            e.stopPropagation();
+        }).removeClass("new");
+        var enable = true;
+        if (r.scores.length != 20)
+            enable = false;
+        disableTopLoadMoreButton(type, mode, enable);
+    });
+}
 
 function loadScoresPage(type, mode) {
     var table = $("#scores-zone div[data-mode=" + mode + "] table[data-type=" + type + "] tbody");
@@ -317,6 +398,12 @@ function weightedPP(type, page, idx, pp) {
     var perc = Math.pow(0.95, ((page - 1) * 20) + idx);
     var wpp = pp * perc;
     return "<i title='Weighted PP, " + Math.round(perc * 100) + "%'>(" + wpp.toFixed(2) + "pp)</i>";
+}
+
+function disableTopLoadMoreButton(type, mode, enable) {
+    var button = $("#top-scores-zone div[data-mode=" + mode + "] table[data-type=" + type + "] .load-more-button");
+    if (enable) button.removeClass("disabled");
+    else button.addClass("disabled");
 }
 
 function disableLoadMoreButton(type, mode, enable) {
