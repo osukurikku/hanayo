@@ -65,11 +65,11 @@
                 <h1 class="ui header">
                     {{ if $super }}
                     <div class="owner">
-                    <a href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> {{ .username }}
+                        <a href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> {{ .username }}
                     </div>
                     {{else if $dev}}
                     <div class="dev">
-                    <a href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> {{ .username }}
+                        <a href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> {{ .username }}
                     </div>
                     {{ else }}
                     <a href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> {{ .username }}
@@ -83,7 +83,9 @@
 						{{ with bget "isOnline?id=%.0f" .id }}
                 <div class="subtitle">
                     <i class="{{ if .result }}green{{ else }}grey{{ end }} circle icon"></i>
-                    {{ if .result }}{{ $global.T "Online" }}{{ else }}{{ $global.T "Offline" }}{{ end }} ( <b>{{ with $.Get "users/subscount?userid=%d" $.UserID }}{{ .subscount }}{{ end }}</b> subs count)
+                    {{ if .result }}{{ $global.T "Online" }}{{ else }}{{ $global.T "Offline" }}{{ end }} (
+                    <b>{{ with $global.Get "users/subscount?userid=%.0f" $global.Context.User.ID }}{{ if .subscount }}{{ .subscount }}{{ else }}0{{ end }}</b>
+                    subs count)
                 </div>
                 {{ end }}
             </div>
@@ -100,15 +102,15 @@
                     </button>
                     {{ end }}
 							{{ if eq $global.Context.User.ID $global.UserID }}
-                    <a href="/settings" class="ui circular mini teal icon button">
-                        <i class="edit icon"></i>
-                    </a>
+                <a href="/settings" class="ui circular mini teal icon button">
+                    <i class="edit icon"></i>
+                </a>
                     {{ end }}
 							{{ if hasAdmin $global.Context.User.Privileges }}
                     <a href="http://oadmin.katori.fun/index.php?p=103&id={{ $global.UserID }}"
-                       target="_blank" title="Quick edit user" class="ui circular mini red icon button">
-                        <i class="folder open outline icon"></i>
-                    </a>
+                target="_blank" title="Quick edit user" class="ui circular mini red icon button">
+                <i class="folder open outline icon"></i>
+                </a>
                     <a href="http://oadmin.katori.fun/index.php?p=104&id={{ $global.UserID }}"
                        target="_blank" title="Quick edit username" class="ui circular mini red icon button">
                         <i class="address book outline icon"></i>
@@ -119,10 +121,17 @@
         </div>
     </div>
 {{ $user := . }}
-    <div class="ui four item bottom attached menu" id="mode-menu">
-    {{ range $k, $v := modes }}
-    <a class="{{ favMode $favouritemode $k }}item" data-mode="{{ $k }}" href="/u/{{ $user.id }}?mode={{ $k }}">{{ $v }}</a>
+<div class="ui four item bottom attached menu" id="mode-menu">
+{{ range $k, $v := modes }}
+<a class="{{ favMode $favouritemode $k }}item" data-mode="{{ $k }}" href="/u/{{ $user.id }}?mode={{ $k }}">{{ $v }}</a>
 {{ end }}
+</div>
+<div class="ui top center centered attached segment overflow auto">
+    <div class="ui breadcrumb">
+        <a href="#scores-zone" class="section">scores</a>
+        <div class="divider"> /</div>
+        <a href="#top-scores-zone" class="section">top plays</a>
+    </div>
 </div>
     <div class="ui segment">
         <div class="ui three column divided stackable grid">
@@ -151,11 +160,11 @@
 							{{ else }}
 								{{ $global.T "<b>%s</b> is a player from <b>%s</b>." .username (country .country true) | html }}
 							{{ end }}
-                <br>{{ $global.T "They registered %s." (time $user.registered_on) | html }}
-                <br>{{ $global.T "Last seen: %s." (time $user.latest_activity) | html }}
-                <br>{{ with playstyle .play_style $global }}{{ $global.T "They play with %s." . }}{{ end }}
-		<br>
-		<h3 class="ui header">Ranks</h3>
+                    <br>{{ $global.T "They registered %s." (time $user.registered_on) | html }}
+                    <br>{{ $global.T "Last seen: %s." (time $user.latest_activity) | html }}
+                    <br>{{ with playstyle .play_style $global }}{{ $global.T "They play with %s." . }}{{ end }}
+                    <br>
+                    <h3 class="ui header">Ranks</h3>
                     <div class="ui five column grid container">
                         <div class="centered column">
                             <img class="ui centered small image" src="/static/ranking-icons/SSHD.png">
@@ -193,7 +202,7 @@
 
                         {{ range .badges }}
                         <div class="eight wide centered column">
-                            <i class="circular {{ faIcon .icon }} big icon"></i><br>
+                        <i class="circular {{ faIcon .icon }} big icon"></i><br>
                             <b>{{ .name }}</b>
 
 
@@ -277,19 +286,25 @@
 
 <div class="ui segment">
 <h2 class="ui header">{{ $global.T "Achievements" }}</h2>
-    <div id="achievements" class="ui grid">
-    </div>
-    <div class="right aligned">
-    <button class="ui disabled button" id="load-more-achievements">
-    {{ $global.T "Load more" }}
+<div id="achievements" class="ui grid">
+</div>
+<div class="right aligned">
+<button class="ui disabled button" id="load-more-achievements">
+{{ $global.T "Load more" }}
 </button>
 </div>
 </div>
 
-    <div id="scores-zone">
+    <div class="ui tab active" id="scores-zone" data-tab-kr="scores-zone">
         {{ range _range 4 }}
-        <div data-mode="{{ . }}" {{ if ne . (int $favouritemode) }} hidden{{ end }} data-loaded="0">
-        </div>
+            <div data-mode="{{ . }}" {{ if ne . (int $favouritemode) }} hidden{{ end }} data-loaded="0">
+            </div>
+        {{ end }}
+    </div>
+    <div class="ui tab" id="top-scores-zone" data-tab-kr="top-scores-zone">
+        {{ range _range 4 }}
+            <div data-mode="{{ . }}" {{ if ne . (int $favouritemode) }} hidden{{ end }} data-loaded="0">
+            </div>
         {{ end }}
     </div>
 <div class="ui modal">
