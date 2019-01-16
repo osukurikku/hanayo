@@ -216,9 +216,9 @@ function initialiseScores(el, mode) {
 function initialiseTopScores(el, mode) {
     el.attr("data-loaded", "1");
     var topscores = defaultScoreTable.clone(true).addClass("orange");
-    topscores.attr("data-type", "top-scores");
+    topscores.attr("data-type", "top");
     el.append($("<div class='ui segments no bottom margin' />").append(
-        $("<div class='ui segment' />").append("<h2 class='ui header'>" + T("Top scores") + "</h2>", topscores),
+        $("<div class='ui segment' />").append("<h2 class='ui header'>" + T("First places") + "</h2>", topscores),
     ));
     loadTopScoresPage("top", mode);
 };
@@ -230,7 +230,14 @@ function loadMoreClick() {
     t.addClass("disabled");
     var type = t.parents("table[data-type]").data("type");
     var mode = t.parents("div[data-mode]").data("mode");
-    loadScoresPage(type, mode);
+    switch (type) {
+      case "top":
+        loadTopScoresPage(type, mode)
+        break;
+      default:
+        loadScoresPage(type, mode);
+    }
+
 }
 
 // currentPage for each mode
@@ -272,7 +279,7 @@ function loadTopScoresPage(type, mode) {
             ));
         });
         $(".new.timeago").timeago().removeClass("new");
-        $(".new.score-row").click(viewScoreInfo).removeClass("new");
+        $(".new.score-row").click(viewTopScoreInfo).removeClass("new");
         $(".new.downloadstar").click(function (e) {
             e.stopPropagation();
         }).removeClass("new");
@@ -387,6 +394,62 @@ function viewScoreInfo() {
     var scoreid = $(this).data("scoreid");
     if (!scoreid && scoreid !== 0) return;
     var s = scoreStore[scoreid];
+    if (s === undefined) return;
+
+    // data to be displayed in the table.
+    var data = {
+        "Points": addCommas(s.score),
+        "PP": addCommas(s.pp),
+        "Beatmap": "<a href='/b/" + s.beatmap.beatmap_id + "'>" + escapeHTML(s.beatmap.song_name) + "</a>",
+        "Accuracy": s.accuracy + "%",
+        "Max combo": addCommas(s.max_combo) + "/" + addCommas(s.beatmap.max_combo)
+            + (s.full_combo ? " " + T("(full combo)") : ""),
+        "Difficulty": T("{{ stars }} star", {
+            stars: s.beatmap.difficulty2[modesShort[s.play_mode]],
+            count: Math.round(s.beatmap.difficulty2[modesShort[s.play_mode]]),
+        }),
+        "Mods": getScoreMods(s.mods, true),
+    };
+
+    // hits data
+    var hd = {};
+    var trans = modeTranslations[s.play_mode];
+    [
+        s.count_300,
+        s.count_100,
+        s.count_50,
+        s.count_geki,
+        s.count_katu,
+        s.count_miss,
+    ].forEach(function (val, i) {
+        hd[trans[i]] = val;
+    });
+
+    data = $.extend(data, hd, {
+        "Ranked?": T(s.completed == 3 ? "Yes" : "No"),
+        "Achieved": s.time,
+        "Mode": modes[s.play_mode],
+    });
+
+    var els = [];
+    $.each(data, function (key, value) {
+        els.push(
+            $("<tr />").append(
+                $("<td>" + T(key) + "</td>"),
+                $("<td>" + value + "</td>")
+            )
+        );
+    });
+
+    $("#score-data-table tr").remove();
+    $("#score-data-table").append(els);
+    $(".ui.modal").modal("show");
+}
+
+function viewTopScoreInfo() {
+    var scoreid = $(this).data("scoreid");
+    if (!scoreid && scoreid !== 0) return;
+    var s = topScoreStore[scoreid];
     if (s === undefined) return;
 
     // data to be displayed in the table.

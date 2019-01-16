@@ -128,7 +128,7 @@
     <div class="ui breadcrumb">
         <a class="section kr-tab" data-tab="scores-zone">scores</a>
         <div class="divider"> /</div>
-        <a class="section kr-tab" data-tab="top-scores-zone">top plays</a>
+        <a class="section kr-tab" data-tab="top-scores-zone">first places</a>
     </div>
 </div>
     <div class="ui segment">
@@ -293,13 +293,13 @@
 </div>
 </div>
 
-    <div class="ui tab active" data-tab="scores-zone">
+    <div class="ui tab active" id="scores-zone" data-tab="scores-zone">
         {{ range _range 4 }}
             <div data-mode="{{ . }}" {{ if ne . (int $favouritemode) }} hidden{{ end }} data-loaded="0">
             </div>
         {{ end }}
     </div>
-    <div class="ui tab" data-tab="top-scores-zone">
+    <div class="ui tab" id="top-scores-zone" data-tab="top-scores-zone">
         {{ range _range 4 }}
             <div data-mode="{{ . }}" {{ if ne . (int $favouritemode) }} hidden{{ end }} data-loaded="0">
             </div>
