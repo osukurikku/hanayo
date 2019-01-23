@@ -21,6 +21,7 @@
 			{{ $admin  := has .privileges 3047935 }}
 			{{ $chatmod  := has .privileges 786763 }}
 			{{ $bat  := has .privileges 267 }}
+            {{ $user_id := .UserID}}
 			
 			{{ if hasAdmin $global.Context.User.Privileges }}
 				{{ $restr := not (has .privileges 1) }}
@@ -83,7 +84,10 @@
 						{{ with bget "isOnline?id=%.0f" .id }}
                 <div class="subtitle">
                     <i class="{{ if .result }}green{{ else }}grey{{ end }} circle icon"></i>
-                    {{ if .result }}{{ $global.T "Online" }}{{ else }}{{ $global.T "Offline" }}{{ end }} (<b>{{ with $.Get "users/subscount?userid=%d" $.UserID }}{{ .subscount }}{{ end }}</b> subs count)
+                    {{ if .result }}{{ $global.T "Online" }}{{ else }}{{ $global.T "Offline" }}{{ end }} (
+                    <b>{{ with $.Get "users/subscount?userid=%d" $user_id }} {{ .subscount }} {{ end }}</b>
+                    subs count)
+
                 </div>
                 {{ end }}
             </div>
@@ -281,6 +285,13 @@
             </div>
         </div>
     </div> <!-- end grid segment -->
+
+<div id="recent-activity">
+    {{ range _range 4 }}
+        <div data-mode="{{ . }}" {{ if ne . (int $favouritemode) }} hidden{{ end }} data-loaded="0">
+        </div>
+    {{ end }}
+</div>
 
 <div class="ui segment">
 <h2 class="ui header">{{ $global.T "Achievements" }}</h2>

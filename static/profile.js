@@ -25,6 +25,8 @@ $(document).ready(function () {
         $("#mode-menu>.active.item").removeClass("active");
         var needsLoad = $("#scores-zone>[data-mode=" + m + "][data-loaded=0]");
         if (needsLoad.length > 0)
+	        initRecentActivity($("#recent-activity>div[data-mode=" + m + "]"), m)
+            initialiseTopScores($("#top-scores-zone>div[data-mode=" + m + "]"), m)
             initialiseScores(needsLoad, m);
         $(this).addClass("active");
         window.history.replaceState('', document.title, wl.pathname + "?mode=" + m + wl.hash);
@@ -35,6 +37,7 @@ $(document).ready(function () {
     $('.kr-tab').tab()
     // load scores page for the current favourite mode
     var i = function () {
+        initRecentActivity($("#recent-activity>div[data-mode=" + favouriteMode + "]"), favouriteMode)
         initialiseScores($("#scores-zone>div[data-mode=" + favouriteMode + "]"), favouriteMode)
         initialiseTopScores($("#top-scores-zone>div[data-mode=" + favouriteMode + "]"), favouriteMode)
     };
@@ -45,6 +48,7 @@ $(document).ready(function () {
             i();
         });
 });
+
 function loadRanksPLZ(userid, mode) {
     api("scores/ranksget", {userid: userid, mode: mode}, (res) => {
         $("#SSHDranks").text(res.sshd);
@@ -166,6 +170,7 @@ function friendClick() {
 }
 
 var defaultScoreTable;
+var recentActivityTable;
 
 function setDefaultScoreTable() {
     defaultScoreTable = $("<table class='ui table score-table' />")
@@ -192,6 +197,18 @@ function setDefaultScoreTable() {
             )
         )
     ;
+    recentActivityTable = $("<table class='ui table score-table' />")
+        .append(
+            $("<thead />").append(
+                $("<tr />").append(
+                    $("<th>" + T("Message") + "</th>"),
+                    $("<th>" + T("Time") + "</th>")
+                )
+            )
+        )
+        .append(
+            $("<tbody />")
+        );
 }
 
 i18next.on('loaded', function (loaded) {
@@ -215,13 +232,23 @@ function initialiseScores(el, mode) {
 
 function initialiseTopScores(el, mode) {
     el.attr("data-loaded", "1");
-    var topscores = defaultScoreTable.clone(true).addClass("orange");
-    topscores.attr("data-type", "top");
+    var topscores = defaultScoreTable.clone(true).addClass("red");
+    topscores.attr("data-type", "top-scores");
     el.append($("<div class='ui segments no bottom margin' />").append(
         $("<div class='ui segment' />").append("<h2 class='ui header'>" + T("First places") + "</h2>", topscores),
     ));
-    loadTopScoresPage("top", mode);
+    loadTopScoresPage("top-scores", mode);
 };
+
+function initRecentActivity(el, mode) {
+    el.attr("data-loaded", "1");
+    var recentActivity = recentActivityTable.clone(true).addClass("green");
+    recentActivity.attr("data-type", "rac");
+    el.append($("<div class='ui segments no bottom margin' />").append(
+        $("<div class='ui segment' />").append("<h2 class='ui header'>" + T("Recent Activity") + "</h2>", recentActivity),
+    ));
+    loadRecentActivity("rac", mode)    
+}
 
 function loadMoreClick() {
     var t = $(this);
@@ -287,6 +314,26 @@ function loadTopScoresPage(type, mode) {
         if (r.scores.length != 20)
             enable = false;
         disableTopLoadMoreButton(type, mode, enable);
+    });
+}
+
+function loadRecentActivity(type, mode) {
+    var table = $("#recent-activity div[data-mode=" + mode + "] table[data-type=" + type + "] tbody");
+    api("users/get_activity", {
+        mode: mode,
+        userid: userID,
+    }, function (r) {
+        r.logs.forEach(function (v, idx) {
+            table.append($("<tr class='new score-row'/>").append(
+                $(
+                    "<td><img src='/static/ranking-icons/" + v.rank + ".png' class='score rank' alt='" + v.rank + "'> " +
+                    escapeHTML(v.body) + "<a href='https://katori.fun/b/"+v.beatmap_id+"'>"+ escapeHTML(v.song_name) + "</a> <br />"
+                ),
+                $("<td><time class='new timeago' datetime='" + v.time + "'>" + v.time + "</time></td>")
+            ));
+        });
+        $(".new.timeago").timeago().removeClass("new");
+        $(".new.score-row").removeClass("new");
     });
 }
 
