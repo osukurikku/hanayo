@@ -25,6 +25,8 @@ $(document).ready(function () {
         $("#mode-menu>.active.item").removeClass("active");
         var needsLoad = $("#scores-zone>[data-mode=" + m + "][data-loaded=0]");
         if (needsLoad.length > 0)
+	    initRecentActivity($("#recent-activity>div[data-mode=" + m + "]"), m)
+            initialiseScores($("#scores-zone>div[data-mode=" + m + "]"), m)
             initialiseScores(needsLoad, m);
         $(this).addClass("active");
         window.history.replaceState('', document.title, wl.pathname + "?mode=" + m + wl.hash);
