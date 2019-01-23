@@ -21,6 +21,7 @@
 			{{ $admin  := has .privileges 3047935 }}
 			{{ $chatmod  := has .privileges 786763 }}
 			{{ $bat  := has .privileges 267 }}
+            {{ $user_id := .UserID}}
 			
 			{{ if hasAdmin $global.Context.User.Privileges }}
 				{{ $restr := not (has .privileges 1) }}
@@ -84,7 +85,7 @@
                 <div class="subtitle">
                     <i class="{{ if .result }}green{{ else }}grey{{ end }} circle icon"></i>
                     {{ if .result }}{{ $global.T "Online" }}{{ else }}{{ $global.T "Offline" }}{{ end }} (
-                    <b>{{ with $.Get "users/subscount?userid=%.0f" $.UserID }}{{ if .subscount }}{{ .subscount }}{{ else }}0{{ end }}{{ end }}</b>
+                    <b>{{ with $.Get "users/subscount?userid=%d" $user_id }} {{ .subscount }} {{ end }}</b>
                     subs count)
                 </div>
                 {{ end }}
@@ -128,9 +129,9 @@
 </div>
 <div class="ui top center centered attached segment overflow auto">
     <div class="ui breadcrumb">
-        <a href="#scores-zone" class="section">scores</a>
+        <a class="section kr-tab" data-tab="scores-zone">scores</a>
         <div class="divider"> /</div>
-        <a href="#top-scores-zone" class="section">top plays</a>
+        <a class="section kr-tab" data-tab="top-scores-zone">first places</a>
     </div>
 </div>
     <div class="ui segment">
@@ -302,13 +303,13 @@
 </div>
 </div>
 
-    <div class="ui tab active" id="scores-zone" data-tab-kr="scores-zone">
+    <div class="ui tab active" id="scores-zone" data-tab="scores-zone">
         {{ range _range 4 }}
             <div data-mode="{{ . }}" {{ if ne . (int $favouritemode) }} hidden{{ end }} data-loaded="0">
             </div>
         {{ end }}
     </div>
-    <div class="ui tab" id="top-scores-zone" data-tab-kr="top-scores-zone">
+    <div class="ui tab" id="top-scores-zone" data-tab="top-scores-zone">
         {{ range _range 4 }}
             <div data-mode="{{ . }}" {{ if ne . (int $favouritemode) }} hidden{{ end }} data-loaded="0">
             </div>

@@ -32,7 +32,7 @@ $(document).ready(function () {
     });
     initialiseAchievements();
     initialiseFriends();
-    var connectTabs = new Tabs();
+    $('.kr-tab').tab()
     // load scores page for the current favourite mode
     var i = function () {
         initRecentActivity($("#recent-activity>div[data-mode=" + favouriteMode + "]"), favouriteMode)
