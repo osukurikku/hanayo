@@ -25,8 +25,8 @@ $(document).ready(function () {
         $("#mode-menu>.active.item").removeClass("active");
         var needsLoad = $("#scores-zone>[data-mode=" + m + "][data-loaded=0]");
         if (needsLoad.length > 0)
-	    initRecentActivity($("#recent-activity>div[data-mode=" + m + "]"), m)
-            initialiseScores($("#scores-zone>div[data-mode=" + m + "]"), m)
+	        initRecentActivity($("#recent-activity>div[data-mode=" + m + "]"), m)
+            initialiseTopScores($("#top-scores-zone>div[data-mode=" + m + "]"), m)
             initialiseScores(needsLoad, m);
         $(this).addClass("active");
         window.history.replaceState('', document.title, wl.pathname + "?mode=" + m + wl.hash);
@@ -48,34 +48,6 @@ $(document).ready(function () {
             i();
         });
 });
-
-
-function Tabs() {
-    var bindAll = function() {
-        var menuElements = document.querySelectorAll('[data-tab-kr]');
-        for(var i = 0; i < menuElements.length ; i++) {
-            menuElements[i].addEventListener('click', change, false);
-        }
-    }
-
-    var clear = function() {
-        var menuElements = document.querySelectorAll('[data-tab-kr]');
-        for(var i = 0; i < menuElements.length ; i++) {
-            menuElements[i].classList.remove('active');
-            var id = menuElements[i].getAttribute('data-tab-kr');
-            document.getElementById(id).classList.remove('active');
-        }
-    }
-
-    var change = function(e) {
-        clear();
-        e.target.classList.add('active');
-        var id = e.currentTarget.getAttribute('data-tab-kr');
-        document.getElementById(id).classList.add('active');
-    }
-
-    bindAll();
-}
 
 function loadRanksPLZ(userid, mode) {
     api("scores/ranksget", {userid: userid, mode: mode}, (res) => {
