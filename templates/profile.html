@@ -87,6 +87,7 @@
                     {{ if .result }}{{ $global.T "Online" }}{{ else }}{{ $global.T "Offline" }}{{ end }} (
                     <b>{{ with $.Get "users/subscount?userid=%d" $user_id }} {{ .subscount }} {{ end }}</b>
                     subs count)
+
                 </div>
                 {{ end }}
             </div>
