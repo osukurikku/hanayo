@@ -642,5 +642,5 @@ img.locked-achievement {
 }
 
 .kr-or:before {
-	line-height: 23px;
+	line-height: 23px!important;
 }
