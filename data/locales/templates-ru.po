@@ -81,6 +81,44 @@ msgstr "зарегестрированные пользователи"
 msgid "Submitted Scores"
 msgstr "Засабмпиченно скоров"
 
+msgid "subs count"
+msgstr "количество подписчиков"
+
+msgid "Beatmaps Searching"
+msgstr "Поиск карт"
+
+msgid "Rank Request"
+msgstr "Запрос карт на ранк"
+
+msgid "Signature Generator"
+msgstr "Генератор карточек"
+
+msgid "Unlimited Name Changes"
+msgstr "Безлимитная смена ника"
+
+msgid "Unlimited Flag Changes"
+msgstr "Безлимитная смена флага"
+
+msgid "Unlimited Stats Resets"
+msgstr "Безлимитный ресет стат"
+
+msgid "<b>Tired of your current identity?</b> Now you can have as many as you want! Just ask an administrator to change your name, as many times as you'd like."
+msgstr "<b>Устали от своего никнейма?</b> Теперь вы можете менять его сколько хотите! Просто попросите администратора поменять ваш ник, такое количество раз сколько вам угодно."
+
+msgid "<b>Want to appear as if you're from another country?</b> You also get as many of these as you'd like. Just enter in chat !flag <flag iso code>"
+msgstr "<b>Хотите быть шпионом из другой страны?</b> Теперь вы можете быть откуда угодно. Просто введите в чат !flag <iso code> "
+
+msgid "Now you can also <b>start fresh</b> with unlimited stats resets! Ask an administrator and they shall perform the deed."
+msgstr "Вы хотите освежиться? Обнулить статистику? Просто попроси админов ^_v"
+
+msgid "You may donate through <b>PayPal</b> (or credit/debit card linked to PayPal). Use the slider below to choose the amount of months you'd like to have the donor benefits, and the cost will be instantly calculated. The more months you purchase, the bigger the discount will be."
+msgstr "Вы можете задонатить через <b>Paypal(в рублях)/Яндекс.Деньгами</b>. Воспользуйтесь этим чудесным слайдером и выберите на какую сумму вы захотите донатить)"
+
+msgid "If you donate via AnyPay, just wait 2-3 minute and donate like magic on you account. If you had trouble just ask KotRik in Discord!<br/>Please contact KotRik directly, preferrably via discord/ingame, or if needed, via email: support@katori.fun"
+msgstr "<temporary not>"
+
+msgid "Disclaimer: Donations are NON-REFUNDABLE, and do not give you special privileges other than what is listed above. You will still be treated the same as all other users."
+msgstr "Дисклеймер: Донаты не ВОЗВРАЩАЕМЫ и не дают вам каких-то особенных прав в отношении правил. Вы равны со всеми пользователями!"
 
 msgid "Wow, now you can create clan for you and your friends. <b>Pew-pew</b> with other clans."
 msgstr "Вау, теперь вы можете создать клан для себя и своих друзей. <b>Pew-pew</b> с остальными кланами."

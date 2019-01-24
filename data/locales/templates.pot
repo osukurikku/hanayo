@@ -144,6 +144,45 @@ msgstr ""
 msgid "Request a beatmap"
 msgstr ""
 
+msgid "subs count"
+msgstr ""
+
+msgid "Beatmaps Searching"
+msgstr ""
+
+msgid "Rank Request"
+msgstr ""
+
+msgid "Signature Generator"
+msgstr ""
+
+msgid "Unlimited Name Changes"
+msgstr ""
+
+msgid "Unlimited Flag Changes"
+msgstr ""
+
+msgid "Unlimited Stats Resets"
+msgstr ""
+
+msgid "<b>Tired of your current identity?</b> Now you can have as many as you want! Just ask an administrator to change your name, as many times as you'd like."
+msgstr ""
+
+msgid "<b>Want to appear as if you're from another country?</b> You also get as many of these as you'd like. Again, just ask an administrator."
+msgstr ""
+
+msgid "Now you can also <b>start fresh</b> with unlimited stats resets! Ask an administrator and they shall perform the deed."
+msgstr ""
+
+msgid "You may donate through <b>PayPal</b> (or credit/debit card linked to PayPal). Use the slider below to choose the amount of months you'd like to have the donor benefits, and the cost will be instantly calculated. The more months you purchase, the bigger the discount will be."
+msgstr ""
+
+msgid "If you donate via AnyPay, just wait 2-3 minute and donate like magic on you account. If you had trouble just ask KotRik in Discord!<br/>Please contact KotRik directly, preferrably via discord/ingame, or if needed, via email: support@katori.fun"
+msgstr "<temporary not>"
+
+msgid "Disclaimer: Donations are NON-REFUNDABLE, and do not give you special privileges other than what is listed above. You will still be treated the same as all other users."
+msgstr ""
+
 msgid "You cannot currently request beatmaps!"
 msgstr ""
 
