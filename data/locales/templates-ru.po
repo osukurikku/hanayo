@@ -1884,11 +1884,6 @@ msgstr ""
 msgid "They told me these are very cool people."
 msgstr ""
 
-msgid ""
-"Looking for how you should contact our team? Check out <a href='/help'>this "
-"page</a>."
-msgstr ""
-
 msgid "And more..."
 msgstr ""
 
