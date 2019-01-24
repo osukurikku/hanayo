@@ -14,20 +14,23 @@ KyutGrill=friends.jpg
         {{ $ := . }}
         {{ $page := or (atoint (.Gin.Query "p")) 1 }}
         {{ $friends := .Get "krapi/friends_sub?p=%d&l=40&sort=username,asc" $page }}
-        {{ with $friends }}
-            <div class="ui four column stackable grid">
-            {{ range .subs }}
-                <div class="ui column">
-                    <h4 class="ui image header">
-                        <img src="{{ config "AvatarURL" }}/{{ .id }}" class="ui mini rounded image"{{ if not (has .privileges 1) }} style="opacity: 0.5"{{ end }}>
-                        <div class="content">
-                            <a href="/u/{{ .id }}"{{ if not (has .privileges 1) }} style="opacity: 0.5"{{ end }}>{{ .username }}</a>
-                        </div>
-                    </h4>
+        {{ if lt (len ($friends.friends)) 1 }}
+            {{ with $friends }}
+                <div class="ui four column stackable grid">
+                {{ range .subs }}
+                    <div class="ui column">
+                        <h4 class="ui image header">
+                            <img src="{{ config "AvatarURL" }}/{{ .id }}" class="ui mini rounded image"{{ if not (has .privileges 1) }} style="opacity: 0.5"{{ end }}>
+                            <div class="content">
+                                <a href="/u/{{ .id }}"{{ if not (has .privileges 1) }} style="opacity: 0.5"{{ end }}>{{ .username }}</a>
+                            </div>
+                        </h4>
+                    </div>
+                {{ end }}
                 </div>
             {{ end }}
-            </div>
-        {{ end }}
+        {{ else }}
+            {{ $.T "Your subs list is empty"}}
         </div>
     {{ $left := gt $page 1 }}
     {{ $right := eq (len (rsin $friends.subs)) 40 }}

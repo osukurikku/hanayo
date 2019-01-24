@@ -81,19 +81,5 @@ KyutGrill=team2.jpg
 	</div>
 	{{ $ := . }}
 	{{ .T "Looking for how you should contact our team? Check out <a href='/help'>this page</a>." | html }}
-	<div class="ui modal">
-		<div class="header"><h2 class="ui header">{{ .T "They told me these are very cool people." }}</h2></div>
-			<div class="content">
-				{{ template "userGroup" (.Get "badges/members?id=%d" 36) }}
-				<!-- Probably most shit coded part of Hanayo -->
-				<br>
-				<div class="centered">
-					<br><br>
-					<b>{{ $.T "Do you want to be in this list?" }}</b><br>
-					<a href="/donate"><b>{{ $.T "Support us with a donation!" }}</b></a><br>
-					<i>{{ $.T "(You get other cool perks too)" }}</i>
-				</div>
-			</div>
-	</div>
 </div>
 {{ end }}

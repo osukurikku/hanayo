@@ -26,13 +26,13 @@ Include=menu.html
                         <form id="register-form" class="ui form" method="post" enctype="multipart/form-data" action="/settings/clansettings">
                             <div class="field">
                                 <label class="left aligned">{{ "Clantag (2 to 6 characters)" }}</label>
-                                <input tabindex="1" type="text" name="tag" placeholder="{{ "Clantag" }}" value="{{ $tag }}" pattern="{2,6}$">
+                                <input tabindex="1" type="text" name="tag" placeholder="{{ $.T "Clantag" }}" value="{{ $tag }}" pattern="{2,6}$">
                             </div>
                             <br/>
                             <textarea tabindex="1" class="monospace" name="password">{{ $desc }}</textarea>
 
                             <div class="field">
-                                <label class="left aligned">{{ "Icon (optional)" }}</label>
+                                <label class="left aligned">{{ $.T "Icon (optional)" }}</label>
                              </div>
 
                             <div class="ui buttons">
@@ -44,8 +44,8 @@ Include=menu.html
                             <input type="file" id="file" style="display:none" accept="image/*" name="avatar">
                             {{ if has .Context.User.Privileges 4 }}
                                 <div class="field">
-                                    <label class="left aligned">{{ "Background [URL] (optional)" }}</label>
-                                    <input tabindex="4" type="url" name="bg" placeholder="{{ "Background URL" }}" value="{{ $bg }}">
+                                    <label class="left aligned">{{ $.T "Background [URL] (optional)" }}</label>
+                                    <input tabindex="4" type="url" name="bg" placeholder="{{ $.T "Background URL" }}" value="{{ $bg }}">
                                 </div>
 
                             {{ end }}
@@ -68,7 +68,7 @@ Include=menu.html
                         <br><form action="/settings/clansettings" method="POST">
                             {{ ieForm .Gin }}
                             <button type="submit" class="ui right green button">
-                                {{ .T "Generate a new invite!" }}
+                                {{ $.T "Generate a new invite!" }}
                             </button>
                         </form>
                         <br>
@@ -86,7 +86,7 @@ Include=menu.html
                             </form>
                         {{ end }}
                         {{ else }}
-                            <font size="3">You haven't joined a clan yet, or you aren't the owner of your current one.</font>
+                            <font size="3">{{ $.T "You haven't joined a clan yet, or you aren't the owner of your current one." }}</font>
                         {{ end }}
                 </div>
             </div>

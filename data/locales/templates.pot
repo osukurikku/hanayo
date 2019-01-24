@@ -186,6 +186,27 @@ msgstr ""
 msgid "You cannot currently request beatmaps!"
 msgstr ""
 
+msgid "Your friend list is empty"
+msgstr ""
+
+msgid "Your subs list is empty"
+msgstr ""
+
+msgid "Clantag (2 to 6 characters)"
+msgstr ""
+
+msgid "Icon (optional)"
+msgstr ""
+
+msgid "Background [URL] (optional)"
+msgstr ""
+
+msgid "Background URL"
+msgstr ""
+
+msgid "You haven't joined a clan yet, or you aren't the owner of your current one."
+msgstr ""
+
 # After this text there is a date. The date is localised separately.
 msgid "Please try again "
 msgstr ""
@@ -1052,6 +1073,42 @@ msgid "Open File"
 msgstr ""
 
 msgid "Save"
+msgstr ""
+
+msgid "No image selected"
+msgstr ""
+
+msgid "This is a list of the wonderful people who keep Katori up and running and deal with its community."
+msgstr ""
+
+msgid "The backbones of the server. The owners function as both the main community managers, as well as primary Developers. They work on everything from managing the team to making this page look nicer."
+msgstr ""
+
+msgid "Community Managers deal with bans, silences, name changes and pretty much everything that has to do with the community."
+msgstr ""
+
+msgid "They take care of our Discord server and reply to emails sent to <a href='mailto:support@katori.fun'>support@katori.fun</a>. Community Managers have a red name in the in-game chat."
+msgstr ""
+
+msgid "Developers add new features to the server, squash bugs, keep the server up and running and take care of its maintenance."
+msgstr ""
+
+msgid "Chat moderators manage the chat to make sure The Law&trade; (the rules) is respected."
+msgstr ""
+
+msgid "BATs play beatmaps in the ranking queue and decide whether they are good enough to be ranked or not."
+msgstr ""
+
+msgid "Here's a list of people who helped with Katori"
+msgstr ""
+
+msgid "<b><a href='http://ripple.moe/'>Ripple</a></b>, for the software to host Katori"
+msgstr ""
+
+msgid "<b><a id='everyone' class='clickable'>Everyone</a></b> who has supported Katori by donating."
+msgstr ""
+
+msgid "Looking for how you should contact our team? Check out <a href='/help'>this page</a>."
 msgstr ""
 
 msgid "Your discord account has been linked to this Katori account. <b>Welcome to the donors club and thank you for supporting us!</b> You have now access to the #donators text and voice channels on our official Discord server! You can also set a custom role name and username colour and change your nickname on Discord. If you want to change your nickname, you can use the <code>/nick</code> command. To set or edit your <b>custom role</b> name and colour, use the command <code>!role HEX_COLOUR ROLE_NAME</code>. You can pick your HEX colour <a href=\"http://www.colorpicker.com/\" target=\"_blank\">here</a>, it's the one that starts with '#'. You can change your role name and colour <b>whenever you want!</b>"
