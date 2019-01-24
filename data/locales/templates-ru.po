@@ -106,7 +106,7 @@ msgid "You haven't joined a clan yet, or you aren't the owner of your current on
 msgstr "Вы не вошли в клан, и вы не являетесь владельцем одного из них."
 
 msgid "This is a list of the wonderful people who keep Katori up and running and deal with its community."
-msgstr "Это список замечательных языков кто поддерживает Katori и занимается его комьюнити"
+msgstr "Это список замечательных людей кто поддерживает Katori и занимается его комьюнити"
 
 msgid "The backbones of the server. The owners function as both the main community managers, as well as primary Developers. They work on everything from managing the team to making this page look nicer."
 msgstr "Закулисье. Владельцы имеют разные функции с комьюнити менеджером, также как и с разработчиками. Они везде начиная от новых функций, заканчивая чтобы эта страница выглядела лучше!"
