@@ -1853,59 +1853,6 @@ msgstr ""
 msgid "Deny"
 msgstr ""
 
-# Team page
-msgid ""
-"This is a list of the wonderful people who keep Katori up and running and "
-"deal with its community."
-msgstr ""
-
-msgid "Community Managers"
-msgstr ""
-
-msgid ""
-"Community Managers deal with bans, silences, name changes and pretty much "
-"everything that has to do with the community."
-msgstr ""
-
-msgid ""
-"They take care of our Discord server and reply to emails sent to <a "
-"href='mailto:support@katori.fun'>support@katori.fun</a>. Community Managers "
-"have a red name in the in-game chat."
-msgstr ""
-
-msgid "Developers"
-msgstr ""
-
-msgid ""
-"Developers add new features to the server, squash bugs, keep the server up "
-"and running and take care of its maintenance."
-msgstr ""
-
-# Said light blue (голубое) because it is light blue. If you don't want it to be this way, replace "голубое" with "синее"
-msgid ""
-"They don't do anything related to the community. Developers have a blue name "
-"in the in-game chat."
-msgstr ""
-
-msgid "Chat Moderators"
-msgstr ""
-
-msgid ""
-"Chat moderators manage the chat to make sure The Law&trade; (the rules) is "
-"respected."
-msgstr ""
-
-msgid ""
-"BATs play beatmaps in the ranking queue and decide whether they are good "
-"enough to be ranked or not."
-msgstr ""
-
-msgid "Special thanks"
-msgstr ""
-
-msgid "Here's a list of people who helped with Katori."
-msgstr ""
-
 msgid ""
 "<b>Franc[e]sco/lolisamurai</b>, for <a "
 "href='https://github.com/Francesco149/oppai'>oppai</a>, used as standard pp "
@@ -1928,12 +1875,6 @@ msgstr ""
 "<b>jrosdahl</b>, for <a "
 "href='https://github.com/jrosdahl/miniircd'>miniircd</a> был использован как "
 "основа для нашего IRC сервера."
-
-msgid "<b>Avail</b>, for having hosted Katori on his server."
-msgstr ""
-
-msgid "<b>Angela Guerra</b>, for designing the Katori logo."
-msgstr ""
 
 msgid ""
 "<b><a id='everyone' class='clickable'>Everyone</a></b> who has supported the "

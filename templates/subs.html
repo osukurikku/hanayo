@@ -31,6 +31,7 @@ KyutGrill=friends.jpg
             {{ end }}
         {{ else }}
             {{ $.T "Your subs list is empty"}}
+        {{ end }}
         </div>
     {{ $left := gt $page 1 }}
     {{ $right := eq (len (rsin $friends.subs)) 40 }}
