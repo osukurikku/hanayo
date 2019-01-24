@@ -180,7 +180,7 @@ msgstr ""
 msgid "If you donate via AnyPay, just wait 2-3 minute and donate like magic on you account. If you had trouble just ask KotRik in Discord!<br/>Please contact KotRik directly, preferrably via discord/ingame, or if needed, via email: support@katori.fun"
 msgstr "<temporary not>"
 
-msgid "Disclaimer: Donations are NON-REFUNDABLE, and do not give you special privileges other than what is listed above. You will still be treated the same as all other users."
+msgid "To get donate join discord and DM KotRik!<br/>Disclaimer: Donations are NON-REFUNDABLE, and do not give you special privileges other than what is listed above. You will still be treated the same as all other users."
 msgstr ""
 
 msgid "You cannot currently request beatmaps!"

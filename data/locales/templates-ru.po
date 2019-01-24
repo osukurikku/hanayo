@@ -117,8 +117,8 @@ msgstr "Вы можете задонатить через <b>Paypal(в рубл�
 msgid "If you donate via AnyPay, just wait 2-3 minute and donate like magic on you account. If you had trouble just ask KotRik in Discord!<br/>Please contact KotRik directly, preferrably via discord/ingame, or if needed, via email: support@katori.fun"
 msgstr "<temporary not>"
 
-msgid "Disclaimer: Donations are NON-REFUNDABLE, and do not give you special privileges other than what is listed above. You will still be treated the same as all other users."
-msgstr "Дисклеймер: Донаты не ВОЗВРАЩАЕМЫ и не дают вам каких-то особенных прав в отношении правил. Вы равны со всеми пользователями!"
+msgid "To get donate join discord and DM KotRik!<br/>Disclaimer: Donations are NON-REFUNDABLE, and do not give you special privileges other than what is listed above. You will still be treated the same as all other users."
+msgstr "Для получения доната, напишите в личку KotRik<br/>Дисклеймер: Донаты не ВОЗВРАЩАЕМЫ и не дают вам каких-то особенных прав в отношении правил. Вы равны со всеми пользователями!"
 
 msgid "Wow, now you can create clan for you and your friends. <b>Pew-pew</b> with other clans."
 msgstr "Вау, теперь вы можете создать клан для себя и своих друзей. <b>Pew-pew</b> с остальными кланами."
