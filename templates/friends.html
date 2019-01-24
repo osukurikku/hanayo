@@ -14,7 +14,6 @@ KyutGrill=friends.jpg
 			{{ $ := . }}
 			{{ $page := or (atoint (.Gin.Query "p")) 1 }}
 			{{ $friends := .Get "friends?p=%d&l=40&sort=username,asc" $page }}
-			{{ if lt (len ($friends.friends)) 1 }}
 				{{ with $friends }}
 					<div class="ui four column stackable grid">
 						{{ range .friends }}
@@ -36,9 +35,6 @@ KyutGrill=friends.jpg
 						{{ end }}
 					</div>
 				{{ end }}
-			{{ else }}
-				{{ $.T "Your friend list is empty"}}
-			{{ end }}
 		</div>
 		{{ $left := gt $page 1 }}
 		{{ $right := eq (len (rsin $friends.friends)) 40 }}
