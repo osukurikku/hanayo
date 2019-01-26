@@ -323,6 +323,9 @@ function loadRecentActivity(type, mode) {
         mode: mode,
         userid: userID,
     }, function (r) {
+        if(!r.logs) {
+        	return;
+	}
         r.logs.forEach(function (v, idx) {
             table.append($("<tr class='new score-row'/>").append(
                 $(
