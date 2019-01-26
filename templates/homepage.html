@@ -11,7 +11,7 @@ KyutGrill=darkhome.jpg
         <div class="ui stackable two grid">
             <div class="nine wide column">
                 <div style="height: 100% !important;" class="ui center aligned segment">
-                    <img src="https://katori.fun/static/logos/logo1.png" style="width: 100%;">
+                    <img src="https://katori.fun/static/logos/logo1.png" alt="logo" style="width: 100%;">
                 </div>
             </div>
 
@@ -28,7 +28,7 @@ KyutGrill=darkhome.jpg
                             {{ range .beatmaps }}
                                 <tr>
                                     <td style="display: flex; align-items: center;">
-                                        <img style="height: 50px; width: auto;" src="https://assets.ppy.sh/beatmaps/{{ .beatmapset_id }}/covers/list@2x.jpg"
+                                        <img style="height: 50px; width: auto;" logo="preview-{{ .beatmapset_id }}" src="https://assets.ppy.sh/beatmaps/{{ .beatmapset_id }}/covers/list@2x.jpg"
                                              class="ui mini rounded image">
                                         <div style="margin-left: 5px; width: 100%;" class="content">
                                             <div style="font-size: 13px">{{ .song_name }}</div>
@@ -81,7 +81,7 @@ KyutGrill=darkhome.jpg
                             {{ range .users }}
                                 <div class="ui column">
                                     <h4 class="ui image header">
-                                        <img src="{{ config "AvatarURL" }}/{{ .id }}" class="ui small rounded image">
+                                        <img src="{{ config "AvatarURL" }}/{{ .id }}" alt="Avatar of donater {{ .id }}" class="ui small rounded image">
                                         <div class="content">
                                             <a href="/u/{{ .id }}">{{ .username }}</a>
                                             <div class="sub header">
