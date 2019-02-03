@@ -560,7 +560,7 @@ msgstr "Buenas, %s!"
 
 msgid ""
 "Welcome back to Katori. We currently have <b>%s online users and %s total "
-"registed users.</b> Nice day to farm a few maps, isn't it?"
+"registered users.</b> Nice day to farm a few maps, isn't it?"
 msgstr ""
 "Bienvenido de vuelta a Katori, Actualmente poseemos <b>%s usuarios online y %"
 "s usuarios registrados en total.</b> Es un buen día para farmear un par de "

@@ -56,21 +56,24 @@ KyutGrill=darkhome.jpg
             <div class="ui segment">
                 <h1 class="ui header">{{ .T "Welcome to Katori." }}</h1>
                 <p>
-                    {{ .T "You look new here. Allow us to introduce you to what Katori is." }}
+                    {{ .T "You look new here. Allow us to introduce you to what Katori is. Katori is a custom server for the game osu!. We have free osu!Direct, beatmap listing and searching, clans and more! Have fun on Katori!" }}
                 </p>
-                <p>
-                    {{ .T "Katori is a private osu! server, with features such as PP for all 4 gamemodes (including DT mania pp!), fully-functioning multiplayer, spectator, and many others. <b>we currently have %s users online and %s registered users!</b>" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
-                </p>
-                <h3 class="ui header center aligned">{{ .T "What are you waiting for? Join Katori; It's risk-free: (you won't get banned on the official server if you play on Katori).<br>You can also switch anytime between the official osu! server and Katori" | html }}</h3>
+                <h3 class="ui header center aligned">{{ .T "What are you waiting for? Join Katori! It's risk-free: you won't get your account banned on the official server if you play on Katori.<br>You can also switch anytime between the official osu! server and Katori!" | html }}</h3>
             </div>
         {{ else }}
             <div class="ui segment">
                 <h1 class="ui header">{{ .T "Hi, %s!" .Context.User.Username }}</h1>
                 <p>
-                    {{ .T "Welcome back to Katori. We currently have <b>%s online users and %s total registed users.</b> Hope you're having a wonderful day!" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
+                    {{ .T "Welcome back to Katori. We currently have <b>%s online users and %s total registered users.</b> Hope you're having a wonderful day!" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
                 </p>
             </div>
         {{ end }}
+
+        <div class="ui raised segment">
+		    <h1 class="ui center aligned header">
+			    {{ .T "Need support or want to talk to other players? Join our <a href=\"%s\">Discord</a>!" (config "DiscordServer") | html }}
+		    </h1>
+	    </div>
 
         <div class="ui stackable grid">
             <div class="wide column">
