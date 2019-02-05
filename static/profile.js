@@ -258,7 +258,7 @@ function loadMoreClick() {
     var type = t.parents("table[data-type]").data("type");
     var mode = t.parents("div[data-mode]").data("mode");
     switch (type) {
-      case "top":
+      case "top-scores":
         loadTopScoresPage(type, mode)
         break;
       default:
