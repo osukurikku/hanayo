@@ -20,6 +20,7 @@
 			{{ $dev  := has .privileges 3129343 }}
 			{{ $admin  := has .privileges 3047935 }}
 			{{ $chatmod  := has .privileges 786763 }}
+            {{ $rmod  := has .privileges 255 }}
 			{{ $bat  := has .privileges 267 }}
             {{ $user_id := .UserID}}
 			
@@ -158,6 +159,10 @@
 								{{else if $bat}}
 								{{ $global.T "<b>%s</b> " .username | html }}
                     is a <i class="orange music small icon"></i><b>BAT</b>
+                    {{ $global.T " from  <b>%s</b>." (country .country true) | html }}
+                            {{else if $rmod}}
+                    {{ $global.T "<b>%s</b> " .username | html }}
+                    is a <i class="green star small icon"></i><b>Replay Moderator</b>
                     {{ $global.T " from  <b>%s</b>." (country .country true) | html }}
 							{{ else }}
 								{{ $global.T "<b>%s</b> is a player from  <b>%s</b>." .username (country .country true) | html }}
