@@ -1,91 +1,43 @@
-/*
- * This file contains Ripple's CSS, that little that is needed for ripple's custom elements.
- */
 .ripple.logo {
 	padding-top: 4px;
 }
 
-body {
-	width: 100vw;
-	height: 100vh;
-	background: url('prism.png');
-}
-
 .huge.heading {
+	background-color: #2e2e2e;
 	width: 100%;
 	margin-bottom: 20px;
-	position: relative;
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-size: cover;
-	padding-top: 15%;
+	display: flex;
+	align-items: flex-end;
+}
+.huge.heading.right .ui.container {
+	text-align: right;
 }
 @media (max-width: 700px) {
-	body {
-		background: url("/static/images/page-light.png");
-		-webkit-animation:  8s ease infinite;
-		-moz-animation:  8s ease infinite;
-		animation:  8s ease infinite;
+	.huge.heading {
+		height: 100px;
 	}
 	.huge.heading h1 {
 		font-size: 24pt;
-		bottom: 10px;
-		left: 20px;
-	}
-	.huge.heading.right h1 {
-		left: auto;
-		right: 40px;
-	}
-	div#navbar {
-		display: flex;
-		justify-content: center !important;
-		width: 100%;
-		background: rgba(0, 0, 0, 1);
-		margin: auto 0;
-		z-index: 999;
+		padding-bottom: 10px;
 	}
 }
 @media (min-width: 700px) {
+	.huge.heading {
+		height: 175px;
+	}
 	.huge.heading h1 {
 		font-size: 40pt;
-		bottom: 15px;
-		left: 40px;
+		padding-bottom: 15px;
 	}
-	.huge.heading.right h1 {
-		right: 40px;
-		left: auto;
-	}
-	div#navbar {
-		width: 100%;
-		border-radius: 30px;
-		background: rgba(0, 0, 0, 0.5);
-		margin: auto 0;
-		position: fixed;
-		height: 30px;
-		border-top-left-radius: 0;
-		border-top-right-radius: 0;
-		z-index: 999;
-	}
-}
-
-.huge.heading {
-	height: 100px;
-	border-bottom-left-radius: 30px;
-	border-bottom-right-radius: 30px;
-	display: flex;
-	justify-content: center;
 }
 
 .huge.heading h1 {
-	position: absolute;
-	width: 95%;
-        text-align: center;
 	color: #f9f9f9;
 	text-shadow: 0 2px 10px #000;
-	margin-bottom: 0px;
-	z-index: 997; /* getting bigger every year */
 }
-
 
 .main.wrapper {
 	padding-bottom: 30px;
@@ -126,9 +78,6 @@ a.inherit:hover {
 .footer {
 	border-top: 1px solid #bbb;
 	padding: 10px 20px;
-	color: white;
-	background-image: linear-gradient(180deg,rgba(0,0,0,.6) 0,transparent 4px);
-	background-color: rgba(0,0,0,.6);
 }
 
 .top.right.icon {
@@ -141,35 +90,6 @@ a.inherit:hover {
 	-webkit-transition: opacity .1s ease;
 	transition: opacity .1s ease;
 }
-
-.ui.segment.chibi-card {
-	width: 100%;
-	height: auto;
-	background: url("/static/chibi/bg.png") center center / cover no-repeat;
-	transition: .3s;
-}
-
-.ui.segment.chibi-card:hover {
-	box-shadow: 0 0 2px 0 yellow;
-}
-
-.chibi {
-	width: 70%;
-}
-
-.ui.stackable.two.grid.chibi-grid {
-	padding-left: 25px;
-	padding-right: 25px;
-}
-
-p.chibi-text {
-	font-size: 15px;
-}
-
-.chibi-1 {
-
-}
-
 .no.top.margin {
 	margin-top: 0;
 }
@@ -204,45 +124,11 @@ p.chibi-text {
 	margin: 0 .2em !important;
 }
 
-.status-head {
-  padding:0;
-  margin: 0;
-  text-align: right; 
-  font-size: 35px;
-}
-.status-footer {
-  font-size: 20px;
-  text-align: right;
-}
-.status-icon {
-  font-size: 4em!important;
-  padding-top: 30px;
-}
-
 .white.background {
 	background-color: #FFF !important;
 }
 body.ds .white.background {
 	background-color: #454545 !important;
-}
-body {
-}
-.triangles-1 {
-}
-
-input#user-search-input {
-	background: transparent;
-	width: 150px !important;
-	font-size: 12px;
-	color: white;
-}
-
-.container-pd {
-	padding-top: -19px;
-	margin-top: -15px;
-}
-div#messages-container {
-	padding-top: 5px;
 }
 
 .user.avatar {
@@ -286,18 +172,18 @@ div#messages-container {
 }
 
 .subtitle, .about.title {
-	color: white;
+	color: rgba(0,0,0,.6);
 }
 .subtitle b {
-	color: white;
+	color: rgba(0,0,0,.87);
 }
 
 /* ds = Dark Site */
 body.ds .subtitle, body.ds .about.title {
-	color: white;
+	color: rgba(255,255,255,.8);
 }
 body.ds .subtitle b {
-	color: white;
+	color: rgba(255,255,255,.94);
 }
 
 .little.margin.top {
@@ -485,101 +371,29 @@ a.camouflaged:hover {
 	margin: 0 auto;
 }
 
-
-
-.owner
-{
-    color: SpringGreen;
-    text-shadow:
-    -1px -1px 0 #006400,
-    1px -1px 0 #006400,
-    -1px 1px 0 #006400,
-    1px 1px 0 #006400;
-    
+/* column in a grid which is both vertically and horizontally centered */
+.ui.grid > .row > .full-centered.column {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.dev
-{
-    color: DodgerBlue;
-    text-shadow:
-    -1px -1px 0 #104e8b,
-    1px -1px 0 #104e8b,
-    -1px 1px 0 #104e8b,
-    1px 1px 0 #104e8b;
-    
-}
-
+/* SO, of course: https://stackoverflow.com/a/8612047/5328069 */
 img.achievement {
- -webkit-filter:drop-shadow(0 5px 5px #777);
- filter:drop-shadow(0 5px 5px #777)
+	-webkit-filter: drop-shadow(0 5px 5px #777);
+	filter: drop-shadow(0 5px 5px #777);
 }
 img.locked-achievement {
- -webkit-filter:brightness(0) drop-shadow(0 5px 5px #777);
- filter:brightness(0) drop-shadow(0 5px 5px #777);
- -webkit-transition:all 500ms;
- -moz-transition:all 500ms;
- -ms-transition:all 500ms;
- -o-transition:all 500ms;
- transition:all 500ms
+	-webkit-filter: brightness(0) drop-shadow(0 5px 5px #777);
+	filter: brightness(0) drop-shadow(0 5px 5px #777);
+	-webkit-transition: all 500ms ;
+    -moz-transition: all 500ms ;
+    -ms-transition: all 500ms ;
+    -o-transition: all 500ms ;
+    transition: all 500ms ;
 }
-
-
-#snow-container {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-}
-
-
-#snow-container>div:first-child, .snow {
-	z-index: 100;
-	pointer-events: none;
-}
-
-#snow-container>div:first-child {
-	overflow: hidden;
-	position: absolute;
-	top: 0;
-	height: 100%;
-	width: 100%;
-	max-width: 100%;
-}
-
-@-webkit-keyframes falling {
-	0% {
-		-webkit-transform: translate3D(-7.5%, -100%, 0);
-		transform: translate3D(-7.5%, -100%, 0);
-		opacity: 0;
-	}
-	10% {
-		-webkit-transform: translate3D(-7.5%, -100%, 0);
-		transform: translate3D(-7.5%, -100%, 0);
-		opacity: 1;
-	}
-	100% {
-		-webkit-transform: translate3D(7.5%, 100%, 0);
-		transform: translate3D(7.5%, 100%, 0);
-	}
-}
-
-@keyframes falling {
-	0% {
-		-webkit-transform: translate3D(-7.5%, -100%, 0);
-		transform: translate3D(-7.5%, -100%, 0);
-		opacity: 0;
-	}
-	10% {
-		-webkit-transform: translate3D(-7.5%, -100%, 0);
-		transform: translate3D(-7.5%, -100%, 0);
-		opacity: 1;
-	}
-	100% {
-		-webkit-transform: translate3D(7.5%, 100%, 0);
-		transform: translate3D(7.5%, 100%, 0);
-	}
-}
-
-.kr-or:before {
-	line-height: 23px!important;
+img.locked-achievement:hover {
+	filter: gray; /* IE6-9 */
+	-webkit-filter: brightness(0.5) drop-shadow(0 5px 5px #777);
+	filter: brightness(0.5) drop-shadow(0 5px 5px #777);
 }
