@@ -6,7 +6,7 @@
 {{ $isClan := qb "SELECT user, clan FROM user_clans WHERE user = ?" .Context.User.ID }}
 
 <div class="triangles-1">
-    <div class="ui secondary inverted fixed-height stackable black background main menu no margin bottom{{ if .DisableHH }} dropped{{ end }}"
+    <div class="ui secondary fixed-height stackable black background main menu no margin bottom{{ if .DisableHH }} dropped{{ end }} kotrik-bar"
          id="navbar">
         <div class="ui container">
             <div class="item">
@@ -57,7 +57,7 @@
                 <div class="item">
                     <div class="ui search" id="user-search">
                         <div class="ui icon input">
-                            <input class="prompt" type="text" placeholder="{{ .T "Looking for someone?" }}"
+                            <input class="prompt kr" type="text" placeholder="{{ .T "Looking for someone?" }}"
                                    id="user-search-input">
                             <i class="search link icon"></i>
                         </div>
