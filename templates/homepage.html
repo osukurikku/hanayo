@@ -143,6 +143,24 @@ KyutGrill=darkhome.jpg
                                 </div>
                             </div>
                         </div>
+                        <div class="sixteen wide column">
+                            <div class="ui yellow segment">
+                                <div class="ui grid">
+                                    <div class="four wide column">
+                                        <i class="angle right icon status-icon"></i>
+                                    </div>
+                                    <div class="twelve wide column">
+                                    {{ with .Get "krapi/top_plays?mode=0&l=1" }}
+                                        {{ range .scores }}
+                                            <p class="status-head">{{ .pp }}pp</p>
+                                            <p class="status-head" style="font-size: 10px!important;">Done by <a href="/u/{{ .user.id }}">{{ .user.username }}</a></p>
+                                            <p class="status-footer">{{ $.T "Top Score" }}</p>
+                                        {{ end }}
+                                    {{ end }}  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

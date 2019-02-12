@@ -56,18 +56,20 @@
                         </a>
                         {{ end }}
                     </div>
-                    <div>
+                    <div class="center aligned sixteen wide column"> 
                         <h1 class="ui header">
                             {{ if $super }}
-                            <div class="owner">
+                            <div class="owner bgf">
                                 <a href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> {{ .username }}
                             </div>
                             {{else if $dev}}
-                            <div class="dev">
+                            <div class="dev bgf">
                                 <a href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> {{ .username }}
                             </div>
                             {{ else }}
-                            <a href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> {{ .username }}
+                            <div class="bgf">
+                                <a href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> {{ .username }}
+                            </div>
                             {{ end }}
                         </h1>
                         {{ if .username_aka }}

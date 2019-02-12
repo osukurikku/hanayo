@@ -9,6 +9,10 @@ body {
 	transition: .3s;
 }
 
+.bgf {
+	font-size: 40px;
+}
+
 .ui.segment.chibi-card:hover {
 	box-shadow: 0 0 2px 0 yellow;
 }
