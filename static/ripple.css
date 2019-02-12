@@ -1,3 +1,7 @@
+body {
+	background-image: url("/static/images/bgpattern.png");
+}
+
 .ui.segment.chibi-card {
 	width: 100%;
 	height: auto;

@@ -4171,7 +4171,7 @@
  i.flag:not(.icon):before {
      display: inline-block;
      content: '';
-     background: url(themes/default/assets/images/flas.png) -108px -1976px no-repeat;
+     background: url(themes/default/assets/images/flags.png) -108px -1976px no-repeat;
      width: 16px;
      height: 11px
  }
