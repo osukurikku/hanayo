@@ -79,8 +79,12 @@ p.chibi-text {
 /*
  * This file contains Ripple's CSS, that little that is needed for ripple's custom elements.
  */
- .ripple.logo {
-	padding-top: 4px;
+.kurikku-head {
+	padding: 0!important;
+}
+
+.kurikku-logo {
+	width: 50px!important;
 }
 
 .huge.heading {
@@ -172,8 +176,16 @@ a.inherit:hover {
 }
 
 .footer {
-	border-top: 1px solid #bbb;
-	padding: 10px 20px;
+	text-shadow: 0 1px 3px rgba(0,0,0,.75);
+	background-color: rgba(0,0,0,.6);
+	background-image: linear-gradient(180deg,rgba(0,0,0,.6) 0,transparent 4px);
+	color: #ccc;
+	font-size: 12px;
+	font-weight: 600;
+	display: flex;
+	flex-direction: column;
+	flex: none;
+	padding: 12px;
 }
 
 .top.right.icon {

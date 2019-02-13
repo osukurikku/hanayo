@@ -9,9 +9,10 @@
     <div class="ui secondary fixed-height stackable black background main menu no margin bottom{{ if .DisableHH }} dropped{{ end }} kotrik-bar"
          id="navbar">
         <div class="ui container">
-            <a class="item kurikku-head" href="/" title="{{ .T "Home page" }}">
-		<img class="kurikku-logo" src="/static/logos/text-white-snow.png" alt="Kurikku">
-	    </a>
+            <div class="item">
+                <b><a href="/" title="{{ .T "Home page" }}"><img class="ripple logo" src="/static/logos/text-white-snow.png"
+                                                                 alt="Kurikku"></a></b>
+            </div>
         {{ if $isRAP }}
 			{{/*
 			Note:
