@@ -15,17 +15,17 @@ KyutGrill=darkhome.jpg
                     {{/* Not logged in block */}}
                     {{ if not .Context.User.ID }}
                         <div class="ui container">
-                            <h2 class="ui header">{{ .T "Welcome to Katori." }}</h1>
+                            <h2 class="ui header">{{ .T "Welcome to Kurikku." }}</h1>
                             <p>
-                                {{ .T "You look new here. Allow us to introduce you to what Katori is. Katori is a custom server for the game osu!. We have free osu!Direct, beatmap listing and searching, clans and more! Have fun on Katori!" }}
+                                {{ .T "You look new here. Allow us to introduce you to what Kurikku is. Kurikku is a custom server for the game osu!. We have free osu!Direct, beatmap listing and searching, clans and more! Have fun on Kurikku!" }}
                             </p>
-                            <h4 class="ui header center aligned">{{ .T "What are you waiting for? Join Katori! It's risk-free: you won't get your account banned on the official server if you play on Katori.<br>You can also switch anytime between the official osu! server and Katori!" | html }}</h3>
+                            <h4 class="ui header center aligned">{{ .T "What are you waiting for? Join Kurikku! It's risk-free: you won't get your account banned on the official server if you play on Kurikku.<br>You can also switch anytime between the official osu! server and Kurikku!" | html }}</h3>
                         </div>
                     {{ else }}
                         <div class="ui container">
                             <h2 class="ui header">{{ .T "Hi, %s!" .Context.User.Username }}</h1>
                             <p>
-                                {{ .T "Welcome back to Katori. We currently have <b>%s online users and %s total registered users.</b> Hope you're having a wonderful day!" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
+                                {{ .T "Welcome back to Kurikku. We currently have <b>%s online users and %s total registered users.</b> Hope you're having a wonderful day!" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
                             </p>
                         </div>
                     {{ end }}      
@@ -38,7 +38,7 @@ KyutGrill=darkhome.jpg
                         {{ range .response.items }}
                             <div class="ui segment">
                                 <h1 class="ui header no top margin">
-                                    <a href="https://vk.com/osukatori?w=wall-175152353_{{ .id }}"
+                                    <a href="https://vk.com/osukurikku?w=wall-175152353_{{ .id }}"
                                     class="inherit">{{ $.GetFirstLine .text | html }}</a>
                                 </h1>
                                 <p>
@@ -67,7 +67,7 @@ KyutGrill=darkhome.jpg
                                 {{ .T "Need support or want to talk to other players? Join our <a href=\"%s\">Discord</a>!" (config "DiscordServer") | html }}
                             </h3>
 
-                            <img src="https://katori.fun/static/logos/logo1.png" class="ui centered image" alt="logo" style="width: 80%;">
+                            <img src="https://kurikku.pw/static/logos/logo1.png" class="ui centered image" alt="logo" style="width: 80%;">
                         </div>
                     </div>
 

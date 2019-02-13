@@ -11,7 +11,7 @@
         <div class="ui container">
             <div class="item">
                 <b><a href="/" title="{{ .T "Home page" }}"><img class="ripple logo" src="/static/logos/text-white-snow.png"
-                                                                 alt="Katori"></a></b>
+                                                                 alt="Kurikku"></a></b>
             </div>
         {{ if $isRAP }}
 			{{/*
@@ -26,7 +26,7 @@
                 <span>{{ .T "Information" }}</span>
                 <div class="inverted menu">
                 {{ navbarItem .Path (.T "Tournament live") "/tournament/live" }}
-                {{ navbarItem .Path (.T "Signature Generator") "https://sig.katori.fun/" }}
+                {{ navbarItem .Path (.T "Signature Generator") "https://sig.kurikku.pw/" }}
                 {{ navbarItem .Path (.T "Discord") "https://discord.gg/5uA3c76" }}
                 {{ navbarItem .Path (.T "Contact support") "/help" }}
                 {{ navbarItem .Path (.T "Documentation") "/doc" }}
@@ -51,7 +51,7 @@
 
         {{ navbarItem .Path (.T "Donate" | printf "<i class=\"red heart icon\"></i>%s") "/donate" }}
         {{ navbarItem .Path (.T "Switcher" | printf "<i class=\"blue download disk icon\"></i>%s") "/switcher" }}
-        {{ if $isAdmin }}{{ navbarItem .Path (.T "Admin Panel" | printf "<b>%s</b>") "http://oadmin.katori.fun/index.php?p=100" }}{{ end }}
+        {{ if $isAdmin }}{{ navbarItem .Path (.T "Admin Panel" | printf "<b>%s</b>") "http://oadmin.kurikku.pw/index.php?p=100" }}{{ end }}
         {{ end }}
             <div class="firetrucking-right-menu">
                 <div class="item">

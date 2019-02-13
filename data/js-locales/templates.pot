@@ -1,10 +1,10 @@
 # JavaScript
-msgid "An error occurred while contacting the Katori API. Please report this to a Katori developer."
+msgid "An error occurred while contacting the Kurikku API. Please report this to a Kurikku developer."
 msgstr ""
 
 # This is a quote of UNDERTALE if you didn't know.
 # It is shown regarding the level of an user, but it is shortened to "Lv.".
-# Of course, this means Level on Katori, but in UNDERTALE, it actually means LOVE.
+# Of course, this means Level on Kurikku, but in UNDERTALE, it actually means LOVE.
 # I'm not gonna spoil you why it's called LOVE.
 # It's hard to keep this cultural reference, so you can also just write the
 # translation for "Level" in this.
