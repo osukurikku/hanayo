@@ -74,6 +74,10 @@ p.chibi-text {
 	padding-top: 58px;
 }
 
+.kr-prompt {
+	color: gray!important;
+}
+
 
 
 /*
@@ -335,7 +339,7 @@ body.ds .subtitle b {
 }
 
 #profile-actions {
-	text-align: right;
+	text-align: center;
 	padding-top: 2px;
 }
 #profile-actions button, .smalltext.button {

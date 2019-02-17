@@ -76,7 +76,7 @@ msgid "Online Users"
 msgstr "Онлайн пользователи"
 
 msgid "Registered Users"
-msgstr "зарегестрированные пользователи"
+msgstr "зарегистрированых пользователей"
 
 msgid "Submitted Scores"
 msgstr "Засабмиченно скоров"

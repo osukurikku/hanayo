@@ -87,7 +87,7 @@
                         </div>
                         {{ end }}
                     </div>
-                    <div>
+                    <div class="center aligned sixteen wide column">
                         {{ range $k, $v := (slice .std .taiko .ctb .mania) }}
                         <h1 data-mode="{{ $k }}" {{ if ne $k (int $favouritemode) }} hidden{{ end }}>{{ with and $v $v.global_leaderboard_rank }}#{{ . }}{{ else }}{{ $global.T "Unknown" }}{{ end }}</h1>
                         {{ end }}
