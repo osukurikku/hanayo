@@ -8,155 +8,188 @@ KyutGrill=darkhome.jpg
     {{ $ds := band $cf 1 }}
     {{ $   := . }}
     <div class="ui container">
-        <div class="ui stackable two grid">
-            <div class="nine wide column">
-                <div style="height: 100% !important;" class="ui center aligned segment">
-                    <img src="https://katori.fun/static/logos/logo1.png" alt="logo" style="width: 100%;">
-                </div>
-            </div>
-
-            <div id="topplayed" class="seven wide column">
-                <div class="ui center aligned segment" style="height: 100%;">
-                    <table class="ui very basic collapsing celled table" style="width: 100%; height: auto;">
-                        <thead>
-                        <tr>
-                            <th style="color: white;" align="center">{{ .T "Most played beatmaps" }}</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {{ with .Get "krapi/top_beatmaps" }}
-                            {{ range .beatmaps }}
-                                <tr>
-                                    <td style="display: flex; align-items: center;">
-                                        <img style="height: 50px; width: auto;" logo="preview-{{ .beatmapset_id }}" src="https://assets.ppy.sh/beatmaps/{{ .beatmapset_id }}/covers/list@2x.jpg"
-                                             class="ui mini rounded image">
-                                        <div style="margin-left: 5px; width: 100%;" class="content">
-                                            <div style="font-size: 13px">{{ .song_name }}</div>
-                                            <div class="sub header kri">{{ .difficulty2.std }} AR: {{ .ar }} OD: {{ .od }} BPM: {{ .bpm }} Played: {{ .playcount }}
-                                        </div>
-                                        </h4>
-                                    </td>
-                                </tr>
-                            {{ end }}
-                        {{ end }}
-                        </tbody>
-                    </table>
-
-                </div>
-            </div>
-        </div>
-        {{ $set := systemSettings "website_home_alert" }}
-        {{ with $set.website_home_alert.String }}
-            <div class="ui warning message">
-                {{ . | html }}
-            </div>
-        {{ end }}
-        {{/* Not logged in block */}}
-        {{ if not .Context.User.ID }}
-            <div class="ui segment">
-                <h1 class="ui header">{{ .T "Welcome to Katori." }}</h1>
-                <p>
-                    {{ .T "You look new here. Allow us to introduce you to what Katori is. Katori is a custom server for the game osu!. We have free osu!Direct, beatmap listing and searching, clans and more! Have fun on Katori!" }}
-                </p>
-                <h3 class="ui header center aligned">{{ .T "What are you waiting for? Join Katori! It's risk-free: you won't get your account banned on the official server if you play on Katori.<br>You can also switch anytime between the official osu! server and Katori!" | html }}</h3>
-            </div>
-        {{ else }}
-            <div class="ui segment">
-                <h1 class="ui header">{{ .T "Hi, %s!" .Context.User.Username }}</h1>
-                <p>
-                    {{ .T "Welcome back to Katori. We currently have <b>%s online users and %s total registered users.</b> Hope you're having a wonderful day!" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
-                </p>
-            </div>
-        {{ end }}
-
         <div class="ui raised segment">
-		    <h1 class="ui center aligned header">
-			    {{ .T "Need support or want to talk to other players? Join our <a href=\"%s\">Discord</a>!" (config "DiscordServer") | html }}
-		    </h1>
-	    </div>
+            <div class="ui stackable column divided grid"> 
+                <div class="eleven wide column"> 
+                    {{/* First container (left part on site) */}}
+                    {{/* Not logged in block */}}
+                    {{ if not .Context.User.ID }}
+                        <div class="ui container">
+                            <h2 class="ui header">{{ .T "Welcome to Kurikku." }}</h1>
+                            <p>
+                                {{ .T "You look new here. Allow us to introduce you to what Kurikku is. Kurikku is a custom server for the game osu!. We have free osu!Direct, beatmap listing and searching, clans and more! Have fun on Kurikku!" }}
+                            </p>
+                            <h4 class="ui header center aligned">{{ .T "What are you waiting for? Join Kurikku! It's risk-free: you won't get your account banned on the official server if you play on Kurikku.<br>You can also switch anytime between the official osu! server and Kurikku!" | html }}</h3>
+                        </div>
+                    {{ else }}
+                        <div class="ui container">
+                            <h2 class="ui header">{{ .T "Hi, %s!" .Context.User.Username }}</h1>
+                            <p>
+                                {{ .T "Welcome back to Kurikku. We currently have <b>%s online users and %s total registered users.</b> Hope you're having a wonderful day!" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
+                            </p>
+                        </div>
+                    {{ end }}      
 
-        <div class="ui stackable grid">
-            <div class="wide column">
-                <div class="ui pink segment">
-                    <h3 class="ui header">{{ .T "Top donators" }}</h3>
-                    {{ with .Get "krapi/topdonors" }}
-                        <div class="ui four column stackable grid">
-                            {{ range .users }}
-                                <div class="ui column">
-                                    <h4 class="ui image header">
-                                        <img src="{{ config "AvatarURL" }}/{{ .id }}" alt="Avatar of donater {{ .id }}" class="ui small rounded image">
-                                        <div class="content">
-                                            <a href="/u/{{ .id }}">{{ .username }}</a>
-                                            <div class="sub header">
-                                                {{ $.T "Expires in <b>%s</b>" (time .expiration) | html }}
-                                            </div>
-                                        </div>
-                                    </h4>
+                    <hr class="ui inverted divider"/>
+
+                    <h2>{{ .T "Server news" }} </h2>
+                    {{ $vktoken := config "VkTehToken" }}
+                    {{ with .BaseGet "https://api.vk.com/method/wall.get?owner_id=-175152353&count=10&filter=owner&v=5.80&access_token=%s" $vktoken }}
+                        {{ range .response.items }}
+                            <div class="ui segment">
+                                <h1 class="ui header no top margin">
+                                    <a href="https://vk.com/osukurikku?w=wall-175152353_{{ .id }}"
+                                    class="inherit">{{ $.GetFirstLine .text | html }}</a>
+                                </h1>
+                                <p>
+                                    {{ $.SubStringKR .text 256 | html }}...
+                                </p>
+                            </div>
+                        {{ end }}
+                    {{ end }}
+
+
+                </div>
+
+                <div class="five wide column"> 
+                    {{/* Second container (right part on site) */}}
+
+                    <div class="ui container">
+                        {{ $set := systemSettings "website_home_alert" }}
+                        {{ with $set.website_home_alert.String }}
+                            <div class="ui warning message">
+                                {{ . | html }}
+                            </div>
+                        {{ end }}
+
+                        <div class="ui raised clearing segment">
+                            <h3 class="ui center aligned header">
+                                {{ .T "Need support or want to talk to other players? Join our <a href=\"%s\">Discord</a>!" (config "DiscordServer") | html }}
+                            </h3>
+
+                            <img src="/static/logos/logo1.png" class="ui centered image" alt="logo" style="width: 80%;">
+                        </div>
+                    </div>
+
+                    <hr class="ui inverted divider"/>
+
+                    <div id="topplayed" class="ui container">
+                        <div class="ui center aligned segment" style="height: 100%;">
+                            <table class="ui very basic collapsing celled table" style="width: 100%; height: auto;">
+                                <thead>
+                                <tr>
+                                    <th style="color: white;" align="center">{{ .T "Most played beatmaps (last day)" }}</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {{ with .Get "krapi/top_beatmaps" }}
+                                    {{ range .beatmaps }}
+                                        <tr>
+                                            <td style="display: flex; align-items: center;">
+                                                <img style="height: 50px; width: auto;" logo="preview-{{ .beatmapset_id }}" src="https://assets.ppy.sh/beatmaps/{{ .beatmapset_id }}/covers/list@2x.jpg"
+                                                    class="ui mini rounded image"/>
+                                                <div style="margin-left: 5px; width: 100%;" class="content">
+                                                    <div style="font-size: 13px">{{ .song_name }}</div>
+                                                    <div class="sub header kri">{{ .difficulty2.std }} AR: {{ .ar }} OD: {{ .od }} BPM: {{ .bpm }} Played: {{ .playcount }}</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    {{ end }}
+                                {{ end }}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <hr class="ui inverted divider"/>
+
+                    <div class="ui stackable grid">
+                        <div class="sixteen wide column">
+                            <div class="ui red segment">
+                                <div class="ui grid">
+                                    <div class="four wide column">
+                                        <i class="user plus icon status-icon"></i>
+                                    </div>
+                                    <div class="twelve wide column">
+                                        <p class="status-head">{{ .T "%s" (rediget "ripple:online_users") | html }}</p>
+                                        <p class="status-footer">{{ .T "Online Users" }}</p>
+                                    </div>
                                 </div>
-                            {{ end }}
+                            </div>
                         </div>
-                    {{end}}
-                </div>
-            </div>
-        </div>
+                        <div class="sixteen wide column">
+                            <div class="ui blue segment">
+                                <div class="ui grid">
+                                    <div class="four wide column">
+                                        <i class="user icon status-icon"></i>
+                                    </div>
+                                    <div class="twelve wide column">
+                                        <p class="status-head">{{ .T "%s" (rediget "ripple:registered_users") | html }}</p>
+                                        <p class="status-footer">{{ .T "Registered Users" }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sixteen wide column">
+                            <div class="ui green segment">
+                                <div class="ui grid">
+                                    <div class="four wide column">
+                                        <i class="angle right icon status-icon"></i>
+                                    </div>
+                                    <div class="twelve wide column">
+                                        <p class="status-head">{{ .T "%s" (rediget "ripple:submitted_scores") | html }}</p>
+                                        <p class="status-footer">{{ .T "Submitted Scores" }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sixteen wide column">
+                            <div class="ui yellow segment">
+                                <div class="ui grid">
+                                    <div class="four wide column">
+                                        <i class="angle right icon status-icon"></i>
+                                    </div>
+                                    <div class="twelve wide column">
+                                    {{ with .Get "krapi/top_plays?mode=0&l=1" }}
+                                        {{ range .scores }}
+                                            <p class="status-head">{{ .pp }}pp</p>
+                                            <p class="status-head" style="font-size: 10px!important;">Done by <a href="/u/{{ .user.id }}">{{ .user.username }}</a></p>
+                                            <p class="status-footer">{{ $.T "Top Score" }}</p>
+                                        {{ end }}
+                                    {{ end }}  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="ui stackable three grid">
-            <div class="five wide column">
-                <div class="ui red segment">
-                    <div class="ui grid">
-                        <div class="four wide column">
-                            <i class="user plus icon status-icon"></i>
-                        </div>
-                        <div class="twelve wide column">
-                            <p class="status-head">{{ .T "%s" (rediget "ripple:online_users") | html }}</p>
-                            <p class="status-footer">{{ .T "Online Users" }}</p>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <div class="five wide column">
-                <div class="ui blue segment">
-                    <div class="ui grid">
-                        <div class="four wide column">
-                            <i class="user icon status-icon"></i>
-                        </div>
-                        <div class="twelve wide column">
-                            <p class="status-head">{{ .T "%s" (rediget "ripple:registered_users") | html }}</p>
-                            <p class="status-footer">{{ .T "Registered Users" }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="six wide column">
-                <div class="ui green segment">
-                    <div class="ui grid">
-                        <div class="four wide column">
-                            <i class="angle right icon status-icon"></i>
-                        </div>
-                        <div class="twelve wide column">
-                            <p class="status-head">{{ .T "%s" (rediget "ripple:submitted_scores") | html }}</p>
-                            <p class="status-footer">{{ .T "Submitted Scores" }}</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="ui segments">
-            {{ $vktoken := config "VkTehToken" }}
-            {{ with .BaseGet "https://api.vk.com/api.php?oauth=1&method=wall.get&owner_id=-175152353&count=10&filter=owner&v=5.80&access_token=%s" $vktoken }}
-                {{ range .response.items }}
-                    <div class="ui segment">
-                        <h1 class="ui header no top margin">
-                            <a href="https://vk.com/osukatori?w=wall-175152353_{{ .id }}"
-                               class="inherit">{{ $.GetFirstLine .text| html }}</a>
-                        </h1>
-                        <p>
-                            {{ $.SubStringKR .text 256 | html }}...
-                        </p>
+            <div class="ui stackable grid">
+                <div class="wide column">
+                    <div class="ui pink segment">
+                        <h3 class="ui header">{{ .T "Top donators" }}</h3>
+                        {{ with .Get "krapi/topdonors" }}
+                            <div class="ui stackable column grid">
+                                {{ range .users }}
+                                    <div class="five wide column">
+                                        <h4 class="ui image header">
+                                            <img src="{{ config "AvatarURL" }}/{{ .id }}" alt="Avatar of donater {{ .id }}" class="ui rounded image">
+                                            <div class="content">
+                                                <a href="/u/{{ .id }}">{{ .username }}</a>
+                                                <div class="sub header">
+                                                    {{ $.T "Expires in <b>%s</b>" (time .expiration) | html }}
+                                                </div>
+                                            </div>
+                                        </h4>
+                                    </div>
+                                {{ end }}
+                            </div>
+                        {{end}}
                     </div>
-                {{ end }}
-            {{ end }}
+                </div>
+            </div>
         </div>
     </div>
     </div>

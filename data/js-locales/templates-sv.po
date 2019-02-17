@@ -16,11 +16,11 @@ msgstr ""
 
 # JavaScript
 msgid ""
-"An error occurred while contacting the Katori API. Please report this to a "
-"Katori developer."
+"An error occurred while contacting the Kurikku API. Please report this to a "
+"Kurikku developer."
 msgstr ""
-"Ett fel uppstod när du kontaktade Katori API. Var vänlig rapportera detta "
-"till en Katori-uvecklare."
+"Ett fel uppstod när du kontaktade Kurikku API. Var vänlig rapportera detta "
+"till en Kurikku-uvecklare."
 
 msgid "Why, LOVE, of course!"
 msgstr "Varför, ÄLSKAR, förstås!"

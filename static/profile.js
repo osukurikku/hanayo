@@ -84,7 +84,7 @@ function initialiseAchievements() {
                     shown++;
                     $ach.append(
                         $("<div class='ui two wide column'>").append(
-                            $("<img src='https://s.katori.fun/achievements/" + ach.icon + ".png' alt='" + ach.name +
+                            $("<img src='https://s.kurikku.pw/achievements/" + ach.icon + ".png' alt='" + ach.name +
                                 "' class='" +
                                 (!ach.achieved ? "locked-achievement" : "achievement") +
                                 "'>").popup({
@@ -330,7 +330,7 @@ function loadRecentActivity(type, mode) {
             table.append($("<tr class='new score-row'/>").append(
                 $(
                     "<td><img src='/static/ranking-icons/" + v.rank + ".png' class='score rank' alt='" + v.rank + "'> " +
-                    escapeHTML(v.body) + "<a href='https://katori.fun/b/"+v.beatmap_id+"'>"+ escapeHTML(v.song_name) + "</a> <br />"
+                    escapeHTML(v.body) + "<a href='https://kurikku.pw/b/"+v.beatmap_id+"'>"+ escapeHTML(v.song_name) + "</a> <br />"
                 ),
                 $("<td><time class='new timeago' datetime='" + v.time + "'>" + v.time + "</time></td>")
             ));

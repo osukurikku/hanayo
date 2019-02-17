@@ -1,15 +1,90 @@
+body {
+	background-image: url("/static/images/bgpattern.png");
+}
+
+.ui.segment.chibi-card {
+	width: 100%;
+	height: auto;
+	background: url("/static/chibi/bg.png") center center / cover no-repeat;
+	transition: .3s;
+}
+
+.bgf {
+	font-size: 40px;
+}
+
+.ui.segment.chibi-card:hover {
+	box-shadow: 0 0 2px 0 yellow;
+}
+
+.chibi {
+	width: 70%;
+}
+
+.ui.stackable.two.grid.chibi-grid {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+p.chibi-text {
+	font-size: 15px;
+}
+
+.kr-primary {
+	padding-top: 58px;
+}
+
+.full-height {
+	height: 100%!important;
+}
+
+#user-search-input {
+	background: #fff;
+}
+
+.chibi-1 {
+
+}
+
+.kr-or:before {
+	line-height: 23px!important;
+}
+
+.status-head {
+  padding:0;
+  margin: 0;
+  text-align: right; 
+  font-size: 35px;
+}
+.status-footer {
+  font-size: 20px;
+  text-align: right;
+}
+.status-icon {
+  font-size: 4em!important;
+  padding-top: 30px;
+}
+
+#navbar {
+	background: linear-gradient(to right, #aa1a4d 0%,#c32c74 100%);
+	box-shadow: -1px 2px 2px 1px rgba(0, 0, 0, 0.11);
+}
+
+.addition {
+	padding-top: 58px;
+}
+
+
+
 /*
  * This file contains Ripple's CSS, that little that is needed for ripple's custom elements.
  */
-.ripple.logo {
-	padding-top: 4px;
+.kurikku-head {
+	padding: 0!important;
 }
 
-body {
-	width: 100vw;
-	height: 100vh;
-	color: #fff;
-	background: url('prism.png');
+.kurikku-logo {
+	width: 50px!important;
 }
 
 .huge.heading {
@@ -19,14 +94,10 @@ body {
 	background-repeat: no-repeat;
 	background-position: center bottom;
 	background-size: cover;
-	padding-top: 15%;
 }
 @media (max-width: 700px) {
-	body {
-		background: url("/static/images/page-light.png");
-		-webkit-animation:  8s ease infinite;
-		-moz-animation:  8s ease infinite;
-		animation:  8s ease infinite;
+	.huge.heading {
+		height: 100px;
 	}
 	.huge.heading h1 {
 		font-size: 24pt;
@@ -37,16 +108,11 @@ body {
 		left: auto;
 		right: 40px;
 	}
-	div#navbar {
-		display: flex;
-		justify-content: center !important;
-		width: 100%;
-		background: rgba(0, 0, 0, 1);
-		margin: auto 0;
-		z-index: 999;
-	}
 }
 @media (min-width: 700px) {
+	.huge.heading {
+		height: 210px;
+	}
 	.huge.heading h1 {
 		font-size: 40pt;
 		bottom: 15px;
@@ -56,35 +122,20 @@ body {
 		right: 40px;
 		left: auto;
 	}
-	div#navbar {
-		width: 100%;
-		border-radius: 30px;
-		background: rgba(0, 0, 0, 0.5);
-		margin: auto 0;
-		position: fixed;
-		height: 30px;
-		border-top-left-radius: 0;
-		border-top-right-radius: 0;
-		z-index: 999;
-	}
-}
-
-.huge.heading {
-	height: 100px;
-	border-bottom-left-radius: 30px;
-	border-bottom-right-radius: 30px;
-	display: flex;
-	justify-content: center;
 }
 
 .huge.heading h1 {
-	position: absolute;
-	width: 95%;
-        text-align: center;
-	color: #f9f9f9;
-	text-shadow: 0 2px 10px #000;
-	margin-bottom: 0px;
-	z-index: 997; /* getting bigger every year */
+		color: #f9f9f9;
+		text-shadow: 0 2px 10px #000;
+		margin-bottom: 0px;
+		z-index: 1000001;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
 }
 
 
@@ -125,11 +176,16 @@ a.inherit:hover {
 }
 
 .footer {
-	border-top: 1px solid #bbb;
-	padding: 10px 20px;
-	color: white;
-	background-image: linear-gradient(180deg,rgba(0,0,0,.6) 0,transparent 4px);
+	text-shadow: 0 1px 3px rgba(0,0,0,.75);
 	background-color: rgba(0,0,0,.6);
+	background-image: linear-gradient(180deg,rgba(0,0,0,.6) 0,transparent 4px);
+	color: #ccc;
+	font-size: 12px;
+	font-weight: 600;
+	display: flex;
+	flex-direction: column;
+	flex: none;
+	padding: 12px;
 }
 
 .top.right.icon {
@@ -142,35 +198,6 @@ a.inherit:hover {
 	-webkit-transition: opacity .1s ease;
 	transition: opacity .1s ease;
 }
-
-.ui.segment.chibi-card {
-	width: 100%;
-	height: auto;
-	background: url("/static/chibi/bg.png") center center / cover no-repeat;
-	transition: .3s;
-}
-
-.ui.segment.chibi-card:hover {
-	box-shadow: 0 0 2px 0 yellow;
-}
-
-.chibi {
-	width: 70%;
-}
-
-.ui.stackable.two.grid.chibi-grid {
-	padding-left: 25px;
-	padding-right: 25px;
-}
-
-p.chibi-text {
-	font-size: 15px;
-}
-
-.chibi-1 {
-
-}
-
 .no.top.margin {
 	margin-top: 0;
 }
@@ -205,45 +232,11 @@ p.chibi-text {
 	margin: 0 .2em !important;
 }
 
-.status-head {
-  padding:0;
-  margin: 0;
-  text-align: right; 
-  font-size: 35px;
-}
-.status-footer {
-  font-size: 20px;
-  text-align: right;
-}
-.status-icon {
-  font-size: 4em!important;
-  padding-top: 30px;
-}
-
 .white.background {
 	background-color: #FFF !important;
 }
 body.ds .white.background {
 	background-color: #454545 !important;
-}
-body {
-}
-.triangles-1 {
-}
-
-input#user-search-input {
-	background: transparent;
-	width: 150px !important;
-	font-size: 12px;
-	color: white;
-}
-
-.container-pd {
-	padding-top: -19px;
-	margin-top: -15px;
-}
-div#messages-container {
-	padding-top: 5px;
 }
 
 .user.avatar {
@@ -287,18 +280,18 @@ div#messages-container {
 }
 
 .subtitle, .about.title {
-	color: white;
+	color: rgba(255,255,255,.6);
 }
 .subtitle b {
-	color: white;
+	color: rgba(255,255,255,.87);
 }
 
 /* ds = Dark Site */
 body.ds .subtitle, body.ds .about.title {
-	color: white;
+	color: rgba(255,255,255,.8);
 }
 body.ds .subtitle b {
-	color: white;
+	color: rgba(255,255,255,.94);
 }
 
 .little.margin.top {
@@ -487,17 +480,60 @@ a.camouflaged:hover {
 }
 
 
-
-.owner
-{
-    color: SpringGreen;
-    text-shadow:
-    -1px -1px 0 #006400,
-    1px -1px 0 #006400,
-    -1px 1px 0 #006400,
-    1px 1px 0 #006400;
-    
+.owner {
+  
+  font-size:40px;
+  
+  -webkit-animation: rainbow 2s infinite; 
+  -ms-animation: rainbow 2s infinite; 
+  animation: rainbow 2s infinite; 
 }
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rainbow{
+  0%{color: orange;}	
+  10%{color: purple;}	
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+
+/* Internet Explorer */
+@-ms-keyframes rainbow{
+  0%{color: orange;}	
+  10%{color: purple;}	
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+
+/* Standar Syntax */
+@keyframes rainbow{
+  0%{color: orange;}	
+  10%{color: purple;}	
+	20%{color: red;}
+  30%{color: CadetBlue;}
+	40%{color: yellow;}
+  50%{color: coral;}
+	60%{color: green;}
+  70%{color: cyan;}
+  80%{color: DeepPink;}
+  90%{color: DodgerBlue;}
+	100%{color: orange;}
+}
+
 
 .dev
 {
@@ -510,77 +546,141 @@ a.camouflaged:hover {
     
 }
 
+
+.admin
+{
+	color: red;
+	text-shadow: -1px -1px 0 #0033CC;
+}
+
+
+.premium
+{
+	color: yellow;
+	text-shadow: -1px -1px 0 #0033CC;
+}
+
 img.achievement {
- -webkit-filter:drop-shadow(0 5px 5px #777);
- filter:drop-shadow(0 5px 5px #777)
+	-webkit-filter: drop-shadow(0 5px 5px #777);
+	filter: drop-shadow(0 5px 5px #777);
 }
 img.locked-achievement {
- -webkit-filter:brightness(0) drop-shadow(0 5px 5px #777);
- filter:brightness(0) drop-shadow(0 5px 5px #777);
- -webkit-transition:all 500ms;
- -moz-transition:all 500ms;
- -ms-transition:all 500ms;
- -o-transition:all 500ms;
- transition:all 500ms
+	-webkit-filter: brightness(0) drop-shadow(0 5px 5px #777);
+	filter: brightness(0) drop-shadow(0 5px 5px #777);
+	-webkit-transition: all 500ms ;
+    -moz-transition: all 500ms ;
+    -ms-transition: all 500ms ;
+    -o-transition: all 500ms ;
+    transition: all 500ms ;
 }
-
-
-#snow-container {
+img.locked-achievement:hover {
+	filter: gray; /* IE6-9 */
+	-webkit-filter: brightness(0.5) drop-shadow(0 5px 5px #777);
+	filter: brightness(0.5) drop-shadow(0 5px 5px #777);
+}
+#progress {
 	position: fixed;
-	width: 100%;
-	height: 100%;
-	z-index: -1;
-}
-
-
-#snow-container>div:first-child, .snow {
-	z-index: 100;
-	pointer-events: none;
-}
-
-#snow-container>div:first-child {
-	overflow: hidden;
+	z-index: 2147483647;
+	top: 0;
+	left: -6px;
+	width: 0%;
+	height: 2px;
+	background: #b91f1f;
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px;
+	border-radius: 1px;
+	-moz-transition: width 500ms ease-out,opacity 400ms linear;
+	-ms-transition: width 500ms ease-out,opacity 400ms linear;
+	-o-transition: width 500ms ease-out,opacity 400ms linear;
+	-webkit-transition: width 500ms ease-out,opacity 400ms linear;
+	transition: width 500ms ease-out,opacity 400ms linear
+	}
+	#progress.done {
+	opacity: 0
+	}
+	#progress dd,#progress dt {
 	position: absolute;
 	top: 0;
-	height: 100%;
-	width: 100%;
-	max-width: 100%;
-}
-
-@-webkit-keyframes falling {
-	0% {
-		-webkit-transform: translate3D(-7.5%, -100%, 0);
-		transform: translate3D(-7.5%, -100%, 0);
-		opacity: 0;
+	height: 2px;
+	-moz-box-shadow: #b91f1f 1px 0 6px 1px;
+	-ms-box-shadow: #b91f1f 1px 0 6px 1px;
+	-webkit-box-shadow: #b91f1f 1px 0 6px 1px;
+	box-shadow: #b91f1f 1px 0 6px 1px;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%
 	}
-	10% {
-		-webkit-transform: translate3D(-7.5%, -100%, 0);
-		transform: translate3D(-7.5%, -100%, 0);
-		opacity: 1;
+	#progress dd {
+	opacity: 1;
+	width: 20px;
+	right: 0;
+	clip: rect(-6px,22px,14px,10px)
 	}
-	100% {
-		-webkit-transform: translate3D(7.5%, 100%, 0);
-		transform: translate3D(7.5%, 100%, 0);
+	#progress dt {
+	opacity: 1;
+	width: 180px;
+	right: -80px;
+	clip: rect(-6px,90px,14px,-6px)
 	}
-}
-
-@keyframes falling {
-	0% {
-		-webkit-transform: translate3D(-7.5%, -100%, 0);
-		transform: translate3D(-7.5%, -100%, 0);
-		opacity: 0;
+	@-moz-keyframes pulse {
+	30% {
+	opacity: 1
 	}
-	10% {
-		-webkit-transform: translate3D(-7.5%, -100%, 0);
-		transform: translate3D(-7.5%, -100%, 0);
-		opacity: 1;
+	60% {
+	opacity: 0
 	}
 	100% {
-		-webkit-transform: translate3D(7.5%, 100%, 0);
-		transform: translate3D(7.5%, 100%, 0);
+	opacity: 1
 	}
-}
-
-.kr-or:before {
-	line-height: 23px!important;
-}
+	}
+	@-ms-keyframes pulse {
+	30% {
+	opacity: .6
+	}
+	60% {
+	opacity: 0
+	}
+	100% {
+	opacity: .6
+	}
+	}
+	@-o-keyframes pulse {
+	30% {
+	opacity: 1
+	}
+	60% {
+	opacity: 0
+	}
+	100% {
+	opacity: 1
+	}
+	}
+	@-webkit-keyframes pulse {
+	30% {
+	opacity: .6
+	}
+	60% {
+	opacity: 0
+	}
+	100% {
+	opacity: .6
+	}
+	}
+	@keyframes pulse {
+	30% {
+	opacity: 1
+	}
+	60% {
+	opacity: 0
+	}
+	100% {
+	opacity: 1
+	}
+	}
+	#progress.waiting dd,#progress.waiting dt {
+	-moz-animation: pulse 2s ease-out 0s infinite;
+	-ms-animation: pulse 2s ease-out 0s infinite;
+	-o-animation: pulse 2s ease-out 0s infinite;
+	-webkit-animation: pulse 2s ease-out 0s infinite;
+	animation: pulse 2s ease-out 0s infinite
+	}

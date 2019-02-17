@@ -13,7 +13,7 @@ Include=clan_members.html
                     <div class="magic table">
                         
                         <div class="table element">
-                            <img src="{{ config "AvatarURL" }}/clans/{{ $.ClanID }}" alt="icon" class="clan icon" style="border-radius:5%; height:90px;">
+                            <img src="{{ config "AvatarURL" }}/clans/{{ $.ClanID }}" alt="icon" class="clan icon" style="border-radius:5%; height:90px; padding-right: 15px;">
                         </div>
                         
                         <div class="table element">
@@ -82,7 +82,7 @@ Include=clan_members.html
                 </tbody>
                 </table>{{ end }}
                 </div>
-            <div class="column">
+            <div class="column" style="">
                 {{ if $global.Context.User.ID }}
                     {{ $d := qb "SELECT user, clan, perms FROM user_clans WHERE user = ? LIMIT 1" .Context.User.ID }}
                     {{ $p := qb "SELECT user, clan, perms FROM user_clans WHERE user = ? AND perms = 8 LIMIT 1" .Context.User.ID }}

@@ -373,11 +373,11 @@ msgstr ""
 
 msgid ""
 "If you live with %s and you don't have your own computer from which to sign "
-"up on cmyu!, then please contact support@katori.fun, and we'll deal with "
+"up on cmyu!, then please contact support@kurikku.pw, and we'll deal with "
 "your specific case."
 msgstr ""
 "Jos asut %s:n kanssa ja sinulla ei ole omaa tietokonetta josta kirjautua "
-"cmyu!en, siinä tapauksessa ota yhteyttä sähköpostiin support@katori.fun, ja "
+"cmyu!en, siinä tapauksessa ota yhteyttä sähköpostiin support@kurikku.pw, ja "
 "me käsittelemme asiasi."
 
 msgid ""
