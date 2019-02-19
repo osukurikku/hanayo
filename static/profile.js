@@ -317,15 +317,120 @@ function loadTopScoresPage(type, mode) {
     });
 }
 
+function get_range(date) {
+    let d = new Date(date);
+    let current = new Date();
+    if (d == undefined) { return null; }
+    return Math.ceil(Math.abs(current.getTime() - d.getTime()) / (1000 * 3600 * 24));
+}
+
+function convert_to_normal_format(data) {
+    minDay = 0
+    newdata = {}
+    sonewerdata = []
+    if (data == undefined || data == null) {
+        return []
+    }
+    data.forEach(element => {
+        var s = get_range(element['day']); 
+        if (s>minDay) { minDay = s };
+        newdata[-s] = element['value'] });
+    
+    last_knowed_info = 0
+    for(var x = -minDay; x<0; x++) {
+        if (newdata[x] == undefined) { sonewerdata.push([x+1, last_knowed_info]); continue; }
+        last_knowed_info = newdata[x];
+        sonewerdata.push([x+1, newdata[x]]);
+    }
+
+    return sonewerdata
+}
+
+function con_data(data) {	
+    return [
+        {
+            area: false,
+            values: data,
+            key: "Performance",
+            color: "#c02a70",
+            size: 6
+        },
+    ];
+}
+
+function loadGraph(mode, cdata, minPP, maxPP) {
+    var chart;
+
+    nv.addGraph(function() {
+        chart = nv.models.lineChart()
+        .options({
+            margin: {left: 80, bottom: 45},
+            x: function(d) { return d[0] },
+            y: function(d) { return d[1] },
+            showXAxis: true,
+            showYAxis: true
+        })
+        ;
+
+        chart.xAxis
+        .axisLabel("Days")
+        .tickFormat(function(d) {
+            if (d == 0) return "now";
+	  	    return -d + " days ago";
+        });
+
+        chart.yAxis
+        .axisLabel('Performance')
+        .tickFormat(function(d) {
+            if (d == 0) return "-";
+            return d +"pp";
+        })
+        ;
+
+        chart.yScale(d3.scale.log().clamp(true));
+
+        chart.forceY([minPP,maxPP]);
+        chart.yAxis.tickValues(-maxPP);
+
+        chart.xAxis.tickValues([-31, -15, 0]);
+        chart.forceX([-31,0]);
+
+        // No disabling / enabling elements allowed.
+        chart.legend.updateState(false);
+        chart.interpolate("basis");
+
+        var svg = d3.select('#graph1 div[data-mode="' + mode + '"] svg');
+
+        svg.datum(con_data(cdata))
+        .call(chart);
+    })
+}
+
+function ppdata() {	
+    return [
+        {
+            area: false,
+            values: sonewerdata,
+            key: "Performance",
+            color: "#666",
+            size: 6
+        },
+    ];
+}
+
 function loadRecentActivity(type, mode) {
     var table = $("#recent-activity div[data-mode=" + mode + "] table[data-type=" + type + "] tbody");
     api("users/get_activity", {
         mode: mode,
         userid: userID,
     }, function (r) {
+        //Loading Graps!
+        var dataFormatted = convert_to_normal_format(r.ppGraph.data)
+        loadGraph(mode, dataFormatted, r.ppGraph.minLimit, r.ppGraph.maxLimit)
+
         if(!r.logs) {
         	return;
-	}
+	    }
         r.logs.forEach(function (v, idx) {
             table.append($("<tr class='new score-row'/>").append(
                 $(
