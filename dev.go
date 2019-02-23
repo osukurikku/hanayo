@@ -197,7 +197,7 @@ func editOAuthApplication(c *gin.Context) {
 		err := db.Get(app, `SELECT c.id, c.extra, c.redirect_uri as redirecturi
 FROM osin_client_user cu
 INNER JOIN osin_client c ON c.id = cu.id
-WHERE cu.user = ? AND cu.client_id = ?`, ctx.User.ID, c.Query("id"))
+WHERE cu.user = ? AND cu.id = ?`, ctx.User.ID, c.Query("id"))
 		switch err {
 		case nil:
 			break
@@ -243,7 +243,7 @@ func editOAuthApplicationSubmit(c *gin.Context) {
 		db.Get(&previousExtra, `SELECT c.extra
 		FROM osin_client_user cu
 		INNER JOIN osin_client c ON c.id = cu.id
-		WHERE cu.client_id = ?`, id)
+		WHERE cu.id = ?`, id)
 		oClient := oAuthClient{Extra: previousExtra}
 		if previousExtra == "" || oClient.Owner() != ctx.User.ID {
 			fmt.Println(previousExtra, oClient.Owner(), ctx.User.ID)
@@ -355,7 +355,7 @@ func deleteOAuthApplication(c *gin.Context) {
 	db.Get(&x, `SELECT c.extra
 	FROM osin_client_user cu
 	INNER JOIN osin_client c ON c.id = cu.id
-	WHERE cu.client_id = ?`, c.PostForm("id"))
+	WHERE cu.id = ?`, c.PostForm("id"))
 	if x.Owner() != ctx.User.ID {
 		addMessage(c, errorMessage{"y u do dis"})
 		return
@@ -372,7 +372,7 @@ func deleteOAuthApplication(c *gin.Context) {
 	db.Exec(`DELETE c
 	FROM osin_client_user cu
 	INNER JOIN osin_client c ON c.id = cu.id
-	WHERE cu.client_id = ?`, clientID)
+	WHERE cu.id = ?`, clientID)
 
 	addMessage(c, successMessage{"poof"})
 }
