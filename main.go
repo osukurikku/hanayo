@@ -27,7 +27,6 @@ import (
 	"zxq.co/ripple/hanayo/routers/pagemappings"
 	"zxq.co/ripple/hanayo/services"
 	"zxq.co/ripple/hanayo/services/cieca"
-	"zxq.co/ripple/schiavolib"
 	"zxq.co/x/rs"
 )
 
@@ -176,7 +175,7 @@ func main() {
 	})
 
 	// initialise oauth
-	//setUpOauth()
+	setUpOauth()
 
 	// initialise btcaddress
 	btcaddress.Redis = rd
