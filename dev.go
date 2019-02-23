@@ -171,7 +171,7 @@ func getOAuthApplications(c *gin.Context) {
 	var apps []oAuthClient
 	err := db.Select(&apps, `SELECT c.id, c.extra, c.redirect_uri as redirecturi
 FROM osin_client_user cu
-INNER JOIN osin_client c ON c.id = cu.client_id
+INNER JOIN osin_client c ON c.id = cu.id
 WHERE cu.user = ?`, ctx.User.ID)
 
 	if err != nil {
@@ -196,7 +196,7 @@ func editOAuthApplication(c *gin.Context) {
 	if c.Query("id") != "new" {
 		err := db.Get(app, `SELECT c.id, c.extra, c.redirect_uri as redirecturi
 FROM osin_client_user cu
-INNER JOIN osin_client c ON c.id = cu.client_id
+INNER JOIN osin_client c ON c.id = cu.id
 WHERE cu.user = ? AND cu.client_id = ?`, ctx.User.ID, c.Query("id"))
 		switch err {
 		case nil:
@@ -240,7 +240,10 @@ func editOAuthApplicationSubmit(c *gin.Context) {
 	var avatarFilename string
 	if id != "new" {
 		var previousExtra string
-		db.Get(&previousExtra, "SELECT extra FROM osin_client WHERE id = ?", id)
+		db.Get(&previousExtra, `SELECT c.extra
+		FROM osin_client_user cu
+		INNER JOIN osin_client c ON c.id = cu.id
+		WHERE cu.client_id = ?`, id)
 		oClient := oAuthClient{Extra: previousExtra}
 		if previousExtra == "" || oClient.Owner() != ctx.User.ID {
 			fmt.Println(previousExtra, oClient.Owner(), ctx.User.ID)
@@ -301,7 +304,7 @@ func editOAuthApplicationSubmit(c *gin.Context) {
 }
 
 const createClientMessage = `
-You can now get going integrating Akatsuki in your super cool project!
+You can now get going integrating Kurikku in your super cool project!
 Here's what you need:<br>
 <pre>client_id     = "%s"
 client_secret = "%s"</pre>
@@ -349,7 +352,10 @@ func deleteOAuthApplication(c *gin.Context) {
 	}
 
 	var x oAuthClient
-	db.Get(&x, "SELECT extra FROM osin_client WHERE id = ?", c.PostForm("id"))
+	db.Get(&x, `SELECT c.extra
+	FROM osin_client_user cu
+	INNER JOIN osin_client c ON c.id = cu.id
+	WHERE cu.client_id = ?`, c.PostForm("id"))
 	if x.Owner() != ctx.User.ID {
 		addMessage(c, errorMessage{"y u do dis"})
 		return
@@ -363,7 +369,10 @@ func deleteOAuthApplication(c *gin.Context) {
 
 	db.Exec("DELETE FROM osin_access WHERE client = ?", clientID)
 	db.Exec("DELETE FROM osin_client_user WHERE client_id = ?", clientID)
-	db.Exec("DELETE FROM osin_client WHERE id = ?", clientID)
+	db.Exec(`DELETE c
+	FROM osin_client_user cu
+	INNER JOIN osin_client c ON c.id = cu.id
+	WHERE cu.client_id = ?`, clientID)
 
 	addMessage(c, successMessage{"poof"})
 }
