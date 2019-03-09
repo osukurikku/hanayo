@@ -89,7 +89,7 @@ msgstr ""
 msgid "Now you can watch <b>your subscribers</b>. That's way to <b>found</b> new good friends"
 msgstr ""
 
-msgid "You look new here. Allow us to introduce you to what Kurikku is. Kurikku is a custom server for the game osu!. We have free osu!Direct, beatmap listing and searching, clans and more! Have fun on Kurikku!"
+msgid "You look new here. Allow us to introduce you to what Kurikku is. Kurikku is a osu! private server. We have free osu!Direct, beatmap listing and searching, clans and more! Have fun on Kurikku!"
 msgstr ""
 
 msgid "What are you waiting for? Join Kurikku! It's risk-free: you won't get your account banned on the official server if you play on Kurikku.<br>You can also switch anytime between the official osu! server and Kurikku!"
