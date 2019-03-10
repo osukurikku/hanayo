@@ -288,6 +288,8 @@ func generateEngine() *gin.Engine {
 	r.GET("/c/:cid", clanPage)
 
 	r.GET("/u/:user", userProfile)
+	r.GET("/u/:user/report", reportForm)
+	r.POST("/u/:user/report", reportSubmit)
 	r.GET("/b/:bid", beatmapInfo)
 
 	r.POST("/pwreset", passwordReset)

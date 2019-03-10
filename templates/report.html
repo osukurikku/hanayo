@@ -1,0 +1,29 @@
+{{ define "tpl" }}
+<div class="ui container">
+    <div class="ui huge header">{{ .T .TitleBar }}</div>
+    <form action="/u/{{ .id }}/report" method="POST" class="ui form">
+        <div class="field">
+            <label>Reason</label>
+            <div class="ui selection dropdown">
+                <input type="hidden" name="reason" required>
+                <i class="dropdown icon"></i>
+                <div class="default text">Gender</div>
+                <div class="menu">
+                    <div class="item" data-value="1">{{ .T "Foul play / Cheating" }}</div>
+                    <div class="item" data-value="2">{{ .T "Spamming" }}</div>
+                    <div class="item" data-value="3">{{ .T "Other" }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="field">
+            <label>{{ .T "Additional text" }}</label>
+            <textarea placeholder="{{ .T "Any information about this issue."}}" name="addition" required></textarea>
+        </div>
+
+    </form>
+</div>
+<script>
+    $('select.dropdown').dropdown();
+</script>
+{{ end }}
