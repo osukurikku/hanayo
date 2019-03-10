@@ -1,0 +1,41 @@
+{{ define "tpl" }}
+{{ $global := . }}
+<div class="ui container">
+    <div class="ui segment">
+        <div class="ui huge header">{{ .T .TitleBar }}</div>
+        <div class="ui stackable grid">
+            <div class="eight wide column">
+                <form action="/u/{{ .UserID }}/report" method="POST" class="ui form">
+                    <div class="field">
+                        <label>{{ .T "Reason" }}</label>
+                        <div class="ui selection dropdown">
+                            <input type="hidden" name="reason" required>
+                            <i class="dropdown icon"></i>
+                            <div class="default text">{{ .T "Reason" }}</div>
+                            <div class="menu">
+                                <div class="item" data-value="1">{{ .T "Foul play / Cheating" }}</div>
+                                <div class="item" data-value="2">{{ .T "Spamming" }}</div>
+                                <div class="item" data-value="3">{{ .T "Other" }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label>{{ .T "Additional text" }}</label>
+                        <textarea placeholder="{{ .T "Any information about this issue."}}" name="addition" required style="height: 247px;"></textarea>
+                    </div>
+
+                    <button class="ui button green" type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="eight wide column">
+                <img class="ui centered image" src="/static/images/sotarks_sprite.png" alt="this is sotarks. And he want u."/>
+                <h3>{{ .T "We must say, that we can silence you if the report is false or you're abusing the report system (spamming, etc.)" }}</h3>       
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('select.dropdown').dropdown();
+</script>
+{{ end }}

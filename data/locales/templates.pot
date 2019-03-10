@@ -98,6 +98,30 @@ msgstr ""
 msgid "Need support or want to talk to other players? Join our <a href=\"%s\">Discord</a>!"
 msgstr ""
 
+msgid "Report %s"
+msgstr ""
+
+msgid "Reason"
+msgstr ""
+
+msgid "Foul play / Cheating"
+msgstr ""
+
+msgid "Spamming"
+msgstr ""
+
+msgid "Other"
+msgstr ""
+
+msgid "Additional text"
+msgstr ""
+
+msgid "Any information about this issue."
+msgstr ""
+
+msgid "We must say, that we can silence you if the report is false or you're abusing the report system (spamming, etc.)"
+msgstr ""
+
 msgid "Expires in <b>%s</b>"
 msgstr ""
 
