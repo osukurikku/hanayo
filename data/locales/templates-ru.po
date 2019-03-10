@@ -751,6 +751,30 @@ msgstr "Нужна помощь? Или вы хотите пообщаться �
 msgid "Hi, %s!"
 msgstr "Как дела, %s?"
 
+msgid "Report %s"
+msgstr "Отправить репорт на %s"
+
+msgid "Reason"
+msgstr "Причина"
+
+msgid "Foul play / Cheating"
+msgstr "Обман / Читерство"
+
+msgid "Spamming"
+msgstr "Спам"
+
+msgid "Other"
+msgstr "Прочее"
+
+msgid "Additional text"
+msgstr "Дополнительный текст"
+
+msgid "Any information about this issue."
+msgstr "Подробная информация о случае."
+
+msgid "We must say, that we can silence you if the report is false or you're abusing the report system (spamming, etc.)"
+msgstr "Хочу заметить, мы оставляем за собой право замутить вас, в случае если репорт окажется ложным или вы будете отсылать бессмысленные репорты."
+
 msgid ""
 "Welcome back to Kurikku. We currently have <b>%s online users and %s total "
 "registered users.</b> Hope you're having a wonderful day!"

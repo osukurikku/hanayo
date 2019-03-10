@@ -101,6 +101,10 @@
                             <a href="/settings" class="ui circular mini teal icon button">
                                 <i class="edit icon"></i>
                             </a>
+                            {{ else }}
+                                <a href="/u/{{ $global.UserI }}" class="ui circular mini orange icon button">
+                                    <i class="flag icon"></i>
+                                </a>
                             {{ end }}
                             {{ if hasAdmin $global.Context.User.Privileges }}
                             <a href="http://oadmin.kurikku.pw/index.php?p=103&id={{ $global.UserID }}" target="_blank"
