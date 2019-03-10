@@ -40,13 +40,28 @@ func reportForm(c *gin.Context) {
 	data := new(profileData)
 	data.UserID = userID
 
-	defer resp(c, 200, "report.html", data)
-
-	if data.UserID == 0 {
-		data.TitleBar = "User not found"
-		data.Messages = append(data.Messages, warningMessage{T(c, "That user could not be found.")})
+	if data.UserID == getContext(c).User.ID {
+		addMessage(c, errorMessage{T(c, "You can't report yourself")})
+		getSession(c).Save()
+		c.Redirect(302, "/u/"+c.Param("user"))
 		return
 	}
+
+	if data.UserID == 999 {
+		addMessage(c, errorMessage{T(c, "You can't report our bot ;3")})
+		getSession(c).Save()
+		c.Redirect(302, "/u/"+c.Param("user"))
+		return
+	}
+
+	if data.UserID == 0 {
+		addMessage(c, errorMessage{T(c, "User not found")})
+		getSession(c).Save()
+		c.Redirect(302, "/")
+		return
+	}
+
+	defer resp(c, 200, "report.html", data)
 
 	data.TitleBar = T(c, "Report %s", username)
 	data.DisableHH = true
@@ -88,9 +103,23 @@ func reportSubmit(c *gin.Context) {
 	data := new(profileData)
 	data.UserID = userID
 
+	if data.UserID == getContext(c).User.ID {
+		addMessage(c, errorMessage{T(c, "You can't report yourself")})
+		getSession(c).Save()
+		c.Redirect(302, "/u/"+c.Param("user"))
+		return
+	}
+
+	if data.UserID == 999 {
+		addMessage(c, errorMessage{T(c, "You can't report our bot ;3")})
+		getSession(c).Save()
+		c.Redirect(302, "/u/"+c.Param("user"))
+		return
+	}
+
 	if data.UserID == 0 {
-		addMessage(c, errorMessage("User not found"))
-		getSession(c).save()
+		addMessage(c, errorMessage{T(c, "User not found")})
+		getSession(c).Save()
 		c.Redirect(302, "/u/"+c.Param("user")+"/report")
 		return
 	}
@@ -112,14 +141,14 @@ func reportSubmit(c *gin.Context) {
 		reasonStr = "Other"
 		break
 	default:
-		addMessage(c, errorMessage("Not correct reason"))
+		addMessage(c, errorMessage{T(c, "Not correct reason")})
 		c.Redirect(302, "/u/"+c.Param("user")+"/report")
 		return
 	}
 
-	res, err := db.Exec(`INSERT INTO reports (id, from_uid, to_uid, chatlog, reason, time, assigned) VALUES (NULL, ?, ?, ?, ?, ?, '');`,
+	_, err1 := db.Exec(`INSERT INTO reports (id, from_uid, to_uid, chatlog, reason, time, assigned) VALUES (NULL, ?, ?, ?, ?, ?, '');`,
 		getContext(c).User.ID, c.Param("user"), c.PostForm("addition"), reasonStr, currentTime)
-	if err != nil {
+	if err1 != nil {
 		c.Error(err)
 		return
 	}

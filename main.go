@@ -182,10 +182,6 @@ func main() {
 	btcaddress.APIKey = config.CoinbaseAPIKey
 	btcaddress.APISecret = config.CoinbaseAPISecret
 
-	// initialise schiavo
-	schiavo.Prefix = "hanayo"
-	schiavo.Bunker.Send(fmt.Sprintf("STARTUATO, mode: %s", gin.Mode()))
-
 	// even if it's not release, we say that it's release
 	// so that gin doesn't spam
 	gin.SetMode(gin.ReleaseMode)
