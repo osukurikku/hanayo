@@ -146,8 +146,27 @@ var bbcodeCompiler = func() bbcode.Compiler {
 		contentTag.Name = "div"
 		contentTag.Attrs["class"] = "content"
 
-		pTag := bbcode.NewHTMLTag(bbcode.compileRaw(content))
+		pTag := bbcode.NewHTMLTag("")
 		pTag.Name = "p"
+
+		if len(node.Children) == 0 {
+			pTag.AppendChild(bbcode.NewHTMLTag(""))
+		} else {
+			node.Info = []*bbcode.HTMLTag{pTag, pTag}
+			tags := node.Info.([]*bbcode.HTMLTag)
+			for _, child := range node.Children {
+				curr := tags[1]
+				curr.AppendChild(node.Compiler.CompileTree(child))
+			}
+			if len(tags[1].Children) > 0 {
+				last := tags[1].Children[len(tags[1].Children)-1]
+				if len(last.Children) > 0 && last.Children[len(last.Children)-1].Name == "br" {
+					last.Children[len(last.Children)-1] = bbcode.NewHTMLTag("")
+				}
+			} else {
+				tags[1].AppendChild(bbcode.NewHTMLTag(""))
+			}
+		}
 
 		contentTag.AppendChild(pTag)
 
