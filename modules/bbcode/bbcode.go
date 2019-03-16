@@ -134,6 +134,7 @@ var bbcodeCompiler = func() bbcode.Compiler {
 		icon := bbcode.NewHTMLTag("")
 		icon.Name = "i"
 		icon.Attrs["class"] = "dropdown icon"
+		icon.AppendChild(nil)
 
 		titleTag := bbcode.NewHTMLTag("")
 		titleTag.Name = "div"
