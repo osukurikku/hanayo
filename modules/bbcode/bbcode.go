@@ -123,6 +123,56 @@ var bbcodeCompiler = func() bbcode.Compiler {
 		return container, false
 	})
 
+	compiler.SetTag("spoiler", func(node *bbcode.BBCodeNode) (*bbcode.HTMLTag, bool) {
+		firstTag := bbcode.NewHTMLTag("")
+		firstTag.Name = "div"
+		firstTag.Attrs["class"] = "ui styled fluid accordion"
+
+		icon := bbcode.NewHTMLTag("")
+		icon.Name = "i"
+		icon.Attrs["class"] = "dropdown icon"
+		icon.AppendChild(nil)
+
+		titleTag := bbcode.NewHTMLTag("")
+		titleTag.Name = "div"
+		titleTag.Attrs["class"] = "title"
+		titleTag.AppendChild(icon)
+		titleTag.AppendChild(bbcode.NewHTMLTag("Spoiler"))
+
+		contentTag := bbcode.NewHTMLTag("")
+		contentTag.Name = "div"
+		contentTag.Attrs["class"] = "content"
+
+		pTag := bbcode.NewHTMLTag("")
+		pTag.Name = "p"
+
+		if len(node.Children) == 0 {
+			pTag.AppendChild(bbcode.NewHTMLTag(""))
+		} else {
+			node.Info = []*bbcode.HTMLTag{pTag, pTag}
+			tags := node.Info.([]*bbcode.HTMLTag)
+			for _, child := range node.Children {
+				curr := tags[1]
+				curr.AppendChild(node.Compiler.CompileTree(child))
+			}
+			if len(tags[1].Children) > 0 {
+				last := tags[1].Children[len(tags[1].Children)-1]
+				if len(last.Children) > 0 && last.Children[len(last.Children)-1].Name == "br" {
+					last.Children[len(last.Children)-1] = bbcode.NewHTMLTag("")
+				}
+			} else {
+				tags[1].AppendChild(bbcode.NewHTMLTag(""))
+			}
+		}
+
+		contentTag.AppendChild(pTag)
+
+		firstTag.AppendChild(titleTag)
+		firstTag.AppendChild(contentTag)
+
+		return firstTag, false
+	})
+
 	compiler.SetTag("left", func(node *bbcode.BBCodeNode) (*bbcode.HTMLTag, bool) {
 		out := bbcode.NewHTMLTag("")
 		out.Name = "div"
