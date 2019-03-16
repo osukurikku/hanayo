@@ -127,20 +127,20 @@ var bbcodeCompiler = func() bbcode.Compiler {
 		var content string
 
 		content = bbcode.CompileText(node)
-		firstTag := bbcode.HTMLTag("div")
+		firstTag := bbcode.NewHTMLTag("div")
 		firstTag.Attrs["class"] = "ui styled fluid accordion"
 
-		icon := bbcode.HTMLTag("i")
+		icon := bbcode.NewHTMLTag("i")
 		icon.Attrs["class"] = "dropdown icon"
 
-		titleTag := bbcode.HTMLTag("title")
+		titleTag := bbcode.NewHTMLTag("title")
 		titleTag.AppendChild(icon)
 		titleTag.AppendChild(bbcode.NewHTMLTag("spoiler"))
 
-		contentTag := bbcode.HTMLTag("div")
+		contentTag := bbcode.NewHTMLTag("div")
 		contentTag.Attrs["class"] = "content"
 
-		pTag := bbcode.HTMLTag("p")
+		pTag := bbcode.NewHTMLTag("p")
 		pTag.AppendChild(bbcode.NewHTMLTag(content))
 
 		contentTag.AppendChild(pTag)
