@@ -124,8 +124,6 @@ var bbcodeCompiler = func() bbcode.Compiler {
 	})
 
 	compiler.SetTag("spoiler", func(node *bbcode.BBCodeNode) (*bbcode.HTMLTag, bool) {
-		var content string
-
 		firstTag := bbcode.NewHTMLTag("")
 		firstTag.Name = "div"
 		firstTag.Attrs["class"] = "ui styled fluid accordion"
