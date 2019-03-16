@@ -139,8 +139,8 @@ var bbcodeCompiler = func() bbcode.Compiler {
 		titleTag := bbcode.NewHTMLTag("")
 		titleTag.Name = "div"
 		titleTag.Attrs["class"] = "title"
-		titleTag.AppendChild("Spoiler")
 		titleTag.AppendChild(icon)
+		titleTag.AppendChild(bbcode.NewHTMLTag("Spoiler"))
 
 		contentTag := bbcode.NewHTMLTag("")
 		contentTag.Name = "div"
