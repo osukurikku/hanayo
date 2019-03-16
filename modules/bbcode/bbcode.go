@@ -123,6 +123,34 @@ var bbcodeCompiler = func() bbcode.Compiler {
 		return container, false
 	})
 
+	compiler.SetTag("spoiler", func(node *bbcode.BBCodeNode) (*bbcode.HTMLTag, bool) {
+		var content string
+
+		content = bbcode.CompileText(node)
+		firstTag = bbcode.HTMLTag("div")
+		firstTag.Attrs["class"] = "ui styled fluid accordion"
+
+		icon = bbcode.HTMLTag("i")
+		icon.Attrs["class"] = "dropdown icon"
+
+		titleTag = bbcode.HTMLTag("title")
+		titleTag.AppendChild(icon)
+		titleTag.AppendChild(NewHTMLTag("spoiler"))
+
+		contentTag = bbcode.HTMLTag("div")
+		contentTag.Attrs["class"] = "content"
+
+		pTag = bbcode.HTMLTag("p")
+		pTag.AppendChild(NewHTMLTag(content))
+
+		contentTag.AppendChild(pTag)
+
+		firstTag.AppendChild(titleTag)
+		firstTag.AppendChild(contentTag)
+
+		return firstTag, false
+	})
+
 	compiler.SetTag("left", func(node *bbcode.BBCodeNode) (*bbcode.HTMLTag, bool) {
 		out := bbcode.NewHTMLTag("")
 		out.Name = "div"

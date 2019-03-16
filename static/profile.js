@@ -47,6 +47,11 @@ $(document).ready(function () {
         i18next.on("loaded", function () {
             i();
         });
+
+    //init spoilers
+    if ($('.ui.accordion').length > 0) {
+        $('.ui.accordion').accordion();
+    }
 });
 
 function loadRanksPLZ(userid, mode) {
