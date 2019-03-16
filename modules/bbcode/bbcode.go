@@ -135,13 +135,13 @@ var bbcodeCompiler = func() bbcode.Compiler {
 
 		titleTag := bbcode.HTMLTag("title")
 		titleTag.AppendChild(icon)
-		titleTag.AppendChild(NewHTMLTag("spoiler"))
+		titleTag.AppendChild(bbcode.NewHTMLTag("spoiler"))
 
 		contentTag := bbcode.HTMLTag("div")
 		contentTag.Attrs["class"] = "content"
 
 		pTag := bbcode.HTMLTag("p")
-		pTag.AppendChild(NewHTMLTag(content))
+		pTag.AppendChild(bbcode.NewHTMLTag(content))
 
 		contentTag.AppendChild(pTag)
 
