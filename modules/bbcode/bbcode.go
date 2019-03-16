@@ -146,7 +146,7 @@ var bbcodeCompiler = func() bbcode.Compiler {
 		contentTag.Name = "div"
 		contentTag.Attrs["class"] = "content"
 
-		pTag := bbcode.NewHTMLTag(content)
+		pTag := bbcode.NewHTMLTag(bbcode.compileRaw(content))
 		pTag.Name = "p"
 
 		contentTag.AppendChild(pTag)
