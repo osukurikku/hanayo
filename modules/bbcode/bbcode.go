@@ -135,22 +135,18 @@ var bbcodeCompiler = func() bbcode.Compiler {
 		icon.Attrs["class"] = "dropdown icon"
 		icon.AppendChild(nil)
 
-		content := bbcode.CompileText(node)
-		nodeQuery, err := url.Parse(content)
-		if err != nil {
-			tag = "Spoiler"
+		in := node.GetOpeningTag()
+		if name, ok := in.Args["tag"]; ok && name != "" {
+			tag = name
 		} else {
-			tag = nodeQuery.Query().Get("tag")
-			if tag == "" {
-				tag = "Spoiler"
-			}
+			tag = "Spoiler"
 		}
 
 		titleTag := bbcode.NewHTMLTag("")
 		titleTag.Name = "div"
 		titleTag.Attrs["class"] = "title"
 		titleTag.AppendChild(icon)
-		titleTag.AppendChild(bbcode.NewHTMLTag("Spoiler"))
+		titleTag.AppendChild(bbcode.NewHTMLTag(tag))
 
 		contentTag := bbcode.NewHTMLTag("")
 		contentTag.Name = "div"
