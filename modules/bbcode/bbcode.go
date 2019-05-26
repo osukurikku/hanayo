@@ -124,6 +124,8 @@ var bbcodeCompiler = func() bbcode.Compiler {
 	})
 
 	compiler.SetTag("spoiler", func(node *bbcode.BBCodeNode) (*bbcode.HTMLTag, bool) {
+		var tag string
+
 		firstTag := bbcode.NewHTMLTag("")
 		firstTag.Name = "div"
 		firstTag.Attrs["class"] = "ui styled fluid accordion"
@@ -133,11 +135,18 @@ var bbcodeCompiler = func() bbcode.Compiler {
 		icon.Attrs["class"] = "dropdown icon"
 		icon.AppendChild(nil)
 
+		in := node.GetOpeningTag()
+		if name, ok := in.Args["tag"]; ok && name != "" {
+			tag = name
+		} else {
+			tag = "Spoiler"
+		}
+
 		titleTag := bbcode.NewHTMLTag("")
 		titleTag.Name = "div"
 		titleTag.Attrs["class"] = "title"
 		titleTag.AppendChild(icon)
-		titleTag.AppendChild(bbcode.NewHTMLTag("Spoiler"))
+		titleTag.AppendChild(bbcode.NewHTMLTag(tag))
 
 		contentTag := bbcode.NewHTMLTag("")
 		contentTag.Name = "div"
