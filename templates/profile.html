@@ -51,7 +51,7 @@
                         {{ if eq $global.UserID $global.Context.User.ID }}
                         <a href="/settings/avatar">
                             {{ end }}
-                            <img src="{{ config "AvatarURL" }}/{{ .id }}" alt="avatar" class="ui tiny centered image">
+                            <img src="{{ config "AvatarURL" }}/{{ .id }}" alt="avatar" class="ui small centered image">
                             {{ if eq $global.UserID $global.Context.User.ID }}
                         </a>
                         {{ end }}
@@ -349,6 +349,6 @@
     {{ end }}
 <script src="/static/d3.v3.min.js"></script>
 <script src="/static/nv.d3.js"></script>
-<!--  Hey! If you want use this version of profile writed by KotRik(kirikku). Please say thanks him and add in team in "special thanks".  -->
+<!--  Hey! If you want use this version of profile writed by KotRik(kurikku). Please say thanks him and add in team in "special thanks".  -->
 </div>
 {{ end }}
