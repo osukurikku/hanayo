@@ -16,12 +16,37 @@ KyutGrill=help.jpg
 			<p>
 				{{ .T "When contacting the support mail, please make sure to <b>send the email from the email address you signed up on Kurikku with</b>." | html }}
 			</p>
-		</div>
-		<div class="ui right aligned segment">
-			<a class="ui right labeled blue icon button" href="mailto:support@kurikku.pw">
-				<i class="right arrow icon"></i>
-				{{ .T "I have read and understood everything on this page." }}
+			<a href="https://discord.gg/5cBtMPW" class="ui purple labeled icon button">
+				<i class="microphone icon"></i>
+				{{ .T "OUR DISCORD" }}
 			</a>
+		</div>
+		<div class="ui segment">
+			<div class="ui container">
+				<form action="mailto:support@kurikku.pw" method="post" enctype="text/plain">
+					<div class="ui form">
+						<div class="field">
+							<label>{{ .T "Full Name" }}</label>
+							<input name="name" type="text">
+						</div>
+						<div class="field">
+							<label>{{ .T "E-Mail" }}</label>
+							<input name="email" type="text">
+						</div>
+						<div class="field">
+							<label>{{ .T "Subject" }}</label>
+							<input name="subject" type="text">
+						</div>
+						<div class="field">
+							<label>{{ .T "Text" }}</label>
+							<textarea name="comment"></textarea>
+						</div>
+					</div>		
+					<button type="submit" class="ui primary button">
+						{{ .T "Send" }}
+					</button>		
+				</form>
+			</div>
 		</div>
 	</div>
 </div>

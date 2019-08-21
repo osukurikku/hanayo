@@ -14,6 +14,20 @@ msgstr ""
 "X-Pootle-Path: /ru/Hanayo/templates-ru.po\n"
 "X-Pootle-Revision: 6958\n"
 
+msgid "Full Name"
+msgstr "Полное имя"
+
+msgid "E-Mail"
+msgstr "Е-Мэйл"
+
+msgid "Subject"
+msgstr "Тема"
+
+msgid "Text"
+msgstr "Текст сообщения"
+
+msgid "Send"
+msgstr "Отправить"
 
 msgid "Kurikku Switcher"
 msgstr "Kurikku Switcher"
@@ -1931,3 +1945,6 @@ msgid ""
 "token from this page, be wary and only actually create the token if you "
 "really trust the owner of the application.</b>"
 msgstr ""
+
+msgid "OUR DISCORD"
+msgstr "Наш Дискорд"
