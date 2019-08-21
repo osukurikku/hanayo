@@ -842,11 +842,11 @@ msgstr "Документации для разработчиков"
 msgid "See what changed!"
 msgstr "Посмотреть изменения!"
 
-msgid "If you need to get in touch with our support team (our Community Managers), you will need to either send an email to our support email address, or join our <a href='https://discord.gg/5cBtMPW'>Discord Server</a>. You can compose an email to it by clicking the button at the bottom of this page. <b>Please read the following</b> though, as it is important."
-msgstr "Если тебе нужно связаться с нашей поддержкой, то ты должен отправить нам е-мейл на support@kurikku.pw или вступить в <a href='https://discord.gg/5cBtMPW'>дискорд сервер.</a>"
+msgid "If you need to get in touch with our support team (our Community Managers), you will need to either send an email to our support email address, or join our <a href='https://discord.gg/5uA3c76'>Discord Server</a>. You can compose an email to it by clicking the button at the bottom of this page. <b>Please read the following</b> though, as it is important."
+msgstr "Если тебе нужно связаться с нашей поддержкой, то ты должен отправить нам е-мейл на support@kurikku.pw или вступить в <a href='https://discord.gg/5uA3c76'>дискорд сервер.</a>"
 
-msgid "The support email <b>is not meant for technical support</b>. If you need technical support, then please join our <a href='https://discord.gg/5cBtMPW'>Discord Server</a>, and ask your question on the <b>#help channel</b>. You should also join the Discord server and ask a CM if you have any informal inquiry that you may have."
-msgstr "Е-мейл саппорта <b>не подрузамевается для технической помощи</b>. Если вам нужна техническая поддержка, вступите в наш <a href='https://discord.gg/5cBtMPW'>дискорд сервер</a>, и задайте вопрос в канале помощи."
+msgid "The support email <b>is not meant for technical support</b>. If you need technical support, then please join our <a href='https://discord.gg/5uA3c76'>Discord Server</a>, and ask your question on the <b>#help channel</b>. You should also join the Discord server and ask a CM if you have any informal inquiry that you may have."
+msgstr "Е-мейл саппорта <b>не подрузамевается для технической помощи</b>. Если вам нужна техническая поддержка, вступите в наш <a href='https://discord.gg/5uA3c76'>дискорд сервер</a>, и задайте вопрос в канале помощи."
   
 msgid "Changelog"
 msgstr "Журнал изменений"
