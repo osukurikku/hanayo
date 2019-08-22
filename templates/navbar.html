@@ -49,13 +49,12 @@
             </div>
         
             <div class="ui dropdown item">
-                <span>{{ .T "Donate" | printf "<i class=\"red heart icon\"></i>%s") }}</span>
+                <span>{{ .T "Donate" | printf "<i class=\"red heart icon\"></i>%s" }}</span>
                 <div class="inverted menu">
                 {{ navbarItem .Path (.T "Why do we need donations?") "/donate" }}
                 {{ navbarItem .Path (.T "Shop") "/shop" }}
                 </div>
             </div>
-        {{ navbarItem .Path  }}
         {{ navbarItem .Path (.T "Switcher" | printf "<i class=\"blue download disk icon\"></i>%s") "/switcher" }}
         {{ if $isAdmin }}{{ navbarItem .Path (.T "Admin Panel" | printf "<b>%s</b>") "http://oadmin.kurikku.pw/index.php?p=100" }}{{ end }}
         {{ end }}
