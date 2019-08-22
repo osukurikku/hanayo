@@ -47,8 +47,16 @@
                     {{ navbarItem .Path (.T "Clans Create") "/clans/create" }}
                 </div>
             </div>
-
-        {{ navbarItem .Path (.T "Donate" | printf "<i class=\"red heart icon\"></i>%s") "/donate" }}
+        
+            <div class="ui dropdown item">
+                <span>{{ .T "Donate" | printf "<i class=\"red heart icon\"></i>%s" | html }}</span>
+                <div class="inverted menu">
+                {{ navbarItem .Path (.T "Why do we need donations?") "/donate" }}
+                {{ if .Context.User.Username }}
+                    {{ navbarItem .Path (.T "Shop") "/shop" }}
+                {{ end }}
+                </div>
+            </div>
         {{ navbarItem .Path (.T "Switcher" | printf "<i class=\"blue download disk icon\"></i>%s") "/switcher" }}
         {{ if $isAdmin }}{{ navbarItem .Path (.T "Admin Panel" | printf "<b>%s</b>") "http://oadmin.kurikku.pw/index.php?p=100" }}{{ end }}
         {{ end }}
