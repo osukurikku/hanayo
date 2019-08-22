@@ -1950,7 +1950,16 @@ msgid "OUR DISCORD"
 msgstr "Наш Дискорд"
 
 msgid "That's DonationAlerts - \"streamer's main tool\" but we use that beautiful platform for collect donations ヽ(・∀・)ﾉ"
-msgstr "Это DonationAlerts - \"главный инструмент стримера\", но мы пользуемся этой шикарной платформой чтобы собирать донаты ヽ(・∀・)ﾉ"
+msgstr "Это DonationAlerts - \"главный инструмент стримера\", но мы пользуемся этой шикарной платформой чтобы собирать донаты<br/>ヽ(・∀・)ﾉ"
 
 msgid "<b>NOTE:</b> please check description before you donate"
 msgstr "<b>Примечание:</b> пожалуйста прочитай описание перед донатом"
+
+msgid "Donate!"
+msgstr "Донат!"
+
+msgid "Shop"
+msgstr "Магазин"
+
+msgid "Why do we need donations?"
+msgstr "Почему нам нужны донаты?"

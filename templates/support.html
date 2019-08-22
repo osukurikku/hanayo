@@ -266,11 +266,12 @@ AdditionalJS=https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.
         <div class="ui center aligned container">
             <img src="https://donationalerts.ru/img/header/logo.svg" width="128" height="128">
             <h3> {{ $.T "That's DonationAlerts - \"streamer's main tool\" but we use that beautiful platform for collect donations ヽ(・∀・)ﾉ" }} </h3>
-            <a href="https://donationalerts/r/osukurikku" class="ui orange button">Pew-Pew for donate</a>
+            <a href="https://donationalerts/r/osukurikku" class="ui orange button">{{ $.T "Donate!" }}</a>
+            <a href="/shop" class="ui orange button">{{ $.T "Shop" }}</a>
             <br/><br/>
             <p>{{ $.T "<b>NOTE:</b> please check description before you donate" | html }}</p>
           
-          </div>
+        </div>
     {{ else }}
         <div class="ui divider"></div>
         <h1 class="ui center aligned header">{{ $.T "Please log in before purchasing supporter" }}</h1>
