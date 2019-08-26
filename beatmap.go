@@ -28,8 +28,8 @@ func beatmapSetInfo(c *gin.Context) {
 	if _, err := strconv.Atoi(sid); err != nil {
 		c.Error(err)
 	} else {
-		var result map[string]interface{}
-		resp, err := http.Get(config.CheesegullAPI + "/s/" + strconv.Itoa(sid))
+		result := make(map[string]interface{})
+		resp, err := http.Get(config.CheesegullAPI + "/s/" + sid)
 		if err != nil {
 			c.Error(err)
 		}
