@@ -44,7 +44,7 @@ func beatmapSetInfo(c *gin.Context) {
 			c.Error(err)
 		}
 
-		childrens := result["ChildrenBeatmaps"].([]map[string]interface{})
+		childrens := result["ChildrenBeatmaps"].([]interface{})
 		if len(childrens) < 1 {
 			data.TitleBar = T(c, "Beatmap not found.")
 			data.Messages = append(data.Messages, errorMessage{T(c, "Beatmap could not be found.")})
@@ -52,7 +52,7 @@ func beatmapSetInfo(c *gin.Context) {
 			return
 		}
 
-		beatmapID := childrens[0]["BeatmapID"].(int)
+		beatmapID := childrens[0].(map[string]interface{})["BeatmapID"].(int)
 		c.Redirect(302, "/b/"+strconv.Itoa(beatmapID))
 	}
 }
