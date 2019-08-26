@@ -44,6 +44,10 @@ func beatmapSetInfo(c *gin.Context) {
 			c.Error(err)
 		}
 
+		if result["ChildrenBeatmaps"] == nil {
+			c.Redirect(302, "/b/"+sid)
+			return
+		}
 		childrens := result["ChildrenBeatmaps"].([]interface{})
 		if len(childrens) < 1 {
 			data.TitleBar = T(c, "Beatmap not found.")
