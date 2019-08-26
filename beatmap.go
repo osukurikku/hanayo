@@ -52,7 +52,7 @@ func beatmapSetInfo(c *gin.Context) {
 			return
 		}
 
-		beatmapID := childrens[0].(map[string]interface{})["BeatmapID"].(int)
+		beatmapID := int(childrens[0].(map[string]interface{})["BeatmapID"].(float64))
 		c.Redirect(302, "/b/"+strconv.Itoa(beatmapID))
 	}
 }
