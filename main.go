@@ -287,6 +287,8 @@ func generateEngine() *gin.Engine {
 	r.GET("/u/:user/report", reportForm)
 	r.POST("/u/:user/report", reportSubmit)
 	r.GET("/b/:bid", beatmapInfo)
+	r.GET("/s/:sid", beatmapSetInfo)
+	r.GET("/beatmapsets/:sid", beatmapSetInfo)
 
 	r.POST("/pwreset", passwordReset)
 	r.GET("/pwreset/continue", passwordResetContinue)

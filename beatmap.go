@@ -21,6 +21,43 @@ type beatmapPageData struct {
 	SetJSON    string
 }
 
+func beatmapSetInfo(c *gin.Context) {
+	data := new(beatmapPageData)
+
+	sid := c.Param("sid")
+	if _, err := strconv.Atoi(sid); err != nil {
+		c.Error(err)
+	} else {
+		var result map[string]interface{}
+		resp, err := http.Get(config.CheesegullAPI + "/s/" + strconv.Itoa(sid))
+		if err != nil {
+			c.Error(err)
+		}
+		defer resp.Body.Close()
+		body, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			c.Error(err)
+		}
+
+		err = json.Unmarshal(body, &result)
+		if err != nil {
+			c.Error(err)
+		}
+
+		if len(result["ChildrenBeatmaps"]) < 1 {
+			if data.Beatmapset.ID == 0 {
+				data.TitleBar = T(c, "Beatmap not found.")
+				data.Messages = append(data.Messages, errorMessage{T(c, "Beatmap could not be found.")})
+				resp(c, 200, "beatmap.html", data)
+				return
+			}
+		}
+
+		beatmapID := result["ChildrenBeatmaps"][0]["BeatmapID"]
+		c.Redirect(302, "/b/"+strconv.Itoa(beatmapID))
+	}
+}
+
 func beatmapInfo(c *gin.Context) {
 	data := new(beatmapPageData)
 	defer resp(c, 200, "beatmap.html", data)
