@@ -28,7 +28,7 @@ func beatmapSetInfo(c *gin.Context) {
 	if _, err := strconv.Atoi(sid); err != nil {
 		c.Error(err)
 	} else {
-		result := make(map[string]interface{})
+		var result map[string]interface{}
 		resp, err := http.Get(config.CheesegullAPI + "/s/" + sid)
 		if err != nil {
 			c.Error(err)
@@ -44,16 +44,15 @@ func beatmapSetInfo(c *gin.Context) {
 			c.Error(err)
 		}
 
-		if len(result["ChildrenBeatmaps"]) < 1 {
-			if data.Beatmapset.ID == 0 {
-				data.TitleBar = T(c, "Beatmap not found.")
-				data.Messages = append(data.Messages, errorMessage{T(c, "Beatmap could not be found.")})
-				resp(c, 200, "beatmap.html", data)
-				return
-			}
+		childrens := result["ChildrenBeatmaps"].([]map[string]interface{})
+		if len(childrens) < 1 {
+			data.TitleBar = T(c, "Beatmap not found.")
+			data.Messages = append(data.Messages, errorMessage{T(c, "Beatmap could not be found.")})
+			c.Redirect(302, "/b/"+sid)
+			return
 		}
 
-		beatmapID := result["ChildrenBeatmaps"][0]["BeatmapID"]
+		beatmapID := childrens[0]["BeatmapID"].(int)
 		c.Redirect(302, "/b/"+strconv.Itoa(beatmapID))
 	}
 }
