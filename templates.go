@@ -57,7 +57,7 @@ func loadTemplates(subdir string) {
 		}
 
 		fullName := "templates" + subdir + "/" + i.Name()
-		_c := parseConfig(fullName)BaseGet
+		_c := parseConfig(fullName)
 		var c templateConfig
 		if _c != nil {
 			c = *_c
