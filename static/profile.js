@@ -644,7 +644,7 @@ function viewTopScoreInfo() {
       },
       'Score': {
         name: 'score.png',
-        val:  humanizeNumber(s.score)
+        val:  addCommas(s.score)
       },
       'PP': {
         name: 'pp.png',
