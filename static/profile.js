@@ -167,6 +167,10 @@ function setFriend(i) {
     b.attr("data-friends", i > 0 ? 1 : 0)
 }
 
+function humanizeNumber(number) {
+    return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
+  }
+
 function friendClick() {
     var t = $(this);
     if (t.hasClass("loading")) return;
