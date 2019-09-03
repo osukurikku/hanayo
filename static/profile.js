@@ -168,7 +168,7 @@ function setFriend(i) {
 }
 
 function humanizeNumber(number) {
-    return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ').replace(" ", ".")
+    return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ').replace(/\s/g, ".")
   }
 
 function friendClick() {
@@ -305,14 +305,28 @@ function loadTopScoresPage(type, mode) {
             } else {
                 var scoreRank = getRank(mode, v.mods, v.accuracy, v.count_300, v.count_100, v.count_50, v.count_miss);
             }
-            table.append($("<tr class='new score-row' data-scoreid='" + v.id + "' />").append(
-                $(
-                    "<td><img src='/static/ranking-icons/" + scoreRank + ".png' class='score rank' alt='" + scoreRank + "'> " +
-                    escapeHTML(v.beatmap.song_name) + " <b>" + getScoreMods(v.mods) + "</b> <i>(" + v.accuracy.toFixed(2) + "%)</i><br />" +
-                    "<div class='subtitle'><time class='new timeago' datetime='" + v.time + "'>" + v.time + "</time></div></td>"
-                ),
-                $("<td><b>" + ppOrScore(v.pp, v.score) + "</b> " + weightedPP(type, page, idx, v.pp) + (v.completed == 3 ? "<br>" + downloadStar(v.id) : "") + "</td>")
-            ));
+            table.append(
+                $("<tr class='new score-row' data-scoreid='" + v.id + "' />").append(
+                    $(`
+                    <div class="scores-table">
+                        <div class="scores-table-left">
+                        <img src='/static/ranking-icons/${scoreRank}.png' class='score rank' alt='${scoreRank}'> 
+                        </div>
+                        <div class="scores-table-left-info">
+                        ${escapeHTML(v.beatmap.song_name)} <b>${getScoreMods(v.mods)}</b><br/>
+                        
+                        <div class="subtitle">
+                            ${v.accuracy.toFixed(2)}% / ${humanizeNumber(v.score)} / ${v.max_combo}x <b>(${v.beatmap.max_combo}x)</b> { ${v.count_300} / ${v.count_100} / ${v.count_50} / ${v.count_miss} }
+                        </div>
+                        <div class="subtitle">
+                            <time class='new timeago' datetime='${v.time}'>${v.time}</time>
+                        </div>
+                        </div>
+                    </div>
+                    `),
+                    $("<td class=\"text-kr-center\"><b>" + ppOrScore(v.pp, v.score) + "</b> " + weightedPP(type, page, idx, v.pp) +  (v.completed == 3 ? "<br>" + downloadStar(v.id) : "") +  "</td>")
+                )
+            );
         });
         $(".new.timeago").timeago().removeClass("new");
         $(".new.score-row").click(viewTopScoreInfo).removeClass("new");
@@ -640,11 +654,11 @@ function viewTopScoreInfo() {
     var ultimateStupidDatav2 = {
       // key, value, shouldinsert?
       'bg': {
-        val: `https://assets.ppy.sh/beatmaps/${s.beatmap.beatmap_id}/covers/cover.jpg`
+        val: `https://assets.ppy.sh/beatmaps/${s.beatmap.beatmapset_id}/covers/cover.jpg`
       },
       'Score': {
         name: 'score.png',
-        val:  addCommas(+s.score).replace(",", " ")
+        val:  humanizeNumber(s.score)
       },
       'PP': {
         name: 'pp.png',
@@ -656,7 +670,7 @@ function viewTopScoreInfo() {
       },
       'Accuracy': {
         name: 'acc.png',
-        val: s.accuracy + "%"
+        val: s.accuracy.toFixed(2) + "%"
       },
       'Mods': {
         name: 'mods.png',
@@ -689,7 +703,7 @@ function viewTopScoreInfo() {
   
     var els = [];
     $.each(data, function(key, value) {
-      if (key === "bg") continue;
+      if (key === "bg") return;
   
       els.push(
         $(`
@@ -701,16 +715,17 @@ function viewTopScoreInfo() {
               </div>
               <div class="twelve wide column">
                 <p class="status-head-score">${value.val}</p>
-                <p class="status-footer">${T(key)}</p>
+                <p class="status-footer-score">${T(key)}</p>
               </div>
             </div>
           </div>
         </div>
         `)
       );
-    });
+    }); 
   
-    $("#scores-header").css("background-image", data['bg']['val']); // Update header image
+    $("#scores-header").css("background-image", `url(${data.bg.val})`); // Update header image
+    $("#scores-header p").text(s.beatmap.song_name);
     $("#scores-body div").remove(); // Remove old stats
     $("#scores-body").append(els); // Add new stats imho ;d
   
