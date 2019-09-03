@@ -167,6 +167,10 @@ function setFriend(i) {
     b.attr("data-friends", i > 0 ? 1 : 0)
 }
 
+function humanizeNumber(number) {
+    return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ').replace(/\s/g, ".")
+  }
+
 function friendClick() {
     var t = $(this);
     if (t.hasClass("loading")) return;
@@ -182,8 +186,8 @@ function setDefaultScoreTable() {
         .append(
             $("<thead />").append(
                 $("<tr />").append(
-                    $("<th>" + T("General info") + "</th>"),
-                    $("<th>" + T("Score") + "</th>")
+                    $("<th class='text-kr-center'>" + T("General info") + "</th>"),
+                    $("<th class='text-kr-center'>" + T("Score") + "</th>")
                 )
             )
         )
@@ -301,14 +305,28 @@ function loadTopScoresPage(type, mode) {
             } else {
                 var scoreRank = getRank(mode, v.mods, v.accuracy, v.count_300, v.count_100, v.count_50, v.count_miss);
             }
-            table.append($("<tr class='new score-row' data-scoreid='" + v.id + "' />").append(
-                $(
-                    "<td><img src='/static/ranking-icons/" + scoreRank + ".png' class='score rank' alt='" + scoreRank + "'> " +
-                    escapeHTML(v.beatmap.song_name) + " <b>" + getScoreMods(v.mods) + "</b> <i>(" + v.accuracy.toFixed(2) + "%)</i><br />" +
-                    "<div class='subtitle'><time class='new timeago' datetime='" + v.time + "'>" + v.time + "</time></div></td>"
-                ),
-                $("<td><b>" + ppOrScore(v.pp, v.score) + "</b> " + weightedPP(type, page, idx, v.pp) + (v.completed == 3 ? "<br>" + downloadStar(v.id) : "") + "</td>")
-            ));
+            table.append(
+                $("<tr class='new score-row' data-scoreid='" + v.id + "' />").append(
+                    $(`
+                    <div class="scores-table">
+                        <div class="scores-table-left">
+                        <img src='/static/ranking-icons/${scoreRank}.png' class='score rank' alt='${scoreRank}'> 
+                        </div>
+                        <div class="scores-table-left-info">
+                        ${escapeHTML(v.beatmap.song_name)} <b>${getScoreMods(v.mods)}</b><br/>
+                        
+                        <div class="subtitle">
+                            ${v.accuracy.toFixed(2)}% / ${humanizeNumber(v.score)} / ${v.max_combo}x <b>(${v.beatmap.max_combo}x)</b> { ${v.count_300} / ${v.count_100} / ${v.count_50} / ${v.count_miss} }
+                        </div>
+                        <div class="subtitle">
+                            <time class='new timeago' datetime='${v.time}'>${v.time}</time>
+                        </div>
+                        </div>
+                    </div>
+                    `),
+                    $("<td class=\"text-kr-center\"><b>" + ppOrScore(v.pp, v.score) + "</b> " + weightedPP(type, page, idx, v.pp) +  (v.completed == 3 ? "<br>" + downloadStar(v.id) : "") +  "</td>")
+                )
+            );
         });
         $(".new.timeago").timeago().removeClass("new");
         $(".new.score-row").click(viewTopScoreInfo).removeClass("new");
@@ -472,47 +490,33 @@ function loadScoresPage(type, mode) {
             scoreStore[v.id] = v;
             if (v.completed == 0) {
                 /*
-                We
-                definitely
-                don't
-                not
-                define
-                it
-                here
-                then
-                name
-                the
-                image
-                undefined.png
-                nope
-                not
-                us
-                not
-                us
-                here
-                at
-                akatsuki
-                we
-                wouldn't
-                dare
-                do
-                that
-                no
-                fucking
-                way
-                bro
+                WTF?
                 */
             } else {
                 var scoreRank = getRank(mode, v.mods, v.accuracy, v.count_300, v.count_100, v.count_50, v.count_miss);
             }
-            table.append($("<tr class='new score-row' data-scoreid='" + v.id + "' />").append(
-                $(
-                    "<td><img src='/static/ranking-icons/" + scoreRank + ".png' class='score rank' alt='" + scoreRank + "'> " +
-                    escapeHTML(v.beatmap.song_name) + " <b>" + getScoreMods(v.mods) + "</b> <i>(" + v.accuracy.toFixed(2) + "%)</i><br />" +
-                    "<div class='subtitle'><time class='new timeago' datetime='" + v.time + "'>" + v.time + "</time></div></td>"
-                ),
-                $("<td><b>" + ppOrScore(v.pp, v.score) + "</b> " + weightedPP(type, page, idx, v.pp) + (v.completed == 3 ? "<br>" + downloadStar(v.id) : "") + "</td>")
-            ));
+            table.append(
+                $("<tr class='new score-row' data-scoreid='" + v.id + "' />").append(
+                    $(`
+                    <div class="scores-table">
+                        <div class="scores-table-left">
+                        <img src='/static/ranking-icons/${scoreRank}.png' class='score rank' alt='${scoreRank}'> 
+                        </div>
+                        <div class="scores-table-left-info">
+                        ${escapeHTML(v.beatmap.song_name)} <b>${getScoreMods(v.mods)}</b><br/>
+                        
+                        <div class="subtitle">
+                            ${v.accuracy.toFixed(2)}% / ${humanizeNumber(v.score)} / ${v.max_combo}x <b>(${v.beatmap.max_combo}x)</b> { ${v.count_300} / ${v.count_100} / ${v.count_50} / ${v.count_miss} }
+                        </div>
+                        <div class="subtitle">
+                            <time class='new timeago' datetime='${v.time}'>${v.time}</time>
+                        </div>
+                        </div>
+                    </div>
+                    `),
+                    $("<td class=\"text-kr-center\"><b>" + ppOrScore(v.pp, v.score) + "</b> " + weightedPP(type, page, idx, v.pp) +  (v.completed == 3 ? "<br>" + downloadStar(v.id) : "") +  "</td>")
+                )
+            );
         });
         $(".new.timeago").timeago().removeClass("new");
         $(".new.score-row").click(viewScoreInfo).removeClass("new");
@@ -555,147 +559,218 @@ function viewScoreInfo() {
     if (!scoreid && scoreid !== 0) return;
     var s = scoreStore[scoreid];
     if (s === undefined) return;
-
+  
     // data to be displayed in the table.
-    var data = {
-        "Points": addCommas(s.score),
-        "PP": addCommas(s.pp),
-        "Beatmap": "<a href='/b/" + s.beatmap.beatmap_id + "'>" + escapeHTML(s.beatmap.song_name) + "</a>",
-        "Accuracy": s.accuracy + "%",
-        "Max combo": addCommas(s.max_combo) + "/" + addCommas(s.beatmap.max_combo)
-            + (s.full_combo ? " " + T("(full combo)") : ""),
-        "Difficulty": T("{{ stars }} star", {
-            stars: s.beatmap.difficulty2[modesShort[s.play_mode]],
-            count: Math.round(s.beatmap.difficulty2[modesShort[s.play_mode]]),
-        }),
-        "Mods": getScoreMods(s.mods, true),
-    };
-
+    // Data by KotRik, because i want!
+    var ultimateStupidDatav2 = {
+      // key, value, shouldinsert?
+      'bg': {
+        val: `https://assets.ppy.sh/beatmaps/${s.beatmap.beatmapset_id}/covers/cover.jpg`
+      },
+      'Score': {
+        name: 'score.png',
+        val:  humanizeNumber(s.score)
+      },
+      'PP': {
+        name: 'pp.png',
+        val: addCommas(s.pp)
+      },
+      'Starrate': {
+        name: 'starrate.png',
+        val: Math.round(s.beatmap.difficulty2[modesShort[s.play_mode]])
+      },
+      'Accuracy': {
+        name: 'acc.png',
+        val: s.accuracy.toFixed(2) + "%"
+      },
+      'Mods': {
+        name: 'mods.png',
+        val: getScoreMods(s.mods, true)
+      },
+      'Combo': {
+        name: 'combo.png',
+        val: s.max_combo
+      }
+    }
+  
     // hits data
     var hd = {};
     var trans = modeTranslations[s.play_mode];
     [
-        s.count_300,
-        s.count_100,
-        s.count_50,
-        s.count_geki,
-        s.count_katu,
-        s.count_miss,
-    ].forEach(function (val, i) {
-        hd[trans[i]] = val;
+      s.count_300,
+      s.count_100,
+      s.count_50,
+      s.count_geki,
+      s.count_katu,
+      s.count_miss,
+    ].forEach(function(val, i) {
+      hd[trans[i][0]] = {
+          name: trans[i][1],
+          val: val
+      };
     });
-
-    data = $.extend(data, hd, {
-        "Ranked?": T(s.completed == 3 ? "Yes" : "No"),
-        "Achieved": s.time,
-        "Mode": modes[s.play_mode],
-    });
-
+  
+    data = $.extend(ultimateStupidDatav2, hd);
+  
     var els = [];
-    $.each(data, function (key, value) {
-        els.push(
-            $("<tr />").append(
-                $("<td>" + T(key) + "</td>"),
-                $("<td>" + value + "</td>")
-            )
-        );
-    });
+    $.each(data, function(key, value) {
+      if (key === "bg") return;
+  
+      els.push(
+        $(`
+        <div class="four wide column">
+          <div>
+            <div class="ui grid score-info-grid">
+              <div class="four wide column">
+                <img src="/static/images/scoreic/${value.name}" class="ui centered icon-score"/>
+              </div>
+              <div class="twelve wide column">
+                <p class="status-head-score">${value.val}</p>
+                <p class="status-footer-score">${T(key)}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        `)
+      );
+    }); 
+  
+    $("#scores-header").css("background-image", `url(${data.bg.val})`); // Update header image
+    $("#scores-header a").text(s.beatmap.song_name);
+    $("#scores-header a").attr("href", `https://kurikku.pw/b/${s.beatmap.beatmap_id}`);
 
-    $("#score-data-table tr").remove();
-    $("#score-data-table").append(els);
+    $("#scores-body div").remove(); // Remove old stats
+    $("#scores-body").append(els); // Add new stats imho ;d
+  
     $(".ui.modal").modal("show");
-}
+  }
 
 function viewTopScoreInfo() {
     var scoreid = $(this).data("scoreid");
     if (!scoreid && scoreid !== 0) return;
     var s = topScoreStore[scoreid];
     if (s === undefined) return;
-
+  
     // data to be displayed in the table.
-    var data = {
-        "Points": addCommas(s.score),
-        "PP": addCommas(s.pp),
-        "Beatmap": "<a href='/b/" + s.beatmap.beatmap_id + "'>" + escapeHTML(s.beatmap.song_name) + "</a>",
-        "Accuracy": s.accuracy + "%",
-        "Max combo": addCommas(s.max_combo) + "/" + addCommas(s.beatmap.max_combo)
-            + (s.full_combo ? " " + T("(full combo)") : ""),
-        "Difficulty": T("{{ stars }} star", {
-            stars: s.beatmap.difficulty2[modesShort[s.play_mode]],
-            count: Math.round(s.beatmap.difficulty2[modesShort[s.play_mode]]),
-        }),
-        "Mods": getScoreMods(s.mods, true),
-    };
-
+    // Data by KotRik, because i want!
+    var ultimateStupidDatav2 = {
+      // key, value, shouldinsert?
+      'bg': {
+        val: `https://assets.ppy.sh/beatmaps/${s.beatmap.beatmapset_id}/covers/cover.jpg`
+      },
+      'Score': {
+        name: 'score.png',
+        val:  humanizeNumber(s.score)
+      },
+      'PP': {
+        name: 'pp.png',
+        val: addCommas(s.pp)
+      },
+      'Starrate': {
+        name: 'starrate.png',
+        val: Math.round(s.beatmap.difficulty2[modesShort[s.play_mode]])
+      },
+      'Accuracy': {
+        name: 'acc.png',
+        val: s.accuracy.toFixed(2) + "%"
+      },
+      'Mods': {
+        name: 'mods.png',
+        val: getScoreMods(s.mods, true)
+      },
+      'Combo': {
+        name: 'combo.png',
+        val: s.max_combo
+      }
+    }
+  
     // hits data
     var hd = {};
     var trans = modeTranslations[s.play_mode];
     [
-        s.count_300,
-        s.count_100,
-        s.count_50,
-        s.count_geki,
-        s.count_katu,
-        s.count_miss,
-    ].forEach(function (val, i) {
-        hd[trans[i]] = val;
+      s.count_300,
+      s.count_100,
+      s.count_50,
+      s.count_geki,
+      s.count_katu,
+      s.count_miss,
+    ].forEach(function(val, i) {
+      hd[trans[i][0]] = {
+          name: trans[i][1],
+          val: val
+      };
     });
-
-    data = $.extend(data, hd, {
-        "Ranked?": T(s.completed == 3 ? "Yes" : "No"),
-        "Achieved": s.time,
-        "Mode": modes[s.play_mode],
-    });
-
+  
+    data = $.extend(ultimateStupidDatav2, hd);
+  
     var els = [];
-    $.each(data, function (key, value) {
-        els.push(
-            $("<tr />").append(
-                $("<td>" + T(key) + "</td>"),
-                $("<td>" + value + "</td>")
-            )
-        );
-    });
+    $.each(data, function(key, value) {
+      if (key === "bg") return;
+  
+      els.push(
+        $(`
+        <div class="four wide column">
+          <div>
+            <div class="ui grid score-info-grid">
+              <div class="four wide column">
+                <img src="/static/images/scoreic/${value.name}" class="ui centered icon-score"/>
+              </div>
+              <div class="twelve wide column">
+                <p class="status-head-score">${value.val}</p>
+                <p class="status-footer-score">${T(key)}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        `)
+      );
+    }); 
+  
+    $("#scores-header").css("background-image", `url(${data.bg.val})`); // Update header image
+    $("#scores-header a").text(s.beatmap.song_name);
+    $("#scores-header a").attr("href", `https://kurikku.pw/b/${s.beatmap.beatmap_id}`);
 
-    $("#score-data-table tr").remove();
-    $("#score-data-table").append(els);
+    $("#scores-body div").remove(); // Remove old stats
+    $("#scores-body").append(els); // Add new stats imho ;d
+  
     $(".ui.modal").modal("show");
-}
+  }
 
 var modeTranslations = [
     [
-        "300s",
-        "100s",
-        "50s",
-        "Gekis",
-        "Katus",
-        "Misses"
+      ["300s", '300.png'], 
+      ["100s", '100.png'],
+      ["50s", '50.png'],
+      ["Gekis", 'gekis.png'],
+      ["Katus", 'katu.png'],
+      ["Misses", '0.png']
     ],
     [
-        "GREATs",
-        "GOODs",
-        "50s",
-        "GREATs (Gekis)",
-        "GOODs (Katus)",
-        "Misses"
+      ["GREATs", '300.png'],
+      ["GOODs", '100.png'],
+      ["50s", '50.png'],
+      ["GREATs (Gekis)", 'gekis.png'],
+      ["GOODs (Katus)", 'katu.png'],
+      ["Misses", '0.png']
     ],
     [
-        "Fruits (300s)",
-        "Ticks (100s)",
-        "Droplets",
-        "Gekis",
-        "Droplet misses",
-        "Misses"
+      ["Fruits (300s)", '300.png'],
+      ["Ticks (100s)", '100.png'],
+      ["Droplets", '50.png'],
+      ["Gekis", 'gekis.png'],
+      ["Droplet misses", 'katu.png'],
+      ["Misses", '0.png']
     ],
     [
-        "300s",
-        "200s",
-        "50s",
-        "Max 300s",
-        "100s",
-        "Misses"
+      ["300s", '300.png'],
+      ["200s", '100.png'],
+      ["50s", '50.png'],
+      ["Max 300s", 'gekis.png'],
+      ["100s", 'katu.png'],
+      ["Misses", '0.png']
     ]
-];
+  ];
+  
 
 // helper functions copied from user.js in old-frontend
 function getScoreMods(m, noplus) {
