@@ -622,6 +622,7 @@ function viewScoreInfo() {
     });
   
     $("#scores-header").css("background-image", data['bg']['val']); // Update header image
+    $("#scores-header p").val(s.beatmap.song_name);
     $("#scores-body div").remove(); // Remove old stats
     $("#scores-body").append(els); // Add new stats imho ;d
   

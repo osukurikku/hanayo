@@ -1389,14 +1389,16 @@ g > text {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: left;
+	justify-content: left;
+	margin-top: 12px;
 }
 
 .scores-table-left img {
     width: 34px;
-    height: 34px!important;
+	height: 34px!important;
+	margin-right: 8px;
 }
 
 .text-kr-center {
-    text-align: center;
+    text-align: center!important;
 }
