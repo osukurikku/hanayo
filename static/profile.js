@@ -168,7 +168,7 @@ function setFriend(i) {
 }
 
 function humanizeNumber(number) {
-    return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
+    return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ').replace(" ", ".")
   }
 
 function friendClick() {
@@ -492,7 +492,7 @@ function loadScoresPage(type, mode) {
                         ${escapeHTML(v.beatmap.song_name)} <b>${getScoreMods(v.mods)}</b><br/>
                         
                         <div class="subtitle">
-                            ${v.accuracy.toFixed(2)}% / ${humanizeNumber(v.score)} / ${v.max_combo}x (${v.beatmap.max_combo}x) { ${v.count_300} / ${v.count_100} / ${v.count_50} / ${v.count_miss} }
+                            ${v.accuracy.toFixed(2)}% / ${humanizeNumber(v.score)} / ${v.max_combo}x <b>(${v.beatmap.max_combo}x)</b> { ${v.count_300} / ${v.count_100} / ${v.count_50} / ${v.count_miss} }
                         </div>
                         <div class="subtitle">
                             <time class='new timeago' datetime='${v.time}'>${v.time}</time>
@@ -567,7 +567,7 @@ function viewScoreInfo() {
       },
       'Accuracy': {
         name: 'accuracy.png',
-        val: s.accuracy + "%"
+        val: s.accuracy.toFixed(2) + "%"
       },
       'Mods': {
         name: 'mods.png',
@@ -655,7 +655,7 @@ function viewTopScoreInfo() {
         val: Math.round(s.beatmap.difficulty2[modesShort[s.play_mode]])
       },
       'Accuracy': {
-        name: 'accuracy.png',
+        name: 'acc.png',
         val: s.accuracy + "%"
       },
       'Mods': {
@@ -723,32 +723,32 @@ var modeTranslations = [
       ["100s", '100.png'],
       ["50s", '50.png'],
       ["Gekis", 'gekis.png'],
-      ["Katus", 'katus.png'],
-      ["Misses", 'misses.png']
+      ["Katus", 'katu.png'],
+      ["Misses", '0.png']
     ],
     [
       ["GREATs", '300.png'],
       ["GOODs", '100.png'],
       ["50s", '50.png'],
       ["GREATs (Gekis)", 'gekis.png'],
-      ["GOODs (Katus)", 'katus.png'],
-      ["Misses", 'misses.png']
+      ["GOODs (Katus)", 'katu.png'],
+      ["Misses", '0.png']
     ],
     [
       ["Fruits (300s)", '300.png'],
       ["Ticks (100s)", '100.png'],
       ["Droplets", '50.png'],
       ["Gekis", 'gekis.png'],
-      ["Droplet misses", 'katus.png'],
-      ["Misses", 'misses.png']
+      ["Droplet misses", 'katu.png'],
+      ["Misses", '0.png']
     ],
     [
       ["300s", '300.png'],
       ["200s", '100.png'],
       ["50s", '50.png'],
       ["Max 300s", 'gekis.png'],
-      ["100s", 'katus.png'],
-      ["Misses", 'misses.png']
+      ["100s", 'katu.png'],
+      ["Misses", '0.png']
     ]
   ];
   
