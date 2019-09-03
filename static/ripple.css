@@ -1369,7 +1369,7 @@ g > text {
 .icon-score {
 	width: 64px;
 	height: 64px;
-	align-self: center;
+	max-width: none;
 }
 
 .score-info-grid {

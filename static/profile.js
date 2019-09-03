@@ -566,7 +566,7 @@ function viewScoreInfo() {
         val: Math.round(s.beatmap.difficulty2[modesShort[s.play_mode]])
       },
       'Accuracy': {
-        name: 'accuracy.png',
+        name: 'acc.png',
         val: s.accuracy.toFixed(2) + "%"
       },
       'Mods': {
