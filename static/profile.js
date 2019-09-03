@@ -186,8 +186,8 @@ function setDefaultScoreTable() {
         .append(
             $("<thead />").append(
                 $("<tr />").append(
-                    $("<th>" + T("General info") + "</th>"),
-                    $("<th>" + T("Score") + "</th>")
+                    $("<th class='text-kr-center'>" + T("General info") + "</th>"),
+                    $("<th class='text-kr-center'>" + T("Score") + "</th>")
                 )
             )
         )
@@ -486,7 +486,7 @@ function loadScoresPage(type, mode) {
                     $(`
                     <div class="scores-table">
                         <div class="scores-table-left">
-                        <img src='/static/ranking-icons/${scoreRank}.svg' class='score rank' alt='${scoreRank}'> 
+                        <img src='/static/ranking-icons/${scoreRank}.png' class='score rank' alt='${scoreRank}'> 
                         </div>
                         <div class="scores-table-left-info">
                         ${escapeHTML(v.beatmap.song_name)} <b>${getScoreMods(v.mods)}</b><br/>
@@ -600,7 +600,7 @@ function viewScoreInfo() {
   
     var els = [];
     $.each(data, function(key, value) {
-      if (key === "bg") continue;
+      if (key === "bg") return;
   
       els.push(
         $(`
