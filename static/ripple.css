@@ -1383,6 +1383,10 @@ g > text {
 	font-size: 28px;
 }
 
+.status-footer-score {
+	font-size: 20px;
+    text-align: center;
+}
 
 .scores-table {
     width: 100%;

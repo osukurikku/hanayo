@@ -612,17 +612,17 @@ function viewScoreInfo() {
               </div>
               <div class="twelve wide column">
                 <p class="status-head-score">${value.val}</p>
-                <p class="status-footer">${T(key)}</p>
+                <p class="status-footer-score">${T(key)}</p>
               </div>
             </div>
           </div>
         </div>
         `)
       );
-    });
+    }); 
   
-    $("#scores-header").css("background-image", data['bg']['val']); // Update header image
-    $("#scores-header p").val(s.beatmap.song_name);
+    $("#scores-header").css("background-image", `url(${data.bg.val})`); // Update header image
+    $("#scores-header p").text(s.beatmap.song_name);
     $("#scores-body div").remove(); // Remove old stats
     $("#scores-body").append(els); // Add new stats imho ;d
   
