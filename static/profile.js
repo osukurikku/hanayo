@@ -479,26 +479,26 @@ function loadScoresPage(type, mode) {
             }
             table.append(
                 $("<tr class='new score-row' data-scoreid='" + v.id + "' />").append(
-                  $(`
+                    $(`
                     <div class="scores-table">
-                      <div class="scores-table-left">
+                        <div class="scores-table-left">
                         <img src='/static/ranking-icons/${scoreRank}.svg' class='score rank' alt='${scoreRank}'> 
-                      </div>
-                      <div class="scores-table-left-info">
+                        </div>
+                        <div class="scores-table-left-info">
                         ${escapeHTML(v.beatmap.song_name)} <b>${getScoreMods(v.mods)}</b><br/>
                         
                         <div class="subtitle">
-                          ${v.accuracy.toFixed(2)}% / ${humanizeNumber(v.score)} / ${v.max_combo}x (${v.beatmap.max_combo}x) { ${v.count_300} / ${v.count_100} / ${v.count_50} / ${v.count_miss} }
+                            ${v.accuracy.toFixed(2)}% / ${humanizeNumber(v.score)} / ${v.max_combo}x (${v.beatmap.max_combo}x) { ${v.count_300} / ${v.count_100} / ${v.count_50} / ${v.count_miss} }
                         </div>
                         <div class="subtitle">
-                          <time class='new timeago' datetime='${v.time}'>${v.time}</time>
+                            <time class='new timeago' datetime='${v.time}'>${v.time}</time>
                         </div>
-                      </div>
+                        </div>
                     </div>
-                  `),
-                  $("<td class=\"text-kr-center\"><b>" + ppOrScore(v.pp, v.score) + "</b> " + weightedPP(type, page, idx, v.pp) +  (v.completed == 3 ? "<br>" + downloadStar(v.id) : "") +  "</td>")
-              ));
-            });
+                    `),
+                    $("<td class=\"text-kr-center\"><b>" + ppOrScore(v.pp, v.score) + "</b> " + weightedPP(type, page, idx, v.pp) +  (v.completed == 3 ? "<br>" + downloadStar(v.id) : "") +  "</td>")
+                )
+            );
         });
         $(".new.timeago").timeago().removeClass("new");
         $(".new.score-row").click(viewScoreInfo).removeClass("new");
