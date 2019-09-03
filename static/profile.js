@@ -636,7 +636,9 @@ function viewScoreInfo() {
     }); 
   
     $("#scores-header").css("background-image", `url(${data.bg.val})`); // Update header image
-    $("#scores-header p").text(s.beatmap.song_name);
+    $("#scores-header a").text(s.beatmap.song_name);
+    $("#scores-header a").attr("href", `https://kurikku.pw/b/${s.beatmap.beatmap_id}`);
+
     $("#scores-body div").remove(); // Remove old stats
     $("#scores-body").append(els); // Add new stats imho ;d
   
@@ -725,7 +727,9 @@ function viewTopScoreInfo() {
     }); 
   
     $("#scores-header").css("background-image", `url(${data.bg.val})`); // Update header image
-    $("#scores-header p").text(s.beatmap.song_name);
+    $("#scores-header a").text(s.beatmap.song_name);
+    $("#scores-header a").attr("href", `https://kurikku.pw/b/${s.beatmap.beatmap_id}`);
+
     $("#scores-body div").remove(); // Remove old stats
     $("#scores-body").append(els); // Add new stats imho ;d
   
