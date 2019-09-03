@@ -551,7 +551,7 @@ function viewScoreInfo() {
     var ultimateStupidDatav2 = {
       // key, value, shouldinsert?
       'bg': {
-        val: `https://assets.ppy.sh/beatmaps/${s.beatmap.beatmap_id}/covers/cover.jpg`
+        val: `https://assets.ppy.sh/beatmaps/${s.beatmap.beatmapset_id}/covers/cover.jpg`
       },
       'Score': {
         name: 'score.png',
