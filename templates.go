@@ -13,6 +13,7 @@ import (
 	"strings"
 	"time"
 	"unicode/utf8"
+	"strconv"
 
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
@@ -273,6 +274,10 @@ func (b baseTemplateData) SubStringKR(s string, count int) string {
 	}
 	finalStr = replaceUnCorrectSymbols(finalStr)
 	return finalStr
+}
+
+func (b baseTemplateData) ConvertFl64ToInt(s float64) string {
+        return strconv.Itoa(int(s))
 }
 
 func (b baseTemplateData) Has(privs uint64) bool {

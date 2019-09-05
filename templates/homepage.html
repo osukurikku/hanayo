@@ -86,7 +86,7 @@ KyutGrill=darkhome.jpg
                                     {{ range .beatmaps }}
                                         <tr>
                                             <td style="display: flex; align-items: center;">
-                                                <img style="height: 50px; width: auto;" logo="preview-{{ .beatmapset_id }}" src="https://assets.ppy.sh/beatmaps/{{ .beatmapset_id }}/covers/list@2x.jpg"
+                                                <img style="height: 50px; width: auto;" logo="preview-{{ $.ConvertFl64ToInt .beatmapset_id }}" src="https://assets.ppy.sh/beatmaps/{{ $.ConvertFl64ToInt .beatmapset_id }}/covers/list@2x.jpg"
                                                     class="ui mini rounded image"/>
                                                 <div style="margin-left: 5px; width: 100%;" class="content">
                                                     <div style="font-size: 13px">{{ .song_name }}</div>
