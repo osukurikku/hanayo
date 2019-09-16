@@ -577,7 +577,7 @@ function viewScoreInfo() {
       },
       'Starrate': {
         name: 'starrate.png',
-        val: Math.round(s.beatmap.difficulty2[modesShort[s.play_mode]])
+        val: s.beatmap.difficulty2[modesShort[s.play_mode]].toFixed(2)
       },
       'Accuracy': {
         name: 'acc.png',
@@ -668,7 +668,7 @@ function viewTopScoreInfo() {
       },
       'Starrate': {
         name: 'starrate.png',
-        val: Math.round(s.beatmap.difficulty2[modesShort[s.play_mode]])
+        val: s.beatmap.difficulty2[modesShort[s.play_mode]].toFixed(2)
       },
       'Accuracy': {
         name: 'acc.png',
