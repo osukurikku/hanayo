@@ -112,6 +112,16 @@ var funcMap = template.FuncMap{
 		i, _ := strconv.Atoi(s)
 		return i
 	},
+
+	"isBday": func(i int) bool {
+		_, month, day := time.Now().Date()
+		if month == 10 && day == 19 {
+			return true;
+		} else {
+			return false;
+		}
+	},
+
 	// parseUserpage compiles BBCode to HTML.
 	"parseUserpage": func(s string) template.HTML {
 		return template.HTML(bbcode.Compile(s))
