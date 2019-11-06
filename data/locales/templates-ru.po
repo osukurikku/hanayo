@@ -1963,3 +1963,6 @@ msgstr "Магазин"
 
 msgid "Why do we need donations?"
 msgstr "Почему нам нужны донаты?"
+
+msgid "Hunters who catch and send in ban cheaters. We are proud of them."
+msgstr "Охотники, которые ловят и отправляют в бан читеров. Мы гордимся ими"

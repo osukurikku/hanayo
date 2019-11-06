@@ -33,6 +33,13 @@ KyutGrill=team2.jpg
 			{{ template "userGroup" (.Get "badges/members?id=%d" 3) }}
 		</div>
 		<div class="ui center aligned segment">
+			<h1 class="ui heading">{{ .T "Replay Moderators" }}</h1>
+			<p>
+				{{ .T "Hunters who catch and send in ban cheaters. We are proud of them." }}<br>
+			</p>
+			{{ template "userGroup" (.Get "badges/members?id=%d" 17) }}
+		</div>
+		<div class="ui center aligned segment">
 			<h1 class="ui heading">{{ .T "Chat Moderators" }}</h1>
 			<p>
 				{{ .T "Chat moderators manage the chat to make sure The Law&trade; (the rules) is respected." | html }}
@@ -48,6 +55,7 @@ KyutGrill=team2.jpg
 		</div>
 	</div>
 	<div class="ui segments">
+		{{ .T "Looking for how you should contact our team? Check out <a href='/help'>this page</a>." | html }}
 		<div class="ui center aligned segment">
 			<h1 class="ui heading">{{ .T "Special thanks" }}</h1>
 			<p>{{ .T "Here's a list of people who helped with Kurikku" }}</p>
@@ -79,6 +87,5 @@ KyutGrill=team2.jpg
 		</div>
 	</div>
 	{{ $ := . }}
-	{{ .T "Looking for how you should contact our team? Check out <a href='/help'>this page</a>." | html }}
 </div>
 {{ end }}
