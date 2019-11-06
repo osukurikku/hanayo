@@ -55,13 +55,13 @@ KyutGrill=team2.jpg
 		</div>
 	</div>
 	<div class="ui segments">
-		{{ .T "Looking for how you should contact our team? Check out <a href='/help'>this page</a>." | html }}
 		<div class="ui center aligned segment">
 			<h1 class="ui heading">{{ .T "Special thanks" }}</h1>
 			<p>{{ .T "Here's a list of people who helped with Kurikku" }}</p>
 			{{ template "userGroup" (.Get "badges/members?id=%d" 6) }}
 		</div>
 		<div class="ui segment">
+			{{ .T "Looking for how you should contact our team? Check out <a href='/help'>this page</a>." | html }}
 			<ul class="ui list">
 				<li>
 					{{ .T "<b>Franc[e]sco/lolisamurai</b>, for <a href='https://github.com/Francesco149/oppai'>oppai</a>, used as standard pp calculator." | html }}<br>
