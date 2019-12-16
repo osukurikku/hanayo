@@ -119,7 +119,7 @@
       $(this).addClass("active");
       currentMode = $(this).data("mode");
       currentModeChanged = true;
-      if (currentMode !== "0") {
+      if (currentMode !== 0) {
         // Удаляем все менюшки
         currentMod = "nomod";
         $("#sm-menu .item").remove()
@@ -128,7 +128,7 @@
         // Пытаемся вернуть всё на место(тесто)
         $("#sm-menu").append(
           $(`
-          <a class="item" id="mode-nomod" data-mod="nomod" href="">Standart</a>
+          <a class="item active" id="mode-nomod" data-mod="nomod" href="">Standart</a>
           <a class="item" id="mode-rx" data-mod="rx" href="#">Relax</a>
           <a class="item" id="mode-ap" data-mod="ap" href="#">Autopilot</a>
           `)
