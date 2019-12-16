@@ -47,6 +47,7 @@
         <div class="five wide column">
             <div class="ui top attached segment overflow auto" style="border-bottom-left-radius: 0 !important; border-bottom-right-radius: 0 !important;">
                 <div class="ui stackable centered grid">
+
                     <div class="sixteen wide column">
                         {{ if eq $global.UserID $global.Context.User.ID }}
                         <a href="/settings/avatar">
@@ -56,6 +57,7 @@
                         </a>
                         {{ end }}
                     </div>
+
                     <div class="center aligned sixteen wide column"> 
                         <h1 class="ui header">
                             {{ if $super }}
@@ -209,6 +211,7 @@
                             {{ end }}
                         </div>
                     </div>
+
                     <div class="sixteen wide column">
                         {{ range $k, $v := (slice .std .taiko .ctb .mania) }}
                         <div data-mode="{{ $k }}" {{ if ne $k (int $favouritemode) }} hidden{{ end }}>
@@ -269,6 +272,19 @@
                         </div>
                         {{ end }}
                     </div>
+
+                    <div class="sixteen wide column">
+                        <div class="ui raised segment" id="mostplayed_bms">
+                            Most played beatmaps
+
+                            {{ range _range 4 }}
+                                <div class="ui yellow segment" data-mode="{{ . }}" {{ if ne . (int $favouritemode) }} hidden{{ end }} data-loaded="0">
+
+                                </div>
+                            {{ end }}                        
+                        </div>
+                    </div>
+
                 </div>
             </div> <!-- end grid segment -->
         </div>
