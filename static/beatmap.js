@@ -102,20 +102,6 @@
     console.log("clicked");
     console.log($(this).data)
     currentMod = $(this).data("mod");
-    if (currentMod !== 0) {
-      // Удаляем все менюшки
-      $("#sm-menu .item").remove()
-    } else {
-      // Пытаемся вернуть всё на место(тесто)
-      $("#sm-menu").append(
-        $(`
-          <a class="item" id="mode-nomod" data-mod="nomod" href="">Standart</a>
-          <a class="item" id="mode-rx" data-mod="rx" href="#">Relax</a>
-          <a class="item" id="mode-ap" data-mod="ap" href="#">Autopilot</a>
-      `)
-      )
-      $("#sm-menu .item").click(smMenuHandler)
-    }
     loadLeaderboard(beatmapID, currentMode, currentMod);
   }
 
@@ -132,8 +118,25 @@
       $("#mode-menu .active.item").removeClass("active");
       $(this).addClass("active");
       currentMode = $(this).data("mode");
-      loadLeaderboard(beatmapID, currentMode, currentMod);
       currentModeChanged = true;
+      if (currentMode !== "0") {
+        // Удаляем все менюшки
+        currentMod = "nomod";
+        $("#sm-menu .item").remove()
+        $("#sm-menu").hide();
+      } else {
+        // Пытаемся вернуть всё на место(тесто)
+        $("#sm-menu").append(
+          $(`
+          <a class="item" id="mode-nomod" data-mod="nomod" href="">Standart</a>
+          <a class="item" id="mode-rx" data-mod="rx" href="#">Relax</a>
+          <a class="item" id="mode-ap" data-mod="ap" href="#">Autopilot</a>
+          `)
+        )
+        $("#sm-menu .item").click(smMenuHandler)
+        $("#sm-menu").show()
+      }
+      loadLeaderboard(beatmapID, currentMode, currentMod);
     });
   $("#sm-menu .item")
     .click(smMenuHandler)
