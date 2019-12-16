@@ -118,7 +118,20 @@
       console.log("clicked");
       console.log($(this).data)
       currentMod = $(this).data("mod");
+      if (currentMod !== 0) {
+	$("#sm-menu .item").remove()
+      } else {
+	$("#sm-menu").append(
+		$(`
+			<a class="item" id="mode-nomod" data-mod="nomod" href="">Standart</a>
+                        <a class="item" id="mode-rx" data-mod="rx" href="#">Relax</a>
+                        <a class="item" id="mode-ap" data-mod="ap" href="#">Autopilot</a>
+		`)
+	)
+      }
       loadLeaderboard(beatmapID, currentMode, currentMod);
+
+
     })
 
   $("table.sortable").tablesort();

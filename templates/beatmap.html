@@ -70,17 +70,20 @@
 			var favMode = parseInt({{ $favModeRaw.favourite_mode }}) || 0;
 		</script>
 
+		
 		<div class="ui three item menu" id="sm-menu">
+		{{ if eq (atoint (.Gin.Query "mode")) 0 }}
 			<a class="item" id="mode-nomod" data-mod="nomod" href="">Standart</a>
 			<a class="item" id="mode-rx" data-mod="rx" href="#">Relax</a>
 			<a class="item" id="mode-ap" data-mod="ap" href="#">Autopilot</a>
-		</div>		
-
-		<div class="ui four item menu" id="mode-menu">
-			{{ range $k, $v := modes }}
-				<a class="item" id="mode-{{ $k }}" data-mode="{{ $k }}" href="/b/{{ $.Beatmap.ID }}?mode={{ $k }}">{{ $v }}</a>
-			{{ end }}
+		{{ end }}
 		</div>
+
+			<div class="ui four item menu" id="mode-menu">
+				{{ range $k, $v := modes }}
+					<a class="item" id="mode-{{ $k }}" data-mode="{{ $k }}" href="/b/{{ $.Beatmap.ID }}?mode={{ $k }}">{{ $v }}</a>
+				{{ end }}
+			</div>
 
 		<table class="ui sortable fixed table">
 			<thead>
