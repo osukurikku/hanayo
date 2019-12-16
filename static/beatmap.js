@@ -1,6 +1,6 @@
-(function() {
+(function () {
   var mapset = {};
-  setData.ChildrenBeatmaps.forEach(function(diff) {
+  setData.ChildrenBeatmaps.forEach(function (diff) {
     mapset[diff.BeatmapID] = diff;
   });
   console.log(mapset);
@@ -10,13 +10,13 @@
       "/b/" + b + "?mode=" + m + "&mod=" + mode + wl.hash);
 
     api("scores?sort=score,desc&sort=id,asc", {
-      mode : m,
+      mode: m,
       gamemode: mode,
-      b : b,
-      p : 1,
-      l : 50,
+      b: b,
+      p: 1,
+      l: 50,
     },
-      function(data) {
+      function (data) {
         console.log(data);
         var tb = $(".ui.table tbody");
         tb.find("tr").remove();
@@ -24,16 +24,16 @@
           data.scores = [];
         }
         var i = 0;
-        data.scores.sort(function(a, b) { return b.score - a.score; });
-        data.scores.forEach(function(score) {
+        data.scores.sort(function (a, b) { return b.score - a.score; });
+        data.scores.forEach(function (score) {
           var user = score.user;
           tb.append($("<tr />").append(
             $("<td data-sort-value=" + (++i) + " />")
               .text("#" + ((page - 1) * 50 + i)),
             $("<td />").html("<a href='/u/" + user.id +
-                                  "' title='View profile'><i class='" +
-                                  user.country.toLowerCase() + " flag'></i>" +
-                                  escapeHTML(user.username) + "</a>"),
+              "' title='View profile'><i class='" +
+              user.country.toLowerCase() + " flag'></i>" +
+              escapeHTML(user.username) + "</a>"),
             $("<td data-sort-value=" + score.score + " />")
               .html(addCommas(score.score)),
             $("<td />").html(getScoreMods(score.mods, true)),
@@ -60,7 +60,7 @@
 
     // column 3
     $("#ar").html(diff.AR);
-    $.getJSON(`https://osu-pp-calc-api.glitch.me/?id=${bid}`, function(res) {
+    $.getJSON(`https://osu-pp-calc-api.glitch.me/?id=${bid}`, function (res) {
       $("#stars").html(diff.DifficultyRating.toFixed(2) + ` (${res.pp_100}pp)`);
     });
     $("#length").html(timeFormat(diff.TotalLength));
@@ -94,15 +94,40 @@
   window.changeDifficulty = changeDifficulty;
   changeDifficulty(beatmapID);
   // loadLeaderboard(beatmapID, currentMode);
+
+  function smMenuHandler(e) {
+    e.preventDefault();
+    $("#sm-menu .active.item").removeClass("active");
+    $(this).addClass("active");
+    console.log("clicked");
+    console.log($(this).data)
+    currentMod = $(this).data("mod");
+    if (currentMod !== 0) {
+      // Удаляем все менюшки
+      $("#sm-menu .item").remove()
+    } else {
+      // Пытаемся вернуть всё на место(тесто)
+      $("#sm-menu").append(
+        $(`
+          <a class="item" id="mode-nomod" data-mod="nomod" href="">Standart</a>
+          <a class="item" id="mode-rx" data-mod="rx" href="#">Relax</a>
+          <a class="item" id="mode-ap" data-mod="ap" href="#">Autopilot</a>
+      `)
+      )
+      $("#sm-menu .item").click(smMenuHandler)
+    }
+    loadLeaderboard(beatmapID, currentMode, currentMod);
+  }
+
   $("#diff-menu .item")
-    .click(function(e) {
+    .click(function (e) {
       e.preventDefault();
       $(this).addClass("active");
       beatmapID = $(this).data("bid");
       changeDifficulty(beatmapID);
     });
   $("#mode-menu .item")
-    .click(function(e) {
+    .click(function (e) {
       e.preventDefault();
       $("#mode-menu .active.item").removeClass("active");
       $(this).addClass("active");
@@ -111,28 +136,7 @@
       currentModeChanged = true;
     });
   $("#sm-menu .item")
-    .click(function(e) {
-      e.preventDefault();
-      $("#sm-menu .active.item").removeClass("active");
-      $(this).addClass("active");
-      console.log("clicked");
-      console.log($(this).data)
-      currentMod = $(this).data("mod");
-      if (currentMod !== 0) {
-	$("#sm-menu .item").remove()
-      } else {
-	$("#sm-menu").append(
-		$(`
-			<a class="item" id="mode-nomod" data-mod="nomod" href="">Standart</a>
-                        <a class="item" id="mode-rx" data-mod="rx" href="#">Relax</a>
-                        <a class="item" id="mode-ap" data-mod="ap" href="#">Autopilot</a>
-		`)
-	)
-      }
-      loadLeaderboard(beatmapID, currentMode, currentMod);
-
-
-    })
+    .click(smMenuHandler)
 
   $("table.sortable").tablesort();
 })();
