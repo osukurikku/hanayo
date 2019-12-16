@@ -66,14 +66,14 @@
 			// defaults to 0
 			var currentMode = {{ atoi (.Gin.Query "mode") }};
 			var currentModeChanged = false;
-			var currentMode = null;
+			var currentMod = "";
 			var favMode = parseInt({{ $favModeRaw.favourite_mode }}) || 0;
 		</script>
 
-		<div class="ui two item menu" id="sm-menu">
-			<a class="item" id="mode-nomod" href="">Standart</a>
-			<a class="item" id="mode-rx" href="#">Relax</a>
-			<a class="item" id="mode-ap" href="#">Autopilot</a>
+		<div class="ui three item menu" id="sm-menu">
+			<a class="item" id="mode-nomod" data-mod="nomod" href="">Standart</a>
+			<a class="item" id="mode-rx" data-mod="rx" href="#">Relax</a>
+			<a class="item" id="mode-ap" data-mod="ap" href="#">Autopilot</a>
 		</div>		
 
 		<div class="ui four item menu" id="mode-menu">
@@ -98,5 +98,5 @@
 			</tbody>
 		</table>
 	{{ end }}
-	</divc>
+	</div>
 {{ end }}

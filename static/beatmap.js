@@ -47,20 +47,6 @@
       });
   }
 
-  function changeMods(mode) {
-    switch(mode) {
-      case 'mode-nomod':
-
-        break;
-      case 'mode-rx':
-
-        break;
-      case 'mode-ap':
-
-        break;
-    }
-  }
-
   function changeDifficulty(bid) {
     // load info
     var diff = mapset[bid];
@@ -93,7 +79,7 @@
 
     const urlParams = new URLSearchParams(window.location.search);
     const modParam = urlParams.get('mod');
-    currentMod = (modParam.length > 0) ? modParam : "nomod"
+    currentMod = (modParam !== null && modParam.length > 0) ? modParam : "nomod"
 
     // update mode menu
     $("#mode-menu .active.item").removeClass("active");
@@ -124,5 +110,16 @@
       loadLeaderboard(beatmapID, currentMode, currentMod);
       currentModeChanged = true;
     });
+  $("#sm-menu .item")
+    .click(function(e) {
+      e.preventDefault();
+      $("#sm-menu .active.item").removeClass("active");
+      $(this).addClass("active");
+      console.log("clicked");
+      console.log($(this).data)
+      currentMod = $(this).data("mod");
+      loadLeaderboard(beatmapID, currentMode, currentMod);
+    })
+
   $("table.sortable").tablesort();
 })();
