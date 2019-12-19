@@ -1,0 +1,19 @@
+{{ define "tpl" }}
+<div class="ui container">
+    <div class="ui segment">
+        <div class="ui center aligned segment box-none">
+            {{ if $.Authorized }}
+                <h2><b>Hello! Authorization was successful, time to go back ....</b></h2>
+                <a href="{{ $.RedirectBackPage }}" class="ui green button">
+                    <i class="chevron left icon"></i> {{ $.T "Back" }} 
+                </a>
+            {{ else }}
+                <h2><b>Hello! Authorization was not entirely successful, can you try again?</b></h2>
+                <a href="{{ $.RedirectBackPage }}" class="ui red button">
+                    <i class="chevron left icon"></i> {{ $.T "Back" }} 
+                </a>
+            {{ end }}            
+        </div>
+    </div>
+</div>
+{{ end }}

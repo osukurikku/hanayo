@@ -12,6 +12,8 @@ NoCompile=true
 
 		{{ navbarItem .Path (.T "Password") "/settings/password" }}
 
+		{{ navbarItem .Path (.T "Social Accounts") "/settings/socialAuth" }}
+
 		{{/* Stuff for donators */}}
 		{{ if has .Context.User.Privileges 4 }}
 			{{ navbarItem .Path (.T "Clan Settings") "/settings/clansettings" }}

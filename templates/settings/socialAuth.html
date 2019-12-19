@@ -1,0 +1,66 @@
+{{/*###
+Handler=/settings/socialAuth
+TitleBar=Social Accounts
+KyutGrill=settings2.jpg
+Include=menu.html
+MinPrivileges=2
+*/}}
+{{ define "tpl" }}
+{{ $isVk := isSocialExists "vk" $.Context.User.ID }}
+{{ $isTwitch := isSocialExists "twitch" $.Context.User.ID }}
+
+{{ $vkConfig := socialConfig "VKSettings" }}
+{{ $twitchConfig := socialConfig "TwitchSettings" }}
+
+{{ $ := . }}
+<div class="ui container">
+    {{ $isTwitch }}
+    {{ $isVk }}
+
+    
+    <div class="ui stackable grid">
+        {{ template "settingsSidebar" . }}
+        <div class="twelve wide column">
+            <div class="ui segment">
+                <h3><b>{{ .T "Here you can connect your social accounts (VK, Twitch). Your accounts shows in your profile page and any user can see it!" }}<b/></h3>
+                <hr class="ui inverted divider"/>
+
+                <div class="ui stackable grid">
+                    <div class="six wide column">
+                        <div class="ui center aligned segment box-none">
+                            <h4>VK <span class="ui text green">{{ if $isVk }}(Linked){{ else }}(Not Linked){{ end }}</span></h4>
+                            {{ if $isVk }}
+                                <a href="/social/vk/unlink" class="ui red button right aligned">
+                                    <i class="play icon"></i> {{ $.T "Unlink" }} 
+                                </a>
+                            {{ else }}
+                                <a href="https://oauth.vk.com/authorize?client_id={{ $vkConfig.ClientID }}&redirect_uri={{ $vkConfig.RedirectURI }}&scope=info&display=page" class="ui green button right aligned">
+                                    
+                                    <i class="play icon"></i> {{ $.T "Link" }} 
+                                </a>
+                            {{ end }}
+                            </div>
+                    </div>
+                    <div class="six wide column">
+                        <div class="ui center aligned segment box-none">
+                            <h4>Twitch <span class="ui text red">{{ if $isTwitch }}(Linked){{ else }}(Not Connected){{ end }}</span></h4>
+                            
+                            {{ if $isTwitch }}
+                                <a href="/social/twitch/unlink" class="ui red button right aligned">
+                                    <i class="play icon"></i> {{ $.T "Unlink" }} 
+                                </a>
+                            {{ else }}
+                                <a href="https://id.twitch.tv/oauth2/authorize?response_type=code&client_id={{ $twitchConfig.ClientID }}&redirect_uri={{ $twitchConfig.RedirectURI }}&scope=user:read:email" class="ui green button right aligned">
+                                    <i class="play icon"></i> {{ $.T "Link" }} 
+                                </a>
+                            {{ end }}
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{ end }}
+    

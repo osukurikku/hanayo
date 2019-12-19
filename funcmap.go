@@ -13,6 +13,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
+	"reflect"
 
 	"github.com/dustin/go-humanize"
 	"github.com/gin-gonic/gin"
@@ -120,6 +121,30 @@ var funcMap = template.FuncMap{
 		} else {
 			return false;
 		}
+	},
+
+	"isSocialExists": func(social string, uID int) bool {
+		var sId string
+		db.Get(&sId, "SELECT account_id FROM social_networks WHERE user_id = ? AND account_type = ?", uID, social)
+		if len(sId) < 1 {
+			return false
+		}
+		return true
+	},
+
+	"socialConfig": func(socialConfig string) (tSC typicalSocialConfig) {
+		r := reflect.ValueOf(&config)
+		f := reflect.Indirect(r).FieldByName(socialConfig)
+		fString := string(f.String())
+
+		if len(fString) < 1 {
+			return tSC
+		}
+		splitted := strings.Split(fString, "|")
+		tSC.ClientID = splitted[0]
+		tSC.ClientSecret = splitted[1]
+		tSC.RedirectURI = splitted[2]
+		return tSC
 	},
 
 	// parseUserpage compiles BBCode to HTML.

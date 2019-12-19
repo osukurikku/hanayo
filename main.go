@@ -87,6 +87,9 @@ var (
 		SentryDSN string
 
 		IP_API string
+
+		VKSettings string
+		TwitchSettings string
 	}
 	configMap map[string]interface{}
 	db        *sqlx.DB
@@ -328,6 +331,18 @@ func generateEngine() *gin.Engine {
 
 	r.GET("/donate/rates", btcconversions.GetRates)
 
+	// Social Networks part
+
+	// ---- PART VK ----
+	r.GET("/social/vk/verify", vKAuthorizeHandler)
+	r.GET("/social/vk/unlink", vKUnAuthorizeHandler)
+	// ---- PART END ----
+
+	// ---- PART TWITCH ----
+	r.GET("/social/twitch/verify", twitchAuthorizeHandler)
+	r.GET("/social/twitch/unlink", twitchUnAuthorizeHandler)
+	// ---- PART END ----
+
 	loadSimplePages(r)
 
 	r.NoRoute(notFound)
@@ -336,5 +351,5 @@ func generateEngine() *gin.Engine {
 }
 
 const alwaysRespondText = `Ooops! Looks like something went really wrong while trying to process your request.
-Perhaps report this to a Akatsuki developer?
+Perhaps report this to a Kurikku developer?
 Retrying doing again what you were trying to do might work, too.`
