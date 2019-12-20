@@ -3,6 +3,7 @@
     {{ if .UserID }}
     {{ $gqm := atoi (.Gin.Query "mode") }}
     {{ $global := . }}
+    {{ $sAccounts := socialAccounts .UserID }}
     {{ with (.Get "users/full?id=%d" .UserID) }}
     {{ $favouritemode := _or $gqm .favourite_mode }}
     <script>
@@ -49,11 +50,11 @@
                 <div class="ui stackable centered grid">
                     <div class="sixteen wide column">
                         {{ if eq $global.UserID $global.Context.User.ID }}
-                        <a href="/settings/avatar">
-                            {{ end }}
+                            <a href="/settings/avatar">
+                        {{ end }}
                             <img src="{{ config "AvatarURL" }}/{{ .id }}" alt="avatar" class="ui small centered image">
-                            {{ if eq $global.UserID $global.Context.User.ID }}
-                        </a>
+                        {{ if eq $global.UserID $global.Context.User.ID }}
+                            </a>
                         {{ end }}
                     </div>
                     <div class="center aligned sixteen wide column"> 
@@ -87,6 +88,7 @@
                         </div>
                         {{ end }}
                     </div>
+
                     <div class="center aligned sixteen wide column">
                         {{ range $k, $v := (slice .std .taiko .ctb .mania) }}
                         <h1 data-mode="{{ $k }}" {{ if ne $k (int $favouritemode) }} hidden{{ end }}>{{ with and $v $v.global_leaderboard_rank }}#{{ . }}{{ else }}{{ $global.T "Unknown" }}{{ end }}</h1>
@@ -118,7 +120,23 @@
                             {{ end }}
                         </div>
                     </div>
+                    <div class="center aligned sixteen wide column">
+                        {{ range $sAccounts }}
+                            <div class="center aligned sixteen wide column ">
+                                {{ if eq .AccountType "vk" }}
+                                <a href="https://vk.com/id{{ .AccountID }}" class="ui blue button saccount">
+                                    {{ $.T "VK" }} 
+                                {{ else if eq .AccountType "twitch" }}
+                                <a href="https://twitch.tv/{{ .AccountID }}" class="ui purple button saccount">
+                                    {{ $.T "Twitch" }} 
+                                {{ end }}
+                                </a>
+                            </div>
+                        {{ end }}
+                    </div>
                 </div>
+
+                
             </div>
             {{ $user := . }}
 

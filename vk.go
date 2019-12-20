@@ -23,16 +23,16 @@ type vkAuthStruct struct {
 	UserId			int `json:"user_id"`
 }
 
-type vkDBInfo struct {
-	UserID			int
-	AccountType		string
-	AccountID		string
-}
-
 type typicalSocialConfig struct {
 	ClientID		string
 	ClientSecret	string
 	RedirectURI		string
+}
+
+type socialDBInfo struct {
+	UserID			int
+	AccountType		string
+	AccountID		string
 }
 
 func vKAuthorizeUser(code string) (vkData vkAuthStruct, err error) {
@@ -94,7 +94,7 @@ func vKAuthorizeHandler(c *gin.Context) {
 		return
 	}
 
-	vkDBInfo := vkDBInfo{}
+	socialDBInfo := socialDBInfo{}
 	if err := db.QueryRow(`
 	SELECT
 		user_id, account_type, account_id
@@ -104,10 +104,10 @@ func vKAuthorizeHandler(c *gin.Context) {
 		account_id = '`+strconv.Itoa(vkData.UserId)+`'
 	AND
 		account_type = 'vk'
-	`).Scan(&vkDBInfo.UserID, &vkDBInfo.AccountType, &vkDBInfo.AccountID); err != nil {
+	`).Scan(&socialDBInfo.UserID, &socialDBInfo.AccountType, &socialDBInfo.AccountID); err != nil {
 		db.Exec("INSERT INTO social_networks (user_id, account_type, account_id) VALUES (?, ?, ?)", getContext(c).User.ID, "vk", vkData.UserId)
 	} else {
-		if vkDBInfo.UserID != getContext(c).User.ID {
+		if socialDBInfo.UserID != getContext(c).User.ID {
 			data.Authorized = false
 			data.RedirectBackPage = "/settings/socialAuth"
 			data.Messages = append(data.Messages,  errorMessage{T(c, "This account already connected to another player! ")})
@@ -135,7 +135,7 @@ func vKUnAuthorizeHandler(c *gin.Context) {
 	data.KyutGrill = "2fa.jpg"
 	defer resp(c, 200, "socialOAuth.html", data)
 
-	vkDBInfo := vkDBInfo{}
+	socialDBInfo := socialDBInfo{}
 	if err := db.QueryRow(`
 	SELECT
 		user_id, account_type, account_id
@@ -145,7 +145,7 @@ func vKUnAuthorizeHandler(c *gin.Context) {
 		user_id = `+strconv.Itoa(getContext(c).User.ID)+`
 	AND
 		account_type = 'vk'
-	`).Scan(&vkDBInfo.UserID, &vkDBInfo.AccountType, &vkDBInfo.AccountID); err != nil {
+	`).Scan(&socialDBInfo.UserID, &socialDBInfo.AccountType, &socialDBInfo.AccountID); err != nil {
 		data.Authorized = true
 		data.RedirectBackPage = "/settings"
 		data.Messages = append(data.Messages,  successMessage{T(c, "Your profile hasn't linked account ;d Ok, BRUH!~~~~")})

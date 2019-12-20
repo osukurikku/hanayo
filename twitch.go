@@ -11,13 +11,7 @@ import (
 )
 
 //baseOauthStruct - vk.go
-
-type twitchDBInfo struct {
-	UserID			int
-	AccountType		string
-	AccountID		string
-}
-
+//socialDBInfo - vk.go
 
 func twitchAuthorizeUser(code string) (nickname string, err error) {
 	twitchSettings := config.TwitchSettings
@@ -113,7 +107,7 @@ func twitchAuthorizeHandler(c *gin.Context) {
 		return
 	}
 
-	twitchDBInfo := twitchDBInfo{}
+	socialDBInfo := socialDBInfo{}
 	if err := db.QueryRow(`
 	SELECT
 		user_id, account_type, account_id
@@ -123,10 +117,10 @@ func twitchAuthorizeHandler(c *gin.Context) {
 		account_id = '`+twitchNickname+`'
 	AND
 		account_type = 'twitch'
-	`).Scan(&twitchDBInfo.UserID, &twitchDBInfo.AccountType, &twitchDBInfo.AccountID); err != nil {
+	`).Scan(&socialDBInfo.UserID, &socialDBInfo.AccountType, &socialDBInfo.AccountID); err != nil {
 		db.Exec("INSERT INTO social_networks (user_id, account_type, account_id) VALUES (?, ?, ?)", getContext(c).User.ID, "twitch", twitchNickname)
 	} else {
-		if twitchDBInfo.UserID != getContext(c).User.ID {
+		if socialDBInfo.UserID != getContext(c).User.ID {
 			data.Authorized = false
 			data.RedirectBackPage = "/settings/socialAuth"
 			data.Messages = append(data.Messages,  errorMessage{T(c, "This account already connected to another player! ")})
@@ -154,7 +148,7 @@ func twitchUnAuthorizeHandler(c *gin.Context) {
 	data.KyutGrill = "2fa.jpg"
 	defer resp(c, 200, "socialOAuth.html", data)
 
-	twitchDBInfo := twitchDBInfo{}
+	socialDBInfo := socialDBInfo{}
 	if err := db.QueryRow(`
 	SELECT
 		user_id, account_type, account_id
@@ -164,7 +158,7 @@ func twitchUnAuthorizeHandler(c *gin.Context) {
 		user_id = `+strconv.Itoa(getContext(c).User.ID)+`
 	AND
 		account_type = 'twitch'
-	`).Scan(&twitchDBInfo.UserID, &twitchDBInfo.AccountType, &twitchDBInfo.AccountID); err != nil {
+	`).Scan(&socialDBInfo.UserID, &socialDBInfo.AccountType, &socialDBInfo.AccountID); err != nil {
 		data.Authorized = true
 		data.RedirectBackPage = "/settings"
 		data.Messages = append(data.Messages,  successMessage{T(c, "Your profile hasn't linked account ;d Ok, BRUH!~~~~")})

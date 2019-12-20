@@ -147,6 +147,39 @@ var funcMap = template.FuncMap{
 		return tSC
 	},
 
+	"socialAccounts": func(userID int) (sDI []socialDBInfo) {
+		rows, err := db.Query(`
+		SELECT
+			user_id, account_type, account_id
+		FROM
+			social_networks
+		WHERE
+			user_id = ?
+		`, userID)
+		if err != nil {
+			return sDI
+		}
+
+		for rows.Next() {
+			var sAcc socialDBInfo
+			err := rows.Scan(
+				&sAcc.UserID,
+				&sAcc.AccountType,
+				&sAcc.AccountID,
+			)
+			if err != nil {
+				break
+			}
+			sDI = append(sDI, sAcc)
+		}
+
+		sort.Slice(sDI, func(i, j int) bool {
+			return sDI[i].AccountType < sDI[j].AccountType
+		})
+
+		return sDI
+	},
+
 	// parseUserpage compiles BBCode to HTML.
 	"parseUserpage": func(s string) template.HTML {
 		return template.HTML(bbcode.Compile(s))
