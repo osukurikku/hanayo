@@ -3,7 +3,7 @@
     <div class="ui segment">
         <div class="ui center aligned segment box-none">
             {{ if $.Authorized }}
-                <h2><b>Hello! Authorization was successful, time to go back ....</b></h2>
+                <h2><b>{{ .T "Hello! Authorization was successful, time to go back ...." }}</b></h2>
                 <a href="{{ $.RedirectBackPage }}" class="ui green button">
                     <i class="chevron left icon"></i> {{ $.T "Back" }} 
                 </a>

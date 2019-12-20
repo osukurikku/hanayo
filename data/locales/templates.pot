@@ -140,6 +140,60 @@ msgstr ""
 msgid "Next we need to unpack one of a switchers, open, install the certificate and then press the green button <b>«Switch to Kurikku»</b>. That's all, welcome to one of most friendly private servers <b>on osu!</b>."
 msgstr ""
 
+msgid "Please log in before"
+msgstr ""
+
+msgid "One of arguments is empty. Don't hack!"
+msgstr ""
+
+msgid "Something goes wrong, try again later!"
+msgstr ""
+
+msgid "This account already connected to another player!"
+msgstr ""
+
+msgid "You connected this account earlier!"
+msgstr ""
+
+msgid "You successfully connected VK account to your profile"
+msgstr ""
+
+msgid "You successfully connected twitch account to your profile"
+msgstr ""
+
+msgid "Your profile hasn't linked account ;d Ok, BRUH!~~~~"
+msgstr ""
+
+msgid "Your profile has successfully unlinked!"
+msgstr ""
+
+msgid "Social Accounts"
+msgstr ""
+
+msgid "Here you can connect your social accounts (VK, Twitch). Your accounts shows in your profile page and any user can see it!"
+msgstr ""
+
+msgid "(Linked)"
+msgstr ""
+
+msgid "(Not Linked)"
+msgstr ""
+
+msgid "Unlink"
+msgstr ""
+
+msgid "Link"
+msgstr ""
+
+msgid "Hello! Authorization was successful, time to go back ...."
+msgstr ""
+
+msgid "Hello! Authorization was not entirely successful, can you try again?"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
 msgid "Videoguide:"
 msgstr ""
 

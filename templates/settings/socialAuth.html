@@ -28,7 +28,7 @@ MinPrivileges=2
                 <div class="ui stackable grid">
                     <div class="six wide column">
                         <div class="ui center aligned segment box-none">
-                            <h4>VK <span class="ui text green">{{ if $isVk }}(Linked){{ else }}(Not Linked){{ end }}</span></h4>
+                            <h4>VK <span class="ui text green">{{ if $isVk }}{{ .T "(Linked)" }}{{ else }}{{ .T "(Not Linked)" }}{{ end }}</span></h4>
                             {{ if $isVk }}
                                 <a href="/social/vk/unlink" class="ui red button right aligned">
                                     <i class="play icon"></i> {{ $.T "Unlink" }} 
@@ -43,7 +43,7 @@ MinPrivileges=2
                     </div>
                     <div class="six wide column">
                         <div class="ui center aligned segment box-none">
-                            <h4>Twitch <span class="ui text red">{{ if $isTwitch }}(Linked){{ else }}(Not Connected){{ end }}</span></h4>
+                            <h4>Twitch <span class="ui text red">{{ if $isTwitch }}{{ .T "(Linked)" }}{{ else }}{{ .T "(Not Linked)" }}{{ end }}</span></h4>
                             
                             {{ if $isTwitch }}
                                 <a href="/social/twitch/unlink" class="ui red button right aligned">

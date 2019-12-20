@@ -85,7 +85,7 @@ func twitchAuthorizeHandler(c *gin.Context) {
 		return
 	}
 	data := new(baseOAuthInfo)
-	data.TitleBar = "OAuth Gate"
+	data.TitleBar = T(c, "OAuth Gate")
 	data.KyutGrill = "2fa.jpg"
 	defer resp(c, 200, "socialOAuth.html", data)
 
@@ -144,7 +144,7 @@ func twitchUnAuthorizeHandler(c *gin.Context) {
 		return
 	}
 	data := new(baseOAuthInfo)
-	data.TitleBar = "OAuth Gate"
+	data.TitleBar = T(c, "OAuth Gate")
 	data.KyutGrill = "2fa.jpg"
 	defer resp(c, 200, "socialOAuth.html", data)
 
