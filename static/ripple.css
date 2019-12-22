@@ -1462,15 +1462,15 @@ g > text {
 }
 
 .snow.large {
-	-webkit-animation-duration: 15s;
-	animation-duration: 15s;
+	-webkit-animation-duration: 14s;
+	animation-duration: 14s;
 	background-image: url("/static/images/large-new.png");
 	background-size: auto;
 }
 
 .snow.large + .delayed {
-	-webkit-animation-delay: -10s;
-	animation-delay: -10s;
+	-webkit-animation-delay: -6s;
+	animation-delay: -6s;
 }
 
 @-webkit-keyframes falling {
