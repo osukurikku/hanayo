@@ -1,5 +1,6 @@
 body {
-	background-image: url("/static/images/bgpattern.png");
+	background-image: url("/static/images/triangles-combined@2x.png");
+	background-color: hsl(255, 30%, 12%);
 }
 
 .ui.segment.chibi-card {
@@ -1411,4 +1412,97 @@ g > text {
 .saccount {
 	width: 100%;
 	margin-bottom: 5px!important;
+}
+
+.snow {
+	background-image:
+			url("/static/images/snow-1.png"),
+			url("/static/images/snow-2.png"),
+			url("/static/images/snow-3.png");
+	animation: snow 30s linear infinite;
+}
+
+@keyframes snow {
+	0% {background-position: 0px 0px, 0px 0px, 0px 0px;}
+	100% {background-position: 500px 1000px, 400px 400px, 300px 300px}
+}
+
+#snow-container {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+
+#snow-container>div:first-child, .snow {
+	z-index: 100;
+	pointer-events: none;
+}
+
+#snow-container>div:first-child {
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	max-width: 100%;
+}
+
+.snow {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	-webkit-animation: falling linear infinite both;
+	animation: falling linear infinite both;
+	-webkit-transform: translate3D(0, -100%, 0);
+	transform: translate3D(0, -100%, 0);
+}
+
+.snow.large {
+	-webkit-animation-duration: 14s;
+	animation-duration: 14s;
+	background-image: url("/static/images/large-new.png");
+	background-size: auto;
+}
+
+.snow.large + .delayed {
+	-webkit-animation-delay: -6s;
+	animation-delay: -6s;
+}
+
+@-webkit-keyframes falling {
+	0% {
+		-webkit-transform: translate3D(-7.5%, -100%, 0);
+		transform: translate3D(-7.5%, -100%, 0);
+		opacity: 0;
+	}
+	10% {
+		-webkit-transform: translate3D(-7.5%, -100%, 0);
+		transform: translate3D(-7.5%, -100%, 0);
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: translate3D(7.5%, 100%, 0);
+		transform: translate3D(7.5%, 100%, 0);
+	}
+}
+
+@keyframes falling {
+	0% {
+		-webkit-transform: translate3D(-7.5%, -100%, 0);
+		transform: translate3D(-7.5%, -100%, 0);
+		opacity: 0;
+	}
+	10% {
+		-webkit-transform: translate3D(-7.5%, -100%, 0);
+		transform: translate3D(-7.5%, -100%, 0);
+		opacity: 1;
+	}
+	100% {
+		-webkit-transform: translate3D(7.5%, 100%, 0);
+		transform: translate3D(7.5%, 100%, 0);
+	}
 }
