@@ -1506,3 +1506,9 @@ g > text {
 		transform: translate3D(7.5%, 100%, 0);
 	}
 }
+
+.kr-flag {
+	width: 25px!important;
+	margin-right: 5px!important;
+	vertical-align: -1px!important;
+}

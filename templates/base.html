@@ -147,15 +147,14 @@
         {{ $lang := .Context.Language }}
         {{ with $lang }}
         {{ $info := languageInformationByNameShort . }}
-            <div class="text"><i class="{{ $info.CountryShort }} flag"></i>{{ $info.Name }}</div>
+            <div class="text"><img src="https://s.kurikku.pw/flags/{{ ToUpper $info.CountryShort }}.png" alt="{{ ToUpper $info.CountryShort }} flag" class="ui tiny image kr-flag"></img>{{ $info.Name }}</div>
         {{ else }}
             <div class="default text">{{ .T "Language" }}</div>
         {{ end }}
             <i class="dropdown icon"></i>
             <div class="menu">
             {{ range languageInformation }}
-                <div class="{{ if eq .NameShort $lang }}selected {{ end }}item" data-lang="{{ .NameShort }}"><i
-                        class="{{ .CountryShort }} flag"></i>{{ .Name }}</div>
+                <div class="{{ if eq .NameShort $lang }}selected {{ end }}item" data-lang="{{ .NameShort }}"><img src="https://s.kurikku.pw/flags/{{ ToUpper .CountryShort }}.png" alt="{{ ToUpper .CountryShort }} flag" class="ui tiny image kr-flag"></img>{{ .Name }}</div>
             {{ end }}
             </div>
         </div>
