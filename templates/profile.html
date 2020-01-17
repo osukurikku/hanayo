@@ -323,14 +323,7 @@
                 <a class="{{ favMode $favouritemode $k }}item" data-mode="{{ $k }}" href="/u/{{ $user.id }}?mode={{ $k }}">{{ $v }}</a>
                 {{ end }}
             </div>
-            <div class="ui top center centered attached segment overflow auto">
-                <div class="ui breadcrumb">
-                    <a class="section kr-tab" data-tab="scores-zone">scores</a>
-                    <div class="divider"> /</div>
-                    <a class="section kr-tab" data-tab="top-scores-zone">first places</a>
-                </div>
-            </div>
-
+            
             <div id="graph1" class="ui raised segment">
                 {{ range _range 4 }}
                     <div data-mode="{{ . }}" {{ if ne . (int $favouritemode) }} hidden{{ end }} data-loaded="0">
@@ -339,7 +332,7 @@
                     </div>
                 {{ end }}
             </div>
-
+            
             <div id="recent-activity">
                 {{ range _range 4 }}
                     <div data-mode="{{ . }}" {{ if ne . (int $favouritemode) }} hidden{{ end }} data-loaded="0">
@@ -355,6 +348,14 @@
                     <button class="ui disabled button" id="load-more-achievements">
                         {{ $global.T "Load more" }}
                     </button>
+                </div>
+            </div>
+
+            <div class="ui top center centered attached segment overflow auto">
+                <div class="ui breadcrumb">
+                    <a class="section kr-tab" data-tab="scores-zone">scores</a>
+                    <div class="divider"> /</div>
+                    <a class="section kr-tab" data-tab="top-scores-zone">first places</a>
                 </div>
             </div>
 
