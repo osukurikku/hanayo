@@ -39,8 +39,8 @@ MinPrivileges=2
 					<div class="field">
 						<label>{{ .T "PP > Score" }}</label>
 						<select class="ui dropdown" name="pp_over_score" data-cast="int">
-							<option value="1" {{ if eq ($d.pp_over_score) 1 }}selected{{ end }}>{{ $v }}</a>
-							<option value="0" {{ if eq ($d.pp_over_score) 0 }}selected{{ end }}>{{ $v }}</a>
+							<option value="1" {{ if eq ($d.pp_over_score) 1 }}selected{{ end }}>Enabled</a>
+							<option value="0" {{ if eq ($d.pp_over_score) 0 }}selected{{ end }}>Disabled</a>
 						</select>
 					</div>
 					{{ if has .Context.User.Privileges 4 }}
