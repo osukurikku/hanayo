@@ -14,9 +14,13 @@ NoCompile=true
 
 		{{ navbarItem .Path (.T "Social Accounts") "/settings/socialAuth" }}
 
+		{{ $d := qb "SELECT user, clan, perms FROM user_clans WHERE user = ? AND perms = 8 LIMIT 1" .Context.User.ID }}
+		{{ if $d }}
+			{{ navbarItem .Path (.T "Clan Settings") "/settings/clansettings" }}
+		{{ end }}
+
 		{{/* Stuff for donators */}}
 		{{ if has .Context.User.Privileges 4 }}
-			{{ navbarItem .Path (.T "Clan Settings") "/settings/clansettings" }}
 
 			{{ navbarItem .Path (.T "Discord donor") "/settings/discord" }}
 
