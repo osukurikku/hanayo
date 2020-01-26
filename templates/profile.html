@@ -19,10 +19,10 @@
 
     {{ $super := has .privileges 7340031 }}
     {{ $dev := has .privileges 3129343 }}
-    {{ $admin := has .privileges 3047935 }}
+    {{ $admin := has .privileges 978431 }}
     {{ $chatmod := has .privileges 786767 }}
-    {{ $rmod := has .privileges 255 }}
     {{ $bat := has .privileges 271 }}
+    {{ $rmod := has .privileges 255 }}
     {{ $user_id := .UserID}}
 
     {{ if hasAdmin $global.Context.User.Privileges }}
@@ -146,31 +146,31 @@
                 <div class="ui sixteen stackable grid">
                     <div class="sixteen wide column">
                         {{if $super }}
-                        {{ $global.T "<b>%s</b> " .username | html }}
-                        is an <i class="red code small icon"></i><b>Owner</b>
-                        {{ $global.T " from <b>%s</b>." (country .country true) | html }}
+                            {{ $global.T "<b>%s</b> " .username | html }}
+                            is an <i class="red code small icon"></i><b>Owner</b>
+                            {{ $global.T " from <b>%s</b>." (country .country true) | html }}
                         {{else if $dev}}
-                        {{ $global.T "<b>%s</b> " .username | html }}
-                        is a <i class="blue code small icon"></i><b>Developer</b>
-                        {{ $global.T " from <b>%s</b>." (country .country true) | html }}
+                            {{ $global.T "<b>%s</b> " .username | html }}
+                            is a <i class="blue code small icon"></i><b>Developer</b>
+                            {{ $global.T " from <b>%s</b>." (country .country true) | html }}
                         {{else if $admin}}
-                        {{ $global.T "<b>%s</b> " .username | html }}
-                        is an <i class="red lightning small icon"></i><b>Administrator</b>
-                        {{ $global.T " from <b>%s</b>." (country .country true) | html }}
+                            {{ $global.T "<b>%s</b> " .username | html }}
+                            is an <i class="red lightning small icon"></i><b>Community Manager</b>
+                            {{ $global.T " from <b>%s</b>." (country .country true) | html }}
                         {{else if $chatmod}}
-                        {{ $global.T "<b>%s</b> " .username | html }}
-                        is a <i class="purple star small icon"></i><b>Chat Mod</b>
-                        {{ $global.T " from <b>%s</b>." (country .country true) | html }}
+                            {{ $global.T "<b>%s</b> " .username | html }}
+                            is a <i class="purple star small icon"></i><b>Chat Mod</b>
+                            {{ $global.T " from <b>%s</b>." (country .country true) | html }}
                         {{else if $bat}}
-                        {{ $global.T "<b>%s</b> " .username | html }}
-                        is a <i class="orange music small icon"></i><b>BAT</b>
-                        {{ $global.T " from <b>%s</b>." (country .country true) | html }}
+                            {{ $global.T "<b>%s</b> " .username | html }}
+                            is a <i class="orange music small icon"></i><b>BAT</b>
+                            {{ $global.T " from <b>%s</b>." (country .country true) | html }}
                         {{else if $rmod}}
-                        {{ $global.T "<b>%s</b> " .username | html }}
-                        is a <i class="green star small icon"></i><b>Replay Moderator</b>
-                        {{ $global.T " from <b>%s</b>." (country .country true) | html }}
+                            {{ $global.T "<b>%s</b> " .username | html }}
+                            is a <i class="green star small icon"></i><b>Replay Moderator</b>
+                            {{ $global.T " from <b>%s</b>." (country .country true) | html }}
                         {{ else }}
-                        {{ $global.T "<b>%s</b> is a player from <b>%s</b>." .username (country .country true) | html }}
+                            {{ $global.T "<b>%s</b> is a player from <b>%s</b>." .username (country .country true) | html }}
                         {{ end }}
                         <br>{{ $global.T "They registered %s." (time $user.registered_on) | html }}
                         <br>{{ $global.T "Last seen: %s." (time $user.latest_activity) | html }}
