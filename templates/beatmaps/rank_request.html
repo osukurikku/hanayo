@@ -45,7 +45,39 @@ MinPrivileges=2
 				<h3 class="ui header">{{ $.T "You cannot currently request beatmaps!" }}</h3>
 				{{ with .next_expiration }}<p>{{ $.T "Please try again " }}<b>{{ timeAddDay . }}</b></p>{{ end }}
 			{{ end }}
+			
 		{{ end }}
+	</div>
+	<div class="ui segment">
+		<table class="ui celled stackable table">
+			<thead>
+				<tr>
+					<th>{{ $.T "ID bm/bs" }}</th>
+					<th>{{ $.T "Moderator" }}</th>
+					<th>{{ $.T "Reason" }}</th>
+				</tr>
+			</tr>
+		</thead>
+			<tbody>
+				{{ $requests := getRankRequests .Context.User.ID }}
+				{{ range $requests }}
+					{{ if lt .Status 0 }}
+						<tr class="negative">
+					{{ else if gt .Status 0}}
+						<tr class="positive">
+					{{ else }}
+						<tr>
+					{{ end }}
+						<td><a href="/{{ .MapType }}/{{ .Bid }}">{{ .MapType }}/{{ .Bid }}</a></td>
+						<td>
+							<img class="ui avatar image" src="https://a.kurikku.pw/{{ .ModeratorID }}" alt="{{ .ModeratorName }}!">
+							<span>{{ .ModeratorName }}</span>
+						</td>
+						<td><p>{{ .ModeratorReason }}</p></td>
+					</tr>
+				{{ end }}
+			</tbody>
+		</table>
 	</div>
 </div>
 {{ end }}

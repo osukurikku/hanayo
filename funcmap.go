@@ -30,6 +30,15 @@ import (
 	"zxq.co/ripple/rippleapi/common"
 )
 
+type RankRequest struct {
+	Bid				int
+	MapType			string
+	ModeratorID		int
+	ModeratorReason	string
+	ModeratorName	string
+	Status 			int
+}
+
 // funcMap contains useful functions for the various templates.
 var funcMap = template.FuncMap{
 	// html disables HTML escaping on the values it is given.
@@ -449,6 +458,35 @@ var funcMap = template.FuncMap{
 			fmt.Println(err)
 		}
 		return i
+	},
+
+	"getRankRequests": func(userid int) (requests []RankRequest)  {
+		fmt.Println(userid)
+		rows, err := db.Query("SELECT rank_requests.bid, rank_requests.type, rank_requests.moderator_id, rank_requests.moderator_reason, rank_requests.status FROM rank_requests WHERE rank_requests.userid = ? ORDER BY rank_requests.id DESC", userid)
+		if err != nil {
+			return requests
+		}
+		for rows.Next() {
+			var r RankRequest
+			err = rows.Scan(
+				&r.Bid, &r.MapType, &r.ModeratorID, &r.ModeratorReason, &r.Status,
+			)
+			
+			if err != nil {
+				fmt.Println(err)
+				return requests
+			}
+			if (r.ModeratorID == 0) {
+				r.ModeratorID = 0
+				r.ModeratorName = "???"
+				r.ModeratorReason = "???"
+			} else {
+				db.QueryRow("SELECT username FROM users WHERE id = ?", r.ModeratorID).Scan(&r.ModeratorName)
+			}
+			requests = append(requests, r)
+		}
+
+		return requests
 	},
 
 	// bget makes a request to the bancho api

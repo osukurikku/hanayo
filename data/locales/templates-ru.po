@@ -825,6 +825,12 @@ msgstr "Отправить репорт на %s"
 msgid "Reason"
 msgstr "Причина"
 
+msgid "Moderator"
+msgstr "Модератор"
+
+msgid "ID bm/bs"
+msgstr "ID карты/сета"
+
 msgid "Foul play / Cheating"
 msgstr "Обман / Читерство"
 
