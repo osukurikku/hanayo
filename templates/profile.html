@@ -302,12 +302,19 @@
                             {{ end }}                        
                         </div>
                     </div> -->
-
                 </div>
             </div> <!-- end grid segment -->
+            
         </div>
 
         <div class="eleven wide column">
+            {{ $images := getImageBadges $.UserID }}
+            {{ range $images }}
+                <div class="eleven wide column">
+                    <img src="{{ . }}" class="proto-pic" alt="img pic"/>
+                </div>
+            {{ end }}
+
             {{ with $global.Get "users/userpage?id=%.0f" .id }}
             {{ if .userpage }}
             {{ with parseUserpage .userpage }}

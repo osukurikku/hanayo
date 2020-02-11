@@ -461,7 +461,6 @@ var funcMap = template.FuncMap{
 	},
 
 	"getRankRequests": func(userid int) (requests []RankRequest)  {
-		fmt.Println(userid)
 		rows, err := db.Query("SELECT rank_requests.bid, rank_requests.type, rank_requests.moderator_id, rank_requests.moderator_reason, rank_requests.status FROM rank_requests WHERE rank_requests.userid = ? ORDER BY rank_requests.id DESC", userid)
 		if err != nil {
 			return requests
@@ -487,6 +486,24 @@ var funcMap = template.FuncMap{
 		}
 
 		return requests
+	},
+
+	"getImageBadges": func(userid int) (images []string) {
+		rows, err := db.Query("SELECT image_url FROM user_image_badges WHERE user_id = ? ORDER BY id DESC", userid)
+		if err != nil {
+			return images
+		}
+		for rows.Next() { 
+			var s string
+			err = rows.Scan(&s)
+
+			if err != nil {
+				fmt.Println(err)
+				return images
+			}
+			images = append(images, s)
+		}
+		return images
 	},
 
 	// bget makes a request to the bancho api

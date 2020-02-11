@@ -59,7 +59,7 @@ MinPrivileges=2
 			</tr>
 		</thead>
 			<tbody>
-				{{ $requests := getRankRequests .Context.User.ID }}
+				{{ $requests := getRankRequests $.Context.User.ID }}
 				{{ range $requests }}
 					{{ if lt .Status 0 }}
 						<tr class="negative">
