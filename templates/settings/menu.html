@@ -13,6 +13,8 @@ NoCompile=true
 		{{ navbarItem .Path (.T "Password") "/settings/password" }}
 
 		{{ navbarItem .Path (.T "Social Accounts") "/settings/socialAuth" }}
+		
+		{{ navbarItem .Path (.T "In-game BGs changer (BETA)") "/settings/ingamebgs" }}
 
 		{{ $d := qb "SELECT user, clan, perms FROM user_clans WHERE user = ? AND perms = 8 LIMIT 1" .Context.User.ID }}
 		{{ if $d }}

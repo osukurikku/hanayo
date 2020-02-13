@@ -1,0 +1,111 @@
+{{/*###
+Handler=/settings/ingamebgs
+TitleBar=In-Game Custom BGS
+KyutGrill=request_beatmap_ranking.jpg
+Include=menu.html
+MinPrivileges=2
+*/}}
+{{ define "tpl" }}
+    {{ $ := . }}
+    <div class="ui container">
+        <div class="ui stackable grid">
+            {{ template "settingsSidebar" . }}
+            <div class="twelve wide column">
+                <div class="ui segment">
+                    <h3>Notice:</h3>
+                    <p>
+                    For donaters available bgs - <b>16</b>, for standard user - <b></b>8</b><br/><br/>
+                    If you want return back to official backgrounds, just delete all of yours!
+                    </p>
+                    
+                    <form class="ui form">
+                        <div class="field">
+                            <label class="left aligned">{{ $.T "URL pic to add" }}</label>
+                            <input id="urlPicker" type="text" name="url" placeholder="{{ $.T "URL pic to add" }}">
+                        </div>
+                    </form>
+                    <br/>
+                    <button class="ui button positive" onClick="addToList()">Add to list</button>
+                    <hr class="ui divider"/>
+
+                    <div class="ui stackable grid">
+                        <div class="sixteen wide column">
+                            <div class="ui stackable grid" id="grid"></div>
+                        </div>
+                        <div class="sixteen wide column">
+                            <button class="ui button primary" onClick="updateBGs()">Update BGs</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var bgsState = [];
+        window.onload = function () {
+            $.get("/api/v2/settings/get_bgs", function(data) {
+                bgsState = data.backgrounds
+                for (let [ind, _] in bgsState) {
+                    $("#grid").append(`
+                        <div class="eight wide column" data-ind=${ind}>
+                            <div class="ui segment">
+                                <img class="ui image middle" src="${bgsState[ind]}"/><br/>
+                                <button class="ui button negative" onClick="deleteFromList(${ind})">Delete BG</button>
+                            </div>
+                        </div>
+                    `);
+                }
+            }).fail(function() {
+                showMessage("negative", "Sorry, we can't update BGs now, try again later. Something wrong with out API");
+            })
+        }
+
+        function deleteFromList(ind) {
+            bgsState[ind] = null;
+            let DOMElements = $("#grid > div");
+            if (ind > bgsState.length) return;
+
+            for (let div of DOMElements) {
+                let element = $(div);
+                if (element.data("ind") === ind) {
+                    element.remove()
+                }
+            }
+        }
+
+        function updateBGs() {
+            let finalArray = [];
+            for (let [ind, _] in bgsState) {
+                if (bgsState[ind] !== null) {
+                    finalArray.push(bgsState[ind]);
+                }
+            }
+
+            $.post("/api/v2/settings/update_bgs", JSON.stringify({bgs: finalArray}))
+             .done(() => {
+                showMessage("positive", "Successfully updated!")
+             })
+             .fail(() => {
+                showMessage("negative", "API is wrong, try again later ;(")
+             })
+        }
+
+        function addToList() {
+            let text = $("#urlPicker");
+            if (text.val().length < 1 || bgsState.indexOf(text.val()) !== -1) {
+                showMessage("negative", "wrong pic url :(");
+                return;
+            }
+            bgsState.push(text.val());
+            let newInd = bgsState.indexOf(text.val());
+            $("#grid").append(`
+                <div class="eight wide column" data-ind=${newInd}>
+                    <div class="ui segment">
+                        <img class="ui image middle" src="${bgsState[newInd]}"/><br/>
+                        <button class="ui button negative" onClick="deleteFromList(${newInd})">Delete BG</button>
+                    </div>
+                </div>
+            `);
+        }
+    </script>
+{{ end }}
