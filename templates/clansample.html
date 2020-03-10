@@ -127,13 +127,12 @@ Include=clan_members.html
                 {{ else }}
                     <div class="ui one item menu" id="join-menu"><a class="item" href="/login" style="background-color:rgba(0,128,255,.3)">Please login to join a clan</a></div>
                     
-                    <h1 class="ui heading">{{ .T "Members" }}</h1>
-                    <p>
-                        {{ .T "The members of the clan." }}<br>
-                    </p>
-                    {{ template "clanMembers" (.Get "clans/members?id=%d&r=%d" .ClanID 1) }}
-
                 {{ end }}                
+                <h1 class="ui heading">{{ .T "Members" }}</h1>
+                <p>
+                    {{ .T "The members of the clan." }}<br>
+                </p>
+                {{ template "clanMembers" (.Get "clans/members?id=%d&r=%d" .ClanID 1) }}
             </div>
                 </div>
                 </div>
