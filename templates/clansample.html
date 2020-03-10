@@ -3,28 +3,45 @@ Include=clan_members.html
 */}}
 {{ define "tpl" }}
     <div class="ui container">
-
         {{ if .ClanID }}
             {{ $gqm := .Gin.Query "mode" }}
             {{ $global := . }}
             {{ $favouritemode := $gqm }}
             {{ range (.Get "clans?id=%d" .ClanID).clans }}
-                <div style="border-bottom-left-radius: 0px !important; border-bottom-right-radius: 0px !important;" class="ui top attached segment overflow auto aligned">
+                <div class="ui top attached segment">
                     <div class="magic table">
-                        
-                        <div class="table element">
-                            <img src="{{ config "AvatarURL" }}/clans/{{ $.ClanID }}" alt="icon" class="clan icon" style="border-radius:5%; height:90px; padding-right: 15px;">
-                        </div>
-                        
-                        <div class="table element">
-                            <h1 class="ui header">
-
-                                {{ $global.T "%s" .name | html }}
-                            </h1>
-                            <div class="subtitle">
-                                {{ $global.T "(%s)" (.tag | htmlescaper) | html }}
+                        <div class="">
+                            <div class="table element">
+                                <img src="{{ config "AvatarURL" }}/clans/{{ $.ClanID }}" alt="icon" class="clan icon" style="border-radius:5%; height:90px; padding-right: 15px;">
+                            </div>
+                            
+                            <div class="table element">
+                                <h1 class="ui header">
+                                    {{ $global.T "%s" .name | html }}
+                                </h1>
+                                <div class="subtitle">
+                                    {{ $global.T "(%s)" (.tag | htmlescaper) | html }}
+                                </div>
                             </div>
                         </div>
+                        <div class="table element table-owner">
+                            {{ range ($global.Get "clans/members?id=%d&r=%d" $global.ClanID 8).members }}
+                                <div class="table element">
+                                    <h1 class="ui header">
+                                        <a class="header" href="/u/{{ .id }}">{{ $global.T .username | html }}</a>
+                                    </h1>
+                                    <div class="subtitle">
+                                        {{ $global.T "Clan Owner" | html }}
+                                    </div>
+                                </div>
+    
+                                <div class="table element" id="#avatar-2">
+                                    <img src="{{ config "AvatarURL" }}/{{ .id }}" alt="icon" class="clan icon" style="border-radius:5%; height:90px; padding-left: 15px;">
+                                </div>
+                                
+                            {{ end }} 
+                        </div>
+
                     </div>
                 </div>
                 <div class="ui four item bottom attached menu" id="mode-menu">
@@ -82,7 +99,7 @@ Include=clan_members.html
                 </tbody>
                 </table>{{ end }}
                 </div>
-            <div class="column" style="">
+            <div class="column">
                 {{ if $global.Context.User.ID }}
                     {{ $d := qb "SELECT user, clan, perms FROM user_clans WHERE user = ? LIMIT 1" .Context.User.ID }}
                     {{ $p := qb "SELECT user, clan, perms FROM user_clans WHERE user = ? AND perms = 8 LIMIT 1" .Context.User.ID }}
@@ -109,23 +126,17 @@ Include=clan_members.html
                     {{ end }}
                 {{ else }}
                     <div class="ui one item menu" id="join-menu"><a class="item" href="/login" style="background-color:rgba(0,128,255,.3)">Please login to join a clan</a></div>
+                    
+                    <h1 class="ui heading">{{ .T "Members" }}</h1>
+                    <p>
+                        {{ .T "The members of the clan." }}<br>
+                    </p>
+                    {{ template "clanMembers" (.Get "clans/members?id=%d&r=%d" .ClanID 1) }}
 
-                {{ end }}
-                <h1 class="ui heading">{{ .T "Clan Owner" }}</h1>
-                <p>
-                    {{ .T "The leader of the clan." }}<br>
-                </p>
-                {{ template "clanMembers" (.Get "clans/members?id=%d&r=%d" .ClanID 8) }}
+                {{ end }}                
             </div>
                 </div>
                 </div>
-            <div style="min-height: 150px" class="ui aligned segment">
-                <h1 class="ui heading">{{ .T "Members" }}</h1>
-                <p>
-                    {{ .T "The members of the clan." }}<br>
-                </p>
-                {{ template "clanMembers" (.Get "clans/members?id=%d&r=%d" .ClanID 1) }}
-            </div>
             </div>
         {{ end }}
     </div>

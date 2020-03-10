@@ -1512,3 +1512,30 @@ g > text {
 	margin-right: 5px!important;
 	vertical-align: -1px!important;
 }
+
+.magic.table {
+	width: 100%!important;
+	height: 100%!important;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.table-owner {
+	text-align: right;
+}
+
+@media only screen and (max-width: 544px) {	
+	.table-owner img {
+		padding-right: 15px!important;
+		padding-left: 0px!important;
+	}
+
+	.table-owner  {
+		padding-top: 10px;
+		display: flex!important;
+		flex-direction: row-reverse!important;
+		text-align: left;
+	}
+}
