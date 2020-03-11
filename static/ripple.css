@@ -43,10 +43,6 @@ p.chibi-text {
 	background: #fff;
 }
 
-.chibi-1 {
-
-}
-
 .kr-or:before {
 	line-height: 23px!important;
 }
@@ -78,8 +74,6 @@ p.chibi-text {
 .kr-prompt {
 	color: gray!important;
 }
-
-
 
 /*
  * This file contains Ripple's CSS, that little that is needed for ripple's custom elements.
@@ -1537,5 +1531,62 @@ g > text {
 		display: flex!important;
 		flex-direction: row-reverse!important;
 		text-align: left;
+	}
+}
+
+.Team--container {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex: 0 1 100%;
+	flex-wrap: wrap;
+}
+.Team--element {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	flex-direction: row;
+	align-items: center;
+	align-self: center;
+	margin: 0!important;
+}
+.Team--left {
+	display: flex;
+	flex-direction: row;
+	flex: 0 1 50vh;
+}
+
+.Team--left > img {
+	width: 50px;
+	height: 50px;
+	margin-right: 10px;
+	border-radius: 5px;
+}
+
+.Team--left-info {
+	min-width: 200px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+.Team--left-info > div {
+	display: flex;
+	width: 100%;
+
+}
+.Team--left-info img {
+	width: 34px!important;
+}
+.Team--left-info > div p {
+	font-weight: 600;
+	font-size: 17px;
+}
+@media (max-width: 394px) {
+	.Team--element {
+		justify-content: center!important;
+		flex-wrap: wrap!important;
 	}
 }

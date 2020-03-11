@@ -3,52 +3,36 @@ NoCompile=true
 */}}
 {{ define "userGroup" }}
 {{ with . }}
-	<div class="ui five column center aligned stackable grid">
+	<div class="Team--container">
 		{{ $teamJSON := teamJSON }}
 		{{ range .members }}
 			{{/* ignore fokabot */}}
 			{{ if ne (int .id) 999 }}
 				{{ $tj := index $teamJSON (print .id)}}
-				<div class="column">
-					<div class="ui left aligned fluid card">
-						<div class="image">
-							<img src="{{ config "AvatarURL" }}/{{ .id }}" alt="Avatar">
-						</div>
-						<div class="content">
-							<a class="header" href="/u/{{ .id }}">{{ country .country false }}{{ .username }}</a>
-							{{ with $tj.real_name }}
-								<div class="meta">
-									<a>{{ . }}</a>
-								</div>
+				<div class="ui segment Team--element">
+					<div class="Team--left">
+						<img src="{{ config "AvatarURL" }}/{{ .id }}"  alt="Avatar">
+						<div class="Team--left-info">
+							{{ if $tj.real_name }}
+								<div>{{ country .country false }} <p><a href="/u/{{ .id }}">{{ $tj.real_name }} ({{ .username }})</a></p></div>
+							{{ else }}
+								<div>{{ country .country false }} <p><a href="/u/{{ .id }}">{{ .username }}</a></p></div>
 							{{ end }}
-							{{ with $tj.role }}
-								<div class="description">
-									{{ . }}
-								</div>
+							
+							{{ if $tj.role }}
+								<p class="subtitle">{{ $tj.role }}</p>
 							{{ end }}
 						</div>
-						<div class="extra content">
-							<div title="Registered">
-								<i class="sign in icon"></i>
-								{{ time .registered_on }}
-							</div>
-							<div title="Latest activity">
-								<i class="sign out icon"></i>
-								{{ time .latest_activity }}
-							</div>
-						</div>
-						{{ if or $tj.twitter $tj.mail $tj.github }}
-							<div class="extra content">
-								<div class="center aligned">
-									{{ range $k, $v := $tj }}
-											{{ if and $v (in $k "github" "twitter" "mail") }}
-												<a href="{{ servicePrefix $k }}{{ $v }}" title="{{ capitalise $k }}">
-													<i class="{{ $k }} icon"></i>
-												</a>
-											{{ end }}
+					</div>
+					<div class="Team--right">
+						{{ if or $tj.twitter $tj.mail $tj.github $tj.vk }}
+							{{ range $k, $v := $tj }}
+									{{ if and $v (in $k "github" "twitter" "mail" "vk") }}
+										<a href="{{ servicePrefix $k }}{{ $v }}" title="{{ capitalise $k }}">
+											<i class="{{ $k }} icon"></i>
+										</a>
 									{{ end }}
-								</div>
-							</div>
+							{{ end }}
 						{{ end }}
 					</div>
 				</div>

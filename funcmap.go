@@ -634,6 +634,7 @@ var servicePrefixes = map[string]string{
 	"github":  "https://github.com/",
 	"twitter": "https://twitter.com/",
 	"mail":    "mailto:",
+	"vk":	   "https://vk.com/",
 }
 
 var logoColours = [...]string{
