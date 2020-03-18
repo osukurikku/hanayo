@@ -75,6 +75,278 @@ p.chibi-text {
 	color: gray!important;
 }
 
+.MainPage--shadowed {
+	width: 100%;
+	height: 500px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+	position: relative;
+	overflow: hidden;
+}
+
+.MainPage--video-container {
+	position: relative;
+	overflow: hidden;
+}
+
+.MainPage--video-container video {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.ui.segment.MainPage--shadowed {
+	padding: 0 !important;
+	margin: 0 !important;
+	border-radius: 0px !important;
+}
+
+.MainPage--shadowed::after {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	content: " ";
+	background-color: rgba(0, 0, 0, .5);
+}
+
+.main-content {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.MainPage--grid {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+.MainPage--grid>div {
+	width: 100%;
+	height: 100%;
+}
+
+.MainPage--grid--right {
+	padding: 5rem;
+}
+
+.kurikku-girl {
+	width: 100%;
+	height: 100%;
+	background-image: url('/static/images/logo-girl.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: bottom;
+	animation-duration: 1s;
+	animation-name: miniOpacity;
+}
+
+.MainPage--grid--right-text {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	height: 100%;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.MainPage--text1 {
+	font-size: 16px;
+}
+
+.MainPage--text2 {
+	font-size: 24px;
+}
+
+#first-grid .ui.segments > div {
+	margin-bottom: 2rem;
+}
+
+#first-grid > .column {
+	height: 100%;
+	width: 100%;
+
+	padding-top: 0!important;
+	padding-bottom: 0!important;
+}
+
+@media (max-width: 913px) {
+	.kurikku-girl {
+		display: none!important;
+	}
+
+	.MainPage--grid--left {
+		width: 0!important;
+		height: 0!important;
+	}
+
+	.MainPage--logo {
+		width: 100%;
+		height: 200px;
+		background-image: url('/static/logos/logo1.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center;
+	}
+}
+
+@media (max-width: 420px) {
+	.MainPage--text1 {
+		font-size: 14px!important;
+	}
+
+	.MainPage--text2 {
+		font-size: 15px!important;
+	}
+}
+
+@keyframes miniOpacity {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.js-landing-graph {
+	z-index: 3;
+	height: 70px;
+	position: absolute;
+	bottom: 0; 
+	width: 100%;
+} 
+
+.landing-graph__area {
+	fill: #aa1a4d;
+}
+
+.landing-graph__text {
+	text-shadow: 0 1px 3px rgba(0,0,0,.75);
+	font-size: 10px;
+	fill: #fff;
+	pointer-events: none;
+}
+
+.landing-graph__circle {
+	fill: none;
+	stroke-width: 2;
+	stroke: #fff;
+}
+
+.MainPage--info {
+	width: 100%;
+	height: 145px;
+	padding: 10px;
+	background-color: #2b2734;
+	border-radius: 8px;
+	margin-bottom: 10px;
+	position: relative;
+}
+
+.MainPage--info--table {
+	width: 100%;
+	height: 90px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.MainPage--info--table--welcome {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.MainPage--info--table--welcome > * {
+	margin-right: 10px;
+}
+
+.MainPage--info--table--welcome > p {
+	font-weight: 600;
+	font-size: 24px;
+}
+
+.MainPage--info--table--welcome > img {
+	width: 64px; 
+	height: 64px;
+	border-radius: 35px;
+}
+
+.MainPage--info--table--status {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.MainPage--info--table--status > div {
+	margin-right: 10px;
+}
+
+.MainPage--info--table--status span {
+	display: block;
+	padding-bottom: 0px;
+	font-size: 24px;
+}
+
+.MainPage--info--table--status .small {
+	font-weight: 500;
+} 
+
+.MainPage--info--table--status .big {
+	font-weight: 700;
+	font-size: 28px;
+}
+
+.MainPage--info--table--status .blue {
+	color: #70a1ff;
+}
+
+.MainPage--info--table--status .green {
+	color: #2ed573;
+}
+
+.MainPage--segment {
+	padding: 15px!important;
+	padding-left: 50px!important;
+	padding-right: 50px!important;
+}
+
+.MainPage--news--preview {
+	width: 100%;height: 200px;background-repeat: no-repeat;background-size: cover;position: relative;background-position:center;border-radius: 5px;
+}
+
+@media (max-width: 500px) {
+	.MainPage--info {
+		height: 240px!important;
+	}
+
+	.MainPage--info--table--welcome, .MainPage--info--table--status {
+		width: 100%!important;
+	}
+
+	.MainPage--info--table--status {
+		justify-content: center!important;
+	} 
+}
+
 /*
  * This file contains Ripple's CSS, that little that is needed for ripple's custom elements.
  */

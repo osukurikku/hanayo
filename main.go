@@ -28,6 +28,8 @@ import (
 	"zxq.co/ripple/hanayo/services"
 	"zxq.co/ripple/hanayo/services/cieca"
 	"zxq.co/x/rs"
+	
+	vkIniter "github.com/SevereCloud/vksdk/api"
 )
 
 var startTime = time.Now()
@@ -96,6 +98,7 @@ var (
 	qb        *qsql.DB
 	mg        mailgun.Mailgun
 	rd        *redis.Client
+	vkWrapper *vkIniter.VK
 )
 
 // Services etc
@@ -151,6 +154,9 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+
+	// initialise vksdk by severecloud
+	vkWrapper = vkIniter.Init(config.VkTehToken)
 
 	// initialise mailgun
 	mg = mailgun.NewMailgun(

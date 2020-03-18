@@ -201,7 +201,7 @@ func (b baseTemplateData) Get(s string, params ...interface{}) map[string]interf
 	return x
 }
 
-func replaceUnCorrectSymbols(s string) string {
+func ReplaceUnCorrectSymbols(s string) string {
 	if !utf8.ValidString(s) {
 		v := make([]rune, 0, len(s))
 		for i, r := range s {
@@ -216,6 +216,17 @@ func replaceUnCorrectSymbols(s string) string {
 		s = string(v)
 	}
 	return s
+}
+
+func GetFirstN(s string, n int) string {
+    i := 0
+    for j := range s {
+        if i == n {
+            return s[:j]
+        }
+        i++
+    }
+    return s
 }
 
 func (b baseTemplateData) BaseGet(s string, params ...interface{}) map[string]interface{} {
@@ -249,10 +260,10 @@ func (b baseTemplateData) GetFirstLine(s string) string {
 	var finalStr string
 	var lines []string = strings.Split(s, "\n")
 	if len(lines) > 0 {
-		n := replaceUnCorrectSymbols(lines[0])
+		n := ReplaceUnCorrectSymbols(lines[0])
 		return n
 	} else {
-		s = replaceUnCorrectSymbols(s)
+		s = ReplaceUnCorrectSymbols(s)
 		var count int = 50
 		if len(s) > 0 {
 			if count >= len(s) {
@@ -272,7 +283,7 @@ func (b baseTemplateData) SubStringKR(s string, count int) string {
 		}
 		finalStr = s[:count]
 	}
-	finalStr = replaceUnCorrectSymbols(finalStr)
+	finalStr = ReplaceUnCorrectSymbols(finalStr)
 	return finalStr
 }
 

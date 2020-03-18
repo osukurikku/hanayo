@@ -156,3 +156,7 @@
 [[constraint]]
   branch = "master"
   name = "zxq.co/ripple/agplwarning"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/SevereCloud/vksdk"

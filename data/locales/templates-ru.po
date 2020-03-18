@@ -2026,3 +2026,33 @@ msgstr "Почему нам нужны донаты?"
 
 msgid "Hunters who catch and send in ban cheaters. We are proud of them."
 msgstr "Охотники, которые ловят и отправляют в бан читеров. Мы гордимся ими"
+
+msgid "Top Score"
+msgstr "Лучший скор"
+
+msgid "Top Score RX"
+msgstr "Лучший скор RX"
+
+msgid "Done by <a href='/u/%s'>%s</a>"
+msgstr "Поставлен <a href='/u/%s'>%s</a>"
+
+msgid "On this moment <b>%s online</b> and <b>%s registered users</b>"
+msgstr "На данный момент играют <b>%s игроков</b> и зарегестрировано <b>%s игроков</b>"
+
+msgid "Learn the experience of playing on the fastest growing private server of osu!."
+msgstr "Познайте опыт игры на самом быстроразвивающемся приватном сервере osu!."
+
+msgid "Check us!"
+msgstr "Попробуй!"
+
+msgid "Server news"
+msgstr "Новости сервера"
+
+msgid "Welcome back, <span class='subtitle'>%s</span>!"
+msgstr "Привет, <span class='subtitle'>%s</span>!"
+
+msgid "players"
+msgstr "игроков"
+
+msgid "online"
+msgstr "онлайн"

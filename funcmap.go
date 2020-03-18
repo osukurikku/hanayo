@@ -28,6 +28,8 @@ import (
 	"zxq.co/ripple/hanayo/modules/fa-semantic-mappings"
 	"zxq.co/ripple/playstyle"
 	"zxq.co/ripple/rippleapi/common"
+
+	vkapi "github.com/SevereCloud/vksdk/api"
 )
 
 type RankRequest struct {
@@ -37,6 +39,19 @@ type RankRequest struct {
 	ModeratorReason	string
 	ModeratorName	string
 	Status 			int
+}
+
+type FancyGraphSimple struct {
+	X int	`json:"x"`
+	Y int	`json:"y"`
+}
+
+type BetterNews struct {
+	Name	string
+	News	string
+	Preview	string
+	Date	string
+	Link	string
 }
 
 // funcMap contains useful functions for the various templates.
@@ -504,6 +519,87 @@ var funcMap = template.FuncMap{
 			images = append(images, s)
 		}
 		return images
+	},
+
+	"getFancyUsersStats": func() (graph string) {
+		graphs := []FancyGraphSimple{}
+		
+		rows, err := db.Query("SELECT users_osu FROM bancho_stats WHERE banchostats_id mod 10 = 0 ORDER BY banchostats_id ASC LIMIT 144")
+		if err != nil {
+			fmt.Println(err)
+			return graph
+		}
+		iter := 0
+		for rows.Next() {
+			var graphItem FancyGraphSimple
+			err = rows.Scan(&graphItem.Y)
+			if err != nil {
+				fmt.Println(err)
+				return graph
+			}
+
+			graphItem.X = iter
+			iter+=1
+			graphs = append(graphs, graphItem)
+		}
+		
+		jsonStr, _ := json.Marshal(graphs)
+		return string(jsonStr)
+	},
+
+	"getBetterNews": func() (news []BetterNews) {
+		newsLetter, err := vkWrapper.WallGet(vkapi.Params{
+			"owner_id": -175152353,
+			"count": 10,
+			"filter":" owner",
+		})
+
+		if err != nil {
+			fmt.Println(err)
+			return news
+		}
+	
+		for _, el := range newsLetter.Items {
+			betterNew := BetterNews{}
+			
+			var (
+				finalStr string
+				count	int
+			) 
+			count = 50
+			var lines []string = strings.Split(el.Text, "\n")
+			if len(lines) > 1 {
+				n := ReplaceUnCorrectSymbols(lines[0])
+				betterNew.Name = n
+				betterNew.News = ReplaceUnCorrectSymbols(GetFirstN(strings.Join(lines[1:], "\n"), 256))
+			} else {
+				s := ReplaceUnCorrectSymbols(el.Text)
+				if len(s) > 0 {
+					if count >= len(s) {
+						count = len(s) - 1
+					}
+					finalStr = s[:count]
+				}
+				betterNew.Name = finalStr
+				betterNew.News = ReplaceUnCorrectSymbols(GetFirstN(s, 256))
+			}
+			
+			if len(el.Attachments) > 0 && el.Attachments[0].Type == "photo" {
+				betterNew.Preview = el.Attachments[0].Photo.MaxSize().URL
+			} else {
+				betterNew.Preview = "/static/headers/unnamed.png"
+			}
+			
+			betterNew.Date = "02.02"
+			betterNew.Link = "https://vk.com/osukurikku?w=wall-175152353_"+strconv.Itoa(el.ID)
+
+			news = append(news, betterNew)
+		}
+		return news
+	},
+
+	"incrValue": func(value int, incr int) (newValue int) {
+		return value+incr
 	},
 
 	// bget makes a request to the bancho api

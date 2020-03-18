@@ -4,81 +4,230 @@ TitleBar=Home Page
 KyutGrill=homepage.jpg
 */}}
 {{ define "tpl" }}
-    {{ $cf := .ClientFlags }}
-    {{ $ds := band $cf 1 }}
-    {{ $   := . }}
-    <div class="ui container">
-        <div class="ui raised segment">
+{{ $cf := .ClientFlags }}
+{{ $ds := band $cf 1 }}
+{{ $   := . }}
+<div class="ui container">
+
+    {{ $set := systemSettings "website_home_alert" }}
+    {{ with $set.website_home_alert.String }}
+        <div class="ui warning message">
+            {{ . | html }}
+        </div>
+    {{ end }}
+
+    {{ if not .Context.User.ID }}
+        <div class="ui segment MainPage--shadowed">
+            <div class="MainPage--video-container js-scale">
+                <video autoplay loop muted playsinline
+                    src="https://s.kurikku.pw/landing.mp4"></video>
+            </div>
+
+            <div class="js-landing-graph">
+
+            </div>
+
+            <div class="MainPage--grid main-content">
+                <div class="MainPage--grid--left">
+                    <div class="kurikku-girl"></div>
+                </div>
+                <div class="MainPage--grid--right">
+                    <div class="MainPage--grid--right-text">
+                        <p class="MainPage--text1">{{ .T "On this moment <b>%s online</b> and <b>%s registered users</b>" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
+                        </p>
+                        <div class="MainPage--logo"></div>
+                        <div>
+                            <p class="MainPage--text2">{{ .T "Learn the experience of playing on the fastest growing private server of osu!." }}</br>
+                                <span class="subtitle">{{ .T "Check us!" }}</span>
+                            </p>
+                            <a href="/register" class="big ui button pink">{{ .T "Register" }}</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        </br>
+
+        <div class="ui stackable column divided grid" id="first-grid">
+            <div class="five wide column">
+                <div class="ui segments" style="height: 100%;">
+                    <div class="sixteen wide column">
+                        <div class="ui yellow segment">
+                            <div class="ui grid">
+                                <div class="four wide column">
+                                    <i class="angle right icon status-icon"></i>
+                                </div>
+                                <div class="twelve wide column">
+                                {{ with .Get "krapi/top_plays?mode=0&l=1" }}
+                                    {{ range .scores }}
+                                        <p class="status-head">{{ .pp }}pp</p>
+                                        <p class="status-head" style="font-size: 10px!important;">{{ $.T "Done by <a href='/u/%s'>%s</a>" ($.ConvertFl64ToInt .user.id) (.user.username) | html }}</a></p>
+                                        <p class="status-footer">{{ $.T "Top Score" }}</p>
+                                    {{ end }}
+                                {{ end }}  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sixteen wide column">
+                        <div class="ui green segment">
+                            <div class="ui grid">
+                                <div class="four wide column">
+                                    <i class="angle right icon status-icon"></i>
+                                </div>
+                                <div class="twelve wide column">
+                                {{ with .Get "krapi/top_plays?mode=0&l=1&rx=1" }}
+                                    {{ range .scores }}
+                                        <p class="status-head">{{ .pp }}pp</p>
+                                        <p class="status-head" style="font-size: 10px!important;">{{ $.T "Done by <a href='/u/%s'>%s</a>" ($.ConvertFl64ToInt .user.id) (.user.username) | html }}</a></p>
+                                        <p class="status-footer">{{ $.T "Top Score RX" }}</p>
+                                    {{ end }}
+                                {{ end }}  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="six wide column">
+                <script type="text/javascript" src="https://vk.com/js/api/openapi.js?167"></script>
+
+                <!-- VK Widget -->
+                <div id="vk_groups"></div>
+            </div>
+            <div class="five wide column">
+                <iframe src="https://discordapp.com/widget?id=511199892031668245&theme=dark" id="ds-widget"
+                    allowtransparency="true" frameborder="0" style="
+                            width: 100%;
+                            height: 289px;
+                    "></iframe>
+            </div>
+        </div>
+
+        </br></br>
+
+        <div class="ui stackable grid">
+            <div class="wide column">
+                <div class="ui pink segment">
+                    <h3 class="ui header">{{ .T "Top donators" }}</h3>
+                    {{ with .Get "krapi/topdonors" }}
+                    <div class="ui stackable column grid">
+                        {{ range .users }}
+                        <div class="five wide column">
+                            <h4 class="ui image header">
+                                <img src="{{ config "AvatarURL" }}/{{ .id }}" alt="Avatar of donater {{ .id }}"
+                                    class="ui rounded image">
+                                <div class="content">
+                                    <a href="/u/{{ .id }}">{{ .username }}</a>
+                                    <div class="sub header">
+                                        {{ $.T "Expires in <b>%s</b>" (time .expiration) | html }}
+                                    </div>
+                                </div>
+                            </h4>
+                        </div>
+                        {{ end }}
+                    </div>
+                    {{end}}
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" defer>
+            var userRegistered = {{ not (not .Context.User.ID) }};
+            var jsonStats = JSON.parse({{ getFancyUsersStats }});
+
+            const resizeEl = () => {
+                let needEl = $(".js-scale");
+                if (needEl.length < 1) return;
+
+                let parentSize = needEl[0].parentElement.getBoundingClientRect();
+                let width = null;
+                let height = null;
+
+                if (parentSize.width / parentSize.height > 16 / 9) {
+                    width = parentSize.width;
+                    height = 9 / 16 * width;
+                } else {
+                    height = parentSize.height;
+                    width = 16 / 9 * height;
+                }
+
+                if (width && height) {
+                    needEl[0].style.height = `${height}px`;
+                    needEl[0].style.width = `${width}px`;
+                }
+            }
+
+            window.onload = () => {
+                resizeEl();
+                let graph = new LandingUserStats();
+
+                $(window).resize(() => {
+                    resizeEl();
+                    graph.resize();
+                })
+
+                VK.Widgets.Group("vk_groups", { mode: 4, width: "" + ($("#vk_groups")[0].parentElement.getBoundingClientRect().width.toFixed(0) - 20), height: "272", color1: '2B2734', color2: 'FFFFFF', color3: '7272DF' }, 175152353);
+            }        
+        </script>
+    {{ else }}
+        <div class="MainPage--info">
+            <div class="MainPage--info--table">
+                <div class="MainPage--info--table--welcome">
+                    <img src="https://a.kurikku.pw/{{ .Context.User.ID }}" alt="admin avatar"/>
+                    <p>{{ $.T "Welcome back, <span class='subtitle'>%s</span>!" .Context.User.Username | html }}</p>
+                </div>
+                <div class="MainPage--info--table--status">
+                    <div>
+                        <span class="small subtitle">{{ $.T "players" }}</span></br>
+                        <span class="big blue">{{ rediget "ripple:registered_users" }}</span>
+                    </div>
+                    <div>
+                        <span class="small subtitle">{{ $.T "online" }}</span></br>
+                        <span class="big green">{{ rediget "ripple:online_users" }}</span>
+                    </div>
+                </div>
+
+                <div class="js-landing-graph" style="left: 0;"></div>
+            </div>
+
+            <div>
+            </div>
+        </div>
+        
+        <div class="ui raised segment MainPage--segment">
             <div class="ui stackable column divided grid"> 
                 <div class="eleven wide column"> 
-                    {{/* First container (left part on site) */}}
-                    {{/* Not logged in block */}}
-                    {{ if not .Context.User.ID }}
-                        <div class="ui container">
-                            <h2 class="ui header">{{ .T "Welcome to Kurikku." }}</h1>
-                            <p>
-                                {{ .T "You look new here. Allow us to introduce you to what Kurikku is. Kurikku is a osu! private server. We have free osu!Direct, beatmap listing and searching, clans and more! Have fun on Kurikku!" }}
-                            </p>
-                            <h4 class="ui header center aligned">{{ .T "What are you waiting for? Join Kurikku! It's risk-free: you won't get your account banned on the official server if you play on Kurikku.<br>You can also switch anytime between the official osu! server and Kurikku!" | html }}</h3>
-                        </div>
-                    {{ else }}
-                        <div class="ui container">
-                            <h2 class="ui header">{{ .T "Hi, %s!" .Context.User.Username }}</h1>
-                            <p>
-                                {{ .T "Welcome back to Kurikku. We currently have <b>%s online users and %s total registered users.</b> Hope you're having a wonderful day!" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
-                            </p>
-                        </div>
-                    {{ end }}      
-
-                    <hr class="ui inverted divider"/>
 
                     <h2>{{ .T "Server news" }} </h2>
-                    {{ $vktoken := config "VkTehToken" }}
-                    {{ with .BaseGet "https://api.vk.com/method/wall.get?owner_id=-175152353&count=10&filter=owner&v=5.80&access_token=%s" $vktoken }}
-                        {{ range .response.items }}
+
+                    <hr class="ui inverted divider"/>
+                    {{ $news := getBetterNews }}
+                    {{ range $index, $new := $news }}
+                        <div class="ui segments">
+                            {{ if (lt $index 3) }}
+                                <div class="MainPage--news--preview" style="background-image: url('{{ $new.Preview }}');"></div>
+                            {{ end }}
+                            
                             <div class="ui segment">
                                 <h1 class="ui header no top margin">
-                                    <a href="https://vk.com/osukurikku?w=wall-175152353_{{ .id }}"
-                                    class="inherit">{{ $.GetFirstLine .text | html }}</a>
+                                    <a href="{{ $new.Link }}"
+                                    class="inherit">{{ $new.Name }}</a>
                                 </h1>
                                 <p>
-                                    {{ $.SubStringKR .text 256 | html }}...
+                                    {{ $new.News }}...
                                 </p>
                             </div>
-                        {{ end }}
-                    {{ end }}
+                        </div>
 
+                    {{ end }}
 
                 </div>
 
                 <div class="five wide column"> 
-                    {{/* Second container (right part on site) */}}
-
-                    <div class="ui container">
-                        {{ $set := systemSettings "website_home_alert" }}
-                        {{ with $set.website_home_alert.String }}
-                            <div class="ui warning message">
-                                {{ . | html }}
-                            </div>
-                        {{ end }}
-
-                        <div class="ui raised clearing segment">
-                            <h3 class="ui center aligned header">
-                                {{ .T "Need support or want to talk to other players? Join our <a href=\"%s\">Discord</a>!" (config "DiscordServer") | html }}
-                            </h3>
-
-                            <img src="/static/logos/logo1.png" class="ui centered image" alt="logo" style="width: 80%;">
-                        </div>
-                    </div>
-
-                    <hr class="ui inverted divider">
-
-                    <iframe src="https://discordapp.com/widget?id=511199892031668245&theme=dark" allowtransparency="true" frameborder="0" style="
-                        width: 100%;
-                        height: 23rem;
-                    "></iframe>
-
-                    <hr class="ui inverted divider"/>
 
                     <div id="topplayed" class="ui container">
                         <div class="ui center aligned segment" style="height: 100%;">
@@ -110,33 +259,14 @@ KyutGrill=homepage.jpg
 
                     <hr class="ui inverted divider"/>
 
+                    <iframe src="https://discordapp.com/widget?id=511199892031668245&theme=dark" allowtransparency="true" frameborder="0" style="
+                    width: 100%;
+                    height: 23rem;
+                "></iframe>
+
+                    <hr class="ui inverted divider"/>
+
                     <div class="ui stackable grid">
-                        <div class="sixteen wide column">
-                            <div class="ui red segment">
-                                <div class="ui grid">
-                                    <div class="four wide column">
-                                        <i class="user plus icon status-icon"></i>
-                                    </div>
-                                    <div class="twelve wide column">
-                                        <p class="status-head">{{ .T "%s" (rediget "ripple:online_users") | html }}</p>
-                                        <p class="status-footer">{{ .T "Online Users" }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sixteen wide column">
-                            <div class="ui blue segment">
-                                <div class="ui grid">
-                                    <div class="four wide column">
-                                        <i class="user icon status-icon"></i>
-                                    </div>
-                                    <div class="twelve wide column">
-                                        <p class="status-head">{{ .T "%s" (rediget "ripple:registered_users") | html }}</p>
-                                        <p class="status-footer">{{ .T "Registered Users" }}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="sixteen wide column">
                             <div class="ui green segment">
                                 <div class="ui grid">
@@ -160,8 +290,26 @@ KyutGrill=homepage.jpg
                                     {{ with .Get "krapi/top_plays?mode=0&l=1" }}
                                         {{ range .scores }}
                                             <p class="status-head">{{ .pp }}pp</p>
-                                            <p class="status-head" style="font-size: 10px!important;">Done by <a href="/u/{{ .user.id }}">{{ .user.username }}</a></p>
+                                            <p class="status-head" style="font-size: 10px!important;">{{ $.T "Done by <a href='/u/%s'>%s</a>" ($.ConvertFl64ToInt .user.id) (.user.username) | html }}</p>
                                             <p class="status-footer">{{ $.T "Top Score" }}</p>
+                                        {{ end }}
+                                    {{ end }}  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sixteen wide column">
+                            <div class="ui yellow segment">
+                                <div class="ui grid">
+                                    <div class="four wide column">
+                                        <i class="angle right icon status-icon"></i>
+                                    </div>
+                                    <div class="twelve wide column">
+                                    {{ with .Get "krapi/top_plays?mode=0&l=1&rx=1" }}
+                                        {{ range .scores }}
+                                            <p class="status-head">{{ .pp }}pp</p>
+                                            <p class="status-head" style="font-size: 10px!important;">{{ $.T "Done by <a href='/u/%s'>%s</a>" ($.ConvertFl64ToInt .user.id) (.user.username) | html }}</a></p>
+                                            <p class="status-footer">{{ $.T "Top Score RX" }}</p>
                                         {{ end }}
                                     {{ end }}  
                                     </div>
@@ -172,39 +320,154 @@ KyutGrill=homepage.jpg
 
                 </div>
             </div>
+        </div>
 
-            <div class="ui stackable grid">
-                <div class="wide column">
-                    <div class="ui pink segment">
-                        <h3 class="ui header">{{ .T "Top donators" }}</h3>
-                        {{ with .Get "krapi/topdonors" }}
-                            <div class="ui stackable column grid">
-                                {{ range .users }}
-                                    <div class="five wide column">
-                                        <h4 class="ui image header">
-                                            <img src="{{ config "AvatarURL" }}/{{ .id }}" alt="Avatar of donater {{ .id }}" class="ui rounded image">
-                                            <div class="content">
-                                                <a href="/u/{{ .id }}">{{ .username }}</a>
-                                                <div class="sub header">
-                                                    {{ $.T "Expires in <b>%s</b>" (time .expiration) | html }}
-                                                </div>
-                                            </div>
-                                        </h4>
+        <div class="ui stackable grid">
+            <div class="wide column">
+                <div class="ui pink segment">
+                    <h3 class="ui header">{{ .T "Top donators" }}</h3>
+                    {{ with .Get "krapi/topdonors" }}
+                    <div class="ui stackable column grid">
+                        {{ range .users }}
+                        <div class="five wide column">
+                            <h4 class="ui image header">
+                                <img src="{{ config "AvatarURL" }}/{{ .id }}" alt="Avatar of donater {{ .id }}"
+                                    class="ui rounded image">
+                                <div class="content">
+                                    <a href="/u/{{ .id }}">{{ .username }}</a>
+                                    <div class="sub header">
+                                        {{ $.T "Expires in <b>%s</b>" (time .expiration) | html }}
                                     </div>
-                                {{ end }}
-                            </div>
-                        {{end}}
+                                </div>
+                            </h4>
+                        </div>
+                        {{ end }}
                     </div>
+                    {{end}}
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    <script>
-	var kri = document.querySelectorAll("div.sub.header.kri")
-        for(let i = 0; i < kri.length; i++) {
-            var sp = kri[i].innerHTML.split(" ");
-            kri[i].innerHTML = `${Number(sp[0]).toPrecision(3)}★ ${sp[1]} ${sp[2]} ${sp[3]} ${sp[4]} ${sp[5]} ${sp[6]} ${sp[7]} ${sp[8]}`
-        }
+
+        <script type="text/javascript" defer>
+            var jsonStats = JSON.parse({{ getFancyUsersStats }});
+
+            window.onload = () => {
+                let graph = new LandingUserStats();
+                $(window).resize(() => {
+                    graph.resize();
+                })
+            }
+        </script>
+    {{ end }}
+
+    <script type="text/javascript" defer>
+        class LandingUserStats {
+                constructor() {
+                    this.margin = {
+                        top: 40,
+                        right: 0,
+                        bottom: 0,
+                        left: 0
+                    };
+                    this.peakR = 5;
+                    this.svgContainerOuter = d3.select('.js-landing-graph');
+                    this.svgContainerOuter.selectAll('svg').remove();
+                    this.svgContainerInner = this.svgContainerOuter.append('svg').attr('class', 'landing-graph');
+                    this.svg = this.svgContainerInner.append('g').attr('transform', "translate(" + this.margin.left + ", " + (this.margin.top + 1) + ")");
+                    this.svgArea = this.svg.append('path').attr('class', 'landing-graph__area');
+                    this.svgPeakText = this.svg.append('text').attr('class', 'landing-graph__text').attr('y', -this.peakR * 2);
+                    this.svgPeakCircle = this.svg.append('circle').attr('class', 'landing-graph__circle').attr('cy', 0).attr('r', this.peakR);
+                    this.scaleX = d3.scaleLinear();
+                    this.scaleY = d3.scaleTime();
+                    this.area = d3.area().curve(d3.curveBasis).x((function(_this) {
+                        return function(d) {
+                        return _this.scaleX(d.x);
+                        };
+                    })(this)).y0((function(_this) {
+                        return function() {
+                        return _this.height;
+                        };
+                    })(this)).y1((function(_this) {
+                        return function(d) {
+                        return _this.scaleY(d.y);
+                        };
+                    })(this));
+                    this.loadData();
+                    this.resize();
+                }
+
+                loadData() {
+                    this.data = window.jsonStats;
+
+                    if (this.data.length < 1) {
+                        return;
+                    }
+                    let maxVal = 0;
+                    this.maxElem = {x:0,y:0};
+                    for (let el of this.data) {
+                        if (el.y > maxVal) {
+                            this.maxElem = el
+                            maxVal = el.y;
+                        }
+                    }
+                    this.scaleX.domain(d3.extent(this.data, function(d) {
+                        return d.x;
+                    }));
+                    this.scaleY.domain([
+                        0, d3.max(this.data, function(d) {
+                        return d.y;
+                        })
+                    ]);
+
+                    this.svgPeakText.text(window.T(`Max, {0} players`).format(this.formatNumber(this.maxElem.y)));
+                    return this.peakTextLength = this.svgPeakText.node().getComputedTextLength();
+                }
+
+                resize() {
+                    if (this.data.length < 1) {
+                        return;
+                    }
+                    this.width = parseInt(this.svgContainerOuter.style('width')) - this.margin.left - this.margin.right;
+                    this.height = parseInt(this.svgContainerOuter.style('height')) - this.margin.top - this.margin.bottom;
+                    this.scaleX.range([0, this.width]);
+                    this.scaleY.range([this.height, 0]);
+                    this.svgContainerInner.attr('width', this.width + this.margin.left + this.margin.right).attr('height', this.height + this.margin.top + this.margin.bottom);
+                    this.svgArea.datum(this.data).attr('d', this.area);
+                    this.svgPeakCircle.attr('cx', this.scaleX(this.maxElem.x));
+                    return this.svgPeakText.attr('x', (function(_this) {
+                        return function() {
+                            var rightX;
+                            rightX = _this.scaleX(_this.maxElem.x) + (_this.peakR * 2);
+                            if ((_this.peakTextLength + rightX) > _this.width) {
+                                return _this.scaleX(_this.maxElem.x) - (_this.peakTextLength + (_this.peakR * 2));
+                            } else {
+                                return rightX;
+                            }
+                        };
+                    })(this));
+                }
+
+                formatNumber(number) {
+                    return number.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
+                }
+            }
     </script>
+
+</div>
+                <!-- {{/* First container (left part on site) 
+                {{/* Not logged in block */}}
+                {{ if not .Context.User.ID }}
+                <div class="ui container">
+
+                </div>
+                {{ else }}
+                <div class="ui container">
+
+                </div>
+                {{ end }}
+
+                <hr class="ui inverted divider" />
+
+                <h2>{{ .T "Server news" }} </h2>*/}} -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.7/d3.min.js"></script>
 {{ end }}
