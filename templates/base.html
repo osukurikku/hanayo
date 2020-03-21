@@ -72,12 +72,7 @@
 			This is mainly used in user profiles, allowing users to set their profile background.
 			If we're asked to disable the hugeheading, and a KyutGrill is not set, navbar has the `dropped` class.
 		*/}}
-<div class="ui full height main wrapper"
-{{ if and .DisableHH .KyutGrill }}
-     style="background-image: url('{{ if .KyutGrillAbsolute }}{{ .KyutGrill }}{{ else }}/static/headers/{{ .KyutGrill }}{{ end }}');"
-{{ else if .SolidColour }}
-     style="background-color: {{ .SolidColour }}"
-{{ end }}>
+<div class="ui full height main wrapper">
 {{ template "navbar" . }}
  {{ if not .DisableHH }}
     <div class="ui container">

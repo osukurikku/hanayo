@@ -350,6 +350,7 @@ type templateConfig struct {
 	MinPrivileges    uint64
 	HugeHeadingRight bool
 	AdditionalJS     string
+	DisableHH	 bool
 }
 
 func (t templateConfig) inc(prefix string) []string {
