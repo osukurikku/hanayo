@@ -524,7 +524,7 @@ var funcMap = template.FuncMap{
 	"getFancyUsersStats": func() (graph string) {
 		graphs := []FancyGraphSimple{}
 		
-		rows, err := db.Query("SELECT sub.users_osu FROM (SELECT banchostats_id, users_osu FROM bancho_stats WHERE banchostats_id mod 10 = 0 ORDER BY banchostats_id DESC LIMIT 144) AS sub ORDER BY sub.banchostats_id ASC")
+		rows, err := db.Query("SELECT users_osu FROM bancho_stats WHERE banchostats_id mod 10 = 0 ORDER BY banchostats_id DESC LIMIT 144")
 		if err != nil {
 			fmt.Println(err)
 			return graph
@@ -540,10 +540,17 @@ var funcMap = template.FuncMap{
 
 			graphItem.X = iter
 			iter+=1
-			//graphs = append([]FancyGraphSimple{graphItem}, graphs...)
+
 			graphs = append(graphs, graphItem)
 		}
-		
+
+		for left, right := 0, len(graphs)-1; left < right; left, right = left+1, right-1 {
+			posLeft := graphs[left].X
+			graphs[left].X = graphs[right].X
+			graphs[right].X = posLeft
+
+			graphs[left], graphs[right] = graphs[right], graphs[left]
+		}
 		jsonStr, _ := json.Marshal(graphs)
 		return string(jsonStr)
 	},
