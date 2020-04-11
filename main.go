@@ -28,7 +28,7 @@ import (
 	"zxq.co/ripple/hanayo/services"
 	"zxq.co/ripple/hanayo/services/cieca"
 	"zxq.co/x/rs"
-	
+
 	vkIniter "github.com/SevereCloud/vksdk/api"
 )
 
@@ -90,7 +90,7 @@ var (
 
 		IP_API string
 
-		VKSettings string
+		VKSettings     string
 		TwitchSettings string
 	}
 	configMap map[string]interface{}
@@ -348,6 +348,12 @@ func generateEngine() *gin.Engine {
 	r.GET("/social/twitch/verify", twitchAuthorizeHandler)
 	r.GET("/social/twitch/unlink", twitchUnAuthorizeHandler)
 	// ---- PART END ----
+
+	// ---- PART TOPG VOTER ----
+	r.GET("/votingShelf/topg_voter_api", SubmiterVotes)
+	r.GET("/vote", GetVoter)
+	r.GET("/vote/exchange", exchangeVotes)
+	// ---- PART TOPG VOTER END ----
 
 	loadSimplePages(r)
 

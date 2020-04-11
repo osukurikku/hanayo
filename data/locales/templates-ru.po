@@ -2056,3 +2056,24 @@ msgstr "игроков"
 
 msgid "online"
 msgstr "онлайн"
+
+msgid "You haven't enough votes. Min votes to exchange = 25. 25 votes = 150 rub"
+msgstr "У вас не достаточно. Минимальное количество голосов для обмена 25. 25 голосов = 150 руб."
+
+msgid "Exchange your votes!"
+msgstr "Обменяй свои голоса!"
+
+msgid "You have: %x votes!"
+msgstr "У вас %x голосов"
+
+msgid "Why do we need these votes?"
+msgstr "Зачем нам нужны эти голоса?"
+
+msgid "These votes help us promote the server at the <a class='ui subtitle' href='https://topg.org' alt='topg link'>TopG.org</a> monitoring site."
+msgstr "Эти голоса помогают нам развивать сервер на площадке мониторинга <a class='ui subtitle' href='https://topg.org' alt='topg link'>TopG.org</a>"
+
+msgid "Vote for us and get free donor!"
+msgstr "Голосуй и получи донора!"
+
+msgid "Vote!"
+msgstr "Голосовать!"

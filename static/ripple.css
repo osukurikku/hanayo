@@ -1862,3 +1862,10 @@ g > text {
 		flex-wrap: wrap!important;
 	}
 }
+
+.centerAll p.status-footer {
+	text-align: center;
+}
+.centerAll .ui.button {
+	width: 100%!important;
+}
