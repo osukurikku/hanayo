@@ -67,8 +67,14 @@ func SubmiterVotes(c *gin.Context) {
 		}
 	}
 
-	voter.Count++
-	db.Exec("UPDATE topg_votes SET time = ?, count = ? WHERE userid = ?", voter.Time, voter.Count, voter.UserID)
+	if voter.Time > int(currentTime) {
+		data.Messages = append(data.Messages, errorMessage{T(c, "Not now, try later!")})
+		data.NextTimeSubmit = int64(voter.Time)
+	} else {
+		voter.Time = int(currentTime + 172800)
+		voter.Count++
+		db.Exec("UPDATE topg_votes SET time = ?, count = ? WHERE userid = ?", voter.Time, voter.Count, voter.UserID)
+	}
 
 	// if getContext(c).User.ID == 0 {
 
@@ -162,7 +168,7 @@ func exchangeVotes(c *gin.Context) {
 	voter := TopgVoter{}
 	err := db.Get(&voter, "SELECT userid, count, time FROM topg_votes WHERE userid = ?", getContext(c).User.ID)
 	if err != nil {
-		resp403(c)
+		respEmpty(c, "Forbidden", warningMessage{T(c, "You haven't enough votes. Min votes to exchange = 25. 25 votes = 150 rub")})
 		return
 	}
 

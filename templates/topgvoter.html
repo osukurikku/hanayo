@@ -7,7 +7,11 @@
                 <div class="ui segment">
                     <div style="display: flex; width: 100%; flex-direction: row; justify-content: center; align-items: center; self-align: center;">
                         <h2 style="padding-right: 10px; padding-top: 10px;">{{ .T "You have: %x votes!" ($.Balance) | html }}</h2>
-                        <a href="https://topg.org/osu-private-servers/in-501468-{{ .Context.User.ID }}" class="big ui button red">{{ .T "Vote!" }}</a>
+                        {{ if $.CanUserSubmit }}
+                            <a href="https://topg.org/osu-private-servers/in-501468-{{ .Context.User.ID }}" class="big ui green button">{{ .T "Vote!" }}</a>
+                        {{ else }}
+                            <a href="https://topg.org/osu-private-servers/in-501468-{{ .Context.User.ID }}" disabled class="big ui red button">{{ .T "Vote!" }}</a>
+                        {{ end }}
                     </div>
                     <hr class="ui divider">
                     <a href="/vote/exchange" class="medium ui button green">{{ .T "Exchange your votes!" }}</a>
@@ -16,11 +20,6 @@
         </div>
         </br>
         <div class="tiny container">
-            <!-- <div class="ui raised segment">
-                <h2>Зачем нам нужны эти голоса?</h2>
-                <hr class="ui divider">
-                <h3>Эти голоса помогают нам развивать сервер на площадке мониторинга <a class="ui subtitle" href="https://topg.org" alt="topg link">TopG.org</a></h3>
-            </div> -->
             <div class="ui raised segment">
                 <h2>{{ .T "Why do we need these votes?" }}</h2>
                 <hr class="ui divider">
