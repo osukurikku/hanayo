@@ -9,7 +9,7 @@
  *
  */
  
- @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic&subset=latin);
+ @import url(https://fonts.googleapis.com/css?family=Exo+2:400,700,400italic,700italic&subset=latin&display=swap);
  *,
  :after,
  :before {
@@ -240,7 +240,7 @@
      padding: 0;
      overflow-x: hidden;
      min-width: 320px;
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      font-size: 14px;
      line-height: 1.4285em;
      color: rgba(255, 255, 255, .93);
@@ -252,7 +252,7 @@
  h3,
  h4,
  h5 {
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      line-height: 1.2857em;
      margin: calc(2rem - .14285em) 0 1rem;
      font-weight: 700;
@@ -350,7 +350,7 @@
      vertical-align: baseline;
      background: #E0E1E2;
      color: rgba(0, 0, 0, .6);
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      margin: 0 .25em 0 0;
      padding: .78571429em 1.5em;
      text-transform: none;
@@ -3949,7 +3949,7 @@
  }
  
  .ui.text.container {
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      max-width: 700px!important;
      line-height: 1.5;
      font-size: 1.14285714rem
@@ -5413,7 +5413,7 @@
      border: none;
      margin: calc(2rem - .14285em) 0 1rem;
      padding: 0;
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      font-weight: 700;
      line-height: 1.2857em;
      text-transform: none;
@@ -10025,7 +10025,7 @@
      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
      text-align: left;
      line-height: 1.2142em;
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      padding: .67861429em 1em;
      background: hsl(255, 13%, 18%);;
      border: 1px solid rgba(34, 36, 38, .15);
@@ -11702,7 +11702,7 @@
  .ui.list>.item .header {
      display: block;
      margin: 0;
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      font-weight: 700;
      color: rgba(255, 255, 255, .93)
  }
@@ -13926,7 +13926,7 @@
  .ui.form input[type=file],
  .ui.form input[type=url],
  .ui.form input[type=number] {
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      margin: 0;
      outline: 0;
      -webkit-appearance: none;
@@ -16576,7 +16576,7 @@
      display: -ms-flexbox;
      display: flex;
      margin: 1rem 0;
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      background: hsl(255, 14%, 18%);
      font-weight: 400;
      border: 1px solid rgba(34, 36, 38, .15);
@@ -18357,7 +18357,7 @@
  
  .ui.message .header {
      display: block;
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      font-weight: 700;
      margin: -.14285em 0 0
  }
@@ -20045,7 +20045,7 @@
  .ui.cards>.card>.content>.header {
      display: block;
      margin: '';
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      color: rgba(255, 255, 255, .9)
  }
  
@@ -21305,7 +21305,7 @@
  .ui.items>.item>.content>.header {
      display: inline-block;
      margin: -.21425em 0 0;
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      font-weight: 700;
      color: rgba(255, 255, 255, .9)
  }
@@ -21643,7 +21643,7 @@
  
  .ui.statistic>.value,
  .ui.statistics .statistic>.value {
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      font-weight: 400;
      line-height: 1em;
      color: #1B1C1D;
@@ -21653,7 +21653,7 @@
  
  .ui.statistic>.label,
  .ui.statistics .statistic>.label {
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      font-size: 1em;
      font-weight: 700;
      color: rgba(255, 255, 255, .93);
@@ -22103,7 +22103,7 @@
  
  .ui.accordion .title:not(.ui) {
      padding: .5em 0;
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      font-size: 1em;
      color: rgba(255, 255, 255, .93)
  }
@@ -24167,7 +24167,7 @@
  
  .ui.modal>.header {
      display: block;
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      background: hsl(255, 14%, 18%);
      margin: 0;
      padding: 1.25rem 1.5rem;
@@ -24678,7 +24678,7 @@
  
  .ui.popup>.header {
      padding: 0;
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      font-size: 1.14285714em;
      line-height: 1.2;
      font-weight: 700
@@ -25808,7 +25808,7 @@
  
  .ui.search>.results .result .title {
      margin: -.14285em 0 0;
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      font-weight: 700;
      font-size: 1em;
      color: rgba(255, 255, 255, .9)
@@ -25830,7 +25830,7 @@
  }
  
  .ui.search>.results>.message .header {
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      font-size: 1rem;
      font-weight: 700;
      color: rgba(255, 255, 255, .93)
@@ -25988,7 +25988,7 @@
  .ui.category.search>.results .category>.name {
      width: 100px;
      background: 0 0;
-     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+     font-family: 'Exo 2', 'Helvetica Neue', Arial, Helvetica, sans-serif;
      font-size: 1em;
      float: 1em;
      float: left;
