@@ -168,12 +168,12 @@ func exchangeVotes(c *gin.Context) {
 	voter := TopgVoter{}
 	err := db.Get(&voter, "SELECT userid, count, time FROM topg_votes WHERE userid = ?", getContext(c).User.ID)
 	if err != nil {
-		respEmpty(c, "Forbidden", warningMessage{T(c, "You haven't enough votes. Min votes to exchange = 25. 25 votes = 150 rub")})
+		respEmpty(c, "Forbidden", warningMessage{T(c, "You haven't enough votes. Min votes to exchange = 15. 15 votes = 150 rub")})
 		return
 	}
 
 	if voter.Count < 25 {
-		respEmpty(c, "Forbidden", warningMessage{T(c, "You haven't enough votes. Min votes to exchange = 25. 25 votes = 150 rub")})
+		respEmpty(c, "Forbidden", warningMessage{T(c, "You haven't enough votes. Min votes to exchange = 15. 15 votes = 150 rub")})
 		return
 	}
 	voter.Count -= 25

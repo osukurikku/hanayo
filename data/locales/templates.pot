@@ -1458,7 +1458,7 @@ msgstr ""
 msgid "The Kurikku API is the system through which developers can create applications to interact with Kurikku. <b>If you're asked to fill out an API token from this page, be wary and only actually create the token if you really trust the owner of the application.</b>"
 msgstr ""
 
-msgid "You haven't enough votes. Min votes to exchange = 25. 25 votes = 150 rub"
+msgid "You haven't enough votes. Min votes to exchange = 15. 15 votes = 150 rub"
 msgstr ""
 
 msgid "Exchange your votes!"

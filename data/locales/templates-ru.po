@@ -2057,8 +2057,8 @@ msgstr "игроков"
 msgid "online"
 msgstr "онлайн"
 
-msgid "You haven't enough votes. Min votes to exchange = 25. 25 votes = 150 rub"
-msgstr "У вас не достаточно. Минимальное количество голосов для обмена 25. 25 голосов = 150 руб."
+msgid "You haven't enough votes. Min votes to exchange = 15. 15 votes = 150 rub"
+msgstr "У вас не достаточно. Минимальное количество голосов для обмена 15. 15 голосов = 150 руб."
 
 msgid "Exchange your votes!"
 msgstr "Обменяй свои голоса!"
