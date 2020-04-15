@@ -2063,7 +2063,7 @@ msgstr "У вас не достаточно. Минимальное количе
 msgid "Exchange your votes!"
 msgstr "Обменяй свои голоса!"
 
-msgid "You have: %x votes!"
+msgid "You have %x votes!"
 msgstr "У вас %x голосов"
 
 msgid "Why do we need these votes?"
@@ -2077,3 +2077,6 @@ msgstr "Голосуй и получи донора!"
 
 msgid "Vote!"
 msgstr "Голосовать!"
+
+msgid "You have %x votes. For free donor you need %s"
+msgstr "У вас %x голосов. Для донора, тебе нужно %s"
