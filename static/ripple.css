@@ -47,6 +47,10 @@ p.chibi-text {
 	line-height: 23px!important;
 }
 
+.rounded-avatar {
+	border-radius: 23px;
+}
+
 .status-head {
   padding:0;
   margin: 0;

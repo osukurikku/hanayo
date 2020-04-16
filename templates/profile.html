@@ -53,7 +53,7 @@
                         {{ if eq $global.UserID $global.Context.User.ID }}
                             <a href="/settings/avatar">
                         {{ end }}
-                            <img src="{{ config "AvatarURL" }}/{{ .id }}" alt="avatar" class="ui small centered image">
+                            <img src="{{ config "AvatarURL" }}/{{ .id }}" alt="avatar" class="ui small centered image rounded-avatar">
                         {{ if eq $global.UserID $global.Context.User.ID }}
                             </a>
                         {{ end }}
