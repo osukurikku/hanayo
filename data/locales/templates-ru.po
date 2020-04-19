@@ -2039,8 +2039,8 @@ msgstr "Поставлен <a href='/u/%s'>%s</a>"
 msgid "On this moment <b>%s online</b> and <b>%s registered users</b>"
 msgstr "На данный момент играют <b>%s игроков</b> и зарегестрировано <b>%s игроков</b>"
 
-msgid "Learn the experience of playing on the fastest growing private server of osu!."
-msgstr "Познайте опыт игры на самом быстроразвивающемся приватном сервере osu!."
+msgid "Learn the experience of playing on the fastest growing private server of osu!"
+msgstr "Познайте опыт игры на самом быстроразвивающемся приватном сервере osu!"
 
 msgid "Check us!"
 msgstr "Попробуй!"
