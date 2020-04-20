@@ -6,7 +6,7 @@
             <div class="ui raised segments">
                 <div class="ui segment">
                     <div style="display: flex; width: 100%; flex-direction: row; justify-content: center; align-items: center; self-align: center;">
-                        <h2 style="padding-right: 10px; padding-top: 10px;">{{ .T "You have %x votes!" ($.Balance) | html }}</h2>
+                        <h2 style="padding-right: 10px; padding-top: 10px;">{{ .T "You have %d votes!" ($.Balance) | html }}</h2>
                         {{ if $.CanUserSubmit }}
                             <a href="https://topg.org/osu-private-servers/in-501468-{{ .Context.User.ID }}" class="big ui green button">{{ .T "Vote!" }}</a>
                         {{ else }}
@@ -17,7 +17,7 @@
                         <div class="bar">
                             <div class="progress">%</div>
                         </div>
-                        <div class="label"> {{.T "You have %x votes. For free donor you need %s" ($.Balance) ("15") | html}}</div>
+                        <div class="label"> {{.T "You have %d votes. For free donor you need %s" ($.Balance) ("15") | html}}</div>
                     </div>
                     <hr class="ui divider">
                     <a href="/vote/exchange" class="medium ui button green">{{ .T "Exchange your votes!" }}</a>

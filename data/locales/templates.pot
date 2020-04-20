@@ -1464,7 +1464,7 @@ msgstr ""
 msgid "Exchange your votes!"
 msgstr ""
 
-msgid "You have %x votes!"
+msgid "You have %d votes!"
 msgstr ""
 
 msgid "Why do we need these votes?"
@@ -1479,5 +1479,5 @@ msgstr ""
 msgid "Vote!"
 msgstr ""
 
-msgid "You have %x votes. For free donor you need %s"
+msgid "You have %d votes. For free donor you need %s"
 msgstr ""
