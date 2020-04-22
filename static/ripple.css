@@ -1873,3 +1873,92 @@ g > text {
 .centerAll .ui.button {
 	width: 100%!important;
 }
+
+.kpw--profile--flex {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 0 10px 10px 10px;
+	margin-top: 5px;
+}
+
+.kpw--profile--bg {
+	min-height: 200px;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+}
+
+.kpw--profile--avatar {
+	margin-left: 10px;
+	margin-top: -5rem;
+	width: 150px;
+	max-width: 150px;
+	max-height: 150px;
+	margin-top: -2.5rem;
+	box-shadow: 0 1px 3px rgba(0,0,0,.25);                      
+}
+
+.ui.header {
+	padding: 0;
+	margin: 0;
+}
+
+.kpw--profile--actions {
+	margin-top: 5px;
+	display: flex;
+	flex-direction: column;
+	width: 202px;
+}
+
+.kpw--profile--pactions {
+	margin-bottom: 10px;
+}
+
+p.ranks .clan {
+	font-size: 40px;
+}
+
+p.ranks .rank {
+	font-size: 20px;
+}
+
+.kpw--profile--stats--rank {
+	width: 20px;
+}
+
+.kpw--profile--segment {
+	padding: 0!important;
+}
+
+.kpw--zero {
+	padding-bottom: 0!important;
+}
+
+.kpw--info--block {
+	display: flex; flex-direction: column; width: 100%; height: 100%; align-items: flex-start; padding-left: 10px; margin: 10px;
+}
+
+@media (max-width: 767px) {
+	.kpw--profile--flex {
+		flex-direction: column!important;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.kpw--profile--flex .title, 
+	.kpw--profile--flex .subtitle, 
+	.kpw--profile--flex h1 {
+		text-align: center!important;
+	}
+
+	.kpw--info--block {
+		align-items: center!important;
+		justify-content: center;
+	}
+
+	.kpw--profile--avatar {
+		margin-top: -8rem;
+	}
+}

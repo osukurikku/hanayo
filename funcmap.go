@@ -9,11 +9,11 @@ import (
 	"math"
 	"math/rand"
 	"net/http"
+	"reflect"
 	"sort"
 	"strconv"
 	"strings"
 	"time"
-	"reflect"
 
 	"github.com/dustin/go-humanize"
 	"github.com/gin-gonic/gin"
@@ -21,11 +21,11 @@ import (
 	"github.com/russross/blackfriday"
 	"github.com/thehowl/qsql"
 	"golang.org/x/oauth2"
-	"zxq.co/ripple/go-discord-oauth"
+	discordoauth "zxq.co/ripple/go-discord-oauth"
 	"zxq.co/ripple/hanayo/modules/bbcode"
 	"zxq.co/ripple/hanayo/modules/btcaddress"
 	"zxq.co/ripple/hanayo/modules/doc"
-	"zxq.co/ripple/hanayo/modules/fa-semantic-mappings"
+	fasuimappings "zxq.co/ripple/hanayo/modules/fa-semantic-mappings"
 	"zxq.co/ripple/playstyle"
 	"zxq.co/ripple/rippleapi/common"
 
@@ -33,25 +33,25 @@ import (
 )
 
 type RankRequest struct {
-	Bid				int
-	MapType			string
-	ModeratorID		int
-	ModeratorReason	string
-	ModeratorName	string
-	Status 			int
+	Bid             int
+	MapType         string
+	ModeratorID     int
+	ModeratorReason string
+	ModeratorName   string
+	Status          int
 }
 
 type FancyGraphSimple struct {
-	X int	`json:"x"`
-	Y int	`json:"y"`
+	X int `json:"x"`
+	Y int `json:"y"`
 }
 
 type BetterNews struct {
-	Name	string
-	News	string
-	Preview	string
-	Date	string
-	Link	string
+	Name    string
+	News    string
+	Preview string
+	Date    string
+	Link    string
 }
 
 // funcMap contains useful functions for the various templates.
@@ -141,9 +141,9 @@ var funcMap = template.FuncMap{
 	"isBday": func(i int) bool {
 		_, month, day := time.Now().Date()
 		if month == 10 && day == 19 {
-			return true;
+			return true
 		} else {
-			return false;
+			return false
 		}
 	},
 
@@ -443,6 +443,9 @@ var funcMap = template.FuncMap{
 		}
 		return "pink"
 	},
+	"randInt": func(min int, max int) int {
+		return rand.Intn(max-min) + min
+	},
 	// after checks whether a certain time is after time.Now()
 	"after": func(s string) bool {
 		t, _ := time.Parse(time.RFC3339, s)
@@ -475,7 +478,7 @@ var funcMap = template.FuncMap{
 		return i
 	},
 
-	"getRankRequests": func(userid int) (requests []RankRequest)  {
+	"getRankRequests": func(userid int) (requests []RankRequest) {
 		rows, err := db.Query("SELECT rank_requests.bid, rank_requests.type, rank_requests.moderator_id, rank_requests.moderator_reason, rank_requests.status FROM rank_requests WHERE rank_requests.userid = ? ORDER BY rank_requests.id DESC", userid)
 		if err != nil {
 			return requests
@@ -485,12 +488,12 @@ var funcMap = template.FuncMap{
 			err = rows.Scan(
 				&r.Bid, &r.MapType, &r.ModeratorID, &r.ModeratorReason, &r.Status,
 			)
-			
+
 			if err != nil {
 				fmt.Println(err)
 				return requests
 			}
-			if (r.ModeratorID == 0) {
+			if r.ModeratorID == 0 {
 				r.ModeratorID = 0
 				r.ModeratorName = "???"
 				r.ModeratorReason = "???"
@@ -508,7 +511,7 @@ var funcMap = template.FuncMap{
 		if err != nil {
 			return images
 		}
-		for rows.Next() { 
+		for rows.Next() {
 			var s string
 			err = rows.Scan(&s)
 
@@ -523,7 +526,7 @@ var funcMap = template.FuncMap{
 
 	"getFancyUsersStats": func() (graph string) {
 		graphs := []FancyGraphSimple{}
-		
+
 		rows, err := db.Query("SELECT users_osu FROM bancho_stats WHERE banchostats_id mod 10 = 0 ORDER BY banchostats_id DESC LIMIT 144")
 		if err != nil {
 			fmt.Println(err)
@@ -539,7 +542,7 @@ var funcMap = template.FuncMap{
 			}
 
 			graphItem.X = iter
-			iter+=1
+			iter += 1
 
 			graphs = append(graphs, graphItem)
 		}
@@ -558,22 +561,22 @@ var funcMap = template.FuncMap{
 	"getBetterNews": func() (news []BetterNews) {
 		newsLetter, err := vkWrapper.WallGet(vkapi.Params{
 			"owner_id": -175152353,
-			"count": 10,
-			"filter":" owner",
+			"count":    10,
+			"filter":   " owner",
 		})
 
 		if err != nil {
 			fmt.Println(err)
 			return news
 		}
-	
+
 		for _, el := range newsLetter.Items {
 			betterNew := BetterNews{}
-			
+
 			var (
 				finalStr string
-				count	int
-			) 
+				count    int
+			)
 			count = 50
 			var lines []string = strings.Split(el.Text, "\n")
 			if len(lines) > 1 {
@@ -591,15 +594,15 @@ var funcMap = template.FuncMap{
 				betterNew.Name = finalStr
 				betterNew.News = ReplaceUnCorrectSymbols(GetFirstN(s, 256))
 			}
-			
+
 			if len(el.Attachments) > 0 && el.Attachments[0].Type == "photo" {
 				betterNew.Preview = el.Attachments[0].Photo.MaxSize().URL
 			} else {
 				betterNew.Preview = "/static/headers/unnamed.png"
 			}
-			
+
 			betterNew.Date = "02.02"
-			betterNew.Link = "https://vk.com/osukurikku?w=wall-175152353_"+strconv.Itoa(el.ID)
+			betterNew.Link = "https://vk.com/osukurikku?w=wall-175152353_" + strconv.Itoa(el.ID)
 
 			news = append(news, betterNew)
 		}
@@ -607,7 +610,7 @@ var funcMap = template.FuncMap{
 	},
 
 	"incrValue": func(value int, incr int) (newValue int) {
-		return value+incr
+		return value + incr
 	},
 
 	// bget makes a request to the bancho api
@@ -738,7 +741,7 @@ var servicePrefixes = map[string]string{
 	"github":  "https://github.com/",
 	"twitter": "https://twitter.com/",
 	"mail":    "mailto:",
-	"vk":	   "https://vk.com/",
+	"vk":      "https://vk.com/",
 }
 
 var logoColours = [...]string{

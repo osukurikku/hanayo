@@ -24831,14 +24831,14 @@
  
  [data-tooltip][data-inverted]:after {
      background: #1B1C1D;
-     color: hsl(255, 14%, 18%);
+     color: #fff;
      border: none;
      box-shadow: none
  }
  
  [data-tooltip][data-inverted]:after .header {
      background-color: none;
-     color: hsl(255, 14%, 18%)
+     color: #fff;
  }
  
  [data-position="top center"][data-tooltip]:after {

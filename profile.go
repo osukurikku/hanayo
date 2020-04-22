@@ -12,6 +12,10 @@ import (
 type profileData struct {
 	baseTemplateData
 	UserID int
+
+	ProfileGrill         string
+	ProfileGrillAbsolute bool
+	ProfileColour        string
 }
 
 func userProfile(c *gin.Context) {
@@ -62,10 +66,10 @@ func userProfile(c *gin.Context) {
 		db.Get(&profileBackground, "SELECT type, value FROM profile_backgrounds WHERE uid = ?", data.UserID)
 		switch profileBackground.Type {
 		case 1:
-			data.KyutGrill = "/static/profbackgrounds/" + profileBackground.Value
-			data.KyutGrillAbsolute = true
+			data.ProfileGrill = "/static/profbackgrounds/" + profileBackground.Value
+			data.ProfileGrillAbsolute = true
 		case 2:
-			data.SolidColour = profileBackground.Value
+			data.ProfileColour = profileBackground.Value
 		}
 	}
 

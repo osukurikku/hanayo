@@ -45,101 +45,131 @@
     {{ end }}
 
     <div class="ui stackable column grid">
-        <div class="five wide column">
-            <div class="ui top attached segment overflow auto" style="border-bottom-left-radius: 0 !important; border-bottom-right-radius: 0 !important;">
-                <div class="ui stackable centered grid">
-
-                    <div class="sixteen wide column">
+        <div class="sixteen wide column kpw--zero">
+            <div class="ui segment kpw--profile--segment">
+                <div class="">
+                    <div class="kpw--profile--bg"
+                        {{ if and $.ProfileGrillAbsolute $.ProfileGrill }}     
+                            style="background-image: url('{{ if $.ProfileGrillAbsolute }}{{ $.ProfileGrill }}{{ else }}/static/headers/{{ $.ProfileGrill }}{{ end }}');"
+                        {{ else if $.SolidColour }}
+                            style="background-color: {{ $.ProfileColour }}; width: 100%;"
+                        {{ else }}
+                            style="background-image: url('https://s.kurikku.pw/profile-covers/c{{ randInt 1 8 }}.jpg');"
+                        {{ end }}>
+                    </div>
+                    
+                    <div class="kpw--profile--flex">
                         {{ if eq $global.UserID $global.Context.User.ID }}
                             <a href="/settings/avatar">
                         {{ end }}
-                            <img src="{{ config "AvatarURL" }}/{{ .id }}" alt="avatar" class="ui small centered image rounded-avatar">
+                            <img src="{{ config "AvatarURL" }}/{{ .id }}" alt="avatar" class="rounded-avatar kpw--profile--avatar">
                         {{ if eq $global.UserID $global.Context.User.ID }}
                             </a>
                         {{ end }}
-                    </div>
+            
+                        <div class="kpw--info--block">
+                            <h1 class="ui header">
+                                <p class="ranks">
+                                    {{ if $super }}
+                                        <a class="clan" href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> <span class="owner bgf">{{ .username }}</span>
+                                    {{else if $dev}}
+                                        <a class="clan" href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> <span class="dev bgf">{{ .username }}</span>
+                                    {{ else }}
+                                        <a class="clan" href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> <span class="bgf">{{ .username }}</span>
+                                    {{ end }}
+                                    {{ range $k, $v := (slice .std .taiko .ctb .mania) }}
+                                        <span class="rank" data-mode="{{ $k }}" {{ if ne $k (int $favouritemode) }} hidden{{ end }}>{{ with and $v $v.global_leaderboard_rank }}(#{{ . }}){{ else }}{{ $global.T "Unknown" }}{{ end }}</span>
+                                    {{ end }}                                    
 
-                    <div class="center aligned sixteen wide column"> 
-                        <h1 class="ui header">
-                            {{ if $super }}
-                            <div class="owner bgf">
-                                <a href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> {{ .username }}
-                            </div>
-                            {{else if $dev}}
-                            <div class="dev bgf">
-                                <a href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> {{ .username }}
-                            </div>
-                            {{ else }}
-                            <div class="bgf">
-                                <a href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> {{ .username }}
+                                    
+                                    {{ if and (not .badges) (not .custom_badge) }}
+                                    {{ else }}        
+                                        {{ range .badges }}
+                                            {{ if .icon }}
+                                                <span class="" data-tooltip="{{ .name }}" data-inverted="">
+                                                    <i class="{{ faIcon .icon }} small icon"></i>
+                                                </span>
+                                            {{ end }}
+                                        {{ end }}
+                                        {{ with .custom_badge }}
+                                            {{ if .icon }}
+                                                <span class="" data-tooltip="{{ .name }}" data-inverted="">
+                                                    <i class="{{ faIcon .icon }} small icon"></i>
+                                                </span>
+                                            {{ end }}
+                                        {{ end }}
+                                    {{ end }}
+                                </p>
+                            </h1>
+                            {{ if .username_aka }}
+                            <div class="subtitle">
+                                {{ $global.T "(aka <b>%s</b>)" (.username_aka | htmlescaper) | html }}
                             </div>
                             {{ end }}
-                        </h1>
-                        {{ if .username_aka }}
-                        <div class="subtitle">
-                            {{ $global.T "(aka <b>%s</b>)" (.username_aka | htmlescaper) | html }}
-                        </div>
-                        {{ end }}
-                        {{ with bget "isOnline?id=%.0f" .id }}
-                        <div class="subtitle">
-                            <i class="{{ if .result }}green{{ else }}grey{{ end }} circle icon"></i>
-                            {{ if .result }}{{ $global.T "Online" }}{{ else }}{{ $global.T "Offline" }}{{ end }} (
-                            <b>{{ with $.Get "users/subscount?userid=%d" $.UserID }} {{ .subscount }} {{ end }}</b>
-                            {{ $global.T "subs count" }})
+                            {{ with bget "isOnline?id=%.0f" .id }}
+                            <div class="subtitle">
+                                <i class="{{ if .result }}green{{ else }}grey{{ end }} circle icon"></i>
+                                {{ if .result }}{{ $global.T "Online" }}{{ else }}{{ $global.T "Offline" }}{{ end }} (
+                                <b>{{ with $.Get "users/subscount?userid=%d" $.UserID }} {{ .subscount }} {{ end }}</b>
+                                {{ $global.T "subs count" }})
+            
+                            </div>
+                            {{ end }}
 
                         </div>
-                        {{ end }}
-                    </div>
-
-                    <div class="center aligned sixteen wide column">
-                        {{ range $k, $v := (slice .std .taiko .ctb .mania) }}
-                        <h1 data-mode="{{ $k }}" {{ if ne $k (int $favouritemode) }} hidden{{ end }}>{{ with and $v $v.global_leaderboard_rank }}#{{ . }}{{ else }}{{ $global.T "Unknown" }}{{ end }}</h1>
-                        {{ end }}
-                        <div id="profile-actions">
-                            {{ if and (ne $global.Context.User.ID $global.UserID) (ne $global.Context.User.ID 0) }}
-                            <button class="ui circular mini icon loading button" id="add-friend-button">
-                                <i class="horizontal ellipsis icon"></i>
-                            </button>
-                            {{ end }}
-                            {{ if eq $global.Context.User.ID $global.UserID }}
-                            <a href="/settings" class="ui circular mini teal icon button">
-                                <i class="edit icon"></i>
-                            </a>
-                            {{ else }}
-                                <a href="/u/{{ $global.UserID }}/report" class="ui circular mini orange icon button">
-                                    <i class="flag icon"></i>
-                                </a>
-                            {{ end }}
-                            {{ if hasAdmin $global.Context.User.Privileges }}
-                            <a href="http://oadmin.kurikku.pw/index.php?p=103&id={{ $global.UserID }}" target="_blank"
-                                title="Quick edit user" class="ui circular mini red icon button">
-                                <i class="folder open outline icon"></i>
-                            </a>
-                            <a href="http://oadmin.kurikku.pw/index.php?p=104&id={{ $global.UserID }}" target="_blank"
-                                title="Quick edit username" class="ui circular mini red icon button">
-                                <i class="address book outline icon"></i>
-                            </a>
-                            {{ end }}
-                        </div>
-                    </div>
-                    <div class="center aligned sixteen wide column">
-                        {{ range $sAccounts }}
-                            <div class="center aligned sixteen wide column ">
-                                {{ if eq .AccountType "vk" }}
-                                <a href="https://vk.com/id{{ .AccountID }}" class="ui blue button saccount">
-                                    {{ $.T "VK" }} 
-                                {{ else if eq .AccountType "twitch" }}
-                                <a href="https://twitch.tv/{{ .AccountID }}" class="ui purple button saccount">
-                                    {{ $.T "Twitch" }} 
+                        
+                        <div class="kpw--profile--actions">
+                            <div id="profile-actions" class="kpw--profile--pactions">
+                                {{ if and (ne $global.Context.User.ID $global.UserID) (ne $global.Context.User.ID 0) }}
+                                <button class="ui circular mini icon loading button" id="add-friend-button">
+                                    <i class="horizontal ellipsis icon"></i>
+                                </button>
                                 {{ end }}
+                                {{ if eq $global.Context.User.ID $global.UserID }}
+                                <a href="/settings" class="ui circular mini teal icon button">
+                                    <i class="edit icon"></i>
                                 </a>
+                                {{ else }}
+                                    <a href="/u/{{ $global.UserID }}/report" class="ui circular mini orange icon button">
+                                        <i class="flag icon"></i>
+                                    </a>
+                                {{ end }}
+                                {{ if hasAdmin $global.Context.User.Privileges }}
+                                <a href="http://oadmin.kurikku.pw/index.php?p=103&id={{ $global.UserID }}" target="_blank"
+                                    title="Quick edit user" class="ui circular mini red icon button">
+                                    <i class="folder open outline icon"></i>
+                                </a>
+                                <a href="http://oadmin.kurikku.pw/index.php?p=104&id={{ $global.UserID }}" target="_blank"
+                                    title="Quick edit username" class="ui circular mini red icon button">
+                                    <i class="address book outline icon"></i>
+                                </a>
+                                {{ end }}
                             </div>
-                        {{ end }}
-                    </div>
-                </div>
 
-                
+
+                        
+                            {{ range $sAccounts }}
+                                <div class="center aligned sixteen wide column ">
+                                    {{ if eq .AccountType "vk" }}
+                                    <a href="https://vk.com/id{{ .AccountID }}" class="ui blue button saccount">
+                                        {{ $.T "VK" }} 
+                                    {{ else if eq .AccountType "twitch" }}
+                                    <a href="https://twitch.tv/{{ .AccountID }}" class="ui purple button saccount">
+                                        {{ $.T "Twitch" }} 
+                                    {{ end }}
+                                    </a>
+                                </div>
+                            {{ end }}
+                        </div>
+
+
+                    </div>
+                        
+                </div>
             </div>
+        </div>
+
+        <div class="five wide column">
             {{ $user := . }}
 
             <div class="ui segment">
@@ -176,65 +206,14 @@
                         <br>{{ $global.T "Last seen: %s." (time $user.latest_activity) | html }}
                         <br>{{ with playstyle .play_style $global }}{{ $global.T "They play with %s." . }}{{ end }}
                         <br>
-                        <h3 class="ui header">Ranks</h3>
-                        <div class="ui five column grid container">
-                            <div class="centered column">
-                                <img class="ui centered small image" alt="Ranks SS+" src="/static/ranking-icons/SSHD.png">
-                                <br>
-                                <p id="SSHDranks"></p>
-                            </div>
-                            <div class="centered column">
-                                <img class="ui centered small image" alt="Rank SS" src="/static/ranking-icons/SS.png">
-                                <br>
-                                <p id="SSranks"></p>
-                            </div>
-                            <div class="centered column">
-                                <img class="ui centered small image" alt="Rank S+" src="/static/ranking-icons/SHD.png">
-                                <br>
-                                <p id="SHDranks"></p>
-                            </div>
-                            <div class="centered column">
-                                <img class="ui centered small image" alt="Rank S" src="/static/ranking-icons/S.png">
-                                <br>
-                                <p id="Sranks"></p>
-                            </div>
-                            <div class="centered column">
-                                <img class="ui centered small image" alt="Rank A" src="/static/ranking-icons/A.png">
-                                <br>
-                                <p id="Aranks"></p>
-                            </div>
-                        </div>
-                        <div class="sixteen wide column">
-                            {{ if and (not .badges) (not .custom_badge) }}
-                            {{ $global.T "This user hasn't got any badges!" }}
-                            {{ else }}
-                            <div class="ui grid">
-
-                                {{ range .badges }}
-                                <div class="eight wide centered column">
-                                    <i class="circular {{ faIcon .icon }} big icon"></i><br>
-                                    <b>{{ .name }}</b>
-
-
-                                </div>
-                                {{ end }}
-                                {{ with .custom_badge }}
-                                <div class="eight wide centered column">
-                                    <i class="circular {{ faIcon .icon }} big icon"></i><br>
-                                    <b><i>{{ .name }}</i></b>
-                                </div>
-                                {{ end }}
-
-                            </div>
-                            {{ end }}
-                        </div>
                     </div>
 
                     <div class="sixteen wide column">
                         {{ range $k, $v := (slice .std .taiko .ctb .mania) }}
                         <div data-mode="{{ $k }}" {{ if ne $k (int $favouritemode) }} hidden{{ end }}>
                             <table class="ui very basic two column compact table nopad">
-                                <tbody>
+                                <tbody>                                   
+
                                     {{ with .global_leaderboard_rank }}
                                     <tr>
                                         <td><b>{{ $global.T "Global rank" }}</b></td>
@@ -278,6 +257,26 @@
                                     <tr>
                                         <td><b>{{ $global.T "Accuracy" }}</b></td>
                                         <td class="right aligned">{{ printf "%.2f" .accuracy }}%</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img class="kpw--profile--stats--rank" alt="Ranks SS+" src="/static/ranking-icons/SSHD.png"></td>
+                                        <td class="right aligned" id="SSHDranks">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img class="kpw--profile--stats--rank" alt="Rank SS" src="/static/ranking-icons/SS.png"></td>
+                                        <td class="right aligned" id="SSranks">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img class="kpw--profile--stats--rank" alt="Rank S+" src="/static/ranking-icons/SHD.png"></td>
+                                        <td class="right aligned" id="SHDranks">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img class="kpw--profile--stats--rank" alt="Rank S" src="/static/ranking-icons/S.png"></td>
+                                        <td class="right aligned" id="Sranks">0</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img class="kpw--profile--stats--rank" alt="Rank A" src="/static/ranking-icons/A.png"></td>
+                                        <td class="right aligned" id="Aranks">0</td>
                                     </tr>
                                 </tbody>
                             </table>
