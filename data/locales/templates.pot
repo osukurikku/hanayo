@@ -1481,3 +1481,12 @@ msgstr ""
 
 msgid "You have %d votes. For free donor you need %s"
 msgstr ""
+
+msgid "Community"
+msgstr ""
+
+msgid "viewers"
+msgstr ""
+
+msgid "Streamers"
+msgstr ""

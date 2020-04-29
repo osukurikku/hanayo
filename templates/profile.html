@@ -130,9 +130,11 @@
                                     <i class="edit icon"></i>
                                 </a>
                                 {{ else }}
-                                    <a href="/u/{{ $global.UserID }}/report" class="ui circular mini orange icon button">
-                                        <i class="flag icon"></i>
-                                    </a>
+                                    {{ if $global.Context.User.ID }}
+                                        <a href="/u/{{ $global.UserID }}/report" class="ui circular mini orange icon button">
+                                            <i class="flag icon"></i>
+                                        </a>
+                                    {{ end }}
                                 {{ end }}
                                 {{ if hasAdmin $global.Context.User.Privileges }}
                                 <a href="http://oadmin.kurikku.pw/index.php?p=103&id={{ $global.UserID }}" target="_blank"

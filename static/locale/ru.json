@@ -37,5 +37,7 @@
     "Mutual": "Взаимно",
     "Remove": "Удалить",
     "Add": "Добавить",
-    "Max, {0} players": "Максимум, {0} игроков"
-}
+    "Max, {0} players": "Максимум, {0} игроков",
+    "Seems nobody streaming, maybe you will be first?": "Кажется, никто не стримит! Может быть ты будешь первым?",
+    "viewers": "зрителей"
+} 

@@ -2080,3 +2080,12 @@ msgstr "Голосовать!"
 
 msgid "You have %d votes. For free donor you need %s"
 msgstr "У вас %d голосов. Для донора, тебе нужно %s"
+
+msgid "Community"
+msgstr "Комьюнити"
+
+msgid "viewers"
+msgstr "зрителей"
+
+msgid "Streamers"
+msgstr "Стримеры"

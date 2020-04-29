@@ -9,6 +9,10 @@ import (
 )
 
 func reportForm(c *gin.Context) {
+	if getContext(c).User.ID == 0 {
+		resp403(c)
+		return
+	}
 	var (
 		userID     int
 		username   string

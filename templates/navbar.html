@@ -43,10 +43,16 @@
                 </div>
             </div>
             <div class="ui dropdown item">
-                <span>{{ .T "Clans" }}</span>
-                <div class="menu">
-                    {{ navbarItem .Path (.T "Clans Leaderboard") "/clans?mode=0" }}
-                    {{ navbarItem .Path (.T "Clans Create") "/clans/create" }}
+                <span>{{ .T "Community" }}</span>
+                <div class="inverted menu">
+                    <div class="ui dropdown item">
+                        <span>{{ .T "Clans" }}</span>
+                        <div class="menu">
+                            {{ navbarItem .Path (.T "Clans Leaderboard") "/clans?mode=0" }}
+                            {{ navbarItem .Path (.T "Clans Create") "/clans/create" }}
+                        </div>
+                    </div>
+                    {{ navbarItem .Path (.T "Streamers") "/streamers" }}
                 </div>
             </div>
         
