@@ -2089,3 +2089,6 @@ msgstr "зрителей"
 
 msgid "Streamers"
 msgstr "Стримеры"
+
+msgid "Most ranked scores"
+msgstr "Наибольшее количество ранкед скоров"

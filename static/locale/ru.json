@@ -39,5 +39,7 @@
     "Add": "Добавить",
     "Max, {0} players": "Максимум, {0} игроков",
     "Seems nobody streaming, maybe you will be first?": "Кажется, никто не стримит! Может быть ты будешь первым?",
-    "viewers": "зрителей"
+    "viewers": "зрителей",
+    "Total Playtime:": "Времени в игре",
+    "{0}d {1}h {2}m": "{0}д {1}ч {2}м"
 } 

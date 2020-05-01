@@ -1,13 +1,14 @@
 package main
 
 import (
-	"strings"
-	"errors"
-	"strconv"
-	"net/http"
-	"io/ioutil"
 	"encoding/json"
-	"github.com/gin-gonic/gin"	
+	"errors"
+	"io/ioutil"
+	"net/http"
+	"strconv"
+	"strings"
+
+	"github.com/gin-gonic/gin"
 )
 
 //baseOauthStruct - vk.go
@@ -42,16 +43,16 @@ func twitchAuthorizeUser(code string) (nickname string, err error) {
 		return nickname, errors.New("twitch oauth failed, bad code!")
 	}
 	token := result["access_token"].(string)
-	
-	client := http.Client{} 
+
+	client := http.Client{}
 	req, err := http.NewRequest("GET", "https://api.twitch.tv/helix/users", nil)
 	if err != nil {
 		return nickname, err
 	}
 	req.Header.Set("Accept", "application/vnd.twitchtv.v5+json")
 	req.Header.Set("Client-ID", client_id)
-	req.Header.Set("Authorization", "Bearer " + token)
- 
+	req.Header.Set("Authorization", "Bearer "+token)
+
 	resp, err = client.Do(req)
 	if err != nil {
 		return nickname, err
@@ -68,7 +69,7 @@ func twitchAuthorizeUser(code string) (nickname string, err error) {
 	if err != nil {
 		return nickname, err
 	}
-	
+
 	if result2["data"] == nil {
 		return nickname, errors.New("twitch oauth failed, data array not found!")
 	}
@@ -123,19 +124,19 @@ func twitchAuthorizeHandler(c *gin.Context) {
 		if socialDBInfo.UserID != getContext(c).User.ID {
 			data.Authorized = false
 			data.RedirectBackPage = "/settings/socialAuth"
-			data.Messages = append(data.Messages,  errorMessage{T(c, "This account already connected to another player! ")})
+			data.Messages = append(data.Messages, errorMessage{T(c, "This account already connected to another player! ")})
 			return
 		}
 
 		data.Authorized = true
 		data.RedirectBackPage = "/settings/socialAuth"
-		data.Messages = append(data.Messages,  successMessage{T(c, "You connected this account earlier!")})
+		data.Messages = append(data.Messages, successMessage{T(c, "You connected this account earlier!")})
 		return
 	}
 
 	data.Authorized = true
 	data.RedirectBackPage = "/settings"
-	data.Messages = append(data.Messages,  successMessage{T(c, "You successfully connected twitch account to your profile")})
+	data.Messages = append(data.Messages, successMessage{T(c, "You successfully connected twitch account to your profile")})
 }
 
 func twitchUnAuthorizeHandler(c *gin.Context) {
@@ -161,13 +162,13 @@ func twitchUnAuthorizeHandler(c *gin.Context) {
 	`).Scan(&socialDBInfo.UserID, &socialDBInfo.AccountType, &socialDBInfo.AccountID); err != nil {
 		data.Authorized = true
 		data.RedirectBackPage = "/settings"
-		data.Messages = append(data.Messages,  successMessage{T(c, "Your profile hasn't linked account ;d Ok, BRUH!~~~~")})
+		data.Messages = append(data.Messages, successMessage{T(c, "Your profile hasn't linked account ;d Ok, BRUH!~~~~")})
 		return
 	}
-	
+
 	db.Exec("DELETE FROM social_networks WHERE user_id = ? AND account_type  = 'twitch'", getContext(c).User.ID)
 
 	data.Authorized = true
 	data.RedirectBackPage = "/settings/socialAuth"
-	data.Messages = append(data.Messages,  successMessage{T(c, "Your profile has successfully unlinked!")})
+	data.Messages = append(data.Messages, successMessage{T(c, "Your profile has successfully unlinked!")})
 }

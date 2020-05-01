@@ -28,6 +28,7 @@ $(document).ready(function () {
 	        initRecentActivity($("#recent-activity>div[data-mode=" + m + "]"), m)
             initialiseTopScores($("#top-scores-zone>div[data-mode=" + m + "]"), m)
             initialiseScores(needsLoad, m);
+            loadMostPlayedBeatmaps(m)
         $(this).addClass("active");
         window.history.replaceState('', document.title, wl.pathname + "?mode=" + m + wl.hash);
         loadRanksPLZ(userID, m);
@@ -40,6 +41,7 @@ $(document).ready(function () {
         initRecentActivity($("#recent-activity>div[data-mode=" + favouriteMode + "]"), favouriteMode)
         initialiseScores($("#scores-zone>div[data-mode=" + favouriteMode + "]"), favouriteMode)
         initialiseTopScores($("#top-scores-zone>div[data-mode=" + favouriteMode + "]"), favouriteMode)
+        loadMostPlayedBeatmaps(favouriteMode)
     };
     if (i18nLoaded)
         i();
@@ -253,8 +255,9 @@ function initRecentActivity(el, mode) {
     el.attr("data-loaded", "1");
     var recentActivity = recentActivityTable.clone(true).addClass("green");
     recentActivity.attr("data-type", "rac");
+    var playTimer = $(`<div data-type='playTime' data-mode='${mode}' class='kpw--playtime'></div>`);
     el.append($("<div class='ui segments no bottom margin' />").append(
-        $("<div class='ui segment' />").append("<h2 class='ui header'>" + T("Recent Activity") + "</h2>", recentActivity),
+        $("<div class='ui segment' />").append("<h2 class='ui header'>" + T("Recent Activity") + "</h2>", playTimer, recentActivity),
     ));
     loadRecentActivity("rac", mode)    
 }
@@ -442,6 +445,18 @@ function ppdata() {
 }
 
 function loadRecentActivity(type, mode) {
+    let playTimer = $(`#recent-activity div[data-mode="${mode}"][data-type="playTime"]`);
+    let days = Math.floor(window.playTimes[+mode] / (3600*24)).toString();
+    let hours = Math.floor(window.playTimes[+mode] % (3600*24) / 3600).toString();
+    let minutes = Math.floor(window.playTimes[+mode] % 3600 / 60).toString();
+    playTimer.append(`
+        <h3>${window.T('Total Playtime:')}</h3>
+        <div class="timer">
+            ${window.T("{0}d {1}h {2}m").format(days.padStart(2, "0"), hours.padStart(2, "0"), minutes.padStart(2, "0"))}
+        </div>
+    `)
+
+    console.log(playTimer);
     var table = $("#recent-activity div[data-mode=" + mode + "] table[data-type=" + type + "] tbody");
     api("users/get_activity", {
         mode: mode,
@@ -466,6 +481,38 @@ function loadRecentActivity(type, mode) {
         $(".new.timeago").timeago().removeClass("new");
         $(".new.score-row").removeClass("new");
     });
+}
+
+var mostPlayedBmsInited = {
+    0: false,
+    1: false,
+    2: false,
+    3: false,
+};
+
+function loadMostPlayedBeatmaps(mode) {
+    if (mostPlayedBmsInited[+mode]) return;
+    var beatmaps = $(`#most-played-bms div[data-mode="${mode}"]`);
+    api("users/mostplayedbm", {
+        mode: mode,
+        uid: userID,
+        limit: 5
+    }, function (r) {
+        r.beatmaps.forEach(function (v, idx) {
+            let bgUrl = `https://assets.ppy.sh/beatmaps/${v.beatmapset_id}/covers/card.jpg`
+            beatmaps.append(`
+                <a href="/b/${v.beatmap_id}" rel="no-referrer">
+                    <div class="kpw--mostbms" style="background-image: url(${bgUrl});">
+                        <div class="kpw--mostbms-container">
+                            <p class="songname">${v.song_name}</p>
+                            <div class="count"><span>${v.count}</span> <i class="play icon"/></div></p>
+                        </div>
+                    </div>
+                </a>
+            `)
+        })
+        mostPlayedBmsInited[+mode] = true;
+    })
 }
 
 function loadScoresPage(type, mode) {

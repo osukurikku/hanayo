@@ -1940,6 +1940,47 @@ p.ranks .rank {
 	display: flex; flex-direction: column; width: 100%; height: 100%; align-items: flex-start; padding-left: 10px; margin: 10px;
 }
 
+.kpw--playtime {
+	display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.kpw--playtime h3 {
+	margin: 0;
+    margin-right: 10px;
+}
+
+.kpw--playtime div.timer {
+	padding: 10px;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.kpw--mostbms {
+	background-position: center; width: 100%; margin-bottom: 10px; border-radius: 10px;
+}
+
+.kpw--mostbms-container {
+	background-color: rgba(0,0,0,0.5); display: flex; flex-direction: row; justify-content: space-between; padding: 14px; align-items: center; border-radius: 10px;
+}
+
+.kpw--mostbms-container p.songname {
+	margin: 0; width: 100%;
+}
+
+.kpw--mostbms-container div.count {
+	margin: 0; text-align: center;display: flex;align-items: center;justify-content: center;color: orange;font-weight: 700;
+}
+
+.kpw--mostbms-container div.count i {
+	margin-left: 5px; margin-top: -3px;
+}
+
 @media (max-width: 767px) {
 	.kpw--profile--flex {
 		flex-direction: column!important;
