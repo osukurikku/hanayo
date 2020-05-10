@@ -743,7 +743,7 @@ var funcMap = template.FuncMap{
 	"htmlescaper": template.HTMLEscaper,
 }
 
-var localeLanguages = []string{"de", "pl", "it", "es", "ru", "fr", "nl", "ro", "fi", "sv", "vi", "ko"}
+var localeLanguages = []string{"en", "by", "ua", "de", "pl", "it", "es", "ru", "fr", "nl", "ro", "fi", "sv", "vi", "ko"}
 
 var hanayoStarted = time.Now().UnixNano()
 
@@ -846,17 +846,19 @@ type langInfo struct {
 }
 
 var languageInformation = []langInfo{
+	{"Беларускі", "by", "by"},
 	{"Deutsch", "de", "de"},
 	{"English (UK)", "gb", "en"},
 	{"Español", "es", "es"},
+	{"Suomi", "fi", "fi"},
 	{"Français", "fr", "fr"},
 	{"Italiano", "it", "it"},
+	{"한국어", "kr", "ko"},
 	{"Nederlands", "nl", "nl"},
 	{"Polski", "pl", "pl"},
 	{"Русский", "ru", "ru"},
 	{"Română", "ro", "ro"},
-	{"Suomi", "fi", "fi"},
 	{"Svenska", "se", "sv"},
+        {"Українська", "ua", "ua"},
 	{"Tiếng Việt Nam", "vn", "vi"},
-	{"한국어", "kr", "ko"},
 }

@@ -1,18 +1,233 @@
-﻿msgid ""
+msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-07-31 13:42+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: ru\n"
-"MIME-Version: 1.0\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: kurikku-hanayo\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: templates.pot\n"
+"Project-Id-Version: kurikku-hanayo\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 2.0.0\n"
-"X-Pootle-Path: /ru/Hanayo/templates-ru.po\n"
-"X-Pootle-Revision: 6958\n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"PO-Revision-Date: 2020-05-10 07:30\n"
+
+msgid "Hey, %s."
+msgstr "Эй, %s."
+
+msgid "Before proceding any further on Kurikku, we require you to use the message you just received on telegram to log in to your account."
+msgstr "Перед тем как продолжить использовать Kurikku, мы требуем вас использовать код из сообщения, которые вы только что получили в Telegram, чтобы войти в ваш аккаунт."
+
+msgid "Before proceding further on Kurikku, we require you to use your Google Authenticator App to use the code for Kurikku, so that we can log you in."
+msgstr "Перед тем как продолжить использовать Kurikku, мы требуем от вас получить код из приложения Google Authenticator, чтобы мы смогли вас авторизовать."
+
+msgid "Telegram code"
+msgstr "Код из Telegram"
+
+msgid "(send again?)"
+msgstr "(отправить еще раз?)"
+
+msgid "Lost your phone, or can't access Google Authenticator?"
+msgstr "Потеряли телефон, или не можете зайти в Google Authenticator?"
+
+msgid "Click here to use a recovery code."
+msgstr "Нажмите здесь, чтобы использовать код восстановления."
+
+msgid "Can't find a way to get back access to your Kurikku account? Fear not! If you have your recovery codes which we recommended you to print you can type one in here and we'll magically log you in this time. After you've managed to get in, please disable and then re-enable 2FA, so you won't risk losing your account again."
+msgstr "Не знаете, как вернуть доступ к вашему аккаунту Kurikku? Не бойтесь! Если у вас есть коды восстановления, которые мы рекомендуем вам распечатать, вы можете написать один из них сюда и мы магическим образом впустим вас на этот раз. После того как вы войдете, пожалуйста, отключите и затем включите 2FA, чтобы вы не потеряли свой аккаунт еще раз."
+
+msgid "Recover account"
+msgstr "Восстановить аккаунт"
+
+msgid "Ooops! Looks like something went really wrong while trying to process your request. Perhaps report this to a developer? Retrying doing what you were trying to do might work, too."
+msgstr "Упс! Кажется что-то действительно плохое произошло, пока мы делали запрос! Не могли бы вы написать разработчику? "
+
+msgid "Your account is currently in restricted mode. You will not be able to perform certain actions, and your profile can only be seen by you and by Kurikku's staff. If you believe this was a mistake, or a month has passed since you first saw this, then you can send an appeal to <a href=mailto:support@kurikku.pw>support@kurikku.pw</a>."
+msgstr "Ваш аккаунт в настоящее время находится в рестриктнутом состоянии. Вы не сможете выполнять определенные действия, и Ваш профиль будет виден только Вам и сотрудникам Kurikku. Если вы считаете, что это была ошибка или прошел месяц с тех пор, как впервые увидели это, то вы можете отправить обращение по адресу <a href=mailto:support@kurikku.pw>support@kurikku.pw</a>."
+
+msgid "Kurikku's score submission is currently in maintenance mode. You will not be allowed to submit scores for the time being."
+msgstr "Система загрузки игр на Kurikku находится на техническом обслуживании. Вам запрещено отправлять игры в это время."
+
+msgid "Kurikku's website is currently in maintenance mode. Only certain users are allowed to access the full website."
+msgstr "Сайт Kurikku в настоящее время находится в режиме обслуживания. Только определенные пользователи могут получить доступ к полной версии сайта."
+
+msgid "&copy; %d Ripple, osu!Kurikku, using Hanayo %s."
+msgstr "&copy; %d Ripple, osu!Kurikku, на Hanayo %s."
+
+msgid "Who is working on this thing?"
+msgstr "Кто разрабатывает это?"
+
+msgid "Team"
+msgstr "Команда"
+
+msgid "GitHub"
+msgstr "Github"
+
+msgid "Status"
+msgstr "Статус"
+
+msgid "Language"
+msgstr "Язык"
+
+msgid "Artist"
+msgstr "Артист"
+
+msgid "Title"
+msgstr "Название"
+
+msgid "Creator"
+msgstr "Создатель"
+
+msgid "Source"
+msgstr "Источник"
+
+msgid "Circle Size"
+msgstr "Circle Size"
+
+msgid "HP Drain"
+msgstr "HP Drain"
+
+msgid "Overall Difficulty"
+msgstr "Overall Difficulty"
+
+msgid "Passes/Plays"
+msgstr "Прохождений/Количество игр"
+
+msgid "Approach Rate"
+msgstr "Approach Rate"
+
+msgid "Star Difficulty"
+msgstr "Сложность"
+
+msgid "Length"
+msgstr "Длина"
+
+msgid "BPM"
+msgstr "БПМ"
+
+msgid "osu!direct"
+msgstr "osu!direct"
+
+msgid "download"
+msgstr "скачать"
+
+msgid "download (no video)"
+msgstr "скачать (без видео)"
+
+msgid "Rank"
+msgstr "Ранг"
+
+msgid "Player"
+msgstr "Игрок"
+
+msgid "Score"
+msgstr "Счёт"
+
+msgid "Mods"
+msgstr "Моды"
+
+msgid "Accuracy"
+msgstr "Точность"
+
+msgid "Combo"
+msgstr "Комбо"
+
+msgid "PP"
+msgstr "PP"
+
+msgid "This is the changelog. Changes are published here as soon as they hit the production status (as in, live on the website)."
+msgstr "Это список изменений. Изменения попадают сюда, как только попадают в релиз (например, на веб-сайт)."
+
+msgid "Author"
+msgstr "Автор"
+
+msgid "Subject"
+msgstr "Тема"
+
+msgid "Time"
+msgstr "Время"
+
+msgid "[Clan tag] Name"
+msgstr "[Клан-тэг] Имя клана"
+
+msgid "PP/Score"
+msgstr "PP/Счет"
+
+msgid "Playcount"
+msgstr "Сыграно карт"
+
+msgid "%s"
+msgstr "%s"
+
+msgid "(%s)"
+msgstr "(%s)"
+
+msgid "Clan Owner"
+msgstr "Владелец клана"
+
+msgid "Global Rank"
+msgstr "Глобальный ранк"
+
+msgid "Ranked Score"
+msgstr "Рейтинговый счет"
+
+msgid "Total Score"
+msgstr "Общий счет"
+
+msgid "Total Playcount"
+msgstr "Общее количество игр"
+
+msgid "Total Replays Watched"
+msgstr "Всего просмотрено реплеев"
+
+msgid "Total Hits"
+msgstr "Всего попаданий"
+
+msgid "Disband Clan"
+msgstr "Расформировать клан"
+
+msgid "Leave Clan"
+msgstr "Покинуть клан"
+
+msgid "Members"
+msgstr "Участники"
+
+msgid "The members of the clan."
+msgstr "Члены клана."
+
+msgid "Need some help getting around? Look no further! From here you will be able to view our documentation, which is basically a very simplistic wiki."
+msgstr "Нужна помощь в освоении? Больше нет! Отсюда вы можете просмотреть нашу документацию, которая, по сути, является простейшей Wiki."
+
+msgid "Looks like there is no documentation on this Kurikku instance!"
+msgstr "Похоже, что на этом сервере Kurikku нет документации!"
+
+msgid "It seems like the original version of this file has been updated, so this file is out of date and may contain inaccurate information. If you want to make sure to be up-to-date, please refer to the <a href=\"%s%s\">English version</a>."
+msgstr "Похоже, что оригинальная версия этого файла была обновлена, поэтому этот файл устарел и может содержать неточную информацию. Если вы хотите удостовериться, что вы посмотрели последнюю версию, пожалуйста, обратитесь к <a href=\"%s%s\">Английской версии</a>."
+
+msgid "Documentation file not found!"
+msgstr "Файл документации не найден!"
+
+msgid "View all docs"
+msgstr "Просмотреть все документы"
+
+msgid "On this page you can see all of your friends, and unfriend them as you see fit."
+msgstr "На этой странице Вы можете увидеть всех своих друзей и перестать с ними дружить, если желаете."
+
+msgid "Mutual"
+msgstr "Взаимно"
+
+msgid "Remove"
+msgstr "Удалить"
+
+msgid "If you need to get in touch with our support team (our Community Managers), you will need to either send an email to our support email address, or join our <a href='https://discord.gg/5uA3c76'>Discord Server</a>. You can compose an email to it by clicking the button at the bottom of this page. <b>Please read the following</b> though, as it is important."
+msgstr "Если тебе нужно связаться с нашей поддержкой, то ты должен отправить нам е-мейл на support@kurikku.pw или вступить в <a href='https://discord.gg/5uA3c76'>дискорд сервер.</a>"
+
+msgid "The support email <b>is not meant for technical support</b>. If you need technical support, then please join our <a href='https://discord.gg/5uA3c76'>Discord Server</a>, and ask your question on the <b>#help channel</b>. You should also join the Discord server and ask a CM if you have any informal inquiry that you may have."
+msgstr "Е-мейл саппорта <b>не подразумевается для технической помощи</b>. Если вам нужна техническая поддержка, вступите в наш <a href='https://discord.gg/5uA3c76'>дискорд сервер</a>, и задайте вопрос в канале помощи."
+
+msgid "When contacting the support mail, please make sure to <b>send the email from the email address you signed up on Kurikku with</b>."
+msgstr "Отправляя письмо на адрес электронной почты, <b>обязательно пишите с того адреса, с помощью которого вы зарегистрировались на Kurikku</b>."
+
+msgid "OUR DISCORD"
+msgstr "Наш Дискорд"
 
 msgid "Full Name"
 msgstr "Полное имя"
@@ -20,44 +235,125 @@ msgstr "Полное имя"
 msgid "E-Mail"
 msgstr "Е-Мэйл"
 
-msgid "Subject"
-msgstr "Тема"
-
 msgid "Text"
 msgstr "Текст сообщения"
 
 msgid "Send"
 msgstr "Отправить"
 
-msgid "Kurikku Switcher"
-msgstr "Kurikku Switcher"
+msgid "On this moment <b>%s online</b> and <b>%s registered users</b>"
+msgstr "На данный момент играют <b>%s игроков</b> и зарегистрировано <b>%s игроков</b>"
 
-msgid "Chance to be in top donators"
-msgstr "Шанс попасть в топ донатеры проекта"
+msgid "Learn the experience of playing on the fastest growing private server of osu!"
+msgstr "Познайте опыт игры на самом быстроразвивающемся приватном сервере osu!"
 
-msgid "If you are <b>one of those who support our server the most</b>, you will be in the <b>top donators</b>. <b>Imagine</b> you are <b>on the main page</b>. That's cool)"
-msgstr "Если ты <b>будешь одним из тех, кто поддержит наш сервер больше всех</b>, ты попадёшь в топ донатеры</b>. <b>Представь</b> ты на <b>главной странице проекта</b>. Это круто)"
+msgid "Check us!"
+msgstr "Попробуй!"
 
-msgid "On this page you can see all of your subscribers, and add new friends if you see fit."
-msgstr "На этой странице вы можете увидеть своих подписчиков, а кого-то добавить в друзья."
+msgid "Register"
+msgstr "Зарегистрироваться"
 
-msgid "Creating clans"
-msgstr "Создать свой клан"
+msgid "Done by <a href='/u/%s'>%s</a>"
+msgstr "Поставлен <a href='/u/%s'>%s</a>"
 
-msgid "Members"
-msgstr "Участники"
+msgid "Top Score"
+msgstr "Лучший скор"
 
-msgid "You need to be an Kurikku Supporter in order to create a clan."
-msgstr "Вы должны иметь Kurikku донатор чтобы создать клан!"
+msgid "Top Score RX"
+msgstr "Лучший скор RX"
 
-msgid "The members of the clan."
-msgstr "Члены клана."
+msgid "Top donators"
+msgstr "Топ донатеров"
+
+msgid "Expires in <b>%s</b>"
+msgstr "Истекает <b>%s</b>"
+
+msgid "Welcome back, <span class='subtitle'>%s</span>!"
+msgstr "Привет, <span class='subtitle'>%s</span>!"
+
+msgid "players"
+msgstr "игроков"
+
+msgid "online"
+msgstr "онлайн"
+
+msgid "Server news"
+msgstr "Новости сервера"
+
+msgid "viewers"
+msgstr "зрителей"
+
+msgid "Most played beatmaps"
+msgstr "Наиболее сыгранные карты"
+
+msgid "Submitted Scores"
+msgstr "Засабмиченно скоров"
+
+msgid "Vote for us and get free donor!"
+msgstr "Голосуй и получи донора!"
+
+msgid "Vote!"
+msgstr "Голосовать!"
+
+msgid "Here you can generate a new IRC token. You can use it to connect to Kurikku's chat using IRC. Remember that your IRC token is like a password, anyone who knows it, has access to your account. If you're interested knowing how to connect to Kurikku's chat via IRC."
+msgstr "Здесь вы можете сгенерировать новый IRC токен. С помощью этого токена, вы можете подключиться к Kurikku через IRC. Запомните! Ваш токен, как пароль - его должны знать лишь вы. Если вы заинтересованы, как подключиться к Kurikku через IRC."
+
+msgid "Generate a new token!"
+msgstr "Генерировать новый токен!"
+
+msgid "You're already logged in!"
+msgstr "Вы уже вошли!"
+
+msgid "Username (or email)"
+msgstr "Имя пользователя (или эл. почта)"
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "(forgot?)"
+msgstr "(забыли?)"
+
+msgid "Submit"
+msgstr "Отправить"
+
+msgid "Home page"
+msgstr "Домашняя страница"
+
+msgid "Leaderboard"
+msgstr "Таблица лидеров"
+
+msgid "Information"
+msgstr "Информация"
 
 msgid "Tournament live"
 msgstr "Турнир live!"
 
-msgid "Most played beatmaps"
-msgstr "Наиболее сыгранные мапы"
+msgid "Signature Generator"
+msgstr "Генератор карточек"
+
+msgid "Discord"
+msgstr "Дискорд"
+
+msgid "Contact support"
+msgstr "Связаться с поддержкой"
+
+msgid "Documentation"
+msgstr "Документация"
+
+msgid "Beatmaps"
+msgstr "Карты"
+
+msgid "Beatmaps Searching"
+msgstr "Поиск карт"
+
+msgid "Rank Request"
+msgstr "Запрос карт на ранк"
+
+msgid "Community"
+msgstr "Комьюнити"
 
 msgid "Clans"
 msgstr "Кланы"
@@ -68,182 +364,275 @@ msgstr "Таблица лидеров кланов"
 msgid "Clans Create"
 msgstr "Создание клана"
 
-msgid "You're already in a Clan."
-msgstr "Вы уже в клане"
+msgid "Streamers"
+msgstr "Стримеры"
 
-msgid "[Clan tag] Name"
-msgstr "[Клан-тэг] Имя клана"
+msgid "Donate"
+msgstr "Пожертвовать"
 
-msgid "Clan Owner"
-msgstr "Владелец клана"
+msgid "Why do we need donations?"
+msgstr "Почему нам нужны донаты?"
 
-msgid "The leader of the clan."
-msgstr "Лидер клана"
+msgid "Shop"
+msgstr "Магазин"
 
-msgid "Clan Settings"
-msgstr "Настройки клана"
+msgid "Switcher"
+msgstr "Свитчер"
 
-msgid "Generate a new invite!"
-msgstr "Создать новое приглашение в клан!"
+msgid "Admin Panel"
+msgstr "Админ-панель"
 
-msgid "Online Users"
-msgstr "Онлайн пользователи"
+msgid "Looking for someone?"
+msgstr "Ищете кого-то?"
 
-msgid "Registered Users"
-msgstr "зарегистрированых пользователей"
+msgid "Profile"
+msgstr "Профиль"
 
-msgid "Submitted Scores"
-msgstr "Засабмиченно скоров"
+msgid "Friends"
+msgstr "Друзья"
+
+msgid "Subscribers"
+msgstr "Подписчики"
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Log out"
+msgstr "Выйти"
+
+msgid "Log in"
+msgstr "Вход"
+
+msgid "We're sorry, but we were unable to find the content you were looking for!"
+msgstr "Нам очень жаль, но мы не смогли найти контент, который вы искали!"
+
+msgid "This application will be able to:"
+msgstr "Это приложение будет в состоянии:"
+
+msgid "Identify"
+msgstr "Идентифицировать"
+
+msgid "See your public information (everything somebody can see on your user profile), however with this alone it will not be able to see your private information (for instance your email address)."
+msgstr "Смотрите вашу общедоступную информацию (все, что кто-то может увидеть в вашем профиле пользователя), однако, только с помощью этой информации он не сможет увидеть вашу личную информацию (например, ваш адрес электронной почты)."
+
+msgid "Read private information"
+msgstr "Прочитать приватную информацию"
+
+msgid "This application will be able to see your email address, and any private information we will add in the future."
+msgstr "Это приложение сможет увидеть ваш адрес электронной почты, а также любую личную информацию, которую мы добавим в будущем."
+
+msgid "Write"
+msgstr "Записать"
+
+msgid "This application will be able to make modifications to your Kurikku account. This is potentially really dangerous! Use this only with applications that you trust."
+msgstr "Это приложение пытается получить доступ к вашему аккаунту Kurikku. Это опасно! Используйте это, если вы уверены в приложении."
+
+msgid "Approve"
+msgstr "Подтвердить"
+
+msgid "Deny"
+msgstr "Отказать"
+
+msgid "created by %s"
+msgstr "создан %s"
+
+msgid "User is <b>silenced</b> for %s, expires %s."
+msgstr "Пользователь <b>не может говорить</b> за %s, истекает %s."
+
+msgid "User is <b>%s</b>"
+msgstr "Пользователь <b>%s</b>"
+
+msgid "Unknown"
+msgstr "Неизвестно"
+
+msgid "(aka <b>%s</b>)"
+msgstr "(ака <b>%s</b>)"
+
+msgid "Online"
+msgstr "В сети"
+
+msgid "Offline"
+msgstr "Не в сети"
 
 msgid "subs count"
 msgstr "подписчиков"
 
-msgid "Your friend list is empty"
-msgstr "Твой список друзей пуст!"
+msgid "VK"
+msgstr "ВК"
 
-msgid "Your subs list is empty"
-msgstr "Твой список сабов пуст!"
+msgid "Twitch"
+msgstr "Twitch"
 
-msgid "Clantag (2 to 6 characters)"
-msgstr "Клантэг (от 2 до 6 символов)"
+msgid "<b>%s</b> "
+msgstr "<b>%s</b> "
 
-msgid "Icon (optional)"
-msgstr "Иконка (по желаню)"
+msgid " from <b>%s</b>."
+msgstr " из <b>%s</b>."
 
-msgid "Background [URL] (optional)"
-msgstr "Ссылка на фон (по желанию)"
+msgid "<b>%s</b> is a player from <b>%s</b>."
+msgstr "<b>%s</b> игрок из <b>%s</b>."
 
-msgid "Background URL"
-msgstr "Ссылка на фон"
+msgid "They registered %s."
+msgstr "Зарегистрирован %s."
 
-msgid "You haven't joined a clan yet, or you aren't the owner of your current one."
-msgstr "Вы не вошли в клан, и вы не являетесь владельцем одного из них."
+msgid "Last seen: %s."
+msgstr "Последний раз был в сети: %s."
 
-msgid "This is a list of the wonderful people who keep Kurikku up and running and deal with its community."
-msgstr "Это список замечательных людей кто поддерживает Kurikku и занимается его комьюнити"
+msgid "They play with %s."
+msgstr "Играет с помощью %s."
 
-msgid "The backbones of the server. The owners function as both the main community managers, as well as primary Developers. They work on everything from managing the team to making this page look nicer."
-msgstr "Закулисье. Владельцы имеют разные функции с комьюнити менеджером, также как и с разработчиками. Они везде начиная от новых функций, заканчивая чтобы эта страница выглядела лучше!"
+msgid "Global rank"
+msgstr "Глобальный рейтинг"
 
-msgid "Community Managers deal with bans, silences, name changes and pretty much everything that has to do with the community."
-msgstr "Комьюнити менеджеры занимаются банами, мутами, сменой никнеймов. Они настолько круты, что работают с нашим комьюнити."
+msgid "Country rank"
+msgstr "Рейтинг по стране"
 
-msgid "They take care of our Discord server and reply to emails sent to <a href='mailto:support@kurikku.pw'>support@kurikku.pw</a>. Community Managers have a red name in the in-game chat."
-msgstr "Они беспокоются за Discord сервер и отвечают на email'ы отправленные на <a href='mailto:support@kurikku.pw'>support@kurikku.pw</a>. Комьюнити менеджеры имеют красный никнейм в чате."
+msgid "Clan"
+msgstr "Клан"
 
-msgid "Developers add new features to the server, squash bugs, keep the server up and running and take care of its maintenance."
-msgstr "Разработчики добавляют новые фишки на сервер, правят баги, поддерживают сервер поднятым, рабочим и заботятся о плановых работах"
+msgid "Ranked score"
+msgstr "Рейтинговый счет"
 
-msgid "Chat moderators manage the chat to make sure The Law&trade; (the rules) is respected."
-msgstr "Чат модераторы смотрят, чтобы правила соблюдались."
+msgid "Total score"
+msgstr "Общий счет"
 
-msgid "BATs play beatmaps in the ranking queue and decide whether they are good enough to be ranked or not."
-msgstr "BATs играют карты в очереди и определяют может ли эта карта быть ранкнутой или нет."
+msgid "Replays watched"
+msgstr "Просмотрено повторов"
 
-msgid "Here's a list of people who helped with Kurikku"
-msgstr "Тут находятся люди, которые помогают Kurikku со стороны!"
+msgid "Total hits"
+msgstr "Всего попаданий"
 
-msgid "Please log in before"
-msgstr "Пожалуйста, сначала войдите в свой аккаунт!"
+msgid "Level %s"
+msgstr "Уровень %s"
 
-msgid "One of arguments is empty. Don't hack!"
-msgstr "Один из аргументов отсутствует. Пожалуйста, не ломай здесь ничего! >_<"
+msgid "Achievements"
+msgstr "Достижения"
 
-msgid "Something goes wrong, try again later!"
-msgstr "Что-то пошло не так, попробуй позже!"
+msgid "Load more"
+msgstr "Загрузить ещё"
 
-msgid "This account already connected to another player!"
-msgstr "Этот аккаунт уже привзяан к другому игроку!"
+msgid "Forgot your password? Worry not! Here you can reset it. Just tell us your username or email address, and we'll take care of it. You will receive an email at the email address you used to sign up on Kurikku. To continue the password reset procedure, click the link on that email."
+msgstr "Забыли свой пароль? Не волнуйтесь! Здесь вы можете его сбросить. Просто скажите нам ваше имя пользователя или эл. почту и мы позаботимся о нем. Вы получите письмо на эл. почту, которую вы использовали для регистрации на Kurikku. Чтобы продолжить процедуру сброса, нажмите на ссылку в письме."
 
-msgid "You connected this account earlier!"
-msgstr "Я не знаю зачем, но ты уже подключал этот аккаунт!"
+msgid "Reason"
+msgstr "Причина"
 
-msgid "You successfully connected VK account to your profile"
-msgstr "Вы успешно подключили аккаунт ВКонтакте к своему профилю"
+msgid "Foul play / Cheating"
+msgstr "Обман / Читерство"
 
-msgid "You successfully connected twitch account to your profile"
-msgstr "Вы успешно подключили аккаунт twitch к своему профилю"
+msgid "Spamming"
+msgstr "Спам"
 
-msgid "Your profile hasn't linked account ;d Ok, BRUH!~~~~"
-msgstr "Этот тип аккаунта не привязан~~~~"
+msgid "Other"
+msgstr "Прочее"
 
-msgid "Your profile has successfully unlinked!"
-msgstr "Твой профиль успешно отвязан!"
+msgid "Additional text"
+msgstr "Дополнительный текст"
 
-msgid "Social Accounts"
-msgstr "Интеграции"
-
-msgid "Here you can connect your social accounts (VK, Twitch). Your accounts shows in your profile page and any user can see it!"
-msgstr "Здесь ты можешь подключить свой аккаунт из соц. сетей(ВК или Twitch). Эти аккаунты будут отображены в твоём профиле и каждый пользователь сможет на них зайти!"
-
-msgid "(Linked)"
-msgstr "(Привязан)"
-
-msgid "(Not Linked)"
-msgstr "(Не привязан)"
-
-msgid "Unlink"
-msgstr "Отвязать"
-
-msgid "Link"
-msgstr "Привязать"
+msgid "We must say, that we can silence you if the report is false or you're abusing the report system (spamming, etc.)"
+msgstr "Хочу заметить, мы оставляем за собой право замутить вас, в случае если репорт окажется ложным или вы будете отсылать бессмысленные репорты."
 
 msgid "Hello! Authorization was successful, time to go back ...."
 msgstr "Привет! Кажется авторизация прошла как надо, время возвращаться назад!"
 
-msgid "Hello! Authorization was not entirely successful, can you try again?"
-msgstr "Привет! Авторизация прошла не совсем успешно. Можешь попробовать ещё раз?"
-
 msgid "Back"
 msgstr "Назад"
 
-msgid "<b><a href='http://ripple.moe/'>Ripple</a></b>, for the software to host Kurikku"
-msgstr "<b><a href='http://ripple.moe/'>Ripple</a></b>, за софт для Kurikku"
+msgid "On this page you can see all of your subscribers, and add new friends if you see fit."
+msgstr "На этой странице вы можете увидеть своих подписчиков, а кого-то добавить в друзья."
 
-msgid "<b><a id='everyone' class='clickable'>Everyone</a></b> who has supported Kurikku by donating."
-msgstr "<b><a id='everyone' class='clickable'>Каждому</a></b> кто поддержал Kurikku донатом."
+msgid "You are a donor!"
+msgstr "Вы - донор!"
 
-msgid "Looking for how you should contact our team? Check out <a href='/help'>this page</a>."
-msgstr "Хотите попасть в команду? Проверьте <a href='/help'>эту страничку</a>."
+msgid "Your donor expires <b>%s</b>. No need to feel guilty for not having donated!"
+msgstr "Ваши привилегии истекают <b>%s</b>. Не нужно чувствовать вину за то, что вы не пожертвовали!"
 
-msgid "Beatmaps Searching"
-msgstr "Поиск карт"
+msgid "Did you know?"
+msgstr "Знали ли вы?"
 
-msgid "Rank Request"
-msgstr "Запрос карт на ранк"
+msgid "(Probably.)"
+msgstr "(Возможно.)"
 
-msgid "Signature Generator"
-msgstr "Генератор карточек"
+msgid "(Probably not.)"
+msgstr "(Скорее всего, нет.)"
+
+msgid "Kurikku is not cheap to run."
+msgstr "Kurikku не дешев в обслуживании."
+
+msgid "While we provide this service for free, we still have to pay for it, and if we always took the money out of our own pockets, 1. we would be broke, 2. we wouldn't be able to upgrade our hardware to accomodate our users. While we do have loads of software optimisations that allow us to have Kurikku run crazy fast while still being on not so high-end hardware, the more users we have, the higher-end our hardware needs to be. So we are asking you for help on this :)."
+msgstr "Несмотря на то, что мы предлагаем играть бесплатно, нам всё равно приходится  платить. Если мы всегда платили со своего кармана, во-первых, мы бы разорились, во-вторых, мы не имели бы возможности совершенствовать серверное железо, чтобы соответствовать нагрузке. И даже с достаточным количеством оптимизаций кода, которые позволяют Kurikku работать крайне быстро на крайне скудном железе, с увеличением количества пользователей, более продвинутые серверы становятся необходимы. Именно поэтому мы просим Вас помочь нам с этим :)."
+
+msgid "We are still students."
+msgstr "Мы всё ещё учимся."
+
+msgid "Kurikku developers, and most of the Kurikku staff, do not have a day job. This means that we get most of our income as students from doing small jobs as \"freelancers\" every so often, or, you know, allowance."
+msgstr "У разработчиков и большей части персонала Kurikku нет работы. Это значит, что мы получаем большую часть доходов, выполняя небольшую работу как \"фрилансеры\"."
+
+msgid "We do not have ads. And never will."
+msgstr "У нас нет рекламы. И никогда не будет."
+
+msgid "You may have adblock enabled and have not noticed, but we don't have ads anywhere on our website. We believe ads are bad, as they can be very annoying to you and that you would rather spend a few bucks to help us rather than watch annoying ads all the time."
+msgstr "Возможно, у Вас включен блокировщик рекламы, из-за чего Вы не заметили, что у нас в принципе нет рекламы на сайте. Мы верим в то, что реклама - это плохо, так как она может надоедать. И возможно, лучше потратить несколько долларов, чтобы помочь нам вместо того, чтобы смотреть эту приставучую рекламу все время."
+
+msgid "We love picking random icons from our icon library."
+msgstr "Нам нравится выбирать случайные иконки из нашей библиотеки иконок."
+
+msgid "So what can you do?"
+msgstr "Итак, что Вы можете сделать?"
+
+msgid "Well, you can give us even more money."
+msgstr "Ну, Вы можете дать нам еще денег."
+
+msgid "Here's what you get:"
+msgstr "Вот, что вы получите:"
+
+msgid "Yellow username"
+msgstr "Желтый юзернейм"
+
+msgid "Just like in osu!, you get a <b>shiny yellow username</b> in the in-game chat to show everyone you're a really cool dude who has helped us pay the server bills."
+msgstr "Прямо как в osu!, вы получаете <b>яркий желтый никнейм</b> в игровом чате, чтобы показать, что вы очень крутой чувак, который помог нам оплатить счета за сервера."
+
+msgid "Donor badge"
+msgstr "Значок донора"
+
+msgid "Again, just like in osu!, you will get a <b>donor badge</b> on your profile, to show everyone you're supporting us."
+msgstr "Опять же, как в osu!, вы получаете <b>значок донора</b> в вашем профиле, чтобы показать, что вы поддерживаете нас."
+
+msgid "Custom badge editor"
+msgstr "Редактор значков"
+
+msgid "You get to be able to create your <b>own personal badge</b>, with custom text and icon, to show off on your profile! Let the world know you're an anchor. Or prank people showing a spinnin' wheel with \"Loading...\"! Up to you."
+msgstr "Вы сможете создать ваш <b>собственный значок</b> со своим текстом и иконкой, чтобы красоваться им в вашем профиле! Или разыгрывать людей, показывая им крутящееся колесо с \"Loading...\"! Все зависит от вас."
+
+msgid "Friends ranking"
+msgstr "Рейтинг друзей"
+
+msgid "<b>Competing with friends</b> is really cool, you can play on the leaderboard with someone more or less on your level, without getting crippling depression and RSI for not beating that pro!"
+msgstr "<b>Соревноваться с друзьями</b> очень круто, вы можете играть с кем-то выше или ниже вашего уровня, не получая калечащую депрессию и RSI после проигрыша этому профессионалу!"
+
+msgid "Profile background"
+msgstr "Задний фон профиля"
+
+msgid "Think about <b>spicing your profile up with some eggplants</b>? Got you covered! Having donor privileges, you get to be able to change your profile background."
+msgstr "Хотите <b>приправить ваш профиль парочкой баклажанов</b>? Мы обо всем позаботились! Имея донорские привилегии, вы сможете менять ваш задний фон профиля."
 
 msgid "Unlimited Name Changes"
 msgstr "Безлимитная смена ника"
 
-msgid "Unlimited Flag Changes"
-msgstr "Безлимитная смена флага"
-
-msgid "Unlimited Stats Resets"
-msgstr "Безлимитный ресет стат"
-
 msgid "<b>Tired of your current identity?</b> Now you can have as many as you want! Just ask an administrator to change your name, as many times as you'd like."
 msgstr "<b>Устали от своего никнейма?</b> Теперь вы можете менять его сколько хотите! Просто попросите администратора поменять ваш ник, такое количество раз сколько вам угодно."
+
+msgid "Unlimited Flag Changes"
+msgstr "Безлимитная смена флага"
 
 msgid "<b>Want to appear as if you're from another country?</b> You also get as many of these as you'd like. Just enter in chat !flag <flag iso code>"
 msgstr "<b>Хотите быть шпионом из другой страны?</b> Теперь вы можете быть откуда угодно. Просто введите в чат !flag <iso code> "
 
+msgid "Unlimited Stats Resets"
+msgstr "Безлимитный ресет стат"
+
 msgid "Now you can also <b>start fresh</b> with unlimited stats resets! Ask an administrator and they shall perform the deed."
 msgstr "Вы хотите освежиться? Обнулить статистику? Просто попроси админов ^_v"
-
-msgid "You may donate through <b>PayPal</b> (or credit/debit card linked to PayPal). Use the slider below to choose the amount of months you'd like to have the donor benefits, and the cost will be instantly calculated. The more months you purchase, the bigger the discount will be."
-msgstr "Вы можете задонатить через <b>Paypal(в рублях)/Яндекс.Деньгами</b>. Воспользуйтесь этим чудесным слайдером и выберите на какую сумму вы захотите донатить)"
-
-msgid "If you donate via AnyPay, just wait 2-3 minute and donate like magic on you account. If you had trouble just ask KotRik in Discord!<br/>Please contact KotRik directly, preferrably via discord/ingame, or if needed, via email: support@kurikku.pw"
-msgstr "<temporary not>"
-
-msgid "To get donate join discord and DM KotRik!<br/>Disclaimer: Donations are NON-REFUNDABLE, and do not give you special privileges other than what is listed above. You will still be treated the same as all other users."
-msgstr "Для получения доната, напишите в личку KotRik<br/>Дисклеймер: Донаты не ВОЗВРАЩАЕМЫ и не дают вам каких-то особенных прав в отношении правил. Вы равны со всеми пользователями!"
-
-msgid "Wow, now you can create clan for you and your friends. <b>Pew-pew</b> with other clans."
-msgstr "Вау, теперь вы можете создать клан для себя и своих друзей. <b>Pew-pew</b> с остальными кланами."
 
 msgid "Viewing your subscribers"
 msgstr "Просмотр своих подписчиков"
@@ -251,14 +640,32 @@ msgstr "Просмотр своих подписчиков"
 msgid "Now you can watch <b>your subscribers</b>. That's way to <b>found</b> new good friends"
 msgstr "Теперь вы сможете смотреть своих <b>подписчиков</b>. Это отличный путь чтобы найти новых друзей"
 
-msgid "Subscribers"
-msgstr "Подписчики"
+msgid "Chance to be in top donators"
+msgstr "Шанс попасть в топ донатеры проекта"
 
-msgid "Expires in <b>%s</b>"
-msgstr "Истекает <b>%s</b>"
+msgid "If you are <b>one of those who support our server the most</b>, you will be in the <b>top donators</b>. <b>Imagine</b> you are <b>on the main page</b>. That's cool)"
+msgstr "Если ты <b>будешь одним из тех, кто поддержит наш сервер больше всех</b>, ты попадёшь в топ донатеры</b>. <b>Представь</b> ты на <b>главной странице проекта</b>. Это круто)"
 
-msgid "Top donators"
-msgstr "Топ донатеров"
+msgid "Creating clans"
+msgstr "Создать свой клан"
+
+msgid "Wow, now you can create clan for you and your friends. <b>Pew-pew</b> with other clans."
+msgstr "Вау, теперь вы можете создать клан для себя и своих друзей. <b>Pew-pew</b> с остальными кланами."
+
+msgid "And this is how you pay"
+msgstr "А вот так вы можете оплатить"
+
+msgid "That's DonationAlerts - \"streamer's main tool\" but we use that beautiful platform for collect donations ヽ(・∀・)ﾉ"
+msgstr "Это DonationAlerts - \"главный инструмент стримера\", но мы пользуемся этой шикарной платформой чтобы собирать донаты<br/>ヽ(・∀・)ﾉ"
+
+msgid "Donate!"
+msgstr "Донат!"
+
+msgid "<b>NOTE:</b> please check description before you donate"
+msgstr "<b>Примечание:</b> пожалуйста прочитай описание перед донатом"
+
+msgid "Please log in before purchasing supporter"
+msgstr "Пожалуйста, авторизуйтесь, перед покупкой донатера"
 
 msgid "Guide about Server Switcher!"
 msgstr "Инструкция по Server Switcher!"
@@ -275,46 +682,98 @@ msgstr "Дальше нам нужно распаковать тот или ин
 msgid "Videoguide:"
 msgstr "Видеогайд:"
 
-# General
-msgid "You're already logged in!"
-msgstr "Вы уже вошли!"
+msgid "This is a list of the wonderful people who keep Kurikku up and running and deal with its community."
+msgstr "Это список замечательных людей кто поддерживает Kurikku и занимается его комьюнити"
 
-msgid "Information"
-msgstr "Информация"
+msgid "Owners"
+msgstr "Владельцы"
 
-msgid "Submit"
-msgstr "Отправить"
+msgid "The backbones of the server. The owners function as both the main community managers, as well as primary Developers. They work on everything from managing the team to making this page look nicer."
+msgstr "Закулисье. Владельцы имеют разные функции с комьюнити менеджером, также как и с разработчиками. Они везде начиная от новых функций, заканчивая чтобы эта страница выглядела лучше!"
 
-msgid "Username"
-msgstr "Имя пользователя"
+msgid "Community Managers"
+msgstr "Комьюнити менеджеры"
 
-msgid "Password"
-msgstr "Пароль"
+msgid "Community Managers deal with bans, silences, name changes and pretty much everything that has to do with the community."
+msgstr "Комьюнити менеджеры занимаются банами, мутами, сменой никнеймов. Они настолько круты, что работают с нашим комьюнити."
 
-msgid "Invalid CSRF token"
-msgstr "Неверный CSRF токен"
+msgid "They take care of our Discord server and reply to emails sent to <a href='mailto:support@kurikku.pw'>support@kurikku.pw</a>. Community Managers have a red name in the in-game chat."
+msgstr "Они беспокоятся за Discord сервер и отвечают на email'ы отправленные на <a href='mailto:support@kurikku.pw'>support@kurikku.pw</a>. Комьюнити менеджеры имеют красный никнейм в чате."
 
-msgid ""
-"Your session has expired. Please try redoing what you were trying to do."
-msgstr ""
-"Ваша сессия истекла. Пожалуйста, авторизуйтесь снова"
+msgid "Developers"
+msgstr "Разработчики"
 
-msgid "That user could not be found."
-msgstr "Не удалось найти этого пользователя."
+msgid "Developers add new features to the server, squash bugs, keep the server up and running and take care of its maintenance."
+msgstr "Разработчики добавляют новые фишки на сервер, правят баги, поддерживают сервер поднятым, рабочим и заботятся о плановых работах"
 
-msgid "Your settings have been saved."
-msgstr "Ваши настройки были сохранены."
+msgid "Replay Moderators"
+msgstr "Модераторы реплеев"
 
-# beatmaps/rank_requests.html
-msgid "Request beatmap ranking"
-msgstr "Запрос карт на ранк"
+msgid "Hunters who catch and send in ban cheaters. We are proud of them."
+msgstr "Охотники, которые ловят и отправляют в бан читеров. Мы гордимся ими"
 
-msgid ""
-"Want to play an unranked beatmap and get pp? You can submit beatmaps rank "
-"requests here!"
-msgstr ""
-"Хотите сыграть на неранкнутой карте и получить PP? Здесь вы можете отправить "
-"карту на проверку!"
+msgid "Chat Moderators"
+msgstr "Модераторы чата"
+
+msgid "Chat moderators manage the chat to make sure The Law&trade; (the rules) is respected."
+msgstr "Чат модераторы смотрят, чтобы правила соблюдались."
+
+msgid "BATs"
+msgstr "БАТы"
+
+msgid "BATs play beatmaps in the ranking queue and decide whether they are good enough to be ranked or not."
+msgstr "БАТы играют карты в очереди, и определяют может ли эта карта быть ранкнутой или нет."
+
+msgid "Special thanks"
+msgstr "Особое спасибо"
+
+msgid "Here's a list of people who helped with Kurikku"
+msgstr "Тут находятся люди, которые помогают Kurikku со стороны!"
+
+msgid "Looking for how you should contact our team? Check out <a href='/help'>this page</a>."
+msgstr "Хотите попасть в команду? Проверьте <a href='/help'>эту страничку</a>."
+
+msgid "<b>Franc[e]sco/lolisamurai</b>, for <a href='https://github.com/Francesco149/oppai'>oppai</a>, used as standard pp calculator."
+msgstr "<b>Franc[e]sco/lolisamurai</b>, за <a href='https://github.com/Francesco149/oppai'>oppai</a>, используемый, как калькулятор PP в std."
+
+msgid "<b>Semyon442</b>, for <a href='https://github.com/semyon422/omppc'>mania-pp</a> calculator"
+msgstr "<b>Semyon442</b>, за <a href='https://github.com/semyon422/omppc'>mania-pp</a> калькулятор"
+
+msgid "<b>Sunpy</b>, for <a href='https://github.com/osufx/catch-the-pp'>catch-the-pp</a>, used as catch the beat pp calculator."
+msgstr "<b>Sunpy</b>, за <a href='https://github.com/osufx/catch-the-pp'>catch-the-pp</a>, используемый для просчёта PP в catch-the-beat."
+
+msgid "<b>jrosdahl</b>, for <a href='https://github.com/jrosdahl/miniircd'>miniircd</a>, used as a base for our IRC server."
+msgstr "<b>jrosdahl</b>, for <a href='https://github.com/jrosdahl/miniircd'>miniircd</a> был использован как основа для нашего IRC сервера."
+
+msgid "<b>Flame</b> for clans system!"
+msgstr "<b>Flame</b> за клановую систему!"
+
+msgid "<b><a href='http://ripple.moe/'>Ripple</a></b>, for the software to host Kurikku"
+msgstr "<b><a href='http://ripple.moe/'>Ripple</a></b>, за софт для Kurikku"
+
+msgid "<b><a id='everyone' class='clickable'>Everyone</a></b> who has supported Kurikku by donating."
+msgstr "<b><a id='everyone' class='clickable'>Каждому</a></b> кто поддержал Kurikku донатом."
+
+msgid "You have %d votes!"
+msgstr "У вас %d голосов"
+
+msgid "Exchange your votes!"
+msgstr "Обменяй свои голоса!"
+
+msgid "Why do we need these votes?"
+msgstr "Зачем нам нужны эти голоса?"
+
+msgid "These votes help us promote the server at the <a class='ui subtitle' href='https://topg.org' alt='topg link'>TopG.org</a> monitoring site."
+msgstr "Эти голоса помогают нам развивать сервер на площадке мониторинга <a class='ui subtitle' href='https://topg.org' alt='topg link'>TopG.org</a>"
+
+msgid "You need register!"
+msgstr "Вы должны зарегистрироваться!"
+
+msgid "Tournament grid!"
+msgstr "Турнирная сетка"
+
+msgid "Want to play an unranked beatmap and get pp? You can submit beatmaps rank requests here!"
+msgstr "Хотите сыграть на неранкнутой карте и получить PP? Здесь вы можете отправить карту на проверку!"
 
 msgid "Queue status"
 msgstr "Статус очереди"
@@ -334,51 +793,80 @@ msgstr "Предложить карту"
 msgid "You cannot currently request beatmaps!"
 msgstr "Вы пока не можете предлагать карты!"
 
-# After this text there is a date. The date is localised separately.
 msgid "Please try again "
 msgstr "Попробуйте еще раз "
 
-# pwreset/continue.html
-msgid "Reset password"
-msgstr "Сбросить пароль"
+msgid "ID bm/bs"
+msgstr "ID карты/сета"
 
-msgid ""
-"Glad to have you back here, %s! To finish the password recovery, type in a "
-"new password:"
-msgstr ""
-"Рады что вы вернулись, %s! Чтобы завершить восстановление пароля, введите "
-"новый пароль:"
+msgid "Moderator"
+msgstr "Модератор"
 
-msgid "Nope."
-msgstr "Не-а."
+msgid "You need to login!"
+msgstr "Вы должны авторизоваться!"
 
-msgid "That key could not be found. Perhaps it expired?"
-msgstr "Мы не можем найти этот ключ. Может, он истек?"
+msgid "Sorry, it's not possible to create a clan at the moment. Please try again later."
+msgstr "Извини, но сейчас нельзя создать клан. Попробуй позже."
 
-msgid ""
-"All right, we have changed your password and you should now be able to "
-"login! Have fun!"
-msgstr "Итак, мы поменяли ваш пароль и теперь вы сможете зайти! Развлекайтесь!"
+msgid "You're already in a Clan."
+msgstr "Вы уже в клане."
 
-# register/register.html
-msgid "Register"
-msgstr "Зарегистрироваться"
+msgid "Name (2 to 15 characters, alphanumeric, spaces, <code>_[]-</code>)"
+msgstr "Имя (от 2 до 15 символов, буквы, цифры, пробелы, а также <code>_[]-</code>)"
 
-msgid ""
-"Sorry, it's not possible to register at the moment. Please try again later."
+msgid "Name"
+msgstr "Имя"
+
+msgid "Description (optional)"
+msgstr "Описание (по желанию)"
+
+msgid "Description"
+msgstr "Описание"
+
+msgid "Icon [URL] (optional)"
+msgstr "Иконка [Ссылка] (по желанию)"
+
+msgid "Icon URL"
+msgstr "Ссылка на иконку"
+
+msgid "You need to be an Kurikku Supporter in order to create a clan."
+msgstr "Вы должны иметь роль донатера на Kurikku, чтобы создать клан!"
+
+msgid "The Ripple API is the system through which developers can create applications to interact with Ripple. <b>If you're asked to fill out an API token from this page, be wary and only actually create the token if you really trust the owner of the application.</b>"
+msgstr "Ripple API - это система, с помощью которой разработчики могут создавать приложения для взаимодействия с Ripple. <b>Если вас попросят заполнить токен API с этой страницы, будьте осторожны и создавайте токен на самом деле только в том случае, если вы действительно доверяете владельцу приложения.</b>"
+
+msgid "Glad to have you back here, %s! To finish the password recovery, type in a new password:"
+msgstr "Рады что вы вернулись, %s! Чтобы завершить восстановление пароля, введите новый пароль:"
+
+msgid "We see that you're trying to sign up while having already signed up as %s! Please note that multiaccounting is punishable, and can lead to a one month restriction!"
+msgstr "Мы заметили, что ты пытаешься зарегистрироваться, когда ты уже зарегистрирован как %s! Мультиаккаунтинг наказуем, и может привести к ограничению на 1 месяц!"
+
+msgid "If you're %s, keep in mind that multiaccounting = ban."
+msgstr "Если вы - %s, то не забывайте, что мультиаккаунтинг = бан."
+
+msgid "If you're not %s, but you're using %s's computer, please sign up on Kurikku from your own computer."
+msgstr "Если вы не %s, но используете компьютер %s, пожалуйста, зарегистрируйтесь в Kurikku со своего собственного компьютера"
+
+msgid "If you live with %s and you don't have your own computer from which to sign up on Kurikku, then please contact support@kurikku.pw, and we'll deal with your specific case."
+msgstr "Если вы живете с %s, и у вас нет своего компьютера,чтобы зарегистрироваться на Kurikku, пожалуйста, свяжитесь с support@kurikku.pw, и мы разберемся с вашей проблемой."
+
+msgid "This warning may pop up also if you're using another computer on the same network of %s. As long as you're not using the same computer, you should be all good."
+msgstr "Также, это предупреждение может появляться если вы используете другой компьютер в той же сети, что и %s. Пока вы не используете один и тот же ПК, все хорошо."
+
+msgid "If you truly have understood what's written above and you have understood that creating a multiaccount will lead to a restriction on your main account, you can click here and you'll be brought to the sign up page."
+msgstr "Если вы действительно поняли, что написано выше, и поняли, что создание мультиаккаунта приведет к ограничению вашего основного аккаунта, вы можете нажать здесь, и вы попадете на страницу регистрации."
+
+msgid "Bring me back to safety!"
+msgstr "Верни меня в безопасное место!"
+
+msgid "Sorry, it's not possible to register at the moment. Please try again later."
 msgstr "Извини, но сейчас нельзя зарегистрироваться. Попробуй позже."
 
-msgid ""
-"Remember: this seems like it's your second account! Do not multiaccount, or "
-"you're likely to get restricted!"
-msgstr ""
-"Вспомни: выглядит как твой второй аккаунт! Не создавай мультиаккаунты, или "
-"тебя заблокируют!"
+msgid "Remember: this seems like it's your second account! Do not multiaccount, or you're likely to get restricted!"
+msgstr "Вспомни: выглядит как твой второй аккаунт! Не создавай мультиаккаунты, или тебя заблокируют!"
 
 msgid "Username (2 to 15 characters, alphanumeric, spaces, <code>_[]-</code>)"
-msgstr ""
-"Имя пользователя (от 2 до 15 символов, буквы, цифры, пробелы, а также "
-"<code>_[]-</code>)"
+msgstr "Имя пользователя (от 2 до 15 символов, буквы, цифры, пробелы, а также <code>_[]-</code>)"
 
 msgid "Password (at least 8 characters)"
 msgstr "Пароль (не менее 8 символов)"
@@ -386,132 +874,8 @@ msgstr "Пароль (не менее 8 символов)"
 msgid "Email"
 msgstr "Электронная почта"
 
-msgid ""
-"You have been successfully registered on Kurikku! You now need to verify your "
-"account."
-msgstr ""
-"Вы успешно зарегистрировались на Kurikku! Теперь нужно проверить Ваш аккаунт."
-
-# Register checks
-msgid "Your password is too short! It must be at least 8 characters long."
-msgstr "Ваш пароль слишком маленький! Он должен быть не менее 8 символов."
-
-msgid ""
-"Your password is one of the most common passwords on the entire internet. No "
-"way we're letting you use that!"
-msgstr ""
-"Ваш пароль - один из самых частых паролей во всем интернете. Мы не позволим "
-"Вам использовать его!"
-
-msgid ""
-"Your username must contain alphanumerical characters, spaces, or any of "
-"<code>_[]-</code>"
-msgstr ""
-"Ваше имя пользователя должно содержать буквы, числа, пробелы или "
-"<code>_[]-</code>"
-
-msgid "You're not allowed to register with that username."
-msgstr "Вам не разрешено регистрироваться с этим именем пользователя."
-
-msgid "Please pass a valid email address."
-msgstr "Введите верный адрес электронной почты."
-
-msgid "An username can't contain both underscores and spaces."
-msgstr "В имени пользователя не может быть подчеркиваний и пробелов вместе."
-
-msgid "An user with that username already exists!"
-msgstr "Пользователь с этим именем пользователя уже существует!"
-
-msgid "An user with that email address already exists!"
-msgstr "Пользователь с этим электронным адресом уже существует!"
-
-msgid "Captcha is invalid."
-msgstr "Капча введена неверно."
-
-msgid ""
-"Whoops, an error slipped in. You might have been registered, though. I don't "
-"know."
-msgstr ""
-"У-упс, произошла ошибка. Возможно, вы были зарегистрированы. Я без понятия."
-
-# register/verify.html
-msgid "Verify account"
-msgstr "Проверить аккаунт"
-
-msgid ""
-"Your account has been created, however it still <b>needs to be verified!</b> "
-"Please log in into <b><u>osu! (the game)</u></b> using your account. <b>"
-"There is <u>no email confirmation</u> at the moment. All you need to do is "
-"connect to Kurikku from the osu! client!</b> If you're having trouble, <a "
-"href='/doc/1'>follow this guide</a>."
-msgstr ""
-"Ваш аккаунт был создан, но его еще <b>нужно подтвердить!</b> Пожалуйста, "
-"войдите <b><u>osu! (в игру)</u></b> используя ваш аккаунт. <b>У нас <u>"
-"подтверждения по электронной почте</u> на данный момент. Все что вам нужно "
-"сделать, это подключиться к Kurikku из клиента osu!</b> Если у вас возникли "
-"сложности, <a href='/doc/1'>используйте это руководство</a>."
-
-msgid ""
-"<b class='big text'>Do not let anyone except yourself log into your Kurikku "
-"account!</b><br> Get on our <a href='%s'>Discord server's</a> #help channel "
-"instead (after following the steps on this page) so that we can help you out "
-"if you have trouble connecting."
-msgstr ""
-"<b class='big text'>Не позволяйте кому-то кроме вас входить в ваш аккаунт "
-"Kurikku!</b><br> Вместо этого, заходите на канал #help на нашем <a href='%s'>"
-"сервере Discord</a> (после того, как вы пройдете шаги, описанные на этой "
-"странице) чтобы вы вам помогли если у вас есть проблемы с подключением."
-
-msgid "<a href='/doc/1'>The Guide,</a> tl;dr version"
-msgstr "<a href='/doc/1'>Руководство,</a> версия tl;dr"
-
-msgid "Download the server switcher"
-msgstr "Загрузите переключатель серверов"
-
-msgid "Extract it, disable your antivirus, execute it <b>as administrator</b>"
-msgstr ""
-"Распакуйте его, отключите ваш антивирус, запустите его <b>от "
-"администратора</b>"
-
-msgid "Click on <b>install certificate</b>, then <b>Yes</b>"
-msgstr "Нажмите на <b>установить сертификат</b>, затем на <b>Да</b>"
-
-msgid ""
-"Make sure the switcher says you're playing on <b>Kurikku</b> server, if not "
-"click <b>On/Off</b>"
-msgstr ""
-"Убедитесь в том, что Switcher пишет, что вы играете на сервере <b>Kurikku</b>"
-". Если это не так, то нажмите на <b>Перейти на kurikku</b>"
-
-msgid ""
-"If it says something about read-only mode, go to <code>C:\\Windows\\"
-"System32\\Drivers\\etc</code>, open the hosts' file Properties and make sure "
-"it's not set to \"Read only\"."
-msgstr ""
-"Если Switcher пишет что-то про режим read-only, откройте <code>C:\\Windows\\"
-"System32\\Drivers\\etc</code>, откройте параметры файла 'hosts' и убедитесь "
-"в том, что там не стоит параметр \"Только чтение\"."
-
-msgid ""
-"If you're still having trouble, then again, get on our <a href='%s'>Discord "
-"server's</a> #help channel. To have a better chance to be answered, say \""
-"strawberry\" anywhere in your messages so that we know you have actually "
-"read this."
-msgstr ""
-"Если у вас все еще остались проблемы, то заходите на канал #help нашего <a "
-"href='%s'>сервера Discord</a>. Чтобы повысить шанс на ответ, напишите \""
-"strawberry\" где-нибудь в вашем сообщении, чтобы мы знали, что вы прочитали "
-"это."
-
-msgid "Waiting for verification"
-msgstr "Ожидание верификации"
-
-# register/welcome.html
-msgid "Welcome!"
-msgstr "Добро пожаловать!"
-
-msgid "Welcome back!"
-msgstr "С возвращением!"
+msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via osu! to finish the account creation process."
+msgstr "<b class='big text'>Ваш аккаунт был создан!</b><br> Теперь вам надо залогиниться в игре, чтоб закончить процесс создания."
 
 msgid "Congratulations for not reading things!"
 msgstr "Поздравляем с тем, что вы ничего не прочитали!"
@@ -519,26 +883,14 @@ msgstr "Поздравляем с тем, что вы ничего не проч
 msgid "Multiaccounts are not allowed on Kurikku"
 msgstr "Мультиаккаунты запрещены на Kurikku"
 
-msgid ""
-"Your new account has been <b>banned</b> and your main account has been "
-"<b>restricted</b>. You can appeal in a month by sending an email to <b><a "
-"href='mailto:support@kurikku.pw'>support@kurikku.pw</a></b>. You better read "
-"the rules next time."
-msgstr ""
-"Ваш новый аккаунт был <b>заблокирован</b> и ваш основной аккаунт был "
-"<b>ограничен</b>. Вы можете подать аппеляцию в течении месяца, отправив "
-"письмо <b><a href='mailto:support@kurikku.pw'>support@kurikku.pw</a></b>. В "
-"следующий раз вам лучше прочитать правила."
+msgid "Your new account has been <b>banned</b> and your main account has been <b>restricted</b>. You can appeal in a month by sending an email to <b><a href='mailto:support@kurikku.pw'>support@kurikku.pw</a></b>. You better read the rules next time."
+msgstr "Ваш новый аккаунт был <b>заблокирован</b> и ваш основной аккаунт был <b>ограничен</b>. Вы можете подать апелляцию в течение месяца, отправив письмо <b><a href='mailto:support@kurikku.pw'>support@kurikku.pw</a></b>. В следующий раз вам лучше прочитать правила."
 
 msgid "Welcome to Kurikku"
 msgstr "Приветствуем в Kurikku"
 
-msgid ""
-"We're glad to have you here. <b>Your account is now active.</b> You can now "
-"play on Kurikku and <a href='/login'>log in</a> on the website!"
-msgstr ""
-"Мы рады, что вы с нами. <b>Ваш аккаунт теперь активен.</b> Вы можете играть "
-"на Kurikku и <a href='/login'>входить</a> на веб-сайте!"
+msgid "We're glad to have you here. <b>Your account is now active.</b> You can now play on Kurikku and <a href='/login'>log in</a> on the website!"
+msgstr "Мы рады, что вы с нами. <b>Ваш аккаунт теперь активен.</b> Вы можете играть на Kurikku и <a href='/login'>входить</a> на веб-сайте!"
 
 msgid "Here's a few things you might want to check out:"
 msgstr "Пара вещей, которые могли бы вам понравиться:"
@@ -546,23 +898,11 @@ msgstr "Пара вещей, которые могли бы вам понрав�
 msgid "Login"
 msgstr "Войти"
 
-msgid "Rules"
-msgstr "Правила"
-
-msgid "Documentation"
-msgstr "Документация"
-
-msgid "Status"
-msgstr "Статус"
-
-msgid "Discord"
-msgstr "Discord"
-
-msgid "Subreddit"
-msgstr "Сабреддит"
-
 msgid " - in case you don't know where to start"
 msgstr " - в случае, если вы не знаете с чего начать"
+
+msgid "Rules"
+msgstr "Правила"
 
 msgid " - in case you haven't already read them"
 msgstr " - в случае, если вы еще не читали их"
@@ -570,1004 +910,8 @@ msgstr " - в случае, если вы еще не читали их"
 msgid " - in case, well, you need help doing stuff"
 msgstr " - на случай, если вам, например, понадобится помощь с чем-нибудь"
 
-msgid " - in case you believe Kurikku is down"
-msgstr " - в случае, если вы думаете что Kurikku не работает"
-
 msgid " - in case you want to talk with people about Kurikku"
 msgstr " - в случае, если вы хотите поговорить с людьми про Kurikku"
-
-msgid " - just in case"
-msgstr " - просто на всякий случай"
-
-# 2fa_gateway_recover.html
-msgid "Recover account"
-msgstr "Восстановить аккаунт"
-
-msgid ""
-"Can't find a way to get back access to your Kurikku account? Fear not! If you "
-"have your recovery codes which we recommended you to print you can type one "
-"in here and we'll magically log you in this time. After you've managed to "
-"get in, please disable and then re-enable 2FA, so you won't risk losing your "
-"account again."
-msgstr ""
-"Не знаете, как вернуть доступ к вашему аккаунту Kurikku? Не бойтесь! Если у "
-"вас есть коды восстановления, которые мы рекомендуем вам распечатать, вы "
-"можете написать один из них сюда и мы магическим образом впустим вас на этот "
-"раз. После того как вы войдете, пожалуйста, отключите и затем включите 2FA, "
-"чтобы вы не потеряли свой аккаунт еще раз."
-
-msgid "Oh no you don't."
-msgstr "О нет, ты не хочешь."
-
-msgid "Get out."
-msgstr "Убирайся."
-
-msgid "Recovery code is invalid."
-msgstr "Код восстановления неверный."
-
-# register/elmo.html
-msgid "Elmo! Stop!"
-msgstr "Элмо! Остановись!"
-
-msgid "Stop!"
-msgstr "Остановись!"
-
-msgid ""
-"We see that you're trying to sign up while having already signed up as %s! "
-"Please note that multiaccounting is punishable, and can lead to a one month "
-"restriction!"
-msgstr ""
-"Мы заметили, что ты пытаешься зарегистрироваться, когда ты уже "
-"зарегистрирован как %s! Мультиаккаунтинг наказуем, и может привести к "
-"ограничению на 1 месяц!"
-
-msgid "If you're %s, keep in mind that multiaccounting = ban."
-msgstr "Если вы - %s, то не забывайте, что мультиаккаунтинг = бан."
-
-msgid ""
-"If you're not %s, but you're using %s's computer, please sign up on Kurikku "
-"from your own computer."
-msgstr ""
-"Если вы не %s, но используете компьютер %s, пожалуйста, зарегистрируйтесь в "
-"Kurikku со своего собственного компьютера"
-
-msgid ""
-"If you live with %s and you don't have your own computer from which to sign "
-"up on Kurikku, then please contact support@kurikku.pw, and we'll deal with "
-"your specific case."
-msgstr ""
-"Если вы живете с %s, и у вас нет своего компьютера,чтобы зарегистрироваться "
-"на Kurikku, пожалуйста, свяжитесь с support@kurikku.pw, и мы разберемся с "
-"вашей проблемой."
-
-msgid ""
-"This warning may pop up also if you're using another computer on the same "
-"network of %s. As long as you're not using the same computer, you should be "
-"all good."
-msgstr ""
-"Также, это предупреждение может появляться если вы используете другой "
-"компьютер в той же сети, что и %s. Пока вы не используете один и тот же пк, "
-"все хорошо."
-
-msgid "Don't stop me now!"
-msgstr "Не останавливай меня сейчас!"
-
-msgid "Bring me back to safety!"
-msgstr "Верни меня в безопасное место!"
-
-# login.html
-msgid "Log in"
-msgstr "Вход"
-
-msgid "Username (or email)"
-msgstr "Имя пользователя (или эл. почта)"
-
-# in relationship to a password
-msgid "(forgot?)"
-msgstr "(забыли?)"
-
-msgid "Username or password not set."
-msgstr "Имя пользователя или пароль не указаны."
-
-msgid "No user with such %s!"
-msgstr "Нет пользователя с %s!"
-
-msgid ""
-"Your password is sooooooo old, that we don't even know how to deal with it "
-"anymore. Could you please change it?"
-msgstr ""
-"Ваш пароль тако-о-ой старый, что мы даже не знаем как с ним быть. Вы не "
-"могли бы его поменять?"
-
-msgid "Wrong password."
-msgstr "Неверный пароль."
-
-msgid "You will need to verify your account first."
-msgstr "Для начала вам нужно верифицировать свой аккаунт."
-
-msgid ""
-"You are not allowed to login. This means your account is either banned or "
-"locked."
-msgstr ""
-"Вам нельзя войти. Это значит, что ваш аккаунт или заблокирован, или закрыт."
-
-msgid "Hey %s! You are now logged in."
-msgstr "Эй, %s! Теперь вы вошли."
-
-msgid "You're already logged out!"
-msgstr "Вы уже вышли!"
-
-msgid "Successfully logged out."
-msgstr "Успешный выход."
-
-# pwreset.html
-msgid ""
-"Forgot your password? Worry not! Here you can reset it. Just tell us your "
-"username or email address, and we'll take care of it. You will receive an "
-"email at the email address you used to sign up on Kurikku. To continue the "
-"password reset procedure, click the link on that email."
-msgstr ""
-"Забыли свой пароль? Не волнуйтесь! Здесь вы можете его сбросить. Просто "
-"скажите нам ваше имя пользователя или эл. почту и мы позаботимся о нем. Вы "
-"получите письмо на эл. почту, которую вы использовали для регистрации на "
-"Kurikku. Чтобы продолжить процедуру сброса, нажмите на ссылку в письме."
-
-msgid "You look pretty banned/locked here."
-msgstr "Нам кажется, что вы заблокированы/закрыты."
-
-msgid ""
-"Done! You should shortly receive an email from us at the email you used to "
-"sign up on Kurikku."
-msgstr ""
-"Готово! В скором времени вы получите от нас письмо на почту, которую вы "
-"использовали для регистрации на Kurikku."
-
-msgid "Kurikku password recovery instructions"
-msgstr "Инструкция сброса пароля на Kurikku"
-
-msgid ""
-"Hey %s! Someone, which we really hope was you, requested a password reset "
-"for your account. In case it was you, please <a href='%s'>click here</a> to "
-"reset your password on Kurikku. Otherwise, silently ignore this email."
-msgstr ""
-"Эй, %s! Кто-то, надеемся вы, запросил сброс пароля для вашего аккаунта. В "
-"случае, если это были вы, <a href='%s'>нажмите сюда</a>, чтобы сбросить ваш "
-"пароль на Kurikku. В другом случае, проигнорируйте это письмо."
-
-# not_found.html
-msgid "Not Found"
-msgstr "Не найдено"
-
-msgid ""
-"We're sorry, but we were unable to find the content you were looking for!"
-msgstr "Нам очень жаль, но мы не смогли найти контент, который вы искали!"
-
-# navbar.html
-msgid "Home page"
-msgstr "Домашняя страница"
-
-msgid "Leaderboard"
-msgstr "Таблица лидеров"
-
-msgid "Help"
-msgstr "Справка"
-
-msgid "About"
-msgstr "О нас"
-
-msgid "Chat (Discord)"
-msgstr "Чат (Discord)"
-
-msgid "Contact support"
-msgstr "Связаться с поддержкой"
-
-msgid "Beatmaps"
-msgstr "Карты"
-
-msgid "Donate"
-msgstr "Пожертвовать"
-
-msgid "RAP"
-msgstr "RAP"
-
-msgid "Profile"
-msgstr "Профиль"
-
-msgid "Friends"
-msgstr "Друзья"
-
-msgid "Settings"
-msgstr "Настройки"
-
-msgid "Log out"
-msgstr "Выйти"
-
-msgid "Looking for someone?"
-msgstr "Ищете кого-то?"
-
-# homepage.html
-msgid "Home Page"
-msgstr "Домашняя страница"
-
-msgid "Welcome to %s."
-msgstr "Приветствуем %s."
-
-msgid ""
-"Kurikku is a private osu! server, featuring multiplayer, PP, a very active "
-"community and a development team going strong implementing new features and "
-"squashing bugs. <a href='/about'>You can check out even more features "
-"here.</a> It has also a very friendly community, and it's <a "
-"href='https://zxq.co/Kurikku/Kurikku'>open source!</a> Just so you know, <b>we "
-"currently have %s users online and %s registered users!</b>"
-msgstr ""
-"Kurikku - частный осу сервер с мультиплеером, PP, активным сообществом и "
-"командой разработчиков, которая добавляет новые функции и исправляет баги. <"
-"a href='/about'>Вы можете почитать обо всех возможностях здесь.</a> У нас "
-"дружелюбное сообщество, и у нас <a href='https://zxq.co/Kurikku/Kurikku'>"
-"открытый исходный код!</a> К вашему сведению, <b> в данный момент у нас %s "
-"пользователей в сети и %s зарегистрированных пользователей!</b>"
-
-msgid "You look new here. Allow us to introduce you to what Kurikku is. Kurikku is a osu! private server. We have free osu!Direct, beatmap listing and searching, clans and more! Have fun on Kurikku!"
-msgstr "Похоже вы новенький здесь. Давай мы расскажем, что представляет из себя Kurikku. Kurikku это приватный сервер для ритм-игры osu!. Мы имеем бесплатный osu!Direct, просмотр битмап, а также их поиск. Кланы и много чего другого! Добро пожалловать! И удаче в игре!"
-
-msgid "What are you waiting for? Join Kurikku! It's risk-free: you won't get your account banned on the official server if you play on Kurikku.<br>You can also switch anytime between the official osu! server and Kurikku!"
-msgstr "Так чего ты ждёшь? Заходи в сообщество Kurikku! Это безопасно! Вы не получите бан на оффициальном сервере, если играете на Kurikku.<br>Вы можете в любой момент переключиться между оффициальным сервером и Kurikku!"
-
-msgid "Need support or want to talk to other players? Join our <a href=\"%s\">Discord</a>!"
-msgstr "Нужна помощь? Или вы хотите пообщаться с другими игроками? Заходите к нам в <a href=\"%s\">Discord</a>"
-
-msgid "Hi, %s!"
-msgstr "Как дела, %s?"
-
-msgid "Report %s"
-msgstr "Отправить репорт на %s"
-
-msgid "Reason"
-msgstr "Причина"
-
-msgid "Moderator"
-msgstr "Модератор"
-
-msgid "ID bm/bs"
-msgstr "ID карты/сета"
-
-msgid "Foul play / Cheating"
-msgstr "Обман / Читерство"
-
-msgid "Spamming"
-msgstr "Спам"
-
-msgid "Other"
-msgstr "Прочее"
-
-msgid "Additional text"
-msgstr "Дополнительный текст"
-
-msgid "Any information about this issue."
-msgstr "Подробная информация о случае."
-
-msgid "We must say, that we can silence you if the report is false or you're abusing the report system (spamming, etc.)"
-msgstr "Хочу заметить, мы оставляем за собой право замутить вас, в случае если репорт окажется ложным или вы будете отсылать бессмысленные репорты."
-
-msgid ""
-"Welcome back to Kurikku. We currently have <b>%s online users and %s total "
-"registered users.</b> Hope you're having a wonderful day!"
-msgstr ""
-"С возвращением на Kurikku. Сейчас у нас <b>%s пользователей онлайн и %s "
-"зарегистрированных пользователей.</b> Хороший день пофармить карт, не так ли?"
-
-msgid "Latest news from our <a href='https://blog.Kurikku.moe'>blog</a>"
-msgstr "Последние новости из нашего <a href='https://blog.Kurikku.moe'>блога</a>"
-
-# base.html
-msgid ""
-"Kurikku's score submission is currently in maintenance mode. You will not be "
-"allowed to submit scores for the time being."
-msgstr ""
-"Система загрузки игр на Kurikku находится на техническом обслуживании. Вам "
-"запрещено отправлять игры в это время."
-
-msgid ""
-"The Kurikku website is currently in maintenance mode. Only certain users are "
-"allowed to access the full website."
-msgstr ""
-"Веб-сайт Kurikku находится на техническом обслуживании. Только определенные "
-"пользователи имеют доступ к полной версии сайта."
-
-msgid ""
-"Your account is currently in restricted mode. You will not be able to do "
-"certain actions, and your profile can only be seen by you and by Kurikku's "
-"staff. If you believe we have mistaken putting you in restricted mode, or a "
-"month has passed since you first saw this, then you can send an appeal at <a "
-"href='mailto:support@kurikku.pw'>support@kurikku.pw</a>."
-msgstr ""
-"Ваш аккаунт находится в ограниченном режиме. Вы не сможете производить "
-"некоторые действия, и ваш профиль могут видеть только вы и сотрудники "
-"Kurikku. Если вы считаете, что были ограничены по ошибке, или прошел месяц с "
-"того момента, как вы впервые увидели это сообщение, то вы можете отправить "
-"аппеляцию на <a href='mailto:support@kurikku.pw'>support@kurikku.pw</a>."
-
-msgid "&copy; 2015-%d Kurikku, using Hanayo %s."
-msgstr "&copy; 2015-%d Kurikku, используется Hanayo %s."
-
-msgid "Team"
-msgstr "Команда"
-
-msgid "Who is working on this thing?"
-msgstr "Кто разрабатывает это?"
-
-msgid "Developer docs"
-msgstr "Документации для разработчиков"
-
-msgid "See what changed!"
-msgstr "Посмотреть изменения!"
-
-msgid "If you need to get in touch with our support team (our Community Managers), you will need to either send an email to our support email address, or join our <a href='https://discord.gg/5uA3c76'>Discord Server</a>. You can compose an email to it by clicking the button at the bottom of this page. <b>Please read the following</b> though, as it is important."
-msgstr "Если тебе нужно связаться с нашей поддержкой, то ты должен отправить нам е-мейл на support@kurikku.pw или вступить в <a href='https://discord.gg/5uA3c76'>дискорд сервер.</a>"
-
-msgid "The support email <b>is not meant for technical support</b>. If you need technical support, then please join our <a href='https://discord.gg/5uA3c76'>Discord Server</a>, and ask your question on the <b>#help channel</b>. You should also join the Discord server and ask a CM if you have any informal inquiry that you may have."
-msgstr "Е-мейл саппорта <b>не подрузамевается для технической помощи</b>. Если вам нужна техническая поддержка, вступите в наш <a href='https://discord.gg/5uA3c76'>дискорд сервер</a>, и задайте вопрос в канале помощи."
-  
-msgid "Changelog"
-msgstr "Журнал изменений"
-
-msgid "Blog"
-msgstr "Блог"
-
-msgid "What's going on under the hood?"
-msgstr "Что же внутри?"
-
-msgid "Follow us on Twitter!"
-msgstr "Подписывайтесь на нас в Twitter!"
-
-msgid "Share irrelevant opinions on reddit!"
-msgstr "Делитесь своими мнениями на Reddit!"
-
-msgid "Language"
-msgstr "Язык"
-
-# 2fa_gateway.html
-msgid "Two Factor Authentication"
-msgstr "Двухфакторная аутентификация"
-
-msgid ""
-"Before proceding further on Kurikku, we require you to use your Google "
-"Authenticator App to use the code for Kurikku, so that we can log you in."
-msgstr ""
-"Перед тем как продолжить использовать Kurikku, мы требуем от вас получить код "
-"из приложения Google Authenticator, чтобы мы смогли вас авторизовать."
-
-msgid ""
-"Before proceding any further on Kurikku, we require you to use the message "
-"you just received on telegram to log in to your account."
-msgstr ""
-"Перед тем как продолжить использовать Kurikku, мы требуем вас использовать "
-"код из сообщения, которые вы только что получили в Telegram, чтобы войти в "
-"ваш аккаунт."
-
-msgid "Lost your phone, or can't access Google Authenticator?"
-msgstr "Потеряли телефон, или не можете зайти в Google Authenticator?"
-
-msgid "Click here to use a recovery code."
-msgstr "Нажмите здесь, чтобы использовать код восстановления."
-
-msgid "Telegram code"
-msgstr "Код из Telegram"
-
-msgid "(send again?)"
-msgstr "(отправить еще раз?)"
-
-msgid "Google Authenticator passcode"
-msgstr "Код из Google Authenticator"
-
-msgid "Hey, %s."
-msgstr "Эй, %s."
-
-msgid "You need to complete the 2fa challenge first."
-msgstr "Для начала вам нужно пройти двухфакторную аутентификацию."
-
-msgid "A new code has been generated and sent to you through Telegram."
-msgstr "Мы сгенерировали новый код и отправили его вам через Telegram."
-
-msgid "You've been successfully logged in."
-msgstr "Вы успешно вошли."
-
-# help.html
-msgid ""
-"If you need to get in touch with our support team (our Community Managers), "
-"you will need to send an email to our support email address. You can compose "
-"an email to it by clicking the button at the bottom of this page. <b>Please "
-"read the following</b> though, as it is important."
-msgstr ""
-"Если вам нужно связаться с нашей командой поддержки (нашими Менеджерами "
-"Сообщества), вы должны написать письмо на нашу электронную почту. Вы можете "
-"отправить его, нажав на кнопку внизу этой страницы. <b>Пожалуйста, "
-"прочитайте информацию ниже</b>. Это важно."
-
-msgid ""
-"The support email <b>is not meant for technical support</b>. If you need "
-"technical support, then please join our <a href='%s'>Discord Server</a>, and "
-"ask your question on the <b>#help channel</b>. You should also join the "
-"Discord server and ask a CM if you have any informal inquiry that you may "
-"have. If you need to contact a specific staff member, you can contact them "
-"by clicking the envelope icon under their name in the <a href='/team'>Team "
-"page</a>."
-msgstr ""
-"Электронная почта поддержки <b>не предназначена для технической поддержки</b>"
-". Если вам нужна техническая помощь, то заходите на наш <a href='%s'>сервер "
-"Discord</a>, и задайте свой вопрос <b>на канале #help</b>. Также вы можете "
-"зайти на Discord и спросить у МС если у вас есть неофициальный запрос. Если "
-"вам нужно связаться с определенным человеком из нашей команды, то вы можете "
-"это сделать нажав на иконку с конвертиком под их именем на <a href='/team'>"
-"странице команды</a>."
-
-msgid "Instead, if you need any of the following:"
-msgstr "Если же вам нужно:"
-
-msgid "Username change"
-msgstr "Смена имени пользователя"
-
-msgid "Appeal your ban/restriction"
-msgstr "Оправдать ваш бан/ограничение"
-
-msgid ""
-"Anything else that strictly deals with your account and is not related in "
-"any way to a technical issue of yours."
-msgstr ""
-"Все, что связано с вашим аккаунтом и не связано с техническими проблемами на "
-"вашей стороне."
-
-msgid "Then the support mail is the way to go."
-msgstr "В таком случае, почта поддержки - то, что нужно."
-
-msgid ""
-"When contacting the support mail, please make sure to <b>send the email from "
-"the email address you signed up on Kurikku with</b>."
-msgstr ""
-"Отправляя письмо на адрес электронной почты, <b>обязательно пишите с того "
-"адреса, с помощью которого вы зарегистрировались на Kurikku</b>."
-
-msgid ""
-"Last but not least, <b>the support email is not meant for filing bug "
-"reports</b>. If you need to report a bug, then please just ask one of our "
-"developers on Discord. If it's a security bug, for instance XSS or SQL "
-"injection, then please contact <a href='mailto:howl@Kurikku.moe'>Howl</a> or <"
-"a href='mailto:nyo@Kurikku.moe'>Nyo</a>."
-msgstr ""
-"И наконец, <b>адрес электронной почты поддержки не предназначен для отправки "
-"отчетов об ошибке</b>. Если вы хотите сообщить об ошибке, то свяжитесь с "
-"одним из разработчиков Kurikku в Discord. Если это уязвимость, например, "
-"инъекция XSS или SQL, свяжитесь с <a href='mailto:howl@Kurikku.moe'>Howl</a> "
-"или <a href='mailto:nyo@Kurikku.moe'>Nyo</a>."
-
-msgid "I have read and understood everything on this page."
-msgstr "Я прочитал и понял все вышеуказанное."
-
-msgid ""
-"Ooops! Looks like something went really wrong while trying to process your "
-"request. Perhaps report this to a Kurikku developer? Retrying doing what you "
-"were trying to do might work, too."
-msgstr ""
-"У-упс! Похоже, что-то пошло не так при обработке Вашего запроса. Может, "
-"уведомить об этом разработчиков Kurikku? Повтор всего того, что вы сделали, "
-"тоже может сработать."
-
-msgid "Kurikku is a private osu! server."
-msgstr "Kurikku - частный сервер osu!"
-
-msgid "There are many like it, but this one is ours."
-msgstr "Таких как он - много, но этот - наш."
-
-# %s is eggplant emoji
-msgid "Don't you like %s?"
-msgstr "Разве вы не любите %s?"
-
-msgid "We have leaderboards."
-msgstr "У нас есть таблица лидеров."
-
-msgid "Online user listing."
-msgstr "Отображение игроков в сети."
-
-msgid "Free osu!direct."
-msgstr "Бесплатный osu!direct."
-
-msgid "Global leaderboards."
-msgstr "Глобальная таблица лидеров."
-
-msgid "and PP for osu!standard and osu!mania"
-msgstr "и PP для режимов osu!standard и osu!mania"
-
-msgid "Ranking queue for unranked beatmaps."
-msgstr "Проверка непроверенных карт."
-
-msgid "Spectator."
-msgstr "Режим наблюдателя."
-
-msgid "Multiplayer."
-msgstr "Мультиплеер."
-
-msgid "FokaBot, our chat bot"
-msgstr "Наш чат-бот FokaBot."
-
-msgid ""
-"with plenty of functions for just about anything, <a href=\"/doc/4\">check "
-"it out!</a>"
-msgstr ""
-"с кучей функций почти для всего, чего угодно! <a href=\"/doc/4\">Зацени!</a>"
-
-msgid "And a lot more to come!"
-msgstr "И это еще не все!"
-
-msgid ""
-"Kurikku is the result of the hard work of two Italian developers, who got "
-"tired about the whole osu! ecosystem, and also because they wanted to play "
-"with a few banned friends."
-msgstr ""
-"Kurikku это результат тяжелого труда двух итальянских разработчиков, которые "
-"устали ото всей экосистемы osu!, а также потому, что они хотели поиграть со "
-"своими заблокированными друзьями."
-
-# %s is wink emoji
-msgid ""
-"It has now evolved into the largest available osu! private server, with more "
-"than 10,000 registered users. <a href=\"/register\">Signing up</a> on Kurikku "
-"won't result in getting your account on osu! restricted, so what are you "
-"waiting for?! Come join us! %s"
-msgstr ""
-"Но сейчас он эволюционировал в самый популярный частный сервер osu! с более "
-"чем 10,000 зарегистрированными пользователями. <a href=\"/register\""
-">Регистрация</a> на Kurikku не повлечет за собой блокировку аккаунта на "
-"официальном сервере, так чего же ты тогда ждешь?! Присоединяйся! %s"
-
-msgid ""
-"In case you want to make sure we're not doing shady stuff with your data, "
-"you can also check the <a href=\"https://zxq.co/Kurikku/Kurikku\">source "
-"code</a> Kurikku is running on."
-msgstr ""
-"В случае, если Вы хотите убедиться в том, что мы не делаем каких-либо "
-"пакостных вещей с вашими данными, вы можете просмотреть <a href=\""
-"https://zxq.co/Kurikku/Kurikku\">исходный код</a>, на котором работает Kurikku."
-
-# changelog.html
-msgid ""
-"This is the changelog. Changes are published here as soon as they hit the "
-"production status (as in, live on the website)."
-msgstr ""
-"Это список изменений. Изменения попадают себя как только попадают в "
-"эксплуатацию (например, на веб-сайт)."
-
-msgid ""
-"For various reasons, some software of Kurikku does not contribute to the "
-"changelog, to which this website is a part of. In case you want to see the "
-"changelog of Hanayo, you can do so by <a href=\""
-"https://zxq.co/Kurikku/hanayo/commits/master\">clicking here</a>."
-msgstr ""
-"По разным причинам, некоторое программное обеспечение Kurikku не попадает в "
-"список изменений. Этот сайт - один из них. Если вы хотите увидеть список "
-"изменений Hanayo, <a href=\"https://zxq.co/Kurikku/hanayo/commits/master\">"
-"нажмите сюда</a>."
-
-msgid "Author"
-msgstr "Автор"
-
-msgid "Subject"
-msgstr "Тема"
-
-msgid "Time"
-msgstr "Время"
-
-# doc_content.html 
-msgid "View document"
-msgstr "Просмотреть документ"
-
-msgid "Documentation file not found!"
-msgstr "Файл документации не найден!"
-
-msgid "View all docs"
-msgstr "Просмотреть все документы"
-
-# doc.html
-msgid ""
-"Need some help getting around? Look no further! From here you will be able "
-"to view our documentation, which is basically a very simplistic wiki."
-msgstr ""
-"Нужна помощь в освоении? Больше нет! Отсюда вы можете просмотреть нашу "
-"документацию, которая, по сути, является простейшей Wiki."
-
-msgid "Looks like there is no documentation on this Kurikku instance!"
-msgstr "Похоже, что на этом сервере Kurikku нет документации!"
-
-# friends.html
-msgid ""
-"On this page you can see all of your friends, and unfriend them as you see "
-"fit."
-msgstr ""
-"На этой странице Вы можете увидеть всех своих друзей и перестать с ними "
-"дружить, если желаете."
-
-msgid "Mutual"
-msgstr "Взаимно"
-
-msgid "Remove"
-msgstr "Удалить"
-
-# irc.html
-msgid ""
-"Here you can generate a new IRC token. You can use it to connect to Kurikku's "
-"chat using IRC. Remember that your IRC token is like a password, anyone who "
-"knows it, has access to your account. If you're interested knowing how to "
-"connect to Kurikku's chat via IRC, you may want to check out <a href=\"/doc/"
-"11\">this</a>."
-msgstr ""
-"Здесь Вы можете сгенерировать новый IRC-токен. Вы можете использовать его "
-"для соединения с чатом Kurikku через IRC. Помните, что токен - как пароль, и "
-"каждый, кто знает его, имеет доступ к Вашему аккаунту. Если Вам интересно, "
-"как соединиться с чатом через IRC, просмотрите <a href=\"/doc/11\">это</a>."
-
-msgid "Generate a new token!"
-msgstr "Генерировать новый токен!"
-
-# leaderboard.html
-msgid "Rank"
-msgstr "Ранг"
-
-msgid "Player"
-msgstr "Игрок"
-
-msgid "PP/Score"
-msgstr "PP/Счет"
-
-msgid "Accuracy"
-msgstr "Точность"
-
-msgid "Playcount"
-msgstr "Сыграно карт"
-
-# profile.html
-msgid "%s's profile"
-msgstr "Профиль %s"
-
-# profile.html
-# for <reason>, expires <placeholder for time>.
-msgid "User is <b>silenced</b> for %s, expires %s."
-msgstr "Пользователь <b>не может говорить</b> за %s, истекает %s."
-
-# %s is placeholder for an adjective of the user, e.g. "locked", "pending verification", "restricted"
-msgid "User is <b>%s</b>"
-msgstr "Пользователь <b>%s</b>"
-
-msgid "pending verification"
-msgstr "ожидает подтверждения"
-
-msgid "banned"
-msgstr "забанен"
-
-msgid "restricted"
-msgstr "ограничен"
-
-msgid "locked"
-msgstr "заблокирован"
-
-msgid "User not found"
-msgstr "Пользователь не найден"
-
-msgid "(aka <b>%s</b>)"
-msgstr "(aka <b>%s</b>)"
-
-msgid "Online"
-msgstr "В сети"
-
-msgid "Offline"
-msgstr "Не в сети"
-
-msgid "Unknown"
-msgstr "Неизвестно"
-
-msgid "<b>%s</b> is a Kurikku player from <b>%s</b>."
-msgstr "<b>%s</b> - игрок Kurikku из <b>%s</b>."
-
-msgid "Last seen: %s."
-msgstr "Последний раз был в сети: %s."
-
-msgid "They signed up on Kurikku %s."
-msgstr "Зарегистрировался на Kurikku %s."
-
-msgid "They play with %s."
-msgstr "Играет с помощью %s."
-
-msgid "Mouse"
-msgstr "Мышь"
-
-msgid "Tablet"
-msgstr "Планшет"
-
-msgid "Keyboard"
-msgstr "Клавиатура"
-
-msgid "Touchscreen"
-msgstr "Сенсорный экран"
-
-msgid "Spoon"
-msgstr "Ложка"
-
-msgid "Leap motion"
-msgstr "Leap motion"
-
-msgid "Oculus rift"
-msgstr "Oculus rift"
-
-msgid "Dick"
-msgstr "Член"
-
-msgid "Eggplant"
-msgstr "Баклажан"
-
-msgid "This user hasn't got any badges!"
-msgstr "У этого пользователя нет ни одного значка!"
-
-msgid "Global rank"
-msgstr "Глобальный рейтинг"
-
-msgid "Country rank"
-msgstr "Рейтинг по стране"
-
-msgid "PP"
-msgstr "PP"
-
-msgid "Ranked score"
-msgstr "Рейтинговый счет"
-
-msgid "Total score"
-msgstr "Общий счет"
-
-msgid "Replays watched"
-msgstr "Просмотрено повторов"
-
-msgid "Total hits"
-msgstr "Всего попаданий"
-
-msgid "Level %s"
-msgstr "Уровень %s"
-
-# support.html
-msgid "Support Kurikku"
-msgstr "Поддержать Kurikku"
-
-msgid "You are a donor!"
-msgstr "Вы - донор!"
-
-msgid ""
-"Your donor expires <b>%s</b>. No need to feel guilty for not having donated!"
-msgstr ""
-"Ваши привелегии истекают <b>%s</b>. Не нужно чувствовать вину за то, что вы "
-"не пожертвовали!"
-
-msgid "Did you know?"
-msgstr "Знали ли вы?"
-
-msgid "(Probably.)"
-msgstr "(Возможно.)"
-
-msgid "(Probably not.)"
-msgstr "(Скорее всего, нет.)"
-
-msgid "Kurikku is not cheap to run."
-msgstr "Kurikku не дешев в обслуживании."
-
-msgid ""
-"While we provide this service for free, we still have to pay for it, and if "
-"we always took the money out of our own pockets, 1. we would be broke, 2. we "
-"wouldn't be able to upgrade our hardware to accomodate our users. While we "
-"do have loads of software optimisations that allow us to have Kurikku run "
-"crazy fast while still being on not so high-end hardware, the more users we "
-"have, the higher-end our hardware needs to be. So we are asking you for help "
-"on this :)."
-msgstr ""
-"Несмотря на то, что мы предлагаем Вам играть бесплатно, нам всё-равно "
-"приходится за это платить, и если бы мы всегда платили со своего кармана, 1. "
-"мы бы разорились, 2. мы не имели бы возможности совершенствовать серверное "
-"железо, чтобы соответствовать нагрузке. И даже с достаточным количеством "
-"оптимизаций кода, которые позволяют Kurikku работать крайне быстро на крайне "
-"скудном железе, с увеличением количества пользователей, более продвинутые "
-"серверы становятся необходимы. Именно поэтому мы просим Вас помочь нам с "
-"этим :)."
-
-msgid "We are still students."
-msgstr "Мы все еще студенты."
-
-msgid ""
-"Kurikku developers, and most of the Kurikku staff, do not have a day job. This "
-"means that we get most of our income as students from doing small jobs as \""
-"freelancers\" every so often, or, you know, allowance."
-msgstr ""
-"У разработчиков и большей части персонала Kurikku нет работы. Это значит, что "
-"мы получаем большую часть доходов, выполняя небольшую работу как \""
-"фрилансеры\" или получая стипендию."
-
-msgid "We do not have ads. And never will."
-msgstr "У нас нет рекламы. И никогда не будет."
-
-msgid "We love picking random icons from our icon library."
-msgstr "Нам нравится выбирать случайные иконки из нашей библиотеки иконок."
-
-msgid ""
-"You may have adblock enabled and have not noticed, but we don't have ads "
-"anywhere on our website. We believe ads are bad, as they can be very "
-"annoying to you and that you would rather spend a few bucks to help us "
-"rather than watch annoying ads all the time."
-msgstr ""
-"Возможно, у Вас включен блокировщик рекламы, из-за чего Вы не заметили, что "
-"у нас в принципе нет рекламы на сайте. Мы верим в то, что реклама - это "
-"плохо, так как она может быть очень надоедать и, возможно, лучше потратить "
-"несколько долларов, чтобы помочь нам вместо того, чтобы лицезреть эту "
-"приставучую рекламу все время."
-
-msgid "So what can you do?"
-msgstr "Итак, что Вы можете сделать?"
-
-msgid "Well, you can give us money."
-msgstr "Ну, Вы можете дать нам денег."
-
-msgid "Well, you can give us even more money."
-msgstr "Ну, Вы можете дать нам еще денег."
-
-msgid "Here's what you get:"
-msgstr "Вот, что вы получите:"
-
-msgid "Yellow username"
-msgstr "Желтый юзернейм"
-
-msgid "Donor badge"
-msgstr "Значок донора"
-
-msgid "Custom badge editor"
-msgstr "Редактор значков"
-
-msgid "Friends ranking"
-msgstr "Рейтинг друзей"
-
-msgid "Discord privileges"
-msgstr "Привелегии в Discord"
-
-msgid "Profile background"
-msgstr "Задний фон профиля"
-
-msgid "More to come!"
-msgstr "И это еще не все!"
-
-msgid ""
-"Just like in osu!, you get a <b>shiny yellow username</b> in the in-game "
-"chat to show everyone you're a really cool dude who has helped us pay the "
-"server bills."
-msgstr ""
-"Прямо как в osu!, вы получаете <b>яркий желтый никнейм</b> в игровом чате, "
-"чтобы показать, что вы очень крутой чувак, который помог нам оплатить счета "
-"за сервера."
-
-msgid ""
-"Again, just like in osu!, you will get a <b>donor badge</b> on your profile, "
-"to show everyone you're supporting us."
-msgstr ""
-"Опять же, как в osu!, вы получаете <b>значок донора</b> в вашем профиле, "
-"чтобы показать, что вы поддерживаете нас."
-
-msgid ""
-"You get to be able to create your <b>own personal badge</b>, with custom "
-"text and icon, to show off on your profile! Let the world know you're an "
-"anchor. Or prank people showing a spinnin' wheel with \"Loading...\"! Up to "
-"you."
-msgstr ""
-"Вы сможете создать ваш <b>собственный значок</b> со своим текстом и иконкой, "
-"чтобы красоваться им в вашем профиле! Или разыгрывать людей, показывая им "
-"крутящееся колесо с \"Loading...\"! Все зависит от вас."
-
-msgid ""
-"<b>Competing with friends</b> is really cool, you can play on the "
-"leaderboard with someone more or less on your level, without getting "
-"crippling depression and RSI for not beating that pro!"
-msgstr ""
-"<b>Соревноваться с друзьями</b> очень круто, вы можете играть с кем-то выше "
-"или ниже вашего уровня, не получая калечащую депрессию и RSI после проигрыша "
-"этому профессионалу!"
-
-msgid ""
-"You'll get exclusive access to the <b>\"#donators\"</b> text and voice "
-"channels, you'll be able to change your discord nickname and you'll get a "
-"custom role with custom username colour!"
-msgstr ""
-"Вы получите эксклюзивный доступ в текстовый и голосовой канал <b>\"#"
-"donators\"</b>, вы сможете поменять ваш никнейм в Discord и вы получите "
-"специальную роль с заказным цветом никнейма!"
-
-msgid ""
-"Think about <b>spicing your profile up with some eggplants</b>? Got you "
-"covered! Having donor privileges, you get to be able to change your profile "
-"background."
-msgstr ""
-"Хотите <b>приправить ваш профиль парочкой баклажанов</b>? Мы обо всем "
-"позаботились! Имея донорские привилегии, вы сможете менять ваш задний фон "
-"профиля."
-
-msgid ""
-"<b>Who knows</b> what we could implement next? You could be able to do even "
-"<i>more</i> stuff for donors once we implement it."
-msgstr ""
-"<b>Кто знает</b> что мы добавим в следующий раз? Вы сможете делать еще "
-"<i>больше</i> вещей когда мы их добавим."
-
-msgid "And this is how you pay"
-msgstr "А вот так вы можете оплатить"
-
-msgid ""
-"You may donate through either <b>PayPal</b> (or credit/debit card linked to "
-"PayPal) or <b>Bitcoin</b>. Use the slider below to choose the amount of "
-"months you'd like to have the donor benefits, and the cost will be instantly "
-"calculated. Remember that if, for instance, you choose to donate € 4 instead "
-"of € 3.51, you will only be given one donor month."
-msgstr ""
-"Вы можете пожертвовать через <b>PayPal</b> (или кредитную/банковскую карту, "
-"прикрепленную к PayPal) или через <b>Bitcoin</b>. Используйте слайдер снизу, "
-"чтобы выбрать количество месяцев, на которые вы хотели бы привилегии, и цена "
-"будет автоматически рассчитана. Не забывайте, что если вы решите "
-"пожертвовать €4 вместо €3.51, вы получите только 1 месяц донорства."
-
-msgid "Loading..."
-msgstr "Загрузка..."
-
-msgid "PayPal"
-msgstr "PayPal"
-
-msgid "User:"
-msgstr "Пользователь:"
-
-msgid "Bitcoin"
-msgstr "Bitcoin"
-
-msgid "Send %s BTC to this Bitcoin address:"
-msgstr "Отправьте %s BTC на этот Bitcoin-адрес:"
-
-msgid ""
-"Afterwards, <b>please send an email to <a href=\"mailto:howl@Kurikku.moe\""
-">howl@Kurikku.moe</a></b> containing the transaction hash!"
-msgstr ""
-"После этого, <b>отправьте письмо на <a href=\"mailto:howl@Kurikku.moe\""
-">howl@Kurikku.moe</a></b> с хешем транзакции!"
-
-msgid "I've donated, now what?"
-msgstr "Я пожертвовал, что теперь?"
-
-msgid ""
-"You'll have to wait until we verify and process your payment. It can take up "
-"to <b>12 hours</b>. If 12 hours have passed and you still haven't received "
-"your Donor tag, contact a <b>Dev/Community Manager</b> in our Discord server "
-"or send an email to <b><a href=\"mailto:support@kurikku.pw\""
-">support@kurikku.pw</a></b>. Once we have processed your payment, you'll "
-"receive an <b>email</b> to the address you've used to sign up and you'll get "
-"<b>all the donor privileges, except the Discord ones</b>. To get the Discord "
-"donor privileges, go <a href=\"/settings/discord\">here</a>."
-msgstr ""
-"Вам нужно подождать, пока мы проверим и проведем ваш платеж. Это может "
-"занять до <b>12 часов</b>. Если 12 часов прошло и вы все еще не получили "
-"ваше донорство, свяжитесь с <b>менеджером разработки/сообщества</b> на нашем "
-"сервере Discord или отправьте письмо на <b><a href=\"mailto:support@Kurikku."
-"moe\">support.Kurikku.moe</a></b>. Как только мы проведем ваш платеж, вы "
-"получите <b>письмо</b> на адрес, который вы используете для входа, и вы "
-"получите <b>все донорские привелегии, кроме привелегий в Discord</b>. Чтобы "
-"получить донорские привелегии в Discord, зайдите <a href=\"/settings/"
-"discord\">сюда</a>."
-
-msgid "Please log in to get supporter"
-msgstr "Войдите, чтобы получить донора"
-
-# Settings
-msgid "Userpage"
-msgstr "Страница пользователя"
-
-msgid "Avatar"
-msgstr "Аватар"
-
-msgid "Discord donor"
-msgstr "Discord-донор"
 
 msgid "Two factor authentication is enabled on your account."
 msgstr "Двухфакторная аутентификация включена на вашем аккаунте."
@@ -1578,51 +922,29 @@ msgstr "Двухфакторная аутентификация отключен
 msgid "Telegram 2FA"
 msgstr "Двухфакторная аутентификация Telegram"
 
-msgid ""
-"To enable Telegram Two Factor Authentication, click this button, then click "
-"\"start\" on Telegram:"
-msgstr ""
-"Чтобы включить двухфакторную аутентификацию в Telegram, нажмите на эту "
-"кнопку, потом нажмите \"start\" в Telegram:"
+msgid "To enable Telegram Two Factor Authentication, click this button, then click \"start\" on Telegram:"
+msgstr "Чтобы включить двухфакторную аутентификацию в Telegram, нажмите на эту кнопку, потом нажмите \"start\" в Telegram:"
 
 msgid "Enable Telegram 2FA"
 msgstr "Включить двухфакторную аутентификацию в Telegram"
 
-msgid ""
-"If you don't have Telegram on the current device, you can either open this "
-"page from a device on which you have it, or scan this QR code:"
-msgstr ""
-"Если у вас нет Telegram на этом девайсе, вы можете открыть эту страницу с "
-"девайса, на котором он у вас есть, или просканируйте этот QR-код:"
+msgid "If you don't have Telegram on the current device, you can either open this page from a device on which you have it, or scan this QR code:"
+msgstr "Если у вас нет Telegram на этом девайсе, вы можете открыть эту страницу с девайса, на котором он у вас есть, или просканируйте этот QR-код:"
 
-msgid ""
-"In case you don't have a way to scan QR codes or you simply can't be "
-"bothered to download an app that scans them, you can also open Telegram, "
-"start a conversation with <a href=\"http://telegram.me/Kurikku2fabot\""
-"><b>@Kurikku2fabot</b></a> and send this message:"
-msgstr ""
-"В случае если вы не можете сканировать QR-коды или вы не утруждаете себя "
-"загрузкой сканера, вы можете открыть Telegram, начать диалог с <a href=\""
-"http://telegram.me/Kurikku2fabot\"><b>@Kurikku2fabot</b></a> и отправьте ему "
-"это сообщение:"
+msgid "In case you don't have a way to scan QR codes or you simply can't be bothered to download an app that scans them, you can also open Telegram, start a conversation with <a href=\"http://telegram.me/ripple2fabot\"><b>@ripple2fabot</b></a> and send this message:"
+msgstr "Если у Вас нет возможности отсканировать QR-коды или Вы просто не можете потрудиться загрузить приложение, которое их сканирует, Вы также можете открыть Телеграмм и начать разговор с <a href=\"http://telegram.me/ripple2fabot\"><b>@ripple2fabot</b></a> и отправить это сообщение:"
 
 msgid "Google Authenticator (TOTP) based 2FA"
 msgstr "Двухфакторная аутентификация через Google Authenticator"
 
-msgid ""
-"At the moment you currently have set up Telegram Two Factor Authentication. "
-"Should you wish to disable it, please fill out the following form:"
-msgstr ""
-"Сейчас у вас включена двухфакторная аутентификация через Telegram. Если вы "
-"хотите отключить ее, заполните данную форму:"
+msgid "Scan this from <a href=\"https://support.google.com/accounts/answer/1066447?hl=en\">Google Authenticator</a>, or if you're not able to, provide to Google Authenticator this key: <code>%s</code>. Once you've done, fill out the following form with the code you get on Google Authenticator and click on enter to enable TOTP-based two factor authentication."
+msgstr "*не используется*"
 
-msgid ""
-"At the moment you currently have set up TOTP-based (Google Authenticator) "
-"Two Factor Authentication. Should you wish to disable it, please fill out "
-"the following form:"
-msgstr ""
-"Сейчас у вас включена двухфакторная аутентификация через Google "
-"Authenticator. Если вы хотите отключить ее, заполните данную форму:"
+msgid "At the moment you currently have set up Telegram Two Factor Authentication. Should you wish to disable it, please fill out the following form:"
+msgstr "Сейчас у вас включена двухфакторная аутентификация через Telegram. Если вы хотите отключить ее, заполните данную форму:"
+
+msgid "At the moment you currently have set up TOTP-based (Google Authenticator) Two Factor Authentication. Should you wish to disable it, please fill out the following form:"
+msgstr "Сейчас у вас включена двухфакторная аутентификация через Google Authenticator. Если вы хотите отключить ее, заполните данную форму:"
 
 msgid "Disable Telegram 2FA"
 msgstr "Отключить двухфакторную аутентификацию в Telegram"
@@ -1633,16 +955,23 @@ msgstr "Отключить двухфакторную аутентификаци
 msgid "Google Authenticator recovery keys"
 msgstr "Ключи восстановления для Google Authenticator"
 
-msgid ""
-"These are the only thing that will let you get back into your Kurikku account "
-"if you lose your device. Our suggestion is to paste them inside a document "
-"in your word processor (Microsoft Word, LibreOffice Writer), print them and "
-"store them in a safe place."
-msgstr ""
-"Они - единственная вещь, которая поможет вам войти в ваш аккаунт Kurikku, "
-"если вы потеряли ваш девайс. Мы рекомендуем копировать их в документ в ваш "
-"редактор (Microsoft Word, LibreOffice, Writer), распечатать их и сохранить "
-"их в безопасном месте."
+msgid "These are the only thing that will let you get back into your Kurikku account if you lose your device. Our suggestion is to paste them inside a document in your word processor (Microsoft Word, LibreOffice Writer), print them and store them in a safe place."
+msgstr "Они - единственная вещь, которая поможет вам войти в ваш аккаунт Kurikku, если вы потеряли ваше устройство. Мы рекомендуем копировать их в документ (Microsoft Word, LibreOffice, Writer), распечатать их и сохранить их в безопасном месте."
+
+msgid "From here you can check all the applications you granted authorization to your account, and revoke their permissions if necessary."
+msgstr "Отсюда Вы можете проверить все запросы, на которые Вы дали разрешение на Вашу учетную запись, и при необходимости отозвать их разрешение."
+
+msgid "Authorization created %s"
+msgstr "Авторизация произведена %s"
+
+msgid "Owner"
+msgstr "Владелец"
+
+msgid "Revoke"
+msgstr "Обнулить"
+
+msgid "... but it looks like you have none!"
+msgstr "... мне кажется или тут пусто!"
 
 msgid "Open File"
 msgstr "Открыть файл"
@@ -1650,58 +979,41 @@ msgstr "Открыть файл"
 msgid "Save"
 msgstr "Сохранить"
 
-msgid "No image selected"
-msgstr "Не выбрано изображение"
+msgid "Clan Settings"
+msgstr "Настройки клана"
 
-msgid ""
-"Your discord account has been linked to this Kurikku account. <b>Welcome to "
-"the donors club and thank you for supporting us!</b> You have now access to "
-"the #donators text and voice channels on our official Discord server! You "
-"can also set a custom role name and username colour and change your nickname "
-"on Discord. If you want to change your nickname, you can use the "
-"<code>/nick</code> command. To set or edit your <b>custom role</b> name and "
-"colour, use the command <code>!role HEX_COLOUR ROLE_NAME</code>. You can "
-"pick your HEX colour <a href=\"http://www.colorpicker.com/\" target=\""
-"_blank\">here</a>, it's the one that starts with '#'. You can change your "
-"role name and colour <b>whenever you want!</b>"
-msgstr ""
-"Ваш аккаунт Discord был подключен к этому аккаунту Kurikku. <b>Приветствуем в "
-"клубе доноров и спасибо за вашу поддержку!</b> Теперь у вас есть доступ к "
-"голосовому и текстовому каналу #donators на нашем официальном сервере "
-"Discord! Также, вы можете установить свою роль, цвет ника и свой никнейм в "
-"Discord. Если вы хотите поменять ваш ник, используйте команду "
-"<code>/nick</code>. Чтобы установить или изменить цвет и название <b>вашей "
-"роли</b>, используйте команду <code>!rode ЦВЕТ_HEX НАЗВАНИЕ_РОЛИ</code>. Вы "
-"можете найти ваш цвет в HEX <a href=\"http://www.colorpicker.com/\" target=\""
-"_blank\">тут</a>, это тот, который начинается с '#'. Вы можете поменять ваш "
-"цвет и название роли <b>когда вам угодно!</b>"
+msgid "Clantag"
+msgstr "Клантэг"
+
+msgid "Icon (optional)"
+msgstr "Иконка (по желаню)"
+
+msgid "Background [URL] (optional)"
+msgstr "Ссылка на фон (по желанию)"
+
+msgid "Background URL"
+msgstr "Ссылка на фон"
+
+msgid "Generate a new invite!"
+msgstr "Создать новое приглашение в клан!"
+
+msgid "You haven't joined a clan yet, or you aren't the owner of your current one."
+msgstr "Вы не вошли в клан, и вы не являетесь владельцем одного из них."
+
+msgid "Your discord account has been linked to this account. <b>Welcome to the donors club and thank you for supporting us!</b> You have now access to the #donators text and voice channels on our official Discord server! You can also set a custom role name and username colour and change your nickname on Discord. If you want to change your nickname, you can use the <code>/nick</code> command. To set or edit your <b>custom role</b> name and colour, use the command <code>!role HEX_COLOUR ROLE_NAME</code>. You can pick your HEX colour <a href=\"http://www.colorpicker.com/\" target=\"_blank\">here</a>, it's the one that starts with '#'. You can change your role name and colour <b>whenever you want!</b>"
+msgstr "Ваша учетная запись дискорда была связана с этой учетной записью. <b>Добро пожаловать в клуб доноров и спасибо за поддержку!</b> Теперь у вас есть доступ к текстовым и голосовым каналам #donators на нашем официальном сервере Discord! Вы также можете установить свое имя роли и цвет имени пользователя, а также изменить ник на Discord. Если вы хотите изменить псевдоним, вы можете воспользоваться командой <code>/nick</code>. Для установки или редактирования вашего <b>имя и цвет вашей роли</b> используйте команду <code>!role HEX_COLOUR ROLE_NAME</code>. Вы можете выбрать свой HEX-цвет <a href=\"http://www.colorpicker.com/\" target=\"_blank\">here</a>, он начинается с '#'. Вы можете изменить имя вашей роли и цвет, <b>когда захотите!</b>"
 
 msgid "Thank you for supporting us and have fun on Kurikku!"
 msgstr "Спасибо за поддержку и веселитесь на Kurikku!"
 
 msgid "Donors get special privileges on our Discord server too!"
-msgstr "Также, доноры получают специальные привелегии на нашем сервере Discord!"
+msgstr "Также, доноры получают специальные привилегии на нашем сервере Discord!"
 
-msgid ""
-"Discord is a chatroom with text and voice channels, bots and lots of other "
-"cool features. You can <b>download Discord for free <a href=\""
-"http://discord.gg/\" target=\"_blank\">here</a></b> and you can <b>join our "
-"official Discord server <a href=\"%s\" target=\"_blank\">here</a></b>."
-msgstr ""
-"Discord это чат-клиент с текстовыми и голосовыми каналами, ботами и кучей "
-"других крутых штуковин. Вы можете <b>скачать Discord бесплатно <a href=\""
-"http://discord.gg/\" target=\"_blank\">здесь</a></b> и вы можете <b>зайти на "
-"наш официальный сервер Discord <a href=\"%s\" target=\"_blank\""
-">здесь</a></b>."
+msgid "Discord is a chatroom with text and voice channels, bots and lots of other cool features. You can <b>download Discord for free <a href=\"http://discord.gg/\" target=\"_blank\">here</a></b> and you can <b>join our official Discord server <a href=\"%s\" target=\"_blank\">here</a></b>."
+msgstr "Discord это чат-клиент с текстовыми и голосовыми каналами, ботами и кучей других крутых штуковин. Вы можете <b>скачать Discord бесплатно <a href=\"http://discord.gg/\" target=\"_blank\">здесь</a></b> и вы можете <b>зайти на наш официальный сервер Discord <a href=\"%s\" target=\"_blank\">здесь</a></b>."
 
 msgid "Here's what you get if you link your Discord account:"
 msgstr "Вы получите это, когда прикрепите ваш аккаунт Discord:"
-
-msgid "Access to /nick command, to change your Discord nickname"
-msgstr "Доступ к команде /nick, чтобы менять ваш никнейм в Discord"
-
-msgid "Access to #donators text and voice channels"
-msgstr "Доступ к текстовому и голосовому каналу #donators"
 
 msgid "Username on donors list"
 msgstr "Никнейм в списке доноров"
@@ -1709,156 +1021,35 @@ msgstr "Никнейм в списке доноров"
 msgid "Custom role with custom username"
 msgstr "Ваша роль с вашим названием"
 
-msgid ""
-"To get these perks, first of all <a href=\"%s\" target=\"_blank\">join our "
-"Discord server</a>, then click this fancy button:"
-msgstr ""
-"Чтобы получить эти привилегии, сначала <a href=\"%s\" target=\"_blank\">"
-"зайдите на наш сервер Discord</a>, потом нажмите на эту красивую кнопку:"
+msgid "To get these perks, first of all <a href=\"%s\" target=\"_blank\">join our Discord server</a>, then click this fancy button:"
+msgstr "Чтобы получить эти привилегии, сначала <a href=\"%s\" target=\"_blank\">зайдите на наш сервер Discord</a>, потом нажмите на эту красивую кнопку:"
 
 msgid "Get Discord donor privileges"
-msgstr "Получить привелегии донора в Discord"
+msgstr "Получить привилегии донора в Discord"
+
+msgid "URL pic to add"
+msgstr "Ссылка на картинку"
+
+msgid "Userpage"
+msgstr "Страница пользователя"
+
+msgid "Avatar"
+msgstr "Аватар"
+
+msgid "Social Accounts"
+msgstr "Интеграции"
+
+msgid "In-game BGs changer (BETA)"
+msgstr "Смена фона в игровом меню (BETA)"
+
+msgid "Discord donor"
+msgstr "Discord-донор"
 
 msgid "New password (leave blank if you don't want to change it)"
 msgstr "Новый пароль (оставьте пустым, если не хотите менять его)"
 
 msgid "Current password"
 msgstr "Текущий пароль"
-
-msgid "BBCode syntax reference"
-msgstr "Синтаксис BBCode"
-
-msgid "General"
-msgstr "Общие"
-
-msgid "Email address"
-msgstr "Адрес эл. почты"
-
-msgid "Alternative username (cannot be used for login)"
-msgstr "Дополнительный никнейм (не используется для входа)"
-
-msgid "Also known as..."
-msgstr "Также известен как..."
-
-msgid "Custom badge"
-msgstr "Свой значок"
-
-msgid "Enable"
-msgstr "Включить"
-
-msgid ""
-"<b>Do not use offensive badges and do not pretend to be someone else with "
-"your badge.</b> If you abuse the badges system, you'll be silenced and you "
-"won't be able to edit your custom badge anymore."
-msgstr ""
-"<b>Не используйте оскорбительный значки и не притворяйтесь кем-то другим с "
-"помощью вашего значка.</b> Если вы будете злоупотреблять системой значков, "
-"вы не сможете использовать чат и не сможете изменять ваш личный значок."
-
-msgid "Icon reference"
-msgstr "Ссылка на иконку"
-
-msgid "Dinosaur, oompa-loompa, cool guy..."
-msgstr ""
-
-msgid "Playstyle"
-msgstr "Стиль игры"
-
-msgid "Authorized applications"
-msgstr ""
-
-msgid ""
-"From here you can check all the applications you granted authorization to "
-"your account, and revoke their permissions if necessary."
-msgstr ""
-
-msgid "... but it looks like you have none!"
-msgstr ""
-
-msgid "That authorization has been successfully revoked."
-msgstr "Данная авторизация была успешно отозвана."
-
-msgid "Authorization created %s"
-msgstr ""
-
-msgid "Owner"
-msgstr ""
-
-msgid "Revoke"
-msgstr ""
-
-# Go source
-msgid "TOTP-based 2FA has been enabled on your account."
-msgstr ""
-"Двухфакторная аутентификация с использованием TOTP была включена на вашем "
-"аккаунте."
-
-msgid "Passcode is invalid. Perhaps it expired?"
-msgstr "Код доступа неверен. Может, он истек?"
-
-msgid "No passcode/secret was given. Please try again"
-msgstr "Вы не указали код доступа. Попробуйте еще раз."
-
-msgid "TOTP-based 2FA is already enabled!"
-msgstr "Двухфакторная аутентификация с использованием TOTP уже включена!"
-
-msgid ""
-"You currently have Telegram 2FA enabled. You first need to disable that if "
-"you want to use TOTP-based 2FA."
-msgstr ""
-"У вас уже включена двухфакторная аутентификация через Telegram. Если вы "
-"хотите использовать двухфакторную аутентификацию через TOTP, сначала "
-"отключите её."
-
-msgid "2FA disabled successfully."
-msgstr "Двухфакторная аутентификация успешно отключена."
-
-msgid "Changing avatar is currently not possible."
-msgstr "Смена аватара сейчас невозможна."
-
-msgid "An error occurred."
-msgstr "Произошла ошибка."
-
-msgid "We were not able to save your avatar."
-msgstr "Мы не смогли сохранить ваш аватар."
-
-msgid ""
-"Your avatar was successfully changed. It may take some time to properly "
-"update. To force a cache refresh, you can use CTRL+F5."
-msgstr ""
-"Ваш аватар был изменен. Это займет какое-то время прежде чем он обновится. "
-"Чтобы сбросить ваш кэш, используйте CTRL+F5."
-
-msgid "Internal Server Error"
-msgstr "Внутренняя ошибка сервера"
-
-msgid "You're not a donor!"
-msgstr "Вы не донор!"
-
-msgid ""
-"You've not joined the discord server! Links to it are below on the page. "
-"Please join the server before attempting to connect your account to Discord."
-msgstr ""
-"Вы не заходили на сервер Discord! Ссылки на него внизу страницы. Пожалуйста, "
-"сначала зайдите туда, прежде чем вы присоедините ваш Discord-аккаунт."
-
-msgid "Your account has been linked successfully!"
-msgstr "Ваш аккаунт был успешно присоединен!"
-
-msgid ""
-"Your new IRC token is <code>%s</code>. The old IRC token is not valid "
-"anymore.<br>Keep it safe, don't show it around, and store it now! We won't "
-"show it to you again."
-msgstr ""
-"Ваш новый IRC-токен: <code>%s</code>. Старый IRC-токен больше не "
-"работает.<br>Держите его в сохранности, не показывайте и сохраните его! Мы "
-"не покажем его еще раз."
-
-msgid "Your profile background has been saved."
-msgstr "Задний фон профиля был успешно сохранен."
-
-msgid "We were not able to save your profile background."
-msgstr "Мы не смогли сохранить ваш задний фон профиля."
 
 msgid "Background type"
 msgstr "Тип фона"
@@ -1872,223 +1063,57 @@ msgstr "Изображение"
 msgid "Solid colour"
 msgstr "Сплошной цвет"
 
-msgid "Colour is invalid"
-msgstr "Цвет неверен."
+msgid "No image selected"
+msgstr "Не выбрано изображение"
 
-msgid ""
-"You have been automatically logged out of your account because your account "
-"has either been banned or locked. Should you believe this is a mistake, you "
-"can contact our support team at support@kurikku.pw."
-msgstr ""
-"Вы автоматически вышли из аккаунта из-за того, что он был забанен или "
-"заблокирован. Если вы уверены, что это ошибка, свяжитесь с командой "
-"поддержки: support@kurikku.pw."
+msgid "General"
+msgstr "Общие"
 
-msgid ""
-"You have been automatically logged out for security reasons. Please <a "
-"href='/login?redir=%s'>log back in</a>."
-msgstr ""
-"Вы автоматически вышли из аккаунта для вашей безопасности. Пожалуйста, <a "
-"href='/login?redir=%s'>войдите еще раз</a>."
+msgid "Email address"
+msgstr "Адрес эл. почты"
 
-msgid "You need to login first."
-msgstr "Сначала войдите."
+msgid "Alternative username (cannot be used for login)"
+msgstr "Дополнительный никнейм (не используется для входа)"
 
-msgid "Forbidden"
-msgstr "Доступ запрещен."
+msgid "Also known as..."
+msgstr "Также известен как..."
 
-msgid "You should not be 'round here."
-msgstr "Вы не должны тут находиться."
+msgid "Favourite mode"
+msgstr "Избранный режим"
 
-msgid ""
-"It seems like the original version of this file has been updated, so this "
-"file is out of date and may contain inaccurate information. If you want to "
-"make sure to be up-to-date, please refer to the <a href=\"%s%s\">English "
-"version</a>."
-msgstr ""
+msgid "PP > Score"
+msgstr "PP > Очков скора"
 
-msgid ""
-"If you truly have understood what's written above and you have understood "
-"that creating a multiaccount will lead to a restriction on your main "
-"account, you can click here and you'll be brought to the sign up page."
-msgstr ""
+msgid "Custom badge"
+msgstr "Свой значок"
 
-msgid "You look new here. Allow us to introduce you to what Kurikku is."
-msgstr ""
+msgid "<b>Do not use offensive badges and do not pretend to be someone else with your badge.</b> If you abuse the badges system, you'll be silenced and you won't be able to edit your custom badge anymore."
+msgstr "<b>Не используйте оскорбительный значки и не притворяйтесь кем-то другим с помощью вашего значка.</b> Если вы будете злоупотреблять системой значков, вы не сможете использовать чат и не сможете изменять ваш личный значок."
 
-# PAY ATTENTION! This is Log in *with* Kurikku, not *on* Kurikku. This is for
-# oauth.
-msgid "Log in with Kurikku"
-msgstr ""
+msgid "Enable"
+msgstr "Включить"
 
-msgid "This application will be able to:"
-msgstr ""
+msgid "Icon reference"
+msgstr "Ссылка на иконку"
 
-msgid "Identify"
-msgstr ""
+msgid "Dinosaur, oompa-loompa, cool guy..."
+msgstr "Динозавр, oompa-loompa, крутой парень..."
 
-msgid ""
-"See your public information (everything somebody can see on your user "
-"profile), however with this alone it will not be able to see your private "
-"information (for instance your email address)."
-msgstr ""
+msgid "Playstyle"
+msgstr "Стиль игры"
 
-msgid "Read private information"
-msgstr ""
+msgid "Here you can connect your social accounts (VK, Twitch). Your accounts shows in your profile page and any user can see it!"
+msgstr "Здесь ты можешь подключить свой аккаунт из соц. сетей(ВК или Twitch). Эти аккаунты будут отображены в твоём профиле и каждый пользователь сможет на них зайти!"
 
-msgid ""
-"This application will be able to see your email address, and any private "
-"information we will add in the future."
-msgstr ""
+msgid "(Linked)"
+msgstr "(Привязан)"
 
-msgid "Write"
-msgstr ""
+msgid "(Not Linked)"
+msgstr "(Не привязан)"
 
-msgid ""
-"This application will be able to make modifications to your Kurikku account. "
-"This is potentially really dangerous! Use this only with applications that "
-"you trust."
-msgstr ""
+msgid "Unlink"
+msgstr "Отвязать"
 
-msgid "Approve"
-msgstr ""
+msgid "Link"
+msgstr "Привязать"
 
-msgid "Deny"
-msgstr ""
-
-msgid ""
-"<b>Franc[e]sco/lolisamurai</b>, for <a "
-"href='https://github.com/Francesco149/oppai'>oppai</a>, used as standard pp "
-"calculator."
-msgstr ""
-
-msgid ""
-"<b>Tom94</b>, for <a href='https://github.com/ppy/osu-performance'>osu-"
-"performance</a>, used as a reference for our mania pp calculator."
-msgstr ""
-"<b>Tom94</b>, for <a href='https://github.com/ppy/osu-performance'>osu-"
-"performance</a> был использован как справочный материал для нашего "
-"калькулятора mania pp."
-
-msgid ""
-"<b>jrosdahl</b>, for <a "
-"href='https://github.com/jrosdahl/miniircd'>miniircd</a>, used as a base for "
-"our IRC server."
-msgstr ""
-"<b>jrosdahl</b>, for <a "
-"href='https://github.com/jrosdahl/miniircd'>miniircd</a> был использован как "
-"основа для нашего IRC сервера."
-
-msgid ""
-"<b><a id='everyone' class='clickable'>Everyone</a></b> who has supported the "
-"Kurikku project by donating or inviting other people."
-msgstr ""
-
-msgid "They told me these are very cool people."
-msgstr ""
-
-msgid "And more..."
-msgstr ""
-
-msgid "Do you want to be in this list?"
-msgstr ""
-
-msgid "Support us with a donation!"
-msgstr ""
-
-msgid "(You get other cool perks too)"
-msgstr ""
-
-msgid ""
-"The Kurikku API is the system through which developers can create "
-"applications to interact with Kurikku. <b>If you're asked to fill out an API "
-"token from this page, be wary and only actually create the token if you "
-"really trust the owner of the application.</b>"
-msgstr ""
-
-msgid "OUR DISCORD"
-msgstr "Наш Дискорд"
-
-msgid "That's DonationAlerts - \"streamer's main tool\" but we use that beautiful platform for collect donations ヽ(・∀・)ﾉ"
-msgstr "Это DonationAlerts - \"главный инструмент стримера\", но мы пользуемся этой шикарной платформой чтобы собирать донаты<br/>ヽ(・∀・)ﾉ"
-
-msgid "<b>NOTE:</b> please check description before you donate"
-msgstr "<b>Примечание:</b> пожалуйста прочитай описание перед донатом"
-
-msgid "Donate!"
-msgstr "Донат!"
-
-msgid "Shop"
-msgstr "Магазин"
-
-msgid "Why do we need donations?"
-msgstr "Почему нам нужны донаты?"
-
-msgid "Hunters who catch and send in ban cheaters. We are proud of them."
-msgstr "Охотники, которые ловят и отправляют в бан читеров. Мы гордимся ими"
-
-msgid "Top Score"
-msgstr "Лучший скор"
-
-msgid "Top Score RX"
-msgstr "Лучший скор RX"
-
-msgid "Done by <a href='/u/%s'>%s</a>"
-msgstr "Поставлен <a href='/u/%s'>%s</a>"
-
-msgid "On this moment <b>%s online</b> and <b>%s registered users</b>"
-msgstr "На данный момент играют <b>%s игроков</b> и зарегестрировано <b>%s игроков</b>"
-
-msgid "Learn the experience of playing on the fastest growing private server of osu!"
-msgstr "Познайте опыт игры на самом быстроразвивающемся приватном сервере osu!"
-
-msgid "Check us!"
-msgstr "Попробуй!"
-
-msgid "Server news"
-msgstr "Новости сервера"
-
-msgid "Welcome back, <span class='subtitle'>%s</span>!"
-msgstr "Привет, <span class='subtitle'>%s</span>!"
-
-msgid "players"
-msgstr "игроков"
-
-msgid "online"
-msgstr "онлайн"
-
-msgid "You haven't enough votes. Min votes to exchange = 15. 15 votes = 150 rub"
-msgstr "У вас не достаточно. Минимальное количество голосов для обмена 15. 15 голосов = 150 руб."
-
-msgid "Exchange your votes!"
-msgstr "Обменяй свои голоса!"
-
-msgid "You have %d votes!"
-msgstr "У вас %d голосов"
-
-msgid "Why do we need these votes?"
-msgstr "Зачем нам нужны эти голоса?"
-
-msgid "These votes help us promote the server at the <a class='ui subtitle' href='https://topg.org' alt='topg link'>TopG.org</a> monitoring site."
-msgstr "Эти голоса помогают нам развивать сервер на площадке мониторинга <a class='ui subtitle' href='https://topg.org' alt='topg link'>TopG.org</a>"
-
-msgid "Vote for us and get free donor!"
-msgstr "Голосуй и получи донора!"
-
-msgid "Vote!"
-msgstr "Голосовать!"
-
-msgid "You have %d votes. For free donor you need %s"
-msgstr "У вас %d голосов. Для донора, тебе нужно %s"
-
-msgid "Community"
-msgstr "Комьюнити"
-
-msgid "viewers"
-msgstr "зрителей"
-
-msgid "Streamers"
-msgstr "Стримеры"
-
-msgid "Most ranked scores"
-msgstr "Наибольшее количество ранкед скоров"

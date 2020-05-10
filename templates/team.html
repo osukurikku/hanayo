@@ -59,6 +59,7 @@ KyutGrill=team2.jpg
 			<h1 class="ui heading">{{ .T "Special thanks" }}</h1>
 			<p>{{ .T "Here's a list of people who helped with Kurikku" }}</p>
 			{{ template "userGroup" (.Get "badges/members?id=%d" 6) }}
+			{{ template "userGroup" (.Get "badges/members?id=%d" 24) }}
 		</div>
 		<div class="ui segment">
 			{{ .T "Looking for how you should contact our team? Check out <a href='/help'>this page</a>." | html }}

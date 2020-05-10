@@ -1,6 +1,6 @@
 {
     "An error occurred while contacting the Kurikku API. Please report this to a Kurikku developer.": "Произошла ошибка при соединении с API Kurikku. Пожалуйста, сообщите об этом разработчикам.",
-    "Why, LOVE, of course!": "Уровень",
+    "Why, LOVE, of course!": "Уровень!",
     "Your new settings have been saved.": "Ваши новые настройки были сохранены.",
     "Your userpage has been saved.": "Ваш юзерпейдж был сохранен.",
     "Please provide a valid link, in the form of either https://osu.ppy.sh/s/&lt;ID&gt; or https://osu.ppy.sh/b/&lt;ID&gt;.": "Пожалуйста, вставьте в поле рабочую ссылку вида https://osu.ppy.sh/s/&lt;ID&gt; или https://osu.ppy.sh/b/&lt;ID&gt;.",
@@ -10,7 +10,7 @@
     "Remove friend": "Удалить из друзей",
     "Unmutual friend": "Удалить из друзей",
     "General info": "Основная информация",
-    "Score": "Очки",
+    "Score": "Счёт",
     "Load more": "Загрузить ещё",
     "Best scores": "Рекорды",
     "Recent scores": "Недавно сыгранные",
@@ -42,4 +42,4 @@
     "viewers": "зрителей",
     "Total Playtime:": "Времени в игре",
     "{0}d {1}h {2}m": "{0}д {1}ч {2}м"
-} 
+}
