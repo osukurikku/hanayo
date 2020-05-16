@@ -758,10 +758,15 @@ a.camouflaged:hover {
 .owner {
   
   font-size:40px;
-  
   -webkit-animation: rainbow 2s infinite; 
   -ms-animation: rainbow 2s infinite; 
   animation: rainbow 2s infinite; 
+}
+
+.rainbowic {
+  -webkit-animation: rainbow 2s infinite; 
+  -ms-animation: rainbow 2s infinite; 
+  animation: rainbow 2s infinite;
 }
 
 /* Chrome, Safari, Opera */

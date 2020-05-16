@@ -1,5 +1,5 @@
 {
-    "An error occurred while contacting the Kurikku API. Please report this to a Kurikku developer.": "Nastąpił błąd podczas kontaktowania API. Proszę powiadomić o tym deweloperów Kurikku.",
+    "An error occurred while contacting the Kurikku API. Please report this to a Kurikku developer.": "Nastąpił błąd podczas kontaktowania z API. Proszę powiadomić o tym deweloperów Kurikku.",
     "Why, LOVE, of course!": "Poziom",
     "Your new settings have been saved.": "Twoje ustawienia zostały zapisane.",
     "Your userpage has been saved.": "Twoja strona użytkownika była zapisana.",
@@ -36,5 +36,10 @@
     "($ {{ usd }} / BTC {{ btc }})": "($ {{ usd }} / BTC {{ btc }})",
     "Mutual": "Wspólny znajomy",
     "Remove": "Usuń",
-    "Add": "Dodaj"
+    "Add": "Dodaj",
+    "Max, {0} players": "Maks. {0} graczy",
+    "Seems nobody streaming, maybe you will be first?": "Wydaje się, że nikt nie streamuje. Może będziesz pierwszy?",
+    "viewers": "widzowie",
+    "Total Playtime:": "Czas gry:",
+    "{0}d {1}h {2}m": "{0}d {1}g {2}m"
 }
