@@ -172,11 +172,11 @@ func exchangeVotes(c *gin.Context) {
 		return
 	}
 
-	if voter.Count < 25 {
+	if voter.Count < 15 {
 		respEmpty(c, "Forbidden", warningMessage{T(c, "You haven't enough votes. Min votes to exchange = 15. 15 votes = 150 rub")})
 		return
 	}
-	voter.Count -= 25
+	voter.Count -= 15
 	db.Exec("UPDATE topg_votes SET count = ? WHERE userid = ?", voter.Count, voter.UserID)
 	db.Exec(`UPDATE users SET balance = balance+150 WHERE id = ?`, voter.UserID)
 
