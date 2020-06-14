@@ -1,0 +1,1121 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: kurikku-hanayo\n"
+"X-Crowdin-Project-ID: 401388\n"
+"X-Crowdin-Language: th\n"
+"X-Crowdin-File: templates.pot\n"
+"X-Crowdin-File-ID: 4\n"
+"Project-Id-Version: kurikku-hanayo\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Thai\n"
+"Language: th_TH\n"
+"PO-Revision-Date: 2020-06-14 12:54\n"
+
+msgid "Hey, %s."
+msgstr "ว่าไง %s"
+
+msgid "Before proceding any further on Kurikku, we require you to use the message you just received on telegram to log in to your account."
+msgstr "ก่อนจะทำอะไรมากกว่านี้ใน Kurikku เราต้องการให้คุณใช้ข้อความที่คุณพึ่งได้รับใน Telegram เพื่อเข้าสู่ระบบบัญชีของคุณ"
+
+msgid "Before proceding further on Kurikku, we require you to use your Google Authenticator App to use the code for Kurikku, so that we can log you in."
+msgstr "ก่อนจะทำอะไรมากกว่านี้ใน Kurikku เราต้องการให้คุณใช้โค้ตในแอป Google Authenticator เพื่อเข้าสู่ระบบบัญชีของคุณ"
+
+msgid "Telegram code"
+msgstr "โค้ต Telegram"
+
+msgid "(send again?)"
+msgstr "(ส่งอีกรอบมั้ย?)"
+
+msgid "Lost your phone, or can't access Google Authenticator?"
+msgstr "ทำโทรศัพท์หายหรือเข้า Google Authenticator ไม่ได้งั้นหรอ?"
+
+msgid "Click here to use a recovery code."
+msgstr "กดที่นี่เพื่อใช้โค้ตกู้คืน"
+
+msgid "Can't find a way to get back access to your Kurikku account? Fear not! If you have your recovery codes which we recommended you to print you can type one in here and we'll magically log you in this time. After you've managed to get in, please disable and then re-enable 2FA, so you won't risk losing your account again."
+msgstr "ไม่รู้ว่าจะทำยังไงถึงจะได้บัญชีคืนหรอ? ไม่ต้องกลัว! ถ้าคุณมีโค้ตกู้คืนซึ่งเราแนะนำคุณให้ปริ้นต์ไว้ คุณสามารถพิมพ์ไว้ที่นี้และเราจะท่องคาถาให้บัญชีคุณออกจากระบบ หลังจากนั้นถ้าคุณเข้ามาแล้ว กรุณาปิดและเปิด 2FA ใหม่ เพื่อที่จะให้บัญชีของคุณไม่เสี่ยงในการหายอีก"
+
+msgid "Recover account"
+msgstr "กู้คืนบัญชี"
+
+msgid "Ooops! Looks like something went really wrong while trying to process your request. Perhaps report this to a developer? Retrying doing what you were trying to do might work, too."
+msgstr "อุย... เหมือนว่ามีอะไรผิดปกติขณะทำรายการของคุณน่ะ ลองติดต่อทีมงาน Kurikku ดูนะ...? หรือลองใหม่อีกรอบก็อาจจะติด... เหมือนกัน"
+
+msgid "Your account is currently in restricted mode. You will not be able to perform certain actions, and your profile can only be seen by you and by Kurikku's staff. If you believe this was a mistake, or a month has passed since you first saw this, then you can send an appeal to <a href=mailto:support@kurikku.pw>support@kurikku.pw</a>."
+msgstr "บัญชีคุณตอนนี้กำลังถูกระงับ! คุณจะไม่สามารถทำอะไรได้และคุณจะถูกเห็นโดยคุณเองและทีมงาน Kurikku เท่านั้น! ถ้าคุณรู้สึกว่าเราทำอะไรผิดพลาดไป หรือ หลังจากผ่านไปเดือนนึง คุณสามารถลองขอปลดได้ที่อีเมลของเรา <a href=mailto:support@kurikku.pw>support@kurikku.pw</a>"
+
+msgid "Kurikku's score submission is currently in maintenance mode. You will not be allowed to submit scores for the time being."
+msgstr "ระบบคะแนนในเซิร์ฟเวอร์ Kurikku กำลังปิดปรับปรุงตอนนี้ คุณจะไม่สามารถลงคะแนนอะไรใดๆไม่ได้เลย! ขออภัยในความไม่สะดวก!"
+
+msgid "Kurikku's website is currently in maintenance mode. Only certain users are allowed to access the full website."
+msgstr "เว๊ปไซต์ Kurikku อยู่ในช่วงปิดปรับปรุง เฉพาะผู้ใช้ที่อนุญาตเท่านั้นที่สามารถใช้เว๊ปไซต์อย่างเต็มรูปแบบได้!"
+
+msgid "&copy; %d Ripple, osu!Kurikku, using Hanayo %s."
+msgstr "&copy; %d Ripple, osu!Kurikku, ใช้ Hanayo เวอร์ชั่น %s"
+
+msgid "Who is working on this thing?"
+msgstr "ใครเป็นคนทำส่วนนี้เนี่ย?"
+
+msgid "Team"
+msgstr "ทีมงาน"
+
+msgid "GitHub"
+msgstr "GitHub"
+
+msgid "Status"
+msgstr "สถานะตอนนี้"
+
+msgid "Language"
+msgstr "ภาษา"
+
+msgid "Artist"
+msgstr "เจ้าของเพลง"
+
+msgid "Title"
+msgstr "ชื่อเพลง"
+
+msgid "Creator"
+msgstr "ผู้สร้าง"
+
+msgid "Source"
+msgstr "ที่มา"
+
+msgid "Circle Size"
+msgstr "ขนาดวงกลม"
+
+msgid "HP Drain"
+msgstr "ความเร็วการลด HP"
+
+msgid "Overall Difficulty"
+msgstr "ระดับความยากรวมๆ"
+
+msgid "Passes/Plays"
+msgstr "ผ่าน/เล่นไปกี่ครั้งแล้ว"
+
+msgid "Approach Rate"
+msgstr "ความไวของ Approach Rate"
+
+msgid "Star Difficulty"
+msgstr "ระดับดาว"
+
+msgid "Length"
+msgstr "ความยาว"
+
+msgid "BPM"
+msgstr "BPM"
+
+msgid "osu!direct"
+msgstr "osu!direct"
+
+msgid "download"
+msgstr "ดาวน์โหลด"
+
+msgid "download (no video)"
+msgstr "ดาวน์โหลด (แบบไม่เอาวีดีโอ)"
+
+msgid "Rank"
+msgstr "ที่"
+
+msgid "Player"
+msgstr "ผู้เล่น"
+
+msgid "Score"
+msgstr "คะแนน"
+
+msgid "Mods"
+msgstr "ม็อด"
+
+msgid "Accuracy"
+msgstr "ความแม่นยำ"
+
+msgid "Combo"
+msgstr "คอมโบ"
+
+msgid "PP"
+msgstr "PP"
+
+msgid "This is the changelog. Changes are published here as soon as they hit the production status (as in, live on the website)."
+msgstr "นี่คือประวัติการเปลี่ยนแปลง การเปลี่ยนแปลงจะถูกเผยแพร่ที่นี่ทันทีที่เมื่ออยู่ในโหมดสถานะสาธารณะ (เช่นอยู่บนเว็บไซต์นี้ไงละ)"
+
+msgid "Author"
+msgstr "ผู้จัดทำ"
+
+msgid "Subject"
+msgstr "หัวข้อ"
+
+msgid "Time"
+msgstr "เวลา"
+
+msgid "[Clan tag] Name"
+msgstr "[แท็คแคลน] ชื่อ"
+
+msgid "PP/Score"
+msgstr "PP/คะแนน"
+
+msgid "Playcount"
+msgstr "เล่นไปทั้งหมด"
+
+msgid "%s"
+msgstr "%s"
+
+msgid "(%s)"
+msgstr "(%s)"
+
+msgid "Clan Owner"
+msgstr "เจ้าของแคลน"
+
+msgid "Global Rank"
+msgstr "แรงค์ทั่วโลก"
+
+msgid "Ranked Score"
+msgstr "คะแนนแบบแรงค์"
+
+msgid "Total Score"
+msgstr "คะแนนทั้งหมด"
+
+msgid "Total Playcount"
+msgstr "เล่นไปทั้งหมด"
+
+msgid "Total Replays Watched"
+msgstr "มีคนเปิดรีเพลย์ไปทั้งหมด"
+
+msgid "Total Hits"
+msgstr "กดไปทั้งหมด"
+
+msgid "Disband Clan"
+msgstr "ยุบแคลน"
+
+msgid "Leave Clan"
+msgstr "ออกจากแคลน"
+
+msgid "Members"
+msgstr "สมาชิก"
+
+msgid "The members of the clan."
+msgstr "สมาชิกของแคลน"
+
+msgid "Need some help getting around? Look no further! From here you will be able to view our documentation, which is basically a very simplistic wiki."
+msgstr "ต้องการความช่วยเหลืองั้นหรอ? ไม่ต้องไปหาที่ไหนเลย! ถ้าคุณมาที่นี่แล้ว คุณจะสามารถดูเอกสารของเราซึ่งเป็นวิกิที่เรียบง่ายมากสุดๆ"
+
+msgid "Looks like there is no documentation on this Kurikku instance!"
+msgstr "เหมือนว่าจะไม่มีเอกสารให้อ่านในเซิร์ฟเวอร์นี้นะ"
+
+msgid "It seems like the original version of this file has been updated, so this file is out of date and may contain inaccurate information. If you want to make sure to be up-to-date, please refer to the <a href=\"%s%s\">English version</a>."
+msgstr "ดูเหมือนว่าไฟล์ต้นฉบับเวอร์ชันนี้จะได้รับการอัปเดตดังนั้นไฟล์นี้อาจจะล้าสมัยและอาจมีข้อมูลที่ไม่ถูกต้อง หากคุณต้องการแน่ใจว่าเป็นรุ่นล่าสุดโปรดดู <a href=\"%s%s\">เวอร์ชันภาษาอังกฤษ</a>"
+
+msgid "Documentation file not found!"
+msgstr "ไม่พบไฟล์เอกสาร!"
+
+msgid "View all docs"
+msgstr "ดูเอกสารทั้งหมด"
+
+msgid "On this page you can see all of your friends, and unfriend them as you see fit."
+msgstr "ในหน้านี้ คุณจะเจอเพื่อนทั้งหมดของคุณ และคุณสามารถเลิกเป็นเพื่อนได้แล้วแต่คุณเลย"
+
+msgid "Mutual"
+msgstr "เป็นเพื่อกันทั้งสองฝ่าย"
+
+msgid "Remove"
+msgstr "เอาออก"
+
+msgid "If you need to get in touch with our support team (our Community Managers), you will need to either send an email to our support email address, or join our <a href='https://discord.gg/5uA3c76'>Discord Server</a>. You can compose an email to it by clicking the button at the bottom of this page. <b>Please read the following</b> though, as it is important."
+msgstr "หากคุณต้องการติดต่อกับทีมงานช่วยเหลือของเรา (หรือผู้จัดการความสงบของชุมชนนั้นเอง), คุณนั้นจะต้องส่งอีเมลล์ไปหาทีมงานของเรา, หรือเข้า <a href='https://discord.gg/5uA3c76'>เซิร์ฟเวอร์ Discord ของเรา</a>. โดยคุณสามารถส่งอีเมลมาหาเราได้เลยโดยกดปุ่มข้างล่างหน้านี้ <b>แต่ก่อนกดนั้น</b> อย่าลืมอ่านข้างล่าง, มันสำคัญมากๆเลยล่ะ"
+
+msgid "The support email <b>is not meant for technical support</b>. If you need technical support, then please join our <a href='https://discord.gg/5uA3c76'>Discord Server</a>, and ask your question on the <b>#help channel</b>. You should also join the Discord server and ask a CM if you have any informal inquiry that you may have."
+msgstr "อีเมลล์ซัพพอร์ตของเรา<b>ไม่ได้มีไว้ติดต่อด้านเทคนิก</b> หากคุณอยากติดต่อเกี่ยวกับด้านเทคนิกล่ะก็กรุณาเข้ามาที่<a href='https://discord.gg/5uA3c76'>เซิร์ฟเวอร์ Discord</a>และถามคำถามที่อยากจะถามใน<b>ห้อง #help</b> คุณสามารถเข้าเซิร์ฟเวอร์ Discord ของเราเพื่อถามเกี่ยวกับเรื่องอื่นๆก็ได้นะ"
+
+msgid "When contacting the support mail, please make sure to <b>send the email from the email address you signed up on Kurikku with</b>."
+msgstr "เวลาคุณติดต่อหาพวกเรา กรุณาตรวจสอบให้แน่ใจว่าคุณส่งอีเมลจาก<b>เมลที่คุณสมัครในเซิร์ฟเวอร์ Kurikku</b>"
+
+msgid "OUR DISCORD"
+msgstr "ดิสคอร์ดของพวกเรา"
+
+msgid "Full Name"
+msgstr "ชื่อ-นามสกุล"
+
+msgid "E-Mail"
+msgstr "อีเมลล์"
+
+msgid "Text"
+msgstr "ข้อความ"
+
+msgid "Send"
+msgstr "ส่ง"
+
+msgid "On this moment <b>%s online</b> and <b>%s registered users</b>"
+msgstr "ขณะนี้มีคนออนไลน์ทั้งหมด <b>%s คน</b> และสมัครเข้าเซิร์ฟเวอร์แล้วทั้งหมด <b>%s คน</b>"
+
+msgid "Learn the experience of playing on the fastest growing private server of osu!"
+msgstr "ลองเรียนรู้ประสบการณ์กับเซิร์ฟเวอร์ที่เติบโตไวที่สุดของ osu!"
+
+msgid "Check us!"
+msgstr "ลองดูสิ!"
+
+msgid "Register"
+msgstr "สมัครสมาชิก"
+
+msgid "Done by <a href='/u/%s'>%s</a>"
+msgstr "โดย <a href='/u/%s''>%s</a>"
+
+msgid "Top Score"
+msgstr "คะแนนที่ดีที่สุด"
+
+msgid "Top Score RX"
+msgstr "คะแนนที่ดีที่สุด (Relax)"
+
+msgid "Top donators"
+msgstr "คนที่โดเนทเยอะที่สุด"
+
+msgid "Expires in <b>%s</b>"
+msgstr "จะหมดอายุภายใน <b>%s</b>"
+
+msgid "Welcome back, <span class='subtitle'>%s</span>!"
+msgstr "ยินดีต้อนรับกลับมานะ <span class='subtitle'>%s</span>!"
+
+msgid "players"
+msgstr "คน"
+
+msgid "online"
+msgstr "ออนไลน์"
+
+msgid "Server news"
+msgstr "ข่าวสารเซิร์ฟเวอร์"
+
+msgid "viewers"
+msgstr "คนดู"
+
+msgid "Most played beatmaps"
+msgstr "แมพที่เล่นมากที่สุด"
+
+msgid "Submitted Scores"
+msgstr "คะแนนที่อัพลงเซิร์ฟ"
+
+msgid "Vote for us and get free donor!"
+msgstr "โหวตพวกเราเพื่อรับยศโดเนทฟรี!"
+
+msgid "Vote!"
+msgstr "โหวตเลย!"
+
+msgid "Here you can generate a new IRC token. You can use it to connect to Kurikku's chat using IRC. Remember that your IRC token is like a password, anyone who knows it, has access to your account. If you're interested knowing how to connect to Kurikku's chat via IRC."
+msgstr "คุณสามารถสร้างโทเค็น IRC ใหม่ได้ที่นี่ และคุณสามารถใช้มันเพื่อเชื่อมต่อกับการแชทของ Kurikku โดยใช้ IRC อย่าลืมว่าโทเค็น IRC ของคุณเป็นเหมือนรหัสผ่าน ใครก็ตามที่รู้จักสามารถเข้าถึงบัญชีของคุณได้ หากคุณสนใจที่จะรู้วิธีเชื่อมต่อการแชทของ Kurikku ผ่านทาง IRC"
+
+msgid "Generate a new token!"
+msgstr "สร้างโทเค็นใหม่"
+
+msgid "You're already logged in!"
+msgstr "คุณเข้าสู่ระบบอยู่แล้ว"
+
+msgid "Username (or email)"
+msgstr "ชื่อผู้ใช้ (หรืออีเมลล์ก็ได้อะนะ)"
+
+msgid "Username"
+msgstr "ชื่อผู้ใช้"
+
+msgid "Password"
+msgstr "รหัสผ่าน"
+
+msgid "(forgot?)"
+msgstr "(หรือลืมรหัสผ่าน?)"
+
+msgid "Submit"
+msgstr "ส่ง"
+
+msgid "Home page"
+msgstr "หน้าหลัก"
+
+msgid "Leaderboard"
+msgstr "กระดานคะแนน"
+
+msgid "Information"
+msgstr "ข้อมูล"
+
+msgid "Tournament live"
+msgstr "ไลฟ์สดการแข่งขัน"
+
+msgid "Signature Generator"
+msgstr "ตัวสร้างลายเซ็นต์"
+
+msgid "Discord"
+msgstr "ดิสคอร์ด"
+
+msgid "Contact support"
+msgstr "ติดต่อฝ่ายช่วยเหลือ"
+
+msgid "Documentation"
+msgstr "วิธีการใช้งานต่างๆ"
+
+msgid "Beatmaps"
+msgstr "บีทแมพ"
+
+msgid "Beatmaps Searching"
+msgstr "ค้นหาบีทแมพ"
+
+msgid "Rank Request"
+msgstr "ขอแรงค์แมพ"
+
+msgid "Community"
+msgstr "ชุมชน"
+
+msgid "Clans"
+msgstr "แคลน"
+
+msgid "Clans Leaderboard"
+msgstr "กระดานแคลน"
+
+msgid "Clans Create"
+msgstr "สร้างแคลน"
+
+msgid "Streamers"
+msgstr "สตรีมเมอร์"
+
+msgid "Donate"
+msgstr "โดเนท"
+
+msgid "Why do we need donations?"
+msgstr "ทำไมพวกเราต้องการคนโดเนทล่ะ?"
+
+msgid "Shop"
+msgstr "ร้านค้า"
+
+msgid "Switcher"
+msgstr "ตัวสลับเซิร์ฟเวอร์"
+
+msgid "Admin Panel"
+msgstr "แผงแอดมิน"
+
+msgid "Looking for someone?"
+msgstr "หาใครอยู่หรือเปล่า?"
+
+msgid "Profile"
+msgstr "โปรไฟล์"
+
+msgid "Friends"
+msgstr "เพื่อน"
+
+msgid "Subscribers"
+msgstr "ผู้ติดตาม"
+
+msgid "Settings"
+msgstr "การตั้งค่า"
+
+msgid "Log out"
+msgstr "ออกจากระบบ"
+
+msgid "Log in"
+msgstr "เข้าสู่ระบบ"
+
+msgid "We're sorry, but we were unable to find the content you were looking for!"
+msgstr "ขอโทษจริงๆที่เราหาไม่เจอ เราหาทั่วทุกมุมแล้วเร็วไม่เจออะไรเลย!"
+
+msgid "This application will be able to:"
+msgstr "แอปพลิเคชันนี้จะสามารถ:"
+
+msgid "Identify"
+msgstr "ยืนยันและตรวจสอบ"
+
+msgid "See your public information (everything somebody can see on your user profile), however with this alone it will not be able to see your private information (for instance your email address)."
+msgstr "ดูข้อมูลสาธารณะของคุณ (ทุกอย่างที่สามารถดูได้ในโปรไฟล์ผู้ใช้ของคุณ) อย่างไรก็ตามสิ่งนี้จะไม่สามารถดูข้อมูลส่วนตัวของคุณ (เช่นที่อยู่อีเมลของคุณ)"
+
+msgid "Read private information"
+msgstr "อ่านข้อมูลส่วนตัว"
+
+msgid "This application will be able to see your email address, and any private information we will add in the future."
+msgstr "แอปพลิเคชันนี้จะสามารถดูที่อยู่อีเมลของคุณและข้อมูลส่วนตัวใด ๆ ที่เราจะเพิ่มในอนาคต"
+
+msgid "Write"
+msgstr "เขียน"
+
+msgid "This application will be able to make modifications to your Kurikku account. This is potentially really dangerous! Use this only with applications that you trust."
+msgstr "แอปพลิเคชันนี้จะสามารถแก้ไขบัญชี Kurikku ของคุณได้ นี่อาจเป็นอันตรายจริงๆนะ! ใช้สิ่งนี้กับแอปพลิเคชันที่คุณเชื่อถือเท่านั้น"
+
+msgid "Approve"
+msgstr "ยอมรับ"
+
+msgid "Deny"
+msgstr "ไม่ยอมรับ"
+
+msgid "created by %s"
+msgstr "สร้างโดย %s"
+
+msgid "User is <b>silenced</b> for %s, expires %s."
+msgstr "ผู้ใช้คนนี้ <b>โดนใบ้</b> มาได้ %s แล้ว หมดเวลาตอน %s"
+
+msgid "User is <b>%s</b>"
+msgstr "ผู้ใช้คนนี้กำลัง <b>%s</b>"
+
+msgid "Unknown"
+msgstr "ไม่รู้"
+
+msgid "(aka <b>%s</b>)"
+msgstr "(รู้จักกันในนามว่า <b>%s</b>)"
+
+msgid "Online"
+msgstr "กำลังออนไลน์"
+
+msgid "Offline"
+msgstr "ออฟไลน์"
+
+msgid "subs count"
+msgstr "คน"
+
+msgid "VK"
+msgstr "VK"
+
+msgid "Twitch"
+msgstr "Twitch"
+
+msgid "<b>%s</b> "
+msgstr "<b>%s</b> "
+
+msgid " from <b>%s</b>."
+msgstr " จาก <b>%s</b>."
+
+msgid "<b>%s</b> is a player from <b>%s</b>."
+msgstr "<b>%s</b> คือผู้เล่นจากประเทศ <b>%s</b>."
+
+msgid "They registered %s."
+msgstr "เขาสมัครเมื่อ %s."
+
+msgid "Last seen: %s."
+msgstr "เห็นล่าสุดเมื่อ: %s"
+
+msgid "They play with %s."
+msgstr "เขาเล่นด้วย %s"
+
+msgid "Global rank"
+msgstr "ลำดับทั่วโลก"
+
+msgid "Country rank"
+msgstr "ลำดับประเทศ"
+
+msgid "Clan"
+msgstr "แคลน"
+
+msgid "Ranked score"
+msgstr "คะแนนแบบแรงค์"
+
+msgid "Total score"
+msgstr "คะแนนทั้งหมด"
+
+msgid "Replays watched"
+msgstr "มีคนดู Replays ทั้งหมด"
+
+msgid "Total hits"
+msgstr "กดไปทั้งหมด"
+
+msgid "Level %s"
+msgstr "เลเวล %s"
+
+msgid "Achievements"
+msgstr "ความสำเร็จ"
+
+msgid "Load more"
+msgstr "โหลดเพิ่ม"
+
+msgid "Forgot your password? Worry not! Here you can reset it. Just tell us your username or email address, and we'll take care of it. You will receive an email at the email address you used to sign up on Kurikku. To continue the password reset procedure, click the link on that email."
+msgstr "ลืมพาสเวิร์ดหรอ? ไม่ต้องเครียด! มาที่นี่แล้วคุณสามารถรีเซ็ตได้ แค่บอกชื่อผู้ใช้หรืออีเมลของคุณ และเราจะจัดการให้คุณเอง คุณจะได้รับอีเมลจากเราที่อีเมลล์ที่คุณสามารถในเซิร์ฟเวอร์ Kurikku เพื่อทำรายการขั้นต่อไป กรุณากดไปที่ลิ้งค์อีเมลที่เราส่งไปนะ"
+
+msgid "Reason"
+msgstr "สาเหตุ"
+
+msgid "Foul play / Cheating"
+msgstr "เล่นผิดกติกา / โปร"
+
+msgid "Spamming"
+msgstr "สแปม"
+
+msgid "Other"
+msgstr "อื่นๆ"
+
+msgid "Additional text"
+msgstr "ข้อความเพิ่มเติม"
+
+msgid "We must say, that we can silence you if the report is false or you're abusing the report system (spamming, etc.)"
+msgstr "บอกเลยนะว่าเราสามารถใบ้คุณได้เลยนะถ้าคุณรายงานแบบผิดๆหรือพังระบบรีพอร์ต (ส่งรัวๆอะไรพวกนี้อ่ะนะ)"
+
+msgid "Hello! Authorization was successful, time to go back ...."
+msgstr "ว่าไงจ้ะ! เรายืนยันเรียบร้อยแล้วล่ะ ได้เวลากลับแล้วสินะ..."
+
+msgid "Back"
+msgstr "กลับ"
+
+msgid "On this page you can see all of your subscribers, and add new friends if you see fit."
+msgstr "ในหน้านี้ คุณจะเจอผู้ติดตามทั้งหมดของคุณ และคุณสามารถเลิกเป็นเพื่อนได้แล้วแต่คุณเลย"
+
+msgid "You are a donor!"
+msgstr "คุณคือผู้บริจาค!"
+
+msgid "Your donor expires <b>%s</b>. No need to feel guilty for not having donated!"
+msgstr "การบริจาคของคุณจะหมดตอน <b>%s</b> ไม่ต้องรู้สึกผิดหรอกนะถ้าคุณไม่ได้โดเนท"
+
+msgid "Did you know?"
+msgstr "รู้หมือไร่"
+
+msgid "(Probably.)"
+msgstr "(น่าจะรู้อยู่นะ)"
+
+msgid "(Probably not.)"
+msgstr "(คงไม่น่าจะรู้)"
+
+msgid "Kurikku is not cheap to run."
+msgstr "Kurikku ไม่ใช่ถูกๆที่จะเปิด"
+
+msgid "While we provide this service for free, we still have to pay for it, and if we always took the money out of our own pockets, 1. we would be broke, 2. we wouldn't be able to upgrade our hardware to accomodate our users. While we do have loads of software optimisations that allow us to have Kurikku run crazy fast while still being on not so high-end hardware, the more users we have, the higher-end our hardware needs to be. So we are asking you for help on this :)."
+msgstr "ในขณะที่เราให้บริการฟรีเรายังคงต้องจ่ายเงินและถ้าเรานำเงินออกจากกระเป๋าของเราเสมอ ซึ่งนั้นก็แปลว่า 1. เราจะจนแบบกินแกลบ 2. เราจะอับจนเกินเหตุและไม่มีตังอัพเกรดฮาร์ดแวร์ของเราให้รองรับผู้ใช้ของเราได้ ซึ่งพวกเรานั้นมีการเพิ่มประสิทธิภาพของซอฟต์แวร์จำนวนมาก ที่ทำให้ Kurikku นั้นทำงานแบบแรงทะลุนรกในขณะที่ยังไม่ได้ใช้ฮาร์ดแวร์ระดับสูง ผู้ใช้ยิ่งเยอะ เราก็ต้องมีฮาร์ดแวร์ที่สูงขึ้น ดังนั้นเราจึงขอความช่วยเหลือจากคุณในเรื่องนี้ยังไงละ :)"
+
+msgid "We are still students."
+msgstr "พวกเรายังเป็นนักเรียนอยู่"
+
+msgid "Kurikku developers, and most of the Kurikku staff, do not have a day job. This means that we get most of our income as students from doing small jobs as \"freelancers\" every so often, or, you know, allowance."
+msgstr "ทีมงานและพนักงาน Kurikku ส่วนใหญ่ไม่มีงานประจำวัน ซึ่งหมายความว่าเราจะได้รับรายได้ส่วนใหญ่จากการที่นักเรียนทำงานเล็ก ๆ เช่น เป็น \"ฟรีแลนซ์\" ทุกครั้ง หรือคุณก็รู้ๆอยู่นะ แบบว่า... เบี้ยเลี้ยงอ่ะ"
+
+msgid "We do not have ads. And never will."
+msgstr "พวกเราไม่มีโฆษณา และ ไม่มีวันมีแน่ๆ"
+
+msgid "You may have adblock enabled and have not noticed, but we don't have ads anywhere on our website. We believe ads are bad, as they can be very annoying to you and that you would rather spend a few bucks to help us rather than watch annoying ads all the time."
+msgstr "คุณอาจจะมี Adblock และไม่ได้สังเกตว่าเรานั้นไม่มีโฆษณาในเว็บไซต์ของเรา เราเชื่อว่าโฆษณาไม่ดีเนื่องจากโฆษณาเหล่านี้อาจสร้างความรำคาญให้คุณและคุณควรใช้เงินสองสามเหรียญเพื่อช่วยเราแทนที่จะดูโฆษณาที่น่ารำคาญตลอดเวลา"
+
+msgid "We love picking random icons from our icon library."
+msgstr "เราชอบเอาอะไรไม่รู้มาเป็นไอคอน"
+
+msgid "So what can you do?"
+msgstr "เราคุณสามารถทำอะไรได้บ้างล่ะ?"
+
+msgid "Well, you can give us even more money."
+msgstr "งั้น คุณก็ให้เงินเราเพิ่มก็ได้สิ"
+
+msgid "Here's what you get:"
+msgstr "และนี่คือสิ่งที่คุณได้:"
+
+msgid "Yellow username"
+msgstr "ชื่อเหลือง"
+
+msgid "Just like in osu!, you get a <b>shiny yellow username</b> in the in-game chat to show everyone you're a really cool dude who has helped us pay the server bills."
+msgstr "เช่นเดียวกับใน osu! คุณจะได้รับ <b>ชื่อสีเหลืองแสนมันวาว</b> ในการแชทในเกมเพื่อแสดงให้ทุกคนเห็นว่าคุณมันเก๋ามากที่ช่วยโดเนทค่าเซิร์ฟเวอร์"
+
+msgid "Donor badge"
+msgstr "โล่คนบริจาค"
+
+msgid "Again, just like in osu!, you will get a <b>donor badge</b> on your profile, to show everyone you're supporting us."
+msgstr "ก็เหมือน osu! อีกแหละ คุณจะได้รับ <b>โล่บริจาค</b> ในโปรไฟล์ของคุณ เพื่อให้ชาวโลกรู้ว่าคุณนั้นโดเนทช่วยพวกเรา"
+
+msgid "Custom badge editor"
+msgstr "ตัวทำโล่พิเศษ"
+
+msgid "You get to be able to create your <b>own personal badge</b>, with custom text and icon, to show off on your profile! Let the world know you're an anchor. Or prank people showing a spinnin' wheel with \"Loading...\"! Up to you."
+msgstr "คุณจะสามารถสร้าง <b>โล่ส่วนตัวของคุณเอง</b> พร้อมข้อความและไอคอนที่กำหนดเองเพื่อแสดงในโปรไฟล์ของคุณ! ให้ชาวโลกรู้ว่าคุณเป็นเทพทรูหรือคนที่เล่นพิเรนแบบทำโล่รูปโหลด \"กำลังโหลด ...\"! แล้วแต่คุณเลย"
+
+msgid "Friends ranking"
+msgstr "กระดานคะแนนแบบเพื่อน"
+
+msgid "<b>Competing with friends</b> is really cool, you can play on the leaderboard with someone more or less on your level, without getting crippling depression and RSI for not beating that pro!"
+msgstr "<b>การแข่งขันกับเพื่อน</b> มันเจ๋งสุดๆไปเลยละ คุณนั้นสามารถแข่งกับคนที่มีเลเวลสูงกว่าหรือน้อยกว่าโดยที่คุณไม่ได้เป็นโรคซึมเศร้าหรือเป็น RSI ที่ไปท้าตีไอ้จอมโหดนั้นด้วยละ ฮ่า!"
+
+msgid "Profile background"
+msgstr "ภาพพื้นหลังในโปรไฟล์"
+
+msgid "Think about <b>spicing your profile up with some eggplants</b>? Got you covered! Having donor privileges, you get to be able to change your profile background."
+msgstr "คิดเกี่ยวกับ<b>การเปลี่ยนพื้นหลังโปรไฟล์เป็นมะเขือม่วงงั้นหรอ</b>? ไม่ต้องห่วงเราเตรียมไว้แล้ว โดยที่คุณนั้นมีสิทธิพิเศษสำหรับคนบริจาค คุณสามารถเปลี่ยนพื้นหลังของโปรไฟล์คุณได้เลย"
+
+msgid "Unlimited Name Changes"
+msgstr "เปลี่ยนชื่อได้แบบไม่จำกัด"
+
+msgid "<b>Tired of your current identity?</b> Now you can have as many as you want! Just ask an administrator to change your name, as many times as you'd like."
+msgstr "<b>เบื่อกับตัวตนเดิมๆแล้วหรอ?</b> คราวนี้เปลี่ยนเท่าไหร่ก็ได้แล้วนะ! แค่ถามแอดมินเปลี่ยนชื่อให้แล้วแต่เลยว่าจะเอาเท่าไหร่"
+
+msgid "Unlimited Flag Changes"
+msgstr "เปลี่ยนประเทศได้แบบไม่จำกัด"
+
+msgid "<b>Want to appear as if you're from another country?</b> You also get as many of these as you'd like. Just enter in chat !flag <flag iso code>"
+msgstr "<b>อยากโชว์ว่าตัวเองมาจากประเทศอื่นหรือ?</b> อยากไปประเทศไหนก็ไปได้ แค่ใช้คำสั่งนี้ในแชท !flag <flag iso code>"
+
+msgid "Unlimited Stats Resets"
+msgstr "ล้างข้อมูลได้ไม่จำกัด"
+
+msgid "Now you can also <b>start fresh</b> with unlimited stats resets! Ask an administrator and they shall perform the deed."
+msgstr "ตอนนี้คุณสามารถ <b>เริ่มต้นใหม่</b> โดยล้างข้อมูลบัญชีตัวเองแบบไม่จำกัด แค่ถามแอดมินแล้วเขาจะจัดให้เลย"
+
+msgid "Viewing your subscribers"
+msgstr "ดูผู้ติดตามของคุณ"
+
+msgid "Now you can watch <b>your subscribers</b>. That's way to <b>found</b> new good friends"
+msgstr "ตอนนี้คุณจะสามารถดู <b>ผู้ติดตาม</b> ของคุณได้แล้วนะ นี่แหละจะช่วยคุณ<b>หา</b>เพื่อนใหม่ได้ดีเลยล่ะ"
+
+msgid "Chance to be in top donators"
+msgstr "โอกาสที่จะติดท๊อปคนโดเนทเยอะสุด"
+
+msgid "If you are <b>one of those who support our server the most</b>, you will be in the <b>top donators</b>. <b>Imagine</b> you are <b>on the main page</b>. That's cool)"
+msgstr "ถ้าคุณ<b>เป็นหนึ่งในคนที่สนับสนุนเซิร์ฟเวอร์เรามากที่สุด</b>ล่ะก็ คุณจะอยู่ในรายชื่อ<b>คนที่โดเนทมากที่สุด</b> <b>ลองคิดดูสิ</b> ถ้าแบบว่าคุณนั้นอยู่<b>หน้าหลัก</b>อ่ะ อย่างชอบเลยว่ะ)"
+
+msgid "Creating clans"
+msgstr "การสร้างแคลน"
+
+msgid "Wow, now you can create clan for you and your friends. <b>Pew-pew</b> with other clans."
+msgstr "ว้าว คุณสามารถสร้างแคลนสำหรับคุณและเพื่อนของคุณ <b>เพื่อไปท้าตี</b>กับแคลนอื่นๆได้แล้วนะ"
+
+msgid "And this is how you pay"
+msgstr "และนี้คือวิธีบริจาค"
+
+msgid "That's DonationAlerts - \"streamer's main tool\" but we use that beautiful platform for collect donations ヽ(・∀・)ﾉ"
+msgstr "นั้นก็คือ DonationAlerts - \"เครื่องมือหากินหลักของสตรีมเมอร์ต่างๆ\" แต่เราใช้สิ่งนี้นี่แหละในการเก็บเงินโดเนท ヽ(・∀・)ﾉ"
+
+msgid "Donate!"
+msgstr "โดเนท!"
+
+msgid "<b>NOTE:</b> please check description before you donate"
+msgstr "<b>สำคัญ:</b> กรุณาตรวจสอบข้อความพวกนี้ก่อนที่คุณจะโดเนทนะ"
+
+msgid "Please log in before purchasing supporter"
+msgstr "กรุณาเข้าสู่ระบบก่อนซื้อ supporter"
+
+msgid "Guide about Server Switcher!"
+msgstr "ข้อมูลเกี่ยวกับตัวสลับเซิร์ฟเวอร์"
+
+msgid "Hi! This little guide will show you how to connect on our server"
+msgstr "ว่าจังไส่ นี่คือวิธีเล็กๆน้อยในการเชื่อมต่อเซิร์ฟเวอร์ของเรา"
+
+msgid "The first thing you need to do is download one of a switchers:"
+msgstr "ก่อนอื่นอยากแรกเลย โหลดตัวสลับเซิร์ฟเวอร์ซักอันดังต่อไปนี้"
+
+msgid "Next we need to unpack one of a switchers, open, install the certificate and then press the green button <b>«Switch to Kurikku»</b>. That's all, welcome to one of most friendly private servers <b>on osu!</b>."
+msgstr "ต่อไปเราต้องเอาสลับเซิร์ฟเวอร์ออกจากไฟล์ ZIP จากนั้นก็เปิด, ติดตั้งใบอนุญาตให้เรียบร้อยจากนั้นกดปุ่มเขียวๆที่เขียนว่า <b>«Switch to Kurikku»</b> เท่านี้ก็เรียบร้อยแล้ว ยินดีต้อนรับเข้าสู่เซิร์ฟเวอร์ที่น่ารักที่สุดของเรา<b>บน osu!</b>."
+
+msgid "Videoguide:"
+msgstr "วีดีโอการใช้งาน:"
+
+msgid "This is a list of the wonderful people who keep Kurikku up and running and deal with its community."
+msgstr "นี่คือรายชื่อคนที่ช่วยเหลือให้ Kurikku นั้นยังเปิดอยู่และจัดการกับชุมชนต่างๆ"
+
+msgid "Owners"
+msgstr "เจ้าของเซิร์ฟเวอร์"
+
+msgid "The backbones of the server. The owners function as both the main community managers, as well as primary Developers. They work on everything from managing the team to making this page look nicer."
+msgstr "กระดูกสันหลังของชาติ เอ้ย เซิร์ฟเวอร์ นั้นก็คือเจ้าของเซิร์ฟเวอร์นั้นเองที่จัดการกับ ผู้จัดการความสงบของชุมชน พร้อมยังเป็นทีมงานผู้พัฒนาระบบ เขาทำทุกอย่างตั้งแต่ควบคุมทีมไปยันทำเว๊ปให้สวยงามขึ้น"
+
+msgid "Community Managers"
+msgstr "ผู้จัดการความสงบของชุมชน"
+
+msgid "Community Managers deal with bans, silences, name changes and pretty much everything that has to do with the community."
+msgstr "ผู้จัดการความสงบของชุมชนจะจัดการเรื่องแบน การใบ้ การเปลี่ยนชื่อ แบบประมาณว่าทุกอย่างเลยก็ว่าได้ที่เกี่ยวกับชุมชน"
+
+msgid "They take care of our Discord server and reply to emails sent to <a href='mailto:support@kurikku.pw'>support@kurikku.pw</a>. Community Managers have a red name in the in-game chat."
+msgstr "เขาจัดการกับเซิร์ฟเวอร์ Discord และตอบอีเมลที่ส่งไปยัง<a href='mailto:support@kurikku.pw'>support@kurikku.pw</a> ผู้จัดการความสงบของชุมชนจะมีชื่อสีแดงในเกม"
+
+msgid "Developers"
+msgstr "ทีมงานผู้พัฒนา"
+
+msgid "Developers add new features to the server, squash bugs, keep the server up and running and take care of its maintenance."
+msgstr "ทีมงานผู้พัฒนาเพิ่มระบบใหม่ๆให้กับเซิร์ฟเวอร์, ฆ่าบั๊ก, รักษาเซิร์ฟเวอร์ให้พร้อมใช้งานและดูแลการบำรุงรักษา"
+
+msgid "Replay Moderators"
+msgstr "ผู้จัดการความสงบด้านรีเพลย์"
+
+msgid "Hunters who catch and send in ban cheaters. We are proud of them."
+msgstr "นักฆ่าล่าโปร เราชอบพวกเขานะ"
+
+msgid "Chat Moderators"
+msgstr "ผู้จัดการความสงบของแชท"
+
+msgid "Chat moderators manage the chat to make sure The Law&trade; (the rules) is respected."
+msgstr "ผู้จัดการความสงบของแชทจัดการเกี่ยวกับแชทเพื่อให้แน่ใจว่า The Law&trade; (หรือกฎนั้นเอง) นั้นได้ถูกทำตามแล้ว"
+
+msgid "BATs"
+msgstr "หน่วยแรงค์แมพต่างๆ (Beatmap Appreciation Team)"
+
+msgid "BATs play beatmaps in the ranking queue and decide whether they are good enough to be ranked or not."
+msgstr "BATs จะเล่นบีทแมพต่างๆในรายชื่อบีทแมพอยู่ในขอให้อยู่ในโหมดแรงค์และจัดการว่ามันควรได้ถูกแรงค์หรือไม่"
+
+msgid "Special thanks"
+msgstr "ขอขอบคุณเป็นพิเศษ"
+
+msgid "Here's a list of people who helped with Kurikku"
+msgstr "นี่คือรายชื่อคนที่ช่วย Kurikku"
+
+msgid "Looking for how you should contact our team? Check out <a href='/help'>this page</a>."
+msgstr "กำลังหาวิธีที่จะติดต่อพวกเราอยู่หรอ? ลองดู<a href='/help'>หน้านี้</a>สิ"
+
+msgid "<b>Franc[e]sco/lolisamurai</b>, for <a href='https://github.com/Francesco149/oppai'>oppai</a>, used as standard pp calculator."
+msgstr "<b>Franc[e]sco/lolisamurai</b> สำหรับ <a href='https://github.com/Francesco149/oppai'>oppai</a> ที่เอาไว้ใช้คำนวณ PP สำหรับโหมด osu! Standard"
+
+msgid "<b>Semyon442</b>, for <a href='https://github.com/semyon422/omppc'>mania-pp</a> calculator"
+msgstr "<b>Semyon442</b> สำหรับ <a href='https://github.com/semyon422/omppc'>mania-pp</a> ที่เอาไว้ใช้คำนวณ PP สำหรับ Mania"
+
+msgid "<b>Sunpy</b>, for <a href='https://github.com/osufx/catch-the-pp'>catch-the-pp</a>, used as catch the beat pp calculator."
+msgstr "<b>Sunpy</b> สำหรับ <a href='https://github.com/osufx/catch-the-pp'>catch-the-pp</a> ใช้เป็นระบบ PP ในโหมด Catch The Beat"
+
+msgid "<b>jrosdahl</b>, for <a href='https://github.com/jrosdahl/miniircd'>miniircd</a>, used as a base for our IRC server."
+msgstr "<b>jrosdahl</b> สำหรับ <a href='https://github.com/jrosdahl/miniircd'>miniircd</a> ที่เอาไว้ใช้สำหรับเซิร์ฟเวอร์ IRC ของเรา"
+
+msgid "<b>Flame</b> for clans system!"
+msgstr "<b>Flame</b> สำหรับระบบแคลน!"
+
+msgid "<b><a href='http://ripple.moe/'>Ripple</a></b>, for the software to host Kurikku"
+msgstr "<b><a href='http://ripple.moe/'>Ripple</a></b> สำหรับโปรแกรมที่เอาไว้เปิดเซิร์ฟเวอร์ Kurikku"
+
+msgid "<b><a id='everyone' class='clickable'>Everyone</a></b> who has supported Kurikku by donating."
+msgstr "<b><a id='everyone' class='clickable'>ทุกคน</a></b> ที่สนับสนุน Kurikku โดยการโดเนท"
+
+msgid "You have %d votes!"
+msgstr "คุณมีแต้มโหวตทั้งหมด %d โหวต!"
+
+msgid "Exchange your votes!"
+msgstr "แลกคะแนนโหวต!"
+
+msgid "Why do we need these votes?"
+msgstr "ทำไมเราต้องการโหวตพวกนี้ล่ะ?"
+
+msgid "These votes help us promote the server at the <a class='ui subtitle' href='https://topg.org' alt='topg link'>TopG.org</a> monitoring site."
+msgstr "โหวตพวกนี้จำเป็นสำหรับการโปรโหมตเซิร์ฟเวอร์เรา <a class='ui subtitle' href='https://topg.org' alt='topg link'>TopG.org</a> คือเว๊ปที่เราใช้งานนั้นเอง"
+
+msgid "You need register!"
+msgstr "คุณต้องสมัครก่อนนะ"
+
+msgid "Tournament grid!"
+msgstr "ตารางการแข่งขัน"
+
+msgid "Want to play an unranked beatmap and get pp? You can submit beatmaps rank requests here!"
+msgstr "ต้องการอยากให้แมพที่ไม่แรงค์แต่ได้ PP งั้นเหรอ? คุณสามารถส่งบีทแมพที่อยากให้แรงค์ที่นี่ได้เลย!"
+
+msgid "Queue status"
+msgstr "สถานะคิวตอนนี้"
+
+msgid "by you"
+msgstr "โดยคุณ"
+
+msgid "Requests submitted"
+msgstr "ส่งคำขอไปแล้วทั้งหมด"
+
+msgid "In the past 24 hours"
+msgstr "ในเมื่อ 24 ชั่วโมงที่แล้ว"
+
+msgid "Request a beatmap"
+msgstr "ขอบีทแมพ"
+
+msgid "You cannot currently request beatmaps!"
+msgstr "คุณยังขอตอนนี้ไม่ได้นะ!!"
+
+msgid "Please try again "
+msgstr "ลองใหม่อีกครั้งนึงนะ"
+
+msgid "ID bm/bs"
+msgstr "ID bm/bs"
+
+msgid "Moderator"
+msgstr "ผู้จัดการความสงบ"
+
+msgid "You need to login!"
+msgstr "คุณต้องเข้าสู่ระบบก่อนนะ"
+
+msgid "Sorry, it's not possible to create a clan at the moment. Please try again later."
+msgstr "โทษทีนะ เรายังไม่เปิดให้คุณสร้างแคลนตอนนี้ ค่อยมาดูใหม่ทีหลังนะ"
+
+msgid "You're already in a Clan."
+msgstr "คุณอยู่ในแคลนอยู่แล้วนะ"
+
+msgid "Name (2 to 15 characters, alphanumeric, spaces, <code>_[]-</code>)"
+msgstr "ชื่อ (2-15 ตัว สามารถใช้ตัวอักษรภาษาอังกฤษ, ตัวเลข, เว้นวรรค หรือสัญลักษณ์ต่อไปนี้ <code>_[]-</code>)"
+
+msgid "Name"
+msgstr "ชื่อ"
+
+msgid "Description (optional)"
+msgstr "รายละเอียด (ไม่จำเป็นต้องใส่ก็ได้)"
+
+msgid "Description"
+msgstr "รายละเอียด"
+
+msgid "Icon [URL] (optional)"
+msgstr "รูปภาพไอคอน [URL] (ไม่จำเป็นต้องใส่ก็ได้)"
+
+msgid "Icon URL"
+msgstr "URL รูปภาพไอคอน"
+
+msgid "You need to be an Kurikku Supporter in order to create a clan."
+msgstr "คุณจะต้องมี Kurikku Supporter ก่อนที่คุณจะสร้างแคลนนะ"
+
+msgid "The Ripple API is the system through which developers can create applications to interact with Ripple. <b>If you're asked to fill out an API token from this page, be wary and only actually create the token if you really trust the owner of the application.</b>"
+msgstr "Ripple API เป็นระบบที่ผู้พัฒนาสามารถสร้างแอปพลิเคชันเพื่อโต้ตอบกับ Ripple <b>หากคุณถูกขอให้กรอกโทเค็น API จากหน้านี้ให้ระวังและสร้างโทเค็นจริงๆ เท่านั้นหากคุณเชื่อถือเจ้าของแอปพลิเคชันจริงๆ</b>"
+
+msgid "Glad to have you back here, %s! To finish the password recovery, type in a new password:"
+msgstr "ยินดีที่เห็นคุณกลับมานะ! %s! เพื่อจะให้รหัสผ่านถูกรีเซ็ตใหม่ทั้งหมด กรุณาใส่รหัสผ่านใหม่ที่ช่องนี้:"
+
+msgid "We see that you're trying to sign up while having already signed up as %s! Please note that multiaccounting is punishable, and can lead to a one month restriction!"
+msgstr "เรารู้นะว่านายจะทำอะไรน่ะ %s! ขอบอกไว้เลยว่าถ้าสร้างบัญชีหลายๆบัญชีอะ ถูกทำโทษได้เลยนะ!! ยังไม่พอแค่นั้นมันจะทำให้โดนแบน 1 เดือนด้วยละ!!!"
+
+msgid "If you're %s, keep in mind that multiaccounting = ban."
+msgstr "ถ้าคุณคือ %s บอกเลยว่าสร้างหลายบัญชีนั้น แบนสถานเดียว"
+
+msgid "If you're not %s, but you're using %s's computer, please sign up on Kurikku from your own computer."
+msgstr "ถ้าคุณไม่ใช่ %s ละก็ แต่คุณกำลังใช้คอม %s อยู่ ไปสมัครที่คอมคุณเถอะนะ"
+
+msgid "If you live with %s and you don't have your own computer from which to sign up on Kurikku, then please contact support@kurikku.pw, and we'll deal with your specific case."
+msgstr "ถ้าคุณอยู่กับ %s แต่คุณไม่มีคอมเล่นแต่อยากจะเล่นกับเซิร์ฟเวอร์เรา กรุณาติดต่อเราที่อีเมล support@kurikku.pw เดี๋ยวเราไปคุยเอง"
+
+msgid "This warning may pop up also if you're using another computer on the same network of %s. As long as you're not using the same computer, you should be all good."
+msgstr "บางทีคำเตือนนี้อาจจะเด้งมาที่คอมเครื่องอื่นๆแต่ใช้เน็ตเร้าเตอร์เดียวกันกับ %s แต่ถ้าไม่ได้ใช้คอมเครื่องเดียวกัน นั้นก็ไม่มีปัญหาหรอกนะ"
+
+msgid "If you truly have understood what's written above and you have understood that creating a multiaccount will lead to a restriction on your main account, you can click here and you'll be brought to the sign up page."
+msgstr "ถ้าคุณเข้าใจว่าเราอธิบายให้คุณฟังแล้ว และคุณเข้าใจว่าการสร้างหลายๆบัญชีทำให้ถูกแบนได้ คุณสามารถกดข้อความนี้เพื่อไปสมัครได้เลย"
+
+msgid "Bring me back to safety!"
+msgstr "กลับไปเดี๋ยวนี้แหละ!"
+
+msgid "Sorry, it's not possible to register at the moment. Please try again later."
+msgstr "โทษทีนะ เรายังไม่เปิดให้คุณได้สมัครตอนนี้ ค่อยมาดูใหม่ทีหลังนะ"
+
+msgid "Remember: this seems like it's your second account! Do not multiaccount, or you're likely to get restricted!"
+msgstr "จำเอาไว้นะ ว่าคุณกำลังสร้างบัญชีอันที่ 2! และการสร้างหลายบัญชีนั้นมันจะทำให้คุณถูกแบนได้เลยนะ"
+
+msgid "Username (2 to 15 characters, alphanumeric, spaces, <code>_[]-</code>)"
+msgstr "ชื่อผู้ใช้ (2-15 ตัว สามารถใช้ตัวอักษรภาษาอังกฤษ, ตัวเลข, เว้นวรรค หรือสัญลักษณ์ต่อไปนี้ <code>_[]-</code>)"
+
+msgid "Password (at least 8 characters)"
+msgstr "รหัสผ่าน (อย่างน้อยต้องมี 8 ตัวขึ้นไป)"
+
+msgid "Email"
+msgstr "อีเมลล์"
+
+msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via osu! to finish the account creation process."
+msgstr "<b class='big text'>บัญชีของคุณได้ถูกสร้างแล้ว </b><br>กรุณาเข้าสู่ระบบใน osu! (ตัวเกม) โดยใช้บัญชีของคุณ สิ่งที่คุณต้องทำก็คือเชื่อมต่อเซิร์ฟเวอร์ Ripple ผ่านตัวเกม osu! นั้นเอง!"
+
+msgid "Congratulations for not reading things!"
+msgstr "ขอแสดงความดีด้วยที่คุณนั้นไม่ได้อ่านอะไรเลย"
+
+msgid "Multiaccounts are not allowed on Kurikku"
+msgstr "การปั้มบัญชีไม่อนุญาตในเซิร์ฟเวอร์ Kurikku นะ"
+
+msgid "Your new account has been <b>banned</b> and your main account has been <b>restricted</b>. You can appeal in a month by sending an email to <b><a href='mailto:support@kurikku.pw'>support@kurikku.pw</a></b>. You better read the rules next time."
+msgstr "บัญชีของตุณนั้นได้ถูก<b>แบนเรียบร้อยแล้ว</b> และ บัญชีหลักของคุณนั้นโดน<b>ระงับการใช้งานแล้ว</b> คุณสามารถขอปลดแบนโดยคุณส่งอีเมลมาที่ <b><a href='mailto:support@kurikku.pw'>support@kurikku.pw</a></b> อย่าลืมอ่านกฎด้วยละครั้งต่อไป ฮ่า"
+
+msgid "Welcome to Kurikku"
+msgstr "ยินดีต้อนรับเข้าสู่ Kurikku"
+
+msgid "We're glad to have you here. <b>Your account is now active.</b> You can now play on Kurikku and <a href='/login'>log in</a> on the website!"
+msgstr "รู้สึกดีจังที่คุณมาอยู่ที่นี้ <b>ตอนนี้บัญชีของคุณได้เปิดใช้งานแล้ว</b> คุณสามารถมาเล่นเซิร์ฟเวอร์ Kurikku ได้เลยนะ และก็อย่าลืม <a href='/login'>เข้าสู่ระบบ</a>ในเว๊ปด้วยละ!"
+
+msgid "Here's a few things you might want to check out:"
+msgstr "อันนี้ถ้าอยากทำก็ทำเลยนะ ถ้าไม่ทำก็ไม่เป็นไร:"
+
+msgid "Login"
+msgstr "เข้าสู่ระบบ"
+
+msgid " - in case you don't know where to start"
+msgstr " - ถ้าคุณยังไม่รู้ว่าจะทำอะไรตอนนี้"
+
+msgid "Rules"
+msgstr "กฏต่างๆ"
+
+msgid " - in case you haven't already read them"
+msgstr " - ถ้าคุณยังไม่ได้อ่านมัน"
+
+msgid " - in case, well, you need help doing stuff"
+msgstr " - ถ้า... เอิ่ม... ต้องการความช่วยเหลืออะนะ"
+
+msgid " - in case you want to talk with people about Kurikku"
+msgstr " - ถ้าคุณอยากคุยกับคนอื่นๆที่เล่นเซิร์ฟ Kurikku อยู่"
+
+msgid "Two factor authentication is enabled on your account."
+msgstr "การยืนยันแบบ 2 ขั้นตอนได้เปิดสำหรับบัญชีคุณแล้ว"
+
+msgid "Two factor authentication is not enabled on your account."
+msgstr "การยืนยันแบบ 2 ขั้นตอนไม่ได้เปิดในบัญชีของคุณ"
+
+msgid "Telegram 2FA"
+msgstr "Telegram 2FA"
+
+msgid "To enable Telegram Two Factor Authentication, click this button, then click \"start\" on Telegram:"
+msgstr "เพื่อจะเปิด 2FA ของ Telegram กดปุ่มนี้จากนั้นกดปุ่ม \"Start\" ใน Telegram:"
+
+msgid "Enable Telegram 2FA"
+msgstr "เปิดใช้ 2FA ของ Telegram"
+
+msgid "If you don't have Telegram on the current device, you can either open this page from a device on which you have it, or scan this QR code:"
+msgstr "หากคุณไม่มี Telegram ในเครื่องตอนนี้คุณสามารถเปิดหน้านี้จากเครื่องที่คุณมีหรือสแกน QR code ตัวนี้:"
+
+msgid "In case you don't have a way to scan QR codes or you simply can't be bothered to download an app that scans them, you can also open Telegram, start a conversation with <a href=\"http://telegram.me/ripple2fabot\"><b>@ripple2fabot</b></a> and send this message:"
+msgstr "หากคุณไม่มีวิธีที่จะสแกน QR code หรือไม่อยากโหลดแอพที่สแกน QR code เราก็มี Telegram นะ เริ่มแชทกับ <a href=\"http://telegram.me/ripple2fabot\"><b>@ripple2fabot</b></a> และส่งข้อความต่อไปนี้:"
+
+msgid "Google Authenticator (TOTP) based 2FA"
+msgstr "Google Authenticator (TOTP) อ้างอิงจาก 2FA"
+
+msgid "Scan this from <a href=\"https://support.google.com/accounts/answer/1066447?hl=en\">Google Authenticator</a>, or if you're not able to, provide to Google Authenticator this key: <code>%s</code>. Once you've done, fill out the following form with the code you get on Google Authenticator and click on enter to enable TOTP-based two factor authentication."
+msgstr "สแกนสิ่งนี้จาก <a href=\"https://support.google.com/accounts/answer/1066447?hl=en\">Google Authenticator</a> หรือถ้าสแกนไม่ได้ลองใช้คีย์: <code>%s</code> ดู หลังจากได้โค้ตและทำทุกอย่างเสร็จเรียบร้อยแล้ว กดเปิด 2FA แบบ TOTP เลยนะ"
+
+msgid "At the moment you currently have set up Telegram Two Factor Authentication. Should you wish to disable it, please fill out the following form:"
+msgstr "ในขณะนี้คุณกำลังใช้การยืนยันแบบ 2 ขั้นตอนของ Telegram หากคุณต้องการปิดการใช้งานโปรดกรอกแบบฟอร์มต่อไปนี้:"
+
+msgid "At the moment you currently have set up TOTP-based (Google Authenticator) Two Factor Authentication. Should you wish to disable it, please fill out the following form:"
+msgstr "ในขณะนี้คุณกำลังใช้การยืนยันแบบ 2 ขั้นตอนของ TOTP (Google Authenticator) หากคุณต้องการปิดการใช้งานโปรดกรอกแบบฟอร์มต่อไปนี้:"
+
+msgid "Disable Telegram 2FA"
+msgstr "เลิกใช้ 2FA ของ Telegram"
+
+msgid "Disable TOTP-based 2FA"
+msgstr "เลิกใช้ TOTP 2FA"
+
+msgid "Google Authenticator recovery keys"
+msgstr "คีย์กู้คืนของ Google Authenticator"
+
+msgid "These are the only thing that will let you get back into your Kurikku account if you lose your device. Our suggestion is to paste them inside a document in your word processor (Microsoft Word, LibreOffice Writer), print them and store them in a safe place."
+msgstr "สิ่งเหล่านี้เป็นสิ่งเดียวที่จะช่วยให้คุณกลับเข้าสู่บัญชี Kurikku ของคุณได้หากคุณทำอุปกรณ์หาย เราแนะนำให้เซิฟเป็นไฟล์เอกสาร (อาทิเช่น Microsoft Word, LibreOffice Writer) ปริ้นต์มันออกมาและเก็บไว้ในที่ปลอดภัย"
+
+msgid "From here you can check all the applications you granted authorization to your account, and revoke their permissions if necessary."
+msgstr "จากที่นี่คุณสามารถตรวจสอบแอปพลิเคชันทั้งหมดที่คุณให้การอนุญาตกับบัญชีของคุณและยกเลิกการอนุญาตหากจำเป็น"
+
+msgid "Authorization created %s"
+msgstr "สร้างการอนุญาตแล้ว %s"
+
+msgid "Owner"
+msgstr "เจ้าของ"
+
+msgid "Revoke"
+msgstr "เอาออก"
+
+msgid "... but it looks like you have none!"
+msgstr "... แต่เหมือนว่าคุณจะไม่มีนะ!"
+
+msgid "Open File"
+msgstr "เปิดไฟล์"
+
+msgid "Save"
+msgstr "บันทึก"
+
+msgid "Clan Settings"
+msgstr "การตั้งค่าแคลน"
+
+msgid "Clantag"
+msgstr "แท็ค"
+
+msgid "Icon (optional)"
+msgstr "รูปภาพไอคอน (ไม่จำเป็นต้องใส่ก็ได้)"
+
+msgid "Background [URL] (optional)"
+msgstr "รูปภาพพื้นหลัง [URL] (ไม่จำเป็นต้องใส่ก็ได้)"
+
+msgid "Background URL"
+msgstr "URL รูปแบบพื้นหลัง"
+
+msgid "Generate a new invite!"
+msgstr "สร้างลิ้งค์เชิญใหม่"
+
+msgid "You haven't joined a clan yet, or you aren't the owner of your current one."
+msgstr "เหมือนว่าคุณยังไม่มีแคลนนะ"
+
+msgid "Your discord account has been linked to this account. <b>Welcome to the donors club and thank you for supporting us!</b> You have now access to the #donators text and voice channels on our official Discord server! You can also set a custom role name and username colour and change your nickname on Discord. If you want to change your nickname, you can use the <code>/nick</code> command. To set or edit your <b>custom role</b> name and colour, use the command <code>!role HEX_COLOUR ROLE_NAME</code>. You can pick your HEX colour <a href=\"http://www.colorpicker.com/\" target=\"_blank\">here</a>, it's the one that starts with '#'. You can change your role name and colour <b>whenever you want!</b>"
+msgstr "บัญชี Discord ของคุณเชื่อมโยงกับบัญชีนี้แล้ว <b>ยินดีต้อนรับสู่คลับคนรวยนะอิอิและขอขอบคุณสำหรับการสนับสนุนพวกเรา!</b> ตอนนี้คุณสามารถเข้าถึงแชทและห้องเสียง #donators ในเซิร์ฟเวอร์ Discord อย่างเป็นทางการของเราแล้ว! นอกจากนี้คุณยังสามารถกำหนดชื่อยศและสีของชื่อผู้ใช้และเปลี่ยนชื่อเล่นของคุณใน Discord หากคุณต้องการเปลี่ยนชื่อเล่นคุณสามารถใช้คำสั่ง <code>/nick</code> หากต้องการตั้งค่าหรือแก้ไขชื่อและสีของ <b>ยศพิเศษแบบตั้งเอง</b> ให้ใช้คำสั่ง <code>!role สีโค้ตเฮ็กซ์ ชื่อยศ</code> คุณสามารถเลือกสี HEX ของคุณ <a href=\"http://www.colorpicker.com/\" target=\"_blank\">ที่นี่</a> มันเป็นสีที่ขึ้นต้นด้วย '#' คุณสามารถเปลี่ยนชื่อบทบาทและสี <b>เมื่อใดก็ตามที่คุณต้องการ!</b>"
+
+msgid "Thank you for supporting us and have fun on Kurikku!"
+msgstr "ขอบคุณที่สนับสนุนพวกเราและขอให้สนุกในเซิร์ฟเวอร์ Kurikku นะ!"
+
+msgid "Donors get special privileges on our Discord server too!"
+msgstr "ผู้บริจาคได้รับสิทธิพิเศษบนเซิร์ฟเวอร์ Discord ของเราด้วย!"
+
+msgid "Discord is a chatroom with text and voice channels, bots and lots of other cool features. You can <b>download Discord for free <a href=\"http://discord.gg/\" target=\"_blank\">here</a></b> and you can <b>join our official Discord server <a href=\"%s\" target=\"_blank\">here</a></b>."
+msgstr "Discord เป็นแชทที่มีแชทข้อความและห้องเสียง, บอทและคุณสมบัติเจ๋งๆ อีกมากมาย คุณสามารถ <b>ดาวน์โหลด Discord ได้ฟรี<a href=\"http://discord.gg/\" target=\"_blank\">ที่นี่</a></b> และคุณสามารถ <b>เข้าเซิร์ฟเวอร์ Discord อย่างเป็นทางการของเรา<a href=\"%s\" target=\"_blank\">ได้ที่นี่</a></b>"
+
+msgid "Here's what you get if you link your Discord account:"
+msgstr "นี่คือสิ่งที่คุณจะได้รับหากคุณเชื่อมโยงบัญชี Discord ของคุณ:"
+
+msgid "Username on donors list"
+msgstr "ชื่ออยู่ในผู้บริจาค"
+
+msgid "Custom role with custom username"
+msgstr "ยศพิเศษแบบตั้งเองพร้อมชื่อเล่นที่สามารถตั้งได้"
+
+msgid "To get these perks, first of all <a href=\"%s\" target=\"_blank\">join our Discord server</a>, then click this fancy button:"
+msgstr "หากต้องการรับสิทธิพิเศษเหล่านี้ก่อนอื่น <a href=\"%s\" target=\"_blank\">เข้าร่วมเซิร์ฟเวอร์ Discord ของเราก่อน</a> จากนั้นคลิกปุ่มแฟนซีนี้:"
+
+msgid "Get Discord donor privileges"
+msgstr "รับสิทธิพิเศษ Discord"
+
+msgid "URL pic to add"
+msgstr "URL ของรูปที่จะเพิ่ม"
+
+msgid "Userpage"
+msgstr "คำคมประจำตัว"
+
+msgid "Avatar"
+msgstr "รูปโปรไฟล์"
+
+msgid "Social Accounts"
+msgstr "บัญชีโซเชียลต่างๆ"
+
+msgid "In-game BGs changer (BETA)"
+msgstr "ตัวเปลี่ยนภาพพื้นหลัง (เบต้า)"
+
+msgid "Discord donor"
+msgstr "ผู้บริจาค Discord"
+
+msgid "New password (leave blank if you don't want to change it)"
+msgstr "รหัสผ่านใหม่ (ไม่ต้องใส่ถ้าไม่อยากเปลี่ยน)"
+
+msgid "Current password"
+msgstr "รหัสผ่านปัจจุบัน"
+
+msgid "Background type"
+msgstr "รูปแบบพื้นหลัง"
+
+msgid "None"
+msgstr "ไม่มี"
+
+msgid "Image"
+msgstr "รูปภาพ"
+
+msgid "Solid colour"
+msgstr "สี"
+
+msgid "No image selected"
+msgstr "ยังไม่ได้เลือกรูปภาพ"
+
+msgid "General"
+msgstr "ข้อมูลเบื้องต้น"
+
+msgid "Email address"
+msgstr "อีเมลล์"
+
+msgid "Alternative username (cannot be used for login)"
+msgstr "ชื่อที่รู้ในนามต่างๆ (ไม่สามารถเอาอันนี้ไปล็อกอินได้นะ!)"
+
+msgid "Also known as..."
+msgstr "รู้จักกันในนามว่า..."
+
+msgid "Favourite mode"
+msgstr "โหมดที่ชอบที่สุด"
+
+msgid "PP > Score"
+msgstr "PP > Score"
+
+msgid "Custom badge"
+msgstr "โล่พิเศษ"
+
+msgid "<b>Do not use offensive badges and do not pretend to be someone else with your badge.</b> If you abuse the badges system, you'll be silenced and you won't be able to edit your custom badge anymore."
+msgstr "<b>คำเตือน!</b> โปรดอย่าตั้งชื่อโล่ให้ดูแบบหยาบคายมากนัก หรือตั้งโล่ตัวเองเหมือนใหญ่เช่น Owner เป็นต้น เราจะนำคุณออกไม่ให้ใช้ระบบโล่พิเศษ เราถือว่าเตือนแล้วนะ"
+
+msgid "Enable"
+msgstr "เปิด"
+
+msgid "Icon reference"
+msgstr "ดูคลังรูปไอคอน"
+
+msgid "Dinosaur, oompa-loompa, cool guy..."
+msgstr "ฉายาของตัวเอง"
+
+msgid "Playstyle"
+msgstr "เล่นด้วยอะไรเอ่ย?"
+
+msgid "Here you can connect your social accounts (VK, Twitch). Your accounts shows in your profile page and any user can see it!"
+msgstr "มาที่นี่แล้วคุณสามารถเชื่อมต่อบัญชีของคุณกับบัญชีต่างๆ (VK, Twitch) แล้วบัญชีของคุณจะขึ้นในหน้าโปรไฟล์ของคุณซึ่งทุกคนสามารถเห็นแล้วเพิ่มคุณได้!"
+
+msgid "(Linked)"
+msgstr "(เชื่อมแล้ว)"
+
+msgid "(Not Linked)"
+msgstr "(ยังไม่ได้เชื่อม)"
+
+msgid "Unlink"
+msgstr "เลิกเชื่อมต่อ"
+
+msgid "Link"
+msgstr "เชื่อมต่อ"
+
