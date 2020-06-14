@@ -24,6 +24,7 @@ import (
 	discordoauth "zxq.co/ripple/go-discord-oauth"
 	"zxq.co/ripple/hanayo/modules/bbcode"
 	"zxq.co/ripple/hanayo/modules/btcaddress"
+	"zxq.co/ripple/hanayo/modules/btcconversions"
 	"zxq.co/ripple/hanayo/modules/doc"
 	fasuimappings "zxq.co/ripple/hanayo/modules/fa-semantic-mappings"
 	"zxq.co/ripple/playstyle"
@@ -645,7 +646,8 @@ var funcMap = template.FuncMap{
 	},
 	// calculateDonorPrice calculates the price of x donor months in euros.
 	"calculateDonorPrice": func(a float64) string {
-		return fmt.Sprintf("%.2f", math.Pow(a*10.5*0.2, 0.97))
+		currencies := btcconversions.CurrencyRates
+		return fmt.Sprintf("%.2f", a*(150/currencies.EUR))
 	},
 	// is2faEnabled checks 2fa is enabled for an user
 	"is2faEnabled": is2faEnabled,
@@ -859,7 +861,7 @@ var languageInformation = []langInfo{
 	{"Русский", "ru", "ru"},
 	{"Română", "ro", "ro"},
 	{"Svenska", "se", "sv"},
-        {"ภาษาไทย", "th", "th"},
+	{"ภาษาไทย", "th", "th"},
 	{"Українська", "ua", "ua"},
 	{"Tiếng Việt Nam", "vn", "vi"},
 }

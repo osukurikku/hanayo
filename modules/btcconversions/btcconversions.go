@@ -2,6 +2,7 @@ package btcconversions
 
 import (
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"time"
 
@@ -10,18 +11,19 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-var rates = struct {
+// CurrencyRates rates with eur/usd to RUB
+var CurrencyRates = struct {
 	EUR float64
 	USD float64
 }{
-	// 15m values fetched from blockchain ticker on 2017-02-25
-	1118.33,
-	1180.4,
+	// 1 rub to eur/usb on 15.06.2020at00:56
+	78.37,
+	69.70,
 }
 
 // GetRates returns the bitcoin rates as JSON.
 func GetRates(c *gin.Context) {
-	c.JSON(200, rates)
+	c.JSON(200, CurrencyRates)
 }
 
 func init() {
@@ -33,22 +35,24 @@ func init() {
 	}()
 }
 
-type blockchainCurrency struct {
-	// The X is necessary a) to make this exported b) because an identifier
-	// can't start with a number.
-	X15m float64 `json:"15m"`
-}
-
 func updateRates() {
-	resp, err := http.Get("https://blockchain.info/ticker")
+	var result map[string]interface{}
+	resp, err := http.Get("https://www.cbr-xml-daily.ru/daily_json.js")
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
+	defer resp.Body.Close()
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		fmt.Println(err)
+	}
 
-	m := make(map[string]blockchainCurrency)
-	json.NewDecoder(resp.Body).Decode(&m)
+	err = json.Unmarshal(body, &result)
+	if err != nil {
+		fmt.Println(err)
+	}
 
-	rates.EUR = m["EUR"].X15m
-	rates.USD = m["USD"].X15m
+	CurrencyRates.EUR = result["Valute"].(map[string]interface{})["EUR"].(map[string]interface{})["Value"].(float64)
+	CurrencyRates.USD = result["Valute"].(map[string]interface{})["USD"].(map[string]interface{})["Value"].(float64)
 }

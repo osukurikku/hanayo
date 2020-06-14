@@ -262,16 +262,58 @@ AdditionalJS=https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.
         <h4 class="ui horizontal divider header">
             {{ $.T "And this is how you pay" }}
         </h4>
-
-        <div class="ui center aligned container">
-            <img src="https://donationalerts.ru/img/header/logo.svg" width="128" height="128">
-            <h3> {{ $.T "That's DonationAlerts - \"streamer's main tool\" but we use that beautiful platform for collect donations ヽ(・∀・)ﾉ" | html }} </h3>
-            <a href="https://donationalerts.ru/r/osukurikku" class="ui orange button">{{ $.T "Donate!" }}</a>
-            <a href="/shop" class="ui purple button">{{ $.T "Shop" }}</a>
-            <br/><br/>
-            <p>{{ $.T "<b>NOTE:</b> please check description before you donate" | html }}</p>
-          
+        <div class="ui stackable grid">
+            <div class="ui eight wide column">
+                <div class="ui center aligned container">
+                    <img src="https://donationalerts.ru/img/header/logo.svg" width="128" height="128">
+                    <h3> {{ $.T "That's DonationAlerts - \"streamer's main tool\" but we use that beautiful platform for collect donations ヽ(・∀・)ﾉ" | html }} </h3>
+                    <a href="https://donationalerts.ru/r/osukurikku" class="ui orange button">{{ $.T "Donate!" }}</a>
+                    <a href="/shop" class="ui purple button">{{ $.T "Shop" }}</a>
+                    <br/><br/>
+                    <p>{{ $.T "<b>NOTE:</b> please check description before you donate" | html }}</p>
+                </div>
+            </div>
+            <div class="ui eight wide column">
+                <div class="ui center aligned container">
+                    <h1 class="ui header" style="padding-top: 10px; padding-bottom: 20px;">
+                        <i class="paypal icon"></i>
+                        {{ $.T "PayPal" }}
+                    </h2>
+                    <br/>
+                    <div id="months-slider" style="margin: 0 auto; max-width: 500px"></div>
+                    <br>
+                    <div id="cost" class="centered"><b>{{ $.T "Loading..." }}</b></div>
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_self">
+                        <input type="hidden" name="on0" value="Period">
+                        <input type="hidden" name="os0"	value="1 month">
+                        {{ range _range 24 }}
+                            {{ $months := plus (float .) 1 }}
+                            <input type="hidden" name="option_select{{ . }}" value="{{ $months }} month{{ if . }}s{{ end }}">
+                            <input type="hidden" name="option_amount{{ . }}" value="{{ calculateDonorPrice $months }}">
+                        {{ end }}
+                        <input type="hidden" name="on1" value="Kurikku user to give donor">
+                        <input type="hidden" name="custom" value="username={{ $global.User.Username }}" id="ipn-username">
+                        <input type="hidden" name="amount" value="{{ calculateDonorPrice 1 }}" id="paypal-amt">
+                        <div class="ui fluid labeled action input">
+                            <div class="ui label">
+                                {{ $.T "User:" }}
+                            </div>
+                            <input name="os1" type="text" placeholder="{{ $.T "User" }}" value="{{ $global.User.Username }}" id="username-input">
+                            <button type="submit" class="ui blue button">{{ $.T "Submit" }}</button>
+                        </div>
+                        {{ $ief }}
+                        <input type="hidden" name="business" value="i@kotrik.ru">
+                        <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="lc" value="GB">
+                        <input type="hidden" name="no_note" value="0">
+                        <input type="hidden" name="currency_code" value="EUR">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+                    <h3>After donate with paypal, you should write KotRik in osu!pm, or in Discord(KotRik#5754, i'm friendly, please don't be afraid of me)</h3>
+                </div>
+            </div>
         </div>
+        
     {{ else }}
         <div class="ui divider"></div>
         <h1 class="ui center aligned header">{{ $.T "Please log in before purchasing supporter" }}</h1>
