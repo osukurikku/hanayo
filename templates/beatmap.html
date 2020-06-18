@@ -49,6 +49,11 @@
 								{{ if .Beatmapset.HasVideo }}
 								<a href="http://storage.kurikku.pw/d/{{ .Beatmapset.ID }}?novideo" class="ui gray labeled icon button"><i class="download icon"></i>{{ $.T "download (no video)" }}</a>
 								{{ end }}
+								{{ if .Context.User.ID }}
+									{{ if (has .Context.User.Privileges 271)}}
+										<a href="https://oadmin.kurikku.pw/index.php?p=124&bsid={{ .Beatmapset.ID }}" class="ui teal labeled icon button"><i class="black heart icon"></i>Review status(BAT)</a>
+									{{ end }}
+								{{ end }}
 							</div>
 						</div>
 					</div>
