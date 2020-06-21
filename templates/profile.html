@@ -88,14 +88,14 @@
                                         {{ range .badges }}
                                             {{ if .icon }}
                                                 <span class="" data-tooltip="{{ .name }}" data-inverted="">
-                                                    <i class="{{ faIcon .icon }} small icon"></i>
+                                                    <span class="twemoji twemojiBadge">{{ .icon }}</span>
                                                 </span>
                                             {{ end }}
                                         {{ end }}
                                         {{ with .custom_badge }}
                                             {{ if .icon }}
                                                 <span class="" data-tooltip="{{ .name }}" data-inverted="">
-                                                    <i class="{{ faIcon .icon }} small icon"></i>
+                                                    <span class="twemoji twemojiBadge">{{ .icon }}</span>
                                                 </span>
                                             {{ end }}
                                         {{ end }}

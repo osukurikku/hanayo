@@ -2008,3 +2008,24 @@ p.ranks .rank {
 		margin-top: -8rem;
 	}
 }
+.lsx-emojipicker-emoji.lsx-emoji-tab {
+	width: 100% !important;
+}
+
+.lsx-emojipicker-container {
+	width: 300px !important;
+}
+
+.lsx-emojipicker-tabs {
+	text-align: center !important;
+}
+
+.lsx-emojipicker-container {
+	top: -290px !important;
+}
+
+.twemojiBadge > img {
+	vertical-align: -5px;
+	margin-right: 5px;
+    margin-left: 5px;
+}

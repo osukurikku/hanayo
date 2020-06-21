@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" type="text/css" href="/static/{{ if $ds }}dark/{{ end }}semantic.min.css?{{ unixNano }}">
     <link rel="stylesheet" type="text/css" href="/static/ripple.css?{{ unixNano }}">
+    <link rel="stylesheet" type="text/css" href="/static/jquery.lsxemojipicker.css?{{ unixNano }}">
     <!-- KotRik epic react script -->
     <link href="/static/react/css/main.67473584.chunk.css" rel="stylesheet">
 
@@ -176,6 +177,7 @@
 <script src="/static/dist.min.js?{{ unixNano }}"></script>
 {{ with $lang }}
 <script src="/static/timeago-locale/jquery.timeago.{{ . }}.js"></script>
+<script src="//twemoji.maxcdn.com/2/twemoji.min.js?2.2"></script>
 {{ end }}
 {{ if .Scripts }}
 {{ range .Scripts }}
