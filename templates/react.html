@@ -1,20 +1,5 @@
-{{/*###
-Handler=/leaderboard
-TitleBar=Leaderboard
-KyutGrill=leaderboard.jpg
-*/}}
 {{ define "tpl" }}
 <div class="ui container">
-	{{ $favModeRaw := .Get "users/self/favourite_mode" }}
-	{{ $favMode := _or (atoi (.Gin.Query "mode")) $favModeRaw.favourite_mode (float 0) }}
-	<script>
-		var favouriteMode = {{ $favMode }};
-		var page = {{ .Gin.Query "p" | atoint | atLeastOne }};
-		var country = {{ .Gin.Query "country" }}.toLowerCase();
-		if (country.length != 2)
-			country = "";
-	</script>
-		
 	<div id="app">
 	</div>
 	<noscript>You need to enable JavaScript to run this app.</noscript>
@@ -23,3 +8,4 @@ KyutGrill=leaderboard.jpg
 	<script src="/static/react/js/main.1f614011.chunk.js"></script>
 </div>
 {{ end }}
+    

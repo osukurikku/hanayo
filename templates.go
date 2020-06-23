@@ -10,10 +10,10 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 	"unicode/utf8"
-	"strconv"
 
 	"github.com/gin-gonic/contrib/sessions"
 	"github.com/gin-gonic/gin"
@@ -219,14 +219,14 @@ func ReplaceUnCorrectSymbols(s string) string {
 }
 
 func GetFirstN(s string, n int) string {
-    i := 0
-    for j := range s {
-        if i == n {
-            return s[:j]
-        }
-        i++
-    }
-    return s
+	i := 0
+	for j := range s {
+		if i == n {
+			return s[:j]
+		}
+		i++
+	}
+	return s
 }
 
 func (b baseTemplateData) BaseGet(s string, params ...interface{}) map[string]interface{} {
@@ -288,7 +288,7 @@ func (b baseTemplateData) SubStringKR(s string, count int) string {
 }
 
 func (b baseTemplateData) ConvertFl64ToInt(s float64) string {
-        return strconv.Itoa(int(s))
+	return strconv.Itoa(int(s))
 }
 
 func (b baseTemplateData) Has(privs uint64) bool {
@@ -350,7 +350,7 @@ type templateConfig struct {
 	MinPrivileges    uint64
 	HugeHeadingRight bool
 	AdditionalJS     string
-	DisableHH	 bool
+	DisableHH        bool
 }
 
 func (t templateConfig) inc(prefix string) []string {
@@ -409,4 +409,17 @@ func parseConfig(s string) *templateConfig {
 
 func respEmpty(c *gin.Context, title string, messages ...message) {
 	resp(c, 200, "empty.html", &baseTemplateData{TitleBar: title, Messages: messages})
+}
+
+// StaticReactBuilder React Builder test ver
+func StaticReactBuilder(TitleBar string, DisableHH bool, KyutGrillPath string) func(c *gin.Context) {
+	builder := func(c *gin.Context) {
+		data := new(baseTemplateData)
+		defer resp(c, 200, "react.html", data)
+		data.DisableHH = DisableHH
+		data.KyutGrill = KyutGrillPath
+		data.TitleBar = T(c, TitleBar)
+	}
+
+	return builder
 }
