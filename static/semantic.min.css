@@ -12556,7 +12556,7 @@
  }
  
  .ui.dimmer .ui.loader {
-     color: rgba(0, 0, 0, .85)
+     color: white;
  }
  
  .ui.dimmer .ui.loader:before {
@@ -12564,7 +12564,7 @@
  }
  
  .ui.dimmer .ui.loader:after {
-     border-color: hsl(255, 14%, 18%) transparent transparent
+     /*border-color: hsl(255, 14%, 18%) transparent transparent*/
  }
  
  .ui.inverted.dimmer .ui.loader {
@@ -12580,6 +12580,7 @@
  }
  
  .ui.text.loader {
+     color: white;
      width: auto!important;
      height: auto!important;
      text-align: center;
