@@ -2,13 +2,15 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
 "X-Crowdin-Project: kurikku-hanayo\n"
+"X-Crowdin-Project-ID: 401388\n"
 "X-Crowdin-Language: ru\n"
 "X-Crowdin-File: templates.pot\n"
+"X-Crowdin-File-ID: 4\n"
 "Project-Id-Version: kurikku-hanayo\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
-"PO-Revision-Date: 2020-05-10 13:26\n"
+"PO-Revision-Date: 2020-06-27 21:08\n"
 
 msgid "Hey, %s."
 msgstr "Эй, %s."
@@ -367,6 +369,9 @@ msgstr "Создание клана"
 msgid "Streamers"
 msgstr "Стримеры"
 
+msgid "Multiplayer matches"
+msgstr "Мультиплеер матчи"
+
 msgid "Donate"
 msgstr "Пожертвовать"
 
@@ -510,6 +515,9 @@ msgstr "Достижения"
 
 msgid "Load more"
 msgstr "Загрузить ещё"
+
+msgid "Skills"
+msgstr "Скиллы"
 
 msgid "Forgot your password? Worry not! Here you can reset it. Just tell us your username or email address, and we'll take care of it. You will receive an email at the email address you used to sign up on Kurikku. To continue the password reset procedure, click the link on that email."
 msgstr "Забыли свой пароль? Не волнуйтесь! Здесь вы можете его сбросить. Просто скажите нам ваше имя пользователя или эл. почту и мы позаботимся о нем. Вы получите письмо на эл. почту, которую вы использовали для регистрации на Kurikku. Чтобы продолжить процедуру сброса, нажмите на ссылку в письме."
@@ -663,6 +671,18 @@ msgstr "Донат!"
 
 msgid "<b>NOTE:</b> please check description before you donate"
 msgstr "<b>Примечание:</b> пожалуйста прочитай описание перед донатом"
+
+msgid "PayPal"
+msgstr "PayPal"
+
+msgid "Loading..."
+msgstr "Загрузка..."
+
+msgid "User:"
+msgstr "Пользователь:"
+
+msgid "User"
+msgstr "Пользователь"
 
 msgid "Please log in before purchasing supporter"
 msgstr "Пожалуйста, авторизуйтесь, перед покупкой донатера"
@@ -1093,8 +1113,8 @@ msgstr "<b>Не используйте оскорбительный значки
 msgid "Enable"
 msgstr "Включить"
 
-msgid "Icon reference"
-msgstr "Ссылка на иконку"
+msgid "Pick an emoji"
+msgstr "Выберите эмодзи"
 
 msgid "Dinosaur, oompa-loompa, cool guy..."
 msgstr "Динозавр, oompa-loompa, крутой парень..."
@@ -1116,4 +1136,28 @@ msgstr "Отвязать"
 
 msgid "Link"
 msgstr "Привязать"
+
+msgid "Stamina"
+msgstr "Стамина"
+
+msgid "Tenacity"
+msgstr "Выдержка"
+
+msgid "Agility"
+msgstr "Скорость"
+
+msgid "Precision"
+msgstr "Меткость"
+
+msgid "Reading"
+msgstr "Читка"
+
+msgid "Memory"
+msgstr "Память"
+
+msgid "Accuracy"
+msgstr "Точность"
+
+msgid "Reaction"
+msgstr "Реакция"
 

@@ -1218,3 +1218,27 @@ msgstr ""
 
 msgid "Link"
 msgstr ""
+
+msgid "Stamina"
+msgstr ""
+
+msgid "Tenacity"
+msgstr ""
+
+msgid "Agility"
+msgstr ""
+
+msgid "Precision"
+msgstr ""
+
+msgid "Reading"
+msgstr ""
+
+msgid "Memory"
+msgstr ""
+
+msgid "Accuracy"
+msgstr ""
+
+msgid "Reaction"
+msgstr ""
