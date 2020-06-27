@@ -2029,3 +2029,43 @@ p.ranks .rank {
 	margin-right: 5px;
     margin-left: 5px;
 }
+
+.contBar {
+	margin-bottom: 10px;
+}
+
+.contBar p {
+	margin: 0;
+	padding: 0;
+}
+
+.contBar > p {
+	margin: 0;
+	font-size: 13px;
+	text-align: center;
+}
+
+.contBar .leftInfo {
+	display: flex;justify-content: center;align-items: center;
+}
+
+.leftInfo .left {
+	background: rgba(0,0,0,0.5);
+	padding: 5px;
+	width: 7%;
+	border-radius: 5px;
+	font-weight: 700;
+	margin-right: 6px;
+}
+
+.leftInfo .left > p {
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+
+.leftInfo .progress {
+	width: 100%;
+	padding: 0!important;
+	margin: 0!important;
+}

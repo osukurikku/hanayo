@@ -357,6 +357,25 @@
                     </button>
                 </div>
             </div>
+            
+            <div class="ui raised segment" id="skills" style="display: none;">
+                <h2>{{ $global.T "Skills" }}</h2>
+                {{ range $k, $v := $user.std_skills }}
+                    <div class="contBar">
+                        <p>{{ $global.T $v.name }}</p>
+                        <div class="leftInfo">
+                            <div class="left">
+                                <p>{{ $global.T "%s" ($.ConvertFl64ToInt $v.value) }}</p>
+                            </div>
+
+                            <div class="ui {{ $v.color }} progress">
+                                <div id="tenacity" class="bar" style="width: {{ $v.perc }}%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
 
             <div class="ui top center centered attached segment overflow auto">
                 <div class="ui breadcrumb">

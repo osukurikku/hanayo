@@ -12,6 +12,10 @@ $(document).ready(function () {
     else if (wl.pathname != newPathName)
         window.history.replaceState('', document.title, newPathName + wl.search + wl.hash);
 
+    if (favouriteMode === 0) {
+        $("#skills").css("display", "");
+    }
+
     loadRanksPLZ(userID, favouriteMode);
     setDefaultScoreTable();
     // when an item in the mode menu is clicked, it means we should change the mode.
@@ -20,6 +24,11 @@ $(document).ready(function () {
         if ($(this).hasClass("active"))
             return;
         var m = $(this).data("mode");
+        if (+m === 0) {
+            $("#skills").css("display", "")
+        } else {
+            $("#skills").css("display", "none")
+        }
         $("[data-mode]:not(.item):not([hidden])").attr("hidden", "");
         $("[data-mode=" + m + "]:not(.item)").removeAttr("hidden");
         $("#mode-menu>.active.item").removeClass("active");

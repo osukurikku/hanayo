@@ -355,6 +355,13 @@ func generateEngine() *gin.Engine {
 	r.GET("/vote/exchange", exchangeVotes)
 	// ---- PART TOPG VOTER END ----
 
+	r.GET("/shop", StaticReactBuilder("Shop", false, "shop.jpg"))
+	r.GET("/beatmaps", StaticReactBuilder("Beatmaps", false, "beatmaps.jpg"))
+	// /leaderboard REQUIRES ADDITIONAL SCRIPTS BUT USING REACT, DONT FORGET SCRIPT WHEN U WILL UPDATE EM
+	r.GET("/streamers", StaticReactBuilder("Streamers", false, "2fa.jpg"))
+	r.GET("/matches", StaticReactBuilder("Multiplayer matches", false, "multiplayer_listening.png"))
+	r.GET("/matches/:id", StaticReactBuilder("Lobby", false, "multiplayer_lobby.png"))
+
 	loadSimplePages(r)
 
 	r.NoRoute(notFound)
