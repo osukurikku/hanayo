@@ -1,694 +1,14 @@
-# General
-msgid "You're already logged in!"
-msgstr ""
 
-msgid "Submit"
-msgstr ""
 
-msgid "Username"
-msgstr ""
+# Translation for ..\templates\2fa_gateway.html
 
-msgid "Password"
-msgstr ""
-
-msgid "Kurikku Switcher"
-msgstr ""
-
-msgid "Chance to be in top donators"
-msgstr ""
-
-msgid "Members"
-msgstr ""
-
-msgid "You need to be an Kurikku Supporter in order to create a clan."
-msgstr ""
-
-msgid "The members of the clan."
-msgstr ""
-
-msgid "Tournament live"
-msgstr ""
-
-msgid "Most played beatmaps"
-msgstr ""
-
-msgid "Clans"
-msgstr ""
-
-msgid "Clans Leaderboard"
-msgstr ""
-
-msgid "Clans Create"
-msgstr ""
-
-msgid "You're already in a Clan."
-msgstr ""
-
-msgid "[Clan tag] Name"
-msgstr ""
-
-msgid "Clan Owner"
-msgstr ""
-
-msgid "The leader of the clan."
-msgstr ""
-
-msgid "Clan Settings"
-msgstr ""
-
-msgid "Generate a new invite!"
-msgstr ""
-
-msgid "Online Users"
-msgstr ""
-
-msgid "Registered Users"
-msgstr ""
-
-msgid "Submitted Scores"
-msgstr ""
-
-msgid "If you are <b>one of those who support our server the most</b>, you will be in the <b>top donators</b>. <b>Imagine</b> you are <b>on the main page</b>. That's cool)"
-msgstr ""
-
-msgid "Creating clans"
-msgstr ""
-
-msgid "Wow, now you can create clan for you and your friends. <b>Pew-pew</b> with other clans."
-msgstr ""
-
-msgid "On this page you can see all of your subscribers, and add new friends if you see fit."
-msgstr ""
-
-msgid "Subscribers"
-msgstr ""
-
-msgid "Viewing your subscribers"
-msgstr ""
-
-msgid "Now you can watch <b>your subscribers</b>. That's way to <b>found</b> new good friends"
-msgstr ""
-
-msgid "You look new here. Allow us to introduce you to what Kurikku is. Kurikku is a osu! private server. We have free osu!Direct, beatmap listing and searching, clans and more! Have fun on Kurikku!"
-msgstr ""
-
-msgid "What are you waiting for? Join Kurikku! It's risk-free: you won't get your account banned on the official server if you play on Kurikku.<br>You can also switch anytime between the official osu! server and Kurikku!"
-msgstr ""
-
-msgid "Need support or want to talk to other players? Join our <a href=\"%s\">Discord</a>!"
-msgstr ""
-
-msgid "Report %s"
-msgstr ""
-
-msgid "Reason"
-msgstr ""
-
-msgid "Foul play / Cheating"
-msgstr ""
-
-msgid "Spamming"
-msgstr ""
-
-msgid "Other"
-msgstr ""
-
-msgid "Additional text"
-msgstr ""
-
-msgid "Any information about this issue."
-msgstr ""
-
-msgid "We must say, that we can silence you if the report is false or you're abusing the report system (spamming, etc.)"
-msgstr ""
-
-msgid "Expires in <b>%s</b>"
-msgstr ""
-
-msgid "Top donators"
-msgstr ""
-
-msgid "Guide about Server Switcher!"
-msgstr ""
-
-msgid "Hi! This little guide will show you how to connect on our server"
-msgstr ""
-
-msgid "The first thing you need to do is download one of a switchers:"
-msgstr ""
-
-msgid "Next we need to unpack one of a switchers, open, install the certificate and then press the green button <b>«Switch to Kurikku»</b>. That's all, welcome to one of most friendly private servers <b>on osu!</b>."
-msgstr ""
-
-msgid "Please log in before"
-msgstr ""
-
-msgid "One of arguments is empty. Don't hack!"
-msgstr ""
-
-msgid "Something goes wrong, try again later!"
-msgstr ""
-
-msgid "This account already connected to another player!"
-msgstr ""
-
-msgid "You connected this account earlier!"
-msgstr ""
-
-msgid "You successfully connected VK account to your profile"
-msgstr ""
-
-msgid "You successfully connected twitch account to your profile"
-msgstr ""
-
-msgid "Your profile hasn't linked account ;d Ok, BRUH!~~~~"
-msgstr ""
-
-msgid "Your profile has successfully unlinked!"
-msgstr ""
-
-msgid "Social Accounts"
-msgstr ""
-
-msgid "Here you can connect your social accounts (VK, Twitch). Your accounts shows in your profile page and any user can see it!"
-msgstr ""
-
-msgid "(Linked)"
-msgstr ""
-
-msgid "(Not Linked)"
-msgstr ""
-
-msgid "Unlink"
-msgstr ""
-
-msgid "Link"
-msgstr ""
-
-msgid "Hello! Authorization was successful, time to go back ...."
-msgstr ""
-
-msgid "Hello! Authorization was not entirely successful, can you try again?"
-msgstr ""
-
-msgid "Back"
-msgstr ""
-
-msgid "Videoguide:"
-msgstr ""
-
-msgid "Invalid CSRF token"
-msgstr ""
-
-msgid "Your session has expired. Please try redoing what you were trying to do."
-msgstr ""
-
-msgid "That user could not be found."
-msgstr ""
-
-msgid "Your settings have been saved."
-msgstr ""
-
-# beatmaps/rank_requests.html
-msgid "Request beatmap ranking"
-msgstr ""
-
-msgid "Want to play an unranked beatmap and get pp? You can submit beatmaps rank requests here!"
-msgstr ""
-
-msgid "Queue status"
-msgstr ""
-
-msgid "by you"
-msgstr ""
-
-msgid "Requests submitted"
-msgstr ""
-
-msgid "In the past 24 hours"
-msgstr ""
-
-msgid "Request a beatmap"
-msgstr ""
-
-msgid "subs count"
-msgstr ""
-
-msgid "Beatmaps Searching"
-msgstr ""
-
-msgid "Rank Request"
-msgstr ""
-
-msgid "Signature Generator"
-msgstr ""
-
-msgid "Unlimited Name Changes"
-msgstr ""
-
-msgid "Unlimited Flag Changes"
-msgstr ""
-
-msgid "Unlimited Stats Resets"
-msgstr ""
-
-msgid "<b>Tired of your current identity?</b> Now you can have as many as you want! Just ask an administrator to change your name, as many times as you'd like."
-msgstr ""
-
-msgid "<b>Want to appear as if you're from another country?</b> You also get as many of these as you'd like. Again, just ask an administrator."
-msgstr ""
-
-msgid "Now you can also <b>start fresh</b> with unlimited stats resets! Ask an administrator and they shall perform the deed."
-msgstr ""
-
-msgid "You may donate through <b>PayPal</b> (or credit/debit card linked to PayPal). Use the slider below to choose the amount of months you'd like to have the donor benefits, and the cost will be instantly calculated. The more months you purchase, the bigger the discount will be."
-msgstr ""
-
-msgid "If you donate via AnyPay, just wait 2-3 minute and donate like magic on you account. If you had trouble just ask KotRik in Discord!<br/>Please contact KotRik directly, preferrably via discord/ingame, or if needed, via email: support@kurikku.pw"
-msgstr "<temporary not>"
-
-msgid "To get donate join discord and DM KotRik!<br/>Disclaimer: Donations are NON-REFUNDABLE, and do not give you special privileges other than what is listed above. You will still be treated the same as all other users."
-msgstr ""
-
-msgid "You cannot currently request beatmaps!"
-msgstr ""
-
-msgid "Your friend list is empty"
-msgstr ""
-
-msgid "Your subs list is empty"
-msgstr ""
-
-msgid "Clantag (2 to 6 characters)"
-msgstr ""
-
-msgid "Icon (optional)"
-msgstr ""
-
-msgid "Background [URL] (optional)"
-msgstr ""
-
-msgid "Background URL"
-msgstr ""
-
-msgid "You haven't joined a clan yet, or you aren't the owner of your current one."
-msgstr ""
-
-# After this text there is a date. The date is localised separately.
-msgid "Please try again "
-msgstr ""
-
-# pwreset/continue.html
-msgid "Reset password"
-msgstr ""
-
-msgid "Glad to have you back here, %s! To finish the password recovery, type in a new password:"
-msgstr ""
-
-msgid "Nope."
-msgstr ""
-
-msgid "That key could not be found. Perhaps it expired?"
-msgstr ""
-
-msgid "All right, we have changed your password and you should now be able to login! Have fun!"
-msgstr ""
-
-# register/register.html
-msgid "Register"
-msgstr ""
-
-msgid "Sorry, it's not possible to register at the moment. Please try again later."
-msgstr ""
-
-msgid "Remember: this seems like it's your second account! Do not multiaccount, or you're likely to get restricted!"
-msgstr ""
-
-msgid "Username (2 to 15 characters, alphanumeric, spaces, <code>_[]-</code>)"
-msgstr ""
-
-msgid "Password (at least 8 characters)"
-msgstr ""
-
-msgid "Email"
-msgstr ""
-
-msgid "You have been successfully registered on Kurikku! You now need to verify your account."
-msgstr ""
-
-# Register checks
-msgid "Your password is too short! It must be at least 8 characters long."
-msgstr ""
-
-msgid "Your password is one of the most common passwords on the entire internet. No way we're letting you use that!"
-msgstr ""
-
-msgid "Your username must contain alphanumerical characters, spaces, or any of <code>_[]-</code>"
-msgstr ""
-
-msgid "You're not allowed to register with that username."
-msgstr ""
-
-msgid "Please pass a valid email address."
-msgstr ""
-
-msgid "An username can't contain both underscores and spaces."
-msgstr ""
-
-msgid "An user with that username already exists!"
-msgstr ""
-
-msgid "An user with that email address already exists!"
-msgstr ""
-
-msgid "Captcha is invalid."
-msgstr ""
-
-msgid "Whoops, an error slipped in. You might have been registered, though. I don't know."
-msgstr ""
-
-# register/verify.html
-msgid "Verify account"
-msgstr ""
-
-msgid "Your account has been created, however it still <b>needs to be verified!</b> Please log in into <b><u>osu! (the game)</u></b> using your account. <b>There is <u>no email confirmation</u> at the moment. All you need to do is connect to Kurikku from the osu! client!</b> If you're having trouble, <a href='/doc/1'>follow this guide</a>."
-msgstr ""
-
-msgid "<b class='big text'>Do not let anyone except yourself log into your Kurikku account!</b><br> Get on our <a href='%s'>Discord server's</a> #help channel instead (after following the steps on this page) so that we can help you out if you have trouble connecting."
-msgstr ""
-
-msgid "<a href='/doc/1'>The Guide,</a> tl;dr version"
-msgstr ""
-
-msgid "Download the server switcher"
-msgstr ""
-
-msgid "Extract it, disable your antivirus, execute it <b>as administrator</b>"
-msgstr ""
-
-msgid "Click on <b>install certificate</b>, then <b>Yes</b>"
-msgstr ""
-
-msgid "Make sure the switcher says you're playing on <b>Kurikku</b> server, if not click <b>On/Off</b>"
-msgstr ""
-
-msgid "If it says something about read-only mode, go to <code>C:\\Windows\\System32\\Drivers\\etc</code>, open the hosts' file Properties and make sure it's not set to \"Read only\"."
-msgstr ""
-
-msgid "If you're still having trouble, then again, get on our <a href='%s'>Discord server's</a> #help channel. To have a better chance to be answered, say \"strawberry\" anywhere in your messages so that we know you have actually read this."
-msgstr ""
-
-msgid "Waiting for verification"
-msgstr ""
-
-# register/welcome.html
-msgid "Welcome!"
-msgstr ""
-
-msgid "Welcome back!"
-msgstr ""
-
-msgid "Congratulations for not reading things!"
-msgstr ""
-
-msgid "Multiaccounts are not allowed on Kurikku"
-msgstr ""
-
-msgid "Your new account has been <b>banned</b> and your main account has been <b>restricted</b>. You can appeal in a month by sending an email to <b><a href='mailto:support@kurikku.pw'>support@kurikku.pw</a></b>. You better read the rules next time."
-msgstr ""
-
-msgid "Welcome to Kurikku"
-msgstr ""
-
-msgid "We're glad to have you here. <b>Your account is now active.</b> You can now play on Kurikku and <a href='/login'>log in</a> on the website!"
-msgstr ""
-
-msgid "Here's a few things you might want to check out:"
-msgstr ""
-
-msgid "Login"
-msgstr ""
-
-msgid "Rules"
-msgstr ""
-
-msgid "Documentation"
-msgstr ""
-
-msgid "Status"
-msgstr ""
-
-msgid "Discord"
-msgstr ""
-
-msgid "Subreddit"
-msgstr ""
-
-msgid " - in case you don't know where to start"
-msgstr ""
-
-msgid " - in case you haven't already read them"
-msgstr ""
-
-msgid " - in case, well, you need help doing stuff"
-msgstr ""
-
-msgid " - in case you believe Kurikku is down"
-msgstr ""
-
-msgid " - in case you want to talk with people about Kurikku"
-msgstr ""
-
-msgid " - just in case"
-msgstr ""
-
-# 2fa_gateway_recover.html
-msgid "Recover account"
-msgstr ""
-
-msgid "Can't find a way to get back access to your Kurikku account? Fear not! If you have your recovery codes which we recommended you to print you can type one in here and we'll magically log you in this time. After you've managed to get in, please disable and then re-enable 2FA, so you won't risk losing your account again."
-msgstr ""
-
-msgid "Oh no you don't."
-msgstr ""
-
-msgid "Get out."
-msgstr ""
-
-msgid "Recovery code is invalid."
-msgstr ""
-
-# register/elmo.html
-msgid "Elmo! Stop!"
-msgstr ""
-
-msgid "Stop!"
-msgstr ""
-
-msgid "We see that you're trying to sign up while having already signed up as %s! Please note that multiaccounting is punishable, and can lead to a one month restriction!"
-msgstr ""
-
-msgid "If you're %s, keep in mind that multiaccounting = ban."
-msgstr ""
-
-msgid "If you're not %s, but you're using %s's computer, please sign up on Kurikku from your own computer."
-msgstr ""
-
-msgid "If you live with %s and you don't have your own computer from which to sign up on Kurikku, then please contact support@kurikku.pw, and we'll deal with your specific case."
-msgstr ""
-
-msgid "This warning may pop up also if you're using another computer on the same network of %s. As long as you're not using the same computer, you should be all good."
-msgstr ""
-
-msgid "Don't stop me now!"
-msgstr ""
-
-msgid "Bring me back to safety!"
-msgstr ""
-
-# login.html
-msgid "Log in"
-msgstr ""
-
-msgid "Username (or email)"
-msgstr ""
-
-# in relationship to a password
-msgid "(forgot?)"
-msgstr ""
-
-msgid "Username or password not set."
-msgstr ""
-
-msgid "No user with such %s!"
-msgstr ""
-
-msgid "Your password is sooooooo old, that we don't even know how to deal with it anymore. Could you please change it?"
-msgstr ""
-
-msgid "Wrong password."
-msgstr ""
-
-msgid "You will need to verify your account first."
-msgstr ""
-
-msgid "You are not allowed to login. This means your account is either banned or locked."
-msgstr ""
-
-msgid "Hey %s! You are now logged in."
-msgstr ""
-
-msgid "You're already logged out!"
-msgstr ""
-
-msgid "Successfully logged out."
-msgstr ""
-
-# pwreset.html
-msgid "Forgot your password? Worry not! Here you can reset it. Just tell us your username or email address, and we'll take care of it. You will receive an email at the email address you used to sign up on Kurikku. To continue the password reset procedure, click the link on that email."
-msgstr ""
-
-msgid "You look pretty banned/locked here."
-msgstr ""
-
-msgid "Done! You should shortly receive an email from us at the email you used to sign up on Kurikku."
-msgstr ""
-
-msgid "Kurikku password recovery instructions"
-msgstr ""
-
-msgid "Hey %s! Someone, which we really hope was you, requested a password reset for your account. In case it was you, please <a href='%s'>click here</a> to reset your password on Kurikku. Otherwise, silently ignore this email."
-msgstr ""
-
-# not_found.html
-msgid "Not Found"
-msgstr ""
-
-msgid "We're sorry, but we were unable to find the content you were looking for!"
-msgstr ""
-
-# navbar.html
-msgid "Home page"
-msgstr ""
-
-msgid "Leaderboard"
-msgstr ""
-
-msgid "Help"
-msgstr ""
-
-msgid "About"
-msgstr ""
-
-msgid "Chat (Discord)"
-msgstr ""
-
-msgid "Contact support"
-msgstr ""
-
-msgid "Beatmaps"
-msgstr ""
-
-msgid "Donate"
-msgstr ""
-
-msgid "RAP"
-msgstr ""
-
-msgid "Profile"
-msgstr ""
-
-msgid "Friends"
-msgstr ""
-
-msgid "Settings"
-msgstr ""
-
-msgid "Log out"
-msgstr ""
-
-msgid "Looking for someone?"
-msgstr ""
-
-# homepage.html
-msgid "Home Page"
-msgstr ""
-
-msgid "Welcome to Kurikku."
-msgstr ""
-
-msgid "Kurikku is a private osu! server, featuring multiplayer, PP, a very active community and a development team going strong implementing new features and squashing bugs. <a href='/about'>You can check out even more features here.</a> It has also a very friendly community, and it's <a href='https://zxq.co/Kurikku/Kurikku'>open source!</a> Just so you know, <b>we currently have %s users online and %s registered users!</b>"
-msgstr ""
-
-msgid "What are you waiting for? Join Kurikku! It's risk-free: you won't get your account banned on the official server if you play on Kurikku.<br>You can also switch anytime between the official osu! server and Kurikku!"
-msgstr ""
-
-msgid "Howdy, %s!"
-msgstr ""
-
-msgid "Welcome back to Kurikku. We currently have <b>%s online users and %s total registered users.</b> Nice day to farm a few maps, isn't it?"
-msgstr ""
-
-msgid "Latest news from our <a href='https://blog.Kurikku.moe'>blog</a>"
-msgstr ""
-
-# base.html
-msgid "Kurikku's score submission is currently in maintenance mode. You will not be allowed to submit scores for the time being."
-msgstr ""
-
-msgid "The Kurikku website is currently in maintenance mode. Only certain users are allowed to access the full website."
-msgstr ""
-
-msgid "Your account is currently in restricted mode. You will not be able to do certain actions, and your profile can only be seen by you and by Kurikku's staff. If you believe we have mistaken putting you in restricted mode, or a month has passed since you first saw this, then you can send an appeal at <a href='mailto:support@kurikku.pw'>support@kurikku.pw</a>."
-msgstr ""
-
-msgid "&copy; 2015-%d Kurikku, using Hanayo %s."
-msgstr ""
-
-msgid "Team"
-msgstr ""
-
-msgid "Who is working on this thing?"
-msgstr ""
-
-msgid "Developer docs"
-msgstr ""
-
-msgid "See what changed!"
-msgstr ""
-
-msgid "Changelog"
-msgstr ""
-
-msgid "Blog"
-msgstr ""
-
-msgid "What's going on under the hood?"
-msgstr ""
-
-msgid "Follow us on Twitter!"
-msgstr ""
-
-msgid "Share irrelevant opinions on reddit!"
-msgstr ""
-
-msgid "Language"
-msgstr ""
-
-# 2fa_gateway.html
-msgid "Two Factor Authentication"
-msgstr ""
-
-msgid "Before proceding further on Kurikku, we require you to use your Google Authenticator App to use the code for Kurikku, so that we can log you in."
+msgid "Hey, %s."
 msgstr ""
 
 msgid "Before proceding any further on Kurikku, we require you to use the message you just received on telegram to log in to your account."
 msgstr ""
 
-msgid "Lost your phone, or can't access Google Authenticator?"
-msgstr ""
-
-msgid "Click here to use a recovery code."
+msgid "Before proceding further on Kurikku, we require you to use your Google Authenticator App to use the code for Kurikku, so that we can log you in."
 msgstr ""
 
 msgid "Telegram code"
@@ -697,117 +17,125 @@ msgstr ""
 msgid "(send again?)"
 msgstr ""
 
-msgid "Google Authenticator passcode"
+msgid "Lost your phone, or can't access Google Authenticator?"
 msgstr ""
 
-msgid "Hey, %s."
+msgid "Click here to use a recovery code."
 msgstr ""
 
-msgid "You need to complete the 2fa challenge first."
+# Translation for ..\templates\2fa_gateway_recover.html
+
+msgid "Can't find a way to get back access to your Kurikku account? Fear not! If you have your recovery codes which we recommended you to print you can type one in here and we'll magically log you in this time. After you've managed to get in, please disable and then re-enable 2FA, so you won't risk losing your account again."
 msgstr ""
 
-msgid "A new code has been generated and sent to you through Telegram."
+msgid "Recover account"
 msgstr ""
 
-msgid "You've been successfully logged in."
+# Translation for ..\templates\500.html
+
+msgid "Ooops! Looks like something went really wrong while trying to process your request. Perhaps report this to a developer? Retrying doing what you were trying to do might work, too."
 msgstr ""
 
-# help.html
-msgid "If you need to get in touch with our support team (our Community Managers), you will need to send an email to our support email address. You can compose an email to it by clicking the button at the bottom of this page. <b>Please read the following</b> though, as it is important."
+# Translation for ..\templates\base.html
+
+msgid "Your account is currently in restricted mode. You will not be able to perform certain actions, and your profile can only be seen by you and by Kurikku's staff. If you believe this was a mistake, or a month has passed since you first saw this, then you can send an appeal to <a href=mailto:support@kurikku.pw>support@kurikku.pw</a>."
 msgstr ""
 
-msgid "The support email <b>is not meant for technical support</b>. If you need technical support, then please join our <a href='%s'>Discord Server</a>, and ask your question on the <b>#help channel</b>. You should also join the Discord server and ask a CM if you have any informal inquiry that you may have. If you need to contact a specific staff member, you can contact them by clicking the envelope icon under their name in the <a href='/team'>Team page</a>."
+msgid "Kurikku's score submission is currently in maintenance mode. You will not be allowed to submit scores for the time being."
 msgstr ""
 
-msgid "Instead, if you need any of the following:"
+msgid "Kurikku's website is currently in maintenance mode. Only certain users are allowed to access the full website."
 msgstr ""
 
-msgid "Username change"
+msgid "&copy; %d Ripple, osu!Kurikku, using Hanayo %s."
 msgstr ""
 
-msgid "Appeal your ban/restriction"
+msgid "Who is working on this thing?"
 msgstr ""
 
-msgid "Anything else that strictly deals with your account and is not related in any way to a technical issue of yours."
+msgid "Team"
 msgstr ""
 
-msgid "Then the support mail is the way to go."
+msgid "GitHub"
 msgstr ""
 
-msgid "When contacting the support mail, please make sure to <b>send the email from the email address you signed up on Kurikku with</b>."
+msgid "Status"
 msgstr ""
 
-msgid "Last but not least, <b>the support email is not meant for filing bug reports</b>. If you need to report a bug, then please just ask one of our developers on Discord. If it's a security bug, for instance XSS or SQL injection, then please contact <a href='mailto:howl@Kurikku.moe'>Howl</a> or <a href='mailto:nyo@Kurikku.moe'>Nyo</a>."
+msgid "Language"
 msgstr ""
 
-msgid "I have read and understood everything on this page."
+# Translation for ..\templates\beatmap.html
+
+msgid "Artist"
 msgstr ""
 
-msgid "Ooops! Looks like something went really wrong while trying to process your request. Perhaps report this to a Kurikku developer? Retrying doing what you were trying to do might work, too."
+msgid "Title"
 msgstr ""
 
-# about.html
-msgid "Welcome to Kurikku."
+msgid "Creator"
 msgstr ""
 
-msgid "Kurikku is a private osu! server."
+msgid "Source"
 msgstr ""
 
-msgid "There are many like it, but this one is ours."
+msgid "Circle Size"
 msgstr ""
 
-# %s is eggplant emoji
-msgid "Don't you like %s?"
+msgid "HP Drain"
 msgstr ""
 
-msgid "We have leaderboards."
+msgid "Overall Difficulty"
 msgstr ""
 
-msgid "Online user listing."
+msgid "Passes/Plays"
 msgstr ""
 
-msgid "Free osu!direct."
+msgid "Approach Rate"
 msgstr ""
 
-msgid "Global leaderboards."
+msgid "Star Difficulty"
 msgstr ""
 
-msgid "and PP for osu!standard and osu!mania"
+msgid "Length"
 msgstr ""
 
-msgid "Ranking queue for unranked beatmaps."
+msgid "BPM"
 msgstr ""
 
-msgid "Spectator."
+msgid "osu!direct"
 msgstr ""
 
-msgid "Multiplayer."
+msgid "download"
 msgstr ""
 
-msgid "FokaBot, our chat bot"
+msgid "download (no video)"
 msgstr ""
 
-msgid "with plenty of functions for just about anything, <a href=\"/doc/4\">check it out!</a>"
+msgid "Rank"
 msgstr ""
 
-msgid "And a lot more to come!"
+msgid "Player"
 msgstr ""
 
-msgid "Kurikku is the result of the hard work of two Italian developers, who got tired about the whole osu! ecosystem, and also because they wanted to play with a few banned friends."
+msgid "Score"
 msgstr ""
 
-# %s is wink emoji
-msgid "It has now evolved into the largest available osu! private server, with more than 10,000 registered users. <a href=\"/register\">Signing up</a> on Kurikku won't result in getting your account on osu! restricted, so what are you waiting for?! Come join us! %s"
+msgid "Mods"
 msgstr ""
 
-msgid "In case you want to make sure we're not doing shady stuff with your data, you can also check the <a href=\"https://zxq.co/Kurikku/Kurikku\">source code</a> Kurikku is running on."
+msgid "Accuracy"
 msgstr ""
 
-# changelog.html
+msgid "Combo"
+msgstr ""
+
+msgid "PP"
+msgstr ""
+
+# Translation for ..\templates\changelog.html
+
 msgid "This is the changelog. Changes are published here as soon as they hit the production status (as in, live on the website)."
-msgstr ""
-
-msgid "For various reasons, some software of Kurikku does not contribute to the changelog, to which this website is a part of. In case you want to see the changelog of Hanayo, you can do so by <a href=\"https://zxq.co/Kurikku/hanayo/commits/master\">clicking here</a>."
 msgstr ""
 
 msgid "Author"
@@ -819,8 +147,69 @@ msgstr ""
 msgid "Time"
 msgstr ""
 
-# doc_content.html
-msgid "View document"
+# Translation for ..\templates\clanboard.html
+
+msgid "[Clan tag] Name"
+msgstr ""
+
+msgid "PP/Score"
+msgstr ""
+
+msgid "Playcount"
+msgstr ""
+
+# Translation for ..\templates\clansample.html
+
+msgid "%s"
+msgstr ""
+
+msgid "(%s)"
+msgstr ""
+
+msgid "Clan Owner"
+msgstr ""
+
+msgid "Global Rank"
+msgstr ""
+
+msgid "Ranked Score"
+msgstr ""
+
+msgid "Total Score"
+msgstr ""
+
+msgid "Total Playcount"
+msgstr ""
+
+msgid "Total Replays Watched"
+msgstr ""
+
+msgid "Total Hits"
+msgstr ""
+
+msgid "Disband Clan"
+msgstr ""
+
+msgid "Leave Clan"
+msgstr ""
+
+msgid "Members"
+msgstr ""
+
+msgid "The members of the clan."
+msgstr ""
+
+# Translation for ..\templates\doc.html
+
+msgid "Need some help getting around? Look no further! From here you will be able to view our documentation, which is basically a very simplistic wiki."
+msgstr ""
+
+msgid "Looks like there is no documentation on this Kurikku instance!"
+msgstr ""
+
+# Translation for ..\templates\doc_content.html
+
+msgid "It seems like the original version of this file has been updated, so this file is out of date and may contain inaccurate information. If you want to make sure to be up-to-date, please refer to the <a href=\"%s%s\">English version</a>."
 msgstr ""
 
 msgid "Documentation file not found!"
@@ -829,14 +218,8 @@ msgstr ""
 msgid "View all docs"
 msgstr ""
 
-# doc.html
-msgid "Need some help getting around? Look no further! From here you will be able to view our documentation, which is basically a very simplistic wiki."
-msgstr ""
+# Translation for ..\templates\friends.html
 
-msgid "Looks like there is no documentation on this Kurikku instance!"
-msgstr ""
-
-# friends.html
 msgid "On this page you can see all of your friends, and unfriend them as you see fit."
 msgstr ""
 
@@ -846,54 +229,251 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-# irc.html
-msgid "Here you can generate a new IRC token. You can use it to connect to Kurikku's chat using IRC. Remember that your IRC token is like a password, anyone who knows it, has access to your account. If you're interested knowing how to connect to Kurikku's chat via IRC, you may want to check out <a href=\"/doc/11\">this</a>."
+# Translation for ..\templates\help.html
+
+msgid "If you need to get in touch with our support team (our Community Managers), you will need to either send an email to our support email address, or join our <a href='https://discord.gg/5uA3c76'>Discord Server</a>. You can compose an email to it by clicking the button at the bottom of this page. <b>Please read the following</b> though, as it is important."
+msgstr ""
+
+msgid "The support email <b>is not meant for technical support</b>. If you need technical support, then please join our <a href='https://discord.gg/5uA3c76'>Discord Server</a>, and ask your question on the <b>#help channel</b>. You should also join the Discord server and ask a CM if you have any informal inquiry that you may have."
+msgstr ""
+
+msgid "When contacting the support mail, please make sure to <b>send the email from the email address you signed up on Kurikku with</b>."
+msgstr ""
+
+msgid "OUR DISCORD"
+msgstr ""
+
+msgid "Full Name"
+msgstr ""
+
+msgid "E-Mail"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "Send"
+msgstr ""
+
+# Translation for ..\templates\homepage.html
+
+msgid "On this moment <b>%s online</b> and <b>%s registered users</b>"
+msgstr ""
+
+msgid "Learn the experience of playing on the fastest growing private server of osu!"
+msgstr ""
+
+msgid "Check us!"
+msgstr ""
+
+msgid "Register"
+msgstr ""
+
+msgid "Done by <a href='/u/%s'>%s</a>"
+msgstr ""
+
+msgid "Top Score"
+msgstr ""
+
+msgid "Top Score RX"
+msgstr ""
+
+msgid "Top donators"
+msgstr ""
+
+msgid "Expires in <b>%s</b>"
+msgstr ""
+
+msgid "Welcome back, <span class='subtitle'>%s</span>!"
+msgstr ""
+
+msgid "players"
+msgstr ""
+
+msgid "online"
+msgstr ""
+
+msgid "Server news"
+msgstr ""
+
+msgid "viewers"
+msgstr ""
+
+msgid "Most played beatmaps"
+msgstr ""
+
+msgid "Submitted Scores"
+msgstr ""
+
+msgid "Vote for us and get free donor!"
+msgstr ""
+
+msgid "Vote!"
+msgstr ""
+
+# Translation for ..\templates\irc.html
+
+msgid "Here you can generate a new IRC token. You can use it to connect to Kurikku's chat using IRC. Remember that your IRC token is like a password, anyone who knows it, has access to your account. If you're interested knowing how to connect to Kurikku's chat via IRC."
 msgstr ""
 
 msgid "Generate a new token!"
 msgstr ""
 
-# leaderboard.html
-msgid "Rank"
+# Translation for ..\templates\login.html
+
+msgid "You're already logged in!"
 msgstr ""
 
-msgid "Player"
+msgid "Username (or email)"
 msgstr ""
 
-msgid "PP/Score"
+msgid "Username"
 msgstr ""
 
-msgid "Accuracy"
+msgid "Password"
 msgstr ""
 
-msgid "Playcount"
+msgid "(forgot?)"
 msgstr ""
 
-# profile.html
-msgid "%s's profile"
+msgid "Submit"
 msgstr ""
 
-# for <reason>, expires <placeholder for time>.
+# Translation for ..\templates\navbar.html
+
+msgid "Home page"
+msgstr ""
+
+msgid "Leaderboard"
+msgstr ""
+
+msgid "Information"
+msgstr ""
+
+msgid "Tournament live"
+msgstr ""
+
+msgid "Signature Generator"
+msgstr ""
+
+msgid "Discord"
+msgstr ""
+
+msgid "Contact support"
+msgstr ""
+
+msgid "Documentation"
+msgstr ""
+
+msgid "Beatmaps"
+msgstr ""
+
+msgid "Beatmaps Searching"
+msgstr ""
+
+msgid "Rank Request"
+msgstr ""
+
+msgid "Community"
+msgstr ""
+
+msgid "Clans"
+msgstr ""
+
+msgid "Clans Leaderboard"
+msgstr ""
+
+msgid "Clans Create"
+msgstr ""
+
+msgid "Streamers"
+msgstr ""
+
+msgid "Multiplayer matches"
+msgstr ""
+
+msgid "Donate"
+msgstr ""
+
+msgid "Why do we need donations?"
+msgstr ""
+
+msgid "Shop"
+msgstr ""
+
+msgid "Switcher"
+msgstr ""
+
+msgid "Admin Panel"
+msgstr ""
+
+msgid "Looking for someone?"
+msgstr ""
+
+msgid "Profile"
+msgstr ""
+
+msgid "Friends"
+msgstr ""
+
+msgid "Subscribers"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Log out"
+msgstr ""
+
+msgid "Log in"
+msgstr ""
+
+# Translation for ..\templates\not_found.html
+
+msgid "We're sorry, but we were unable to find the content you were looking for!"
+msgstr ""
+
+# Translation for ..\templates\oauth.html
+
+msgid "This application will be able to:"
+msgstr ""
+
+msgid "Identify"
+msgstr ""
+
+msgid "See your public information (everything somebody can see on your user profile), however with this alone it will not be able to see your private information (for instance your email address)."
+msgstr ""
+
+msgid "Read private information"
+msgstr ""
+
+msgid "This application will be able to see your email address, and any private information we will add in the future."
+msgstr ""
+
+msgid "Write"
+msgstr ""
+
+msgid "This application will be able to make modifications to your Kurikku account. This is potentially really dangerous! Use this only with applications that you trust."
+msgstr ""
+
+msgid "Approve"
+msgstr ""
+
+msgid "Deny"
+msgstr ""
+
+msgid "created by %s"
+msgstr ""
+
+# Translation for ..\templates\profile.html
+
 msgid "User is <b>silenced</b> for %s, expires %s."
 msgstr ""
 
-# %s is placeholder for an adjective of the user, e.g. "locked", "pending verification", "restricted"
 msgid "User is <b>%s</b>"
 msgstr ""
 
-msgid "pending verification"
-msgstr ""
-
-msgid "banned"
-msgstr ""
-
-msgid "restricted"
-msgstr ""
-
-msgid "locked"
-msgstr ""
-
-msgid "User not found"
+msgid "Unknown"
 msgstr ""
 
 msgid "(aka <b>%s</b>)"
@@ -905,49 +485,31 @@ msgstr ""
 msgid "Offline"
 msgstr ""
 
-msgid "Unknown"
+msgid "subs count"
 msgstr ""
 
-msgid "<b>%s</b> is a Kurikku player from <b>%s</b>."
+msgid "VK"
+msgstr ""
+
+msgid "Twitch"
+msgstr ""
+
+msgid "<b>%s</b> "
+msgstr ""
+
+msgid " from <b>%s</b>."
+msgstr ""
+
+msgid "<b>%s</b> is a player from <b>%s</b>."
+msgstr ""
+
+msgid "They registered %s."
 msgstr ""
 
 msgid "Last seen: %s."
 msgstr ""
 
-msgid "They signed up on Kurikku %s."
-msgstr ""
-
 msgid "They play with %s."
-msgstr ""
-
-msgid "Mouse"
-msgstr ""
-
-msgid "Tablet"
-msgstr ""
-
-msgid "Keyboard"
-msgstr ""
-
-msgid "Touchscreen"
-msgstr ""
-
-msgid "Spoon"
-msgstr ""
-
-msgid "Leap motion"
-msgstr ""
-
-msgid "Oculus rift"
-msgstr ""
-
-msgid "Dick"
-msgstr ""
-
-msgid "Eggplant"
-msgstr ""
-
-msgid "This user hasn't got any badges!"
 msgstr ""
 
 msgid "Global rank"
@@ -956,7 +518,7 @@ msgstr ""
 msgid "Country rank"
 msgstr ""
 
-msgid "PP"
+msgid "Clan"
 msgstr ""
 
 msgid "Ranked score"
@@ -974,9 +536,54 @@ msgstr ""
 msgid "Level %s"
 msgstr ""
 
-# support.html
-msgid "Support Kurikku"
+msgid "Achievements"
 msgstr ""
+
+msgid "Load more"
+msgstr ""
+
+msgid "Skills"
+msgstr ""
+
+# Translation for ..\templates\pwreset.html
+
+msgid "Forgot your password? Worry not! Here you can reset it. Just tell us your username or email address, and we'll take care of it. You will receive an email at the email address you used to sign up on Kurikku. To continue the password reset procedure, click the link on that email."
+msgstr ""
+
+# Translation for ..\templates\report.html
+
+msgid "Reason"
+msgstr ""
+
+msgid "Foul play / Cheating"
+msgstr ""
+
+msgid "Spamming"
+msgstr ""
+
+msgid "Other"
+msgstr ""
+
+msgid "Additional text"
+msgstr ""
+
+msgid "We must say, that we can silence you if the report is false or you're abusing the report system (spamming, etc.)"
+msgstr ""
+
+# Translation for ..\templates\socialOAuth.html
+
+msgid "Hello! Authorization was successful, time to go back ...."
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+# Translation for ..\templates\subs.html
+
+msgid "On this page you can see all of your subscribers, and add new friends if you see fit."
+msgstr ""
+
+# Translation for ..\templates\support.html
 
 msgid "You are a donor!"
 msgstr ""
@@ -1008,16 +615,13 @@ msgstr ""
 msgid "We do not have ads. And never will."
 msgstr ""
 
-msgid "We love picking random icons from our icon library."
-msgstr ""
-
 msgid "You may have adblock enabled and have not noticed, but we don't have ads anywhere on our website. We believe ads are bad, as they can be very annoying to you and that you would rather spend a few bucks to help us rather than watch annoying ads all the time."
 msgstr ""
 
-msgid "So what can you do?"
+msgid "We love picking random icons from our icon library."
 msgstr ""
 
-msgid "Well, you can give us money."
+msgid "So what can you do?"
 msgstr ""
 
 msgid "Well, you can give us even more money."
@@ -1029,90 +633,367 @@ msgstr ""
 msgid "Yellow username"
 msgstr ""
 
-msgid "Donor badge"
-msgstr ""
-
-msgid "Custom badge editor"
-msgstr ""
-
-msgid "Friends ranking"
-msgstr ""
-
-msgid "Discord privileges"
-msgstr ""
-
-msgid "Profile background"
-msgstr ""
-
-msgid "More to come!"
-msgstr ""
-
 msgid "Just like in osu!, you get a <b>shiny yellow username</b> in the in-game chat to show everyone you're a really cool dude who has helped us pay the server bills."
+msgstr ""
+
+msgid "Donor badge"
 msgstr ""
 
 msgid "Again, just like in osu!, you will get a <b>donor badge</b> on your profile, to show everyone you're supporting us."
 msgstr ""
 
+msgid "Custom badge editor"
+msgstr ""
+
 msgid "You get to be able to create your <b>own personal badge</b>, with custom text and icon, to show off on your profile! Let the world know you're an anchor. Or prank people showing a spinnin' wheel with \"Loading...\"! Up to you."
+msgstr ""
+
+msgid "Friends ranking"
 msgstr ""
 
 msgid "<b>Competing with friends</b> is really cool, you can play on the leaderboard with someone more or less on your level, without getting crippling depression and RSI for not beating that pro!"
 msgstr ""
 
-msgid "You'll get exclusive access to the <b>\"#donators\"</b> text and voice channels, you'll be able to change your discord nickname and you'll get a custom role with custom username colour!"
+msgid "Profile background"
 msgstr ""
 
 msgid "Think about <b>spicing your profile up with some eggplants</b>? Got you covered! Having donor privileges, you get to be able to change your profile background."
 msgstr ""
 
-msgid "<b>Who knows</b> what we could implement next? You could be able to do even <i>more</i> stuff for donors once we implement it."
+msgid "Unlimited Name Changes"
+msgstr ""
+
+msgid "<b>Tired of your current identity?</b> Now you can have as many as you want! Just ask an administrator to change your name, as many times as you'd like."
+msgstr ""
+
+msgid "Unlimited Flag Changes"
+msgstr ""
+
+msgid "<b>Want to appear as if you're from another country?</b> You also get as many of these as you'd like. Just enter in chat !flag <flag iso code>"
+msgstr ""
+
+msgid "Unlimited Stats Resets"
+msgstr ""
+
+msgid "Now you can also <b>start fresh</b> with unlimited stats resets! Ask an administrator and they shall perform the deed."
+msgstr ""
+
+msgid "Viewing your subscribers"
+msgstr ""
+
+msgid "Now you can watch <b>your subscribers</b>. That's way to <b>found</b> new good friends"
+msgstr ""
+
+msgid "Chance to be in top donators"
+msgstr ""
+
+msgid "If you are <b>one of those who support our server the most</b>, you will be in the <b>top donators</b>. <b>Imagine</b> you are <b>on the main page</b>. That's cool)"
+msgstr ""
+
+msgid "Creating clans"
+msgstr ""
+
+msgid "Wow, now you can create clan for you and your friends. <b>Pew-pew</b> with other clans."
 msgstr ""
 
 msgid "And this is how you pay"
 msgstr ""
 
-msgid "You may donate through either <b>PayPal</b> (or credit/debit card linked to PayPal) or <b>Bitcoin</b>. Use the slider below to choose the amount of months you'd like to have the donor benefits, and the cost will be instantly calculated. Remember that if, for instance, you choose to donate ??? 4 instead of ??? 3.51, you will only be given one donor month."
+msgid "That's DonationAlerts - \"streamer's main tool\" but we use that beautiful platform for collect donations ヽ(・∀・)ﾉ"
 msgstr ""
 
-msgid "Loading..."
+msgid "Donate!"
+msgstr ""
+
+msgid "<b>NOTE:</b> please check description before you donate"
 msgstr ""
 
 msgid "PayPal"
 msgstr ""
 
+msgid "Loading..."
+msgstr ""
+
 msgid "User:"
 msgstr ""
 
-msgid "Bitcoin"
+msgid "User"
 msgstr ""
 
-msgid "Send %s BTC to this Bitcoin address:"
+msgid "Please log in before purchasing supporter"
 msgstr ""
 
-msgid "Afterwards, <b>please send an email to <a href=\"mailto:howl@Kurikku.moe\">howl@Kurikku.moe</a></b> containing the transaction hash!"
+# Translation for ..\templates\switcher.html
+
+msgid "Guide about Server Switcher!"
 msgstr ""
 
-msgid "I've donated, now what?"
+msgid "Hi! This little guide will show you how to connect on our server"
 msgstr ""
 
-msgid "You'll have to wait until we verify and process your payment. It can take up to <b>12 hours</b>. If 12 hours have passed and you still haven't received your Donor tag, contact a <b>Dev/Community Manager</b> in our Discord server or send an email to <b><a href=\"mailto:support@kurikku.pw\">support@kurikku.pw</a></b>. Once we have processed your payment, you'll receive an <b>email</b> to the address you've used to sign up and you'll get <b>all the donor privileges, except the Discord ones</b>. To get the Discord donor privileges, go <a href=\"/settings/discord\">here</a>."
+msgid "The first thing you need to do is download one of a switchers:"
 msgstr ""
 
-msgid "Please log in to get supporter"
+msgid "Next we need to unpack one of a switchers, open, install the certificate and then press the green button <b>«Switch to Kurikku»</b>. That's all, welcome to one of most friendly private servers <b>on osu!</b>."
 msgstr ""
 
-# Settings
-msgid "Userpage"
+msgid "Videoguide:"
 msgstr ""
 
-msgid "Avatar"
+# Translation for ..\templates\team.html
+
+msgid "This is a list of the wonderful people who keep Kurikku up and running and deal with its community."
 msgstr ""
 
-msgid "Discord donor"
+msgid "Owners"
 msgstr ""
 
-msgid "Profile background"
+msgid "The backbones of the server. The owners function as both the main community managers, as well as primary Developers. They work on everything from managing the team to making this page look nicer."
 msgstr ""
+
+msgid "Community Managers"
+msgstr ""
+
+msgid "Community Managers deal with bans, silences, name changes and pretty much everything that has to do with the community."
+msgstr ""
+
+msgid "They take care of our Discord server and reply to emails sent to <a href='mailto:support@kurikku.pw'>support@kurikku.pw</a>. Community Managers have a red name in the in-game chat."
+msgstr ""
+
+msgid "Developers"
+msgstr ""
+
+msgid "Developers add new features to the server, squash bugs, keep the server up and running and take care of its maintenance."
+msgstr ""
+
+msgid "Replay Moderators"
+msgstr ""
+
+msgid "Hunters who catch and send in ban cheaters. We are proud of them."
+msgstr ""
+
+msgid "Chat Moderators"
+msgstr ""
+
+msgid "Chat moderators manage the chat to make sure The Law&trade; (the rules) is respected."
+msgstr ""
+
+msgid "BATs"
+msgstr ""
+
+msgid "BATs play beatmaps in the ranking queue and decide whether they are good enough to be ranked or not."
+msgstr ""
+
+msgid "Special thanks"
+msgstr ""
+
+msgid "Here's a list of people who helped with Kurikku"
+msgstr ""
+
+msgid "Looking for how you should contact our team? Check out <a href='/help'>this page</a>."
+msgstr ""
+
+msgid "<b>Franc[e]sco/lolisamurai</b>, for <a href='https://github.com/Francesco149/oppai'>oppai</a>, used as standard pp calculator."
+msgstr ""
+
+msgid "<b>Semyon442</b>, for <a href='https://github.com/semyon422/omppc'>mania-pp</a> calculator"
+msgstr ""
+
+msgid "<b>Sunpy</b>, for <a href='https://github.com/osufx/catch-the-pp'>catch-the-pp</a>, used as catch the beat pp calculator."
+msgstr ""
+
+msgid "<b>jrosdahl</b>, for <a href='https://github.com/jrosdahl/miniircd'>miniircd</a>, used as a base for our IRC server."
+msgstr ""
+
+msgid "<b>Flame</b> for clans system!"
+msgstr ""
+
+msgid "<b><a href='http://ripple.moe/'>Ripple</a></b>, for the software to host Kurikku"
+msgstr ""
+
+msgid "<b><a id='everyone' class='clickable'>Everyone</a></b> who has supported Kurikku by donating."
+msgstr ""
+
+# Translation for ..\templates\topgvoter.html
+
+msgid "You have %d votes!"
+msgstr ""
+
+msgid "Exchange your votes!"
+msgstr ""
+
+msgid "Why do we need these votes?"
+msgstr ""
+
+msgid "These votes help us promote the server at the <a class='ui subtitle' href='https://topg.org' alt='topg link'>TopG.org</a> monitoring site."
+msgstr ""
+
+msgid "You need register!"
+msgstr ""
+
+# Translation for ..\templates\tournamentgrid.html
+
+msgid "Tournament grid!"
+msgstr ""
+
+# Translation for ..\templates\beatmaps\rank_request.html
+
+msgid "Want to play an unranked beatmap and get pp? You can submit beatmaps rank requests here!"
+msgstr ""
+
+msgid "Queue status"
+msgstr ""
+
+msgid "by you"
+msgstr ""
+
+msgid "Requests submitted"
+msgstr ""
+
+msgid "In the past 24 hours"
+msgstr ""
+
+msgid "Request a beatmap"
+msgstr ""
+
+msgid "You cannot currently request beatmaps!"
+msgstr ""
+
+msgid "Please try again "
+msgstr ""
+
+msgid "ID bm/bs"
+msgstr ""
+
+msgid "Moderator"
+msgstr ""
+
+# Translation for ..\templates\clans\create.html
+
+msgid "You need to login!"
+msgstr ""
+
+msgid "Sorry, it's not possible to create a clan at the moment. Please try again later."
+msgstr ""
+
+msgid "You're already in a Clan."
+msgstr ""
+
+msgid "Name (2 to 15 characters, alphanumeric, spaces, <code>_[]-</code>)"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Description (optional)"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Icon [URL] (optional)"
+msgstr ""
+
+msgid "Icon URL"
+msgstr ""
+
+msgid "You need to be an Kurikku Supporter in order to create a clan."
+msgstr ""
+
+# Translation for ..\templates\dev\tokens.html
+
+msgid "The Ripple API is the system through which developers can create applications to interact with Ripple. <b>If you're asked to fill out an API token from this page, be wary and only actually create the token if you really trust the owner of the application.</b>"
+msgstr ""
+
+# Translation for ..\templates\pwreset\continue.html
+
+msgid "Glad to have you back here, %s! To finish the password recovery, type in a new password:"
+msgstr ""
+
+# Translation for ..\templates\register\elmo.html
+
+msgid "We see that you're trying to sign up while having already signed up as %s! Please note that multiaccounting is punishable, and can lead to a one month restriction!"
+msgstr ""
+
+msgid "If you're %s, keep in mind that multiaccounting = ban."
+msgstr ""
+
+msgid "If you're not %s, but you're using %s's computer, please sign up on Kurikku from your own computer."
+msgstr ""
+
+msgid "If you live with %s and you don't have your own computer from which to sign up on Kurikku, then please contact support@kurikku.pw, and we'll deal with your specific case."
+msgstr ""
+
+msgid "This warning may pop up also if you're using another computer on the same network of %s. As long as you're not using the same computer, you should be all good."
+msgstr ""
+
+msgid "If you truly have understood what's written above and you have understood that creating a multiaccount will lead to a restriction on your main account, you can click here and you'll be brought to the sign up page."
+msgstr ""
+
+msgid "Bring me back to safety!"
+msgstr ""
+
+# Translation for ..\templates\register\register.html
+
+msgid "Sorry, it's not possible to register at the moment. Please try again later."
+msgstr ""
+
+msgid "Remember: this seems like it's your second account! Do not multiaccount, or you're likely to get restricted!"
+msgstr ""
+
+msgid "Username (2 to 15 characters, alphanumeric, spaces, <code>_[]-</code>)"
+msgstr ""
+
+msgid "Password (at least 8 characters)"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+# Translation for ..\templates\register\verify.html
+
+msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via osu! to finish the account creation process."
+msgstr ""
+
+# Translation for ..\templates\register\welcome.html
+
+msgid "Congratulations for not reading things!"
+msgstr ""
+
+msgid "Multiaccounts are not allowed on Kurikku"
+msgstr ""
+
+msgid "Your new account has been <b>banned</b> and your main account has been <b>restricted</b>. You can appeal in a month by sending an email to <b><a href='mailto:support@kurikku.pw'>support@kurikku.pw</a></b>. You better read the rules next time."
+msgstr ""
+
+msgid "Welcome to Kurikku"
+msgstr ""
+
+msgid "We're glad to have you here. <b>Your account is now active.</b> You can now play on Kurikku and <a href='/login'>log in</a> on the website!"
+msgstr ""
+
+msgid "Here's a few things you might want to check out:"
+msgstr ""
+
+msgid "Login"
+msgstr ""
+
+msgid " - in case you don't know where to start"
+msgstr ""
+
+msgid "Rules"
+msgstr ""
+
+msgid " - in case you haven't already read them"
+msgstr ""
+
+msgid " - in case, well, you need help doing stuff"
+msgstr ""
+
+msgid " - in case you want to talk with people about Kurikku"
+msgstr ""
+
+# Translation for ..\templates\settings\2fa.html
 
 msgid "Two factor authentication is enabled on your account."
 msgstr ""
@@ -1123,7 +1004,7 @@ msgstr ""
 msgid "Telegram 2FA"
 msgstr ""
 
-msgid "To enable Telegram Two Factor Authentication, click this button, then click "start" on Telegram:"
+msgid "To enable Telegram Two Factor Authentication, click this button, then click \"start\" on Telegram:"
 msgstr ""
 
 msgid "Enable Telegram 2FA"
@@ -1132,10 +1013,13 @@ msgstr ""
 msgid "If you don't have Telegram on the current device, you can either open this page from a device on which you have it, or scan this QR code:"
 msgstr ""
 
-msgid "In case you don't have a way to scan QR codes or you simply can't be bothered to download an app that scans them, you can also open Telegram, start a conversation with <a href=\"http://telegram.me/Kurikku2fabot\"><b>@Kurikku2fabot</b></a> and send this message:"
+msgid "In case you don't have a way to scan QR codes or you simply can't be bothered to download an app that scans them, you can also open Telegram, start a conversation with <a href=\"http://telegram.me/ripple2fabot\"><b>@ripple2fabot</b></a> and send this message:"
 msgstr ""
 
 msgid "Google Authenticator (TOTP) based 2FA"
+msgstr ""
+
+msgid "Scan this from <a href=\"https://support.google.com/accounts/answer/1066447?hl=en\">Google Authenticator</a>, or if you're not able to, provide to Google Authenticator this key: <code>%s</code>. Once you've done, fill out the following form with the code you get on Google Authenticator and click on enter to enable TOTP-based two factor authentication."
 msgstr ""
 
 msgid "At the moment you currently have set up Telegram Two Factor Authentication. Should you wish to disable it, please fill out the following form:"
@@ -1156,16 +1040,57 @@ msgstr ""
 msgid "These are the only thing that will let you get back into your Kurikku account if you lose your device. Our suggestion is to paste them inside a document in your word processor (Microsoft Word, LibreOffice Writer), print them and store them in a safe place."
 msgstr ""
 
+# Translation for ..\templates\settings\authorized_applications.html
+
+msgid "From here you can check all the applications you granted authorization to your account, and revoke their permissions if necessary."
+msgstr ""
+
+msgid "Authorization created %s"
+msgstr ""
+
+msgid "Owner"
+msgstr ""
+
+msgid "Revoke"
+msgstr ""
+
+msgid "... but it looks like you have none!"
+msgstr ""
+
+# Translation for ..\templates\settings\avatar.html
+
 msgid "Open File"
 msgstr ""
 
 msgid "Save"
 msgstr ""
 
-msgid "No image selected"
+# Translation for ..\templates\settings\clansettings.html
+
+msgid "Clan Settings"
 msgstr ""
 
-msgid "Your discord account has been linked to this Kurikku account. <b>Welcome to the donors club and thank you for supporting us!</b> You have now access to the #donators text and voice channels on our official Discord server! You can also set a custom role name and username colour and change your nickname on Discord. If you want to change your nickname, you can use the <code>/nick</code> command. To set or edit your <b>custom role</b> name and colour, use the command <code>!role HEX_COLOUR ROLE_NAME</code>. You can pick your HEX colour <a href=\"http://www.colorpicker.com/\" target=\"_blank\">here</a>, it's the one that starts with '#'. You can change your role name and colour <b>whenever you want!</b>"
+msgid "Clantag"
+msgstr ""
+
+msgid "Icon (optional)"
+msgstr ""
+
+msgid "Background [URL] (optional)"
+msgstr ""
+
+msgid "Background URL"
+msgstr ""
+
+msgid "Generate a new invite!"
+msgstr ""
+
+msgid "You haven't joined a clan yet, or you aren't the owner of your current one."
+msgstr ""
+
+# Translation for ..\templates\settings\discord.html
+
+msgid "Your discord account has been linked to this account. <b>Welcome to the donors club and thank you for supporting us!</b> You have now access to the #donators text and voice channels on our official Discord server! You can also set a custom role name and username colour and change your nickname on Discord. If you want to change your nickname, you can use the <code>/nick</code> command. To set or edit your <b>custom role</b> name and colour, use the command <code>!role HEX_COLOUR ROLE_NAME</code>. You can pick your HEX colour <a href=\"http://www.colorpicker.com/\" target=\"_blank\">here</a>, it's the one that starts with '#'. You can change your role name and colour <b>whenever you want!</b>"
 msgstr ""
 
 msgid "Thank you for supporting us and have fun on Kurikku!"
@@ -1180,12 +1105,6 @@ msgstr ""
 msgid "Here's what you get if you link your Discord account:"
 msgstr ""
 
-msgid "Access to /nick command, to change your Discord nickname"
-msgstr ""
-
-msgid "Access to #donators text and voice channels"
-msgstr ""
-
 msgid "Username on donors list"
 msgstr ""
 
@@ -1198,117 +1117,37 @@ msgstr ""
 msgid "Get Discord donor privileges"
 msgstr ""
 
+# Translation for ..\templates\settings\ingamebgs.html
+
+msgid "URL pic to add"
+msgstr ""
+
+# Translation for ..\templates\settings\menu.html
+
+msgid "Userpage"
+msgstr ""
+
+msgid "Avatar"
+msgstr ""
+
+msgid "Social Accounts"
+msgstr ""
+
+msgid "In-game BGs changer (BETA)"
+msgstr ""
+
+msgid "Discord donor"
+msgstr ""
+
+# Translation for ..\templates\settings\password.html
+
 msgid "New password (leave blank if you don't want to change it)"
 msgstr ""
 
 msgid "Current password"
 msgstr ""
 
-msgid "BBCode syntax reference"
-msgstr ""
-
-msgid "General"
-msgstr ""
-
-msgid "Email address"
-msgstr ""
-
-msgid "Alternative username (cannot be used for login)"
-msgstr ""
-
-msgid "Also known as..."
-msgstr ""
-
-msgid "Custom badge"
-msgstr ""
-
-msgid "Enable"
-msgstr ""
-
-msgid "<b>Do not use offensive badges and do not pretend to be someone else with your badge.</b> If you abuse the badges system, you'll be silenced and you won't be able to edit your custom badge anymore."
-msgstr ""
-
-msgid "Icon reference"
-msgstr ""
-
-msgid "Dinosaur, oompa-loompa, cool guy..."
-msgstr ""
-
-msgid "Playstyle"
-msgstr ""
-
-msgid "Authorized applications"
-msgstr ""
-
-msgid "From here you can check all the applications you granted authorization to your account, and revoke their permissions if necessary."
-msgstr ""
-
-msgid "... but it looks like you have none!"
-msgstr ""
-
-msgid "That authorization has been successfully revoked."
-msgstr ""
-
-msgid "Authorization created %s"
-msgstr ""
-
-msgid "Owner"
-msgstr ""
-
-msgid "Revoke"
-msgstr ""
-
-# Go source
-msgid "TOTP-based 2FA has been enabled on your account."
-msgstr ""
-
-msgid "Passcode is invalid. Perhaps it expired?"
-msgstr ""
-
-msgid "No passcode/secret was given. Please try again"
-msgstr ""
-
-msgid "TOTP-based 2FA is already enabled!"
-msgstr ""
-
-msgid "You currently have Telegram 2FA enabled. You first need to disable that if you want to use TOTP-based 2FA."
-msgstr ""
-
-msgid "2FA disabled successfully."
-msgstr ""
-
-msgid "Changing avatar is currently not possible."
-msgstr ""
-
-msgid "An error occurred."
-msgstr ""
-
-msgid "We were not able to save your avatar."
-msgstr ""
-
-msgid "Your avatar was successfully changed. It may take some time to properly update. To force a cache refresh, you can use CTRL+F5."
-msgstr ""
-
-msgid "Internal Server Error"
-msgstr ""
-
-msgid "You're not a donor!"
-msgstr ""
-
-msgid "You've not joined the discord server! Links to it are below on the page. Please join the server before attempting to connect your account to Discord."
-msgstr ""
-
-msgid "Your account has been linked successfully!"
-msgstr ""
-
-msgid "Your new IRC token is <code>%s</code>. The old IRC token is not valid anymore.<br>Keep it safe, don't show it around, and store it now! We won't show it to you again."
-msgstr ""
-
-msgid "Your profile background has been saved."
-msgstr ""
-
-msgid "We were not able to save your profile background."
-msgstr ""
+# Translation for ..\templates\settings\profbackground.html
 
 msgid "Background type"
 msgstr ""
@@ -1322,174 +1161,60 @@ msgstr ""
 msgid "Solid colour"
 msgstr ""
 
-msgid "Colour is invalid"
+msgid "No image selected"
 msgstr ""
 
-msgid "You have been automatically logged out of your account because your account has either been banned or locked. Should you believe this is a mistake, you can contact our support team at support@kurikku.pw."
+# Translation for ..\templates\settings\profile.html
+
+msgid "General"
 msgstr ""
 
-msgid "You have been automatically logged out for security reasons. Please <a href='/login?redir=%s'>log back in</a>."
+msgid "Email address"
 msgstr ""
 
-msgid "You need to login first."
+msgid "Alternative username (cannot be used for login)"
 msgstr ""
 
-msgid "Forbidden"
+msgid "Also known as..."
 msgstr ""
 
-msgid "You should not be 'round here."
+msgid "Favourite mode"
 msgstr ""
 
-msgid "It seems like the original version of this file has been updated, so this file is out of date and may contain inaccurate information. If you want to make sure to be up-to-date, please refer to the <a href=\"%s%s\">English version</a>."
+msgid "PP > Score"
 msgstr ""
 
-msgid "If you truly have understood what's written above and you have understood that creating a multiaccount will lead to a restriction on your main account, you can click here and you'll be brought to the sign up page."
+msgid "Custom badge"
 msgstr ""
 
-msgid "You look new here. Allow us to introduce you to what Kurikku is."
+msgid "<b>Do not use offensive badges and do not pretend to be someone else with your badge.</b> If you abuse the badges system, you'll be silenced and you won't be able to edit your custom badge anymore."
 msgstr ""
 
-# PAY ATTENTION! This is Log in *with* Kurikku, not *on* Kurikku. This is for
-# oauth.
-msgid "Log in with Kurikku"
+msgid "Enable"
 msgstr ""
 
-msgid "This application will be able to:"
+msgid "Pick an emoji"
 msgstr ""
 
-msgid "Identify"
+msgid "Dinosaur, oompa-loompa, cool guy..."
 msgstr ""
 
-msgid "See your public information (everything somebody can see on your user profile), however with this alone it will not be able to see your private information (for instance your email address)."
+msgid "Playstyle"
 msgstr ""
 
-msgid "Read private information"
+# Translation for ..\templates\settings\socialAuth.html
+
+msgid "Here you can connect your social accounts (VK, Twitch). Your accounts shows in your profile page and any user can see it!"
 msgstr ""
 
-msgid "This application will be able to see your email address, and any private information we will add in the future."
+msgid "(Linked)"
 msgstr ""
 
-msgid "Write"
+msgid "(Not Linked)"
 msgstr ""
 
-msgid "This application will be able to make modifications to your Kurikku account. This is potentially really dangerous! Use this only with applications that you trust."
+msgid "Unlink"
 msgstr ""
 
-msgid "Approve"
-msgstr ""
-
-msgid "Deny"
-msgstr ""
-
-# Team page
-
-msgid "This is a list of the wonderful people who keep Kurikku up and running and deal with its community."
-msgstr ""
-
-msgid "Community Managers"
-msgstr ""
-
-msgid "Community Managers deal with bans, silences, name changes and pretty much everything that has to do with the community."
-msgstr ""
-
-msgid "They take care of our Discord server and reply to emails sent to <a href='mailto:support@kurikku.pw'>support@kurikku.pw</a>. Community Managers have a red name in the in-game chat."
-msgstr ""
-
-msgid "Developers"
-msgstr ""
-
-msgid "Developers add new features to the server, squash bugs, keep the server up and running and take care of its maintenance."
-msgstr ""
-
-msgid "They don't do anything related to the community. Developers have a blue name in the in-game chat."
-msgstr ""
-
-msgid "Chat Moderators"
-msgstr ""
-
-msgid "Chat moderators manage the chat to make sure The Law&trade; (the rules) is respected."
-msgstr ""
-
-msgid "BATs play beatmaps in the ranking queue and decide whether they are good enough to be ranked or not."
-msgstr ""
-
-msgid "Special thanks"
-msgstr ""
-
-msgid "Here's a list of people who helped with Kurikku."
-msgstr ""
-
-msgid "<b>Franc[e]sco/lolisamurai</b>, for <a href='https://github.com/Francesco149/oppai'>oppai</a>, used as standard pp calculator."
-msgstr ""
-
-msgid "<b>Tom94</b>, for <a href='https://github.com/ppy/osu-performance'>osu-performance</a>, used as a reference for our mania pp calculator."
-msgstr ""
-
-msgid "<b>jrosdahl</b>, for <a href='https://github.com/jrosdahl/miniircd'>miniircd</a>, used as a base for our IRC server."
-msgstr ""
-
-msgid "<b>Avail</b>, for having hosted Kurikku on his server."
-msgstr ""
-
-msgid "<b>Angela Guerra</b>, for designing the Kurikku logo."
-msgstr ""
-
-msgid "<b><a id='everyone' class='clickable'>Everyone</a></b> who has supported the Kurikku project by donating or inviting other people."
-msgstr ""
-
-msgid "They told me these are very cool people."
-msgstr ""
-
-msgid "Looking for how you should contact our team? Check out <a href='/help'>this page</a>."
-msgstr ""
-
-msgid "And more..."
-msgstr ""
-
-msgid "Do you want to be in this list?"
-msgstr ""
-
-msgid "Support us with a donation!"
-msgstr ""
-
-msgid "(You get other cool perks too)"
-msgstr ""
-
-msgid "The Kurikku API is the system through which developers can create applications to interact with Kurikku. <b>If you're asked to fill out an API token from this page, be wary and only actually create the token if you really trust the owner of the application.</b>"
-msgstr ""
-
-msgid "You haven't enough votes. Min votes to exchange = 15. 15 votes = 150 rub"
-msgstr ""
-
-msgid "Exchange your votes!"
-msgstr ""
-
-msgid "You have %d votes!"
-msgstr ""
-
-msgid "Why do we need these votes?"
-msgstr ""
-
-msgid "These votes help us promote the server at the <a class='ui subtitle' href='https://topg.org' alt='topg link'>TopG.org</a> monitoring site."
-msgstr ""
-
-msgid "Vote for us and get free donor!"
-msgstr ""
-
-msgid "Vote!"
-msgstr ""
-
-msgid "You have %d votes. For free donor you need %s"
-msgstr ""
-
-msgid "Community"
-msgstr ""
-
-msgid "viewers"
-msgstr ""
-
-msgid "Streamers"
-msgstr ""
-
-msgid "Most ranked scores"
+msgid "Link"
 msgstr ""
