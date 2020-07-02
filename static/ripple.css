@@ -2053,6 +2053,7 @@ p.ranks .rank {
 	background: rgba(0,0,0,0.5);
 	padding: 5px;
 	width: 10%;
+
 	border-radius: 5px;
 	font-weight: 700;
 	margin-right: 6px;
@@ -2068,4 +2069,8 @@ p.ranks .rank {
 	width: 100%;
 	padding: 0!important;
 	margin: 0!important;
+}
+
+.leftInfo .progress > div {
+	max-width: 100%;
 }
