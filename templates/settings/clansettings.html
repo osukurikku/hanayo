@@ -32,7 +32,7 @@ Include=menu.html
                             <textarea tabindex="1" class="monospace" name="password">{{ $desc }}</textarea>
 
                             <div class="field">
-                                <label class="left aligned">{{ $.T "Icon (optional)" }}</label>
+                                <label class="left aligned">{{ $.T "Avatar (optional)" }}</label>
                              </div>
 
                             <div class="ui buttons">
@@ -72,7 +72,7 @@ Include=menu.html
                             </button>
                         </form>
                         <br>
-                        <font size="6">Members {{ $g }}</font>
+                        <h1>Members of clan</h1>
                         <br>
                         {{ range (.Get "clans/members?id=%d&r=%d" $g 1).members }}
                             <form id="kick-form" class="ui form" method="post" action="/settings/clansettings/k">

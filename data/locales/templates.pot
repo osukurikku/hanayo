@@ -1073,7 +1073,7 @@ msgstr ""
 msgid "Clantag"
 msgstr ""
 
-msgid "Icon (optional)"
+msgid "Avatar (optional)"
 msgstr ""
 
 msgid "Background [URL] (optional)"

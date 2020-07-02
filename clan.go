@@ -3,8 +3,6 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	"github.com/gin-gonic/gin"
-	"github.com/nfnt/resize"
 	"image"
 	_ "image/gif"
 	_ "image/jpeg"
@@ -13,6 +11,9 @@ import (
 	"os"
 	"strconv"
 	"time"
+
+	"github.com/gin-gonic/gin"
+	"github.com/nfnt/resize"
 )
 
 // TODO: replace with simple ResponseInfo containing userid
@@ -192,30 +193,41 @@ func createInvite(c *gin.Context) {
 
 		//Avatar uploading if present!
 		file, _, err := c.Request.FormFile("avatar")
-		img, _, err2 := image.Decode(file)
-               	if err != nil || err2 != nil {
-			//m = errorMessage{T(c, "An error occurred.")}
-		} else {
-			fmt.Println("Avatar getted!")
-			if config.ClanAvatarsFolder == "" {
-				fmt.Println("test1")
-				//m = errorMessage{T(c, "Changing avatar is currently not possible.")}
-				return
-			}
-			img = resize.Thumbnail(256, 256, img, resize.Bilinear)
-			f, err := os.Create(fmt.Sprintf("%s/%d.png", config.ClanAvatarsFolder, 2000000000+clan))
-			defer f.Close()
-			if err != nil {
-				//m = errorMessage{T(c, "An error occurred.")}
-				c.Error(err)
-				return
-			}
-			err = png.Encode(f, img)
-			if err != nil {
-				//m = errorMessage{T(c, "We were not able to save your avatar.")}
-				c.Error(err)
-				return
-			}
+		if err != nil {
+			addMessage(c, errorMessage{T(c, "An error occurred.")})
+			fmt.Println("avatar sec")
+			c.Error(err)
+			return
+		}
+		// multipart.File, *multipart.FileHeader, error
+		img, _, err := image.Decode(file)
+		if err != nil {
+			addMessage(c, errorMessage{T(c, "An error occurred.")})
+			fmt.Println("decode sec")
+			c.Error(err)
+			return
+		}
+
+		if config.ClanAvatarsFolder == "" {
+			//fmt.Println("test1")
+			addMessage(c, errorMessage{T(c, "Changing avatar is currently not possible.")})
+			return
+		}
+		img = resize.Thumbnail(256, 256, img, resize.Bilinear)
+		f, err := os.Create(fmt.Sprintf("%s/%d.png", config.ClanAvatarsFolder, 2000000000+clan))
+		defer f.Close()
+		if err != nil {
+			fmt.Println("after f close")
+			addMessage(c, errorMessage{T(c, "An error occurred.")})
+			c.Error(err)
+			return
+		}
+		err = png.Encode(f, img)
+		if err != nil {
+			fmt.Println("just unabale")
+			addMessage(c, errorMessage{T(c, "We were not able to save your avatar.")})
+			c.Error(err)
+			return
 		}
 	}
 	addMessage(c, successMessage{T(c, "Success")})
