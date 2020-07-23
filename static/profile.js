@@ -290,10 +290,10 @@ function loadMoreClick() {
 
 // currentPage for each mode
 var currentPage = {
-    0: {best: 0, recent: 0, top: 0},
-    1: {best: 0, recent: 0, top: 0},
-    2: {best: 0, recent: 0, top: 0},
-    3: {best: 0, recent: 0, top: 0},
+    0: {best: 0, recent: 0, "top-scores": 0},
+    1: {best: 0, recent: 0, "top-scores": 0},
+    2: {best: 0, recent: 0, "top-scores": 0},
+    3: {best: 0, recent: 0, "top-scores": 0},
 };
 var scoreStore = {};
 var topScoreStore = {};

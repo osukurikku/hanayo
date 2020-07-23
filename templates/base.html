@@ -144,7 +144,8 @@
     <center class="ui container center">
     {{ .T "&copy; %d Ripple, osu!Kurikku, using Hanayo %s." (curryear) (version) | html }}
         <a href="/team" title="{{ .T "Who is working on this thing?" }}"><i class="users icon"></i>{{ .T "Team" }}</a> |
-        <a href="https://github.com/osukurikku"><i class="git square icon"></i>{{ .T "GitHub" }}</a> |
+        <a href="https://twitter.com/osukurikku"><i class="twitter icon"></i>{{ .T "Twitter" }}</a> |
+	<a href="https://github.com/osukurikku"><i class="git square icon"></i>{{ .T "GitHub" }}</a> |
         <a href="http://status.kurikku.pw"><i class="signal icon"></i>{{ .T "Status" }}</a> |
         <div class="ui scrolling dropdown" style="margin-left: 5px;" id="language-selector">
         {{ $lang := .Context.Language }}
