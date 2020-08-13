@@ -1,15 +1,16 @@
 package main
 
 import (
-	"fmt"
-	"image"
+	"bytes"
+	"encoding/json"
 	_ "image/gif"
 	_ "image/jpeg"
-	"image/png"
-	"os"
+	"io/ioutil"
+	"log"
+	"mime/multipart"
+	"net/http"
 
 	"github.com/gin-gonic/gin"
-	"github.com/nfnt/resize"
 )
 
 func avatarSubmit(c *gin.Context) {
@@ -22,33 +23,72 @@ func avatarSubmit(c *gin.Context) {
 	defer func() {
 		simpleReply(c, m)
 	}()
-	if config.AvatarsFolder == "" {
-		m = errorMessage{T(c, "Changing avatar is currently not possible.")}
-		return
-	}
-	file, _, err := c.Request.FormFile("avatar")
+	file, multipartFileHeader, err := c.Request.FormFile("avatar")
 	if err != nil {
 		m = errorMessage{T(c, "An error occurred.")}
 		return
 	}
-	img, _, err := image.Decode(file)
+
+	body := &bytes.Buffer{}
+	writer := multipart.NewWriter(body)
+
+	part, err := writer.CreateFormFile("avatar", multipartFileHeader.Filename)
+	avatarContent, err := ioutil.ReadAll(file)
+	part.Write(avatarContent)
+
+	rt, err := writer.CreateFormField("rt")
+	rt.Write([]byte(ctx.Token))
+
 	if err != nil {
-		m = errorMessage{T(c, "An error occurred.")}
+		log.Fatal(err)
+	}
+
+	//io.Copy(rt, strings.NewReader(ctx.Token))
+	writer.Close()
+	request, err := http.NewRequest("POST", "http://127.0.0.1:5010/avatars/uploadAvatar", body)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	request.Header.Add("Content-Type", writer.FormDataContentType())
+	client := &http.Client{}
+
+	response, err := client.Do(request)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer response.Body.Close()
+
+	content, err := ioutil.ReadAll(response.Body)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	errorRed := struct {
+		Wrong string `json:"error"`
+	}{}
+	_ = json.Unmarshal(content, &errorRed)
+
+	if len(errorRed.Wrong) > 1 {
+		m = errorMessage{T(c, errorRed.Wrong)}
 		return
 	}
-	img = resize.Thumbnail(256, 256, img, resize.Bilinear)
-	f, err := os.Create(fmt.Sprintf("%s/%d.png", config.AvatarsFolder, ctx.User.ID))
-	defer f.Close()
+
+	// okay thats' not error
+	// now try to unmarshal in repsonse
+
+	goodResponse := struct {
+		Response string `json:"response"`
+	}{}
+	err = json.Unmarshal(content, &goodResponse)
+
 	if err != nil {
-		m = errorMessage{T(c, "An error occurred.")}
-		c.Error(err)
+		m = errorMessage{T(c, "Something happend, try again later")}
 		return
 	}
-	err = png.Encode(f, img)
-	if err != nil {
-		m = errorMessage{T(c, "We were not able to save your avatar.")}
-		c.Error(err)
-		return
-	}
-	m = successMessage{T(c, "Your avatar was successfully changed. It may take some time to properly update. To force a cache refresh, you can use CTRL+F5.")}
+
+	m = successMessage{T(c, goodResponse.Response)}
 }
