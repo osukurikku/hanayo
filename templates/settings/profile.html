@@ -7,6 +7,7 @@ MinPrivileges=2
 AdditionalJS=/static/jquery.lsxemojipicker.js
 */}}
 {{ define "tpl" }}
+{{ $donorMiniBadge := printf `<div class="ui %s horizontal mini label">%s</div>` ("pink") (.T "Donor") }}
 <div class="ui container">
 	<div class="ui stackable grid">
 		{{ template "settingsSidebar" . }}
@@ -44,8 +45,11 @@ AdditionalJS=/static/jquery.lsxemojipicker.js
 							<option value="0" {{ if eq (int $d.pp_over_score) 0 }}selected{{ end }}>Disabled</a>
 						</select>
 					</div>
-					{{ if has .Context.User.Privileges 4 }}
-						<h3 class="ui header">{{ .T "Custom badge" }}</h3>
+					<h3 class="ui header">{{ printf "%s %s" (.T "Custom badge") $donorMiniBadge | html }}</h3>
+					{{ if not (has .Context.User.Privileges 4) }}
+						{{ template "donor_locked" . }}
+					{{ else }}
+						
 						<div class="ui warning message">
 							{{ .T "<b>Do not use offensive badges and do not pretend to be someone else with your badge.</b> If you abuse the badges system, you'll be silenced and you won't be able to edit your custom badge anymore." | html}}
 						</div>

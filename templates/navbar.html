@@ -4,7 +4,7 @@
 {{ $isDonor := has .Context.User.Privileges 4 }}
 {{ $ds      := band .ClientFlags 1 }}
 {{ $isClan := qb "SELECT user, clan FROM user_clans WHERE user = ?" .Context.User.ID }}
-
+{{ $donorMiniBadge := printf `<div class="ui %s horizontal mini label">%s</div>` ("pink") (.T "Donor") }}
 <div class="triangles-1">
     <div class="ui secondary fixed-height stackable black background main menu no margin bottom{{ if .DisableHH }} dropped{{ end }} kotrik-bar" id="navbar">
         <div class="ui container">
@@ -49,7 +49,7 @@
                         <span>{{ .T "Clans" }}</span>
                         <div class="menu">
                             {{ navbarItem .Path (.T "Clans Leaderboard") "/clans?mode=0" }}
-                            {{ navbarItem .Path (.T "Clans Create") "/clans/create" }}
+                            {{ navbarItem .Path (printf "%s %s" (.T "Clans create") $donorMiniBadge) "/clans/create" }}
                         </div>
                     </div>
                     {{ navbarItem .Path (.T "Streamers") "/streamers" }}

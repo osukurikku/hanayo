@@ -11205,14 +11205,14 @@
  .ui.pink.labels .label {
      background-color: #E03997!important;
      border-color: #E03997!important;
-     color: hsl(255, 14%, 18%)!important
+     color: white!important
  }
  
  .ui.pink.labels .label:hover,
  a.ui.pink.label:hover {
      background-color: #e61a8d!important;
      border-color: #e61a8d!important;
-     color: hsl(255, 14%, 18%)!important
+     color: gray!important
  }
  
  .ui.pink.corner.label,
@@ -18338,7 +18338,7 @@
      position: relative;
      min-height: 1em;
      margin: 1em 0;
-     background: #F8F8F9;
+     background: #000;
      padding: 1em 1.5em;
      line-height: 1.4285em;
      color: rgba(255, 255, 255, .93);

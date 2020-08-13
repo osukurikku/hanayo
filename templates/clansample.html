@@ -12,7 +12,7 @@ Include=clan_members.html
                     <div class="magic table">
                         <div class="">
                             <div class="table element">
-                                <img src="{{ config "AvatarURL" }}/clans/{{ $.ClanID }}" alt="icon" class="clan icon" style="border-radius:5%; height:90px; padding-right: 15px;">
+                                <img src="{{ config "AvatarURL" }}/{{ $.ConvertFl64ToInt (plus 2000000000 (float $.ClanID)) }}" alt="icon" class="clan icon" style="border-radius:5%; height:90px; padding-right: 15px;">
                             </div>
                             
                             <div class="table element">

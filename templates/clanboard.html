@@ -27,7 +27,7 @@ KyutGrill=clanboard.jpg
                 {{ if .name }}
                     <tr>
                         <th class="one wide">#{{ .rank }} </th>
-                        <th class="four wide"> <img class="ui avatar image" src="https://a.kurikku.pw/clans/{{ .id }}"/> <span><a href="/c/{{ .id }}?mode={{ $favMode }}">[{{ .tag }}] {{ .name }}</a></span></th>
+                        <th class="four wide"> <img class="ui avatar image" src="https://a.kurikku.pw/{{ $.ConvertFl64ToInt (plus 2000000000 .id) }}"/> <span><a href="/c/{{ .id }}?mode={{ $favMode }}">[{{ .tag }}] {{ .name }}</a></span></th>
                         <th class="four wide">{{ .chosen_mode.pp }}pp ({{ humanize .chosen_mode.total_score }})</th>
                         <th class="four wide">{{ .chosen_mode.playcount }} played beatmaps</th>
                     </tr>

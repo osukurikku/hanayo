@@ -10,49 +10,74 @@ KyutGrill=team2.jpg
 		<div class="ui center aligned segment">
 			<h3>{{ .T "This is a list of the wonderful people who keep Kurikku up and running and deal with its community." }}</h3>
 		</div>
-		<div class="ui center aligned segment">
-			<h1 class="ui heading">{{ .T "Owners" }}</h1>
-			<p>
-				{{ .T "The backbones of the server. The owners function as both the main community managers, as well as primary Developers. They work on everything from managing the team to making this page look nicer." }}
-			</p>
-			{{ template "userGroup" (.Get "badges/members?id=%d" 2) }}
-		</div>
-		<div class="ui center aligned segment">
-			<h1 class="ui heading">{{ .T "Community Managers" }}</h1>
-			<p>
-				{{ .T "Community Managers deal with bans, silences, name changes and pretty much everything that has to do with the community." }}<br>
-				{{ .T "They take care of our Discord server and reply to emails sent to <a href='mailto:support@kurikku.pw'>support@kurikku.pw</a>. Community Managers have a red name in the in-game chat." | html }}
-			</p>
-			{{ template "userGroup" (.Get "badges/members?id=%d" 10) }}
-		</div>
-		<div class="ui center aligned segment">
+
+		{{ $owners := (.Get "badges/members?id=%d" 2)}}
+		{{ if $owners.members }}
+			<div class="ui center aligned segment">
+				<h1 class="ui heading">{{ .T "Owners" }}</h1>
+				<p>
+					{{ .T "The backbones of the server. The owners function as both the main community managers, as well as primary Developers. They work on everything from managing the team to making this page look nicer." }}
+				</p>
+				{{ template "userGroup" $owners }}
+			</div>
+		{{ end }}
+
+		{{ $cms := (.Get "badges/members?id=%d" 10) }}
+		{{ if $cms.members }}
+			<div class="ui center aligned segment">
+				<h1 class="ui heading">{{ .T "Community Managers" }}</h1>
+				<p>
+					{{ .T "Community Managers deal with bans, silences, name changes and pretty much everything that has to do with the community." }}<br>
+					{{ .T "They take care of our Discord server and reply to emails sent to <a href='mailto:support@kurikku.pw'>support@kurikku.pw</a>. Community Managers have a red name in the in-game chat." | html }}
+				</p>
+				{{ template "userGroup" $cms }}
+			</div>
+		{{ end}}
+		
+		{{ $devs := (.Get "badges/members?id=%d" 3) }}
+		{{ if $devs.members }}
+		<div class="ui center aligned segment"></div>
 			<h1 class="ui heading">{{ .T "Developers" }}</h1>
 			<p>
 				{{ .T "Developers add new features to the server, squash bugs, keep the server up and running and take care of its maintenance." }}<br>
 			</p>
-			{{ template "userGroup" (.Get "badges/members?id=%d" 3) }}
+			{{ template "userGroup" $devs }}
 		</div>
-		<div class="ui center aligned segment">
-			<h1 class="ui heading">{{ .T "Replay Moderators" }}</h1>
-			<p>
-				{{ .T "Hunters who catch and send in ban cheaters. We are proud of them." }}<br>
-			</p>
-			{{ template "userGroup" (.Get "badges/members?id=%d" 17) }}
-		</div>
-		<div class="ui center aligned segment">
-			<h1 class="ui heading">{{ .T "Chat Moderators" }}</h1>
-			<p>
-				{{ .T "Chat moderators manage the chat to make sure The Law&trade; (the rules) is respected." | html }}
-			</p>
-			{{ template "userGroup" (.Get "badges/members?id=%d" 4) }}
-		</div>
-		<div class="ui center aligned segment">
-			<h1 class="ui heading">{{ .T "BATs" }}</h1>
-			<p>
-				{{ .T "BATs play beatmaps in the ranking queue and decide whether they are good enough to be ranked or not." }}
-			</p>
-			{{ template "userGroup" (.Get "badges/members?id=%d" 5) }}
-		</div>
+		{{ end }}
+		
+		{{ $rms := (.Get "badges/members?id=%d" 17) }}
+		{{ if $rms.members }}
+			<div class="ui center aligned segment">
+				<h1 class="ui heading">{{ .T "Replay Moderators" }}</h1>
+				<p>
+					{{ .T "Hunters who catch and send in ban cheaters. We are proud of them." }}<br>
+				</p>
+				{{ template "userGroup" $rms }}
+			</div>
+		{{ end }}
+
+		{{ $chatmods := (.Get "badges/members?id=%d" 4) }}
+		{{ if $chatmods.members }}
+			<div class="ui center aligned segment">
+				<h1 class="ui heading">{{ .T "Chat Moderators" }}</h1>
+				<p>
+					{{ .T "Chat moderators manage the chat to make sure The Law&trade; (the rules) is respected." | html }}
+				</p>
+				{{ template "userGroup" $chatmods }}
+			</div>
+		{{ end }}
+
+		{{ $BATs := (.Get "badges/members?id=%d" 5) }}
+		{{ if $BATs.members }}
+			<div class="ui center aligned segment">
+				<h1 class="ui heading">{{ .T "BATs" }}</h1>
+				<p>
+					{{ .T "BATs play beatmaps in the ranking queue and decide whether they are good enough to be ranked or not." }}
+				</p>
+				{{ template "userGroup" $BATs }}
+			</div>
+		{{ end }}
+
 	</div>
 	<div class="ui segments">
 		<div class="ui center aligned segment">

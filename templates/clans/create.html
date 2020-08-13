@@ -44,9 +44,7 @@
                 </div>
             </div>
         {{ else }}
-            <div class="ui error message">
-                {{ .T "You need to be an Kurikku Supporter in order to create a clan." }}
-            </div>
+            {{ template "donor_locked" . }}
         {{ end }}
     </div>
 {{ end }}
