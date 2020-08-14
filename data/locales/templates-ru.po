@@ -1191,7 +1191,7 @@ msgstr "Подождите 3 дня перед следующей сменой �
 msgid "Before you proceed..."
 msgstr "Прежде, чем ты начнёшь..."
 
-msgid "Remember, that your nickname shouldn't offensive or similar to other players usernames.<br/> In this case, Community Manager can reject your nickname changes. Or you will be renamed without your knowledge.<br/> That's your <b>free</b> nickname change. It can be used once. For next changes you should have donor."
+msgid "Remember that your nickname shouldn't offensive or similar to other players usernames.<br/> In this case, Community Manager can reject your nickname changes. Or you will be renamed without your knowledge.<br/> That's your <b>free</b> nickname change. It can be used once. For next changes you should have donor."
 msgstr "Помните, что ваш ник не должен быть оскорбительным или похожим на имена пользователей других игроков.<br/> В этом случае менеджер сообщества может отклонить изменение вашего имени. Или вы будете переименованы без вашего ведома.<br/> Это <b>бесплатное</b> изменение никнейма. Его можно использовать один раз. Для следующих изменений у вас должен быть донор."
 
 msgid "Your new username..."
