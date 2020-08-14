@@ -48,7 +48,15 @@ func userProfile(c *gin.Context) {
 	}
 
 	data := new(profileData)
-	data.UserID = userID
+	if ctx.User.Privileges&common.AdminPrivilegeManageUsers == common.AdminPrivilegeManageUsers || ctx.User.ID == userID {
+		data.UserID = userID
+	} else {
+		if privileges&2 == 0 {
+			data.UserID = 0
+		} else {
+			data.UserID = userID
+		}
+	}
 
 	defer resp(c, 200, "profile.html", data)
 

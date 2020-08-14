@@ -27,22 +27,22 @@
     {{ $user_id := .UserID}}
 
     {{ if hasAdmin $global.Context.User.Privileges }}
-    {{ $restr := not (has .privileges 1) }}
-    {{ $disab := not (has .privileges 2) }}
-    {{ $pend := has .privileges 1048576 }}
-    
+        {{ $restr := not (has .privileges 1) }}
+        {{ $disab := not (has .privileges 2) }}
+        {{ $pend := has .privileges 1048576 }}
+        
 
-    {{ if and $disab $restr }}
-    {{ if $pend }}
-    <div class="ui warning centered message">{{ $global.T "User is <b>%s</b>" "pending verification" | html }}.</div>
-    {{ else }}
-    <div class="ui error centered message">{{ $global.T "User is <b>%s</b>" "banned" | html }}.</div>
-    {{ end }}
-    {{ else if $restr }}
-    <div class="ui error centered message">{{ $global.T "User is <b>%s</b>" "restricted" | html }}.</div>
-    {{ else if $disab }}
-    <div class="ui error centered message">{{ $global.T "User is <b>%s</b>" "locked" | html }}.</div>
-    {{ end }}
+        {{ if and $disab $restr }}
+        {{ if $pend }}
+        <div class="ui warning centered message">{{ $global.T "User is <b>%s</b>" "pending verification" | html }}.</div>
+        {{ else }}
+        <div class="ui error centered message">{{ $global.T "User is <b>%s</b>" "banned" | html }}.</div>
+        {{ end }}
+        {{ else if $restr }}
+        <div class="ui error centered message">{{ $global.T "User is <b>%s</b>" "restricted/disabled (Ask kotrik if don't know ;d)" | html }}.</div>
+        {{ else if $disab }}
+        <div class="ui error centered message">{{ $global.T "User is <b>%s</b>" "locked" | html }}.</div>
+        {{ end }}
     {{ end }}
 
     <div class="ui stackable column grid">

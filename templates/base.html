@@ -103,6 +103,11 @@
             {{ $.T "Your account is currently in restricted mode. You will not be able to perform certain actions, and your profile can only be seen by you and by Kurikku's staff. If you believe this was a mistake, or a month has passed since you first saw this, then you can send an appeal to <a href=mailto:support@kurikku.pw>support@kurikku.pw</a>." | html }}
             </div>
         {{ end }}
+        {{ if and .Context.User.Username (not (has .Context.User.Privileges 2)) }}
+            <div class="ui warning message">
+            {{ $.T "Your account is hidden. You will not be able to perform certain actions, and your profile can only be seen by you and by Kurikku's staff." | html }}
+            </div>
+        {{ end }}
         {{ if .Messages }}
         {{ range $i, $v := .Messages }}
             <div class="ui {{ $v.Type }} message">
