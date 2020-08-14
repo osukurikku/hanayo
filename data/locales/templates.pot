@@ -1242,3 +1242,69 @@ msgstr ""
 
 msgid "Reaction"
 msgstr ""
+
+msgid "You used your free change! Now you can change nickname only with Donor privileges!"
+msgstr ""
+
+msgid "You can change your nickname only after 3 days. Plz wait!"
+msgstr ""
+
+msgid "Must be at least 2 characters long and mustn't be longer than 15 characters"
+msgstr ""
+
+msgid "Mustn't contain mixed underscores and spaces"
+msgstr ""
+
+msgid "Must contain only letter, symbols, spaces, underscores, square brackets or dashes"
+msgstr ""
+
+msgid "Username already used by another user. No changes have been made."
+msgstr ""
+
+msgid "Your nickname successfully changed!"
+msgstr ""
+
+msgid "You used your free change!"
+msgstr ""
+
+msgid "Wait 3 days before next nickname change"
+msgstr ""
+
+msgid "Before you proceed..."
+msgstr ""
+
+msgid "Remember, that your nickname shouldn't offensive or similar to other players usernames.<br/> In this case, Community Manager can reject your nickname changes. Or you will be renamed without your knowledge.<br/> That's your <b>free</b> nickname change. It can be used once. For next changes you should have donor."
+msgstr ""
+
+msgid "Your new username..."
+msgstr ""
+
+msgid "Must be at least 2 characters long"
+msgstr ""
+
+msgid "Mustn't be longer than 15 characters"
+msgstr ""
+
+msgid "Must contain only letter, symbols, spaces, underscores, square brackets or dashes"
+msgstr ""
+
+msgid "Mustn't contain mixed underscores and spaces"
+msgstr ""
+
+msgid "Mustn't be already used by another Kurikku user"
+msgstr ""
+
+msgid "New username"
+msgstr ""
+
+msgid "Your new username"
+msgstr ""
+
+msgid "This feature is available only to donors"
+msgstr ""
+
+msgid "<a href='/donate'>Purchase donor</a> to support us and unlock this feature, and many more!"
+msgstr ""
+
+msgid "Change Username"
+msgstr ""

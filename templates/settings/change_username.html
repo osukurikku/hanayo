@@ -1,0 +1,147 @@
+{{/*###
+Handler=/settings/change_username
+TitleBar=Change Username
+Include=menu.html
+MinPrivileges=2
+*/}}
+{{ define "tpl" }}
+    {{ $   := . }}
+    <div class="ui container">
+        <div class="ui stackable grid">
+            {{ template "settingsSidebar" . }}
+
+            <div class="twelve wide column">
+                <div class="ui container">
+                {{ $lastNickChange := qb "SELECT latest_nickchange FROM users WHERE id = ?" .Context.User.ID }}
+                {{ $lastNickChange = int ($lastNickChange.latest_nickchange) }}
+
+                {{ if and (gt $lastNickChange 0) (not (has .Context.User.Privileges 4))  }}
+                    <div class="ui segment">
+                        {{ template "donor_locked" . }}
+                        <h3>{{ $.T "You used your free change!" }}</h3>
+                    </div>
+                {{ else if (gt $lastNickChange (int unixNano)) }}
+                    <div class="ui segment">
+                        <h3>{{ $.T "Wait 3 days before next nickname change" }}</h3>
+                    </div>
+                {{ else }}
+                    <div></div>
+                    <div class="ui segments">
+                        <div class="ui warning message segment">
+                            <h3 class="ui header no top margin">
+                                <i class="warning sign icon"></i> 
+                                <div class="content">{{ $.T "Before you proceed..." }}</div>
+                            </h3>
+                            <blockquote>
+                                {{ $.T "Remember, that your nickname shouldn't offensive or similar to other players usernames.<br/> In this case, Community Manager can reject your nickname changes. Or you will be renamed without your knowledge.<br/> That's your <b>free</b> nickname change. It can be used once. For next changes you should have donor." | html }}
+                            </blockquote>
+                        </div>
+                        <div id="username-rules" class="ui message segment error">
+                            <h3 class="ui header no top margin">
+                                <i class="icon meh"></i> 
+                                <div class="content"> {{ $.T "Your new username..." }} </div>
+                            </h3>
+                            <blockquote>
+                                <div class="ui list"><span class="item"><i id="minLength" class="icon remove"></i> 
+                                    {{ $.T "Must be at least 2 characters long" }}
+                                    </span> <span class="item"><i id="maxLength" class="icon remove"></i> 
+                                    {{ $.T "Mustn't be longer than 15 characters" }}
+                                    </span> <span class="item"><i id="characters" class="icon remove"></i> 
+                                    {{ $.T "Must contain only letter, symbols, spaces, underscores, square brackets or dashes" }}
+                                    </span> <span class="item"><i id="mixed" class="icon remove"></i> 
+                                    {{ $.T "Mustn't contain mixed underscores and spaces" }}
+                                    </span> <span class="item"><i id="available" class="icon remove"></i> 
+                                    {{ $.T "Mustn't be already used by another Kurikku user" }}
+                                    </span>
+                                </div>
+                            </blockquote>
+                        </div>
+                        <div class="ui segment">
+                            
+                            <div class="field">
+                                <label class="bold">{{ $.T "New username" }}</label> 
+                                <form id="usernamechange-form" method="POST">
+                                    <div class="ui action fluid input"><input id="inputNick" name="newu" placeholder="{{ $.T "Your new username" }}" type="text" class=""> 
+                                        <button id="smtBtn" class="ui teal right labeled icon button disabled" type="submit"><i class="send icon"></i>
+                                        {{ $.T "Submit" }}
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <script defer>
+                        function debounce(func, wait, immediate) {
+                            var timeout;
+                            return function() {
+                                var context = this, args = arguments;
+                                var later = function() {
+                                    timeout = null;
+                                    if (!immediate) func.apply(context, args);
+                                };
+                                var callNow = immediate && !timeout;
+                                clearTimeout(timeout);
+                                timeout = setTimeout(later, wait);
+                                if (callNow) func.apply(context, args);
+                            };
+                        };
+        
+                        checks = {
+                            minLength: false,
+                            maxLength: false,
+                            characters: false,
+                            mixed: false,
+                            available: false
+                        }
+        
+                        $( document ).ready(function() {
+                            $("#inputNick").keyup(debounce(async function() {
+                                let value = $("#inputNick").val()
+                                if (value.length < 1) return;
+                                try {
+                                    let result = await fetch(`/api/v2/nickname.available?username=${value}`)
+                                    let data = await result.json();
+                                    
+                                    console.log(data);
+                                    checks.available = data.Available;
+                                } catch (e) { 
+                                    console.log(e)
+                                }   
+        
+                                checks.minLength = value.length >= 2
+                                checks.maxLength = value.length <= 15 && value.length > 0
+                                checks.characters = new RegExp("^[A-Za-z0-9 _\\[\\]-]+$").test(value)
+                                checks.mixed = !(value.includes("_") && value.includes(" ")) && value.length > 0
+                                
+                                let condition = (el) => el[1] === false
+        
+                                let resultTest = Object.entries(checks).some(condition);
+                                if (resultTest) {
+                                    $("#smtBtn").removeClass("disabled").addClass("disabled");
+                                    $("#username-rules").removeClass("success").addClass("error");
+                                } else {
+                                    $("#smtBtn").removeClass("disabled");
+                                    $("#username-rules").removeClass("error").addClass("success");
+                                }
+        
+                                Object.entries(checks).forEach((el, _) => {
+                                    let classElement = `#${el[0]}`;
+                                    $(`#${el[0]}`).removeClass("remove").removeClass("checkmark")
+                                    if (el[1]) {
+                                        $(`#${el[0]}`).removeClass("remove").addClass("checkmark")
+                                    } else {
+                                        $(`#${el[0]}`).removeClass("checkmark").addClass("remove")
+                                    }  
+                                })
+                            }, 200))                    
+                        })
+                    </script>
+                {{ end }}
+                </div>
+            </div>  
+        </div>
+    </div>
+{{ end }}
+                    
+

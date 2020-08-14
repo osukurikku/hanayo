@@ -1161,3 +1161,68 @@ msgstr "Точность"
 msgid "Reaction"
 msgstr "Реакция"
 
+msgid "You used your free change! Now you can change nickname only with Donor privileges!"
+msgstr "Вы использовали бесплатную смену никнейма. Теперь, чтобы поменять ваш никнейм, вам нужен статус Donor."
+
+msgid "You can change your nickname only after 3 days. Plz wait!"
+msgstr "Так стоять! Подожди три дня перед сменой ника!"
+
+msgid "Must be at least 2 characters long and mustn't be longer than 15 characters"
+msgstr "Должен быть не меньше 2 символов и не больше 15"
+
+msgid "Mustn't contain mixed underscores and spaces"
+msgstr "Не должно быть смешанных подчёркиваний и пробелов"
+
+msgid "Must contain only letter, symbols, spaces, underscores, square brackets or dashes"
+msgstr "Должно использоваться только буквы, символы, пробелы, подчёркивания"
+
+msgid "Username already used by another user. No changes have been made."
+msgstr "Никнейм уже используется другим игроком. Откат."
+
+msgid "Your nickname successfully changed!"
+msgstr "Ваш никнейм успешно изменён!"
+
+msgid "You used your free change!"
+msgstr "Вы использовали бесплатную смену ника!"
+
+msgid "Wait 3 days before next nickname change"
+msgstr "Подождите 3 дня перед следующей сменой ника!"
+
+msgid "Before you proceed..."
+msgstr "Прежде, чем ты начнёшь..."
+
+msgid "Remember, that your nickname shouldn't offensive or similar to other players usernames.<br/> In this case, Community Manager can reject your nickname changes. Or you will be renamed without your knowledge.<br/> That's your <b>free</b> nickname change. It can be used once. For next changes you should have donor."
+msgstr "Помните, что ваш ник не должен быть оскорбительным или похожим на имена пользователей других игроков.<br/> В этом случае менеджер сообщества может отклонить изменение вашего имени. Или вы будете переименованы без вашего ведома.<br/> Это <b>бесплатное</b> изменение никнейма. Его можно использовать один раз. Для следующих изменений у вас должен быть донор."
+
+msgid "Your new username..."
+msgstr "Ваш новый никнейм..."
+
+msgid "Must be at least 2 characters long"
+msgstr "Должно быть не менее 2 символов"
+
+msgid "Mustn't be longer than 15 characters"
+msgstr "Не должно быть длиннее 15 символов"
+
+msgid "Must contain only letter, symbols, spaces, underscores, square brackets or dashes"
+msgstr "Должен содержать только буквы, символы, пробелы, подчеркивания, квадратные скобки или тире."
+
+msgid "Mustn't contain mixed underscores and spaces"
+msgstr "Не должно содержать смешанных символов подчеркивания и пробелов"
+
+msgid "Mustn't be already used by another Kurikku user"
+msgstr "Не должен уже использоваться другим пользователем Kurikku"
+
+msgid "New username"
+msgstr "Новый никнейм"
+
+msgid "Your new username"
+msgstr "Твой новый никнейм"
+
+msgid "This feature is available only to donors"
+msgstr "Эта функция доступна для Donor"
+
+msgid "<a href='/donate'>Purchase donor</a> to support us and unlock this feature, and many more!"
+msgstr "<a href='/donate'>Покупай донора</a> для помощи нам и разблокируй эту и ещё кучу других функций!"
+
+msgid "Change Username"
+msgstr "Смена никнейма"

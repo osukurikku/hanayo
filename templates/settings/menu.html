@@ -16,6 +16,8 @@ NoCompile=true
 		
 		{{ navbarItem .Path (.T "In-game BGs changer (BETA)") "/settings/ingamebgs" }}
 
+		{{ navbarItem .Path (.T "Change Username") "/settings/change_username" }}
+
 		{{ $d := qb "SELECT user, clan, perms FROM user_clans WHERE user = ? AND perms = 8 LIMIT 1" .Context.User.ID }}
 		{{ if $d }}
 			{{ navbarItem .Path (.T "Clan Settings") "/settings/clansettings" }}

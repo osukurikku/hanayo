@@ -110,6 +110,7 @@ var funcMap = template.FuncMap{
 		if f == nil {
 			return 0
 		}
+
 		switch f := f.(type) {
 		case int:
 			return f
@@ -117,6 +118,16 @@ var funcMap = template.FuncMap{
 			return int(f)
 		case float32:
 			return int(f)
+		case string:
+		case qsql.String:
+			a, err := strconv.Atoi(f.String())
+			if err != nil {
+				return 0
+			}
+			return a
+		default:
+			fmt.Println(reflect.TypeOf(f))
+			fmt.Println("unknown type")
 		}
 		return 0
 	},
