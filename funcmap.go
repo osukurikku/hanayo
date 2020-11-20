@@ -119,6 +119,11 @@ var funcMap = template.FuncMap{
 		case float32:
 			return int(f)
 		case string:
+                        a, err := strconv.Atoi(f)
+                        if err != nil {
+                                return 0
+                        }
+                        return a
 		case qsql.String:
 			a, err := strconv.Atoi(f.String())
 			if err != nil {
@@ -376,6 +381,9 @@ var funcMap = template.FuncMap{
 	"unixNano": func() string {
 		return strconv.FormatInt(hanayoStarted, 10)
 	},
+        "unixNanoInt": func() int {
+               return int(time.Now().Unix())
+        },
 	// playstyle returns the string representation of a playstyle.
 	"playstyle": func(i float64, f *profileData) string {
 		var parts []string

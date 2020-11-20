@@ -1,31 +1,39 @@
 package oauth
 
 import (
+	"crypto/md5"
 	"crypto/sha256"
 	"database/sql"
+	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"strconv"
 	"strings"
 
+	"golang.org/x/crypto/bcrypt"
+
 	"github.com/RangelReale/osin"
-	"github.com/felipeweb/osin-mysql"
+	mysql "github.com/felipeweb/osin-mysql"
 	"github.com/gin-gonic/gin"
+	"github.com/jmoiron/sqlx"
 )
 
 var osinServer *osin.Server
 
 var rh RequestHandler
+var DB *sqlx.DB
 
 // Initialise initialises the oauth router.
-func Initialise(handler RequestHandler) error {
+func Initialise(handler RequestHandler, db *sqlx.DB) error {
 	store := mysql.New(handler.GetDB(), "osin_")
 
 	rh = handler
-
+	DB = db
 	config := osin.NewServerConfig()
 	config.AllowClientSecretInParams = true
 	config.AllowGetAccessRequest = true
+	config.AllowedAccessTypes = osin.AllowedAccessType{osin.AUTHORIZATION_CODE,
+		osin.REFRESH_TOKEN, osin.PASSWORD}
 	// Hmm... Wondering why we're making access tokens everlasting, and
 	// disabling refresh tokens? http://telegra.ph/On-refresh-tokens-06-10
 	config.AccessExpiration = 0
@@ -145,6 +153,30 @@ func Token(c *gin.Context) {
 			redirectURI = ar.RedirectUri
 		}
 
+		if ar.Type == osin.PASSWORD {
+			fmt.Println(ar.Username)
+			var userID int
+			var passwordMD5 string
+			userID = 0
+			err := DB.QueryRow(`SELECT id, password_md5 FROM users WHERE username = '`+ar.Username+`'`).Scan(&userID, &passwordMD5)
+
+			h := md5.New()
+			h.Write([]byte(ar.Password))
+			md5Password := hex.EncodeToString(h.Sum(nil))
+
+			if err := bcrypt.CompareHashAndPassword(
+				[]byte(passwordMD5),
+				[]byte(md5Password),
+			); err != nil {
+				userID = 0
+			}
+
+			if err != nil {
+				fmt.Println(err)
+			}
+			ar.UserData = strconv.Itoa(userID)
+		}
+
 		ar.ForceAccessData = &osin.AccessData{
 			Client:        ar.Client,
 			AuthorizeData: ar.AuthorizeData,
@@ -159,7 +191,6 @@ func Token(c *gin.Context) {
 		// generate access token
 		plainToken, _, _ := osinServer.AccessTokenGen.GenerateAccessToken(ar.ForceAccessData, ar.GenerateRefresh)
 		ar.ForceAccessData.AccessToken = fmt.Sprintf("%x", sha256.Sum256([]byte(plainToken)))
-
 		osinServer.FinishAccessRequest(resp, c.Request, ar)
 		resp.Output["access_token"] = plainToken
 	}

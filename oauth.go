@@ -44,5 +44,5 @@ func (o oauthRequestHandler) GetUserID(c *gin.Context) int {
 }
 
 func setUpOauth() {
-	oauth.Initialise(oauthRequestHandler{})
+	oauth.Initialise(oauthRequestHandler{}, db)
 }

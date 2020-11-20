@@ -10,6 +10,7 @@ import (
 	"math/rand"
 	"os"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -141,7 +142,7 @@ func randSeq(n int) string {
 
 func createInvite(c *gin.Context) {
 	ctx := getContext(c)
-	if string(c.PostForm("password")) == "" && string(c.PostForm("email")) == "" && string(c.PostForm("tag")) == "" && string(c.PostForm("bg")) == "" {
+	if string(c.PostForm("password")) == "" && string(c.PostForm("email")) == "" && string(c.PostForm("tag")) == "" && string(c.PostForm("bg")) == "" && string(c.PostForm("name")) == "" {
 
 		if ctx.User.ID == 0 {
 			resp403(c)
@@ -166,6 +167,7 @@ func createInvite(c *gin.Context) {
 
 		db.Exec("INSERT INTO clans_invites(clan, invite) VALUES (?, ?)", clan, s)
 	} else {
+		fmt.Println("hi?1")
 		// big perms check lol ok
 		var perms int
 		db.QueryRow("SELECT perms FROM user_clans WHERE user = ? AND perms = 8 LIMIT 1", ctx.User.ID).Scan(&perms)
@@ -177,6 +179,9 @@ func createInvite(c *gin.Context) {
 			return
 		}
 
+		var name string
+		db.QueryRow("SELECT name from clans WHERE id = ?", clan).Scan(&name)
+
 		tag := "0"
 		if c.PostForm("tag") != "" {
 			tag = c.PostForm("tag")
@@ -184,52 +189,75 @@ func createInvite(c *gin.Context) {
 
 		if db.QueryRow("SELECT 1 FROM clans WHERE tag = ? AND id != ?", c.PostForm("tag"), clan).
 			Scan(new(int)) != sql.ErrNoRows {
-			resp403(c)
 			addMessage(c, errorMessage{T(c, "A clan with that tag already exists...")})
+			simpleReply(c)
 			return
 		}
 
-		db.Exec("UPDATE clans SET description = ?, tag = ?, background = ? WHERE id = ?", c.PostForm("password"), tag, c.PostForm("bg"), clan)
+		nameClan := strings.TrimSpace(c.PostForm("name"))
+		if !cnameRegex.MatchString(nameClan) {
+			addMessage(c, errorMessage{T(c, "Your clans name must contain alphanumerical characters, spaces, or any of <code>_[]-</code>.")})
+			simpleReply(c)
+			return
+		}
+
+		if name != nameClan && db.QueryRow("SELECT 1 FROM clans WHERE name = ?", nameClan).
+			Scan(new(int)) != sql.ErrNoRows {
+			addMessage(c, errorMessage{T(c, "A clan with that name already exists!")})
+			simpleReply(c)
+			return
+		}
+
+		db.Exec("UPDATE clans SET name = ?, description = ?, tag = ?, background = ? WHERE id = ?", nameClan, c.PostForm("password"), tag, c.PostForm("bg"), clan)
 
 		//Avatar uploading if present!
 		file, _, err := c.Request.FormFile("avatar")
-		if err != nil {
-			addMessage(c, errorMessage{T(c, "An error occurred.")})
-			fmt.Println("avatar sec")
-			c.Error(err)
-			return
+		if file != nil {
+
+			if err != nil {
+				addMessage(c, errorMessage{T(c, "An error occurred.")})
+				fmt.Println("avatar sec")
+				c.Error(err)
+				return
+			}
+
+			img, _, err := image.Decode(file)
+			if err != nil {
+				addMessage(c, errorMessage{T(c, "An error occurred.")})
+				fmt.Println("decode sec")
+				c.Error(err)
+				return
+			}
+
+			if config.ClanAvatarsFolder == "" {
+				//fmt.Println("test1")
+				addMessage(c, errorMessage{T(c, "Changing avatar is currently not possible.")})
+				simpleReply(c)
+				return
+			}
+			img = resize.Thumbnail(256, 256, img, resize.Bilinear)
+			f, err := os.Create(fmt.Sprintf("%s/%d.png", config.ClanAvatarsFolder, 2000000000+clan))
+			defer f.Close()
+			if err != nil {
+				fmt.Println("after f close")
+				addMessage(c, errorMessage{T(c, "An error occurred.")})
+				simpleReply(c)
+				c.Error(err)
+				return
+			}
+			err = png.Encode(f, img)
+			if err != nil {
+				fmt.Println("just unabale")
+				addMessage(c, errorMessage{T(c, "We were not able to save your avatar.")})
+				simpleReply(c)
+				c.Error(err)
+				return
+			}
+
 		}
 		// multipart.File, *multipart.FileHeader, error
-		img, _, err := image.Decode(file)
-		if err != nil {
-			addMessage(c, errorMessage{T(c, "An error occurred.")})
-			fmt.Println("decode sec")
-			c.Error(err)
-			return
-		}
-
-		if config.ClanAvatarsFolder == "" {
-			//fmt.Println("test1")
-			addMessage(c, errorMessage{T(c, "Changing avatar is currently not possible.")})
-			return
-		}
-		img = resize.Thumbnail(256, 256, img, resize.Bilinear)
-		f, err := os.Create(fmt.Sprintf("%s/%d.png", config.ClanAvatarsFolder, 2000000000+clan))
-		defer f.Close()
-		if err != nil {
-			fmt.Println("after f close")
-			addMessage(c, errorMessage{T(c, "An error occurred.")})
-			c.Error(err)
-			return
-		}
-		err = png.Encode(f, img)
-		if err != nil {
-			fmt.Println("just unabale")
-			addMessage(c, errorMessage{T(c, "We were not able to save your avatar.")})
-			c.Error(err)
-			return
-		}
 	}
+	fmt.Println("hi?")
 	addMessage(c, successMessage{T(c, "Success")})
 	getSession(c).Save()
 	c.Redirect(302, "/settings/clansettings")
