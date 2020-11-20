@@ -209,7 +209,7 @@
                         <br>
                     </div>
 
-                    <div class="sixteen wide column">
+                    <div class="sixteen wide column" id="maininfo">
                         {{ range $k, $v := (slice .std .taiko .ctb .mania) }}
                         <div data-mode="{{ $k }}" {{ if ne $k (int $favouritemode) }} hidden{{ end }}>
                             <table class="ui very basic two column compact table nopad">
@@ -347,7 +347,7 @@
                 {{ end }}
             </div>
 
-            <div class="ui segment">
+            <!--<div class="ui segment">
                 <h2 class="ui header">{{ $global.T "Achievements" }}</h2>
                 <div id="achievements" class="ui grid">
                 </div>
@@ -356,7 +356,7 @@
                         {{ $global.T "Load more" }}
                     </button>
                 </div>
-            </div>
+            </div> -->
             
             <div class="ui raised segment" id="skills" style="display: none;">
                 <h2>{{ $global.T "Skills" }}</h2>

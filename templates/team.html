@@ -32,17 +32,17 @@ KyutGrill=team2.jpg
 				</p>
 				{{ template "userGroup" $cms }}
 			</div>
-		{{ end}}
+		{{ end }}
 		
 		{{ $devs := (.Get "badges/members?id=%d" 3) }}
 		{{ if $devs.members }}
-		<div class="ui center aligned segment"></div>
-			<h1 class="ui heading">{{ .T "Developers" }}</h1>
-			<p>
-				{{ .T "Developers add new features to the server, squash bugs, keep the server up and running and take care of its maintenance." }}<br>
-			</p>
-			{{ template "userGroup" $devs }}
-		</div>
+			<div class="ui center aligned segment">
+				<h1 class="ui heading">{{ .T "Developers" }}</h1>
+				<p>
+					{{ .T "Developers add new features to the server, squash bugs, keep the server up and running and take care of its maintenance." }}<br>
+				</p>
+				{{ template "userGroup" $devs }}
+			</div>
 		{{ end }}
 		
 		{{ $rms := (.Get "badges/members?id=%d" 17) }}

@@ -15,12 +15,13 @@ MinPrivileges=2
                 {{ $lastNickChange := qb "SELECT latest_nickchange FROM users WHERE id = ?" .Context.User.ID }}
                 {{ $lastNickChange = int ($lastNickChange.latest_nickchange) }}
 
+
                 {{ if and (gt $lastNickChange 0) (not (has .Context.User.Privileges 4))  }}
                     <div class="ui segment">
                         {{ template "donor_locked" . }}
                         <h3>{{ $.T "You used your free change!" }}</h3>
                     </div>
-                {{ else if (gt $lastNickChange (int unixNano)) }}
+                {{ else if (gt $lastNickChange (int unixNanoInt)) }}
                     <div class="ui segment">
                         <h3>{{ $.T "Wait 3 days before next nickname change" }}</h3>
                     </div>
@@ -38,7 +39,7 @@ MinPrivileges=2
                         </div>
                         <div id="username-rules" class="ui message segment error">
                             <h3 class="ui header no top margin">
-                                <i class="icon meh"></i> 
+                                <i id="Nwordpass" class="icon meh"></i> 
                                 <div class="content"> {{ $.T "Your new username..." }} </div>
                             </h3>
                             <blockquote>
@@ -120,9 +121,11 @@ MinPrivileges=2
                                 if (resultTest) {
                                     $("#smtBtn").removeClass("disabled").addClass("disabled");
                                     $("#username-rules").removeClass("success").addClass("error");
+                                    $("#Nwordpass").removeClass("smile").addClass("meh");
                                 } else {
                                     $("#smtBtn").removeClass("disabled");
                                     $("#username-rules").removeClass("error").addClass("success");
+                                    $("#Nwordpass").removeClass("meh").addClass("smile");
                                 }
         
                                 Object.entries(checks).forEach((el, _) => {

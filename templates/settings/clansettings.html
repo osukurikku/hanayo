@@ -20,10 +20,15 @@ Include=menu.html
                         {{ $o := (.Get "clans/isclan?uid=%d" .Context.User.ID).clan.clan }}
                         {{ $c := qb "SELECT * FROM clans WHERE id = ? LIMIT 1" $o }}
                         {{ $tag := or $c.tag.String "" }}
+                        {{ $name := or $c.name.String "" }}
                         {{ $desc := or $c.description.String "" }}
                         {{ $icon := or $c.icon.String "" }}
                         {{ $bg := or $c.background.String "" }}
                         <form id="register-form" class="ui form" method="post" enctype="multipart/form-data" action="/settings/clansettings">
+                            <div class="field">
+                                <label class="left aligned">{{ "Clan Name" }}</label>
+                                <input tabindex="1" type="text" name="name" placeholder="{{ $.T "Clan Name" }}" value="{{ $name }}">
+                            </div>
                             <div class="field">
                                 <label class="left aligned">{{ "Clantag (2 to 6 characters)" }}</label>
                                 <input tabindex="1" type="text" name="tag" placeholder="{{ $.T "Clantag" }}" value="{{ $tag }}" pattern="{2,6}$">
@@ -33,7 +38,7 @@ Include=menu.html
 
                             <div class="field">
                                 <label class="left aligned">{{ $.T "Avatar (optional)" }}</label>
-                             </div>
+                                </div>
 
                             <div class="ui buttons">
                                 <label tabindex="1" for="file" class="ui green labeled icon button">
@@ -93,3 +98,4 @@ Include=menu.html
         </div>
     </div>
 {{ end }}
+    

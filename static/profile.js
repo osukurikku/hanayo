@@ -42,7 +42,7 @@ $(document).ready(function () {
         window.history.replaceState('', document.title, wl.pathname + "?mode=" + m + wl.hash);
         loadRanksPLZ(userID, m);
     });
-    initialiseAchievements();
+    //initialiseAchievements();
     initialiseFriends();
     $('.kr-tab').tab()
     // load scores page for the current favourite mode
@@ -67,11 +67,11 @@ $(document).ready(function () {
 
 function loadRanksPLZ(userid, mode) {
     api("scores/ranksget", {userid: userid, mode: mode}, (res) => {
-        $("#SSHDranks").text(res.sshd);
-        $("#SSranks").text(res.ss);
-        $("#SHDranks").text(res.sh);
-        $("#Sranks").text(res.s);
-        $("#Aranks").text(res.a);
+        $(`#maininfo>div[data-mode=${mode}] #SSHDranks`).text(res.sshd);
+        $(`#maininfo>div[data-mode=${mode}] #SSranks`).text(res.ss);
+        $(`#maininfo>div[data-mode=${mode}] #SHDranks`).text(res.sh);
+        $(`#maininfo>div[data-mode=${mode}] #Sranks`).text(res.s);
+        $(`#maininfo>div[data-mode=${mode}] #Aranks`).text(res.a);
     })
 }
 
@@ -377,6 +377,8 @@ function convert_to_normal_format(data) {
         last_knowed_info = newdata[x];
         sonewerdata.push([x+1, newdata[x]]);
     }
+
+    sonewerdata = sonewerdata.slice(sonewerdata.length-60, sonewerdata.length)
 
     return sonewerdata
 }
