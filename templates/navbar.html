@@ -84,7 +84,8 @@
                     <img class="ui avatar image" alt="user-avatar" src="{{ config "AvatarURL" }}/{{ .Context.User.ID }}">
                     <span>{{ .Context.User.Username }}</span>
                     <div class="inverted menu">
-                    {{ navbarItem .Path (.T "Profile") (printf "/u/%d" .Context.User.ID) }}
+                        <a class="item" href="#"><img src="/static/images/coins.png"/>: {{ rediget (printf "kurikku:coins:%d" .Context.User.ID) }}</a>
+                        {{ navbarItem .Path (.T "Profile") (printf "/u/%d" .Context.User.ID) }}
 						{{ navbarItem .Path (.T "Friends") "/friends" }}
 						{{ if $isDonor }}
                               {{ navbarItem .Path (.T "Subscribers") "/subs" }}
