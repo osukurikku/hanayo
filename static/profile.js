@@ -366,6 +366,7 @@ function convert_to_normal_format(data) {
     if (data == undefined || data == null) {
         return []
     }
+    data = data.slice(data.length-60, data.length)
     data.forEach(element => {
         var s = get_range(element['day']); 
         if (s>minDay) { minDay = s };
@@ -378,7 +379,7 @@ function convert_to_normal_format(data) {
         sonewerdata.push([x+1, newdata[x]]);
     }
 
-    sonewerdata = sonewerdata.slice(sonewerdata.length-60, sonewerdata.length)
+    //sonewerdata = sonewerdata.slice(sonewerdata.length-60, sonewerdata.length)
 
     return sonewerdata
 }
@@ -546,15 +547,17 @@ function loadScoresPage(type, mode) {
         }
         r.scores.forEach(function (v, idx) {
             scoreStore[v.id] = v;
-            if (v.completed == 0) {
-                /*
-                WTF?
-                */
+            if (v.completed in [0, 1]) {
+                scoreRank = "undefined"
             } else {
                 var scoreRank = getRank(mode, v.mods, v.accuracy, v.count_300, v.count_100, v.count_50, v.count_miss);
             }
+            rowColor = '';
+            if (type === 'recent') {
+				rowColor = v.completed === 3 ? 'positive' : v.completed < 2 ? 'error' : '';
+			}
             table.append(
-                $("<tr class='new score-row' data-scoreid='" + v.id + "' />").append(
+                $("<tr class='new score-row " + rowColor + "' data-scoreid='" + v.id + "' />").append(
                     $(`
                     <div class="scores-table">
                         <div class="scores-table-left">

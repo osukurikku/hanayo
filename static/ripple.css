@@ -1671,7 +1671,8 @@ g > text {
     flex-direction: row;
     align-items: center;
 	justify-content: left;
-	margin-top: 12px;
+	margin: 6px 0 6px 0;
+    padding: 0 6px 0 6px;
 }
 
 .scores-table-left img {

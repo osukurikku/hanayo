@@ -71,7 +71,9 @@
                         <div class="kpw--info--block">
                             <h1 class="ui header">
                                 <p class="ranks">
-                                    {{ if $super }}
+                                    {{ if $.UserStyle }}
+                                        <a class="clan" href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> <span class="bgf" style="{{ $.UserStyle | attrCSS }}">{{ .username }}</span>
+                                    {{ else if $super }}
                                         <a class="clan" href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> <span class="owner bgf">{{ .username }}</span>
                                     {{else if $dev}}
                                         <a class="clan" href="/c/{{ .clan.id }}?mode=0">{{ .clan.tag }} </a> <span class="dev bgf">{{ .username }}</span>
