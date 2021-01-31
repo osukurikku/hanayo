@@ -4,6 +4,8 @@ import (
 	"database/sql"
 	"strconv"
 
+	"fmt"
+
 	"github.com/gin-gonic/gin"
 	"zxq.co/ripple/rippleapi/common"
 )
@@ -11,7 +13,8 @@ import (
 // TODO: replace with simple ResponseInfo containing userid
 type profileData struct {
 	baseTemplateData
-	UserID int
+	UserID    int
+	UserStyle string
 
 	ProfileGrill         string
 	ProfileGrillAbsolute bool
@@ -22,23 +25,33 @@ func userProfile(c *gin.Context) {
 	var (
 		userID     int
 		username   string
+		userStyle  string
 		privileges uint64
+		country    string
+	)
+
+	var (
+		favMode  int
+		pp_std   int
+		pp_taiko int
+		pp_ctb   int
+		pp_mania int
 	)
 
 	ctx := getContext(c)
 
 	u := c.Param("user")
 	if _, err := strconv.Atoi(u); err != nil {
-		err := db.QueryRow("SELECT id, username, privileges FROM users WHERE username = ? AND "+ctx.OnlyUserPublic()+" LIMIT 1", u).Scan(&userID, &username, &privileges)
+		err := db.QueryRow("SELECT  users.id, users.username, users_stats.user_style, users.privileges, users_stats.country, users_stats.favourite_mode, users_stats.pp_std, users_stats.pp_taiko, users_stats.pp_ctb, users_stats.pp_mania FROM users INNER JOIN users_stats ON users_stats.id = users.id WHERE username = ? AND "+ctx.OnlyUserPublic()+" LIMIT 1", u).Scan(&userID, &username, &userStyle, &privileges, &country, &favMode, &pp_std, &pp_taiko, &pp_ctb, &pp_mania)
 		if err != nil && err != sql.ErrNoRows {
 			c.Error(err)
 		}
 	} else {
-		err := db.QueryRow(`SELECT id, username, privileges FROM users WHERE id = ? AND `+ctx.OnlyUserPublic()+` LIMIT 1`, u).Scan(&userID, &username, &privileges)
+		err := db.QueryRow(`SELECT users.id, users.username, users_stats.user_style, users.privileges, users_stats.country, users_stats.favourite_mode, users_stats.pp_std, users_stats.pp_taiko, users_stats.pp_ctb, users_stats.pp_mania FROM users INNER JOIN users_stats ON users_stats.id = users.id WHERE users.id = ? AND `+ctx.OnlyUserPublic()+` LIMIT 1`, u).Scan(&userID, &username, &userStyle, &privileges, &country, &favMode, &pp_std, &pp_taiko, &pp_ctb, &pp_mania)
 		switch {
 		case err == nil:
 		case err == sql.ErrNoRows:
-			err := db.QueryRow(`SELECT id, username, privileges FROM users WHERE username = ? AND `+ctx.OnlyUserPublic()+` LIMIT 1`, u).Scan(&userID, &username, &privileges)
+			err := db.QueryRow(`SELECT users.id, users.username, users_stats.user_style, users.privileges, users_stats.country, users_stats.favourite_mode, users_stats.pp_std, users_stats.pp_taiko, users_stats.pp_ctb, users_stats.pp_mania FROM users INNER JOIN users_stats ON users_stats.id = users.id WHERE username = ? AND `+ctx.OnlyUserPublic()+` LIMIT 1`, u).Scan(&userID, &username, &userStyle, &privileges, &country, &favMode, &pp_std, &pp_taiko, &pp_ctb, &pp_mania)
 			if err != nil && err != sql.ErrNoRows {
 				c.Error(err)
 			}
@@ -48,6 +61,10 @@ func userProfile(c *gin.Context) {
 	}
 
 	data := new(profileData)
+	if len(userStyle) > 0 {
+		data.UserStyle = userStyle
+	}
+
 	if ctx.User.Privileges&common.AdminPrivilegeManageUsers == common.AdminPrivilegeManageUsers || ctx.User.ID == userID {
 		data.UserID = userID
 	} else {
@@ -80,6 +97,17 @@ func userProfile(c *gin.Context) {
 			data.ProfileColour = profileBackground.Value
 		}
 	}
+
+	modesPp := [4]int{pp_std, pp_taiko, pp_ctb, pp_mania}
+	modesNames := [4]string{
+		"osu!standart",
+		"osu!taiko",
+		"osu!ctb",
+		"osu!mania",
+	}
+
+	data.MetaDescription = fmt.Sprintf("%s is %s player from %s with %dpp", username, modesNames[favMode], countryReadable(country), modesPp[favMode])
+	data.MetaImage = fmt.Sprintf("https://a.kurikku.pw/%d", userID)
 
 	data.TitleBar = T(c, "%s's profile", username)
 	data.DisableHH = true

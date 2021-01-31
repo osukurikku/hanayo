@@ -103,7 +103,11 @@ func beatmapInfo(c *gin.Context) {
 		data.SetJSON = "[]"
 	}
 
+	zeroDiff := data.Beatmapset.ChildrenBeatmaps[0]
 	data.TitleBar = T(c, "%s - %s", data.Beatmapset.Artist, data.Beatmapset.Title)
+	data.MetaDescription = fmt.Sprintf(`%.2f ⭐ %.0f 🎵
+AR: %.1f • OD: %.1f • CS: %.1f • HP: %.1f`, zeroDiff.DifficultyRating, zeroDiff.BPM, zeroDiff.AR, zeroDiff.OD, zeroDiff.CS, zeroDiff.HP)
+	data.MetaImage = fmt.Sprintf("https://b.ppy.sh/thumb/%dl.jpg", data.Beatmapset.ID)
 	data.Scripts = append(data.Scripts, "/static/tablesort.js", "/static/beatmap.js")
 }
 

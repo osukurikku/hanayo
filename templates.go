@@ -149,6 +149,9 @@ type baseTemplateData struct {
 	Messages          []message
 	RequestInfo       map[string]interface{}
 
+	MetaDescription string
+	MetaImage       string
+
 	// ignore, they're set by resp()
 	Context  context
 	Path     string

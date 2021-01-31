@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ if .TitleBar }}{{ .T .TitleBar }} - {{ end }}Kurikku</title>
+    <title>{{ if .TitleBar }}{{ .T .TitleBar }} | {{ end }}Kurikku</title>
 
     <link rel="stylesheet" type="text/css" href="/static/{{ if $ds }}dark/{{ end }}semantic.min.css?{{ unixNano }}">
     <link rel="stylesheet" type="text/css" href="/static/ripple.css?{{ unixNano }}">
@@ -16,13 +16,13 @@
     <!-- KotRik epic react script -->
     <link href="/static/react/css/main.d20dcfbe.chunk.css" rel="stylesheet">
 
-    <meta name="theme-color" content="#4C4C4C">
+    <meta name="theme-color" content="#c32c74">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="Kurikku">
     <meta name="description" content="You look new here. Allow us to introduce you to what Kurikku is. Kurikku is a osu! private server. We have free osu!Direct, beatmap listing and searching, clans and more! Have fun on Kurikku!"/>
-    <meta name="keywords" content="osu, osu private server, osu server, kurikku, osu!, private, server, osu приватный сервер, приватный сервер, катори, ripple">
+    <meta name="keywords" content="osu, osu private server, osu server, kurikku, osu!, private, server, osu приватный сервер, приватный сервер, катори, ripple, akatsuki">
     <meta name="author" content="KotRik">
     <meta name="robots" content="index,follow">
 
@@ -33,22 +33,22 @@
     <link rel="apple-touch-icon" href="https://kurikku.pw/static/logos/logo256.png">
 
     <!-- OpenGraph -->
-    <meta property="og:title" content="Kurikku">
-    <meta property="og:image" content="https://kurikku.pw/static/logos/logo256.png">
-    <meta property="og:description" content="another cool private server for osu!game">
-
+    <meta property="og:title" content="{{ if .TitleBar }}{{ .T .TitleBar }} | {{ end }}Kurikku">
+    <meta property="og:image" content="{{ if .MetaImage }}{{ .MetaImage }}{{ else }}https://kurikku.pw/static/logos/logo256.png{{ end }}">
+    <meta property="og:description" content="{{ if .MetaDescription }}{{ .MetaDescription }}{{ else }}another cool private server for osu!game{{ end }}">
     <meta property="og:url" content="https://kurikku.pw/static/logos/logo256.png">
     <meta property="og:type" content="website"/>
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:description" content="another cool private server for osu!game"/>
-    <meta name="twitter:title" content="Kurikku"/>
-    <meta name="twitter:image" content="https://kurikku.pw/static/logos/logo256.png"/>
+    <meta name="twitter:description" content="{{ if .MetaDescription }}{{ .MetaDescription }}{{ else }}another cool private server for osu!game{{ end }}"/>
+    <meta name="twitter:title" content="{{ if .TitleBar }}{{ .T .TitleBar }} | {{ end }}Kurikku"/>
+    <meta name="twitter:image" content="{{ if .MetaImage }}{{ .MetaImage }}{{ else }}https://kurikku.pw/static/logos/logo256.png{{ end }}"/>
+    <meta name="twitter:site" content="@osukurikku"/>
 
     <!-- Windows 8 -->
     <meta name="msapplication-TileImage" content="https://kurikku.pw/static/logos/logo256.png">
-    <meta name="msapplication-TileColor" content="#4C4C4C">
+    <meta name="msapplication-TileColor" content="#c32c74">
 
     <!-- Microdata -->
     <script type="application/ld+json">
