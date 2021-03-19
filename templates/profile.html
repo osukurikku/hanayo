@@ -333,7 +333,22 @@
                 {{ end }}
             </div>
             
-            <div id="graph1" class="ui raised segment">
+            <div class="ui top center centered attached segment overflow auto">
+                <div class="ui breadcrumb">
+                    <a class="section kr-tab" data-tab="top-100-chart">top 100 scores chart</a>
+                    <div class="divider"> /</div>
+                    <a class="section kr-tab" data-tab="pp-chart">pp chart</a>
+                </div>
+            </div>
+
+            <div id="chart-container" class="ui raised segment tab" style="height: 400px" data-tab="top-100-chart">
+                {{ range _range 4 }}
+                    <div id="detail-container-{{ . }}" data-mode="{{ . }}" {{ if ne . (int $favouritemode) }} hidden{{ end }} data-loaded="0">
+                    </div>
+                {{ end }}
+            </div>
+        
+            <div id="graph1" class="ui raised segment tab active" data-tab="pp-chart">
                 {{ range _range 4 }}
                     <div data-mode="{{ . }}" {{ if ne . (int $favouritemode) }} hidden{{ end }} data-loaded="0">
                         <svg style="height: 250px; width: 100%">
@@ -420,6 +435,7 @@
     {{ end }}
     <script src="/static/d3.v3.min.js"></script>
     <script src="/static/nv.d3.js"></script>
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
     <!--  Hey! If you want use this version of profile writed by KotRik(kurikku). Please say thanks him and add in team in "special thanks".  -->
 </div>
 {{ end }}

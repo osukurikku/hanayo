@@ -93,7 +93,7 @@ func beatmapInfo(c *gin.Context) {
 		return
 	}
 
-	data.KyutGrill = fmt.Sprintf("https://assets.ppy.sh/beatmaps/%d/covers/cover.jpg?%d", data.Beatmapset.ID, data.Beatmapset.LastUpdate.Unix())
+	data.KyutGrill = fmt.Sprintf("https://assets.ppy.sh/beatmaps/%d/covers/cover@2x.jpg?%d", data.Beatmapset.ID, data.Beatmapset.LastUpdate.Unix())
 	data.KyutGrillAbsolute = true
 
 	setJSON, err := json.Marshal(data.Beatmapset)

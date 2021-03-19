@@ -42,7 +42,7 @@ func userProfile(c *gin.Context) {
 
 	u := c.Param("user")
 	if _, err := strconv.Atoi(u); err != nil {
-		err := db.QueryRow("SELECT  users.id, users.username, users_stats.user_style, users.privileges, users_stats.country, users_stats.favourite_mode, users_stats.pp_std, users_stats.pp_taiko, users_stats.pp_ctb, users_stats.pp_mania FROM users INNER JOIN users_stats ON users_stats.id = users.id WHERE username = ? AND "+ctx.OnlyUserPublic()+" LIMIT 1", u).Scan(&userID, &username, &userStyle, &privileges, &country, &favMode, &pp_std, &pp_taiko, &pp_ctb, &pp_mania)
+		err := db.QueryRow("SELECT  users.id, users.username, users_stats.user_style, users.privileges, users_stats.country, users_stats.favourite_mode, users_stats.pp_std, users_stats.pp_taiko, users_stats.pp_ctb, users_stats.pp_mania FROM users INNER JOIN users_stats ON users_stats.id = users.id WHERE users.username = ? AND "+ctx.OnlyUserPublic()+" LIMIT 1", u).Scan(&userID, &username, &userStyle, &privileges, &country, &favMode, &pp_std, &pp_taiko, &pp_ctb, &pp_mania)
 		if err != nil && err != sql.ErrNoRows {
 			c.Error(err)
 		}
@@ -51,7 +51,7 @@ func userProfile(c *gin.Context) {
 		switch {
 		case err == nil:
 		case err == sql.ErrNoRows:
-			err := db.QueryRow(`SELECT users.id, users.username, users_stats.user_style, users.privileges, users_stats.country, users_stats.favourite_mode, users_stats.pp_std, users_stats.pp_taiko, users_stats.pp_ctb, users_stats.pp_mania FROM users INNER JOIN users_stats ON users_stats.id = users.id WHERE username = ? AND `+ctx.OnlyUserPublic()+` LIMIT 1`, u).Scan(&userID, &username, &userStyle, &privileges, &country, &favMode, &pp_std, &pp_taiko, &pp_ctb, &pp_mania)
+			err := db.QueryRow(`SELECT users.id, users.username, users_stats.user_style, users.privileges, users_stats.country, users_stats.favourite_mode, users_stats.pp_std, users_stats.pp_taiko, users_stats.pp_ctb, users_stats.pp_mania FROM users INNER JOIN users_stats ON users_stats.id = users.id WHERE users.username = ? AND `+ctx.OnlyUserPublic()+` LIMIT 1`, u).Scan(&userID, &username, &userStyle, &privileges, &country, &favMode, &pp_std, &pp_taiko, &pp_ctb, &pp_mania)
 			if err != nil && err != sql.ErrNoRows {
 				c.Error(err)
 			}

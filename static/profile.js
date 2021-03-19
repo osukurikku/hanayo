@@ -17,6 +17,7 @@ $(document).ready(function () {
     }
 
     loadRanksPLZ(userID, favouriteMode);
+    loadHighCharts(userID, favouriteMode);
     setDefaultScoreTable();
     // when an item in the mode menu is clicked, it means we should change the mode.
     $("#mode-menu>.item").click(function (e) {
@@ -38,6 +39,7 @@ $(document).ready(function () {
             initialiseTopScores($("#top-scores-zone>div[data-mode=" + m + "]"), m)
             initialiseScores(needsLoad, m);
             loadMostPlayedBeatmaps(m)
+            loadHighCharts(userID, m);
         $(this).addClass("active");
         window.history.replaceState('', document.title, wl.pathname + "?mode=" + m + wl.hash);
         loadRanksPLZ(userID, m);
@@ -64,6 +66,208 @@ $(document).ready(function () {
         $('.ui.accordion').accordion();
     }
 });
+
+function loadHighCharts(userid, mode) {
+    api("users/get_highchart", {userid: userid, mode: mode}, (res) => {
+        var data = res.data;
+        if (data === null) return;
+        data = data.filter(function (x) { return x !== undefined && x != null; });
+        var m_chart = 7.5212260750395E-10;
+        var b = -1005.4401898196;
+        var tAgo;
+        var g = data[0]['x'];
+        var h = 0;
+        for (var i = 0; i < data.length; i++) {
+            if (data[i]['x'] < g) {
+                g = data[i]['x'];
+            }
+            if (data[i]['x'] > h) {
+                h = data[i]['x'];
+            }
+        }
+
+        var detailChart;
+        var $container = $('#chart-container')
+            .css('position', 'relative');
+
+        var colors = {
+            "D": "rgba(230,  8,  8,0.5)",
+            "C": "rgba(140, 39,167,0.5)",
+            "B": "rgba( 35, 52,152,0.5)",
+            "A": "rgba( 67,159, 40,0.5)",
+            "S": "rgba(233,190, 53,0.5)",
+            "SH": "rgba(189,149, 21,0.5)",
+            "SS": "rgba(207,226,230,0.5)",
+            "SSH": "rgba(157,196,204,0.5)",
+        }
+        var detailData = {
+            "D": [],
+            "C": [],
+            "B": [],
+            "A": [],
+            "S": [],
+            "SH": [],
+            "SS": [],
+            "SSH": [],
+        }
+        // prepare the detail chart
+        var suchData = [];
+
+        jQuery.each(data, function (i, point) {
+            detailData[point._grade].push({
+                name: point.name,
+                _bid: point._bid,
+                _when: point._when,
+                //_weight: point._weight,
+                x: point.x,
+                y: point.y,
+                fillColor: colors[point._grade],
+            });
+        });
+        suchData.push({
+            x: g,
+            y: g * m_chart + b,
+        });
+        suchData.push({
+            x: h,
+            y: h * m_chart + b,
+        });
+        _series = [{
+            type: 'line',
+            name: 'Linear Regression (pp/song)',
+            color: 'rgba(81,15,173, .5)',
+            data: suchData,
+            dashStyle: 'dash',
+            marker: {
+                enabled: false,
+            },
+            states: {
+                hover: {
+                    lineWidth: 0,
+                },
+            },
+            enableMouseTracking: false,
+        }];
+        for (i in colors) {
+            _series.push({
+                type: 'scatter',
+                name: i + ' Scores',
+                color: colors[i],
+                data: detailData[i],
+                turboThreshold: 0,
+            })
+        }
+
+        let container = $("detail-container-"+mode)
+        container.attr("data-loaded", "1");
+        detailChart = Highcharts.chart("detail-container-"+mode, {
+            chart: {
+                zoomType: 'xy',
+                reflow: false,
+                marginLeft: 70,
+                marginRight: 20,
+                resetZoomButton: {
+                    theme: {
+                        fill: '#000',
+                        stroke: 'none',
+                        r: 0,
+                        states: {
+                            hover: {
+                                fill: '#41739D',
+                                style: {
+                                    color: 'white'
+                                }
+                            }
+                        }
+                    }
+                },
+                height: 370,
+                backgroundColor: null
+            },
+            credits: {
+                enabled: true,
+                text: 'Chart provided by Jebwizoscar and created by arily',
+                style: { color: '#fff', fontSize: '11px' },
+                href: 'https://osu.ppy.sh/users/1123053',
+            },
+            title: {
+                text: 'Best Performance Time-pp Scatter Chart',
+                style: {
+                    color: '#fff'
+                }
+            },
+            subtitle: {
+                text: 'Select an area by dragging across the lower chart',
+                style: {
+                    color: '#fff'
+                }
+            },
+            xAxis: {
+                type: 'datetime',
+            },
+            yAxis: {
+                title: {
+                    text: "Average pp/song",
+                },
+                maxZoom: 0.1,
+            },
+            legend: {
+                enabled: true,
+            },
+            tooltip: {
+                useHTML: true,
+                crosshairs: true,
+                formatter: function () {
+                    var point = this.point;
+                    var tAgo = jQuery.timeago(point._when);
+                    return '<b>' + this.key + '</b><br/><b>pp: ' +
+                        this.y + '</b>' + //<b>Weight: ' +
+                            /*point._weight + '%</b>*/'<br/><b>Link:</b> <a target="_blank" href="//osu.ppy.sh/b/' +
+                        point._bid + '">https://osu.ppy.sh/b/' +
+                        point._bid + "</a><br/><b>Time: </b>" + tAgo;
+                },
+            },
+            plotOptions: {
+                scatter: {
+                    tooltip: {
+                        useHTML: true,
+                        crosshairs: true,
+                        formatter: function () {
+                            var point = this.points[0];
+                            var tAgo = jQuery.timeago(point._when);
+                            return '<b>' + point.key + '</b><br/><b>pp: ' +
+                                this.y + '</b><br/><b>Weight:' +
+                                (100 * Math.pow(0.9, (this.x) - 1)).toFixed(10) + '%</b><br/><b>Link:</b><a href="//osu.ppy.sh/b/' +
+                                point._bid + '"></a>https://osu.ppy.sh/b/' +
+                                point._bid + "</a><br/><b>Time:</b>" + tAgo;
+                        },
+                    },
+                    marker: {
+                        radius: 5,
+                        states: {
+                            hover: {
+                                enabled: true,
+                                lineColor: 'rgb(0,0,0)',
+                            },
+                        },
+                    },
+                    states: {
+                        hover: {
+                            marker: {
+                                enabled: false
+                            }
+                        }
+                    }
+                },
+                turboThreshold: 0,
+            },
+            series: _series,
+            exporting: {
+                enabled: false,
+            },
+        });
+    })
+}
 
 function loadRanksPLZ(userid, mode) {
     api("scores/ranksget", {userid: userid, mode: mode}, (res) => {
@@ -468,7 +672,6 @@ function loadRecentActivity(type, mode) {
         </div>
     `)
 
-    console.log(playTimer);
     var table = $("#recent-activity div[data-mode=" + mode + "] table[data-type=" + type + "] tbody");
     api("users/get_activity", {
         mode: mode,
@@ -530,11 +733,6 @@ function loadMostPlayedBeatmaps(mode) {
 function loadScoresPage(type, mode) {
     var table = $("#scores-zone div[data-mode=" + mode + "] table[data-type=" + type + "] tbody");
     var page = ++currentPage[mode][type];
-    console.log("loadScoresPage with", {
-        page: page,
-        type: type,
-        mode: mode,
-    });
     api("users/scores/" + type, {
         mode: mode,
         p: page,
