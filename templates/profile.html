@@ -363,17 +363,6 @@
                     </div>
                 {{ end }}
             </div>
-
-            <!--<div class="ui segment">
-                <h2 class="ui header">{{ $global.T "Achievements" }}</h2>
-                <div id="achievements" class="ui grid">
-                </div>
-                <div class="right aligned">
-                    <button class="ui disabled button" id="load-more-achievements">
-                        {{ $global.T "Load more" }}
-                    </button>
-                </div>
-            </div> -->
             
             <div class="ui raised segment" id="skills" style="display: none;">
                 <h2>{{ $global.T "Skills" }}</h2>
@@ -414,6 +403,18 @@
                 </div>
                 {{ end }}
             </div>
+
+            <div class="ui segment">
+                <h2 class="ui header">{{ $global.T "Achievements" }}</h2>
+                <div id="achievements" class="ui grid">
+                </div>
+                <div class="right aligned">
+                    <button class="ui disabled button" id="load-more-achievements">
+                        {{ $global.T "Load more" }}
+                    </button>
+                </div>
+            </div>
+
             <div class="ui modal">
                 <i class="close icon"></i>
                 <div class="content">

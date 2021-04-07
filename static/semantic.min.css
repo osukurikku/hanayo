@@ -14819,7 +14819,7 @@
      -ms-flex-align: stretch;
      align-items: stretch;
      padding: 0;
-     margin: -1rem
+     margin: -0.8rem;
  }
  
  .ui.relaxed.grid {
