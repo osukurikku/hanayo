@@ -45,9 +45,9 @@
 						<div class="full-centered column">
 							<div class="ui vertical buttons">
 								<a href="osu://dl/{{ .Beatmapset.ID }}" class="ui pink labeled icon button"><i class="download icon"></i>{{ $.T "osu!direct" }}</a>
-								<a href="http://storage.kurikku.pw/d/{{ .Beatmapset.ID }}" class="ui green labeled icon button"><i class="download icon"></i>{{ $.T "download" }}</a>
+								<a href="https://chimu.moe/d/{{ .Beatmapset.ID }}" class="ui green labeled icon button"><i class="download icon"></i>{{ $.T "download" }}</a>
 								{{ if .Beatmapset.HasVideo }}
-								<a href="http://storage.kurikku.pw/d/{{ .Beatmapset.ID }}?novideo" class="ui gray labeled icon button"><i class="download icon"></i>{{ $.T "download (no video)" }}</a>
+								<a href="https://chimu.moe/d/{{ .Beatmapset.ID }}?n=1" class="ui gray labeled icon button"><i class="download icon"></i>{{ $.T "download (no video)" }}</a>
 								{{ end }}
 								{{ if .Context.User.ID }}
 									{{ if (has .Context.User.Privileges 271)}}
