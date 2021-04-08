@@ -296,26 +296,51 @@ function initialiseAchievements() {
 			var $ach = $("#achievements").empty();
 			limit = limit < 0 ? achievements.length : limit;
 			var shown = 0;
+            
+            let categories = {};
+
 			for (var i = 0; i < achievements.length; i++) {
 				var ach = achievements[i];
 				if (shown >= limit || (achievedOnly && !ach.achieved)) {
 					continue;
 				}
 				shown++;
-				$ach.append(
-					$("<div class='ui two wide computer eight wide mobile centered column'>").append(
-						$("<img src='https://s.kurikku.pw/medals/client/" + ach.icon + ".png' alt='" + ach.name +
-							"' class='" +
-							(!ach.achieved ? "locked-achievement" : "achievement") +
-							"'>").popup({
-							title: ach.name,
-							content: ach.description,
-							position: "bottom center",
-							distanceAway: 10
-						})
-					)
-				);
-			}
+            
+                let tr_ach_name = ach.icon.split("-");
+                if (!(tr_ach_name[1] in categories)) {
+                    categories[tr_ach_name[1]] = []
+
+                    $ach.append(
+                        $(`
+                            <h2 class="ui header" style="margin-top: 20px">${tr_ach_name[1].charAt(0).toUpperCase() + tr_ach_name[1].slice(1)}</h2>
+                            <div class="ui divider"/>
+                            <div id="${tr_ach_name[1]}_achs" class="ui grid"></div></div>
+                        `)
+                    )
+                }
+                categories[tr_ach_name[1]].push(ach)
+            }
+
+            for (const [achType, value] of Object.entries(categories)) {
+                console.log(achType, value)
+                for (const ach of value) {
+                    console.log($(`#${achType}_achs`))
+                    $(`#${achType}_achs`).append(
+                        $('<div class="ui two wide computer eight wide mobile centered column"></div>').append(
+                            $("<img src='https://s.kurikku.pw/medals/client/" + ach.icon + ".png' alt='" + ach.name +
+                                "' class='" +
+                                (!ach.achieved ? "locked-achievement" : "achievement") +
+                                "'>").popup({
+                                title: ach.name,
+                                content: ach.description,
+                                position: "bottom center",
+                                distanceAway: 10
+                            })
+                        )
+                    )
+                }   
+            }
+
 			// if we've shown nothing, and achievedOnly is enabled, try again
 			// this time disabling it.
 			if (shown == 0 && achievedOnly) {
