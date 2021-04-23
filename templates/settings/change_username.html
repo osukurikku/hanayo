@@ -99,6 +99,9 @@ MinPrivileges=2
                         $( document ).ready(function() {
                             $("#inputNick").keyup(debounce(async function() {
                                 let value = $("#inputNick").val()
+				if (value !== null || value !== undefined) {
+				    value = value.trim()
+				}
                                 if (value.length < 1) return;
                                 try {
                                     let result = await fetch(`/api/v2/nickname.available?username=${value}`)

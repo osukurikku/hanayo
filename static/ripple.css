@@ -2075,3 +2075,29 @@ p.ranks .rank {
 .leftInfo .progress > div {
 	max-width: 100%;
 }
+
+.Discord_icon {
+	width: 100%;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 7px;
+    bottom: 0;
+}
+
+.Discord_icon div:first-child {
+	width: 64px;
+    cursor: pointer;
+}
+
+.Discord_icon svg:hover path {
+    fill: #7289da!important;
+    transition: all .25s
+}
+
+@media screen and (max-width: 1350px) {
+    .Discord_icon {
+        display:none!important
+    }
+}

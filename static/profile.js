@@ -322,12 +322,10 @@ function initialiseAchievements() {
             }
 
             for (const [achType, value] of Object.entries(categories)) {
-                console.log(achType, value)
                 for (const ach of value) {
-                    console.log($(`#${achType}_achs`))
                     $(`#${achType}_achs`).append(
                         $('<div class="ui two wide computer eight wide mobile centered column"></div>').append(
-                            $("<img src='https://s.kurikku.pw/medals/client/" + ach.icon + ".png' alt='" + ach.name +
+                            $("<img src='https://s.kurikku.pw/medals/client/" + ach.icon + "@2x.png' alt='" + ach.name +
                                 "' class='" +
                                 (!ach.achieved ? "locked-achievement" : "achievement") +
                                 "'>").popup({

@@ -112,8 +112,7 @@
                             {{ with bget "isOnline?id=%.0f" .id }}
                             <div class="subtitle">
                                 <i class="{{ if .result }}green{{ else }}grey{{ end }} circle icon"></i>
-                                {{ if .result }}{{ $global.T "Online" }}{{ else }}{{ $global.T "Offline" }}{{ end }} (
-                                <b>{{ with $.Get "users/subscount?userid=%d" $.UserID }} {{ .subscount }} {{ end }}</b>
+                                {{ if .result }}{{ $global.T "Online" }}{{ else }}{{ $global.T "Offline" }}{{ end }} (<b>{{ with $.Get "users/subscount?userid=%d" $.UserID }} {{ .subscount }} {{ end }}</b>
                                 {{ $global.T "subs count" }})
             
                             </div>
@@ -428,7 +427,7 @@
                 var playTimes = [{{ range $k, $v := (slice .std .taiko .ctb .mania) }}
                         {{ $v.playtime }},
                     {{ end }}]
-            </script>`
+            </script>
         
             {{ end }}
         </div>
