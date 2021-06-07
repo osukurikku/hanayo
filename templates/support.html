@@ -2,324 +2,41 @@
 Handler=/donate
 TitleBar=Support Kurikku
 KyutGrill=donate.jpg
-AdditionalJS=https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.min.js
+DisableHH=true
+MinPrivileges=2
 */}}
 {{ define "tpl" }}
 {{ $global := .Context }}
 {{ $ := $ }}
-<link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/9.0.0/nouislider.min.css" rel="stylesheet"
-      type="text/css">
 <div class="ui container">
-{{ $ief := ieForm .Gin }}
-{{ with .Get "users/self/donor_info" }}
-{{ if .has_donor }}
-    <div class="ui segment">
-        <h1 class="ui center aligned header no bottom margin" style="margin: 0 auto; display: table;">
-            <i class="red heart icon" style="font-size: 90%;"></i>
-            <div class="content">{{ $.T "You are a donor!" }}</div>
-        </h1>
-        <div class="ui centered subtitle" style="font-size:1.2rem;">
-        {{ $.T "Your donor expires <b>%s</b>. No need to feel guilty for not having donated!" (time .expiration) | html }}
-            &lt;3
-        </div>
-    </div>
-{{ end }}
-    <div class="ui segments">
-        <div class="ui segment">
-            <h2 class="ui header">
-            {{ $.T "Did you know?" }}
-                <div class="sub header">
-                {{ if .has_donor }}{{ $.T "(Probably.)" }}{{ else }}{{ $.T "(Probably not.)" }}{{ end }}
-                </div>
-            </h2>
-        </div>
-        <div class="ui segment">
-            <h3 class="ui header no top margin">
-                <i class="money icon"></i>
-                <div class="content">{{ $.T "Kurikku is not cheap to run." }}</div>
-            </h3>
-            <blockquote>
-            {{ $.T "While we provide this service for free, we still have to pay for it, and if we always took the money out of our own pockets, 1. we would be broke, 2. we wouldn't be able to upgrade our hardware to accomodate our users. While we do have loads of software optimisations that allow us to have Kurikku run crazy fast while still being on not so high-end hardware, the more users we have, the higher-end our hardware needs to be. So we are asking you for help on this :)." }}
-            </blockquote>
-            <h3 class="ui header">
-                <i class="book icon"></i>
-                <div class="content">{{ $.T "We are still students." }}</div>
-            </h3>
-            <blockquote>
-            {{ $.T "Kurikku developers, and most of the Kurikku staff, do not have a day job. This means that we get most of our income as students from doing small jobs as \"freelancers\" every so often, or, you know, allowance." }}
-            </blockquote>
-            <h3 class="ui header">
-                <i class="mouse pointer icon"></i>
-                <div class="content">{{ $.T "We do not have ads. And never will." }}</div>
-            </h3>
-            <blockquote>
-            {{ $.T "You may have adblock enabled and have not noticed, but we don't have ads anywhere on our website. We believe ads are bad, as they can be very annoying to you and that you would rather spend a few bucks to help us rather than watch annoying ads all the time." }}
-            </blockquote>
-            <h3 class="ui header">
-                <i class="wizard icon"></i>
-                <div class="content">{{ $.T "We love picking random icons from our icon library." }}</div>
-            </h3>
-        </div>
-    </div>
-    <div class="ui segment">
-        <h1 class="ui center aligned header">
-        {{ $.T "So what can you do?" }}
-            <div class="sub header">
-            {{ if .has_donor }}{{ $.T "Well, you can give us even more money." }}{{ else }}{{ $.T "Well, you can give us even more money." }}{{ end }}
-            </div>
-        </h1>
-        <h4 class="ui horizontal divider header">
-        {{ $.T "Here's what you get:" }}
-        </h4>
-        <div class="ui stackable one grid">
-            <div class="sixteen wide column">
-                <div class="ui segment chibi-card">
-                    <div class="ui stackable two grid chibi-grid">
-                        <div class="two wide column">
-                            <img class="ui centered image chibi" alt="Chibi" src="/static/chibi/1.png"/>
-                        </div>
-                        <div class="fourteen wide column grid">
-                            <h2>{{ $.T "Yellow username" }}</h2>
-                            <p class="chibi-text">
-                                {{ $.T "Just like in osu!, you get a <b>shiny yellow username</b> in the in-game chat to show everyone you're a really cool dude who has helped us pay the server bills." | html }}
-                            </p>
-                        </div>
-                    </div>
+	<div id="app">
+	</div>
+    
+    <br/>
+    {{ $ief := ieForm .Gin }}
+    {{ with .Get "users/self/donor_info" }}
+        {{ if .has_donor }}
+            <div class="ui segment">
+                <h1 class="ui center aligned header no bottom margin" style="margin: 0 auto; display: table;">
+                    <i class="red heart icon" style="font-size: 90%;"></i>
+                    <div class="content">{{ $.T "You are a donor!" }}</div>
+                </h1>
+                <div class="ui centered subtitle" style="font-size:1.2rem;">
+                {{ $.T "Your donor expires <b>%s</b>. No need to feel guilty for not having donated!" (time .expiration) | html }}
+                    &lt;3
                 </div>
             </div>
-
-            <div class="sixteen wide column">
-                <div class="ui segment chibi-card">
-                    <div class="ui mobile reversed stackable two grid chibi-grid">
-
-                        <div class="fourteen wide column grid">
-                            <h2>{{ $.T "Donor badge" }}</h2>
-                            <p class="chibi-text">
-                                {{ $.T "Again, just like in osu!, you will get a <b>donor badge</b> on your profile, to show everyone you're supporting us." | html }}
-                            </p>
-                        </div>
-                        <div class="two wide column">
-                            <img class="ui centered image chibi" alt="Chibi" src="/static/chibi/2.png"/>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="sixteen wide column">
-                <div class="ui segment chibi-card">
-                    <div class="ui stackable two grid chibi-grid">
-                        <div class="two wide column">
-                            <img class="ui centered image chibi" alt="Chibi" src="/static/chibi/3.png"/>
-                        </div>
-                        <div class="fourteen wide column grid">
-                            <h2>{{ $.T "Custom badge editor" }}</h2>
-                            <p class="chibi-text">
-                                {{ $.T "You get to be able to create your <b>own personal badge</b>, with custom text and icon, to show off on your profile! Let the world know you're an anchor. Or prank people showing a spinnin' wheel with \"Loading...\"! Up to you." | html }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="sixteen wide column">
-                <div class="ui segment chibi-card">
-                    <div class="ui mobile reversed stackable two grid chibi-grid">
-
-                        <div class="fourteen wide column grid">
-                            <h2>{{ $.T "Friends ranking" }}</h2>
-                            <p class="chibi-text">
-                                {{ $.T "<b>Competing with friends</b> is really cool, you can play on the leaderboard with someone more or less on your level, without getting crippling depression and RSI for not beating that pro!" | html }}
-                            </p>
-                        </div>
-                        <div class="two wide column">
-                            <img class="ui centered image chibi" alt="Chibi" src="/static/chibi/4.png"/>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="sixteen wide column">
-                <div class="ui segment chibi-card">
-                    <div class="ui stackable two grid chibi-grid">
-                        <div class="two wide column">
-                            <img class="ui centered image chibi" alt="Chibi" src="/static/chibi/5.png"/>
-                        </div>
-                        <div class="fourteen wide column grid">
-                            <h2>{{ $.T "Profile background" }}</h2>
-                            <p class="chibi-text">
-                                {{ $.T "Think about <b>spicing your profile up with some eggplants</b>? Got you covered! Having donor privileges, you get to be able to change your profile background." | html }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="sixteen wide column">
-                <div class="ui segment chibi-card">
-                    <div class="ui mobile reversed stackable two grid chibi-grid">
-
-                        <div class="fourteen wide column grid">
-                            <h2>{{ $.T "Unlimited Name Changes" }}</h2>
-                            <p class="chibi-text">
-                                {{ $.T "<b>Tired of your current identity?</b> Now you can have as many as you want! Just ask an administrator to change your name, as many times as you'd like." | html }}
-                            </p>
-                        </div>
-                        <div class="two wide column">
-                            <img class="ui centered image chibi" alt="Chibi" src="/static/chibi/6.png"/>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="sixteen wide column">
-                <div class="ui segment chibi-card">
-                    <div class="ui stackable two grid chibi-grid">
-                        <div class="two wide column">
-                            <img class="ui centered image chibi" alt="Chibi" src="/static/chibi/7.png"/>
-                        </div>
-                        <div class="fourteen wide column grid">
-                            <h2>{{ $.T "Unlimited Flag Changes" }}</h2>
-                            <p class="chibi-text">
-                                {{ $.T "<b>Want to appear as if you're from another country?</b> You also get as many of these as you'd like. Just enter in chat !flag <flag iso code>" | html }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="sixteen wide column">
-                <div class="ui segment chibi-card">
-                    <div class="ui mobile reversed stackable two grid chibi-grid">
-
-                        <div class="fourteen wide column grid">
-                            <h2>{{ $.T "Unlimited Stats Resets" }}</h2>
-                            <p class="chibi-text">
-                                {{ $.T "Now you can also <b>start fresh</b> with unlimited stats resets! Ask an administrator and they shall perform the deed." | html }}
-                            </p>
-                        </div>
-                        <div class="two wide column">
-                            <img class="ui centered image chibi" alt="Chibi" src="/static/chibi/8.png"/>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="sixteen wide column">
-                <div class="ui segment chibi-card">
-                    <div class="ui stackable two grid chibi-grid">
-                        <div class="two wide column">
-                            <img class="ui centered image chibi" alt="Chibi" src="/static/chibi/9.png"/>
-                        </div>
-                        <div class="fourteen wide column grid">
-                            <h2>{{ $.T "Viewing your subscribers" }}</h2>
-                            <p class="chibi-text">
-                                {{ $.T "Now you can watch <b>your subscribers</b>. That's way to <b>found</b> new good friends" | html }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="sixteen wide column">
-                <div class="ui segment chibi-card">
-                    <div class="ui mobile reversed stackable two grid chibi-grid">
-
-                        <div class="fourteen wide column grid">
-                            <h2>{{ $.T "Chance to be in top donators" }}</h2>
-                            <p class="chibi-text">
-                                {{ $.T "If you are <b>one of those who support our server the most</b>, you will be in the <b>top donators</b>. <b>Imagine</b> you are <b>on the main page</b>. That's cool)" | html }}
-                            </p>
-                        </div>
-                        <div class="two wide column">
-                            <img class="ui centered image chibi" alt="Chibi" src="/static/chibi/10.png"/>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="sixteen wide column">
-                <div class="ui segment chibi-card">
-                    <div class="ui stackable two grid chibi-grid">
-                        <div class="two wide column">
-                            <img class="ui centered image chibi" alt="Chibi" src="/static/chibi/11.png"/>
-                        </div>
-                        <div class="fourteen wide column grid">
-                            <h2>{{ $.T "Creating clans" }}</h2>
-                            <p class="chibi-text">
-                                {{ $.T "Wow, now you can create clan for you and your friends. <b>Pew-pew</b> with other clans." | html }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    {{ if $global.User.ID }}
-        <h4 class="ui horizontal divider header">
-            {{ $.T "And this is how you pay" }}
-        </h4>
-        <div class="ui stackable grid">
-            <div class="ui eight wide column">
-                <div class="ui center aligned container">
-                    <img src="https://donationalerts.ru/img/header/logo.svg" width="128" height="128">
-                    <h3> {{ $.T "That's DonationAlerts - \"streamer's main tool\" but we use that beautiful platform for collect donations ヽ(・∀・)ﾉ" | html }} </h3>
-                    <!-- <a href="https://donationalerts.ru/r/osukurikku" class="ui orange button">{{ $.T "Donate!" }}</a> -->
-                    <a href="#" class="ui disabled orange button" disabled>{{ $.T "Donate!" }}</a>
-                    <a href="/shop" class="ui purple button">{{ $.T "Shop" }}</a>
-                    <br/><br/>
-                    <p>{{ $.T "<b>NOTE:</b> please check description before you donate" | html }}</p>
-                </div>
-            </div>
-            <div class="ui eight wide column">
-                <div class="ui center aligned container">
-                    <h1 class="ui header" style="padding-top: 10px; padding-bottom: 20px;">
-                        <i class="paypal icon"></i>
-                        {{ $.T "PayPal" }}
-                    </h2>
-                    <br/>
-                    <div id="months-slider" style="margin: 0 auto; max-width: 500px"></div>
-                    <br>
-                    <div id="cost" class="centered"><b>{{ $.T "Loading..." }}</b></div>
-                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_self">
-                        <input type="hidden" name="on0" value="Period">
-                        <input type="hidden" name="os0"	value="1 month">
-                        {{ range _range 24 }}
-                            {{ $months := plus (float .) 1 }}
-                            <input type="hidden" name="option_select{{ . }}" value="{{ $months }} month{{ if . }}s{{ end }}">
-                            <input type="hidden" name="option_amount{{ . }}" value="{{ calculateDonorPrice $months }}">
-                        {{ end }}
-                        <input type="hidden" name="on1" value="Kurikku user to give donor">
-                        <input type="hidden" name="custom" value="username={{ $global.User.Username }}" id="ipn-username">
-                        <input type="hidden" name="amount" value="{{ calculateDonorPrice 1 }}" id="paypal-amt">
-                        <div class="ui fluid labeled action input">
-                            <div class="ui label">
-                                {{ $.T "User:" }}
-                            </div>
-                            <input name="os1" type="text" placeholder="{{ $.T "User" }}" value="{{ $global.User.Username }}" id="username-input">
-                            <button type="submit" class="ui blue button">{{ $.T "Submit" }}</button>
-                        </div>
-                        {{ $ief }}
-                        <input type="hidden" name="business" value="i@kotrik.ru">
-                        <input type="hidden" name="cmd" value="_xclick">
-                        <input type="hidden" name="lc" value="GB">
-                        <input type="hidden" name="no_note" value="0">
-                        <input type="hidden" name="currency_code" value="EUR">
-                        <img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
-                    </form>
-                    <h3>After donate with paypal, you should write KotRik in osu!pm, or in Discord(KotRik#1337 or find me in our discord, i'm friendly, please don't be afraid of me)</h3>
-                </div>
-            </div>
-        </div>
-        
-    {{ else }}
-        <div class="ui divider"></div>
-        <h1 class="ui center aligned header">{{ $.T "Please log in before purchasing supporter" }}</h1>
-    {{ end }}
-    </div>
-{{ end }}
+        {{ end }}
+    {{end}}
 </div>
+<noscript>You need to enable JavaScript to run this app.</noscript>
+<script>!function(e){function r(r){for(var n,i,l=r[0],a=r[1],f=r[2],p=0,s=[];p<l.length;p++)i=l[p],Object.prototype.hasOwnProperty.call(o,i)&&o[i]&&s.push(o[i][0]),o[i]=0;for(n in a)Object.prototype.hasOwnProperty.call(a,n)&&(e[n]=a[n]);for(c&&c(r);s.length;)s.shift()();return u.push.apply(u,f||[]),t()}function t(){for(var e,r=0;r<u.length;r++){for(var t=u[r],n=!0,l=1;l<t.length;l++){var a=t[l];0!==o[a]&&(n=!1)}n&&(u.splice(r--,1),e=i(i.s=t[0]))}return e}var n={},o={1:0},u=[];function i(r){if(n[r])return n[r].exports;var t=n[r]={i:r,l:!1,exports:{}};return e[r].call(t.exports,t,t.exports,i),t.l=!0,t.exports}i.m=e,i.c=n,i.d=function(e,r,t){i.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,r){if(1&r&&(e=i(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(i.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var n in e)i.d(t,n,function(r){return e[r]}.bind(null,n));return t},i.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(r,"a",r),r},i.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},i.p="/";var l=this["webpackJsonpkotorikku-react"]=this["webpackJsonpkotorikku-react"]||[],a=l.push.bind(l);l.push=r,l=l.slice();for(var f=0;f<l.length;f++)r(l[f]);var c=a;t()}([]);</script>
+<script src="/static/react/js/2.09b46c79.chunk.js"></script>
+<script src="/static/react/js/main.975c392d.chunk.js" defer></script>
+<script>
+    var paymentConf = {
+        userID: {{ .Context.User.ID }},
+        userNickname: {{ .Context.User.Username }}
+    }
+</script>
 {{ end }}

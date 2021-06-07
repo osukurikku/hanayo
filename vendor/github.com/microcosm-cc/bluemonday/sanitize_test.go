@@ -826,7 +826,7 @@ tt	p://6	6.000146.0x7.147/">XSS</A>`,
 			expected: ` +ADw-SCRIPT+AD4-alert(&#39;XSS&#39;)`,
 		},
 		{
-			in:       `<META HTTP-EQUIV="Set-Cookie" Content="USERID=<SCRIPT>alert('XSS')</SCRIPT>">`,
+			in:       `<META HTTP-EQUIV="Set-Cookie" Content="=<SCRIPT>alert('XSS')</SCRIPT>">`,
 			expected: ``,
 		},
 		{
