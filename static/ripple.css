@@ -146,7 +146,7 @@ p.chibi-text {
 .kurikku-girl {
 	width: 100%;
 	height: 100%;
-	background-image: url('/static/images/logo-girl.png');
+	background-image: url('/static/images/kurikku_girl.png');
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: bottom;
