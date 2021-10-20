@@ -298,6 +298,7 @@ func generateEngine() *gin.Engine {
 	r.GET("/b/:bid", beatmapInfo)
 	r.GET("/s/:sid", beatmapSetInfo)
 	r.GET("/beatmapsets/:sid", beatmapSetInfo)
+	r.GET("/beatmapsets/:sid/discussion", beatmapSetInfo)
 
 	r.POST("/pwreset", passwordReset)
 	r.GET("/pwreset/continue", passwordResetContinue)
