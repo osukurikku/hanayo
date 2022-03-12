@@ -294,42 +294,11 @@ DisableHH=true
                             {{ end }}
                         {{ end}}
                     {{ end }}
-                    <div id="topplayed" class="ui container">
-                        <div class="ui center aligned segment" style="height: 100%;">
-                            <table class="ui very basic collapsing celled table" style="width: 100%; height: auto;">
-                                <thead>
-                                <tr>
-                                    <th style="color: white;" align="center">{{ .T "Most played beatmaps" }}</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {{ with .Get "krapi/top_beatmaps" }}
-                                    {{ range .beatmaps }}
-                                        <tr>
-                                            <td style="display: flex; align-items: center;">
-                                                <img style="height: 50px; width: auto;" logo="preview-{{ $.ConvertFl64ToInt .beatmapset_id }}" src="https://assets.ppy.sh/beatmaps/{{ $.ConvertFl64ToInt .beatmapset_id }}/covers/list@2x.jpg"
-                                                    class="ui mini rounded image"/>
-                                                <div style="margin-left: 5px; width: 100%;" class="content">
-                                                    <div style="font-size: 13px">{{ .song_name }}</div>
-                                                    <div class="sub header kri">{{ .difficulty2.std }} AR: {{ .ar }} OD: {{ .od }} BPM: {{ .bpm }} Played: {{ .count }}</div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    {{ end }}
-                                {{ end }}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <hr class="ui inverted divider"/>
 
                     <iframe src="https://discordapp.com/widget?id=511199892031668245&theme=dark" allowtransparency="true" frameborder="0" style="
                     width: 100%;
                     height: 23rem;
                 "></iframe>
-
-                    <hr class="ui inverted divider"/>
 
                     <div class="ui stackable grid">
                         <div class="sixteen wide column">
