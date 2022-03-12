@@ -875,8 +875,8 @@ msgstr "Hasło (przynajmniej 8 znaków)"
 msgid "Email"
 msgstr "E-mail"
 
-msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via osu! to finish the account creation process."
-msgstr "<b class='big text'>Twoje konto zostało założone!</b><br> Możesz teraz zalogować się na swoje konto przez osu! aby zakończyć proces tworzenia konta."
+msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via <b>osu!</b> to <b>finish</b> the account creation process."
+msgstr "<b class='big text'>Twoje konto zostało założone!</b><br> Możesz teraz zalogować się na swoje konto przez <b>osu!</b> aby zakończyć proces tworzenia konta."
 
 msgid "Congratulations for not reading things!"
 msgstr "Gratulacje, nie potrafisz czytać!"

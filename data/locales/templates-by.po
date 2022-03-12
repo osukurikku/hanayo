@@ -874,8 +874,8 @@ msgstr "Пароль (не менш за 8 сімвалаў)"
 msgid "Email"
 msgstr "Электронная пошта"
 
-msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via osu! to finish the account creation process."
-msgstr "<b class='big text'>Ваш уліковы запіс быў створан!</b><br> Цяпер вы можаце ўвайсці ў свой рахунак праз osu! каб завяршыць працэс стварэння ўліковага запісу."
+msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via <b>osu!</b> to <b>finish</b> the account creation process."
+msgstr "<b class='big text'>Ваш уліковы запіс быў створан!</b><br> Цяпер вы можаце ўвайсці ў свой рахунак праз <b>osu!</b> каб завяршыць працэс стварэння ўліковага запісу."
 
 msgid "Congratulations for not reading things!"
 msgstr "Віншую вас з тым, што вы нічога не чытаеце!"

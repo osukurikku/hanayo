@@ -875,7 +875,7 @@ msgstr "Salasana (vähintään 8 kirjainta)"
 msgid "Email"
 msgstr "Sähköpostiosoite"
 
-msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via osu! to finish the account creation process."
+msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via <b>osu!</b> to <b>finish</b> the account creation process."
 msgstr "<b class='big text'>Tilisi on luotu!</b><br> Voit nyt kirjautua tilillesi osu-palvelun kautta! tilin luomisprosessin loppuun saattamiseksi."
 
 msgid "Congratulations for not reading things!"

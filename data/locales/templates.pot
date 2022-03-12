@@ -952,7 +952,13 @@ msgstr ""
 
 # Translation for ..\templates\register\verify.html
 
-msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via osu! to finish the account creation process."
+msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via <b>osu!</b> to <b>finish</b> the account creation process."
+msgstr ""
+
+msgid "<h2>Thanks for choosing <i>kurikku</i> as your osu! private server</h2>"
+msgstr ""
+
+msgid "Below you can read the instructions on how to create a shortcut to connect to the server. Use it and get into the game. And remember, we <b>NEVER send an EMAIL</b> to confirm your account"
 msgstr ""
 
 # Translation for ..\templates\register\welcome.html

@@ -876,8 +876,8 @@ msgstr "รหัสผ่าน (อย่างน้อยต้องมี 
 msgid "Email"
 msgstr "อีเมลล์"
 
-msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via osu! to finish the account creation process."
-msgstr "<b class='big text'>บัญชีของคุณได้ถูกสร้างแล้ว </b><br>กรุณาเข้าสู่ระบบใน osu! (ตัวเกม) โดยใช้บัญชีของคุณ สิ่งที่คุณต้องทำก็คือเชื่อมต่อเซิร์ฟเวอร์ Ripple ผ่านตัวเกม osu! นั้นเอง!"
+msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via <b>osu!</b> to <b>finish</b> the account creation process."
+msgstr "<b class='big text'>บัญชีของคุณได้ถูกสร้างแล้ว </b><br>กรุณาเข้าสู่ระบบใน <b>osu!</b> (ตัวเกม) โดยใช้บัญชีของคุณ สิ่งที่คุณต้องทำก็คือเชื่อมต่อเซิร์ฟเวอร์ kurikku ผ่านตัวเกม <b>osu!</b> นั้นเอง!"
 
 msgid "Congratulations for not reading things!"
 msgstr "ขอแสดงความดีด้วยที่คุณนั้นไม่ได้อ่านอะไรเลย"

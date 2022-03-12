@@ -875,8 +875,8 @@ msgstr "Contraseña (por lo menos 8 caracteres)"
 msgid "Email"
 msgstr "Correo electrónico"
 
-msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via osu! to finish the account creation process."
-msgstr "<b class='big text'>¡Tu cuenta ha sido creada!</b><br> Ahora puedes iniciar sesión con tu cuenta en osu! para terminar el proceso de creación."
+msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via <b>osu!</b> to <b>finish</b> the account creation process."
+msgstr "<b class='big text'>¡Tu cuenta ha sido creada!</b><br> Ahora puedes iniciar sesión con tu cuenta en <b>osu!</b> para terminar el proceso de creación."
 
 msgid "Congratulations for not reading things!"
 msgstr "¡Felicidades por no leer nada!"

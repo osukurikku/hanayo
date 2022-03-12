@@ -894,8 +894,17 @@ msgstr "Пароль (не менее 8 символов)"
 msgid "Email"
 msgstr "Электронная почта"
 
-msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via osu! to finish the account creation process."
-msgstr "<b class='big text'>Ваш аккаунт был создан!</b><br> Теперь вам надо залогиниться в игре, чтоб закончить процесс создания."
+msgid "<b class='big text'>Your account has been created!</b><br> You may now login to your account via <b>osu!</b> to <b>finish</b> the account creation process."
+msgstr "<b class='big text'>Ваш аккаунт был создан!</b><br> Теперь вам надо <b>залогиниться в игре</b>, чтоб закончить процесс создания."
+
+msgid "<h2>Thanks for choosing <i>kurikku</i> as your osu! private server</h2>"
+msgstr "<h2>Спасибо за выбор <i>kurikku</i> в качестве вашего приватного osu! сервера</h2>"
+
+msgid "Below you can read the instructions on how to create a shortcut to connect to the server. Use it and get into the game. And remember, we <b>NEVER send an EMAIL</b> to confirm your account"
+msgstr "Ниже вы можете прочитать инструкцию о том, как создать ярлык для подключения к серверу. Используй её и подключайся к нам! И запомни, мы <b>НИКОГДА не отправляем EMAIL</b> для подтверждения твоего аккаунта"
+
+msgid "Waiting for Ingame Login"
+msgstr "Ждём первую авторизацию..."
 
 msgid "Congratulations for not reading things!"
 msgstr "Поздравляем с тем, что вы ничего не прочитали!"
