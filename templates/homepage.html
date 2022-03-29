@@ -206,24 +206,28 @@ DisableHH=true
                     <h2>{{ .T "Server news" }} </h2>
 
                     <hr class="ui inverted divider"/>
-                    {{ $news := getBetterNews }}
-                    {{ range $index, $new := $news }}
-                        <div class="ui segments">
+
+                    {{ $news := getBetterNewsV2 .Context.Language }}
+                    {{ range $index, $post := $news.Posts}}
+                        <div>
                             {{ if (lt $index 3) }}
-                                <div class="MainPage--news--preview" style="background-image: url('{{ $new.Preview }}');"></div>
+                                {{ if .FeatureImage }}
+                                    <div class="MainPage--news--preview" style="background-image: url('{{ $post.FeatureImage }}');"></div>
+                                {{ else }}
+                                    <div class="MainPage--news--preview" style="background-image: url('/static/images/page-white.png');"></div>
+                                {{ end }}
                             {{ end }}
                             
                             <div class="ui segment">
                                 <h1 class="ui header no top margin">
-                                    <a href="{{ $new.Link }}"
-                                    class="inherit">{{ $new.Name }}</a>
+                                    <a href="{{ $post.URL }}"
+                                    class="inherit">{{ $post.Title }}</a>
                                 </h1>
                                 <p>
-                                    {{ $new.News }}...
+                                    {{ $post.Excerpt }}
                                 </p>
                             </div>
                         </div>
-
                     {{ end }}
 
                 </div>

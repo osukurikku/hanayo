@@ -30,7 +30,7 @@ import (
 	"zxq.co/ripple/playstyle"
 	"zxq.co/ripple/rippleapi/common"
 
-	vkapi "github.com/SevereCloud/vksdk/api"
+	// vkapi "github.com/SevereCloud/vksdk/api"
 )
 
 type RankRequest struct {
@@ -582,55 +582,71 @@ var funcMap = template.FuncMap{
 		return string(jsonStr)
 	},
 
-	"getBetterNews": func() (news []BetterNews) {
-		newsLetter, err := vkWrapper.WallGet(vkapi.Params{
-			"owner_id": -175152353,
-			"count":    10,
-			"filter":   " owner",
-		})
+	// "getBetterNews": func() (news []BetterNews) {
+	// 	newsLetter, err := vkWrapper.WallGet(vkapi.Params{
+	// 		"owner_id": -175152353,
+	// 		"count":    10,
+	// 		"filter":   " owner",
+	// 	})
 
+	// 	if err != nil {
+	// 		fmt.Println(err)
+	// 		return news
+	// 	}
+
+	// 	for _, el := range newsLetter.Items {
+	// 		betterNew := BetterNews{}
+
+	// 		var (
+	// 			finalStr string
+	// 			count    int
+	// 		)
+	// 		count = 50
+	// 		var lines []string = strings.Split(el.Text, "\n")
+	// 		if len(lines) > 1 {
+	// 			n := ReplaceUnCorrectSymbols(lines[0])
+	// 			betterNew.Name = n
+	// 			betterNew.News = ReplaceUnCorrectSymbols(GetFirstN(strings.Join(lines[1:], "\n"), 256))
+	// 		} else {
+	// 			s := ReplaceUnCorrectSymbols(el.Text)
+	// 			if len(s) > 0 {
+	// 				if count >= len(s) {
+	// 					count = len(s) - 1
+	// 				}
+	// 				finalStr = s[:count]
+	// 			}
+	// 			betterNew.Name = finalStr
+	// 			betterNew.News = ReplaceUnCorrectSymbols(GetFirstN(s, 256))
+	// 		}
+
+	// 		if len(el.Attachments) > 0 && el.Attachments[0].Type == "photo" {
+	// 			betterNew.Preview = el.Attachments[0].Photo.MaxSize().URL
+	// 		} else {
+	// 			betterNew.Preview = "/static/headers/unnamed.png"
+	// 		}
+
+	// 		betterNew.Date = "02.02"
+	// 		betterNew.Link = "https://vk.com/osukurikku?w=wall-175152353_" + strconv.Itoa(el.ID)
+
+	// 		news = append(news, betterNew)
+	// 	}
+	// 	return news
+	// },
+
+	"getBetterNewsV2": func(language string) GhostPostsResponse {
+		country := strings.ToLower(language)
+		if country != "ru" {
+			country = "en"
+		}
+
+		x := GhostPostsResponse{}
+		d, err := http.Get(fmt.Sprintf("https://blog.kurikku.pw/ghost/api/v4/content/posts/?key=%s&filter=tag:%s", config.GhostApiToken, country))
 		if err != nil {
-			fmt.Println(err)
-			return news
+			return x
 		}
-
-		for _, el := range newsLetter.Items {
-			betterNew := BetterNews{}
-
-			var (
-				finalStr string
-				count    int
-			)
-			count = 50
-			var lines []string = strings.Split(el.Text, "\n")
-			if len(lines) > 1 {
-				n := ReplaceUnCorrectSymbols(lines[0])
-				betterNew.Name = n
-				betterNew.News = ReplaceUnCorrectSymbols(GetFirstN(strings.Join(lines[1:], "\n"), 256))
-			} else {
-				s := ReplaceUnCorrectSymbols(el.Text)
-				if len(s) > 0 {
-					if count >= len(s) {
-						count = len(s) - 1
-					}
-					finalStr = s[:count]
-				}
-				betterNew.Name = finalStr
-				betterNew.News = ReplaceUnCorrectSymbols(GetFirstN(s, 256))
-			}
-
-			if len(el.Attachments) > 0 && el.Attachments[0].Type == "photo" {
-				betterNew.Preview = el.Attachments[0].Photo.MaxSize().URL
-			} else {
-				betterNew.Preview = "/static/headers/unnamed.png"
-			}
-
-			betterNew.Date = "02.02"
-			betterNew.Link = "https://vk.com/osukurikku?w=wall-175152353_" + strconv.Itoa(el.ID)
-
-			news = append(news, betterNew)
-		}
-		return news
+		data, _ := ioutil.ReadAll(d.Body)
+		json.Unmarshal(data, &x)
+		return x
 	},
 
 	"incrValue": func(value int, incr int) (newValue int) {

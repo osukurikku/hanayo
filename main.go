@@ -29,7 +29,7 @@ import (
 	"zxq.co/ripple/hanayo/services/cieca"
 	"zxq.co/x/rs"
 
-	vkIniter "github.com/SevereCloud/vksdk/api"
+	// vkIniter "github.com/SevereCloud/vksdk/api"
 )
 
 var startTime = time.Now()
@@ -83,7 +83,8 @@ var (
 		CoinbaseAPIKey    string
 		CoinbaseAPISecret string
 
-		VkTehToken     string
+		// VkTehToken     string
+		GhostApiToken	string
 		ChallengeOneID string
 
 		SentryDSN string
@@ -98,7 +99,7 @@ var (
 	qb        *qsql.DB
 	mg        mailgun.Mailgun
 	rd        *redis.Client
-	vkWrapper *vkIniter.VK
+	// vkWrapper *vkIniter.VK
 )
 
 // Services etc
@@ -134,7 +135,8 @@ func main() {
 		&config.DiscordServer:    "#",
 		&config.MainRippleFolder: "/home/osu/server",
 		&config.MailgunFrom:      `"Kurikku" <noreply@kurikku.pw>`,
-		&config.VkTehToken:       "<vkontakte_teh_token>",
+		// &config.VkTehToken:       "<vkontakte_teh_token>",
+		&config.GhostApiToken: 	  "",
 		&config.ChallengeOneID:   "",
 	}
 	for key, value := range configDefaults {
@@ -155,8 +157,8 @@ func main() {
 		panic(err)
 	}
 
-	// initialise vksdk by severecloud
-	vkWrapper = vkIniter.Init(config.VkTehToken)
+	// // initialise vksdk by severecloud
+	// vkWrapper = vkIniter.Init(config.VkTehToken)
 
 	// initialise mailgun
 	mg = mailgun.NewMailgun(
