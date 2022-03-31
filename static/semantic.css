@@ -4471,7 +4471,8 @@
  
  @media only screen and (min-width: 992px) and (max-width: 1199px) {
      .ui.container {
-         width: 933px;
+         /* width: 933px; */
+         width: 95%;
          margin-left: auto !important;
          margin-right: auto !important;
      }

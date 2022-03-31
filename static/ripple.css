@@ -2101,3 +2101,14 @@ p.ranks .rank {
         display:none!important
     }
 }
+
+@media (min-width: 770px) and (max-width: 800px) {
+	div#user-search {
+		display: none;
+	}
+}
+
+.kpw-user--avatar {
+	width: 50px!important;
+	height: 50px!important;
+}

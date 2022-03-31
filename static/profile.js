@@ -525,18 +525,23 @@ var currentPage = {
 var scoreStore = {};
 var topScoreStore = {};
 
+let isFirstTopScoresLoad = [true, true, true, true];
 function loadTopScoresPage(type, mode) {
     var table = $("#top-scores-zone div[data-mode=" + mode + "] table[data-type=" + type + "] tbody");
     var page = ++currentPage[mode][type];
+    const countOfScores = isFirstTopScoresLoad[mode] ? 5 : 20;
     api("users/first_scores", {
         mode: mode,
         p: page,
-        l: 20,
+        l: countOfScores,
         id: userID,
     }, function (r) {
         if (r.scores == null) {
             disableTopLoadMoreButton(type, mode);
             return;
+        }
+        if (isFirstTopScoresLoad[mode]) {
+            isFirstTopScoresLoad[mode] = false;
         }
         r.scores.forEach(function (v, idx) {
             topScoreStore[v.id] = v;
@@ -573,7 +578,7 @@ function loadTopScoresPage(type, mode) {
             e.stopPropagation();
         }).removeClass("new");
         var enable = true;
-        if (r.scores.length != 20)
+        if (r.scores.length != countOfScores)
             enable = false;
         disableTopLoadMoreButton(type, mode, enable);
     });
@@ -753,18 +758,23 @@ function loadMostPlayedBeatmaps(mode) {
     })
 }
 
+let isFirstLoadScores = [true, true, true, true]
 function loadScoresPage(type, mode) {
     var table = $("#scores-zone div[data-mode=" + mode + "] table[data-type=" + type + "] tbody");
     var page = ++currentPage[mode][type];
+    const length = isFirstLoadScores[mode] ? 5 : 20;
     api("users/scores/" + type, {
         mode: mode,
         p: page,
-        l: 20,
+        l: length,
         id: userID,
     }, function (r) {
         if (r.scores == null) {
             disableLoadMoreButton(type, mode);
             return;
+        } 
+        if (isFirstLoadScores[mode]) {
+            isFirstLoadScores[mode] = false;
         }
         r.scores.forEach(function (v, idx) {
             scoreStore[v.id] = v;
@@ -806,7 +816,7 @@ function loadScoresPage(type, mode) {
             e.stopPropagation();
         }).removeClass("new");
         var enable = true;
-        if (r.scores.length != 20)
+        if (r.scores.length != length)
             enable = false;
         disableLoadMoreButton(type, mode, enable);
     });
